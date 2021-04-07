@@ -80,13 +80,13 @@ BOOST_AUTO_TEST_CASE(LinkedListTest)
 		BOOST_CHECK_EQUAL(h.first()->get_var(), var[i]);
 	}
 
-	int idx = 9999;
+	int idx = MAX_TEST_COUNT - 1;
 	for (TestListHead::iterator it = h.begin(); it != TestListHead::iterator(nullptr); ++it) {
 		printf("pre-increment: %d\n", it->get_var());
 		BOOST_CHECK_EQUAL(it->get_var(), var[idx--]);
 	}
 
-	idx = 9999;
+	idx = MAX_TEST_COUNT - 1;
 	for (TestListHead::iterator it = h.begin(); it != TestListHead::iterator(nullptr); it++) {
 		printf("reverse post-increment: %d\n", it->get_var());
 		BOOST_CHECK_EQUAL(it->get_var(), var[idx--]);
