@@ -75,6 +75,6 @@ else
 	echo "Sqlpp11-connector-mysql already exists, skipping installation...";
 fi
 
-sudo apt-get -y install libreadline-dev lua5.3 liblua5.3-dev zlib1g-dev mariadb-server mariadb-client;
+sudo apt-get -y install libreadline-dev lua5.3 liblua5.3-dev zlib1g-dev mariadb-server mariadb-client ninja-build;
 
 popd;

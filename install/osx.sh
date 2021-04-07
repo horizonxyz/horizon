@@ -62,6 +62,6 @@ else
 	echo "Sqlpp11-connector-mysql already exists, skipping installation...";
 fi
 
-brew install readline zlib boost
+brew install readline zlib boost ninja
 
 popd;

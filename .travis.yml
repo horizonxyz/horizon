@@ -104,8 +104,8 @@ script:
   # Install OSX
   #
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-      cmake ../ -G"Xcode" -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ${COMPILE_OPTIONS} -DWITH_COVERAGE=1 -DWITH_TESTS=1 -DWITHOUT_SERVERS=1 || exit 1;
-      sudo xcodebuild -target install -config $BUILD_TYPE install || exit 1;
+      cmake ../ -G Ninja -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ${COMPILE_OPTIONS} -DWITH_COVERAGE=1 -DWITH_TESTS=1 -DWITHOUT_SERVERS=1 || exit 1;
+      ninja -v
     fi
   - popd;
   #
@@ -135,8 +135,8 @@ script:
   # Deploy OSX
   #
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-        cmake ../ -G"Xcode" -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ${COMPILE_OPTIONS} || exit 1;
-        sudo xcodebuild -target install -config $BUILD_TYPE install || exit 1;
+      cmake ../ -G Ninja -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ${COMPILE_OPTIONS} || exit 1;
+      ninja -v
     fi
   # - pushd bin/${BUILD_TYPE};
   # - sudo cp config/auth-server.lua.dist config/auth-server.lua;
