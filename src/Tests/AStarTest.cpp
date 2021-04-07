@@ -58,11 +58,13 @@ bool check_collision(int16_t x, int16_t y)
 	return cell[x][y].isWalkable() ? false : true;
 }
 
+#define MAX_TEST_COUNT 100
+
 BOOST_AUTO_TEST_CASE(AStarTest)
 {
 	std::srand(std::time(nullptr));
 
-	for (int i = 0; i < 10000; i++) {
+	for (int i = 0; i < MAX_TEST_COUNT; i++) {
 		MapCoords start, end;
 		int idx = 0;
 

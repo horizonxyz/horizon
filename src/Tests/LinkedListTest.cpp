@@ -64,14 +64,16 @@ public:
 	iterator end()   { return iterator(last()); }
 };
 
+#define MAX_TEST_COUNT 100
+
 BOOST_AUTO_TEST_CASE(LinkedListTest)
 {
-	int var[10000];
+	int var[MAX_TEST_COUNT];
 	TestListHead h;
 
-	std::shared_ptr<TestListElem> t[10000];
+	std::shared_ptr<TestListElem> t[MAX_TEST_COUNT];
 
-	for (int i = 0; i < 10000; i++) {
+	for (int i = 0; i < MAX_TEST_COUNT; i++) {
 		var[i] = i;
 		t[i] = std::make_shared<TestListElem>(var[i]);
 		h.push_front(t[i].get());
