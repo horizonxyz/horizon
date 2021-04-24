@@ -141,7 +141,6 @@ CREATE TABLE `session_data` (
 CREATE TABLE `character_inventory` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `char_id` int(11) unsigned NOT NULL DEFAULT '0',
-  `inventory_index` int(11) unsigned NOT NULL DEFAULT '2',
   `item_id` int(11) unsigned NOT NULL DEFAULT '0',
   `amount` int(11) unsigned NOT NULL DEFAULT '0',
   `equip_location_mask` int(11) unsigned NOT NULL DEFAULT '0',
@@ -164,8 +163,9 @@ CREATE TABLE `character_inventory` (
   `opt_val4` smallint(5) NOT NULL DEFAULT '0',
   `hire_expire_date` int(11) unsigned NOT NULL DEFAULT '0',
   `is_favorite` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `bind_type` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `bind_type` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `unique_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `is_broken` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `char_id` (`char_id`),
   KEY `item_id` (`item_id`),

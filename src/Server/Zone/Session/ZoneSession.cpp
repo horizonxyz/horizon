@@ -117,7 +117,7 @@ void ZoneSession::perform_cleanup()
 		player()->set_logged_in(false);
 		player()->notify_nearby_players_of_existence(EVP_NOTIFY_LOGGED_OUT);
 		player()->remove_grid_reference();
-		player()->sync_with_models();
+		player()->save();
 		player()->map_container()->remove_player(player());
 	}
 }

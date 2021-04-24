@@ -44,6 +44,7 @@
 #include <chrono>
 #include <signal.h>
 #include <sqlpp11/sqlpp11.h>
+#include <random>
 
 #include <sol.hpp>
 
@@ -170,6 +171,9 @@ void SignalHandler(int signal)
 
 void ZoneServer::initialize_core()
 {
+
+	std::srand(std::time(nullptr));
+	
 	// Install a signal handler
 	signal(SIGINT, SignalHandler);
 #ifndef WIN32

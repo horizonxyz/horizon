@@ -94,7 +94,6 @@ protected:
 	virtual void on_movement_begin() = 0;
 	virtual void on_movement_step() = 0;
 	virtual void on_movement_end() = 0;
-	virtual void sync_with_models() = 0;
 
 	/**
 	 * Unit Data

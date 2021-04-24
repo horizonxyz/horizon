@@ -26,14 +26,12 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#ifndef HORIZON_SQL_CHARACTERS_STATUS_HPP
-#define HORIZON_SQL_CHARACTERS_STATUS_HPP
+#ifndef HORIZON_SQL_CHARACTER_STATUS_HPP
+#define HORIZON_SQL_CHARACTER_STATUS_HPP
 
 #include <sqlpp11/table.h>
 #include <sqlpp11/data_types.h>
 #include <sqlpp11/char_sequence.h>
-
-class Server;
 
 namespace Horizon
 {

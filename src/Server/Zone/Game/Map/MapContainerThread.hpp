@@ -40,8 +40,6 @@
 #include <unordered_map>
 #include <atomic>
 
-#include <sol.hpp>
-
 namespace Horizon
 {
 namespace Zone

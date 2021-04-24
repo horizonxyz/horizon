@@ -92,8 +92,8 @@ public:
 	void notify_deletion(uint16_t idx, uint16_t amount, inventory_deletion_reason_type reason);
 	void notify_drop(uint16_t idx, uint16_t amount);
 	void notify_move_fail(uint16_t idx, bool silent);
-	uint32_t sync_to_model();
-	uint32_t sync_from_model();
+	void save();
+	uint32_t load();
 
 	void set_max_storage(uint32_t max_storage) { _max_storage = max_storage; }
 	uint32_t max_storage() { return _max_storage; }
@@ -107,6 +107,7 @@ private:
 	std::weak_ptr<Entities::Player> _player;
 	EquipmentListType _equipments;
 	inventory_storage_type _inventory_items;
+	inventory_storage_type _saved_inventory_items;
 };
 }
 }

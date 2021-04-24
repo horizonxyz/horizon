@@ -29,7 +29,7 @@
 #ifndef HORIZON_COMMANDLINEINTERFACE_H
 #define HORIZON_COMMANDLINEINTERFACE_H
 
-#include <Server/Common/Server.hpp>
+class Server;
 
 void cli_thread_start(Server *srv);
 void handle_signals(int sig);

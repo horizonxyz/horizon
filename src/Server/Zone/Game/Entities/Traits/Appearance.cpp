@@ -29,7 +29,6 @@
 
 #include "Appearance.hpp"
 
-#include "Server/Zone/Game/Entities/Entity.hpp"
 #include "Server/Zone/Game/Entities/Player/Player.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
 
