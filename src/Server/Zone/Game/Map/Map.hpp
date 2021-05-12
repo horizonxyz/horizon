@@ -104,8 +104,6 @@ public:
 
 		assert(min <= max);
 
-		std::srand(std::time(nullptr));
-
 		for (int i = std::max(x - max, 0); i < std::min(x + max, (int) _width); i++) {
 			for (int j = std::max(y - max, 0); j < std::min(y + max,(int) _height); j++) {
 				if (i == x && j == y)
@@ -131,8 +129,6 @@ public:
 
 		assert(xs >= 0);
 		assert(ys >= 0);
-
-		std::srand(std::time(nullptr));
 
 		for (int i = std::max(x - xs, 0); i < std::min(x + xs, (int) _width); i++) {
 			for (int j = std::max(y - ys, 0); j < std::min(y + ys,(int) _height); j++) {

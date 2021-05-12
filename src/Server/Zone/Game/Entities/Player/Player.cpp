@@ -30,6 +30,7 @@
 #include "Player.hpp"
 
 #include "Server/Common/Definitions/EntityDefinitions.hpp"
+#include "Server/Common/SQL/Character/Character.hpp"
 #include "Server/Zone/Game/Entities/Player/Assets/Inventory.hpp"
 #include "Server/Zone/Game/Map/Grid/Notifiers/GridNotifiers.hpp"
 #include "Server/Zone/Game/Map/Grid/Container/GridReferenceContainer.hpp"
@@ -43,8 +44,11 @@
 #include "Server/Zone/Game/Entities/Traits/Status.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
 #include "Server/Zone/Socket/ZoneSocket.hpp"
+#include "Server/Zone/Zone.hpp"
 
 #include "version.hpp"
+#include <sqlpp11/sqlpp11.h>
+#include <sqlpp11/mysql/connection.h>
 
 using namespace Horizon::Zone;
 using namespace Horizon::Zone::Entities;
@@ -74,12 +78,15 @@ void Player::initialize()
 {
 	Entity::initialize();
 
-	// Inventory.
-	_inventory = std::make_shared<Assets::Inventory>(downcast<Player>(), get_max_inventory_size());
-	_inventory->sync_from_model();
-
 	// Initialize Status.
 	status()->initialize(shared_from_this());
+
+	// Inventory.
+	_inventory = std::make_shared<Assets::Inventory>(downcast<Player>(), get_max_inventory_size());
+	_inventory->load();
+
+	status()->aspd()->compute(true);
+	status()->equip_atk()->compute(true);
 
 	// Ensure grid for entity.
 	map()->ensure_grid_for_entity(this, map_coords());
@@ -112,6 +119,16 @@ void Player::initialize()
 	} catch (sol::error &e) {
 		HLog(error) << "Player::initialize: " << e.what();
 	}
+
+    map()->container()->getScheduler().Schedule(
+    	Milliseconds(60000),
+    	get_scheduler_task_id(ENTITY_SCHEDULE_SAVE),
+    	[this] (TaskContext context)
+    {
+    	save();
+    	context.Repeat(Milliseconds(60000));
+    });
+
 }
 
 void Player::stop_movement()
@@ -120,9 +137,21 @@ void Player::stop_movement()
 	get_session()->clif()->notify_movement_stop(guid(), coords.x(), coords.y());
 }
 
-void Player::sync_with_models()
+void Player::save()
 {
+	SQL::TableCharacters tch;
+	std::shared_ptr<sqlpp::mysql::connection> conn = sZone->get_db_connection();
+	
+	(*conn)(update(tch).set(tch.slot = character()._slot, tch.name = name(), tch.online = character()._online ? 1 : 0, 
+		tch.last_unique_id = character()._last_unique_id, tch.hotkey_row_index = 0, tch.change_slot_count = 0, tch.font = 0,
+		tch.show_equip = 0, tch.allow_party = 0, tch.partner_aid = 0, tch.father_aid = 0, tch.mother_aid = 0, tch.child_aid = 0, tch.party_id = 0,
+		tch.guild_id = 0, tch.pet_id = 0, tch.homun_id = 0, tch.elemental_id = 0, tch.current_map = map()->get_name(), tch.current_x = map_coords().x(), tch.current_y = map_coords().y(),
+		tch.saved_map = character()._saved_map, tch.saved_x = character()._saved_x, tch.saved_y = character()._saved_y)
+		.where(tch.account_id == character()._account_id and tch.id == character()._character_id));
 
+	HLog(info) << "Player " << name() << " has been saved at (" << map()->get_name() << " " << map_coords().x() << "," << map_coords().y() << ").";
+
+	_inventory->save();
 }
 
 void Player::on_pathfinding_failure()

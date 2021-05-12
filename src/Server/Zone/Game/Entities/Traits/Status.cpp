@@ -154,16 +154,15 @@ void Status::initialize(std::shared_ptr<Entity> entity)
 
 	initialize_observable_statuses();
 
-	max_weight()->compute(false);
+	max_weight()->compute(true);
+	
 	status_atk()->compute(false);
-	equip_atk()->compute(false);
 	status_matk()->compute(false);
 	soft_def()->compute(false);
 	soft_mdef()->compute(false);
 	hit()->compute(false);
 	crit()->compute(false);
 	flee()->compute(false);
-	aspd()->compute(false);
 
 	pl->get_session()->clif()->notify_initial_status(shared_from_this());
 }

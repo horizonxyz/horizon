@@ -48,8 +48,7 @@
 
 #include <date/date.h>
 #include <sqlpp11/sqlpp11.h>
-#include <sqlpp11/functions.h>
-#include <sqlpp11/insert.h>
+#include <sqlpp11/mysql/connection.h>
 
 
 #include <memory>

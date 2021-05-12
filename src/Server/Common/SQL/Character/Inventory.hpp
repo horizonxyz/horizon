@@ -26,16 +26,12 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#ifndef HORIZON_MODELS_CHARACTERS_INVENTORY_HPP
-#define HORIZON_MODELS_CHARACTERS_INVENTORY_HPP
+#ifndef HORIZON_SQL_CHARACTER_INVENTORY_HPP
+#define HORIZON_SQL_CHARACTER_INVENTORY_HPP
 
-#include "Server/Common/Definitions/ItemDefinitions.hpp"
-
-#include <cstdint>
-#include <vector>
-#include <memory>
-
-class Server;
+#include <sqlpp11/table.h>
+#include <sqlpp11/data_types.h>
+#include <sqlpp11/char_sequence.h>
 
 namespace Horizon
 {
@@ -84,29 +80,6 @@ struct char_id
 			const T& operator()() const
 			{
 				return char_id;
-			}
-		};
-	};
-	using _traits = sqlpp::make_traits<sqlpp::integer>;
-};
-
-struct inventory_index
-{
-	struct _alias_t
-	{
-		static constexpr const char _literal[] = "inventory_index";
-		using _name_t = sqlpp::make_char_sequence<sizeof(_literal), _literal>;
-		template <typename T>
-		struct _member_t
-		{
-			T inventory_index;
-			T& operator()()
-			{
-				return inventory_index;
-			}
-			const T& operator()() const
-			{
-				return inventory_index;
 			}
 		};
 	};
@@ -664,15 +637,40 @@ struct unique_id
 	};
 	using _traits = sqlpp::make_traits<sqlpp::bigint>;
 };
+
+
+struct is_broken
+{
+	struct _alias_t
+	{
+		static constexpr const char _literal[] = "is_broken";
+		using _name_t = sqlpp::make_char_sequence<sizeof(_literal), _literal>;
+		template <typename T>
+		struct _member_t
+		{
+			T is_broken;
+			T& operator()()
+			{
+				return is_broken;
+			}
+			const T& operator()() const
+			{
+				return is_broken;
+			}
+		};
+	};
+	using _traits = sqlpp::make_traits<sqlpp::tinyint>;
+};
+
 }
 
 struct TableCharacterInventory : sqlpp::table_t<TableCharacterInventory,
-TableCharacterInventory_::id, TableCharacterInventory_::char_id, TableCharacterInventory_::inventory_index, TableCharacterInventory_::item_id, TableCharacterInventory_::amount,
+TableCharacterInventory_::id, TableCharacterInventory_::char_id, TableCharacterInventory_::item_id, TableCharacterInventory_::amount,
 TableCharacterInventory_::equip_location_mask, TableCharacterInventory_::is_identified, TableCharacterInventory_::refine_level, TableCharacterInventory_::element_type,
 TableCharacterInventory_::slot_item_id_0, TableCharacterInventory_::slot_item_id_1, TableCharacterInventory_::slot_item_id_2, TableCharacterInventory_::slot_item_id_3,
 TableCharacterInventory_::opt_idx0, TableCharacterInventory_::opt_val0, TableCharacterInventory_::opt_idx1, TableCharacterInventory_::opt_val1,
 TableCharacterInventory_::opt_idx2, TableCharacterInventory_::opt_val2, TableCharacterInventory_::opt_idx3, TableCharacterInventory_::opt_val3, TableCharacterInventory_::opt_idx4, TableCharacterInventory_::opt_val4,
-TableCharacterInventory_::hire_expire_date, TableCharacterInventory_::is_favorite, TableCharacterInventory_::bind_type, TableCharacterInventory_::unique_id>
+TableCharacterInventory_::hire_expire_date, TableCharacterInventory_::is_favorite, TableCharacterInventory_::bind_type, TableCharacterInventory_::is_broken, TableCharacterInventory_::unique_id>
 {
 	struct _alias_t
 	{

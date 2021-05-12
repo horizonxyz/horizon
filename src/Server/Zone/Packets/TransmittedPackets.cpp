@@ -2163,11 +2163,10 @@ void ZC_INVENTORY_ITEMLIST_EQUIP_V6::deliver(std::vector<std::shared_ptr<const i
 ByteBuffer &ZC_INVENTORY_ITEMLIST_EQUIP_V6::serialize()
 {
 	buf() << _packet_id;
-	buf() << (int16_t) ((65 * _items.size()) + 4);
+	buf() << (int16_t) ((57 * _items.size()) + 4);
 
 	for (auto it = _items.begin(); it != _items.end(); it++) {
 		std::shared_ptr<const item_entry_data> id = *it;
-		uint8_t config = 0;
 		buf() << id->inventory_index;
 		buf() << ((uint16_t) id->item_id);
 		buf() << ((uint8_t) id->type);
@@ -2175,23 +2174,24 @@ ByteBuffer &ZC_INVENTORY_ITEMLIST_EQUIP_V6::serialize()
 		buf() << id->current_equip_location_mask;
 		buf() << id->refine_level; //14
 		for (int i = 0; i < MAX_ITEM_SLOTS; i++)
-			buf() << (uint16_t) id->slot_item_id[i]; // 30
-		buf() << id->hire_expire_date;
-		buf() << (uint16_t) id->bind_type; // 36
-		buf() << id->sprite_id; // 38
+			buf() << (uint16_t) id->slot_item_id[i]; // 14 + 8 = 22
+		buf() << id->hire_expire_date; // 26
+		buf() << (uint16_t) id->bind_type; // 28
+		buf() << id->sprite_id; // 30
 
-		buf() << id->option_count; // 39
+		buf() << id->option_count; // 31
 
 		for (int i = 0; i < MAX_ITEM_OPTIONS; i++) {
 			buf() << id->option_data[i].index;
 			buf() << id->option_data[i].value;
 			buf() << id->option_data[i].param;
-		} // 39 + 25 = 64
+		} // 31 + 25 = 56
 
+		uint8_t config = 0;
 		config |= id->info.is_identified;
 		config |= id->info.is_broken << 1;
 		config |= id->info.is_favorite << 2;
-		buf() << config; // 65
+		buf() << config; // 57
 	}
 
 	return buf();

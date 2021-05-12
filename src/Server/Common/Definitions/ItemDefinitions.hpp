@@ -404,33 +404,33 @@ struct item_entry_data
 		return true;
 	}
 
-	uint8_t get_refine_level() { return refine_level; }
+	int8_t get_refine_level() { return refine_level; }
 	void set_refine_level(int lvl) { refine_level = lvl; }
 
-	uint32_t get_hire_expire_date() { return hire_expire_date; }
+	int32_t get_hire_expire_date() { return hire_expire_date; }
 	void set_hire_expire_date(int date) { hire_expire_date = date; }
 
 	item_bind_type get_bind_type() { return bind_type; }
 	void set_bind_type(item_bind_type val) { bind_type = val; }
 
-	uint8_t get_option_count() { return option_count; }
+	int8_t get_option_count() { return option_count; }
 	void set_option_count(uint8_t count) { option_count = count; }
 
-	uint16_t get_sprite_id() { return sprite_id; }
+	int16_t get_sprite_id() { return sprite_id; }
 
-	uint16_t inventory_index{0};
-	uint32_t item_id{0};
+	int16_t inventory_index{0};
+	int32_t item_id{0};
 	item_type type{IT_TYPE_ETC};
-	uint16_t amount{0};
-	uint32_t current_equip_location_mask{0};
-	uint32_t actual_equip_location_mask{0};
-	uint8_t refine_level{0};
-	uint32_t slot_item_id[MAX_ITEM_SLOTS]{0};
-	uint32_t hire_expire_date{0};
-	uint16_t sprite_id{0};
+	int16_t amount{0};
+	int32_t current_equip_location_mask{0};
+	int32_t actual_equip_location_mask{0};
+	int8_t refine_level{0};
+	int32_t slot_item_id[MAX_ITEM_SLOTS]{0};
+	int32_t hire_expire_date{0};
+	int16_t sprite_id{0};
 
 	element_type ele_type{ELE_NEUTRAL};
-	uint8_t option_count{0};
+	int8_t option_count{0};
 	struct options {
 		int16_t get_index() { return index; }
 		void set_index(int idx) { index = idx; }
@@ -440,17 +440,16 @@ struct item_entry_data
 
 		int16_t index{0};
 		int16_t value{0};
-		uint8_t param{0};
+		int8_t param{0};
 	} option_data[MAX_ITEM_OPTIONS];
 	struct item_entry_info {
-		item_entry_info () { memset(this, 0, sizeof(*this)); }
 		unsigned is_identified : 1;
 		unsigned is_broken : 1;
 		unsigned is_favorite : 1;
 		unsigned spare_bits : 5;
-	} info;
+	} info{0};
 	item_bind_type bind_type{IT_BIND_NONE}; // int16_t
-	uint64_t unique_id{0};
+	int64_t unique_id{0};
 };
 
 typedef std::array<std::pair<item_equip_location_mask, std::weak_ptr<item_entry_data>>, IT_EQPI_MAX> EquipmentListType;

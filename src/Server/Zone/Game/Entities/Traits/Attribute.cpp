@@ -27,6 +27,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
+#include "AttributesImpl.hpp"
 #include "Server/Zone/Game/Entities/Player/Player.hpp"
 #include "Server/Zone/Game/Entities/Player/Assets/Inventory.hpp"
 #include "Server/Zone/Game/StaticDB/JobDB.hpp"
@@ -385,8 +386,6 @@ int32_t EquipATK::compute(bool notify)
 
 int32_t EquipATK::compute_variance(int8_t weapon_lvl, int32_t base_weapon_dmg)
 {
-	srand(time(0));
-
 	return floor(((rand() % 1000 + (-500)) / 10000.f) * weapon_lvl * base_weapon_dmg);
 }
 

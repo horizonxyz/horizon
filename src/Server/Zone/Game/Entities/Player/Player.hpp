@@ -63,6 +63,8 @@ class Player : public Entity, public GridObject<Player>
 		entity_gender_types _gender{ENTITY_GENDER_FEMALE};
 		uint32_t _max_inventory_size{MAX_INVENTORY_SIZE};
 		uint64_t _last_unique_id{0};
+		std::string _saved_map{""};
+		int16_t _saved_x{0}, _saved_y{0};
 	};
 	
 public:
@@ -100,7 +102,7 @@ public:
 	/**
 	 * Player applications.
 	 */
-	void sync_with_models() override;
+	void save();
 
 	uint64_t new_unique_id();
 

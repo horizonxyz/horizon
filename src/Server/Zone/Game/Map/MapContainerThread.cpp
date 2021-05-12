@@ -125,7 +125,7 @@ void MapContainerThread::finalize()
 		std::shared_ptr<Entities::Player> player = pi->second;
 
 		if (player && player->get_session())
-			player->sync_with_models();
+			player->save();
 
 		// Disconnect player.
 //		player->get_packet_handler()->Send_ZC_ACK_REQ_DISCONNECT(true);
@@ -142,7 +142,7 @@ void MapContainerThread::finalize()
 		if (!player || !player->get_session())
 			continue;
 
-		player->sync_with_models();
+		player->save();
 //		player->get_packet_handler()->Send_ZC_ACK_REQ_DISCONNECT(true);
 	}
 

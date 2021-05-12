@@ -95,7 +95,6 @@ ByteBuffer &HC_ACCEPT_MAKECHAR::serialize()
  */
 void HC_SECOND_PASSWD_LOGIN::deliver(hc_pincode_state_type state)
 {
-	std::srand(std::time(0));
 	_pincode_seed = rand() % 0xFFFF;
 	get_session()->get_session_data()._pincode_seed = _pincode_seed;
 	
@@ -678,7 +677,6 @@ ByteBuffer &HC_REFUSE_ENTER::serialize()
  */
 void HC_EDIT_SECOND_PASSWD::deliver(pincode_edit_response state)
 {
-	std::srand(std::time(0));
 	_seed = rand() % 0xFFFF;
 	
 	_state = state;
