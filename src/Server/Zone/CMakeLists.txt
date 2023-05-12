@@ -71,7 +71,7 @@ target_link_libraries(zone
 		mcache
 		${Readline_LIBRARY}
 		${LUA_LIBRARIES}
-		${MYSQL_LIBRARY}
+		${MYSQL_LIBRARIES}
 		unofficial::mysql-connector-cpp::connector
 )
 
@@ -84,6 +84,7 @@ CollectIncludeDirectories(
 	PUBLIC_INCLUDES
 )
 
+message(status ${MYSQL_INCLUDE_DIR})
 target_include_directories(zone
 	PUBLIC
 		${Boost_INCLUDE_DIRS}

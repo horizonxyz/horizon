@@ -139,8 +139,10 @@ find_package(ZLIB REQUIRED)
 #################
 # Find MySQL
 #################
-include(FindMySQL)
+if (WIN32)
+find_package(libmysql REQUIRED)
 find_package(unofficial-mysql-connector-cpp CONFIG REQUIRED)
+endif()
 
 #################
 # Horizon Project Source

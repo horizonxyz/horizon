@@ -43,7 +43,6 @@
 #include <boost/filesystem.hpp>
 #include <boost/bind/placeholders.hpp>
 
-#include <date/date.h>
 #include <mysqlx/xdevapi.h>
 
 #ifndef SOL_ALL_SAFETIES_ON

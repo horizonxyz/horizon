@@ -51,7 +51,7 @@ target_link_libraries(char
 	    -lpthread
         ${Readline_LIBRARY}
 		${LUA_LIBRARIES}
-		${MYSQL_LIBRARY}
+		${MYSQL_LIBRARIES}
 		unofficial::mysql-connector-cpp::connector
 )
 

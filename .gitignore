@@ -35,6 +35,7 @@ bin
 resources/
 \.DS_Store
 .vs/horizon/*
+.vs/slnx.sqlite
 
 # Skip objects and static libraries.
 *.o
