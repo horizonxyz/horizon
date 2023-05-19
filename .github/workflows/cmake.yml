@@ -84,6 +84,6 @@ jobs:
     - name: Run Auth
       working-directory: ${{github.workspace}}\build\bin\Release
       run: |
-        powerhshell ./auth.exe --with-config="config\auth-server.lua" --test-run 
-        powerhshell ./char.exe --with-config="config\char-server.lua" --test-run
-        powerhshell ./zone.exe --with-config="config\zone-server.lua" --test-run 
+        powershell ./auth.exe --with-config="config\auth-server.lua" --test-run 
+        powershell ./char.exe --with-config="config\char-server.lua" --test-run
+        powershell ./zone.exe --with-config="config\zone-server.lua" --test-run 
