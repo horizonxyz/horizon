@@ -7,11 +7,9 @@
  *      \_| |_/\___/|_|  |_/___\___/|_| |_|        *
  ***************************************************
  * This file is part of Horizon (c).
+ * Copyright (c) 2020- Horizon Dev Team.
  *
- * Copyright (c) 2019 Sagun K. (sagunxp@gmail.com).
- * Copyright (c) 2019 Horizon Dev Team.
- *
- * Base Author - Sagun K. (sagunxp@gmail.com)
+ * Base Author - Sagun Khosla. (sagunxp@gmail.com)
  *
  * This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,46 +25,37 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#ifndef HORIZON_MODELS_GUILD_MEMBERS_HPP
-#define HORIZON_MODELS_GUILD_MEMBERS_HPP
+#ifndef HORIZON_ZONE_UI_TRADE_HPP
+#define HORIZON_ZONE_UI_TRADE_HPP
 
 namespace Horizon
 {
-namespace Models
+namespace Zone
 {
-namespace Guild
+class ZoneSession;
+namespace UI
 {
-class Member
+class Trade
 {
 public:
-	Member() { }
-	~Member() { }
+	Trade(std::shared_ptr<ZoneSession> session);
+	~Trade();
 
-	/* Guild ID */
-	uint32_t get_guild_id() { return _guild_id; }
-	void set_guild_id(uint32_t guild_id) { _guild_id = guild_id; }
-	/* Character ID */
-	uint32_t get_character_id() { return _character_id; }
-	void set_character_id(uint32_t char_id) { _character_id = char_id; }
-	/* Experience Paid */
-	uint64_t getExperiencePaid() { return _experience_paid; }
-	void setExperiencePaid(uint32_t exp) { _experience_paid = exp; }
-	/* Tax Percent */
-	uint8_t getTaxPercent() { return _tax_percent; }
-	void setTaxPercent(uint8_t percent) { _tax_percent = percent; }
-	/* Position ID */
-	uint8_t getPositionID() { return _position_id; }
-	void setPositionID(uint8_t pos) { _position_id = pos; }
+	std::shared_ptr<ZoneSession> session() { return _session.lock(); }
+
+	void request(int account_id);
+	void response(int result);
+	void add_zeny(int zeny);
+	void add_item(int inventory_index, int amount);
+	void lock();
+	void cancel();
+	void commit();
 
 private:
-	uint32_t _guild_id;
-	uint32_t _character_id;
-	uint64_t _experience_paid;
-	uint8_t _tax_percent;
-	uint8_t _position_id;
-}
+	std::weak_ptr<ZoneSession> _session;
+};
 }
 }
 }
 
-#endif /* HORIZON_MODELS_GUILD_MEMBERS_HPP */
+#endif /* HORIZON_ZONE_UI_TRADE_HPP */

@@ -30,6 +30,7 @@
 
 #include "Server/Common/Configuration/Horizon.hpp"
 #include "Server/Common/Base/NetworkPacket.hpp"
+#include "Server/Zone/Definitions/UIDefinitions.hpp"
 
 namespace Horizon
 {
@@ -3805,6 +3806,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _party_id{ 0 };
+	int8_t _response{ 0 };
 };
 
 enum {
@@ -11029,6 +11032,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id{ 0 };
 };
 
 enum {
@@ -13816,6 +13820,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _exp_share_rule{ 0 };
 };
 
 enum {
@@ -14581,6 +14586,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	char _name[MAX_UNIT_NAME_LENGTH];
 };
 
 enum {
@@ -16683,6 +16689,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id{ 0 };
 };
 
 enum {
@@ -19363,6 +19370,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _inventory_index{ 0 };
+	int _amount{ 0 };
 };
 
 enum {
@@ -22140,6 +22149,9 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	char _party_name[MAX_PARTY_NAME_LENGTH];
+	int8_t _item_pickup_rule{ 0 };
+	int8_t _item_share_rule{ 0 };
 };
 
 enum {
@@ -22558,6 +22570,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _role{ 0 };
+	char _name[MAX_UNIT_NAME_LENGTH];
 };
 
 enum {
@@ -22682,6 +22696,11 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	int16_t _limit{ 0 };
+	int8_t _type{ 0 };
+	char _password[CHATROOM_PASS_SIZE];
+	char _title[CHATROOM_TITLE_SIZE];
 };
 
 enum {
@@ -23500,6 +23519,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _chat_id{ 0 };
+	char _password[CHATROOM_PASS_SIZE];
 };
 
 enum {
@@ -24179,6 +24200,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	char _party_name[MAX_PARTY_NAME_LENGTH];
 };
 
 enum {
@@ -25533,6 +25555,11 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	int16_t _limit{ 0 };
+	int8_t _public{ 0 };
+	char _password[CHATROOM_PASS_SIZE];
+	char _title[CHATROOM_TITLE_SIZE];
 };
 
 enum {
@@ -26068,6 +26095,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id;
 };
 
 enum {
@@ -26390,6 +26418,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _party_id{ 0 };
+	int _response{ 0 };
 };
 
 enum {
@@ -26464,6 +26494,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id{ 0 };
+	char _name[MAX_UNIT_NAME_LENGTH]{ 0 };
 };
 
 enum {
@@ -28095,6 +28127,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	char _message[MAX_CHAT_STR_LENGTH];
 };
 
 enum {
@@ -29743,6 +29777,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int8_t _result{ 0 };
 };
 
 enum {
@@ -32226,6 +32261,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	char _name[MAX_UNIT_NAME_LENGTH];
 };
 
 enum {
@@ -35900,6 +35936,9 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _exp_share_rule{ 0 };
+	int _item_pickup_rule{ 0 };
+	int _item_share_rule{ 0 };
 };
 
 enum {

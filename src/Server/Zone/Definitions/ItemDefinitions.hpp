@@ -481,4 +481,13 @@ struct item_entry_data
 
 typedef std::array<std::pair<item_equip_location_mask, std::weak_ptr<item_entry_data>>, IT_EQPI_MAX> EquipmentListType;
 
+struct item_slot {
+#if ((CLIENT_TYPE == 'M' && PACKET_VERSION >= 20181121) || \
+	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20180704) || \
+	(CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20181114))
+	uint32 item_id[4];
+#else
+	uint16 item_id[4];
+#endif
+};
 #endif /* HORIZON_ZONE_ITEM_DEFINITIONS */

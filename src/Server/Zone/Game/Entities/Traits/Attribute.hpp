@@ -74,8 +74,11 @@ namespace Traits
 	{
 	public:
 		Attribute(std::weak_ptr<Entity> entity, int32_t base = 0, int32_t equip = 0, int32_t status = 0)
-		: _base_val(base), _equip_val(equip), _status_val(status), _entity(entity)
+		: _entity(entity)
 		{
+			set_base(base);
+			set_equip(equip);
+			set_status(status);
 		}
 		virtual ~Attribute() { }
 

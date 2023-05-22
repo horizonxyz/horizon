@@ -374,8 +374,8 @@ bool HC_ACCEPT_ENTER::prepare(uint32_t account_id, uint8_t max_char_slots, uint8
 		c._status_points = r[47].get<int>();           ///< 40
 		c._hp = r[44].get<int>();                      ///< 42
 		c._maximum_hp = r[43].get<int>();              ///< 46
-		c._sp = r[46].get<int>();                      ///< 50
-		c._maximum_sp = r[47].get<int>();              ///< 52
+		c._sp = r[45].get<int>();                      ///< 50
+		c._maximum_sp = r[46].get<int>();              ///< 52
 		c._walk_speed = int16_t(DEFAULT_MOVEMENT_SPEED);              ///< 54
 		c._job_id = r[31].get<int>();                  ///< 56
 		c._hair_view_id = r[53].get<int>();            ///< 58

@@ -27,6 +27,7 @@
 
 
 #include "TransmittedPackets.hpp"
+#include "Server/Zone/Definitions/PartyDefinitions.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
 #include "Utility/Utility.hpp"
 
@@ -430,10 +431,17 @@ ByteBuffer &ZC_MER_PAR_CHANGE::serialize()
 /**
  * ZC_EXEC_EXCHANGE_ITEM
  */
-void ZC_EXEC_EXCHANGE_ITEM::deliver() { }
+void ZC_EXEC_EXCHANGE_ITEM::deliver(zc_exec_exchange_item_result_type result) 
+{
+	_result = (int8_t) result;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_EXEC_EXCHANGE_ITEM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -450,10 +458,31 @@ ByteBuffer &ZC_ACK_APPLY_BARGAIN_SALE_ITEM::serialize()
 /**
  * ZC_ENTER_ROOM
  */
-void ZC_ENTER_ROOM::deliver() { }
+void ZC_ENTER_ROOM::deliver(int chat_id, std::vector<chatroom_user> users) 
+{
+	_chat_id = chat_id;
+	_users = users;
+
+	_packet_length = 8;
+	
+	for (auto u : _users)
+		_packet_length += sizeof(u._type) + MAX_UNIT_NAME_LENGTH;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ENTER_ROOM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	buf() << _chat_id;
+
+	for (auto u : _users) {
+		buf() << u._type;
+		buf().append(u.name, MAX_UNIT_NAME_LENGTH);
+	}
+
 	return buf();
 }
 
@@ -847,10 +876,28 @@ ByteBuffer &ZC_NOTIFY_SKILL2::serialize()
 /**
  * ZC_CHANGE_CHATROOM
  */
-void ZC_CHANGE_CHATROOM::deliver() { }
+void ZC_CHANGE_CHATROOM::deliver(int owner_id, int chat_id, int limit, int users, zc_change_chatroom_type type, std::string title)
+{
+	_packet_length = 17 + title.length();
+	_owner_id = owner_id;
+	_chat_id = chat_id;
+	_limit = limit;
+	_users = users;
+	_type = (int8_t)type;
+	std::strncpy(_title, title.c_str(), CHATROOM_TITLE_SIZE);
+	
+}
 
 ByteBuffer &ZC_CHANGE_CHATROOM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	buf() << _owner_id;
+	buf() << _chat_id;
+	buf() << _limit;
+	buf() << _users;
+	buf() << _type;
+	buf().append(_title, CHATROOM_TITLE_SIZE);
 	return buf();
 }
 
@@ -1778,10 +1825,18 @@ ByteBuffer &ZC_SKILL_ENTRY::serialize()
 /**
  * ZC_ACK_EXCHANGE_ITEM
  */
-void ZC_ACK_EXCHANGE_ITEM::deliver() { }
+void ZC_ACK_EXCHANGE_ITEM::deliver(zc_ack_exchange_item_result_type type) 
+{
+	_result = type;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_EXCHANGE_ITEM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -2614,10 +2669,31 @@ ByteBuffer &ZC_KILLER_RANK::serialize()
 /**
  * ZC_ROOM_NEWENTRY
  */
-void ZC_ROOM_NEWENTRY::deliver() { }
+void ZC_ROOM_NEWENTRY::deliver(int owner_id, int char_id, int limit, int users, int type, std::string title)
+{
+	_owner_id = owner_id;
+	_char_id = char_id;
+	_limit = limit;
+	_users = users;
+	_type = type;
+	std::strncpy(_title, title.c_str(), CHATROOM_TITLE_SIZE);
+	_packet_length = 17 + title.length();
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ROOM_NEWENTRY::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	buf() << _owner_id;
+	buf() << _char_id;
+	buf() << _limit;
+	buf() << _users;
+	buf() << _type;
+	buf().append(_title, CHATROOM_TITLE_SIZE);
+
 	return buf();
 }
 
@@ -2764,10 +2840,21 @@ ByteBuffer &ZC_HUNTING_QUEST_INFO::serialize()
 /**
  * ZC_REQ_JOIN_GROUP
  */
-void ZC_REQ_JOIN_GROUP::deliver() { }
+void ZC_REQ_JOIN_GROUP::deliver(int party_id, std::string party_name)
+{
+	_party_id = party_id;
+	std::strncpy(_party_name, party_name.c_str(), MAX_PARTY_NAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_REQ_JOIN_GROUP::serialize()
 {
+	buf() << _packet_id;
+	buf() << _party_id;
+	buf().append(_party_name, MAX_PARTY_NAME_LENGTH);
+
 	return buf();
 }
 
@@ -2804,10 +2891,19 @@ ByteBuffer &ZC_ADD_QUEST::serialize()
 /**
  * ZC_REFUSE_ENTER_ROOM
  */
-void ZC_REFUSE_ENTER_ROOM::deliver() { }
+void ZC_REFUSE_ENTER_ROOM::deliver(chat_join_fail_type type)
+{
+	_result = (int8_t) type;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_REFUSE_ENTER_ROOM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
+
 	return buf();
 }
 
@@ -3048,10 +3144,20 @@ ByteBuffer &ZC_PARTY_BOOKING_ACK_SEARCH::serialize()
 /**
  * ZC_ACK_REQ_JOIN_GROUP
  */
-void ZC_ACK_REQ_JOIN_GROUP::deliver() { }
+void ZC_ACK_REQ_JOIN_GROUP::deliver(std::string name, zcparty_joinreqack_result_type result) 
+{
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+	_result = (int8_t)result;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_REQ_JOIN_GROUP::serialize()
 {
+	buf() << _packet_id;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+	buf() << _result;
 	return buf();
 }
 
@@ -3160,10 +3266,15 @@ ByteBuffer &ZC_NOTIFY_GROUNDSKILL::serialize()
 /**
  * ZC_CANCEL_EXCHANGE_ITEM
  */
-void ZC_CANCEL_EXCHANGE_ITEM::deliver() { }
+void ZC_CANCEL_EXCHANGE_ITEM::deliver() 
+{
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_CANCEL_EXCHANGE_ITEM::serialize()
 {
+	buf() << _packet_id;
 	return buf();
 }
 
@@ -3409,10 +3520,18 @@ ByteBuffer &ZC_UNUSED_SRPACKET_INIT::serialize()
 /**
  * ZC_PARTY_CONFIG
  */
-void ZC_PARTY_CONFIG::deliver() { }
+void ZC_PARTY_CONFIG::deliver(zc_party_config_type config)
+{
+	_config = (int8_t)config;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_PARTY_CONFIG::serialize()
 {
+	buf() << _packet_id;
+	buf() << _config;
 	return buf();
 }
 
@@ -3469,10 +3588,40 @@ ByteBuffer &ZC_ACK_OPEN_WRITE_RODEX::serialize()
 /**
  * ZC_NOTIFY_HP_TO_GROUPM
  */
-void ZC_NOTIFY_HP_TO_GROUPM::deliver() { }
+void ZC_NOTIFY_HP_TO_GROUPM::deliver(int account_id, int hp, int max_hp) 
+{
+	_account_id = account_id;
+	_hp = hp;
+	_max_hp = max_hp;
+
+	serialize();
+	transmit();
+}
+
+#if (CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20210504)
+void ZC_NOTIFY_HP_TO_GROUPM::deliver(int account_id, int hp, int max_hp, int sp, int max_sp)
+{
+	_account_id = account_id;
+	_hp = hp;
+	_max_hp = max_hp;
+	_sp = sp;
+	_max_sp = max_sp;
+
+	serialize();
+	transmit();
+}
+#endif
 
 ByteBuffer &ZC_NOTIFY_HP_TO_GROUPM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _hp;
+	buf() << _max_hp;
+#if (CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20210504)
+	buf() << _sp;
+	buf() << _max_sp;
+#endif
 	return buf();
 }
 
@@ -3900,10 +4049,20 @@ ByteBuffer &ZC_ACK_BAN_GUILD::serialize()
 /**
  * ZC_PARTY_JOIN_REQ_ACK
  */
-void ZC_PARTY_JOIN_REQ_ACK::deliver() { }
+void ZC_PARTY_JOIN_REQ_ACK::deliver(std::string name, zcparty_joinreqack_result_type result)
+{
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+	_result = (int) result;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_PARTY_JOIN_REQ_ACK::serialize()
 {
+	buf() << _packet_id;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+	buf() << _result;
 	return buf();
 }
 
@@ -4509,10 +4668,17 @@ ByteBuffer &ZC_CART_EQUIPMENT_ITEMLIST::serialize()
 /**
  * ZC_CONCLUDE_EXCHANGE_ITEM
  */
-void ZC_CONCLUDE_EXCHANGE_ITEM::deliver() { }
+void ZC_CONCLUDE_EXCHANGE_ITEM::deliver(zc_conclude_exchange_item_type type)
+{
+	_type = (int8_t) type;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_CONCLUDE_EXCHANGE_ITEM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _type;
 	return buf();
 }
 
@@ -4781,10 +4947,23 @@ ByteBuffer &ZC_INVENTORY_TAB::serialize()
 /**
  * ZC_DELETE_MEMBER_FROM_GROUP
  */
-void ZC_DELETE_MEMBER_FROM_GROUP::deliver() { }
+void ZC_DELETE_MEMBER_FROM_GROUP::deliver(int account_id, std::string name, zc_delete_member_from_group_result_type result) 
+{
+	_account_id = account_id;
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+	_result = result;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_DELETE_MEMBER_FROM_GROUP::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+	buf() << _result;
+
 	return buf();
 }
 
@@ -4934,10 +5113,16 @@ ByteBuffer &ZC_DIVORCE::serialize()
 /**
  * ZC_ACK_MAKE_GROUP
  */
-void ZC_ACK_MAKE_GROUP::deliver() { }
+void ZC_ACK_MAKE_GROUP::deliver(zcack_makegroup_result_type result)
+{
+	_result = result;
+	serialize();
+}
 
 ByteBuffer &ZC_ACK_MAKE_GROUP::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -5312,10 +5497,21 @@ ByteBuffer &ZC_UPDATE_MAPINFO::serialize()
 /**
  * ZC_NOTIFY_POSITION_TO_GROUPM
  */
-void ZC_NOTIFY_POSITION_TO_GROUPM::deliver() { }
+void ZC_NOTIFY_POSITION_TO_GROUPM::deliver(int account_id, MapCoords current_mcoords)
+{
+	_account_id = account_id;
+	_x = current_mcoords.x();
+	_y = current_mcoords.y();
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_NOTIFY_POSITION_TO_GROUPM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _x;
+	buf() << _y;
 	return buf();
 }
 
@@ -5652,10 +5848,22 @@ ByteBuffer &ZC_TRYCOLLECTION::serialize()
 /**
  * ZC_REQ_GROUPINFO_CHANGE_V2
  */
-void ZC_REQ_GROUPINFO_CHANGE_V2::deliver() { }
+void ZC_REQ_GROUPINFO_CHANGE_V2::deliver(int exp_share_rule, int8_t item_pick_rule, int8_t item_share_rule) 
+{
+	_exp_share_rule = exp_share_rule;
+	_item_pick_rule = item_pick_rule;
+	_item_share_rule = item_share_rule;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_REQ_GROUPINFO_CHANGE_V2::serialize()
 {
+	buf() << _packet_id;
+	buf() << _exp_share_rule;
+	buf() << _item_pick_rule;
+	buf() << _item_share_rule;
 	return buf();
 }
 
@@ -5817,10 +6025,37 @@ ByteBuffer &ZC_MAIL_RECEIVE::serialize()
 /**
  * ZC_GROUP_LIST
  */
-void ZC_GROUP_LIST::deliver() { }
+void ZC_GROUP_LIST::deliver(std::string party_name, std::vector<s_members> members) 
+{
+	std::strncpy(_party_name, party_name.c_str(), MAX_PARTY_NAME_LENGTH);
+
+	_members = members;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GROUP_LIST::serialize()
 {
+	buf() << _packet_id;
+	buf() << 28 + (sizeof(struct s_members) * _members.size());
+	buf().append(_party_name, MAX_PARTY_NAME_LENGTH);
+	for (int i = 0; i < _members.size(); i++) {
+		buf() << _members[i].account_id;
+#if PACKET_VERSION >= 20171207
+		buf() << _members[i].char_id;
+#endif
+		buf().append(_members[i].player_name, MAX_UNIT_NAME_LENGTH);
+		buf().append(_members[i].map_name, MAP_NAME_LENGTH_EXT);
+		buf() << _members[i].leader;
+		buf() << _members[i].offline;
+#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20170524) || \
+	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20170502) || \
+	(CLIENT_TYPE == 'Z')
+		buf() << _members[i].class_;
+		buf() << _members[i].base_level;
+#endif
+	}
 	return buf();
 }
 
@@ -5837,10 +6072,22 @@ ByteBuffer &ZC_MILLENNIUMSHIELD::serialize()
 /**
  * ZC_PARTY_MEMBER_JOB_LEVEL
  */
-void ZC_PARTY_MEMBER_JOB_LEVEL::deliver() { }
+void ZC_PARTY_MEMBER_JOB_LEVEL::deliver(int account_id, int job_id, int level)
+{
+	_account_id = account_id;
+	_job_id = job_id;
+	_level = level;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_PARTY_MEMBER_JOB_LEVEL::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _job_id;
+	buf() << _level;
 	return buf();
 }
 
@@ -6134,10 +6381,17 @@ ByteBuffer &ZC_MVP::serialize()
 /**
  * ZC_DESTROY_ROOM
  */
-void ZC_DESTROY_ROOM::deliver() { }
+void ZC_DESTROY_ROOM::deliver(int chat_id)
+{
+	_chat_id = chat_id;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_DESTROY_ROOM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _chat_id;
 	return buf();
 }
 
@@ -6154,10 +6408,17 @@ ByteBuffer &ZC_REQ_BABY::serialize()
 /**
  * ZC_ACK_ADD_EXCHANGE_ITEM
  */
-void ZC_ACK_ADD_EXCHANGE_ITEM::deliver() { }
+void ZC_ACK_ADD_EXCHANGE_ITEM::deliver(int inventory_index, zc_ack_exchange_item_result_type result) 
+{
+	_inventory_index = inventory_index;
+	_result = (int8_t) result;
+}
 
 ByteBuffer &ZC_ACK_ADD_EXCHANGE_ITEM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _inventory_index;
+	buf() << _result;
 	return buf();
 }
 
@@ -6211,10 +6472,22 @@ ByteBuffer &ZC_ACK_GUILD_MEMBER_INFO::serialize()
 /**
  * ZC_ACK_EXCHANGE_ITEM2
  */
-void ZC_ACK_EXCHANGE_ITEM2::deliver() { }
+void ZC_ACK_EXCHANGE_ITEM2::deliver(zc_ack_exchange_item_result_type type, int char_id, int base_level)
+{ 
+	_result = type;
+	_char_id = char_id;
+	_base_level = base_level;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_EXCHANGE_ITEM2::serialize()
 {
+	buf() >> _packet_id;
+	buf() >> _result;
+	buf() >> _char_id;
+	buf() >> _base_level;
 	return buf();
 }
 
@@ -6231,10 +6504,46 @@ ByteBuffer &ZC_RECV_ROULETTE_ITEM::serialize()
 /**
  * ZC_ADD_EXCHANGE_ITEM
  */
-void ZC_ADD_EXCHANGE_ITEM::deliver() { }
+void ZC_ADD_EXCHANGE_ITEM::deliver(s_zc_add_exchange_item item)
+{
+	_item = item;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ADD_EXCHANGE_ITEM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _item.item_id;
+	buf() << _item.item_type;
+	buf() << _item.amount;
+	buf() << _item.identified;
+	buf() << _item.damaged;
+	buf() << _item.refine;
+	for (int i = 0; i < MAX_ITEM_SLOTS; i++)
+		buf() << _item.cards.item_id[i];
+#if PACKET_VERSION >= 20150226
+	for (int i = 0; i < MAX_ITEM_OPTIONS; i++) {
+		buf() << _item.option_data[i].index;
+		buf() << _item.option_data[i].value;
+		buf() << _item.option_data[i].param;
+	}
+#endif
+
+#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20161102) || \
+	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20161026) || \
+	(CILENT_TYPE == 'Z')
+	buf() << _item.location;
+	buf() << _item.look;
+#endif  // PACKETVER_MAIN_NUM >= 20161102 || PACKETVER_RE_NUM >= 20161026 || defined(PACKETVER_ZERO)
+#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20200916) || \
+	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20200723) || \
+	(CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20221024)
+	buf() << _item.refine;
+	buf() << _item.grade;
+#endif  // PACKETVER_MAIN_NUM >= 20200916 || PACKETVER_RE_NUM >= 20200723 || PACKETVER_ZERO_NUM >= 20221024
+
 	return buf();
 }
 
@@ -6281,10 +6590,21 @@ ByteBuffer &ZC_ACK_ENTRY_QUEUE_CANCEL::serialize()
 /**
  * ZC_ROLE_CHANGE
  */
-void ZC_ROLE_CHANGE::deliver() { }
+void ZC_ROLE_CHANGE::deliver(int role, std::string name) 
+{
+	_role = role;
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ROLE_CHANGE::serialize()
 {
+	buf() << _packet_id;
+	buf() << _role;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+
 	return buf();
 }
 
@@ -6642,10 +6962,18 @@ ByteBuffer &ZC_ACK_READ_RODEX::serialize()
 /**
  * ZC_GROUPINFO_CHANGE
  */
-void ZC_GROUPINFO_CHANGE::deliver() { }
+void ZC_GROUPINFO_CHANGE::deliver(int exp_share_rule) 
+{
+	_exp_share_rule = exp_share_rule;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GROUPINFO_CHANGE::serialize()
 {
+	buf() << _packet_id;
+	buf() << _exp_share_rule;
 	return buf();
 }
 
@@ -7173,10 +7501,19 @@ ByteBuffer &ZC_MYGUILD_BASIC_INFO::serialize()
 /**
  * ZC_PARTY_JOIN_REQ
  */
-void ZC_PARTY_JOIN_REQ::deliver() { }
+void ZC_PARTY_JOIN_REQ::deliver(int party_id, std::string party_name) 
+{
+	_party_id = party_id;
+	std::strncpy(_party_name, party_name.c_str(), MAX_PARTY_NAME_LENGTH);
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_PARTY_JOIN_REQ::serialize()
 {
+	buf() << _packet_id;
+	buf() << _party_id;
+	buf().append(_party_name, MAX_PARTY_NAME_LENGTH);
 	return buf();
 }
 
@@ -7438,10 +7775,36 @@ ByteBuffer &ZC_STATE_CHANGE::serialize()
 /**
  * ZC_ADD_MEMBER_TO_GROUP
  */
-void ZC_ADD_MEMBER_TO_GROUP::deliver() { }
+void ZC_ADD_MEMBER_TO_GROUP::deliver(s_zc_add_member_to_group member) 
+{
+	_member = member;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ADD_MEMBER_TO_GROUP::serialize()
 {
+	buf() << _packet_id;
+	buf() << _member._account_id;
+#if PACKET_VERSION >= 20171207
+	buf() << _member._char_id;
+#endif
+	buf() << _member.leader;
+#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20170524) || \
+	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20170502) || \
+	(CLIENT_TYPE == 'Z')
+	buf() << _member.class_;
+	buf() << _member.base_level;
+#endif
+	buf() << _member.x;
+	buf() << _member.y;
+	buf() << _member.offline;
+	buf().append(_member.party_name, MAX_PARTY_NAME_LENGTH);
+	buf().append(_member.player_name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_member.map_name, MAP_NAME_LENGTH_EXT);
+	buf() << _member.share_pickup;
+	buf() << _member.share_loot;
 	return buf();
 }
 
@@ -7458,10 +7821,20 @@ ByteBuffer &ZC_GUILD_INFO2::serialize()
 /**
  * ZC_MEMBER_NEWENTRY
  */
-void ZC_MEMBER_NEWENTRY::deliver() { }
+void ZC_MEMBER_NEWENTRY::deliver(int16_t user_count, std::string name)
+{
+	_user_count = user_count;
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_MEMBER_NEWENTRY::serialize()
 {
+	buf() << _packet_id;
+	buf() << _user_count;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
 	return buf();
 }
 
@@ -7546,10 +7919,17 @@ ByteBuffer &ZC_STORE_EQUIPMENT_ITEMLIST::serialize()
 /**
  * ZC_ACK_CREATE_CHATROOM
  */
-void ZC_ACK_CREATE_CHATROOM::deliver() { }
+void ZC_ACK_CREATE_CHATROOM::deliver(zcack_create_chatroom_result_type result)
+{
+	_result = (int8_t)result;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_CREATE_CHATROOM::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -7896,10 +8276,22 @@ ByteBuffer &ZC_ITEMIDENTIFY_LIST::serialize()
 /**
  * ZC_NOTIFY_CHAT_PARTY
  */
-void ZC_NOTIFY_CHAT_PARTY::deliver() { }
+void ZC_NOTIFY_CHAT_PARTY::deliver(int account_id, std::string message)
+{
+	_account_id = account_id;
+	std::strncpy(_message, message.c_str(), MAX_CHAT_STR_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_NOTIFY_CHAT_PARTY::serialize()
 {
+	_packet_length = 8 + MAX_CHAT_STR_LENGTH;
+	buf() << _packet_id;
+	buf() << _packet_length;
+	buf() << _account_id;
+	buf().append(_message, MAX_CHAT_STR_LENGTH);
 	return buf();
 }
 
@@ -8041,10 +8433,22 @@ ByteBuffer &ZC_ACK_BATTLE_STATE_MONITOR::serialize()
 /**
  * ZC_NOTIFY_HP_TO_GROUPM_R2
  */
-void ZC_NOTIFY_HP_TO_GROUPM_R2::deliver() { }
+void ZC_NOTIFY_HP_TO_GROUPM_R2::deliver(int account_id, int hp, int max_hp)
+{
+	_account_id = account_id;
+	_hp = hp;
+	_max_hp = max_hp;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_NOTIFY_HP_TO_GROUPM_R2::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _hp;
+	buf() << _max_hp;
 	return buf();
 }
 

@@ -301,7 +301,7 @@ int main(int argc, const char * argv[])
 
 	/* Read Char Configuration */
 	if (!sChar->read_config())
-		exit(1); // Stop process if the file can't be read.
+		return 1; // Stop process if the file can't be read.
 
 	/* Initialize the Common Core */
 	sChar->initialize_core();

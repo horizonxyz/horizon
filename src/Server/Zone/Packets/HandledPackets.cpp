@@ -252,9 +252,18 @@ void CZ_RENAME_MER::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_PARTY_JOIN_REQ_ACK
  */
-void CZ_PARTY_JOIN_REQ_ACK::handle(ByteBuffer &&buf) { }
+void CZ_PARTY_JOIN_REQ_ACK::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().invite_response(_party_id, ((int)_response) ? PARTY_INVITE_RESPONSE_ACCEPT : PARTY_INVITE_RESPONSE_REJECT);
+}
 
-void CZ_PARTY_JOIN_REQ_ACK::deserialize(ByteBuffer &buf) { }
+void CZ_PARTY_JOIN_REQ_ACK::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _party_id;
+	buf >> _response;
+}
 
 /**
  * CZ_REQ_TRADE_BUYING_STORE
@@ -703,9 +712,17 @@ void CZ_PKMODE_CHANGE::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_CHANGE_GROUP_MASTER
  */
-void CZ_CHANGE_GROUP_MASTER::handle(ByteBuffer &&buf) { }
+void CZ_CHANGE_GROUP_MASTER::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().change_leader(_account_id);
+}
 
-void CZ_CHANGE_GROUP_MASTER::deserialize(ByteBuffer &buf) { }
+void CZ_CHANGE_GROUP_MASTER::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _account_id;
+}
 
 /**
  * CZ_GPK_DYNCODE_RELOAD
@@ -941,9 +958,17 @@ void CZ_STATUS_CHANGE::deserialize(ByteBuffer &buf)
 /**
  * CZ_CHANGE_GROUPEXPOPTION
  */
-void CZ_CHANGE_GROUPEXPOPTION::handle(ByteBuffer &&buf) { }
+void CZ_CHANGE_GROUPEXPOPTION::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().change_properties(_exp_share_rule, 0, 0);
+}
 
-void CZ_CHANGE_GROUPEXPOPTION::deserialize(ByteBuffer &buf) { }
+void CZ_CHANGE_GROUPEXPOPTION::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _exp_share_rule;
+}
 
 /**
  * CZ_NOTIFY_ACTORINIT
@@ -966,9 +991,17 @@ void CZ_SE_CASHSHOP_CLOSE::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_PARTY_JOIN_REQ
  */
-void CZ_PARTY_JOIN_REQ::handle(ByteBuffer &&buf) { }
+void CZ_PARTY_JOIN_REQ::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().invite(_name);
+}
 
-void CZ_PARTY_JOIN_REQ::deserialize(ByteBuffer &buf) { }
+void CZ_PARTY_JOIN_REQ::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf.read(_name, MAX_UNIT_NAME_LENGTH);
+}
 
 /**
  * CZ_SHIFT
@@ -1053,9 +1086,16 @@ void CZ_MACRO_STOP::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_CANCEL_EXCHANGE_ITEM
  */
-void CZ_CANCEL_EXCHANGE_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_CANCEL_EXCHANGE_ITEM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->trade().cancel();
+}
 
-void CZ_CANCEL_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_CANCEL_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+}
 
 /**
  * CZ_PARTY_RECRUIT_REQ_SEARCH
@@ -1105,9 +1145,17 @@ void CZ_REQNAME_BYGID::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_JOIN_GROUP
  */
-void CZ_REQ_JOIN_GROUP::handle(ByteBuffer &&buf) { }
+void CZ_REQ_JOIN_GROUP::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().invite(_account_id);
+}
 
-void CZ_REQ_JOIN_GROUP::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_JOIN_GROUP::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _account_id;
+}
 
 /**
  * CZ_REQ_ROULETTE_INFO
@@ -1350,9 +1398,26 @@ void CZ_PARTY_BOOKING_REQ_SEARCH::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_ADD_EXCHANGE_ITEM
  */
-void CZ_ADD_EXCHANGE_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_ADD_EXCHANGE_ITEM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
 
-void CZ_ADD_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) { }
+	switch (_inventory_index) {
+	case 0:
+		get_session()->clif()->trade().add_zeny(_amount);
+		break;
+	default:
+		get_session()->clif()->trade().add_item(_inventory_index, _amount);
+		break;
+	}
+}
+
+void CZ_ADD_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _inventory_index;
+	buf >> _amount;
+}
 
 /**
  * CZ_UNUSED_MER_UPGRADE_SKILLLEVEL
@@ -1504,11 +1569,18 @@ void CZ_REQ_OPEN_WRITE_RODEX::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_CONCLUDE_EXCHANGE_ITEM
  */
-void CZ_CONCLUDE_EXCHANGE_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_CONCLUDE_EXCHANGE_ITEM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->trade().lock();
+}
 
-void CZ_CONCLUDE_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_CONCLUDE_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+}
 
-/**
+/**CZ_CANCEL_EXCHANGE_ITEM
  * CZ_REQUEST_QUIT
  */
 void CZ_REQUEST_QUIT::handle(ByteBuffer &&buf) { }
@@ -1568,9 +1640,16 @@ void CZ_CLOSE_RODEXBOX::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_EXEC_EXCHANGE_ITEM
  */
-void CZ_EXEC_EXCHANGE_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_EXEC_EXCHANGE_ITEM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->trade().commit();
+}
 
-void CZ_EXEC_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_EXEC_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+}
 
 /**
  * CZ_WHISPER
@@ -1613,9 +1692,19 @@ void CZ_REQ_MAKE_GUILD::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_MAKE_GROUP2
  */
-void CZ_MAKE_GROUP2::handle(ByteBuffer &&buf) { }
+void CZ_MAKE_GROUP2::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().create(_party_name, _item_pickup_rule, _item_share_rule);
+}
 
-void CZ_MAKE_GROUP2::deserialize(ByteBuffer &buf) { }
+void CZ_MAKE_GROUP2::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+	buf.read(_party_name, MAX_PARTY_NAME_LENGTH);
+	buf >> _item_pickup_rule;
+	buf >> _item_share_rule;
+}
 
 /**
  * CZ_ALLY_GUILD
@@ -1634,9 +1723,18 @@ void CZ_USE_SKILL2::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_ROLE_CHANGE
  */
-void CZ_REQ_ROLE_CHANGE::handle(ByteBuffer &&buf) { }
+void CZ_REQ_ROLE_CHANGE::handle(ByteBuffer &&buf)
+{
+	deserialize(buf);
+	get_session()->clif()->chatroom().role_change(_role, _name);
+}
 
-void CZ_REQ_ROLE_CHANGE::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_ROLE_CHANGE::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _role;
+	buf.read(_name, MAX_UNIT_NAME_LENGTH);
+}
 
 /**
  * CZ_REPLY_LOBBY_ADMISSION
@@ -1655,9 +1753,20 @@ void CZ_REQ_GENERATE_ROULETTE::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_CHANGE_CHATROOM
  */
-void CZ_CHANGE_CHATROOM::handle(ByteBuffer &&buf) { }
+void CZ_CHANGE_CHATROOM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+}
 
-void CZ_CHANGE_CHATROOM::deserialize(ByteBuffer &buf) { }
+void CZ_CHANGE_CHATROOM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _packet_length;
+	buf >> _limit;
+	buf >> _type;
+	buf.read(_password, CHATROOM_PASS_SIZE);
+	buf.read(_title, CHATROOM_TITLE_SIZE);
+}
 
 /**
  * CZ_USE_SKILL_NEW_JAPEN
@@ -1734,16 +1843,32 @@ void CZ_SEEK_PARTY_MEMBER::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_ENTER_ROOM
  */
-void CZ_REQ_ENTER_ROOM::handle(ByteBuffer &&buf) { }
+void CZ_REQ_ENTER_ROOM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->chatroom().add_member(_chat_id, _password);
+}
 
-void CZ_REQ_ENTER_ROOM::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_ENTER_ROOM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _chat_id;
+	buf.read(_password, CHATROOM_PASS_SIZE);
+}
 
 /**
  * CZ_CANCEL_LOCKON
  */
-void CZ_CANCEL_LOCKON::handle(ByteBuffer &&buf) { }
+void CZ_CANCEL_LOCKON::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->stop_attack();
+}
 
-void CZ_CANCEL_LOCKON::deserialize(ByteBuffer &buf) { }
+void CZ_CANCEL_LOCKON::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+}
 
 /**
  * CZ_REQUEST_CHAT
@@ -1817,9 +1942,17 @@ void CZ_MOVE_ITEM_FROM_BODY_TO_CART::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_MAKE_GROUP
  */
-void CZ_MAKE_GROUP::handle(ByteBuffer &&buf) { }
+void CZ_MAKE_GROUP::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().create(_party_name, 0, 0);
+}
 
-void CZ_MAKE_GROUP::deserialize(ByteBuffer &buf) { }
+void CZ_MAKE_GROUP::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf.read(_party_name, MAX_PARTY_NAME_LENGTH);
+}
 
 /**
  * CZ_GANGSI_RANK
@@ -1908,9 +2041,25 @@ void CZ_INPUT_EDITDLGSTR::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_CREATE_CHATROOM
  */
-void CZ_CREATE_CHATROOM::handle(ByteBuffer &&buf) { }
+void CZ_CREATE_CHATROOM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
 
-void CZ_CREATE_CHATROOM::deserialize(ByteBuffer &buf) { }
+	if (_packet_length - 15 < 1) // If title is less than size of 1.
+		return;
+	
+	get_session()->clif()->chatroom().create_chatroom(_limit, _public, _password, _title);
+}
+
+void CZ_CREATE_CHATROOM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _packet_length;
+	buf >> _limit;
+	buf >> _public;
+	buf.read(_password, CHATROOM_PASS_SIZE);
+	buf.read(_title, std::min((_packet_length - 16), CHATROOM_TITLE_SIZE));
+}
 
 /**
  * CZ_REQ_GIVE_MANNER_POINT
@@ -1950,9 +2099,17 @@ void CZ_REQ_DELETE_RELATED_GUILD::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_EXCHANGE_ITEM
  */
-void CZ_REQ_EXCHANGE_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_REQ_EXCHANGE_ITEM::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->trade().request(_account_id);
+}
 
-void CZ_REQ_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _account_id;
+}
 
 /**
  * CZ_PC_PURCHASE_ITEMLIST
@@ -2006,16 +2163,34 @@ void CZ_CLOSE_BARGAIN_SALE_TOOL::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_JOIN_GROUP
  */
-void CZ_JOIN_GROUP::handle(ByteBuffer &&buf) { }
+void CZ_JOIN_GROUP::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().invite_response(_party_id, (_response ? PARTY_INVITE_RESPONSE_ACCEPT : PARTY_INVITE_RESPONSE_REJECT));
+}
 
-void CZ_JOIN_GROUP::deserialize(ByteBuffer &buf) { }
+void CZ_JOIN_GROUP::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _party_id;
+	buf >> _response;
+}
 
 /**
  * CZ_REQ_EXPEL_GROUP_MEMBER
  */
-void CZ_REQ_EXPEL_GROUP_MEMBER::handle(ByteBuffer &&buf) { }
+void CZ_REQ_EXPEL_GROUP_MEMBER::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().expel_member(_account_id, _name);
+}
 
-void CZ_REQ_EXPEL_GROUP_MEMBER::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_EXPEL_GROUP_MEMBER::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _account_id;
+	buf.read(_name, MAX_UNIT_NAME_LENGTH);
+}
 
 /**
  * CZ_ACK_REQ_ADD_FRIENDS
@@ -2122,9 +2297,18 @@ void CZ_REQ_OPEN_UI::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQUEST_CHAT_PARTY
  */
-void CZ_REQUEST_CHAT_PARTY::handle(ByteBuffer &&buf) { }
+void CZ_REQUEST_CHAT_PARTY::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().send_message(_packet_length, _message);
+}
 
-void CZ_REQUEST_CHAT_PARTY::deserialize(ByteBuffer &buf) { }
+void CZ_REQUEST_CHAT_PARTY::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _packet_length;
+	buf.read(_message, MAX_CHAT_STR_LENGTH + MAX_UNIT_NAME_LENGTH + 3 + 1);
+}
 
 /**
  * CZ_MOVE_ITEM_FROM_STORE_TO_BODY
@@ -2227,9 +2411,17 @@ void CZ_REQ_WEAPONREFINE::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_ACK_EXCHANGE_ITEM
  */
-void CZ_ACK_EXCHANGE_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_ACK_EXCHANGE_ITEM::handle(ByteBuffer &&buf)\
+{
+	deserialize(buf);
+	get_session()->clif()->trade().response(_result);
+}
 
-void CZ_ACK_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_ACK_EXCHANGE_ITEM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _result;
+}
 
 /**
  * CZ_ITEMLISTWIN_RES
@@ -2396,9 +2588,17 @@ void CZ_REQMAKINGITEM::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_EXPEL_MEMBER
  */
-void CZ_REQ_EXPEL_MEMBER::handle(ByteBuffer &&buf) { }
+void CZ_REQ_EXPEL_MEMBER::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->chatroom().expel_member(_name);
+}
 
-void CZ_REQ_EXPEL_MEMBER::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_EXPEL_MEMBER::deserialize(ByteBuffer &buf)
+{
+	buf >> _packet_id;
+	buf.read(_name, MAX_UNIT_NAME_LENGTH);
+}
 
 /**
  * CZ_USE_SKILL_TOGROUND_WITHTALKBOX
@@ -2574,9 +2774,16 @@ void CZ_CLAN_CHAT::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_EXIT_ROOM
  */
-void CZ_EXIT_ROOM::handle(ByteBuffer &&buf) { }
+void CZ_EXIT_ROOM::handle(ByteBuffer &&buf) 
+{ 
+	deserialize(buf);
+	get_session()->clif()->chatroom().leave();
+}
 
-void CZ_EXIT_ROOM::deserialize(ByteBuffer &buf) { }
+void CZ_EXIT_ROOM::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+}
 
 /**
  * CZ_UPGRADE_SKILLLEVEL
@@ -2750,9 +2957,19 @@ void CZ_REQ_BATTLE_STATE_MONITOR::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_GROUPINFO_CHANGE_V2
  */
-void CZ_GROUPINFO_CHANGE_V2::handle(ByteBuffer &&buf) { }
+void CZ_GROUPINFO_CHANGE_V2::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->party().change_properties(_exp_share_rule, _item_pickup_rule, _item_share_rule);
+}
 
-void CZ_GROUPINFO_CHANGE_V2::deserialize(ByteBuffer &buf) { }
+void CZ_GROUPINFO_CHANGE_V2::deserialize(ByteBuffer& buf)
+{
+	buf >> _packet_id;
+	buf >> _exp_share_rule;
+	buf >> _item_pickup_rule;
+	buf >> _item_share_rule;
+}
 
 /**
  * CZ_TAEKWON_RANK

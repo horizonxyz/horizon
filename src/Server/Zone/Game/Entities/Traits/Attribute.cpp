@@ -85,6 +85,13 @@ void LuckPointCost::on_observable_changed(Luck *luk)
 
 void BaseLevel::set_base(int32_t val)
 {
+	std::shared_ptr<const job_config_data> job = JobDB->get_job_by_id(entity()->job_id());
+	std::shared_ptr<const exp_group_data> bexpg = ExpDB->get_exp_group(job->base_exp_group, EXP_GROUP_TYPE_BASE);
+
+	if (val >= bexpg->max_level) {
+		val = bexpg->max_level;
+	}
+
 	Attribute::set_base(val);
 	this->notify_observers();
 
@@ -101,14 +108,26 @@ void BaseLevel::on_observable_changed(BaseExperience *bexp)
 	if (get_base() >= MAX_LEVEL)
 		return;
 
-	if (bexp->get_base() == entity()->status()->next_base_experience()->get_base()) {
-		add_base(1);
-		bexp->set_base(0);
+	int prev_nbexp = 0;
+	if (bexp->get_base() >= (prev_nbexp = entity()->status()->next_base_experience()->get_base())) {
+		int carry_over = bexp->get_base();
+		do {
+			carry_over = carry_over - prev_nbexp;
+			add_base(1);
+		} while (carry_over >= (prev_nbexp = entity()->status()->next_base_experience()->total()));
+		bexp->set_base(carry_over);
 	}
 }
 
 void JobLevel::set_base(int32_t val)
 {
+	std::shared_ptr<const job_config_data> job = JobDB->get_job_by_id(entity()->job_id());
+	std::shared_ptr<const exp_group_data> jexpg = ExpDB->get_exp_group(job->job_exp_group, EXP_GROUP_TYPE_JOB);
+
+	if (val >= jexpg->max_level) {
+		val = jexpg->max_level;
+	}
+
 	Attribute::set_base(val);
 	this->notify_observers();
 
@@ -122,14 +141,26 @@ void JobLevel::on_observable_changed(JobExperience *jexp)
 	if (entity() == nullptr || jexp == nullptr)
 		return;
 
-	if (jexp->get_base() == entity()->status()->next_job_experience()->get_base()) {
-		add_base(1);
-		jexp->set_base(0);
+	int prev_njexp = 0;
+	if (jexp->total() >= (prev_njexp = entity()->status()->next_job_experience()->get_base())) {
+		int carry_over = jexp->total();
+		do {
+			carry_over = carry_over - prev_njexp;
+			add_base(1);
+		} while (carry_over >= (prev_njexp = entity()->status()->next_job_experience()->total()));
+		
+		jexp->set_base(carry_over);
 	}
 }
 
 void BaseExperience::set_base(int32_t val)
 {
+	std::shared_ptr<const job_config_data> job = JobDB->get_job_by_id(entity()->job_id());
+	std::shared_ptr<const exp_group_data> bexpg = ExpDB->get_exp_group(job->base_exp_group, EXP_GROUP_TYPE_BASE);
+
+	if (entity()->status()->base_level()->total() >= bexpg->max_level)
+		return;
+
 	Attribute::set_base(val);
 	this->notify_observers();
 
@@ -140,7 +171,14 @@ void BaseExperience::set_base(int32_t val)
 
 void JobExperience::set_base(int32_t val)
 {
+	std::shared_ptr<const job_config_data> job = JobDB->get_job_by_id(entity()->job_id());
+	std::shared_ptr<const exp_group_data> jexpg = ExpDB->get_exp_group(job->job_exp_group, EXP_GROUP_TYPE_JOB);
+
+	if (entity()->status()->job_level()->total() >= jexpg->max_level)
+		return;
+
 	Attribute::set_base(val);
+
 	this->notify_observers();
 
 	if (entity()->type() == ENTITY_PLAYER) {
@@ -188,6 +226,11 @@ void NextBaseExperience::on_observable_changed(BaseLevel *blvl)
 	std::shared_ptr<const job_config_data> job = JobDB->get_job_by_id(entity()->job_id());
 	std::shared_ptr<const exp_group_data> bexpg = ExpDB->get_exp_group(job->base_exp_group, EXP_GROUP_TYPE_BASE);
 
+	if (blvl->total() >= bexpg->max_level) {
+		set_base(bexpg->exp[bexpg->exp.size() - 1]);
+		return;
+	}
+
 	set_base(bexpg->exp[blvl->get_base() - 1]);
 }
 
@@ -207,6 +250,11 @@ void NextJobExperience::on_observable_changed(JobLevel *jlvl)
 
 	std::shared_ptr<const job_config_data> job = JobDB->get_job_by_id(entity()->job_id());
 	std::shared_ptr<const exp_group_data> jexpg = ExpDB->get_exp_group(job->job_exp_group, EXP_GROUP_TYPE_JOB);
+	
+	if (jlvl->total() >= jexpg->max_level) {
+		set_base(jexpg->exp[jexpg->exp.size() - 1]);
+		return;
+	}
 
 	set_base(jexpg->exp[jlvl->get_base() - 1]);
 }

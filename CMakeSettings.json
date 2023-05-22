@@ -24,7 +24,7 @@
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
           "value": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
-          "type": "FILEPATH",
+          "type": "FILEPATH"
         },
         {
           "name": "VCPKG_TARGET_TRIPLET",
@@ -38,16 +38,15 @@
         },
         {
           "name": "WITH_TESTS",
-          "value": true,
+          "value": "True",
           "type": "BOOL"
         },
         {
           "name": "WITH_TOOLS",
-          "value": true,
+          "value": "True",
           "type": "BOOL"
         }
       ]
-
     }
   ]
 }

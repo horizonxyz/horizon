@@ -35,6 +35,9 @@
 #include "Server/Common/Interfaces/ClientInterface.hpp"
 #include "Server/Zone/Game/Map/Grid/GridDefinitions.hpp"
 #include "Server/Zone/Packets/TransmittedPackets.hpp"
+#include "Server/Zone/Interface/UI/Chatroom/Chatroom.hpp"
+#include "Server/Zone/Interface/UI/Trade/Trade.hpp"
+#include "Server/Zone/Interface/UI/Party/Party.hpp"
 
 namespace Horizon
 {
@@ -55,6 +58,10 @@ public:
 	ZoneClientInterface(std::shared_ptr<ZoneSession> s);
 	~ZoneClientInterface();
 	
+	UI::Chatroom &chatroom() { return _chat_room; }
+	UI::Trade &trade() { return _trade; }
+	UI::Party &party() { return _party; }
+
 	bool login(uint32_t account_id, uint32_t char_id, uint32_t auth_code, uint32_t client_time, uint8_t gender);
 	bool restart(uint8_t type);
 	bool disconnect(int8_t type);
@@ -64,6 +71,7 @@ public:
 	
 	bool notify_time();
 	bool notify_entity_name(uint32_t guid);
+	bool stop_attack();
 	
 	/* Movement & Viewport*/
 	bool notify_player_movement(MapCoords from, MapCoords to);
@@ -158,6 +166,9 @@ public:
 
 protected:
 	uint32_t _npc_contact_guid{0};
+	UI::Chatroom _chat_room;
+	UI::Trade _trade;
+	UI::Party _party;
 };
 }
 }

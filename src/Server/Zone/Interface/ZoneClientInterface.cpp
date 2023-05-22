@@ -44,7 +44,7 @@
 using namespace Horizon::Zone;
 
 ZoneClientInterface::ZoneClientInterface(std::shared_ptr<ZoneSession> s)
-: ClientInterface(s)
+: ClientInterface(s), _chat_room(s), _trade(s), _party(s)
 {
 	
 }
@@ -199,6 +199,12 @@ bool ZoneClientInterface::notify_entity_name(uint32_t guid)
 	req.deliver(guid, std::string(entity->name()), "", "", "");
 #endif
 	
+	return true;
+}
+
+bool ZoneClientInterface::stop_attack()
+{
+	get_session()->player()->stop_attack();
 	return true;
 }
 
