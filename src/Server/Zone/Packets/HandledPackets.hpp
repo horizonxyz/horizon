@@ -30,7 +30,7 @@
 
 #include "Server/Common/Configuration/Horizon.hpp"
 #include "Server/Common/Base/NetworkPacket.hpp"
-#include "Server/Zone/Definitions/UIDefinitions.hpp"
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
 
 namespace Horizon
 {
@@ -15226,6 +15226,10 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _guild_id{ 0 };
+	int _account_id{ 0 };
+	int _char_id{ 0 };
+	char _reason[MAX_GUILD_LEAVE_REASON_STR_LENGTH];
 };
 
 enum {
@@ -17118,6 +17122,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id{ 0 }, _inviter_account_id{ 0 }, _inviter_char_id{ 0 };
 };
 
 enum {
@@ -17141,6 +17146,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id{ 0 };
 };
 
 enum {
@@ -17205,6 +17211,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _type{ 0 };
 };
 
 enum {
@@ -17327,6 +17334,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_cz_reg_change_guild_positioninfo> _info;
 };
 
 enum {
@@ -17350,6 +17359,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	char _emblem[MAX_EMBLEM_LENGTH]; // no well-formed emblem bitmap is larger than 1782 (24 bit) / 1654 (8 bit) bytes [HerculesWS]
 };
 
 enum {
@@ -19468,6 +19479,9 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _guild_id;
+	char _subject[MAX_GUILD_SUBJECT_STR_LENGTH];
+	char _notice[MAX_GUILD_NOTICE_STR_LENGTH];
 };
 
 enum {
@@ -19664,6 +19678,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	char _name[MAX_UNIT_NAME_LENGTH];
 };
 
 enum {
@@ -20914,6 +20929,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_cz_req_change_memberpos> _members;
 };
 
 enum {
@@ -20984,6 +21001,9 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _account_id{ 0 };
+	int _inviter_account_id{ 0 };
+	int _inviter_char_id{ 0 };
 };
 
 enum {
@@ -22077,6 +22097,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _char_id{ 0 };
+	char _guild_name[MAX_GUILD_NAME_LENGTH];
 };
 
 enum {
@@ -22214,6 +22236,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _inviter_account_id{ 0 };
+	int _response{ 0 };
 };
 
 enum {
@@ -25329,6 +25353,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _guild_id{ 0 };
+	int _response{ 0 };
 };
 
 enum {
@@ -25981,6 +26007,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	char _message[MAX_CHAT_STR_LENGTH];
 };
 
 enum {
@@ -26028,6 +26056,8 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _guild_id{ 0 };
+	int _relation{ 0 };
 };
 
 enum {
@@ -28867,6 +28897,10 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	int _guild_id{ 0 };
+	int _account_id{ 0 };
+	int _char_id{ 0 };
+	char _reason[MAX_GUILD_LEAVE_REASON_STR_LENGTH]{ 0 };
 };
 
 enum {
@@ -35793,6 +35827,7 @@ public:
 	void deserialize(ByteBuffer &buf);
 
 /* Structure */
+	char _key[MAX_GUILD_NAME_LENGTH];
 };
 
 enum {

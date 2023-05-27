@@ -28,6 +28,7 @@
 
 #include "HandledPackets.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
+#include "Server/Zone/Interface/UI/Party/Party.hpp"
 
 using namespace Horizon::Zone;
 
@@ -255,7 +256,7 @@ void CZ_RENAME_MER::deserialize(ByteBuffer &buf) { }
 void CZ_PARTY_JOIN_REQ_ACK::handle(ByteBuffer &&buf) 
 {
 	deserialize(buf);
-	get_session()->clif()->party().invite_response(_party_id, ((int)_response) ? PARTY_INVITE_RESPONSE_ACCEPT : PARTY_INVITE_RESPONSE_REJECT);
+	get_session()->clif()->party().invite_response(_party_id, ((int)_response) ? PARTY_INVITE_RESPONSE_ACCEPTED : PARTY_INVITE_RESPONSE_REJECTED);
 }
 
 void CZ_PARTY_JOIN_REQ_ACK::deserialize(ByteBuffer &buf) 
@@ -698,9 +699,16 @@ void CZ_ADD_FRIENDS::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_GUILD_MENUINTERFACE
  */
-void CZ_REQ_GUILD_MENUINTERFACE::handle(ByteBuffer &&buf) { }
+void CZ_REQ_GUILD_MENUINTERFACE::handle(ByteBuffer &&buf) 
+{ 
+	deserialize(buf);
+	get_session()->clif()->guild().notify_menu_interface();
+}
 
-void CZ_REQ_GUILD_MENUINTERFACE::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_GUILD_MENUINTERFACE::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+}
 
 /**
  * CZ_PKMODE_CHANGE
@@ -1058,9 +1066,20 @@ void CZ_REQUEST_MOVE2::deserialize(ByteBuffer &buf)
 /**
  * CZ_REQ_LEAVE_GUILD
  */
-void CZ_REQ_LEAVE_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_LEAVE_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().leave(_guild_id, _account_id, _char_id, _reason);
+}
 
-void CZ_REQ_LEAVE_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_LEAVE_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _guild_id;
+	buf >> _account_id;
+	buf >> _char_id;
+	buf.read(_reason, MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+}
 
 /**
  * CZ_PC_PURCHASE_ITEMLIST_FROMMC
@@ -1251,23 +1270,50 @@ void CZ_RESET::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_JOIN_GUILD
  */
-void CZ_REQ_JOIN_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_JOIN_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().invite(_account_id, _inviter_account_id, _inviter_char_id);
+}
 
-void CZ_REQ_JOIN_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_JOIN_GUILD::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+	buf >> _account_id;
+	buf >> _inviter_account_id;
+	buf >> _inviter_char_id;
+}
 
 /**
  * CZ_REQ_HOSTILE_GUILD
  */
-void CZ_REQ_HOSTILE_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_HOSTILE_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().add_opposition(_account_id);
 
-void CZ_REQ_HOSTILE_GUILD::deserialize(ByteBuffer &buf) { }
+}
+
+void CZ_REQ_HOSTILE_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _account_id;
+}
 
 /**
  * CZ_REQ_GUILD_MENU
  */
-void CZ_REQ_GUILD_MENU::handle(ByteBuffer &&buf) { }
+void CZ_REQ_GUILD_MENU::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().request_guild_information(_type);
+}
 
-void CZ_REQ_GUILD_MENU::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_GUILD_MENU::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _type;
+}
 
 /**
  * CZ_REQ_GIVE_MANNER_BYNAME
@@ -1286,16 +1332,42 @@ void CZ_AUCTION_ADD::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REG_CHANGE_GUILD_POSITIONINFO
  */
-void CZ_REG_CHANGE_GUILD_POSITIONINFO::handle(ByteBuffer &&buf) { }
+void CZ_REG_CHANGE_GUILD_POSITIONINFO::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().change_position_info(_info);
+}
 
-void CZ_REG_CHANGE_GUILD_POSITIONINFO::deserialize(ByteBuffer &buf) { }
+void CZ_REG_CHANGE_GUILD_POSITIONINFO::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+	buf >> _packet_length;
+	for (int i = 0; i < ((_packet_length - 4) / sizeof(s_cz_reg_change_guild_positioninfo)); i++) {
+		s_cz_reg_change_guild_positioninfo g;
+		buf >> g.position_id;
+		buf >> g.mode;
+		buf >> g.ranking;
+		buf >> g.pay_rate;
+		buf.read(g.name, MAX_GUILD_POSITION_NAME_LENGTH);
+		_info.push_back(g);
+	}
+}
 
 /**
  * CZ_REGISTER_GUILD_EMBLEM_IMG
  */
-void CZ_REGISTER_GUILD_EMBLEM_IMG::handle(ByteBuffer &&buf) { }
+void CZ_REGISTER_GUILD_EMBLEM_IMG::handle(ByteBuffer &&buf) 
+{ 
+	deserialize(buf);
+	get_session()->clif()->guild().change_emblem(_emblem);
+}
 
-void CZ_REGISTER_GUILD_EMBLEM_IMG::deserialize(ByteBuffer &buf) { }
+void CZ_REGISTER_GUILD_EMBLEM_IMG::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+	buf >> _packet_length;
+	buf.read(_emblem, std::min(MAX_EMBLEM_LENGTH, _packet_length - 4));
+}
 
 /**
  * CZ_UNUSED_MER_USE_SKILL
@@ -1429,9 +1501,19 @@ void CZ_UNUSED_MER_UPGRADE_SKILLLEVEL::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_GUILD_NOTICE
  */
-void CZ_GUILD_NOTICE::handle(ByteBuffer &&buf) { }
+void CZ_GUILD_NOTICE::handle(ByteBuffer &&buf) 
+{ 
+	deserialize(buf);
+	get_session()->clif()->guild().change_notice(_guild_id, _subject, _notice);
+}
 
-void CZ_GUILD_NOTICE::deserialize(ByteBuffer &buf) { }
+void CZ_GUILD_NOTICE::deserialize(ByteBuffer &buf) 
+{ 
+	buf >> _packet_id;
+	buf >> _guild_id;
+	buf.read(_subject, MAX_GUILD_SUBJECT_STR_LENGTH);
+	buf.read(_notice, MAX_GUILD_NOTICE_STR_LENGTH);
+}
 
 /**
  * CZ_AUCTION_ADD_CANCEL
@@ -1459,105 +1541,139 @@ void CZ_REQ_CANCEL_WRITE_RODEX::deserialize(ByteBuffer &buf) { }
  */
 void CZ_TRYCAPTURE_MONSTER::handle(ByteBuffer &&buf) { }
 
-void CZ_TRYCAPTURE_MONSTER::deserialize(ByteBuffer &buf) { }
+void CZ_TRYCAPTURE_MONSTER::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_ITEM_PICKUP_NEW_JAPEN
  */
-void CZ_ITEM_PICKUP_NEW_JAPEN::handle(ByteBuffer &&buf) { }
+void CZ_ITEM_PICKUP_NEW_JAPEN::handle(ByteBuffer&& buf) { }
 
-void CZ_ITEM_PICKUP_NEW_JAPEN::deserialize(ByteBuffer &buf) { }
+void CZ_ITEM_PICKUP_NEW_JAPEN::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_REQ_JOIN_GUILD2
  */
-void CZ_REQ_JOIN_GUILD2::handle(ByteBuffer &&buf) { }
+void CZ_REQ_JOIN_GUILD2::handle(ByteBuffer&& buf) 
+{ 
+	deserialize(buf);
+	get_session()->clif()->guild().invite(_name);
+}
 
-void CZ_REQ_JOIN_GUILD2::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_JOIN_GUILD2::deserialize(ByteBuffer& buf) 
+{
+	buf >> _packet_id;
+	buf.read(_name, MAX_UNIT_NAME_LENGTH);
+}
 
 /**
  * CZ_PET_ACT
  */
-void CZ_PET_ACT::handle(ByteBuffer &&buf) { }
+void CZ_PET_ACT::handle(ByteBuffer&& buf) { }
 
-void CZ_PET_ACT::deserialize(ByteBuffer &buf) { }
+void CZ_PET_ACT::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_CLOSE_DIALOG
  */
-void CZ_CLOSE_DIALOG::handle(ByteBuffer &&buf) { }
+void CZ_CLOSE_DIALOG::handle(ByteBuffer&& buf) { }
 
-void CZ_CLOSE_DIALOG::deserialize(ByteBuffer &buf) { }
+void CZ_CLOSE_DIALOG::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_DORIDORI
  */
-void CZ_DORIDORI::handle(ByteBuffer &&buf) { }
+void CZ_DORIDORI::handle(ByteBuffer&& buf) { }
 
-void CZ_DORIDORI::deserialize(ByteBuffer &buf) { }
+void CZ_DORIDORI::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_SIMPLE_BUY_CASH_POINT_ITEM
  */
-void CZ_SIMPLE_BUY_CASH_POINT_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_SIMPLE_BUY_CASH_POINT_ITEM::handle(ByteBuffer&& buf) { }
 
-void CZ_SIMPLE_BUY_CASH_POINT_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_SIMPLE_BUY_CASH_POINT_ITEM::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_PC_BUY_CASH_POINT_ITEM
  */
-void CZ_PC_BUY_CASH_POINT_ITEM::handle(ByteBuffer &&buf) { }
+void CZ_PC_BUY_CASH_POINT_ITEM::handle(ByteBuffer&& buf) { }
 
-void CZ_PC_BUY_CASH_POINT_ITEM::deserialize(ByteBuffer &buf) { }
+void CZ_PC_BUY_CASH_POINT_ITEM::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY
  */
-void CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY::handle(ByteBuffer &&buf) { }
+void CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY::handle(ByteBuffer&& buf) { }
 
-void CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY::deserialize(ByteBuffer &buf) { }
+void CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_SRPACKET_START
  */
-void CZ_SRPACKET_START::handle(ByteBuffer &&buf) { }
+void CZ_SRPACKET_START::handle(ByteBuffer&& buf) { }
 
-void CZ_SRPACKET_START::deserialize(ByteBuffer &buf) { }
+void CZ_SRPACKET_START::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_SELECTAUTOSPELL
  */
-void CZ_SELECTAUTOSPELL::handle(ByteBuffer &&buf) { }
+void CZ_SELECTAUTOSPELL::handle(ByteBuffer&& buf) { }
 
-void CZ_SELECTAUTOSPELL::deserialize(ByteBuffer &buf) { }
+void CZ_SELECTAUTOSPELL::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_SSILIST_ITEM_CLICK
  */
-void CZ_SSILIST_ITEM_CLICK::handle(ByteBuffer &&buf) { }
+void CZ_SSILIST_ITEM_CLICK::handle(ByteBuffer&& buf) { }
 
-void CZ_SSILIST_ITEM_CLICK::deserialize(ByteBuffer &buf) { }
+void CZ_SSILIST_ITEM_CLICK::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_REQ_ITEMIDENTIFY
  */
-void CZ_REQ_ITEMIDENTIFY::handle(ByteBuffer &&buf) { }
+void CZ_REQ_ITEMIDENTIFY::handle(ByteBuffer&& buf) { }
 
-void CZ_REQ_ITEMIDENTIFY::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_ITEMIDENTIFY::deserialize(ByteBuffer& buf) { }
 
 /**
  * CZ_REQ_CHANGE_MEMBERPOS
  */
-void CZ_REQ_CHANGE_MEMBERPOS::handle(ByteBuffer &&buf) { }
+void CZ_REQ_CHANGE_MEMBERPOS::handle(ByteBuffer&& buf)
+{
+	deserialize(buf);
+	get_session()->clif()->guild().change_member_positions(_members);
+}
 
-void CZ_REQ_CHANGE_MEMBERPOS::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_CHANGE_MEMBERPOS::deserialize(ByteBuffer& buf)
+{
+	buf >> _packet_id;
+	buf >> _packet_length;
+	for (int i = 0; i < ((_packet_length - 4) / sizeof(s_cz_req_change_memberpos)); i++)
+	{
+		s_cz_req_change_memberpos m;
+		buf >> m.account_id;
+		buf >> m.char_id;
+		buf >> m.position_id;
+		_members.push_back(m);
+	}
+}
 
 /**
  * CZ_REQ_ALLY_GUILD
  */
-void CZ_REQ_ALLY_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_ALLY_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().invite_ally(_account_id, _inviter_account_id, _inviter_char_id);
+}
 
-void CZ_REQ_ALLY_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_ALLY_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _account_id;
+	buf >> _inviter_account_id;
+	buf >> _inviter_char_id;
+}
 
 /**
  * CZ_REQ_OPEN_WRITE_RODEX
@@ -1685,9 +1801,18 @@ void CZ_REQ_RANKING::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_MAKE_GUILD
  */
-void CZ_REQ_MAKE_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_MAKE_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().create(_char_id, _guild_name);
+}
 
-void CZ_REQ_MAKE_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_MAKE_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _char_id;
+	buf.read(_guild_name, MAX_GUILD_NAME_LENGTH);
+}
 
 /**
  * CZ_MAKE_GROUP2
@@ -1709,9 +1834,18 @@ void CZ_MAKE_GROUP2::deserialize(ByteBuffer &buf)
 /**
  * CZ_ALLY_GUILD
  */
-void CZ_ALLY_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_ALLY_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().invite_ally_response(_inviter_account_id, _response == 1 ? CZ_ALLY_GUILD_RESPONSE_ACCEPT : CZ_ALLY_GUILD_RESPONSE_REFUSE);
+}
 
-void CZ_ALLY_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_ALLY_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _inviter_account_id;
+	buf >> _response;
+}
 
 /**
  * CZ_USE_SKILL2
@@ -2013,9 +2147,18 @@ void CZ_REQUEST_MOVENPC::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_JOIN_GUILD
  */
-void CZ_JOIN_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_JOIN_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().invite_response(_guild_id, _response == 1 ? CZ_JOIN_GUILD_RESPONSE_ACCEPT : CZ_JOIN_GUILD_RESPONSE_REFUSE);
+}
 
-void CZ_JOIN_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_JOIN_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _guild_id;
+	buf >> _response;
+}
 
 /**
  * CZ_REQ_WHISPER_LIST
@@ -2078,9 +2221,18 @@ void CZ_CHANGE_DIRECTION2::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_GUILD_CHAT
  */
-void CZ_GUILD_CHAT::handle(ByteBuffer &&buf) { }
+void CZ_GUILD_CHAT::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().send_message(_message);
+}
 
-void CZ_GUILD_CHAT::deserialize(ByteBuffer &buf) { }
+void CZ_GUILD_CHAT::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _packet_length;
+	buf.read(_message, MAX_CHAT_STR_LENGTH);
+}
 
 /**
  * CZ_REQ_CHANGE_TITLE
@@ -2092,9 +2244,18 @@ void CZ_REQ_CHANGE_TITLE::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_DELETE_RELATED_GUILD
  */
-void CZ_REQ_DELETE_RELATED_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_DELETE_RELATED_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().remove_related_guild(_guild_id, _relation == 1 ? CZ_REQDELETE_RELATEDGUILD_RELATION_ENEMY : CZ_REQDELETE_RELATEDGUILD_RELATION_ALLY);
+}
 
-void CZ_REQ_DELETE_RELATED_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_DELETE_RELATED_GUILD::deserialize(ByteBuffer &buf)
+{
+	buf >> _packet_id;
+	buf >> _guild_id;
+	buf >> _relation;
+}
 
 /**
  * CZ_REQ_EXCHANGE_ITEM
@@ -2166,7 +2327,7 @@ void CZ_CLOSE_BARGAIN_SALE_TOOL::deserialize(ByteBuffer &buf) { }
 void CZ_JOIN_GROUP::handle(ByteBuffer &&buf) 
 {
 	deserialize(buf);
-	get_session()->clif()->party().invite_response(_party_id, (_response ? PARTY_INVITE_RESPONSE_ACCEPT : PARTY_INVITE_RESPONSE_REJECT));
+	get_session()->clif()->party().invite_response(_party_id, (_response ? PARTY_INVITE_RESPONSE_ACCEPTED : PARTY_INVITE_RESPONSE_REJECTED));
 }
 
 void CZ_JOIN_GROUP::deserialize(ByteBuffer &buf) 
@@ -2341,9 +2502,20 @@ void CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_BAN_GUILD
  */
-void CZ_REQ_BAN_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_BAN_GUILD::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->guild().expel(_guild_id, _account_id, _char_id, _reason);
+}
 
-void CZ_REQ_BAN_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_BAN_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _guild_id;
+	buf >> _account_id;
+	buf >> _char_id;
+	buf.read(_reason, MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+}
 
 /**
  * CZ_CHANGE_DIRECTION
@@ -2929,9 +3101,17 @@ void CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER::deserialize(ByteBuffer &buf) { }
 /**
  * CZ_REQ_DISORGANIZE_GUILD
  */
-void CZ_REQ_DISORGANIZE_GUILD::handle(ByteBuffer &&buf) { }
+void CZ_REQ_DISORGANIZE_GUILD::handle(ByteBuffer &&buf) 
+{ 
+	deserialize(buf);
+	get_session()->clif()->guild().disband(_key);
+}
 
-void CZ_REQ_DISORGANIZE_GUILD::deserialize(ByteBuffer &buf) { }
+void CZ_REQ_DISORGANIZE_GUILD::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf.read(_key, MAX_GUILD_NAME_LENGTH);
+}
 
 /**
  * CZ_ACTIVE_QUEST

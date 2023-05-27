@@ -39,3 +39,94 @@ Horizon::Zone::UI::Guild::~Guild()
 {
 
 }
+
+void Horizon::Zone::UI::Guild::create(int master_id, std::string name)
+{
+    
+}
+
+void Horizon::Zone::UI::Guild::request_guild_information(int type)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::notify_menu_interface()
+{
+
+}
+
+void Horizon::Zone::UI::Guild::change_position_info(std::vector<s_cz_reg_change_guild_positioninfo> info)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::change_member_positions(std::vector<s_cz_req_change_memberpos> members)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::change_emblem(std::string emblem)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::change_notice(int guild_id, std::string subject, std::string notice)
+{
+
+}
+
+
+void Horizon::Zone::UI::Guild::invite(int account_id, int inviter_account_id, int inviter_char_id)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::invite(std::string name)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::invite_response(int guild_id, cz_join_guild_response_type response)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::leave(int guild_id, int account_id, int char_id, std::string reason)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::expel(int guild_id, int account_id, int char_id, std::string reason)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::send_message(std::string message)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::invite_ally(int account_id, int inviter_account_id, int inviter_char_id)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::invite_ally_response(int inviter_account_id, cz_ally_guild_response_type response)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::remove_related_guild(int guild_id, cz_req_delete_related_guild_relation_type relation)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::add_opposition(int account_id)
+{
+
+}
+
+void Horizon::Zone::UI::Guild::disband(std::string key)
+{
+
+}

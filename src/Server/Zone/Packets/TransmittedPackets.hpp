@@ -34,7 +34,7 @@
 #include "Server/Zone/Definitions/ItemDefinitions.hpp"
 #include "Server/Zone/Definitions/SkillDefinitions.hpp"
 #include "Server/Zone/Definitions/CombatDefinitions.hpp"
-#include "Server/Zone/Definitions/UIDefinitions.hpp"
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
 
 namespace Horizon
 {
@@ -1390,11 +1390,6 @@ enum {
  */ 
 class ZC_EXEC_EXCHANGE_ITEM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zc_exec_exchange_item_result_type
-	{
-		ZCEXEC_EXCHANGEITEM_RESULT_SUCCESS = 0,
-		ZCEXEC_EXCHANGEITEM_RESULT_FAILURE = 1,
-	};
 public:
 	ZC_EXEC_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_EXEC_EXCHANGE_ITEM, s)
@@ -1488,7 +1483,6 @@ enum {
  */ 
 class ZC_ENTER_ROOM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	struct chatroom_user { int8_t _type; char name[MAX_UNIT_NAME_LENGTH]; };
 public:
 	ZC_ENTER_ROOM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_ENTER_ROOM, s)
@@ -3031,13 +3025,6 @@ enum {
  */ 
 class ZC_CHANGE_CHATROOM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zc_change_chatroom_type
-	{
-		ZC_CHANGECHATROOM_PRIVATE = 0, // password protected
-		ZC_CHANGECHATROOM_PUBLIC = 1,
-		ZC_CHANGECHATROOM_ARENA = 2, // npc waiting room
-		ZC_CHANGECHATROOM_PKZONE = 3 // non-clickable
-	};
 public:
 	ZC_CHANGE_CHATROOM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_CHANGE_CHATROOM, s)
@@ -4236,10 +4223,12 @@ public:
 	{}
 	virtual ~ZC_DELETE_RELATED_GUILD() {}
 
-	void deliver();
+	void deliver(int guild_id, int relation);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _guild_id{ 0 };
+	int _relation{ 0 };
 };
 
 enum {
@@ -4493,11 +4482,6 @@ public:
 	ByteBuffer &serialize();
 
 /* Structure */
-};
-
-enum zc_server_reject_type : int8_t
-{
-	ZONE_SERV_ERROR_REJECT = 3,
 };
 
 enum {
@@ -4764,10 +4748,22 @@ public:
 	{}
 	virtual ~ZC_UPDATE_GDID() {}
 
-	void deliver();
+	void deliver(int guild_id, int emblem_id, int mode, int is_master, std::string guild_name);
+#if (CLIENT_VERSION == 'M' && PACKET_VERSION >= 20220216) || (CLIENT_VERSION == 'Z' && PACKET_VERSION >= 20221024)
+	void deliver(int guild_id, int emblem_id, int mode, int is_master, std::string guild_name, int master_char_id);
+#endif
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _guild_id{ 0 };
+	int _emblem_id{ 0 };
+	int _mode{ 0 };
+	int8_t _is_master{ 0 };
+	int _inter_sid{ 0 };
+	char _guild_name[MAX_GUILD_NAME_LENGTH];
+#if (CLIENT_VERSION == 'M' && PACKET_VERSION >= 20220216) || (CLIENT_VERSION == 'Z' && PACKET_VERSION >= 20221024)
+	int _master_char_id{ 0 };
+#endif
 };
 
 enum {
@@ -6029,15 +6025,6 @@ enum {
 #endif
 };
 
-enum zc_ack_exchange_item_result_type
-{
-	ZCACK_EXCHANGEITEM_CHAR_TOO_FAR = 0,
-	ZCACK_EXCHANGEITEM_CHAR_DOES_NOT_EXIST = 1,
-	ZCACK_EXCHANGEITEM_TRADE_FAILED = 2,
-	ZCACK_EXCHANGEITEM_ACCEPT = 3,
-	ZCACK_EXCHANGEITEM_CANCEL = 4,
-	ZCACK_EXCHANGEITEM_BUSY = 5
-};
 
 /**
  * @brief Main object for the aegis packet: ZC_ACK_EXCHANGE_ITEM
@@ -6350,10 +6337,13 @@ public:
 	{}
 	virtual ~ZC_GUILD_SKILLINFO() {}
 
-	void deliver();
+	void deliver(int skill_points, std::vector<s_zc_guild_skillinfo> skillinfo);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	int16_t _skill_points{ 0 };
+	std::vector<s_zc_guild_skillinfo> _skillinfo;
 };
 
 enum {
@@ -7008,10 +6998,12 @@ public:
 	{}
 	virtual ~ZC_ACK_BAN_GUILD_SSO() {}
 
-	void deliver();
+	void deliver(std::string name, std::string reason);
 	ByteBuffer &serialize();
 
 /* Structure */
+	char _name[MAX_UNIT_NAME_LENGTH];
+	char _reason[MAX_GUILD_LEAVE_REASON_STR_LENGTH];
 };
 
 enum {
@@ -7958,12 +7950,7 @@ enum {
  * @brief Main object for the aegis packet: ZC_ACK_WHISPER02
  *
  */ 
-enum zc_whisper_result_type {
-	WRT_SUCCESS               = 0,
-	WRT_RECIPIENT_OFFLINE     = 1,
-	WRT_RECIPIENT_IGNORE      = 2,
-	WRT_RECIPIENT_IGNORE_ALL  = 3
-};
+
 class ZC_ACK_WHISPER02 : public Base::NetworkPacketTransmitter<ZoneSession>
 {
 public:
@@ -8357,10 +8344,12 @@ public:
 	{}
 	virtual ~ZC_ACK_REQ_JOIN_GUILD() {}
 
-	void deliver();
+	void deliver(zc_ack_req_join_guild_type response);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int8_t _response{ 0 };
+
 };
 
 enum {
@@ -9370,17 +9359,6 @@ enum {
  */ 
 class ZC_REFUSE_ENTER_ROOM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum chat_join_fail_type
-	{
-		CHAT_JOINFAIL_ROOMFULL = 0,
-		CHAT_JOINFAIL_WRONGPASSWORD = 1,
-		CHAT_JOINFAIL_KICKED = 2,
-		CHAT_JOINFAIL_SUCCESS = 3,
-		CHAT_JOINFAIL_NOZENY = 4,
-		CHAT_JOINFAIL_LOWLEVEL = 5,
-		CHAT_JOINFAIL_HIGHLEVEL = 6,
-		CHAT_JOINFAIL_UNSUITABLE_JOB = 7
-	};
 public:
 	ZC_REFUSE_ENTER_ROOM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_REFUSE_ENTER_ROOM, s)
@@ -10386,10 +10364,11 @@ public:
 	{}
 	virtual ~ZC_ACK_DISORGANIZE_GUILD_RESULT() {}
 
-	void deliver();
+	void deliver(zc_ack_disorganizeguild_result result);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int8_t _result{ 0 };
 };
 
 enum {
@@ -10974,10 +10953,12 @@ public:
 	{}
 	virtual ~ZC_REQ_JOIN_GUILD() {}
 
-	void deliver();
+	void deliver(int guild_id, std::string guild_name);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _guild_id{ 0 };
+	char _guild_name[MAX_GUILD_NAME_LENGTH];
 };
 
 enum {
@@ -11539,10 +11520,12 @@ public:
 	{}
 	virtual ~ZC_BAN_LIST() {}
 
-	void deliver();
+	void deliver(std::vector<s_zc_ban_list> list);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_zc_ban_list> _list;
 };
 
 enum {
@@ -11605,11 +11588,6 @@ enum {
  */ 
 class ZC_PARTY_CONFIG : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zc_party_config_type
-	{
-		ZC_PARTYCONFIG_TYPE_ALLOW_INVITES = 0,
-		ZC_PARTYCONFIG_TYPE_DENY_INVITES = 1
-	};
 public:
 	ZC_PARTY_CONFIG(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_PARTY_CONFIG, s)
@@ -11713,10 +11691,12 @@ public:
 	{}
 	virtual ~ZC_GUILD_NOTICE() {}
 
-	void deliver();
+	void deliver(std::string subject, std::string notice);
 	ByteBuffer &serialize();
 
 /* Structure */
+	char _subject[MAX_GUILD_SUBJECT_STR_LENGTH];
+	char _notice[MAX_GUILD_NOTICE_STR_LENGTH];
 };
 
 enum {
@@ -13121,21 +13101,6 @@ enum {
 #endif
 };
 
-struct zc_map_properties {
-	unsigned pvp : 1;
-	unsigned gvg : 1;
-	unsigned siege : 1;
-	unsigned no_effects : 1;
-	unsigned party_pvp : 1;
-	unsigned pvp_kill_counter : 1;
-	unsigned disallow_party : 1;
-	unsigned battleground : 1;
-	unsigned no_costume : 1;
-	unsigned allow_carts : 1;
-	unsigned stargladiator_miracles : 1;
-	unsigned spare_bits : 21;
-};
-
 /**
  * @brief Main object for the aegis packet: ZC_MAPPROPERTY_R2
  *
@@ -13464,10 +13429,13 @@ public:
 	{}
 	virtual ~ZC_UPDATE_CHARSTAT() {}
 
-	void deliver();
+	void deliver(int account_id, int char_id, zc_update_charstat_status_type status);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _account_id{ 0 };
+	int _char_id{ 0 };
+	int _status{ 0 };
 };
 
 enum {
@@ -13607,10 +13575,13 @@ public:
 	{}
 	virtual ~ZC_ACK_BAN_GUILD() {}
 
-	void deliver();
+	void deliver(std::string name, std::string reason, std::string account_name);
 	ByteBuffer &serialize();
 
 /* Structure */
+	char _name[MAX_UNIT_NAME_LENGTH];
+	char _reason[MAX_GUILD_LEAVE_REASON_STR_LENGTH];
+	char _account_name[MAX_USERNAME_LENGTH];
 };
 
 enum {
@@ -14057,10 +14028,11 @@ public:
 	{}
 	virtual ~ZC_ACK_REQ_HOSTILE_GUILD() {}
 
-	void deliver();
+	void deliver(zc_ack_req_hostile_guild_response_type response);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int8_t _result{ 0 };
 };
 
 enum {
@@ -14492,10 +14464,13 @@ public:
 	{}
 	virtual ~ZC_CHANGE_GUILD() {}
 
-	void deliver();
+	void deliver(int account_id, int guild_id, int16_t emblem_id);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _account_id{ 0 };
+	int _guild_id{ 0 };
+	int16_t _emblem_id{ 0 };
 };
 
 enum {
@@ -15417,11 +15392,6 @@ enum {
  */ 
 class ZC_CONCLUDE_EXCHANGE_ITEM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zc_conclude_exchange_item_type
-	{
-		ZC_CONCLUDEEXCHANGE_ITEM_FOR_SELF = 0,
-		ZC_CONCLUDEEXCHANGE_ITEM_FOR_OTHER_PLAYER = 1
-	};
 public:
 	ZC_CONCLUDE_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_CONCLUDE_EXCHANGE_ITEM, s)
@@ -15661,14 +15631,20 @@ class ZC_UPDATE_CHARSTAT2 : public Base::NetworkPacketTransmitter<ZoneSession>
 {
 public:
 	ZC_UPDATE_CHARSTAT2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_UPDATE_CHARSTAT2, s)
+		: NetworkPacketTransmitter<ZoneSession>(ID_ZC_UPDATE_CHARSTAT2, s)
 	{}
 	virtual ~ZC_UPDATE_CHARSTAT2() {}
 
-	void deliver();
-	ByteBuffer &serialize();
+	void deliver(int account_id, int char_id, zc_update_charstat_status_type status, int16_t gender, int16_t hair_style_id, int16_t hair_color_id);
+	ByteBuffer& serialize();
 
-/* Structure */
+	/* Structure */
+	int _account_id{ 0 };
+	int _char_id{ 0 };
+	int _status{ 0 };
+	int16_t _gender{ 0 };
+	int16_t _hair_style_id{ 0 };
+	int16_t _hair_color_id{ 0 };
 };
 
 enum {
@@ -16358,10 +16334,12 @@ public:
 	{}
 	virtual ~ZC_POSITION_INFO() {}
 
-	void deliver();
+	void deliver(std::vector<s_zc_position_info> info);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_zc_position_info> _info;
 };
 
 enum {
@@ -16435,13 +16413,6 @@ enum {
  */ 
 class ZC_DELETE_MEMBER_FROM_GROUP : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zc_delete_member_from_group_result_type
-	{
-		ZC_DELETEMEMBER_FROMGROUP_LEAVE = 0,
-		ZC_DELETEMEMBER_FROMGROUP_EXPEL = 1,
-		ZC_DELETEMEMBER_FROMGROUP_LEAVE_UNAUTHORIZED_MAP = 2,
-		ZC_DELETEMEMBER_FROMGROUP_EXPEL_UNAUTHORIZED_MAP = 3
-	};
 public:
 	ZC_DELETE_MEMBER_FROM_GROUP(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_DELETE_MEMBER_FROM_GROUP, s)
@@ -16621,10 +16592,12 @@ public:
 	{}
 	virtual ~ZC_GUILD_CHAT() {}
 
-	void deliver();
+	void deliver(std::string message);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	char _message[MAX_CHAT_STR_LENGTH];
 };
 
 enum {
@@ -16681,35 +16654,6 @@ enum {
 #endif
 };
 
-struct zc_status_data {
-	int16_t status_points{0};
-	int8_t  strength{1};
-	int8_t  strength_req_stats{1};
-	int8_t  agility{1};
-	int8_t  agility_req_stats{1};
-	int8_t  vitality{1};
-	int8_t  vitality_req_stats{1};
-	int8_t  intelligence{1};
-	int8_t  intelligence_req_stats{1};
-	int8_t  dexterity{1};
-	int8_t  dexterity_req_stats{1};
-	int8_t  luck{1};
-	int8_t  luck_req_stats{1};
-	int16_t status_atk{1};
-	int16_t equip_atk{1};
-	int16_t status_matk{1};
-	int16_t equip_matk{1};
-	int16_t soft_def{1};
-	int16_t hard_def{1};
-	int16_t soft_mdef{1};
-	int16_t hard_mdef{1};
-	int16_t hit{1};
-	int16_t flee{1};
-	int16_t perfect_dodge{1};
-	int16_t critical{1};
-	int16_t attack_speed{0};
-	int16_t plus_aspd{0}; // always 0 apparently.
-};
 
 /**
  * @brief Main object for the aegis packet: ZC_STATUS
@@ -16828,14 +16772,6 @@ enum {
  */ 
 class ZC_ACK_MAKE_GROUP : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zcack_makegroup_result_type
-	{
-		ZCACK_MAKEGROUP_RESULT_SUCCESS = 0,
-		ZCACK_MAKEGROUP_RESULT_NAME_ALREADY_EXISTS = 1,
-		ZCACK_MAKEGROUP_RESULT_ALREADY_IN_PARTY = 2,
-		ZCACK_MAKEGROUP_RESULT_UNAUTHORIZED_ON_MAP = 3,
-		ZCACK_MAKEGROUP_RESULT_NOMSG = 4
-	};
 public:
 	ZC_ACK_MAKE_GROUP(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_ACK_MAKE_GROUP, s)
@@ -16890,10 +16826,11 @@ public:
 	{}
 	virtual ~ZC_ACK_REQ_ALLY_GUILD() {}
 
-	void deliver();
+	void deliver(zc_ack_req_ally_guild_response_type response);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int8_t _response{ 0 };
 };
 
 enum {
@@ -17409,10 +17346,12 @@ public:
 	{}
 	virtual ~ZC_ACK_CHANGE_GUILD_POSITIONINFO() {}
 
-	void deliver();
+	void deliver(std::vector<s_zcack_change_guild_positioninfo> info);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_zcack_change_guild_positioninfo> _info;
 };
 
 enum {
@@ -17849,7 +17788,7 @@ public:
 	{}
 	virtual ~ZC_NOTIFY_POSITION_TO_GROUPM() {}
 
-	void deliver(int account_id, MapCoords current_mcoords);
+	void deliver(int account_id, int x, int y);
 	ByteBuffer &serialize();
 
 /* Structure */
@@ -17899,8 +17838,7 @@ enum {
 	PACKET_VERSION >= 20080304 || \
 	PACKET_VERSION >= 20080226 || \
 	PACKET_VERSION >= 20080219 || \
-	PACKET_VERSION >= 20080102 || \
-	PACKET_VERSION >= 0
+	PACKET_VERSION >= 20080102
 	ID_ZC_MEMBERMGR_INFO = 0x0154
 #elif PACKET_VERSION >= 20161026 || \
 	PACKET_VERSION >= 0
@@ -17919,10 +17857,13 @@ public:
 	{}
 	virtual ~ZC_MEMBERMGR_INFO() {}
 
-	void deliver();
+	void deliver(std::vector<s_zc_membermgr_info_member> s);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_zc_membermgr_info_member> _members;
+
 };
 
 enum {
@@ -17969,10 +17910,11 @@ public:
 	{}
 	virtual ~ZC_GUILD_INFO() {}
 
-	void deliver();
+	void deliver(s_zc_guild_info s);
 	ByteBuffer &serialize();
 
 /* Structure */
+	s_zc_guild_info _s;
 };
 
 enum {
@@ -18255,10 +18197,12 @@ public:
 	{}
 	virtual ~ZC_REQ_ALLY_GUILD() {}
 
-	void deliver();
+	void deliver(int inviter_account_id, std::string guild_name);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _inviter_account_id;
+	char _guild_name[MAX_GUILD_NAME_LENGTH];
 };
 
 enum {
@@ -19529,22 +19473,6 @@ enum {
  */ 
 class ZC_GROUP_LIST : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	struct s_members {
-		int32_t account_id{ 0 };
-#if PACKET_VERSION >= 20171207
-		int32_t char_id{ 0 };
-#endif
-		char player_name[MAX_UNIT_NAME_LENGTH];
-		char map_name[MAP_NAME_LENGTH_EXT];
-		uint8_t leader;
-		uint8_t offline;
-#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20170524) || \
-	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20170502) || \
-	(CLIENT_TYPE == 'Z')
-		int16_t class_;
-		int16_t base_level;
-#endif
-	};
 public:
 	ZC_GROUP_LIST(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_GROUP_LIST, s)
@@ -20693,14 +20621,6 @@ enum {
  */ 
 class ZC_ACK_ADD_EXCHANGE_ITEM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zcack_addexchangeitem_result_type
-	{
-		ZCACK_ADDEXCHANGEITEM_RESULT_SUCCESS = 0,
-		ZCACK_ADDEXCHANGEITEM_RESULT_OVERWEIGHT = 1,
-		ZCACK_ADDEXCHANGEITEM_RESULT_TRADE_CANCELLED = 2,
-		ZCACK_ADDEXCHANGEITEM_RESULT_AMOUNT_EXCEEDED = 3,
-		ZCACK_ADDEXCHANGEITEM_RESULT_AMOUNT_EXCEEDED2 = 4
-	};
 public:
 	ZC_ACK_ADD_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_ACK_ADD_EXCHANGE_ITEM, s)
@@ -21030,48 +20950,6 @@ enum {
 class ZC_ADD_EXCHANGE_ITEM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
 public:
-	struct s_zc_add_exchange_item {
-		/* Structure */
-#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20181121) || \
-	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20180704) || \
-	(CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20181114)
-		uint32_t item_id;
-		uint8_t item_type;
-		int32_t amount;
-#else
-		uint16_t item_id;
-		uint8_t item_type;
-		int32_t amount;
-#endif
-		uint8_t identified;
-		uint8_t damaged;
-#if !((CLIENT_TYPE == 'M' && PACKET_VERSION >= 20200916) || \
-	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20200723) || \
-	(CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20221024))
-		uint8_t refine;
-#endif  // !(PACKETVER_MAIN_NUM >= 20200916 || PACKETVER_RE_NUM >= 20200723 || PACKETVER_ZERO_NUM >= 20221024)
-		item_slot cards;
-#if PACKET_VERSION >= 20150226
-		struct {
-			int16_t index{ 0 };
-			int16_t value{ 0 };
-			int16_t param{ 0 };
-		} option_data[MAX_ITEM_OPTIONS];
-#endif
-#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20161102) || \
-	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20161026) || \
-	(CILENT_TYPE == 'Z')
-		uint32_t location;
-		uint16_t look;
-#endif  // PACKETVER_MAIN_NUM >= 20161102 || PACKETVER_RE_NUM >= 20161026 || defined(PACKETVER_ZERO)
-#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20200916) || \
-	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20200723) || \
-	(CLIENT_TYPE == 'Z' && PACKET_VERSION >= 20221024)
-		uint8_t refine;
-		uint8_t grade;
-#endif  // PACKETVER_MAIN_NUM >= 20200916 || PACKETVER_RE_NUM >= 20200723 || PACKETVER_ZERO_NUM >= 20221024
-
-	};
 
 	ZC_ADD_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
 		: NetworkPacketTransmitter<ZoneSession>(ID_ZC_ADD_EXCHANGE_ITEM, s)
@@ -23558,10 +23436,12 @@ public:
 	{}
 	virtual ~ZC_ACK_REQ_CHANGE_MEMBERS() {}
 
-	void deliver();
+	void deliver(std::vector<s_zcack_reqchange_members> members);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_zcack_reqchange_members> _members;
 };
 
 enum {
@@ -23907,10 +23787,12 @@ public:
 	{}
 	virtual ~ZC_ACK_LEAVE_GUILD() {}
 
-	void deliver();
+	void deliver(std::string name, std::string reason);
 	ByteBuffer &serialize();
 
 /* Structure */
+	char _name[MAX_UNIT_NAME_LENGTH];
+	char _reason[MAX_GUILD_LEAVE_REASON_STR_LENGTH];
 };
 
 enum {
@@ -24570,10 +24452,12 @@ public:
 	{}
 	virtual ~ZC_MYGUILD_BASIC_INFO() {}
 
-	void deliver();
+	void deliver(std::vector<s_related_guild_info> s);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_related_guild_info> _rg_infos;
 };
 
 enum {
@@ -24750,7 +24634,7 @@ enum {
 #endif
 };
 /**
- * @brief Main object for the aegis packet: ZC_ACK_GUILD_MENintERFACE
+ * @brief Main object for the aegis packet: ZC_ACK_GUILD_MENUINTERFACE
  *
  */ 
 class ZC_ACK_GUILD_MENUINTERFACE : public Base::NetworkPacketTransmitter<ZoneSession>
@@ -24761,10 +24645,11 @@ public:
 	{}
 	virtual ~ZC_ACK_GUILD_MENUINTERFACE() {}
 
-	void deliver();
+	void deliver(int options);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _options{ 0 };
 };
 
 enum {
@@ -24808,10 +24693,12 @@ public:
 	{}
 	virtual ~ZC_GUILD_POSITION() {}
 
-	void deliver();
+	void deliver(int account_id, std::string position);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int _account_id;
+	char _position[MAX_GUILD_POSITION_NAME_LENGTH];
 };
 
 enum {
@@ -25585,28 +25472,6 @@ enum {
  */ 
 class ZC_ADD_MEMBER_TO_GROUP : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	struct s_zc_add_member_to_group
-	{
-		uint32_t _account_id;
-#if PACKET_VERSION >= 20171207
-		uint32_t _char_id;
-#endif
-		uint32_t leader;
-#if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20170524) || \
-	(CLIENT_TYPE == 'R' && PACKET_VERSION >= 20170502) || \
-	(CLIENT_TYPE == 'Z')
-		int16_t class_;
-		int16_t base_level;
-#endif
-		int16_t x;
-		int16_t y;
-		uint8_t offline;
-		char party_name[MAX_PARTY_NAME_LENGTH];
-		char player_name[MAX_UNIT_NAME_LENGTH];
-		char map_name[MAP_NAME_LENGTH_EXT];
-		int8_t share_pickup;
-		int8_t share_loot;
-	};
 public:
 	ZC_ADD_MEMBER_TO_GROUP(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_ADD_MEMBER_TO_GROUP, s)
@@ -25688,10 +25553,11 @@ public:
 	{}
 	virtual ~ZC_GUILD_INFO2() {}
 
-	void deliver();
+	void deliver(s_zc_guild_info2 s);
 	ByteBuffer &serialize();
 
 /* Structure */
+	s_zc_guild_info2 _s;
 };
 
 enum {
@@ -26098,12 +25964,6 @@ enum {
  */ 
 class ZC_ACK_CREATE_CHATROOM : public Base::NetworkPacketTransmitter<ZoneSession>
 {
-	enum zcack_create_chatroom_result_type
-	{
-		ZCACK_CREATE_CHATROOM_RESULT_SUCCESS = 0,
-		ZCACK_CREATE_CHATROOM_RESULT_LIMIT_EXCEEDED = 1,
-		ZCACK_CREATE_CHATROOM_RESULT_DUPLICATE_ROOM = 2
-	};
 public:
 	ZC_ACK_CREATE_CHATROOM(std::shared_ptr<ZoneSession> s)
 	: NetworkPacketTransmitter<ZoneSession>(ID_ZC_ACK_CREATE_CHATROOM, s)
@@ -26788,10 +26648,11 @@ public:
 	{}
 	virtual ~ZC_RESULT_MAKE_GUILD() {}
 
-	void deliver();
+	void deliver(zc_result_make_guild_type result);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int8_t _result{ 0 };
 };
 
 enum {
@@ -27611,10 +27472,13 @@ public:
 	{}
 	virtual ~ZC_POSITION_ID_NAME_INFO() {}
 
-	void deliver();
+	void deliver(std::vector<s_zc_position_id_name_info> info);
 	ByteBuffer &serialize();
 
 /* Structure */
+	int16_t _packet_length{ 0 };
+	std::vector<s_zc_position_id_name_info> _info;
+
 };
 
 enum {

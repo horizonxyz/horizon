@@ -554,10 +554,15 @@ ByteBuffer &ZC_ADD_ITEM_TO_CART2::serialize()
 /**
  * ZC_EXCHANGEITEM_UNDO
  */
-void ZC_EXCHANGEITEM_UNDO::deliver() { }
+void ZC_EXCHANGEITEM_UNDO::deliver() 
+{
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_EXCHANGEITEM_UNDO::serialize()
 {
+	buf() << _packet_id;
 	return buf();
 }
 
@@ -1237,10 +1242,20 @@ ByteBuffer &ZC_CLOSE_DIALOG::serialize()
 /**
  * ZC_DELETE_RELATED_GUILD
  */
-void ZC_DELETE_RELATED_GUILD::deliver() { }
+void ZC_DELETE_RELATED_GUILD::deliver(int guild_id, int relation)
+{ 
+	_guild_id = guild_id;
+	_relation = relation;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_DELETE_RELATED_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _guild_id;
+	buf() << _relation;
 	return buf();
 }
 
@@ -1487,10 +1502,44 @@ ByteBuffer &ZC_RESTART_ACK::serialize()
 /**
  * ZC_UPDATE_GDID
  */
-void ZC_UPDATE_GDID::deliver() { }
+void ZC_UPDATE_GDID::deliver(int guild_id, int emblem_id, int mode, int is_master, std::string guild_name)
+{
+	_guild_id = guild_id;
+	_emblem_id = emblem_id;
+	_mode = mode;
+	_is_master = is_master;
+	std::strncpy(_guild_name, guild_name.c_str(), MAX_GUILD_NAME_LENGTH);
+	serialize();
+	transmit();
+}
+
+#if (CLIENT_VERSION == 'M' && PACKET_VERSION >= 20220216) || (CLIENT_VERSION == 'Z' && PACKET_VERSION >= 20221024)
+void ZC_UPDATE_GDID::deliver(int guild_id, int emblem_id, int mode, int is_master, std::string guild_name, int master_char_id)
+{
+	_guild_id = guild_id;
+	_emblem_id = emblem_id;
+	_mode = mode;
+	_is_master = is_master;
+	std::strncpy(_guild_name, guild_name.c_str(), MAX_GUILD_NAME_LENGTH);
+	_master_char_id = master_char_id;
+	serialize();
+	transmit();
+}
+#endif
 
 ByteBuffer &ZC_UPDATE_GDID::serialize()
 {
+	buf() << _packet_id;
+	buf() << _guild_id;
+	buf() << _emblem_id;
+	buf() << _mode;
+	buf() << _is_master;
+	buf() << _inter_sid;
+	buf().append(_guild_name, MAX_GUILD_NAME_LENGTH);
+#if (CLIENT_VERSION == 'M' && PACKET_VERSION >= 20220216) || (CLIENT_VERSION == 'Z' && PACKET_VERSION >= 20221024)
+	buf() << _master_char_id;
+#endif
+
 	return buf();
 }
 
@@ -1903,10 +1952,30 @@ ByteBuffer &ZC_ACK_ZENY_FROM_RODEX::serialize()
 /**
  * ZC_GUILD_SKILLINFO
  */
-void ZC_GUILD_SKILLINFO::deliver() { }
+void ZC_GUILD_SKILLINFO::deliver(int skill_points, std::vector<s_zc_guild_skillinfo> skillinfo)
+{
+	_packet_length = 6 + sizeof(s_zc_guild_skillinfo) * skillinfo.size();
+	_skill_points = skill_points;
+	_skillinfo = skillinfo;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GUILD_SKILLINFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	buf() << _skill_points;
+	for (auto s : _skillinfo) {
+		buf() << s.skill_id;
+		buf() << s.type;
+		buf() << s.level;
+		buf() << s.sp_cost;
+		buf() << s.attack_range;
+		buf().append(s.skill_name, MAX_SKILL_NAME_LENGTH);
+		buf() << s.upgradeable;
+	}
 	return buf();
 }
 
@@ -2090,10 +2159,20 @@ ByteBuffer &ZC_USESKILL_ACK2::serialize()
 /**
  * ZC_ACK_BAN_GUILD_SSO
  */
-void ZC_ACK_BAN_GUILD_SSO::deliver() { }
+void ZC_ACK_BAN_GUILD_SSO::deliver(std::string name, std::string reason) 
+{
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+	std::strncpy(_reason, reason.c_str(), MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_BAN_GUILD_SSO::serialize()
 {
+	buf() << _packet_id;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_reason, MAX_GUILD_LEAVE_REASON_STR_LENGTH);
 	return buf();
 }
 
@@ -2554,10 +2633,17 @@ ByteBuffer &ZC_MAKINGARROW_LIST::serialize()
 /**
  * ZC_ACK_REQ_JOIN_GUILD
  */
-void ZC_ACK_REQ_JOIN_GUILD::deliver() { }
+void ZC_ACK_REQ_JOIN_GUILD::deliver(zc_ack_req_join_guild_type response) 
+{
+	_response = (int8_t)response;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_REQ_JOIN_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _response;
 	return buf();
 }
 
@@ -3114,10 +3200,17 @@ ByteBuffer &ZC_NOTIFY_ACTENTRY::serialize()
 /**
  * ZC_ACK_DISORGANIZE_GUILD_RESULT
  */
-void ZC_ACK_DISORGANIZE_GUILD_RESULT::deliver() { }
+void ZC_ACK_DISORGANIZE_GUILD_RESULT::deliver(zc_ack_disorganizeguild_result result) 
+{
+	_result = (int8_t) result;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_DISORGANIZE_GUILD_RESULT::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -3321,10 +3414,20 @@ ByteBuffer &ZC_AUCTION_ACK_MY_SELL_STOP::serialize()
 /**
  * ZC_REQ_JOIN_GUILD
  */
-void ZC_REQ_JOIN_GUILD::deliver() { }
+void ZC_REQ_JOIN_GUILD::deliver(int guild_id, std::string guild_name)
+{
+	_guild_id = guild_id;
+	std::strncpy(_guild_name, guild_name.c_str(), MAX_GUILD_NAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_REQ_JOIN_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _guild_id;
+	buf().append(_guild_name, MAX_GUILD_NAME_LENGTH);
 	return buf();
 }
 
@@ -3490,10 +3593,22 @@ ByteBuffer &ZC_ACK_REQNAMEALL::serialize()
 /**
  * ZC_BAN_LIST
  */
-void ZC_BAN_LIST::deliver() { }
+void ZC_BAN_LIST::deliver(std::vector<s_zc_ban_list> list)
+{
+	_packet_length = 4 + sizeof(s_zc_ban_list) * list.size();
+	_list = list;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_BAN_LIST::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto l : _list) {
+		buf().append(l.name, MAX_UNIT_NAME_LENGTH);
+		buf().append(l.reason, MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+	}
 	return buf();
 }
 
@@ -3548,10 +3663,20 @@ ByteBuffer &ZC_BROADCAST4::serialize()
 /**
  * ZC_GUILD_NOTICE
  */
-void ZC_GUILD_NOTICE::deliver() { }
+void ZC_GUILD_NOTICE::deliver(std::string subject, std::string notice)
+{
+	std::strncpy(_subject, subject.c_str(), MAX_GUILD_SUBJECT_STR_LENGTH);
+	std::strncpy(_notice, notice.c_str(), MAX_GUILD_NOTICE_STR_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GUILD_NOTICE::serialize()
 {
+	buf() << _packet_id;
+	buf().append(_subject, MAX_GUILD_SUBJECT_STR_LENGTH);
+	buf().append(_notice, MAX_GUILD_NOTICE_STR_LENGTH);
 	return buf();
 }
 
@@ -4019,10 +4144,22 @@ ByteBuffer &ZC_NOTIFY_PCBANG_PLAYING_TIME::serialize()
 /**
  * ZC_UPDATE_CHARSTAT
  */
-void ZC_UPDATE_CHARSTAT::deliver() { }
+void ZC_UPDATE_CHARSTAT::deliver(int account_id, int char_id, zc_update_charstat_status_type status)
+{
+	_account_id = account_id;
+	_char_id = char_id;
+	_status = (int)status;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_UPDATE_CHARSTAT::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _char_id;
+	buf() << _status;
 	return buf();
 }
 
@@ -4039,10 +4176,22 @@ ByteBuffer &ZC_NPCACK_SERVERMOVE::serialize()
 /**
  * ZC_ACK_BAN_GUILD
  */
-void ZC_ACK_BAN_GUILD::deliver() { }
+void ZC_ACK_BAN_GUILD::deliver(std::string name, std::string reason, std::string account_name) 
+{
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+	std::strncpy(_reason, reason.c_str(), MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+	std::strncpy(_account_name, account_name.c_str(), MAX_USERNAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_BAN_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_reason, MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+	buf().append(_account_name, MAX_USERNAME_LENGTH);
 	return buf();
 }
 
@@ -4159,10 +4308,17 @@ ByteBuffer &ZC_ITEMCOMPOSITION_LIST::serialize()
 /**
  * ZC_ACK_REQ_HOSTILE_GUILD
  */
-void ZC_ACK_REQ_HOSTILE_GUILD::deliver() { }
+void ZC_ACK_REQ_HOSTILE_GUILD::deliver(zc_ack_req_hostile_guild_response_type response) 
+{
+	_result = (int8_t)response;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_REQ_HOSTILE_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -4415,10 +4571,22 @@ ByteBuffer &ZC_CONGRATULATION::serialize()
 /**
  * ZC_CHANGE_GUILD
  */
-void ZC_CHANGE_GUILD::deliver() { }
+void ZC_CHANGE_GUILD::deliver(int account_id, int guild_id, int16_t emblem_id)
+{
+	_account_id = account_id;
+	_guild_id = guild_id;
+	_emblem_id = emblem_id;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_CHANGE_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _guild_id;
+	buf() << _emblem_id;
 	return buf();
 }
 
@@ -4735,10 +4903,28 @@ ByteBuffer &ZC_BATTLE_JOIN_DISABLE_STATE::serialize()
 /**
  * ZC_UPDATE_CHARSTAT2
  */
-void ZC_UPDATE_CHARSTAT2::deliver() { }
+void ZC_UPDATE_CHARSTAT2::deliver(int account_id, int char_id, zc_update_charstat_status_type status, int16_t gender, int16_t hair_style_id, int16_t hair_color_id)
+{
+	_account_id = account_id;
+	_char_id = char_id;
+	_status = (int)status;
+	_gender = gender;
+	_hair_style_id = hair_style_id;
+	_hair_color_id = hair_color_id;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_UPDATE_CHARSTAT2::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf() << _char_id;
+	buf() << _status;
+	buf() << _gender;
+	buf() << _hair_style_id;
+	buf() << _hair_color_id;
 	return buf();
 }
 
@@ -4927,10 +5113,24 @@ ByteBuffer &ZC_FASTMOVE::serialize()
 /**
  * ZC_POSITION_INFO
  */
-void ZC_POSITION_INFO::deliver() { }
+void ZC_POSITION_INFO::deliver(std::vector<s_zc_position_info> info) 
+{
+	_packet_length = 4 + (sizeof(s_zc_position_info) * info.size());
+	_info = info;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_POSITION_INFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto i : _info) {
+		buf() << i.position_id;
+		buf() << i.mode;
+		buf() << i.ranking;
+		buf() << i.pay_rate;
+	}
 	return buf();
 }
 
@@ -5039,10 +5239,20 @@ ByteBuffer &ZC_SAY_DIALOG2::serialize()
 /**
  * ZC_GUILD_CHAT
  */
-void ZC_GUILD_CHAT::deliver() { }
+void ZC_GUILD_CHAT::deliver(std::string message) 
+{
+	_packet_length = 4 + message.length();
+	std::strncpy(_message, message.c_str(), MAX_CHAT_STR_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GUILD_CHAT::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	buf().append(_message, MAX_CHAT_STR_LENGTH);
 	return buf();
 }
 
@@ -5139,10 +5349,17 @@ ByteBuffer &ZC_OFFLINE_STORE_ITEMS::serialize()
 /**
  * ZC_ACK_REQ_ALLY_GUILD
  */
-void ZC_ACK_REQ_ALLY_GUILD::deliver() { }
+void ZC_ACK_REQ_ALLY_GUILD::deliver(zc_ack_req_ally_guild_response_type response)
+{
+	_response = (int8_t)response;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_REQ_ALLY_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _response;
 	return buf();
 }
 
@@ -5364,10 +5581,26 @@ ByteBuffer &ZC_GUILD_EMBLEM_IMG::serialize()
 /**
  * ZC_ACK_CHANGE_GUILD_POSITIONINFO
  */
-void ZC_ACK_CHANGE_GUILD_POSITIONINFO::deliver() { }
+void ZC_ACK_CHANGE_GUILD_POSITIONINFO::deliver(std::vector<s_zcack_change_guild_positioninfo> info) 
+{
+	_packet_length = 4 + sizeof(s_zcack_change_guild_positioninfo) * info.size();
+	_info = info;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_CHANGE_GUILD_POSITIONINFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto i : _info) {
+		buf() << i.position_id;
+		buf() << i.mode;
+		buf() << i.ranking;
+		buf() << i.pay_rate;
+		buf().append(i.position_name, MAX_GUILD_POSITION_NAME_LENGTH);
+	}
 	return buf();
 }
 
@@ -5497,11 +5730,12 @@ ByteBuffer &ZC_UPDATE_MAPINFO::serialize()
 /**
  * ZC_NOTIFY_POSITION_TO_GROUPM
  */
-void ZC_NOTIFY_POSITION_TO_GROUPM::deliver(int account_id, MapCoords current_mcoords)
+void ZC_NOTIFY_POSITION_TO_GROUPM::deliver(int account_id, int x, int y)
 {
 	_account_id = account_id;
-	_x = current_mcoords.x();
-	_y = current_mcoords.y();
+	_x = x;
+	_y = y;
+
 	serialize();
 	transmit();
 }
@@ -5518,10 +5752,33 @@ ByteBuffer &ZC_NOTIFY_POSITION_TO_GROUPM::serialize()
 /**
  * ZC_MEMBERMGR_INFO
  */
-void ZC_MEMBERMGR_INFO::deliver() { }
+void ZC_MEMBERMGR_INFO::deliver(std::vector<s_zc_membermgr_info_member> s) 
+{ 
+	_packet_length = 4 + (sizeof(s_zc_membermgr_info_member) * s.size());
+	_members = s;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_MEMBERMGR_INFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto s : _members) {
+		buf() << s.account_id;
+		buf() << s.character_id;
+		buf() << s.hair_style_id;
+		buf() << s.hair_color_id;
+		buf() << s.gender;
+		buf() << s.job;
+		buf() << s.level;
+		buf() << s.contribution_exp;
+		buf() << s.current_state;
+		buf() << s.position_id;
+		buf() << s.last_login;
+		buf().append(s.name, MAX_UNIT_NAME_LENGTH);
+	}
 	return buf();
 }
 
@@ -5538,10 +5795,31 @@ ByteBuffer &ZC_CART_ITEMLIST_EQUIP::serialize()
 /**
  * ZC_GUILD_INFO
  */
-void ZC_GUILD_INFO::deliver() { }
+void ZC_GUILD_INFO::deliver(s_zc_guild_info s)
+{
+	_s = s;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GUILD_INFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _s.guild_id;
+	buf() << _s.level;
+	buf() << _s.member_num;
+	buf() << _s.member_max;
+	buf() << _s.exp;
+	buf() << _s.max_exp;
+	buf() << _s.points;
+	buf() << _s.honor;
+	buf() << _s.virtue;
+	buf() << _s.emblem_id;
+	buf().append(_s.name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_s.master_name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_s.managed_castle, MAP_NAME_LENGTH_EXT);
+
 	return buf();
 }
 
@@ -5616,10 +5894,20 @@ ByteBuffer &ZC_PARTY_RECRUIT_NOTIFY_INSERT::serialize()
 /**
  * ZC_REQ_ALLY_GUILD
  */
-void ZC_REQ_ALLY_GUILD::deliver() { }
+void ZC_REQ_ALLY_GUILD::deliver(int inviter_account_id, std::string guild_name) 
+{ 
+	_inviter_account_id = inviter_account_id;
+	std::strncpy(_guild_name, guild_name.c_str(), MAX_GUILD_NAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_REQ_ALLY_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _inviter_account_id;
+	buf().append(_guild_name, MAX_GUILD_NAME_LENGTH);
 	return buf();
 }
 
@@ -7248,10 +7536,24 @@ ByteBuffer &ZC_NOTIFY_MAPPROPERTY::serialize()
 /**
  * ZC_ACK_REQ_CHANGE_MEMBERS
  */
-void ZC_ACK_REQ_CHANGE_MEMBERS::deliver() { }
+void ZC_ACK_REQ_CHANGE_MEMBERS::deliver(std::vector<s_zcack_reqchange_members> members)
+{
+	_packet_length = 4 + sizeof(s_zcack_reqchange_members) * members.size();
+	_members = members;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_REQ_CHANGE_MEMBERS::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto m : _members) {
+		buf() << m.account_id;
+		buf() << m.char_id;
+		buf() << m.position_id;
+	}
 	return buf();
 }
 
@@ -7338,10 +7640,20 @@ ByteBuffer &ZC_SECRETSCAN_DATA::serialize()
 /**
  * ZC_ACK_LEAVE_GUILD
  */
-void ZC_ACK_LEAVE_GUILD::deliver() { }
+void ZC_ACK_LEAVE_GUILD::deliver(std::string name, std::string reason) 
+{
+	std::strncpy(_name, name.c_str(), MAX_UNIT_NAME_LENGTH);
+	std::strncpy(_reason, reason.c_str(), MAX_GUILD_LEAVE_REASON_STR_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_LEAVE_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf().append(_name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_reason, MAX_GUILD_LEAVE_REASON_STR_LENGTH);
 	return buf();
 }
 
@@ -7491,10 +7803,24 @@ ByteBuffer &ZC_ACK_GUILDSTORAGE_LOG::serialize()
 /**
  * ZC_MYGUILD_BASIC_INFO
  */
-void ZC_MYGUILD_BASIC_INFO::deliver() { }
+void ZC_MYGUILD_BASIC_INFO::deliver(std::vector<s_related_guild_info> s)
+{ 
+	_packet_length = 4 + (sizeof(struct s_related_guild_info) * s.size());
+	_rg_infos = s;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_MYGUILD_BASIC_INFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto r : _rg_infos) {
+		buf() << r.relation;
+		buf() << r.guild_id;
+		buf().append(r.guild_name, MAX_GUILD_NAME_LENGTH);
+	}
 	return buf();
 }
 
@@ -7542,7 +7868,9 @@ ByteBuffer &ZC_NOTIFY_MOVE::serialize()
 /**
  * ZC_CHANGESTATE_MER
  */
-void ZC_CHANGESTATE_MER::deliver() { }
+void ZC_CHANGESTATE_MER::deliver() 
+{ 
+}
 
 ByteBuffer &ZC_CHANGESTATE_MER::serialize()
 {
@@ -7552,10 +7880,17 @@ ByteBuffer &ZC_CHANGESTATE_MER::serialize()
 /**
  * ZC_ACK_GUILD_MENUINTERFACE
  */
-void ZC_ACK_GUILD_MENUINTERFACE::deliver() { }
+void ZC_ACK_GUILD_MENUINTERFACE::deliver(int options) 
+{
+	_options = options;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_ACK_GUILD_MENUINTERFACE::serialize()
 {
+	buf() << _packet_id;
+	buf() << _options;
 	return buf();
 }
 
@@ -7572,10 +7907,20 @@ ByteBuffer &ZC_ACK_GIVE_MANNER_POINT::serialize()
 /**
  * ZC_GUILD_POSITION
  */
-void ZC_GUILD_POSITION::deliver() { }
+void ZC_GUILD_POSITION::deliver(int account_id, std::string position)
+{
+	_account_id = account_id;
+	std::strncpy(_position, position.c_str(), MAX_GUILD_POSITION_NAME_LENGTH);
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GUILD_POSITION::serialize()
 {
+	buf() << _packet_id;
+	buf() << _account_id;
+	buf().append(_position, MAX_GUILD_POSITION_NAME_LENGTH);
 	return buf();
 }
 
@@ -7811,10 +8156,31 @@ ByteBuffer &ZC_ADD_MEMBER_TO_GROUP::serialize()
 /**
  * ZC_GUILD_INFO2
  */
-void ZC_GUILD_INFO2::deliver() { }
+void ZC_GUILD_INFO2::deliver(s_zc_guild_info2 s) 
+{
+	_s = s;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_GUILD_INFO2::serialize()
 {
+	buf() << _packet_id;
+	buf() << _s.guild_id;
+	buf() << _s.level;
+	buf() << _s.member_num;
+	buf() << _s.member_max;
+	buf() << _s.exp;
+	buf() << _s.max_exp;
+	buf() << _s.points;
+	buf() << _s.honor;
+	buf() << _s.virtue;
+	buf() << _s.emblem_id;
+	buf().append(_s. name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_s. master_name, MAX_UNIT_NAME_LENGTH);
+	buf().append(_s. managed_castle, MAP_NAME_LENGTH_EXT);
+	buf() << _s.zeny;
 	return buf();
 }
 
@@ -8146,10 +8512,17 @@ ByteBuffer &ZC_UPDATE_ITEM_FROM_BUYING_STORE::serialize()
 /**
  * ZC_RESULT_MAKE_GUILD
  */
-void ZC_RESULT_MAKE_GUILD::deliver() { }
+void ZC_RESULT_MAKE_GUILD::deliver(zc_result_make_guild_type result) 
+{ 
+	_result = (int8_t)result;
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_RESULT_MAKE_GUILD::serialize()
 {
+	buf() << _packet_id;
+	buf() << _result;
 	return buf();
 }
 
@@ -8413,10 +8786,23 @@ ByteBuffer &ZC_NOTIFY_TIME::serialize()
 /**
  * ZC_POSITION_ID_NAME_INFO
  */
-void ZC_POSITION_ID_NAME_INFO::deliver() { }
+void ZC_POSITION_ID_NAME_INFO::deliver(std::vector<s_zc_position_id_name_info> info)
+{
+	_packet_length = 4 + (sizeof(s_zc_position_id_name_info) * info.size());
+	_info = info;
+
+	serialize();
+	transmit();
+}
 
 ByteBuffer &ZC_POSITION_ID_NAME_INFO::serialize()
 {
+	buf() << _packet_id;
+	buf() << _packet_length;
+	for (auto i : _info) {
+		buf() << i.position_id;
+		buf().append(i.position_name, MAX_GUILD_POSITION_NAME_LENGTH);
+	}
 	return buf();
 }
 

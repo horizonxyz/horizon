@@ -30,7 +30,7 @@
 #ifndef HORIZON_ZONE_UI_CHATROOM_HPP
 #define HORIZON_ZONE_UI_CHATROOM_HPP
 
-#include "Server/Zone/Definitions/UIDefinitions.hpp"
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
 
 namespace Horizon
 {

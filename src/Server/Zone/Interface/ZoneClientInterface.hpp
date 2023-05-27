@@ -38,6 +38,7 @@
 #include "Server/Zone/Interface/UI/Chatroom/Chatroom.hpp"
 #include "Server/Zone/Interface/UI/Trade/Trade.hpp"
 #include "Server/Zone/Interface/UI/Party/Party.hpp"
+#include "Server/Zone/Interface/UI/Guild/Guild.hpp"
 
 namespace Horizon
 {
@@ -61,6 +62,7 @@ public:
 	UI::Chatroom &chatroom() { return _chat_room; }
 	UI::Trade &trade() { return _trade; }
 	UI::Party &party() { return _party; }
+	UI::Guild& guild() { return _guild; }
 
 	bool login(uint32_t account_id, uint32_t char_id, uint32_t auth_code, uint32_t client_time, uint8_t gender);
 	bool restart(uint8_t type);
@@ -75,13 +77,12 @@ public:
 	
 	/* Movement & Viewport*/
 	bool notify_player_movement(MapCoords from, MapCoords to);
-	bool notify_stop_movement(int32_t guid, int16_t x, int16_t y);
+	bool notify_movement_stop(int32_t guid, int16_t x, int16_t y);
 	bool notify_entity_move(int32_t guid, MapCoords from, MapCoords to);
 
 	entity_viewport_entry create_viewport_entry(std::shared_ptr<Entity> entity);
 	bool notify_viewport_add_entity(entity_viewport_entry entry);
 	bool notify_viewport_remove_entity(std::shared_ptr<Entity> entity, entity_viewport_notification_type type);
-	bool notify_movement_stop(int32_t guid, int16_t x, int16_t y);
 	bool notify_viewport_moving_entity(entity_viewport_entry entry);
 	bool notify_viewport_spawn_entity(entity_viewport_entry entry);
 	
@@ -169,6 +170,7 @@ protected:
 	UI::Chatroom _chat_room;
 	UI::Trade _trade;
 	UI::Party _party;
+	UI::Guild _guild;
 };
 }
 }

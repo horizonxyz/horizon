@@ -44,7 +44,7 @@
 using namespace Horizon::Zone;
 
 ZoneClientInterface::ZoneClientInterface(std::shared_ptr<ZoneSession> s)
-: ClientInterface(s), _chat_room(s), _trade(s), _party(s)
+: ClientInterface(s), _chat_room(s), _trade(s), _party(s), _guild(s)
 {
 	
 }

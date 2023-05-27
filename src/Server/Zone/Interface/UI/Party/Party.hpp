@@ -30,6 +30,8 @@
 #ifndef HORIZON_ZONE_UI_PARTY_HPP
 #define HORIZON_ZONE_UI_PARTY_HPP
 
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
+
 namespace Horizon
 {
 namespace Zone
@@ -48,7 +50,7 @@ public:
 	void create(std::string name, int item_pickup_rule, int item_share_rule);
 	void invite(int account_id);
 	void invite(std::string name);
-	void invite_response(int party_id, party_invite_response_type response);
+	void invite_response(int party_id, enum party_invite_response_type response);
 	void leave();
 	void expel_member(int account_id, std::string name);
 	void change_properties(int exp_share_rule, int item_pickup_rule, int item_share_rule);
@@ -56,7 +58,7 @@ public:
 	void change_leader(int account_id);
 
 	/* Nofity */
-	void notify_created(ZC_ACK_MAKE_GROUP::zcack_makegroup_result_type result);
+	void notify_created(zcack_makegroup_result_type result);
 
 private:
 	std::weak_ptr<ZoneSession> _session;

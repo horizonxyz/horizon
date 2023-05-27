@@ -30,7 +30,7 @@
 #include "Party.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
 
-Horizon::Zone::UI::Party::Party(std::shared_ptr<Horizon::Zone::UI::ZoneSession> session)
+Horizon::Zone::UI::Party::Party(std::shared_ptr<Horizon::Zone::ZoneSession> session)
 {
 
 }
@@ -40,7 +40,7 @@ Horizon::Zone::UI::Party::~Party()
 
 }
 
-Horizon::Zone::UI::Party::create(std::string name, int item_share_rule, int item_pickup_rule)
+void Horizon::Zone::UI::Party::create(std::string name, int item_share_rule, int item_pickup_rule)
 {
 
 }
@@ -55,7 +55,7 @@ void Horizon::Zone::UI::Party::invite(std::string name)
 
 }
 
-void Horizon::Zone::UI::Party::invite_response(int party_id, party_invite_response_type response)
+void Horizon::Zone::UI::Party::invite_response(int party_id, enum party_invite_response_type response)
 {
 
 }
@@ -86,7 +86,7 @@ void Horizon::Zone::UI::Party::change_leader(int account_id)
 }
 
 /* Notify */
-void Horizon::Zone::UI::Party::notify_created(ZC_ACK_MAKE_GROUP::zcack_makegroup_result_type result)
+void Horizon::Zone::UI::Party::notify_created(zcack_makegroup_result_type result)
 {
 
 }
