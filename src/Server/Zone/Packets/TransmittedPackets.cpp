@@ -7212,9 +7212,29 @@ ByteBuffer &ZC_HAT_EFFECT::serialize()
 /**
  * ZC_USESKILL_ACK3
  */
-void ZC_USESKILL_ACK3::deliver() {}
+void ZC_USESKILL_ACK3::deliver(uint16_t skill_id, uint32_t src, uint32_t target, uint16_t target_x, uint16_t target_y, uint32_t element, int casttime)
+{
+	_src_id = src;
+	_target_id = target;
+	_x = target_x;
+	_y = target_y;
+	_skill_id = skill_id;
+	_element = element < 0 ? 0 : element;
+	_delay_time = casttime;
+	_disposable = 0;
+	_attack_motion = 0;
+}
 ByteBuffer &ZC_USESKILL_ACK3::serialize()
 {
+	buf() << _packet_id;
+	buf() << _src_id;
+	buf() << _target_id;
+	buf() << _x;
+	buf() << _y;
+	buf() << _element;
+	buf() << _delay_time;
+	buf() << _disposable;
+	buf() << _attack_motion;
 	return buf();
 }
 /**

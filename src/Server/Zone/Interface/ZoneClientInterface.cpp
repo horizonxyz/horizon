@@ -37,6 +37,7 @@
 #include "Server/Zone/Game/Map/MapManager.hpp"
 #include "Server/Zone/Game/Map/MapContainerThread.hpp"
 #include "Server/Zone/Game/StaticDB/SkillDB.hpp"
+#include "Server/Zone/Game/SkillSystem/SkillExecution.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
 #include "Server/Zone/SocketMgr/ClientSocketMgr.hpp"
 #include "Server/Zone/Zone.hpp"
@@ -921,6 +922,8 @@ bool ZoneClientInterface::notify_learnt_skill_list()
 
 void ZoneClientInterface::use_skill_on_target(int16_t skill_lv, int16_t skill_id, int target_guid)
 {
+	auto ske = new SkillExecution(get_session()->player()->map(), skill_id, skill_lv);
+	ske->execute(get_session()->player(), target_guid);
 }
 void ZoneClientInterface::use_ground_skill(int16_t skill_lv, int16_t skill_id, int16_t pos_x, int16_t pos_y)
 {
@@ -928,6 +931,24 @@ void ZoneClientInterface::use_ground_skill(int16_t skill_lv, int16_t skill_id, i
 void ZoneClientInterface::use_ground_skill(int16_t skill_lv, int16_t skill_id, int16_t pos_x, int16_t pos_y, std::string contents)
 {
 }
+
+void ZoneClientInterface::notify_skill_use(uint16_t skill_id, uint32_t src, uint32_t target, uint16_t target_x, uint16_t target_y, uint32_t element, int casttime)
+{
+	ZC_USESKILL_ACK3 pkt(get_session());
+
+	pkt._src_id = src;
+	pkt._target_id = target;
+	pkt._x = target_x;
+	pkt._y = target_y;
+	pkt._skill_id = skill_id;
+	pkt._element = element < 0 ? 0 : element;
+	pkt._delay_time = casttime;
+	pkt._disposable = 0;
+	pkt._attack_motion = 0;
+	
+	get_session()->player()->notify_in_area(pkt.serialize(), GRID_NOTIFY_AREA);
+}
+
 void ZoneClientInterface::action_request(int32_t target_guid, player_action_type action)
 {
 	bool continuous = false;
@@ -936,8 +957,7 @@ void ZoneClientInterface::action_request(int32_t target_guid, player_action_type
 		case PLAYER_ACT_SIT:
 		case PLAYER_ACT_STAND:
 		{
-			std::shared_ptr<const skill_config_data> sk = SkillDB->get_skill_by_name("NV_BASIC");
-			get_session()->player()->perform_skill(sk->skill_id, 3);
+			get_session()->player()->on_action_request(action);
 			break;
 		}
 		case PLAYER_ACT_ATTACK_REPEAT:

@@ -183,6 +183,7 @@ public:
 	/**
 	 * Skills
 	 */
+	bool on_action_request(player_action_type action);
 	bool perform_action(player_action_type action);
 	bool perform_skill(int16_t skill_id, int16_t skill_lv);
 	bool on_skill_failure(int16_t skill_id, int message_type, int item_id, skill_use_fail_cause_type cause);

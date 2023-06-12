@@ -199,6 +199,7 @@ public:
 	void use_skill_on_target(int16_t skill_lv, int16_t skill_id, int target_guid);
 	void use_ground_skill(int16_t skill_lv, int16_t skill_id, int16_t pos_x, int16_t pos_y);
 	void use_ground_skill(int16_t skill_lv, int16_t skill_id, int16_t pos_x, int16_t pos_y, std::string contents);
+	void notify_skill_use(uint16_t skill_id, uint32_t src, uint32_t target, uint16_t target_x, uint16_t target_y, uint32_t element, int casttime);
 
 	/* UI Requests */
 	void action_request(int32_t target_guid, player_action_type action);

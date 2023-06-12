@@ -347,84 +347,96 @@ struct skill_tree_config
  * that is required throughout a skill's lifecycle.
  */
 struct skill_cast_data {
-	~skill_cast_data() = delete;
+	skill_cast_data() = default;
 
 	int16_t skill_id{0};                                                              ///< Skill Id.
 	int16_t skill_lv{0};                                                              ///< Skill level.
-	std::shared_ptr<Horizon::Zone::Entity> source_caster{nullptr};                                   ///< Source caster's block data.
-	std::shared_ptr<Horizon::Zone::Entity> owner_of_source_caster{nullptr}; 
+
+	std::shared_ptr<Horizon::Zone::Entity> initial_source{nullptr};                                   ///< Source caster's block data.
+	std::shared_ptr<Horizon::Zone::Entity> source{nullptr}; 
+
+	std::shared_ptr<Horizon::Zone::Entity> initial_target{nullptr};                                   ///< Source caster's block data.
+	std::shared_ptr<Horizon::Zone::Entity> target{nullptr};                                   ///< Source caster's block data.
+
+	struct {
+		uint16_t x{0}, y{0};
+	} aoe;
+
+	int cast_time{0};                                                                 ///< Cast Time of the skill.
+
+	// // Target/AoE specific data.
+	// union {
+	// 	struct {
+	// 		uint16_t x{0}, y{0};                                                      ///< coordinates of the AOE skill
+	// 	} aoe;
+	// 	struct {
+	// 		std::shared_ptr<Horizon::Zone::Entity> entity{nullptr};                                  ///< Entity data of the target
+	// 	} target;
+	// } u; 
+
 	//struct status_change *sc;                                                       ///< Source caster's status change data.
 	//struct status_change_entry *sce;                                                ///< Status change entry of the target.
 	//int sc_type;                                                                    ///< Status change type of the skill.
-	int cast_time{0};                                                                 ///< Cast Time of the skill.
 
-	int hp_cost{0};                                                                   ///< hp
-	int sp_cost{0};                                                                   ///< sp
-	int hp_percent_cost{0};                                                           ///< hp_rate_cost
-	int sp_percent_cost{0};                                                           ///< sp_rate_cost
-	int max_hp_trigger{0};                                                            ///< mhp
-	int max_sp_trigger{0};                                                            ///< msp
-	int zeny_cost{0};
-	int weapon_type{IT_WT_FIST};                                                      ///< item_weapon_type  / weapon
-	int ammunition_type{IT_AT_NONE};                                                  ///< item_ammunition_type / ammo
-	int ammunition_cost{0};                                                           ///<
-	int required_state{0};                                                            ///< skill_required_state_types
-	int spirit_sphere_cost{0};
+	// int hp_cost{0};                                                                   ///< hp
+	// int sp_cost{0};                                                                   ///< sp
+	// int hp_percent_cost{0};                                                           ///< hp_rate_cost
+	// int sp_percent_cost{0};                                                           ///< sp_rate_cost
+	// int max_hp_trigger{0};                                                            ///< mhp
+	// int max_sp_trigger{0};                                                            ///< msp
+	// int zeny_cost{0};
+	// int weapon_type{IT_WT_FIST};                                                      ///< item_weapon_type  / weapon
+	// int ammunition_type{IT_AT_NONE};                                                  ///< item_ammunition_type / ammo
+	// int ammunition_cost{0};                                                           ///<
+	// int required_state{0};                                                            ///< skill_required_state_types
+	// int spirit_sphere_cost{0};
 
-	struct skill_required_item_data_for_cast {
-		struct {
-			int id{0};
-			int amount{0};
-		} item[MAX_SKILL_ITEM_REQUIRE]{0};
-		bool any{false};
-	} req_items, req_equip;
+	// struct skill_required_item_data_for_cast {
+	// 	struct {
+	// 		int id{0};
+	// 		int amount{0};
+	// 	} item[MAX_SKILL_ITEM_REQUIRE]{0};
+	// 	bool any{false};
+	// } req_items, req_equip;
 
-	unsigned int splash_target{0};                                                    ///< Mask of entity_types as splash targets (@see skill->splash_target).
-	int splash_range{0};                                                              ///< Splash-range of the skill.
-	int64_t cast_start_time{0};                                                       ///< Time of skill packet reception.
-	int attack_type{0};                                                               ///< Attack Properties of the skill cast.
-	// Enum bit masks.
-	int display_flags{0};                                                             ///< Display flags from e_skill_display.
-	int target_flags{0};                                                              ///< Mask of e_battle_check_target.
-	// AoE specific data.
-	int area_target_count{0};                                                         ///< Count of targets in the area of a splash range.
-	int area_target_invoked{0};                                                       ///< Temporary count for the number of targets that
-													                                  ///! have been recursively invoked by @see skill_cast_area_sub().
-	// Knock back information.
-	int knock_back_cells{0};                                                          ///< Distance to knock back if any.
-	int knock_back_dir{0};                                                            ///< Direction to knock back (-1 for default).
-	int knock_back_flag{0};                                                           ///< @see skill_blown() for flag types.
-
-	// Target/AoE specific data.
-	union {
-		struct {
-			uint16_t x{0}, y{0};                                                      ///< coordinates of the AOE skill
-		} aoe;
-		struct {
-			std::shared_ptr<Horizon::Zone::Entity> entity{nullptr};                                  ///< Entity data of the target
-		} target;
-	} u;                                                                              ///< Union
+	// unsigned int splash_target{0};                                                    ///< Mask of entity_types as splash targets (@see skill->splash_target).
+	// int splash_range{0};                                                              ///< Splash-range of the skill.
+	// int64_t cast_start_time{0};                                                       ///< Time of skill packet reception.
+	// int attack_type{0};                                                               ///< Attack Properties of the skill cast.
+	// // Enum bit masks.
+	// int display_flags{0};                                                             ///< Display flags from e_skill_display.
+	// int target_flags{0};                                                              ///< Mask of e_battle_check_target.
+	// // AoE specific data.
+	// int area_target_count{0};                                                         ///< Count of targets in the area of a splash range.
+	// int area_target_invoked{0};                                                       ///< Temporary count for the number of targets that
+	// 												                                  ///! have been recursively invoked by @see skill_cast_area_sub().
+	// // Knock back information.
+	// int knock_back_cells{0};                                                          ///< Distance to knock back if any.
+	// int knock_back_dir{0};                                                            ///< Direction to knock back (-1 for default).
+	// int knock_back_flag{0};                                                           ///< @see skill_blown() for flag types.
+                                                                             ///< Union
 
 	// Skill Switches / Flags.
 	struct {
 		unsigned int is_aoe : 1;                                                      ///< AoE/Targeted skill toggle. (Type specifier for union u)
-		unsigned int record_last_casted : 1;                                          ///< Records latest casted skill even on failure.
-		unsigned int splash_ignore_caster : 1;                                        ///< Splash skills that ignore the caster.
-		unsigned int foreach_retain_properties : 1;                                   ///< Retain original cast properties.
-		unsigned int ignore_requirements : 1;                                         ///< Ignore requirements.
-		unsigned int attract_cast_sensors : 1;                                        ///< Pulls cast-sensing mobs even if no casttime.
-		unsigned int interrupt_cast : 1;                                              ///< Interrupts the target's current cast.
-		unsigned int item_invoked : 1;                                                ///< Invoked via an item.
-		unsigned int splash_ignore_primary_target : 1;                                ///< Ignore the primary target of a splash attack. (In cases where the primary target is handled separately.)
+		unsigned int is_instant_cast : 1;
+		// unsigned int record_last_casted : 1;                                          ///< Records latest casted skill even on failure.
+		// unsigned int splash_ignore_caster : 1;                                        ///< Splash skills that ignore the caster.
+		// unsigned int foreach_retain_properties : 1;                                   ///< Retain original cast properties.
+		// unsigned int ignore_requirements : 1;                                         ///< Ignore requirements.
+		// unsigned int attract_cast_sensors : 1;                                        ///< Pulls cast-sensing mobs even if no casttime.
+		// unsigned int interrupt_cast : 1;                                              ///< Interrupts the target's current cast.
+		// unsigned int item_invoked : 1;                                                ///< Invoked via an item.
+		// unsigned int splash_ignore_primary_target : 1;                                ///< Ignore the primary target of a splash attack. (In cases where the primary target is handled separately.)
 	} flags;
 
 	// Client interface specific data.
-	struct {
-		std::shared_ptr<Horizon::Zone::Entity> skill_animation_target{nullptr};                      ///< Target of the skill animation.
-		int skill_id{0};                                                              ///< Skill Id sent to the client.
-		int display_value{0};                                                         ///< Healed amount sent to the client.
-		int damage_value{0};                                                          ///< Damage value to be displayed for @see clif_skill_damage
-	} clif;
+	// struct {
+	// 	std::shared_ptr<Horizon::Zone::Entity> skill_animation_target{nullptr};                      ///< Target of the skill animation.
+	// 	int skill_id{0};                                                              ///< Skill Id sent to the client.
+	// 	int display_value{0};                                                         ///< Healed amount sent to the client.
+	// 	int damage_value{0};                                                          ///< Damage value to be displayed for @see clif_skill_damage
+	// } clif;
 
 	// Skill-specific flags.
 	// union {
