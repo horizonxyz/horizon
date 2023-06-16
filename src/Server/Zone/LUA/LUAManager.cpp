@@ -84,6 +84,22 @@ void LUAManager::initialize_basic_state(std::shared_ptr<sol::state> state)
 	state->open_libraries(sol::lib::package);
 	state->open_libraries(sol::lib::os);
 
+	// Load timer function
+	
+	state->set_function("get_time", get_sys_time);
+	state->set_function("schedule", [this] (uint32_t time, sol::function fn) {
+		_container.lock()->getScheduler().Schedule(
+		  Milliseconds(time),
+		  [fn] (TaskContext context) {
+		    sol::protected_function_result result = fn();
+		    if (!result.valid()) {
+					sol::error err = result;
+					HLog(error) << "LUAManager::initialize_basic_state: Error on scheduled function: " << err.what();
+				}
+		  }
+		);
+	});
+
 	_map_component->sync_definitions(state);
 	_map_component->sync_data_types(state);
 	_map_component->sync_functions(state);

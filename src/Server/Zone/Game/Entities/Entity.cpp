@@ -36,6 +36,8 @@
 #include "Server/Zone/Game/Map/Grid/Container/GridReferenceContainerVisitor.hpp"
 #include "Server/Zone/Game/Map/Grid/Notifiers/GridNotifiers.hpp"
 #include "Server/Zone/Game/Entities/Traits/Status.hpp"
+#include "Server/Zone/Packets/TransmittedPackets.hpp"
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
 #include "Server/Zone/Zone.hpp"
 
 
@@ -125,6 +127,9 @@ void Entity::walk()
 		stop_walking();
 		return;
 	}
+
+	if (is_attacking())
+		stop_attacking();
 
 	MapCoords c = _walk_path.at(0); // for the first step.
 
@@ -255,6 +260,47 @@ void Entity::notify_nearby_players_of_movement(bool new_entry)
 	map()->visit_in_range(map_coords(), entity_visitor);
 }
 
+void Entity::notify_nearby_players_of_skill_damage(std::shared_ptr<Entity> target, uint16_t skill_id, uint16_t skill_lv, uint32_t start_time, int32_t attack_motion, int32_t attacked_motion, int32_t damage, int16_t count, uint8_t action_type)
+{
+	ZC_NOTIFY_SKILL2 pkt(nullptr);
+
+	pkt._source_id = guid();
+	pkt._target_id = target->guid();
+	pkt._skill_id = skill_id;
+	pkt._level = skill_lv;
+	pkt._start_time = start_time;
+	pkt._attack_motion = attack_motion;
+	pkt._attacked_motion = attacked_motion;
+	pkt._damage = damage;
+	pkt._count = count;
+	pkt._action = action_type;
+	
+	GridPlayerNotifier notifier(pkt.serialize(), static_cast<Entity *>(this)->shared_from_this());
+	GridReferenceContainerVisitor<GridPlayerNotifier, GridReferenceContainer<AllEntityTypes>> container(notifier);
+
+	map()->visit_in_range(map_coords(), container, MAX_VIEW_RANGE);
+}
+
+void Entity::notify_nearby_players_of_skill_use(std::shared_ptr<Entity> target, int16_t skill_id, int cast_time, enum element_type element)
+{
+	ZC_USESKILL_ACK3 pkt(nullptr);
+
+	pkt._src_id = guid();
+	pkt._target_id = target->guid();
+	pkt._x = 0;
+	pkt._y = 0;
+	pkt._skill_id = skill_id;
+	pkt._element = element;
+	pkt._delay_time = cast_time;
+	pkt._disposable = 0;
+	pkt._attack_motion = 0;
+
+	GridPlayerNotifier notifier(pkt.serialize(), static_cast<Entity *>(this)->shared_from_this());
+	GridReferenceContainerVisitor<GridPlayerNotifier, GridReferenceContainer<AllEntityTypes>> container(notifier);
+
+	map()->visit_in_range(map_coords(), container, MAX_VIEW_RANGE);
+}
+
 bool Entity::status_effect_start(int type, int total_time, int val1, int val2, int val3, int val4)
 {
 	std::map<int16_t, std::shared_ptr<status_change_entry>>::iterator it = get_status_effects().find(type);
@@ -342,6 +388,7 @@ bool Entity::stop_attacking()
 		return false;
 
 	map()->container()->getScheduler().CancelGroup(get_scheduler_task_id(ENTITY_SCHEDULE_ATTACK));
+	combat().reset();
 
 	return true;
 }
@@ -351,13 +398,13 @@ bool Entity::attack(std::shared_ptr<Entity> target, bool continuous)
 	if (target == nullptr)
 		return false;
 
+	set_combat(std::make_shared<Combat>(shared_from_this(), target));
+
 	map()->container()->getScheduler().Schedule(Milliseconds(0), get_scheduler_task_id(ENTITY_SCHEDULE_ATTACK),
 		[this, continuous, target] (TaskContext context) {
 
 			if (target == nullptr)
 				return;
-
-			Combat combat(shared_from_this(), target);
 
 			if (target->is_dead()) {
 				return;
@@ -389,7 +436,7 @@ bool Entity::attack(std::shared_ptr<Entity> target, bool continuous)
 			if (is_in_range_of(target, range) && is_walking())
 				stop_walking();
 			
-			combat.weapon_attack();
+			combat()->weapon_attack();
 
 			if (continuous)
 				context.Repeat(Milliseconds(_attackable_time));

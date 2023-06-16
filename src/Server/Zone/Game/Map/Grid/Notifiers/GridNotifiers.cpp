@@ -52,9 +52,6 @@ void GridPlayerNotifier::notify(GridRefManager<Horizon::Zone::Entities::Player> 
 
 	std::shared_ptr<Player> pl = _entity.lock()->template downcast<Player>();
 
-	if (pl == nullptr)
-		return;
-
 	for (typename GridRefManager<Player>::iterator iter = m.begin(); iter != typename GridRefManager<Player>::iterator(nullptr); ++iter) {
 		if (iter->source() == nullptr)
 			continue;
@@ -62,7 +59,7 @@ void GridPlayerNotifier::notify(GridRefManager<Horizon::Zone::Entities::Player> 
 		switch (_type)
 		{
 			case GRID_NOTIFY_AREA_WOS:
-				if (iter->source()->guid() == pl->guid())
+				if (pl != nullptr && iter->source()->guid() == pl->guid())
 					continue;
 			default:
 				break;

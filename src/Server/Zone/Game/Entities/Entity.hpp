@@ -32,6 +32,7 @@
 
 #include "Server/Common/Configuration/Horizon.hpp"
 #include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
 #include "Server/Zone/Definitions/SkillDefinitions.hpp"
 #include "Server/Zone/Definitions/StatusEffectDefinitions.hpp"
 #include "Server/Zone/Game/Entities/Battle/Combat.hpp"
@@ -76,6 +77,7 @@ namespace Zone
 		class Status;
 	}
 class Map;
+class Combat;
 
 static int32_t _last_np_entity_guid = NPC_START_GUID;
 
@@ -172,21 +174,23 @@ public:
 	void notify_nearby_players_of_existence(entity_viewport_notification_type notif_type);
 	void notify_nearby_players_of_spawn();
 	void notify_nearby_players_of_movement(bool new_entry = false);
+	void notify_nearby_players_of_skill_use(std::shared_ptr<Entity> target, int16_t skill_id, int cast_time, enum element_type element);
+	void notify_nearby_players_of_skill_damage(std::shared_ptr<Entity> target, uint16_t skill_id, uint16_t skill_lv, uint32_t start_time, int32_t attack_motion, int32_t attacked_motion, int32_t damage, int16_t count, uint8_t action_type);
 	std::shared_ptr<Entity> get_nearby_entity(uint32_t guid);
 
 	uint64_t get_scheduler_task_id(entity_task_schedule_group group) { return ((uint64_t) guid() << 32) + (int) group; }
     
-    std::map<int16_t, std::shared_ptr<status_change_entry>> &get_status_effects() { return _status_effects; }
-    
-    /**
-     * Status Effects
-     */
-    bool status_effect_start(int type, int total_time, int val1, int val2, int val3, int val4);
-    bool status_effect_end(int type);
+	std::map<int16_t, std::shared_ptr<status_change_entry>> &get_status_effects() { return _status_effects; }
+	
+	/**
+	 * Status Effects
+	 */
+	bool status_effect_start(int type, int total_time, int val1, int val2, int val3, int val4);
+	bool status_effect_end(int type);
 
-    virtual void on_status_effect_start(std::shared_ptr<status_change_entry> sce) = 0;
-    virtual void on_status_effect_end(std::shared_ptr<status_change_entry> sce) = 0;
-    virtual void on_status_effect_change(std::shared_ptr<status_change_entry> sce) = 0;
+	virtual void on_status_effect_start(std::shared_ptr<status_change_entry> sce) = 0;
+	virtual void on_status_effect_end(std::shared_ptr<status_change_entry> sce) = 0;
+	virtual void on_status_effect_change(std::shared_ptr<status_change_entry> sce) = 0;
 
 	std::shared_ptr<AStar::CoordinateList> path_to(std::shared_ptr<Entity> e);
 	int distance_from(std::shared_ptr<Entity> e) { return path_to(e)->size(); }
@@ -196,6 +200,15 @@ public:
 	bool is_attacking();
 
 	bool is_dead();
+
+	/**
+	 * Combat
+	 */
+	std::shared_ptr<Combat> combat() { return _combat; }
+	void set_combat(std::shared_ptr<Combat> combat)
+	{
+		_combat = combat;
+	}
 
 private:
 	bool _is_initialized{false}, _jump_walk_stop{false};
@@ -224,6 +237,9 @@ private:
 	std::map<int16_t, std::shared_ptr<status_change_entry>> _status_effects;
 
 	int32_t _attackable_time{0};
+
+	// Combat data
+	std::shared_ptr<Combat> _combat;
 };
 }
 }

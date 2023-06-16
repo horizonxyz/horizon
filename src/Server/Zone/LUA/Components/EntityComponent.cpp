@@ -30,7 +30,10 @@
 
 #include "Server/Common/Configuration/Horizon.hpp"
 #include "Server/Zone/Game/Entities/Player/Player.hpp"
+#include "Server/Zone/Game/Entities/Entity.hpp"
+#include "Server/Zone/Game/Entities/Battle/Combat.hpp"
 #include "Server/Zone/Game/Entities/Traits/Status.hpp"
+#include "Server/Zone/Definitions/ClientDefinitions.hpp"
 
 #include "EntityDefinitions.hpp"
 
@@ -467,6 +470,12 @@ void EntityComponent::sync_data_types(std::shared_ptr<sol::state> state)
         "skill_point", &Horizon::Zone::Traits::Status::skill_point
     );
 
+		state->new_usertype<Combat>("Combat",
+			sol::constructors<Combat(std::shared_ptr<Entity>, std::shared_ptr<Entity>)>(),
+			"source", &Combat::entity,
+			"target", &Combat::target
+		);
+
     state->new_usertype<Horizon::Zone::Traits::BaseLevel>("BaseLevel",
         "add", &Horizon::Zone::Traits::BaseLevel::add_base,
         "sub", &Horizon::Zone::Traits::BaseLevel::sub_base,
@@ -617,7 +626,11 @@ void EntityComponent::sync_data_types(std::shared_ptr<sol::state> state)
 		"get_nearby_entity", &Entity::get_nearby_entity,
 		"status_effect_start", &Entity::status_effect_start,
 		"status_effect_end", &Entity::status_effect_end,
-		"get_walk_path", &Entity::get_walk_path
+		"get_walk_path", &Entity::get_walk_path,
+		"cast_skill_at_target", &Entity::notify_nearby_players_of_skill_use,
+		"show_skill_damage", &Entity::notify_nearby_players_of_skill_damage,
+		"is_dead", &Entity::is_dead,
+		"combat", &Entity::combat
 	);
 }
 

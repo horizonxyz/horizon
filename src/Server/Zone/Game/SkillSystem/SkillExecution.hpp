@@ -26,7 +26,7 @@ public:
 
 private:
   void load();
-  void start_execution();
+  void start_execution(enum skill_target_type target_type);
 	std::shared_ptr<Map> map() { return _map.expired() ? nullptr : _map.lock(); }
 	void set_map(std::shared_ptr<Map> map)
 	{
@@ -38,11 +38,16 @@ private:
 	std::shared_ptr<LUAManager> lua_manager() { return _lua_mgr.lock(); }
 	std::shared_ptr<sol::state> lua_state() { return _lua_state; }
 
-  struct skill_cast_data _scd{0};
 	std::weak_ptr<Map> _map;
 	std::weak_ptr<MapContainerThread> _map_container_thread;
 	std::weak_ptr<LUAManager> _lua_mgr;
 	std::shared_ptr<sol::state> _lua_state;
+	std::shared_ptr<Entity> _initial_source{nullptr};
+	std::shared_ptr<Entity> _initial_target{nullptr};
+	int16_t _skill_id;
+	int16_t _skill_lv;
+	MapCoords _map_coords;
+	std::string _message;
 };
 }
 }

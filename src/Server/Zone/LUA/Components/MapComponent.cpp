@@ -57,9 +57,9 @@ void MapComponent::sync_data_types(std::shared_ptr<sol::state> state)
 	);
 
 	state->new_usertype<Map>("Map",
-		"get_name", sol::readonly_property(&Map::get_name),
-		"get_width", sol::readonly_property(&Map::get_width),
-		"get_height", sol::readonly_property(&Map::get_height),
+		"name", sol::readonly_property(&Map::get_name),
+		"width", sol::readonly_property(&Map::get_width),
+		"height", sol::readonly_property(&Map::get_height),
 		"has_obstruction_at", &Map::has_obstruction_at,
 		"get_random_coordinates_in_walkable_range", &Map::get_random_coordinates_in_walkable_range,
 		"get_random_coordinates_in_walkable_area", &Map::get_random_coordinates_in_walkable_area
