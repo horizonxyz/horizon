@@ -1956,17 +1956,63 @@ ByteBuffer &ZC_NOTIFY_RANKING::serialize()
 /**
  * ZC_NOTIFY_SKILL
  */
-void ZC_NOTIFY_SKILL::deliver() {}
+void ZC_NOTIFY_SKILL::deliver(uint32_t source, uint32_t target, uint16_t skill_id, uint16_t skill_lv, uint32_t start_time, int32_t attack_motion, int32_t attacked_motion, int16_t damage, int16 count, enum zc_notify_act_3_action_types action_type)
+{
+	_skill_id = skill_id;
+	_source_id = source;
+	_target_id = target;
+	_start_time = start_time;
+	_attack_motion = attack_motion;
+	_attacked_motion = attacked_motion;
+	_damage = damage;
+	_level = skill_lv;
+	_count = count;
+	_action = action_type;
+}
 ByteBuffer &ZC_NOTIFY_SKILL::serialize()
 {
+	buf() << _packet_id;
+	buf() << _skill_id;
+	buf() << _source_id;
+	buf() << _target_id;
+	buf() << _start_time;
+	buf() << _attack_motion;
+	buf() << _attacked_motion;
+	buf() << _damage;
+	buf() << _level;
+	buf() << _count;
+	buf() << _action;
 	return buf();
 }
 /**
  * ZC_NOTIFY_SKILL2
  */
-void ZC_NOTIFY_SKILL2::deliver() {}
+void ZC_NOTIFY_SKILL2::deliver(uint32_t source, uint32_t target, uint16_t skill_id, uint16_t skill_lv, uint32_t start_time, int32_t attack_motion, int32_t attacked_motion, int32_t damage, int16 count, enum zc_notify_act_3_action_types action_type)
+{
+	_skill_id = skill_id;
+	_source_id = source;
+	_target_id = target;
+	_start_time = start_time;
+	_attack_motion = attack_motion;
+	_attacked_motion = attacked_motion;
+	_damage = damage;
+	_level = skill_lv;
+	_count = count;
+	_action = action_type;
+}
 ByteBuffer &ZC_NOTIFY_SKILL2::serialize()
 {
+	buf() << _packet_id;
+	buf() << _skill_id;
+	buf() << _source_id;
+	buf() << _target_id;
+	buf() << _start_time;
+	buf() << _attack_motion;
+	buf() << _attacked_motion;
+	buf() << _damage;
+	buf() << _level;
+	buf() << _count;
+	buf() << _action;
 	return buf();
 }
 /**
@@ -7231,6 +7277,7 @@ ByteBuffer &ZC_USESKILL_ACK3::serialize()
 	buf() << _target_id;
 	buf() << _x;
 	buf() << _y;
+	buf() << _skill_id;
 	buf() << _element;
 	buf() << _delay_time;
 	buf() << _disposable;
