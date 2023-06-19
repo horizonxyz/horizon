@@ -148,7 +148,8 @@ void MonsterComponent::sync_data_types(std::shared_ptr<sol::state> state)
 		"on_status_effect_end", &Monster::on_status_effect_end,
 		"on_status_effect_change", &Monster::on_status_effect_change,
 		"set_next_walk_time", &Monster::set_next_walk_time,
-		"next_walk_time", &Monster::next_walk_time
+		"next_walk_time", &Monster::next_walk_time,
+		"on_damage_received", &Monster::on_damage_received
 	);
 }
 

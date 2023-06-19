@@ -1,14 +1,36 @@
 ---@meta entity
 
+---@param entity Entity
+---@return Monster
+function cast_entity_to_monster(entity) end
+
+---@class Intelligence
+Intelligence = {}
+
+---@return integer # Total amount of intelligence that the entity has
+function Intelligence:get() end
+
+---@class CurrentHP
+CurrentHP = {}
+
+---@param amount integer How much hp to subtract
+function CurrentHP:sub(amount) end
 
 ---@class Status
 Status = {}
 
----@return integer
+---@return CurrentHP
 function Status:current_hp() end
+
+---@return Intelligence
+function Status:intelligence() end
 
 ---@class Entity
 Entity = {}
+
+-- TODO: add entity_type enum
+---@return integer # the entity type value
+function Entity:type() end
 
 ---@return boolean # Returns true if entity is dead
 function Entity:is_dead() end

@@ -214,14 +214,14 @@ void LUAManager::load_scripts()
 	std::string script_root_path = sZone->config().get_script_root_path().string();
 
 	try {
-		_lua_state->script_file(script_root_path.append("include.lua"));
+		_lua_state->script_file(script_root_path + "include.lua");
 
 		sol::table scripts = (*_lua_state)["scripts"];
 
 		int count = 0;
 		scripts.for_each([this, &count, &script_root_path](sol::object const &/*key*/, sol::object const& value) {
 			std::string script_file = value.as<std::string>();
-			sol::protected_function fn = _lua_state->load_file(script_root_path.append(script_file));
+			sol::protected_function fn = _lua_state->load_file(script_root_path + script_file);
 			sol::protected_function_result result = fn();
 			if (!result.valid()) {
 				sol::error error = result;

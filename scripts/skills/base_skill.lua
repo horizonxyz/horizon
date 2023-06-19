@@ -165,7 +165,6 @@ function BASE_SKILL.perform_skill(scd, skd)
       - will execute the effects of the skill.
       - Some skills may be delayed so here will happen the scheduling of those cases.
   ]]
-  scd.source:show_skill_damage(scd.target, scd.skill_id, scd.skill_lv, 1000, 3050, 500, 237 * 10, 10, 8)
   return true
 end
 

@@ -281,7 +281,7 @@ void Player::add_entity_to_viewport(std::shared_ptr<Entity> entity)
 		return;
 
 	entity_viewport_entry entry = get_session()->clif()->create_viewport_entry(entity);
-	get_session()->clif()->notify_viewport_spawn_entity(entry);
+	get_session()->clif()->notify_viewport_add_entity(entry);
 	
 	_viewport_entities.push_back(entity);
 

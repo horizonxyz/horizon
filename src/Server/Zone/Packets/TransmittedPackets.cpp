@@ -5027,7 +5027,7 @@ ByteBuffer &ZC_NOTIFY_STANDENTRY11::serialize()
 	char packed_pos[3]{0};
 	
 	buf() << _packet_id;
-	buf() << (int16_t) 104;
+	buf() << (int16_t) 108;
 	buf() << (int8_t) _entry.unit_type;
 	buf() << _entry.guid;
 	buf() << _entry.character_id;
@@ -5039,6 +5039,7 @@ ByteBuffer &ZC_NOTIFY_STANDENTRY11::serialize()
 	buf() << _entry.hair_style_id;
 	buf() << _entry.weapon_id;
 	buf() << _entry.headgear_bottom_id;
+	buf() << (uint32_t) 0; //shield
 	buf() << _entry.headgear_top_id;
 	buf() << _entry.headgear_mid_id;
 	buf() << _entry.hair_color_id;
