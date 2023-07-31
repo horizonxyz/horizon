@@ -76,6 +76,10 @@ void ZoneSocket::on_close()
 	get_session()->perform_cleanup();
 }
 
+/**
+ * @brief Socket error handler.
+ * @note This method is invoked from the network thread.
+ */
 void ZoneSocket::on_error()
 {
 }

@@ -34,6 +34,8 @@
 #include "Container/GridReferenceContainerVisitor.hpp"
 #include "Server/Zone/Game/Map/MapManager.hpp"
 
+//! @details Grid is used to store objects in a 2D grid. This is used to speed up the search for objects in a given area.
+//! The grid is divided into cells of a given size. Each grid-cell contains a list of objects that are in that grid-cell.
 template
 <
 	class ACTIVE_OBJECT,

@@ -12,6 +12,18 @@ namespace Structures
 {
 namespace LinkedList
 {
+// write a detailed description of this class here
+//! @details This class is used to manage a linked list of References.
+//! It is not intended to be used directly. It is used as a base class for other classes that need to manage a linked list.
+//! The Head class is a friend of this class (derived from Element) to allow it to access the private members of this class.
+//! The relationship between the Reference and the ReferenceManager is a one-to-many relationship, where the ReferenceManager 
+//! is the one and the Reference is the many. The ReferenceManager is responsible for creating and destroying the Reference.
+//! The ReferenceManager is also responsible for calling the link() and remove() methods of the Reference. 
+//! This creates a dynamic responsibility chain between the ReferenceManager and the Reference.
+//! @param _next (derived from Element)The next Reference in the list.
+//! @param _prev (derived from Element) The previous Reference in the list.
+//! @param _ref_to The object that is being referenced.
+//! @param _ref_from The object that is referencing.
 template <class TO, class FROM>
 class Reference : public Element
 {
@@ -32,7 +44,9 @@ public:
 	Reference() { _ref_to = nullptr; _ref_from = nullptr; }
 	virtual ~Reference() { }
 
-	// Create new link
+	//! Links the Reference to the specified object by adding it to the front of the list.
+	//! @param toObj The object to reference.
+	//! @param fromObj The object that is referencing.
 	void link(TO *toObj, FROM *fromObj)
 	{
 		assert(fromObj);

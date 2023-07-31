@@ -14,6 +14,14 @@ namespace Structures
 {
 namespace LinkedList
 {
+//! @brief LinkedList Head class. This class is used to manage a linked list of Elements.
+//! It is used as a base class for other classes that need to manage a linked list.
+//! It is not intended to be used directly.
+//! @param Element The Element type that will be managed by this Head.
+//! @param _first The first Element in the list.
+//! @param _last The last Element in the list.
+//! @param _size The size of the list.
+//! Thread safety: This class is not thread safe and is not intended to be used in a multi-threaded environment.
 class Head
 {
 private:
@@ -30,24 +38,34 @@ public:
 		_last._prev = &_first;
 	}
 
+	//! @brief Returns true if the list is empty.
+	//! @return True if the list is empty.
 	bool is_empty() const { return(_first._next == &_last); }
 
+	//! @brief Returns the first Element in the list.
 	Element *first()      { return (is_empty() ? nullptr : _first._next); }
 	Element const *first() const { return (is_empty() ? nullptr : _first._next); }
 
+	//! @brief Returns the last Element in the list.
 	Element *last()       { return(is_empty() ? nullptr : _last._prev); }
 	Element const *last() const { return(is_empty() ? nullptr : _last._prev); }
 
+	//! push_front() and push_back() are used to add an Element to the list.
+	//! @param pElem The Element to add to the list.
+	//! @note The Element must not already be in a list.
 	void push_front(Element *pElem)
 	{
 		_first.push_after(pElem);
 	}
 
+	//! @param pElem The Element to add to the list.
+	//! @note The Element must not already be in a list.
 	void push_back(Element *pElem)
 	{
 		_last.push_before(pElem);
 	}
 
+	//! returns the number of Elements in the list (not including the head and tail Elements or the first and last Elements)
 	uint32_t get_size() const
 	{
 		if (!_size)
@@ -69,6 +87,9 @@ public:
 	void inc_size() { ++_size; }
 	void dec_size() { --_size; }
 
+	// iterator support. These are used to iterate through the list. The iterator is a pointer to an Element.
+	// The iterator is not a pointer to a Head. The iterator is not a pointer to a list of Elements.
+	// The iterator is not a pointer to a list of Heads or Elements. The iterator is a pointer to an Element.
 	template<class _Ty>
 	class Iterator
 	{

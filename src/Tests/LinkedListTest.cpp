@@ -36,7 +36,6 @@
 #include <cstring>
 #include <iostream>
 
-
 class TestListElem : public Horizon::Structures::LinkedList::Element
 {
 public:

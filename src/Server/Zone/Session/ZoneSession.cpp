@@ -54,7 +54,9 @@ ZoneSession::~ZoneSession()
 void ZoneSession::initialize()
 {
 	try {
+		// Initialize the packet length table. This is used to determine the length of the packet from the packet id.
 		_pkt_tbl = std::make_unique<ClientPacketLengthTable>(shared_from_this());
+		// Initialize the packet handler. This is used to handle the packets received from the client.
 		_clif = std::make_unique<ZoneClientInterface>(shared_from_this());
 		// It is the responsibility of this method to initialize the player, but 
 		// since player is the map owning thread's responsibility, we wait for the
@@ -68,6 +70,10 @@ void ZoneSession::initialize()
 	}
 }
 
+//! @brief Queues a buffer to be sent to the client.
+//! @param _buffer The buffer to be sent.
+//! @param size The size of the buffer.
+//! @return void
 void ZoneSession::transmit_buffer(ByteBuffer _buffer, std::size_t size)
 {
 	if (get_socket() == nullptr || !get_socket()->is_open())
@@ -87,11 +93,13 @@ void ZoneSession::transmit_buffer(ByteBuffer _buffer, std::size_t size)
 			packet_len = p.first;
 		}
 
+		// Warns when the packet length is not the same as the buffer length.
 		if (packet_len != _buffer.active_length()) {
 			HLog(warning) << "Packet 0x" << std::hex << packet_id << " has length " << std::dec << packet_len << " but buffer has " << _buffer.active_length() << " bytes... ignoring.";
 			return;
 		}
 
+		// Queue the buffer for the Network Thread to send.
 		get_socket()->queue_buffer(std::move(_buffer));
 	}
 }
@@ -123,7 +131,6 @@ void ZoneSession::update(uint32_t /*diff*/)
 void ZoneSession::perform_cleanup()
 {
 	if (player() != nullptr) {
-
 		player()->set_logged_in(false);
 		player()->save();
 		player()->remove_grid_reference();

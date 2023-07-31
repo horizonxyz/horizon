@@ -55,6 +55,27 @@ namespace Horizon
 {
 namespace Networking
 {
+/**
+ * @brief A Socket object that handles a single connection.
+ *        Sockets are moved into the thread by SocketMgr, once accepted or connected.
+ *        Once started, the object blocks to handle I/O events and requires explicit stopping.
+ * @tparam SocketType The type of the Socket object. The Socket object is templated to allow the SocketMgr to handle different types of Socket objects. The Socket object must inherit from the Socket class. 
+ * The SocketMgr will call the start() method of the Socket object. The Socket object must implement the start() method. The start() method is called once 
+ * from the NetworkThread. The Socket object must implement the update() method. The update() method is called every n nanoseconds 
+ * from the NetworkThread.
+ * @param socket_id The unique identifier of the Socket object.
+ * @param socket The boost::asio::ip::tcp::socket object.
+ * @param _remote_ip_address The remote IP address of the Socket object.
+ * @param _remote_port The remote port of the Socket object.
+ * @param _read_buffer The ByteBuffer object that holds the read buffer.
+ * @param _closed The atomic boolean that indicates whether the Socket object is closed. The variables are set only from the NetworkThread. 
+ * Once set, the Socket object will not accept any new read/write requests.
+ * @param _closing The atomic boolean that indicates whether the Socket object is closing. The variables are set only from the NetworkThread. 
+ * Once set, the Socket object will not accept any new write requests. The Socket object will continue to read until the read buffer is empty. 
+ * Once the read buffer is empty, the Socket object will be closed.
+ * @param _is_writing_async The atomic boolean that indicates whether the Socket object is writing asynchronously.
+ * @param _write_queue The ThreadSafeQueue object that holds the write queue. The write queue is processed in the NetworkThread.
+ */
 template <class SocketType>
 class Socket : public std::enable_shared_from_this<SocketType>
 {
@@ -179,6 +200,10 @@ protected:
 	virtual void read_handler() = 0;
 	virtual void on_error() = 0;
 
+	/**
+	 * @brief Socket write operation.
+	 * @thread NetworkThread
+  	 */
 	bool async_process_queue()
 	{
 		if (_is_writing_async)
@@ -226,21 +251,26 @@ private:
 	 * Aysnchronous reading handler method.
 	 * @param error
 	 * @param transferredBytes
-     * @thread NetworkThread
+	 * @thread NetworkThread
 	 */
 	void read_handler_internal(boost::system::error_code error, size_t transferredBytes)
 	{
+		// If there is an error on the socket, we need to close it.
 		if (error) {
+			// If the socket is already closed, we don't need to do anything.
 			if (error.value() == boost::asio::error::eof) {
 				close_socket();
+			// If the connection was reset or timed out, we need to close the socket.
 			} else if (error.value() == boost::system::errc::connection_reset
 					   || error.value() == boost::system::errc::timed_out) {
 				on_error();
 				close_socket();
+			// If there was any unknown error on the socket, we need to close it.
 			} else {
 				on_error();
 				close_socket();
 			}
+			// Retreive the error code and handle it accordingly.
 			switch (error.value())
 			{
 			case 2: // End of file
@@ -252,15 +282,20 @@ private:
 		}
 
 		if (transferredBytes > 0) {
+			// write_completed will move the write pointer forward, so we need to save the current position of the write pointer.
 			_read_buffer.write_completed(transferredBytes);
+			// read handler will process the data that has been written to the buffer.
 			read_handler();
 		}
 
+		// Invoke the next read operation.
 		async_read();
 	}
 
 	/**
-	 *
+	 * Write handler wrapper.
+	 * @param error
+	 * @param transferedBytes
 	 */
 	void write_handler_wrapper(boost::system::error_code /*error*/, std::size_t /*transferedBytes*/)
 	{
@@ -270,7 +305,8 @@ private:
 
 	/**
 	 * Handle the queue
-	 * @return true on success, false on failure.
+	 * @return true if the queue is not empty, false otherwise. 
+	 * @thread NetworkThread
 	 */
 	bool handle_queue()
 	{
@@ -283,6 +319,9 @@ private:
 
 		std::size_t bytes_sent = write_buffer_and_send(*to_send, error);
 
+		/**
+		 * If we have a would block error, we need to re-process the queue.
+		 */
 		if (error == boost::asio::error::would_block || error == boost::asio::error::try_again)
 			return async_process_queue();
 
@@ -301,6 +340,7 @@ private:
 		if (_closing && _write_queue.empty())
 			close_socket();
 
+		// Return true if the queue is not empty. Indicating that the sending operation was successful.
 		return !_write_queue.empty() && bytes_sent;
 	}
 
