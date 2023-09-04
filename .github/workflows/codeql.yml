@@ -76,9 +76,9 @@ jobs:
     #     echo "Run, Build Application using script"
     #     ./location_of_script_within_repo/buildscript.sh
 
-    - run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++"
-        cmake --build ${{github.workspace}}/build --target install
+    #- run: |
+    #    cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++"
+    #    cmake --build ${{github.workspace}}/build --target install
         
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
