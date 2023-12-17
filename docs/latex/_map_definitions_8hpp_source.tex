@@ -1,0 +1,58 @@
+\doxysection{Map\+Definitions.\+hpp}
+\hypertarget{_map_definitions_8hpp_source}{}\label{_map_definitions_8hpp_source}\index{src/Server/Zone/Definitions/MapDefinitions.hpp@{src/Server/Zone/Definitions/MapDefinitions.hpp}}
+\mbox{\hyperlink{_map_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_MAP\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_MAP\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\_cell\_types}}\ :\ int8\_t}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a9939cc66ad0cb7763a7aa3fcfab4e4ce}{CELL\_WALKABLE\_SHOOTABLE\_GROUND\_0}}\ =\ 0,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a54a7ecfb901861668bc2012e28f78619}{CELL\_NONWALKABLE\_GROUND}}\ =\ 1,}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a6c151835965c6d467a3ce8ad2a7f9f56}{CELL\_WALKABLE\_SHOOTABLE\_2}}\ =\ 2,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46afbaa6c09326e12081066cc8ff7502980}{CELL\_WALKABLE\_SHOOTABLE\_WATER}}\ =\ 3,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46aba07c512be1f7bee22db4e1231d113e2}{CELL\_WALKABLE\_SHOOTABLE\_4}}\ =\ 4,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a7d513267553916dc30f2d9e743901174}{CELL\_CLIFF\_ONLY\_SHOOTABLE\_5}}\ =\ 5,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a9a71ccb16c5824e2d6f702d851d08665}{CELL\_WALKABLE\_SHOOTABLE\_6}}\ =\ 6,}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a9a4abbac1f15a5f78bc017d5afa303ba}{CELL\_HAS\_NPC}},}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a2e48884170f8803e03ac4663177aebfd}{CELL\_BASILICA}},}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a5569209e7d43a0793291193936003adb}{CELL\_LAND\_PROTECTOR}},}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a1f2406da885d870b72cc5aea58ddcd2a}{CELL\_NO\_VENDING}},}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46aef2a13140e3fbbd04c26fcfe06f33d93}{CELL\_NO\_CHAT}},}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46aa7a07258a40732a36982e5b80ca6bffd}{CELL\_ICE\_WALL}},}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46af94370973f3e2bdc154a2c9bb5fb36c5}{CELL\_NO\_ICE\_WALL}},}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_MAP\_DEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

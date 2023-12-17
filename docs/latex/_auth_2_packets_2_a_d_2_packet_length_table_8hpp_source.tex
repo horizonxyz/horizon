@@ -1,0 +1,88 @@
+\doxysection{Packet\+Length\+Table.\+hpp}
+\hypertarget{_auth_2_packets_2_a_d_2_packet_length_table_8hpp_source}{}\label{_auth_2_packets_2_a_d_2_packet_length_table_8hpp_source}\index{src/Server/Auth/Packets/AD/PacketLengthTable.hpp@{src/Server/Auth/Packets/AD/PacketLengthTable.hpp}}
+\mbox{\hyperlink{_auth_2_packets_2_a_d_2_packet_length_table_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sephus.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_AUTH\_AD\_PACKET\_LENGTH\_TABLE}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HORIZON\_AUTH\_AD\_PACKET\_LENGTH\_TABLE}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_locked_lookup_table_8hpp}{Core/Multithreading/LockedLookupTable.hpp}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_handled_packets_8hpp}{Server/Auth/Packets/HandledPackets.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8hpp}{Server/Auth/Packets/TransmittedPackets.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Auth}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typedef}\ std::shared\_ptr<Base::NetworkPacketHandler<AuthSession>>\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a1054a74e6c232623e13d71b743f2d32f}{HPacketStructPtrType}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typedef}\ std::shared\_ptr<Base::NetworkPacketTransmitter<AuthSession>>\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54906d8b3fbc2b0ce76f40a0d754134f}{TPacketStructPtrType}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<int16\_t,\ HPacketStructPtrType>\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a197b04811c846f6db125eb5147eb4f1f}{HPacketTablePairType}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<int16\_t,\ TPacketStructPtrType>\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac47ef7cd2be27293c954bf076badb901}{TPacketTablePairType}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table}{PacketLengthTable}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a96cc78bb74170fecd437ae41a7ae0b90}{PacketLengthTable}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00050\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a66c2305352a028ab92e1b1c71297b0c3}{\_session}}(s)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ADD\_HPKT(i,\ j,\ k)\ \_hpacket\_length\_table.insert(i,\ std::make\_pair(j,\ std::make\_shared<k>(s)))}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ADD\_TPKT(i,\ j,\ k)\ \_tpacket\_length\_table.insert(i,\ std::make\_pair(j,\ std::make\_shared<k>(s)))}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0069,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n}{AC\_ACCEPT\_LOGIN}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x01dc,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___h_a_s_h}{AC\_ACK\_HASH}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x01be,\ 2,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_s_k___p_n_g_a_m_e_r_o_o_m}{AC\_ASK\_PNGAMEROOM}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x01f1,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___n_o_t_i_f_y___e_r_r_o_r}{AC\_NOTIFY\_ERROR}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x006a,\ 23,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}{AC\_REFUSE\_LOGIN}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0200,\ 26,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___c_o_n_n_e_c_t___i_n_f_o___c_h_a_n_g_e_d}{CA\_CONNECT\_INFO\_CHANGED}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0204,\ 18,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___e_x_e___h_a_s_h_c_h_e_c_k}{CA\_EXE\_HASHCHECK}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0064,\ 55,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n}{CA\_LOGIN}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x01dd,\ 47,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n2}{CA\_LOGIN2}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x01fa,\ 48,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n3}{CA\_LOGIN3}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x01bf,\ 3,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___r_e_p_l_y___p_n_g_a_m_e_r_o_o_m}{CA\_REPLY\_PNGAMEROOM}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x01db,\ 2,\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_c_a___r_e_q___h_a_s_h}{CA\_REQ\_HASH}});}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#undef\ ADD\_HPKT}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#undef\ ADD\_TPKT}}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a20988d3e729b5362be5b361d6ab288fe}{\string~PacketLengthTable}}()\ \{\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ std::shared\_ptr<AuthSession>\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_aa16207db2450ba9ab72dcdc5d5bc3d9f}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a66c2305352a028ab92e1b1c71297b0c3}{\_session}}.lock();\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a197b04811c846f6db125eb5147eb4f1f}{HPacketTablePairType}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a06ade3cc7a07642c267c96613e1db453}{get\_hpacket\_info}}(uint16\_t\ packet\_id)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a9d314c806b0109f0a9fed806b0185db5}{\_hpacket\_length\_table}}.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(packet\_id);\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac47ef7cd2be27293c954bf076badb901}{TPacketTablePairType}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a23b8fcedca376a990ef42a7f4c0e07b8}{get\_tpacket\_info}}(uint16\_t\ packet\_id)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_aca8ef0006e2209be9a824364eb7bdbe0}{\_tpacket\_length\_table}}.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(packet\_id);\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint16\_t,\ HPacketTablePairType>}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a9d314c806b0109f0a9fed806b0185db5}{\_hpacket\_length\_table}};}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint16\_t,\ TPacketTablePairType>}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_aca8ef0006e2209be9a824364eb7bdbe0}{\_tpacket\_length\_table}};}
+\DoxyCodeLine{00080\ \ \ \ \ std::weak\_ptr<AuthSession>\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_packet_length_table_a66c2305352a028ab92e1b1c71297b0c3}{\_session}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_AUTH\_AD\_PACKET\_LENGTH\_TABLE\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

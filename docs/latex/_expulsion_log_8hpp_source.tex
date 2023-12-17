@@ -1,0 +1,70 @@
+\doxysection{Expulsion\+Log.\+hpp}
+\hypertarget{_expulsion_log_8hpp_source}{}\label{_expulsion_log_8hpp_source}\index{src/Server/Zone/Game/Guild/ExpulsionLog.hpp@{src/Server/Zone/Game/Guild/ExpulsionLog.hpp}}
+\mbox{\hyperlink{_expulsion_log_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_MODELS\_GUILD\_HLog\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_MODELS\_GUILD\_HLog\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }Models}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Guild}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log}{HLog}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_a44dbcae9fcebb9988d35973b170df2f7}{HLog}}()\ \{\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_a91cc00423819321f801136ed92c4a450}{\string~HLog}}()\ \{\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{/*\ Guild\ ID\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_aa2790d909627900901d46c02428b33d9}{get\_guild\_id}}()\ \{\ \textcolor{keywordflow}{return}\ \_guild\_id;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_a1ffdecfb72a1aaec9e10bc2090c854bd}{set\_guild\_id}}(uint32\_t\ guild\_id)\ \{\ \_guild\_id\ =\ guild\_id;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ Expellee\ Name\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \&\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_a871b86e72129deca0177e79dc7585553}{getExpelleeName}}()\ \{\ \textcolor{keywordflow}{return}\ \_expellee\_name;\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_ae6f03fb21605d0c84962b73e0a7afadc}{setExpelleeName}}(std::string\ \textcolor{keyword}{const}\ \&name)\ \{\ \_expelle\_name\ =\ name;\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*\ Reason\ */}}
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ \&\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_a7f03f83fd88c3814feb88dbac1d0cecf}{getReason}}()\ \{\ \textcolor{keywordflow}{return}\ \_reason;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log_a1691fed90c350ff0af4d2f15e06d6b97}{setReason}}(std::string\ \textcolor{keyword}{const}\ \&reason)\ \{\ \_reason\ =\ reason;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ uint32\_t\ \_guild\_id;}
+\DoxyCodeLine{00057\ \ \ \ \ std::string\ \_expellee\_name;}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ \_reason;}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_MODELS\_GUILD\_HLog\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

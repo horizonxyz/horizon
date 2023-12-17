@@ -1,0 +1,251 @@
+\doxysection{Horizon\+::Char\+::Char\+Socket Class Reference}
+\hypertarget{class_horizon_1_1_char_1_1_char_socket}{}\label{class_horizon_1_1_char_1_1_char_socket}\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+
+
+{\ttfamily \#include $<$Char\+Socket.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Char\+::Char\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_horizon_1_1_char_1_1_char_socket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Char\+::Char\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a3e6214a12c09c9eae8c8e07fee6913fd}{Char\+Socket}} (uint64\+\_\+t uid, std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ socket)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a693e501189756e6f23b983af23bc0d8d}{\texorpdfstring{$\sim$}{\string~}\+Char\+Socket}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a01230eccd99ab9c3be2d9636c24d2471}{start}} () override
+\begin{DoxyCompactList}\small\item\em Initial method invoked once from the network thread that handles the \doxylink{class_horizon_1_1_char_1_1_char_socket}{Char\+Socket}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a353735f6b43acf08ccf803ad4222e968}{update}} () override
+\begin{DoxyCompactList}\small\item\em Asynchronous update method periodically called from network threads. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_ac8c76b750af550a7d3028f72d33f6bca}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a166fbaeb7fda77e6065229d8e9c2508c}{set\+\_\+session}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$ session)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a465c0e43ad7252eb6d536c723eb9d549}{update\+\_\+session}} (uint32\+\_\+t diff)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a516682034ec65a1554cd2fbc6d700c71}{Socket}} (uint64\+\_\+t socket\+\_\+id, std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ socket)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a0d3bcf6cb3e7aaba096a6ce5c54f3f49}{\texorpdfstring{$\sim$}{\string~}\+Socket}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5dc5b5c012e1878cd77a55f5a669ad61}{get\+\_\+socket\+\_\+id}} ()
+\item 
+std\+::string \& \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aafee17dfecd4126e12e68711a4659b63}{remote\+\_\+ip\+\_\+address}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a789aa1fe451b6f4a4a06f85a98546a4f}{remote\+\_\+port}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a9a3ec6ce1aa190ef14d2894380082a59}{async\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em Asynchronous read operation @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a6910185c7a1ad235adc2a6326a708097}{async\+\_\+read\+\_\+with\+\_\+callback}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&buf, void(\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket}}$<$ Char\+Socket $>$\+::\texorpdfstring{$\ast$}{*})(boost\+::system\+::error\+\_\+code, std\+::size\+\_\+t))
+\begin{DoxyCompactList}\small\item\em Asynchronous read operation with callback handler @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a76ebf8e33b4af739924a689e50e01f50}{queue\+\_\+buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\&buffer)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac819c2aa5b0f4debc6d9cb0b1b3058f9}{is\+\_\+open}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} close operation that performs cleanups before shutting down the connection. @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a6aeebaa8bc9d7af19a9df0e4366b66bf}{delayed\+\_\+close\+\_\+socket}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a051e2e0113e7f53c8bc34f59bc300e2b}{get\+\_\+read\+\_\+buffer}} ()
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a4048fe23cc95fe493a4417f652c678fa}{get\+\_\+recv\+\_\+queue}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a936745c4e9c1d93f545a62beb2d7fa4b}{read\+\_\+handler}} () override
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_a44518d208759c8261b1f24940e52e050}{on\+\_\+close}} () override
+\begin{DoxyCompactList}\small\item\em Socket cleanup method on connection closure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket_ad0db3199e6b4ead2c553a1cc458b6a21}{on\+\_\+error}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a487a76ef4e4568fbf57eaa6bdabe0279}{async\+\_\+process\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} write operation. @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac274c8f50298674dc526e8c87856fe3b}{set\+\_\+no\+\_\+delay}} (bool enable)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aa5b1d93d376372cb26ed87094dfa7f0f}{write\+\_\+buffer\+\_\+and\+\_\+send}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&to\+\_\+send, boost\+::system\+::error\+\_\+code \&error)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5421847b448e162fd9f9e53df7fdbea1}{\+\_\+buffer\+\_\+recv\+\_\+queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a3e6214a12c09c9eae8c8e07fee6913fd}\label{class_horizon_1_1_char_1_1_char_socket_a3e6214a12c09c9eae8c8e07fee6913fd} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!CharSocket@{CharSocket}}
+\index{CharSocket@{CharSocket}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{CharSocket()}{CharSocket()}}
+{\footnotesize\ttfamily Char\+Socket\+::\+Char\+Socket (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{uid,  }\item[{std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a693e501189756e6f23b983af23bc0d8d}\label{class_horizon_1_1_char_1_1_char_socket_a693e501189756e6f23b983af23bc0d8d} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!````~CharSocket@{\texorpdfstring{$\sim$}{\string~}CharSocket}}
+\index{````~CharSocket@{\texorpdfstring{$\sim$}{\string~}CharSocket}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CharSocket()}{\string~CharSocket()}}
+{\footnotesize\ttfamily Char\+Socket\+::\texorpdfstring{$\sim$}{\string~}\+Char\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_ac8c76b750af550a7d3028f72d33f6bca}\label{class_horizon_1_1_char_1_1_char_socket_ac8c76b750af550a7d3028f72d33f6bca} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$ Char\+Socket\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@thread created by network thread and called from main thread / client-\/sockt-\/mgr for \doxylink{class_horizon_1_1_char_1_1_char_socket_a353735f6b43acf08ccf803ad4222e968}{update()}. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket_ac8c76b750af550a7d3028f72d33f6bca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a44518d208759c8261b1f24940e52e050}\label{class_horizon_1_1_char_1_1_char_socket_a44518d208759c8261b1f24940e52e050} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!on\_close@{on\_close}}
+\index{on\_close@{on\_close}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{on\_close()}{on\_close()}}
+{\footnotesize\ttfamily void Char\+Socket\+::on\+\_\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Socket cleanup method on connection closure. 
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a49a8b4278571322b502c38c719b6e9b9}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket_a44518d208759c8261b1f24940e52e050_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_ad0db3199e6b4ead2c553a1cc458b6a21}\label{class_horizon_1_1_char_1_1_char_socket_ad0db3199e6b4ead2c553a1cc458b6a21} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
+{\footnotesize\ttfamily void Char\+Socket\+::on\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a8b8ba5afa9b7386077518a5dd6b95d4d}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}.
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a936745c4e9c1d93f545a62beb2d7fa4b}\label{class_horizon_1_1_char_1_1_char_socket_a936745c4e9c1d93f545a62beb2d7fa4b} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!read\_handler@{read\_handler}}
+\index{read\_handler@{read\_handler}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{read\_handler()}{read\_handler()}}
+{\footnotesize\ttfamily void Char\+Socket\+::read\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Incoming buffer read handler. 
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a81ffe90fe0e8be907894733bb8762f30}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket_a936745c4e9c1d93f545a62beb2d7fa4b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a166fbaeb7fda77e6065229d8e9c2508c}\label{class_horizon_1_1_char_1_1_char_socket_a166fbaeb7fda77e6065229d8e9c2508c} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!set\_session@{set\_session}}
+\index{set\_session@{set\_session}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{set\_session()}{set\_session()}}
+{\footnotesize\ttfamily void Char\+Socket\+::set\+\_\+session (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket_a166fbaeb7fda77e6065229d8e9c2508c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a01230eccd99ab9c3be2d9636c24d2471}\label{class_horizon_1_1_char_1_1_char_socket_a01230eccd99ab9c3be2d9636c24d2471} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!start@{start}}
+\index{start@{start}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Char\+Socket\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initial method invoked once from the network thread that handles the \doxylink{class_horizon_1_1_char_1_1_char_socket}{Char\+Socket}. 
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a0771eb7f7860874879f379cf383f561e}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket_a01230eccd99ab9c3be2d9636c24d2471_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a353735f6b43acf08ccf803ad4222e968}\label{class_horizon_1_1_char_1_1_char_socket_a353735f6b43acf08ccf803ad4222e968} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!update@{update}}
+\index{update@{update}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Char\+Socket\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Asynchronous update method periodically called from network threads. 
+
+\begin{DoxyReturn}{Returns}
+true on successful update, false on failure. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_afb9cddbb3529c0f90977aa394a0fe6e9}{Horizon\+::\+Networking\+::\+Socket$<$ Char\+Socket $>$}}.
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_socket_a465c0e43ad7252eb6d536c723eb9d549}\label{class_horizon_1_1_char_1_1_char_socket_a465c0e43ad7252eb6d536c723eb9d549} 
+\index{Horizon::Char::CharSocket@{Horizon::Char::CharSocket}!update\_session@{update\_session}}
+\index{update\_session@{update\_session}!Horizon::Char::CharSocket@{Horizon::Char::CharSocket}}
+\doxysubsubsection{\texorpdfstring{update\_session()}{update\_session()}}
+{\footnotesize\ttfamily void Char\+Socket\+::update\+\_\+session (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{diff }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_socket_a465c0e43ad7252eb6d536c723eb9d549_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Char/\+Socket/\mbox{\hyperlink{_char_socket_8hpp}{Char\+Socket.\+hpp}}\item 
+src/\+Server/\+Char/\+Socket/\mbox{\hyperlink{_char_socket_8cpp}{Char\+Socket.\+cpp}}\end{DoxyCompactItemize}

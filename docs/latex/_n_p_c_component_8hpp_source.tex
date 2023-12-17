@@ -1,0 +1,75 @@
+\doxysection{NPCComponent.\+hpp}
+\hypertarget{_n_p_c_component_8hpp_source}{}\label{_n_p_c_component_8hpp_source}\index{src/Server/Zone/LUA/Components/NPCComponent.hpp@{src/Server/Zone/LUA/Components/NPCComponent.hpp}}
+\mbox{\hyperlink{_n_p_c_component_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_NPC\_LUA\_COMPONENT\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_NPC\_LUA\_COMPONENT\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l_u_a_component_8hpp}{Server/Zone/LUA/Components/LUAComponent.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_n_p_c_definitions_8hpp}{Server/Zone/Definitions/NPCDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }MapContainerThread;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component}{NPCComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component}{LUAComponent}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_ad1d20aa897aa5d255bc962814a64b51d}{NPCComponent}}()\ \{\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_aa391a6395f853e9be3e5916b5ea5492b}{NPCComponent}}(std::shared\_ptr<MapContainerThread>\ container)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component}{LUAComponent}}(container)\ \{\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a7ba180e84cfc24d15fb51791ca63b4b5}{\string~NPCComponent}}()\ \{\}}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a599c2b55360b83feb038a6d0711833fa}{sync\_definitions}}(std::shared\_ptr<sol::state>\ state);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a2d001b8da22116a0301dd8566c6d8c50}{sync\_data\_types}}(std::shared\_ptr<sol::state>\ state);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a8a17542c21dd20275137a0b09b96b574}{sync\_functions}}(std::shared\_ptr<sol::state>\ state)\ \{\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a8a17542c21dd20275137a0b09b96b574}{sync\_functions}}(std::shared\_ptr<sol::state>\ state,\ std::shared\_ptr<MapContainerThread>\ container);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a2295aa43a653bd1c317918cf8924fd87}{add\_npc\_to\_db}}(uint32\_t\ guid,\ std::shared\_ptr<npc\_db\_data>\ \textcolor{keyword}{const}\ \&data)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_ac9497bc1bc8e1547a1ef0d98bb9fdef0}{\_npc\_db}}.\mbox{\hyperlink{class_locked_lookup_table_a471083f2f190bbc602718de23bdc1b79}{insert}}(guid,\ data);\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ std::shared\_ptr<npc\_db\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a1e77a86df4ec6e04608b049a82134a97}{get\_npc\_from\_db}}(uint32\_t\ guid)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_ac9497bc1bc8e1547a1ef0d98bb9fdef0}{\_npc\_db}}.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(guid);\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a881c909e082534e1221af2324ee2558b}{contact\_npc\_for\_player}}(std::shared\_ptr<Entities::Player>\ player,\ uint32\_t\ npc\_guid);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a72ab82934367b0b1e0ba64ac808d8bf3}{continue\_npc\_script\_for\_player}}(std::shared\_ptr<Entities::Player>\ player,\ uint32\_t\ npc\_guid,\ uint32\_t\ select\_idx\ =\ 0);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ void\ send\_dialog\_to\_player(std::shared\_ptr<Entities::Player>\ player,\ uint32\_t\ npc\_guid,\ std::string\ const\ \&HLog);}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ void\ send\_next\_dialog\_to\_player(std::shared\_ptr<Entities::Player>\ player,\ uint32\_t\ npc\_guid);}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ void\ send\_close\_dialog\_to\_player(std::shared\_ptr<Entities::Player>\ player,\ uint32\_t\ npc\_guid);}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint32\_t,\ std::shared\_ptr<npc\_db\_data>}}>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_ac9497bc1bc8e1547a1ef0d98bb9fdef0}{\_npc\_db}};}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_NPC\_LUA\_COMPONENT\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

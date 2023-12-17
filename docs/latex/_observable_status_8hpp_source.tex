@@ -1,0 +1,71 @@
+\doxysection{Observable\+Status.\+hpp}
+\hypertarget{_observable_status_8hpp_source}{}\label{_observable_status_8hpp_source}\index{src/Server/Zone/Game/Entities/Traits/ObservableStatus.hpp@{src/Server/Zone/Game/Entities/Traits/ObservableStatus.hpp}}
+\mbox{\hyperlink{_observable_status_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_TRAITS\_OBSERVABLESTATUS\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_TRAITS\_OBSERVABLESTATUS\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ OBSERVABLE,\ \textcolor{keyword}{typename}\ ...\ HAS\_OBSERVERS>}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_observable_status}{ObservableStatus}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_observable_status_a83d902e8566880c9217aa1cf656a862b}{ObservableStatus}}(HAS\_OBSERVERS\ ...\ args)}
+\DoxyCodeLine{00038\ \ \ \ \ :\ \mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\_observers}}(args...)}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_observable_status_af9df4a9c777ac360ee628cd771c592bf}{\string~ObservableStatus}}()\ \{\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{template}<std::size\_t\ I\ =\ 0,\ \textcolor{keyword}{typename}...\ Tp>}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<I\ ==\ \textcolor{keyword}{sizeof}...(Tp),\ \textcolor{keywordtype}{void}>::type}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}(std::tuple<Tp...>\&\ \textcolor{comment}{/*t*/})}
+\DoxyCodeLine{00046\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{template}<std::size\_t\ I\ =\ 0,\ \textcolor{keyword}{typename}...\ Tp>}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{typename}\ std::enable\_if<I\ <\ \textcolor{keyword}{sizeof}...(Tp),\ \textcolor{keywordtype}{void}>::type}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}(std::tuple<Tp...>\&\ t)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::get<I>(\mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\_observers}})-\/>on\_observable\_changed(\mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\_observable}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}<I\ +\ 1,\ Tp...>(t);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}()\ \{\ \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}<0,\ HAS\_OBSERVERS...>(\mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\_observers}});\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_observable_status_a360b782379f9fd42e52287d97bd181c8}{register\_observable}}(OBSERVABLE\ obs)\ \{\ \mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\_observable}}\ =\ obs;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_observable_status_a9c286b577e997b6835f58adcca6c61da}{register\_observers}}(HAS\_OBSERVERS...\ obs)\ \{\ \mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\_observers}}\ =\ std::make\_tuple(obs...);\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ OBSERVABLE\ \mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\_observable}};}
+\DoxyCodeLine{00062\ \ \ \ \ std::tuple<HAS\_OBSERVERS...>\ \mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\_observers}};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_STATUS\_OBSERVABLESTATUS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

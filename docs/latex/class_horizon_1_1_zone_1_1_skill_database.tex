@@ -1,0 +1,1190 @@
+\doxysection{Horizon\+::Zone\+::Skill\+Database Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_skill_database}{}\label{class_horizon_1_1_zone_1_1_skill_database}\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+
+
+{\ttfamily \#include $<$Skill\+DB.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ad61537ff5ae9b4206df66cc9d2679dae}{Skill\+Database}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a0eaaa64e2cad51de008be00511e642dc}{\texorpdfstring{$\sim$}{\string~}\+Skill\+Database}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a68ef8dd314883fb1f667ef54a8145b0b}{load}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a93c667bcaae4dd00d3b51b7a6fad2180}{get\+\_\+skill\+\_\+by\+\_\+id}} (int32\+\_\+t id)
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aee98e85608a9f959e36144987a11c7a7}{get\+\_\+skill\+\_\+by\+\_\+name}} (std\+::string name)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__tree__config}{skill\+\_\+tree\+\_\+config}} $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b}{get\+\_\+skill\+\_\+tree\+\_\+by\+\_\+job\+\_\+id}} (\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}} job\+\_\+id)
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__tree__config}{skill\+\_\+tree\+\_\+config}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aa794f9220e7b444c998a743e938e4dd9}{get\+\_\+skill\+\_\+tree\+\_\+skill\+\_\+id\+\_\+by\+\_\+job\+\_\+id}} (\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}} job\+\_\+id, int16\+\_\+t skill\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database}{Skill\+Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a8cef4006a28ff6f53515e4487a197f6c}{get\+\_\+instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aae0fcb8605e93de19e58e38daba768d8}{load\+\_\+internal\+\_\+skill\+\_\+db}} (sol\+::object const \&key, sol\+::object const \&value)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_afc7722f4add88b9bd7195ddb11b4aad8}{load\+\_\+internal\+\_\+skill\+\_\+tree}} (sol\+::object const \&key, sol\+::object const \&value)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a8c96fc053e835bf1a865b3846a720cfd}{parse\+\_\+range}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a8ecdde6544892f816135a0ba1f74718a}{parse\+\_\+hit}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ab10a7972acf44f9b5be001a1a190baa1}{parse\+\_\+skill\+\_\+type}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3b49afadd09fe53e765ea67eecbe923c}{parse\+\_\+skill\+\_\+info}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ac4d8fd34b1544df93f83dc0a5594509e}{parse\+\_\+attack\+\_\+type}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3cb218d51a53a1cb96112907994e0325}{parse\+\_\+element}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ad6eb9a18f917730d1dbcfd240c365d21}{parse\+\_\+damage\+\_\+type}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ad3c12ea843411132898e68b543630907}{parse\+\_\+splash\+\_\+range}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aa34908b39418cf0c867f084d060cfe7f}{parse\+\_\+number\+\_\+of\+\_\+hits}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a023fc29bd5e488c525202522f5c0ab2c}{parse\+\_\+interrupt\+\_\+cast}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6423c3cfb9a0c1638abb3b17491e4184}{parse\+\_\+cast\+\_\+defense\+\_\+rate}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a297c19c61be35786c69e1947f168512b}{parse\+\_\+max\+\_\+skill\+\_\+instances}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ae5d4f1e0ff218c297ca2e0971f6b8fde}{parse\+\_\+knock\+\_\+back\+\_\+tiles}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a1c815c43dbb8bd62f63da32e4a085c24}{parse\+\_\+cast\+\_\+time}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a533a269040a10d119a459368e47270a9}{parse\+\_\+after\+\_\+cast\+\_\+act\+\_\+delay}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a50d7f0691611b12adf6e75f1bda18386}{parse\+\_\+after\+\_\+cast\+\_\+walk\+\_\+delay}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_acb4bd2ae90b859509dcef03c07dafbca}{parse\+\_\+skill\+\_\+data1}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a2e7a212e8f401a0662373bee618336fe}{parse\+\_\+skill\+\_\+data2}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aca420a88fe1d8637d8e1bac60f3d90b8}{parse\+\_\+cooldown}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6d61890cb821171d8cb0fe683ddfe36d}{parse\+\_\+fixed\+\_\+cast\+\_\+time}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3adc56d5ed34e7863d24e36e73e5e56b}{parse\+\_\+cast\+\_\+time\+\_\+options}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a4831f64125a8fc8d250d9e3936ed6447}{parse\+\_\+skill\+\_\+delay\+\_\+options}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a589e172e84dbf586105349c0272bd1a0}{parse\+\_\+requirements}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a2195c5f92d5de00ba3b54872912dbf66}{parse\+\_\+req\+\_\+hp\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a23d623cc946665af0fca85e30867950f}{parse\+\_\+req\+\_\+sp\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a1e8e3ef1be129a6ed99dbc4f628546e1}{parse\+\_\+req\+\_\+hp\+\_\+rate\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_af5cee31266a69833cb7e58109a7e08ec}{parse\+\_\+req\+\_\+sp\+\_\+rate\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_afeb01922425add34bf6c91bcd4b7e398}{parse\+\_\+req\+\_\+max\+\_\+hp\+\_\+trigger}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_adfa63829ba1ff359c4ee1dc82ac91d7e}{parse\+\_\+req\+\_\+max\+\_\+sp\+\_\+trigger}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ae8c4be8e6f17da9831158b845b72bceb}{parse\+\_\+req\+\_\+zeny\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a9379950095ce28369c79a046cf6502f9}{parse\+\_\+req\+\_\+weapon\+\_\+types}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6425e11fa99932b5c95f1ca50828c2e3}{parse\+\_\+req\+\_\+ammunition\+\_\+type}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a9b5c6f4696b1f955cb76cb9f0efd08cd}{parse\+\_\+req\+\_\+ammunition\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a404312cdaa597cef8fe05248b51a4e63}{parse\+\_\+req\+\_\+state}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a773eb913ac9fdc61e973764be703eebb}{parse\+\_\+req\+\_\+spirit\+\_\+sphere\+\_\+cost}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a2fd1229a2214e7694fba805f196a551e}{parse\+\_\+req\+\_\+items}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data, bool equips)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a631b2037d738599016c5be7396af5e99}{parse\+\_\+placement}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a82b36aa1ae60c584649ee51fd0346c1b}{parse\+\_\+placement\+\_\+id}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ae7ed94e46b10d21c21099d2790912887}{parse\+\_\+placement\+\_\+layout}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a784058c430244d288e022d9b72401f82}{parse\+\_\+placement\+\_\+range}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3f6a37b22657623f2fc9ce96a44b34d0}{parse\+\_\+placement\+\_\+interval}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a00fd3db05ea243688b7f6bef8ac53622}{parse\+\_\+placement\+\_\+target}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_af6eb62b9ed226b6aebb94d979ca242eb}{parse\+\_\+placement\+\_\+flag}} (sol\+::table const \&table, \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&data)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6e4bce318fcf04dfd0fc5d9797b0b518}{fill\+\_\+lvl\+\_\+range}} (T \texorpdfstring{$\ast$}{*}setting, T value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ad61537ff5ae9b4206df66cc9d2679dae}\label{class_horizon_1_1_zone_1_1_skill_database_ad61537ff5ae9b4206df66cc9d2679dae} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!SkillDatabase@{SkillDatabase}}
+\index{SkillDatabase@{SkillDatabase}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{SkillDatabase()}{SkillDatabase()}}
+{\footnotesize\ttfamily Skill\+Database\+::\+Skill\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a0eaaa64e2cad51de008be00511e642dc}\label{class_horizon_1_1_zone_1_1_skill_database_a0eaaa64e2cad51de008be00511e642dc} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!````~SkillDatabase@{\texorpdfstring{$\sim$}{\string~}SkillDatabase}}
+\index{````~SkillDatabase@{\texorpdfstring{$\sim$}{\string~}SkillDatabase}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SkillDatabase()}{\string~SkillDatabase()}}
+{\footnotesize\ttfamily Skill\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Skill\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a6e4bce318fcf04dfd0fc5d9797b0b518}\label{class_horizon_1_1_zone_1_1_skill_database_a6e4bce318fcf04dfd0fc5d9797b0b518} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!fill\_lvl\_range@{fill\_lvl\_range}}
+\index{fill\_lvl\_range@{fill\_lvl\_range}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{fill\_lvl\_range()}{fill\_lvl\_range()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Horizon\+::\+Zone\+::\+Skill\+Database\+::fill\+\_\+lvl\+\_\+range (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{setting,  }\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_skill_database_a6e4bce318fcf04dfd0fc5d9797b0b518_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a8cef4006a28ff6f53515e4487a197f6c}\label{class_horizon_1_1_zone_1_1_skill_database_a8cef4006a28ff6f53515e4487a197f6c} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database}{Skill\+Database}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Skill\+Database\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a93c667bcaae4dd00d3b51b7a6fad2180}\label{class_horizon_1_1_zone_1_1_skill_database_a93c667bcaae4dd00d3b51b7a6fad2180} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!get\_skill\_by\_id@{get\_skill\_by\_id}}
+\index{get\_skill\_by\_id@{get\_skill\_by\_id}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_skill\_by\_id()}{get\_skill\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Skill\+Database\+::get\+\_\+skill\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a93c667bcaae4dd00d3b51b7a6fad2180_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a93c667bcaae4dd00d3b51b7a6fad2180_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_aee98e85608a9f959e36144987a11c7a7}\label{class_horizon_1_1_zone_1_1_skill_database_aee98e85608a9f959e36144987a11c7a7} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!get\_skill\_by\_name@{get\_skill\_by\_name}}
+\index{get\_skill\_by\_name@{get\_skill\_by\_name}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_skill\_by\_name()}{get\_skill\_by\_name()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Skill\+Database\+::get\+\_\+skill\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aee98e85608a9f959e36144987a11c7a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aee98e85608a9f959e36144987a11c7a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b}\label{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!get\_skill\_tree\_by\_job\_id@{get\_skill\_tree\_by\_job\_id}}
+\index{get\_skill\_tree\_by\_job\_id@{get\_skill\_tree\_by\_job\_id}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_skill\_tree\_by\_job\_id()}{get\_skill\_tree\_by\_job\_id()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__tree__config}{skill\+\_\+tree\+\_\+config}} $>$ $>$ Horizon\+::\+Zone\+::\+Skill\+Database\+::get\+\_\+skill\+\_\+tree\+\_\+by\+\_\+job\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}}}]{job\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_aa794f9220e7b444c998a743e938e4dd9}\label{class_horizon_1_1_zone_1_1_skill_database_aa794f9220e7b444c998a743e938e4dd9} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!get\_skill\_tree\_skill\_id\_by\_job\_id@{get\_skill\_tree\_skill\_id\_by\_job\_id}}
+\index{get\_skill\_tree\_skill\_id\_by\_job\_id@{get\_skill\_tree\_skill\_id\_by\_job\_id}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_skill\_tree\_skill\_id\_by\_job\_id()}{get\_skill\_tree\_skill\_id\_by\_job\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structskill__tree__config}{skill\+\_\+tree\+\_\+config}} $>$ Horizon\+::\+Zone\+::\+Skill\+Database\+::get\+\_\+skill\+\_\+tree\+\_\+skill\+\_\+id\+\_\+by\+\_\+job\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}}}]{job\+\_\+id,  }\item[{int16\+\_\+t}]{skill\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aa794f9220e7b444c998a743e938e4dd9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a68ef8dd314883fb1f667ef54a8145b0b}\label{class_horizon_1_1_zone_1_1_skill_database_a68ef8dd314883fb1f667ef54a8145b0b} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!load@{load}}
+\index{load@{load}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Skill DB
+
+Skill Tree DBHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_skill_database_a68ef8dd314883fb1f667ef54a8145b0b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_aae0fcb8605e93de19e58e38daba768d8}\label{class_horizon_1_1_zone_1_1_skill_database_aae0fcb8605e93de19e58e38daba768d8} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!load\_internal\_skill\_db@{load\_internal\_skill\_db}}
+\index{load\_internal\_skill\_db@{load\_internal\_skill\_db}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_internal\_skill\_db()}{load\_internal\_skill\_db()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::load\+\_\+internal\+\_\+skill\+\_\+db (\begin{DoxyParamCaption}\item[{sol\+::object const \&}]{key,  }\item[{sol\+::object const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_skill_database_aae0fcb8605e93de19e58e38daba768d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aae0fcb8605e93de19e58e38daba768d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_afc7722f4add88b9bd7195ddb11b4aad8}\label{class_horizon_1_1_zone_1_1_skill_database_afc7722f4add88b9bd7195ddb11b4aad8} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!load\_internal\_skill\_tree@{load\_internal\_skill\_tree}}
+\index{load\_internal\_skill\_tree@{load\_internal\_skill\_tree}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_internal\_skill\_tree()}{load\_internal\_skill\_tree()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::load\+\_\+internal\+\_\+skill\+\_\+tree (\begin{DoxyParamCaption}\item[{sol\+::object const \&}]{key,  }\item[{sol\+::object const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_afc7722f4add88b9bd7195ddb11b4aad8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_afc7722f4add88b9bd7195ddb11b4aad8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a533a269040a10d119a459368e47270a9}\label{class_horizon_1_1_zone_1_1_skill_database_a533a269040a10d119a459368e47270a9} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_after\_cast\_act\_delay@{parse\_after\_cast\_act\_delay}}
+\index{parse\_after\_cast\_act\_delay@{parse\_after\_cast\_act\_delay}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_after\_cast\_act\_delay()}{parse\_after\_cast\_act\_delay()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+after\+\_\+cast\+\_\+act\+\_\+delay (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a533a269040a10d119a459368e47270a9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a533a269040a10d119a459368e47270a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a50d7f0691611b12adf6e75f1bda18386}\label{class_horizon_1_1_zone_1_1_skill_database_a50d7f0691611b12adf6e75f1bda18386} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_after\_cast\_walk\_delay@{parse\_after\_cast\_walk\_delay}}
+\index{parse\_after\_cast\_walk\_delay@{parse\_after\_cast\_walk\_delay}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_after\_cast\_walk\_delay()}{parse\_after\_cast\_walk\_delay()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+after\+\_\+cast\+\_\+walk\+\_\+delay (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a50d7f0691611b12adf6e75f1bda18386_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a50d7f0691611b12adf6e75f1bda18386_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ac4d8fd34b1544df93f83dc0a5594509e}\label{class_horizon_1_1_zone_1_1_skill_database_ac4d8fd34b1544df93f83dc0a5594509e} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_attack\_type@{parse\_attack\_type}}
+\index{parse\_attack\_type@{parse\_attack\_type}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_attack\_type()}{parse\_attack\_type()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+attack\+\_\+type (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ac4d8fd34b1544df93f83dc0a5594509e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ac4d8fd34b1544df93f83dc0a5594509e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a6423c3cfb9a0c1638abb3b17491e4184}\label{class_horizon_1_1_zone_1_1_skill_database_a6423c3cfb9a0c1638abb3b17491e4184} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_cast\_defense\_rate@{parse\_cast\_defense\_rate}}
+\index{parse\_cast\_defense\_rate@{parse\_cast\_defense\_rate}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_cast\_defense\_rate()}{parse\_cast\_defense\_rate()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+cast\+\_\+defense\+\_\+rate (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6423c3cfb9a0c1638abb3b17491e4184_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6423c3cfb9a0c1638abb3b17491e4184_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a1c815c43dbb8bd62f63da32e4a085c24}\label{class_horizon_1_1_zone_1_1_skill_database_a1c815c43dbb8bd62f63da32e4a085c24} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_cast\_time@{parse\_cast\_time}}
+\index{parse\_cast\_time@{parse\_cast\_time}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_cast\_time()}{parse\_cast\_time()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+cast\+\_\+time (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a1c815c43dbb8bd62f63da32e4a085c24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a1c815c43dbb8bd62f63da32e4a085c24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a3adc56d5ed34e7863d24e36e73e5e56b}\label{class_horizon_1_1_zone_1_1_skill_database_a3adc56d5ed34e7863d24e36e73e5e56b} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_cast\_time\_options@{parse\_cast\_time\_options}}
+\index{parse\_cast\_time\_options@{parse\_cast\_time\_options}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_cast\_time\_options()}{parse\_cast\_time\_options()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+cast\+\_\+time\+\_\+options (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a3adc56d5ed34e7863d24e36e73e5e56b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_aca420a88fe1d8637d8e1bac60f3d90b8}\label{class_horizon_1_1_zone_1_1_skill_database_aca420a88fe1d8637d8e1bac60f3d90b8} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_cooldown@{parse\_cooldown}}
+\index{parse\_cooldown@{parse\_cooldown}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_cooldown()}{parse\_cooldown()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+cooldown (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aca420a88fe1d8637d8e1bac60f3d90b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aca420a88fe1d8637d8e1bac60f3d90b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ad6eb9a18f917730d1dbcfd240c365d21}\label{class_horizon_1_1_zone_1_1_skill_database_ad6eb9a18f917730d1dbcfd240c365d21} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_damage\_type@{parse\_damage\_type}}
+\index{parse\_damage\_type@{parse\_damage\_type}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_damage\_type()}{parse\_damage\_type()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+damage\+\_\+type (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ad6eb9a18f917730d1dbcfd240c365d21_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ad6eb9a18f917730d1dbcfd240c365d21_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a3cb218d51a53a1cb96112907994e0325}\label{class_horizon_1_1_zone_1_1_skill_database_a3cb218d51a53a1cb96112907994e0325} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_element@{parse\_element}}
+\index{parse\_element@{parse\_element}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_element()}{parse\_element()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+element (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a3cb218d51a53a1cb96112907994e0325_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a3cb218d51a53a1cb96112907994e0325_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a6d61890cb821171d8cb0fe683ddfe36d}\label{class_horizon_1_1_zone_1_1_skill_database_a6d61890cb821171d8cb0fe683ddfe36d} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_fixed\_cast\_time@{parse\_fixed\_cast\_time}}
+\index{parse\_fixed\_cast\_time@{parse\_fixed\_cast\_time}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_fixed\_cast\_time()}{parse\_fixed\_cast\_time()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+fixed\+\_\+cast\+\_\+time (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6d61890cb821171d8cb0fe683ddfe36d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6d61890cb821171d8cb0fe683ddfe36d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a8ecdde6544892f816135a0ba1f74718a}\label{class_horizon_1_1_zone_1_1_skill_database_a8ecdde6544892f816135a0ba1f74718a} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_hit@{parse\_hit}}
+\index{parse\_hit@{parse\_hit}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_hit()}{parse\_hit()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+hit (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a8ecdde6544892f816135a0ba1f74718a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a8ecdde6544892f816135a0ba1f74718a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a023fc29bd5e488c525202522f5c0ab2c}\label{class_horizon_1_1_zone_1_1_skill_database_a023fc29bd5e488c525202522f5c0ab2c} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_interrupt\_cast@{parse\_interrupt\_cast}}
+\index{parse\_interrupt\_cast@{parse\_interrupt\_cast}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_interrupt\_cast()}{parse\_interrupt\_cast()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+interrupt\+\_\+cast (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a023fc29bd5e488c525202522f5c0ab2c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a023fc29bd5e488c525202522f5c0ab2c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ae5d4f1e0ff218c297ca2e0971f6b8fde}\label{class_horizon_1_1_zone_1_1_skill_database_ae5d4f1e0ff218c297ca2e0971f6b8fde} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_knock\_back\_tiles@{parse\_knock\_back\_tiles}}
+\index{parse\_knock\_back\_tiles@{parse\_knock\_back\_tiles}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_knock\_back\_tiles()}{parse\_knock\_back\_tiles()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+knock\+\_\+back\+\_\+tiles (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ae5d4f1e0ff218c297ca2e0971f6b8fde_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ae5d4f1e0ff218c297ca2e0971f6b8fde_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a297c19c61be35786c69e1947f168512b}\label{class_horizon_1_1_zone_1_1_skill_database_a297c19c61be35786c69e1947f168512b} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_max\_skill\_instances@{parse\_max\_skill\_instances}}
+\index{parse\_max\_skill\_instances@{parse\_max\_skill\_instances}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_max\_skill\_instances()}{parse\_max\_skill\_instances()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+max\+\_\+skill\+\_\+instances (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a297c19c61be35786c69e1947f168512b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a297c19c61be35786c69e1947f168512b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_aa34908b39418cf0c867f084d060cfe7f}\label{class_horizon_1_1_zone_1_1_skill_database_aa34908b39418cf0c867f084d060cfe7f} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_number\_of\_hits@{parse\_number\_of\_hits}}
+\index{parse\_number\_of\_hits@{parse\_number\_of\_hits}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_number\_of\_hits()}{parse\_number\_of\_hits()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+number\+\_\+of\+\_\+hits (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aa34908b39418cf0c867f084d060cfe7f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_aa34908b39418cf0c867f084d060cfe7f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a631b2037d738599016c5be7396af5e99}\label{class_horizon_1_1_zone_1_1_skill_database_a631b2037d738599016c5be7396af5e99} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement@{parse\_placement}}
+\index{parse\_placement@{parse\_placement}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement()}{parse\_placement()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a631b2037d738599016c5be7396af5e99_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a631b2037d738599016c5be7396af5e99_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_af6eb62b9ed226b6aebb94d979ca242eb}\label{class_horizon_1_1_zone_1_1_skill_database_af6eb62b9ed226b6aebb94d979ca242eb} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement\_flag@{parse\_placement\_flag}}
+\index{parse\_placement\_flag@{parse\_placement\_flag}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement\_flag()}{parse\_placement\_flag()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement\+\_\+flag (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_af6eb62b9ed226b6aebb94d979ca242eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a82b36aa1ae60c584649ee51fd0346c1b}\label{class_horizon_1_1_zone_1_1_skill_database_a82b36aa1ae60c584649ee51fd0346c1b} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement\_id@{parse\_placement\_id}}
+\index{parse\_placement\_id@{parse\_placement\_id}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement\_id()}{parse\_placement\_id()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement\+\_\+id (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a82b36aa1ae60c584649ee51fd0346c1b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a3f6a37b22657623f2fc9ce96a44b34d0}\label{class_horizon_1_1_zone_1_1_skill_database_a3f6a37b22657623f2fc9ce96a44b34d0} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement\_interval@{parse\_placement\_interval}}
+\index{parse\_placement\_interval@{parse\_placement\_interval}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement\_interval()}{parse\_placement\_interval()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement\+\_\+interval (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a3f6a37b22657623f2fc9ce96a44b34d0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a3f6a37b22657623f2fc9ce96a44b34d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ae7ed94e46b10d21c21099d2790912887}\label{class_horizon_1_1_zone_1_1_skill_database_ae7ed94e46b10d21c21099d2790912887} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement\_layout@{parse\_placement\_layout}}
+\index{parse\_placement\_layout@{parse\_placement\_layout}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement\_layout()}{parse\_placement\_layout()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement\+\_\+layout (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ae7ed94e46b10d21c21099d2790912887_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ae7ed94e46b10d21c21099d2790912887_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a784058c430244d288e022d9b72401f82}\label{class_horizon_1_1_zone_1_1_skill_database_a784058c430244d288e022d9b72401f82} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement\_range@{parse\_placement\_range}}
+\index{parse\_placement\_range@{parse\_placement\_range}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement\_range()}{parse\_placement\_range()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement\+\_\+range (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a784058c430244d288e022d9b72401f82_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a784058c430244d288e022d9b72401f82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a00fd3db05ea243688b7f6bef8ac53622}\label{class_horizon_1_1_zone_1_1_skill_database_a00fd3db05ea243688b7f6bef8ac53622} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_placement\_target@{parse\_placement\_target}}
+\index{parse\_placement\_target@{parse\_placement\_target}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_placement\_target()}{parse\_placement\_target()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+placement\+\_\+target (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a00fd3db05ea243688b7f6bef8ac53622_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a00fd3db05ea243688b7f6bef8ac53622_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a8c96fc053e835bf1a865b3846a720cfd}\label{class_horizon_1_1_zone_1_1_skill_database_a8c96fc053e835bf1a865b3846a720cfd} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_range@{parse\_range}}
+\index{parse\_range@{parse\_range}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_range()}{parse\_range()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+range (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a8c96fc053e835bf1a865b3846a720cfd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a8c96fc053e835bf1a865b3846a720cfd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a9b5c6f4696b1f955cb76cb9f0efd08cd}\label{class_horizon_1_1_zone_1_1_skill_database_a9b5c6f4696b1f955cb76cb9f0efd08cd} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_ammunition\_cost@{parse\_req\_ammunition\_cost}}
+\index{parse\_req\_ammunition\_cost@{parse\_req\_ammunition\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_ammunition\_cost()}{parse\_req\_ammunition\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+ammunition\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a9b5c6f4696b1f955cb76cb9f0efd08cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a9b5c6f4696b1f955cb76cb9f0efd08cd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a6425e11fa99932b5c95f1ca50828c2e3}\label{class_horizon_1_1_zone_1_1_skill_database_a6425e11fa99932b5c95f1ca50828c2e3} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_ammunition\_type@{parse\_req\_ammunition\_type}}
+\index{parse\_req\_ammunition\_type@{parse\_req\_ammunition\_type}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_ammunition\_type()}{parse\_req\_ammunition\_type()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+ammunition\+\_\+type (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a6425e11fa99932b5c95f1ca50828c2e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a2195c5f92d5de00ba3b54872912dbf66}\label{class_horizon_1_1_zone_1_1_skill_database_a2195c5f92d5de00ba3b54872912dbf66} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_hp\_cost@{parse\_req\_hp\_cost}}
+\index{parse\_req\_hp\_cost@{parse\_req\_hp\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_hp\_cost()}{parse\_req\_hp\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+hp\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a2195c5f92d5de00ba3b54872912dbf66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a2195c5f92d5de00ba3b54872912dbf66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a1e8e3ef1be129a6ed99dbc4f628546e1}\label{class_horizon_1_1_zone_1_1_skill_database_a1e8e3ef1be129a6ed99dbc4f628546e1} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_hp\_rate\_cost@{parse\_req\_hp\_rate\_cost}}
+\index{parse\_req\_hp\_rate\_cost@{parse\_req\_hp\_rate\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_hp\_rate\_cost()}{parse\_req\_hp\_rate\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+hp\+\_\+rate\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a1e8e3ef1be129a6ed99dbc4f628546e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a1e8e3ef1be129a6ed99dbc4f628546e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a2fd1229a2214e7694fba805f196a551e}\label{class_horizon_1_1_zone_1_1_skill_database_a2fd1229a2214e7694fba805f196a551e} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_items@{parse\_req\_items}}
+\index{parse\_req\_items@{parse\_req\_items}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_items()}{parse\_req\_items()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+items (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data,  }\item[{bool}]{equips }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a2fd1229a2214e7694fba805f196a551e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a2fd1229a2214e7694fba805f196a551e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_afeb01922425add34bf6c91bcd4b7e398}\label{class_horizon_1_1_zone_1_1_skill_database_afeb01922425add34bf6c91bcd4b7e398} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_max\_hp\_trigger@{parse\_req\_max\_hp\_trigger}}
+\index{parse\_req\_max\_hp\_trigger@{parse\_req\_max\_hp\_trigger}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_max\_hp\_trigger()}{parse\_req\_max\_hp\_trigger()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+max\+\_\+hp\+\_\+trigger (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_afeb01922425add34bf6c91bcd4b7e398_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_afeb01922425add34bf6c91bcd4b7e398_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_adfa63829ba1ff359c4ee1dc82ac91d7e}\label{class_horizon_1_1_zone_1_1_skill_database_adfa63829ba1ff359c4ee1dc82ac91d7e} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_max\_sp\_trigger@{parse\_req\_max\_sp\_trigger}}
+\index{parse\_req\_max\_sp\_trigger@{parse\_req\_max\_sp\_trigger}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_max\_sp\_trigger()}{parse\_req\_max\_sp\_trigger()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+max\+\_\+sp\+\_\+trigger (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_adfa63829ba1ff359c4ee1dc82ac91d7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_adfa63829ba1ff359c4ee1dc82ac91d7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a23d623cc946665af0fca85e30867950f}\label{class_horizon_1_1_zone_1_1_skill_database_a23d623cc946665af0fca85e30867950f} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_sp\_cost@{parse\_req\_sp\_cost}}
+\index{parse\_req\_sp\_cost@{parse\_req\_sp\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_sp\_cost()}{parse\_req\_sp\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+sp\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a23d623cc946665af0fca85e30867950f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a23d623cc946665af0fca85e30867950f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_af5cee31266a69833cb7e58109a7e08ec}\label{class_horizon_1_1_zone_1_1_skill_database_af5cee31266a69833cb7e58109a7e08ec} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_sp\_rate\_cost@{parse\_req\_sp\_rate\_cost}}
+\index{parse\_req\_sp\_rate\_cost@{parse\_req\_sp\_rate\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_sp\_rate\_cost()}{parse\_req\_sp\_rate\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+sp\+\_\+rate\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_af5cee31266a69833cb7e58109a7e08ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_af5cee31266a69833cb7e58109a7e08ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a773eb913ac9fdc61e973764be703eebb}\label{class_horizon_1_1_zone_1_1_skill_database_a773eb913ac9fdc61e973764be703eebb} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_spirit\_sphere\_cost@{parse\_req\_spirit\_sphere\_cost}}
+\index{parse\_req\_spirit\_sphere\_cost@{parse\_req\_spirit\_sphere\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_spirit\_sphere\_cost()}{parse\_req\_spirit\_sphere\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+spirit\+\_\+sphere\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a773eb913ac9fdc61e973764be703eebb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a773eb913ac9fdc61e973764be703eebb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a404312cdaa597cef8fe05248b51a4e63}\label{class_horizon_1_1_zone_1_1_skill_database_a404312cdaa597cef8fe05248b51a4e63} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_state@{parse\_req\_state}}
+\index{parse\_req\_state@{parse\_req\_state}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_state()}{parse\_req\_state()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+state (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a404312cdaa597cef8fe05248b51a4e63_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a404312cdaa597cef8fe05248b51a4e63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a9379950095ce28369c79a046cf6502f9}\label{class_horizon_1_1_zone_1_1_skill_database_a9379950095ce28369c79a046cf6502f9} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_weapon\_types@{parse\_req\_weapon\_types}}
+\index{parse\_req\_weapon\_types@{parse\_req\_weapon\_types}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_weapon\_types()}{parse\_req\_weapon\_types()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+weapon\+\_\+types (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a9379950095ce28369c79a046cf6502f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ae8c4be8e6f17da9831158b845b72bceb}\label{class_horizon_1_1_zone_1_1_skill_database_ae8c4be8e6f17da9831158b845b72bceb} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_req\_zeny\_cost@{parse\_req\_zeny\_cost}}
+\index{parse\_req\_zeny\_cost@{parse\_req\_zeny\_cost}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_req\_zeny\_cost()}{parse\_req\_zeny\_cost()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+req\+\_\+zeny\+\_\+cost (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ae8c4be8e6f17da9831158b845b72bceb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ae8c4be8e6f17da9831158b845b72bceb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a589e172e84dbf586105349c0272bd1a0}\label{class_horizon_1_1_zone_1_1_skill_database_a589e172e84dbf586105349c0272bd1a0} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_requirements@{parse\_requirements}}
+\index{parse\_requirements@{parse\_requirements}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_requirements()}{parse\_requirements()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+requirements (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a589e172e84dbf586105349c0272bd1a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a589e172e84dbf586105349c0272bd1a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_acb4bd2ae90b859509dcef03c07dafbca}\label{class_horizon_1_1_zone_1_1_skill_database_acb4bd2ae90b859509dcef03c07dafbca} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_skill\_data1@{parse\_skill\_data1}}
+\index{parse\_skill\_data1@{parse\_skill\_data1}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_skill\_data1()}{parse\_skill\_data1()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+skill\+\_\+data1 (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_acb4bd2ae90b859509dcef03c07dafbca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_acb4bd2ae90b859509dcef03c07dafbca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a2e7a212e8f401a0662373bee618336fe}\label{class_horizon_1_1_zone_1_1_skill_database_a2e7a212e8f401a0662373bee618336fe} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_skill\_data2@{parse\_skill\_data2}}
+\index{parse\_skill\_data2@{parse\_skill\_data2}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_skill\_data2()}{parse\_skill\_data2()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+skill\+\_\+data2 (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a2e7a212e8f401a0662373bee618336fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a2e7a212e8f401a0662373bee618336fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a4831f64125a8fc8d250d9e3936ed6447}\label{class_horizon_1_1_zone_1_1_skill_database_a4831f64125a8fc8d250d9e3936ed6447} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_skill\_delay\_options@{parse\_skill\_delay\_options}}
+\index{parse\_skill\_delay\_options@{parse\_skill\_delay\_options}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_skill\_delay\_options()}{parse\_skill\_delay\_options()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+skill\+\_\+delay\+\_\+options (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a4831f64125a8fc8d250d9e3936ed6447_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_a3b49afadd09fe53e765ea67eecbe923c}\label{class_horizon_1_1_zone_1_1_skill_database_a3b49afadd09fe53e765ea67eecbe923c} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_skill\_info@{parse\_skill\_info}}
+\index{parse\_skill\_info@{parse\_skill\_info}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_skill\_info()}{parse\_skill\_info()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+skill\+\_\+info (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_a3b49afadd09fe53e765ea67eecbe923c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ab10a7972acf44f9b5be001a1a190baa1}\label{class_horizon_1_1_zone_1_1_skill_database_ab10a7972acf44f9b5be001a1a190baa1} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_skill\_type@{parse\_skill\_type}}
+\index{parse\_skill\_type@{parse\_skill\_type}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_skill\_type()}{parse\_skill\_type()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+skill\+\_\+type (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ab10a7972acf44f9b5be001a1a190baa1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_skill_database_ad3c12ea843411132898e68b543630907}\label{class_horizon_1_1_zone_1_1_skill_database_ad3c12ea843411132898e68b543630907} 
+\index{Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}!parse\_splash\_range@{parse\_splash\_range}}
+\index{parse\_splash\_range@{parse\_splash\_range}!Horizon::Zone::SkillDatabase@{Horizon::Zone::SkillDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_splash\_range()}{parse\_splash\_range()}}
+{\footnotesize\ttfamily bool Skill\+Database\+::parse\+\_\+splash\+\_\+range (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ad3c12ea843411132898e68b543630907_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_skill_database_ad3c12ea843411132898e68b543630907_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_skill_d_b_8hpp}{Skill\+DB.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_skill_d_b_8cpp}{Skill\+DB.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\doxysection{Connection\+Pool Class Reference}
+\hypertarget{class_connection_pool}{}\label{class_connection_pool}\index{ConnectionPool@{ConnectionPool}}
+
+
+{\ttfamily \#include $<$Connection\+Pool.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_connection_pool_a056fac5a6f20a46e76db70c9f1f6298a}{Connection\+Pool}} (const std\+::string \&host, int port, const std\+::string \&user, const std\+::string \&password, const std\+::string \&schema, int pool\+\_\+size)
+\item 
+mysqlx\+::\+Session \mbox{\hyperlink{class_connection_pool_a820b949dda16a1da7dbe387b5f5e9d73}{get\+\_\+connection}} ()
+\item 
+void \mbox{\hyperlink{class_connection_pool_a61ceaf7e02c749d7ef4fc1936194ac08}{release\+\_\+connection}} (mysqlx\+::\+Session connection)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_connection_pool_a056fac5a6f20a46e76db70c9f1f6298a}\label{class_connection_pool_a056fac5a6f20a46e76db70c9f1f6298a} 
+\index{ConnectionPool@{ConnectionPool}!ConnectionPool@{ConnectionPool}}
+\index{ConnectionPool@{ConnectionPool}!ConnectionPool@{ConnectionPool}}
+\doxysubsubsection{\texorpdfstring{ConnectionPool()}{ConnectionPool()}}
+{\footnotesize\ttfamily Connection\+Pool\+::\+Connection\+Pool (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{int}]{port,  }\item[{const std\+::string \&}]{user,  }\item[{const std\+::string \&}]{password,  }\item[{const std\+::string \&}]{schema,  }\item[{int}]{pool\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_connection_pool_a820b949dda16a1da7dbe387b5f5e9d73}\label{class_connection_pool_a820b949dda16a1da7dbe387b5f5e9d73} 
+\index{ConnectionPool@{ConnectionPool}!get\_connection@{get\_connection}}
+\index{get\_connection@{get\_connection}!ConnectionPool@{ConnectionPool}}
+\doxysubsubsection{\texorpdfstring{get\_connection()}{get\_connection()}}
+{\footnotesize\ttfamily mysqlx\+::\+Session Connection\+Pool\+::get\+\_\+connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_pool_a820b949dda16a1da7dbe387b5f5e9d73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_pool_a61ceaf7e02c749d7ef4fc1936194ac08}\label{class_connection_pool_a61ceaf7e02c749d7ef4fc1936194ac08} 
+\index{ConnectionPool@{ConnectionPool}!release\_connection@{release\_connection}}
+\index{release\_connection@{release\_connection}!ConnectionPool@{ConnectionPool}}
+\doxysubsubsection{\texorpdfstring{release\_connection()}{release\_connection()}}
+{\footnotesize\ttfamily void Connection\+Pool\+::release\+\_\+connection (\begin{DoxyParamCaption}\item[{mysqlx\+::\+Session}]{connection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_pool_a61ceaf7e02c749d7ef4fc1936194ac08_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Database/\mbox{\hyperlink{_connection_pool_8hpp}{Connection\+Pool.\+hpp}}\end{DoxyCompactItemize}

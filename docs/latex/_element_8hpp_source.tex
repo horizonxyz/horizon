@@ -1,0 +1,87 @@
+\doxysection{Element.\+hpp}
+\hypertarget{_element_8hpp_source}{}\label{_element_8hpp_source}\index{src/Core/Structures/LinkedList/Element.hpp@{src/Core/Structures/LinkedList/Element.hpp}}
+\mbox{\hyperlink{_element_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_STRUCTURES\_LINKEDLIST\_ELEMENT\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_STRUCTURES\_LINKEDLIST\_ELEMENT\_HPP}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }Structures}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }LinkedList}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ *\_next;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ *\_prev;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afc3aac8e24b5f6a85606aefe80692142}{Element}}()\ :\ \_next(nullptr),\ \_prev(nullptr)\ \{\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773}{has\_next}}()\textcolor{keyword}{\ const\ \ }\{\ \textcolor{keywordflow}{return}\ (\_next\ \&\&\ \_next-\/>\_next\ !=\ \textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38}{has\_prev}}()\textcolor{keyword}{\ const\ \ }\{\ \textcolor{keywordflow}{return}\ (\_prev\ \&\&\ \_prev-\/>\_prev\ !=\ \textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a8dd1bb6298a17ebe8a76594f4366adc8}{is\_in\_list}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (\_next\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ \_prev\ !=\ \textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d}{next}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773}{has\_next}}()\ ?\ \_next\ :\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a21334a8d43291d411d9be9f336dc9ad3}{next}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773}{has\_next}}()\ ?\ \_next\ :\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11}{prev}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38}{has\_prev}}()\ ?\ \_prev\ :\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a3c3c7e91a7d127fda22f3c4125c03762}{prev}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38}{has\_prev}}()\ ?\ \_prev\ :\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4}{nocheck\_next}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \_next;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5e55b79033f62453ff341e11474f7b2b}{nocheck\_next}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_next;\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013}{nocheck\_prev}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \_prev;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a68a4eaf4f37bd5a2cbe09982cb25e74d}{nocheck\_prev}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_prev;\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34}{delink}}()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a8dd1bb6298a17ebe8a76594f4366adc8}{is\_in\_list}}())}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_next-\/>\_prev\ =\ \_prev;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_prev-\/>\_next\ =\ \_next;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_prev\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a73cdfe20ac1ca1e5816b3b875d66b36a}{push\_before}}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}*\ pElem)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ pElem-\/>\_next\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ pElem-\/>\_prev\ =\ \_prev;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_prev-\/>\_next\ =\ pElem;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \_prev\ =\ pElem;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a1ef6d7c52020cb0020819fba1c57c53e}{push\_after}}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}*\ pElem)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ pElem-\/>\_prev\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ pElem-\/>\_next\ =\ \_next;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \_next-\/>\_prev\ =\ pElem;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_next\ =\ pElem;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ disable\ copy\ and\ assignment\ because\ we\ don't\ want\ to\ copy\ Elements\ and\ we\ don't\ want\ to\ assign\ Elements\ to\ each\ other.}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ This\ is\ a\ linked\ list,\ not\ a\ copyable\ list\ because\ it\ is\ used\ to\ manage\ a\ list\ of\ objects\ that\ are\ not\ copyable.}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ It\ should\ be\ noted\ that\ copying\ the\ objects\ could\ result\ in\ unexpected\ behavior.}}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afc3aac8e24b5f6a85606aefe80692142}{Element}}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\&\ operator=(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5b4f943e6e52edd1b3efecfaf8bb585b}{\string~Element}}()}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34}{delink}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CORE\_STRUCTURES\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

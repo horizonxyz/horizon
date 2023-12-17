@@ -1,0 +1,125 @@
+\doxysection{src/\+Libraries/\+Networking/\+Buffer/\+Byte\+Converter.hpp File Reference}
+\hypertarget{_byte_converter_8hpp}{}\label{_byte_converter_8hpp}\index{src/Libraries/Networking/Buffer/ByteConverter.hpp@{src/Libraries/Networking/Buffer/ByteConverter.hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for Byte\+Converter.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{_byte_converter_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_byte_converter_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_byte_converter}{Byte\+Converter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t T$>$ }\\void \mbox{\hyperlink{namespace_byte_converter_a5628479f846d755da3ff53b0e2a66c26}{Byte\+Converter\+::convert}} (char \texorpdfstring{$\ast$}{*}val)
+\item 
+template$<$$>$ void \mbox{\hyperlink{namespace_byte_converter_aa8017307aa0aa935f062b4f701563d09}{Byte\+Converter\+::convert$<$ 0 $>$}} (char \texorpdfstring{$\ast$}{*})
+\item 
+template$<$$>$ void \mbox{\hyperlink{namespace_byte_converter_a3717e304a2b8b074fcd513ca8e0db116}{Byte\+Converter\+::convert$<$ 1 $>$}} (char \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_byte_converter_a6177d7ac84a4ea6819c57a124345540e}{Byte\+Converter\+::apply}} (T \texorpdfstring{$\ast$}{*}val)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_byte_converter_8hpp_ac1798fda69f7f8dc69f6033bf164ba75}{Endian\+Convert}} (T \&)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_byte_converter_8hpp_aa32fc660c9a769f29d1f158908290777}{Endian\+Convert\+Reverse}} (T \&val)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_byte_converter_8hpp_aa92e0103bbffb5c04e26f3170412ec80}{Endian\+Convert\+Ptr}} (void \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_byte_converter_8hpp_aeb4d09b1cf8d2fbd553ce13aeeb6df3b}{Endian\+Convert\+Ptr\+Reverse}} (void \texorpdfstring{$\ast$}{*}val)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_byte_converter_8hpp_af2e19073fdc053bb0299b663fa1ee757}{Endian\+Convert}} (T \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_byte_converter_8hpp_a1fa1c447bec92bbf436d429b422cc2e7}{Endian\+Convert\+Reverse}} (T \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{_byte_converter_8hpp_a2b4861f20ba8ace2245cac96abad30ef}{Endian\+Convert}} (uint8\+\_\+t \&)
+\item 
+void \mbox{\hyperlink{_byte_converter_8hpp_a7aebf6dc2f90454b77904ee3a016125e}{Endian\+Convert}} (int8\+\_\+t \&)
+\item 
+void \mbox{\hyperlink{_byte_converter_8hpp_a3793b01a279ed8e7a583c0bb52bb91b4}{Endian\+Convert\+Reverse}} (uint8\+\_\+t \&)
+\item 
+void \mbox{\hyperlink{_byte_converter_8hpp_aa90d701f205fd9e9e13f42d4c5f3841f}{Endian\+Convert\+Reverse}} (int8\+\_\+t \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_byte_converter_8hpp_a7aebf6dc2f90454b77904ee3a016125e}\label{_byte_converter_8hpp_a7aebf6dc2f90454b77904ee3a016125e} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvert@{EndianConvert}}
+\index{EndianConvert@{EndianConvert}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvert()}{EndianConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Endian\+Convert (\begin{DoxyParamCaption}\item[{int8\+\_\+t \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_ac1798fda69f7f8dc69f6033bf164ba75}\label{_byte_converter_8hpp_ac1798fda69f7f8dc69f6033bf164ba75} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvert@{EndianConvert}}
+\index{EndianConvert@{EndianConvert}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvert()}{EndianConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Endian\+Convert (\begin{DoxyParamCaption}\item[{T \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_af2e19073fdc053bb0299b663fa1ee757}\label{_byte_converter_8hpp_af2e19073fdc053bb0299b663fa1ee757} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvert@{EndianConvert}}
+\index{EndianConvert@{EndianConvert}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvert()}{EndianConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Endian\+Convert (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_byte_converter_8hpp_a2b4861f20ba8ace2245cac96abad30ef}\label{_byte_converter_8hpp_a2b4861f20ba8ace2245cac96abad30ef} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvert@{EndianConvert}}
+\index{EndianConvert@{EndianConvert}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvert()}{EndianConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Endian\+Convert (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_aa92e0103bbffb5c04e26f3170412ec80}\label{_byte_converter_8hpp_aa92e0103bbffb5c04e26f3170412ec80} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvertPtr@{EndianConvertPtr}}
+\index{EndianConvertPtr@{EndianConvertPtr}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvertPtr()}{EndianConvertPtr()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Endian\+Convert\+Ptr (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_aeb4d09b1cf8d2fbd553ce13aeeb6df3b}\label{_byte_converter_8hpp_aeb4d09b1cf8d2fbd553ce13aeeb6df3b} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvertPtrReverse@{EndianConvertPtrReverse}}
+\index{EndianConvertPtrReverse@{EndianConvertPtrReverse}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvertPtrReverse()}{EndianConvertPtrReverse()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Endian\+Convert\+Ptr\+Reverse (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_aa90d701f205fd9e9e13f42d4c5f3841f}\label{_byte_converter_8hpp_aa90d701f205fd9e9e13f42d4c5f3841f} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvertReverse@{EndianConvertReverse}}
+\index{EndianConvertReverse@{EndianConvertReverse}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvertReverse()}{EndianConvertReverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Endian\+Convert\+Reverse (\begin{DoxyParamCaption}\item[{int8\+\_\+t \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_aa32fc660c9a769f29d1f158908290777}\label{_byte_converter_8hpp_aa32fc660c9a769f29d1f158908290777} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvertReverse@{EndianConvertReverse}}
+\index{EndianConvertReverse@{EndianConvertReverse}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvertReverse()}{EndianConvertReverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Endian\+Convert\+Reverse (\begin{DoxyParamCaption}\item[{T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_byte_converter_8hpp_a1fa1c447bec92bbf436d429b422cc2e7}\label{_byte_converter_8hpp_a1fa1c447bec92bbf436d429b422cc2e7} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvertReverse@{EndianConvertReverse}}
+\index{EndianConvertReverse@{EndianConvertReverse}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvertReverse()}{EndianConvertReverse()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Endian\+Convert\+Reverse (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_byte_converter_8hpp_a3793b01a279ed8e7a583c0bb52bb91b4}\label{_byte_converter_8hpp_a3793b01a279ed8e7a583c0bb52bb91b4} 
+\index{ByteConverter.hpp@{ByteConverter.hpp}!EndianConvertReverse@{EndianConvertReverse}}
+\index{EndianConvertReverse@{EndianConvertReverse}!ByteConverter.hpp@{ByteConverter.hpp}}
+\doxysubsubsection{\texorpdfstring{EndianConvertReverse()}{EndianConvertReverse()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Endian\+Convert\+Reverse (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

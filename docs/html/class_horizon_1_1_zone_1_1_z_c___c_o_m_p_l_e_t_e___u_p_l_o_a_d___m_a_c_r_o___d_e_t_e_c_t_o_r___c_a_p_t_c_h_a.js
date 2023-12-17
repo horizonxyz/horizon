@@ -1,0 +1,7 @@
+var class_horizon_1_1_zone_1_1_z_c___c_o_m_p_l_e_t_e___u_p_l_o_a_d___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a =
+[
+    [ "ZC_COMPLETE_UPLOAD_MACRO_DETECTOR_CAPTCHA", "class_horizon_1_1_zone_1_1_z_c___c_o_m_p_l_e_t_e___u_p_l_o_a_d___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#aa1fb981a0d80ddae37633a355bda9129", null ],
+    [ "~ZC_COMPLETE_UPLOAD_MACRO_DETECTOR_CAPTCHA", "class_horizon_1_1_zone_1_1_z_c___c_o_m_p_l_e_t_e___u_p_l_o_a_d___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#ac979914c3ec2731fcbd22f9d4056edee", null ],
+    [ "deliver", "class_horizon_1_1_zone_1_1_z_c___c_o_m_p_l_e_t_e___u_p_l_o_a_d___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#a7779641c9d2fc7b7292ec00f558b390b", null ],
+    [ "serialize", "class_horizon_1_1_zone_1_1_z_c___c_o_m_p_l_e_t_e___u_p_l_o_a_d___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#aed1a5b1c2029ee2f760ad3d4cf06488e", null ]
+];

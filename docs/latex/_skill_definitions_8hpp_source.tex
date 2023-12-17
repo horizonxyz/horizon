@@ -1,0 +1,354 @@
+\doxysection{Skill\+Definitions.\+hpp}
+\hypertarget{_skill_definitions_8hpp_source}{}\label{_skill_definitions_8hpp_source}\index{src/Server/Zone/Definitions/SkillDefinitions.hpp@{src/Server/Zone/Definitions/SkillDefinitions.hpp}}
+\mbox{\hyperlink{_skill_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_SKILL\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_SKILL\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_battle_definitions_8hpp}{BattleDefinitions.hpp}}"{}}\ \textcolor{comment}{//\ battle\_damage\_type\ in\ skill\_config\_data}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_definitions_8hpp}{ItemDefinitions.hpp}}"{}}\ \textcolor{comment}{//\ weapon\_type,\ ammunition\_type}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }Entity;}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_NAME\_LENGTH\ \ \ \ \ 24}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_LEVEL\ \ \ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_UNIT\_LAYOUT\ \ \ \ \ 45}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ MAX\_SQUARE\_LAYOUT\ \ \ \ \ \ \ \ \ 5\ }\textcolor{comment}{//\ 11*11\ Placement\ of\ a\ maximum\ unit}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_UNIT\_COUNT\ \ \ \ \ \ ((MAX\_SQUARE\_LAYOUT*2+1)*(MAX\_SQUARE\_LAYOUT*2+1))}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_ITEM\_REQUIRE\ \ \ \ 10}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ MAX\_SKILL\_ID}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_ID\ 10015\ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ MAX\_SKILL\_TREE}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ MAX\_SKILL\_TREE\ 86\ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314d}{skill\_placement\_behavior\_types}}\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da1e69bceb5ac963ee36d57834bce7adb7}{SPB\_NONE}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0000,}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa94df797f8d4546c5e24652410a1cac0}{SPB\_DEFNOTENEMY}}\ \ \ \ \ \ =\ 0x0001,\ \textcolor{comment}{//\ If\ 'defunit\_not\_enemy'\ is\ set,\ the\ target\ is\ changed\ to\ 'friend'}}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da4e7390248579d63548e3af333b984ea8}{SPB\_NOREITERATION}}\ \ \ \ =\ 0x0002,\ \textcolor{comment}{//\ Spell\ cannot\ be\ stacked}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3d29cccb1553b801b1be7a4bf86ef0d3}{SPB\_NOFOOTSET}}\ \ \ \ \ \ \ \ =\ 0x0004,\ \textcolor{comment}{//\ Spell\ cannot\ be\ cast\ near/on\ targets}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab85a2366c3a8ccec757518244d58a75c}{SPB\_NOOVERLAP}}\ \ \ \ \ \ \ \ =\ 0x0008,\ \textcolor{comment}{//\ Spell\ effects\ do\ not\ overlap}}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da90929bf0f278c05633754599739dae29}{SPB\_PATHCHECK}}\ \ \ \ \ \ \ \ =\ 0x0010,\ \textcolor{comment}{//\ Only\ cells\ with\ a\ shootable\ path\ will\ be\ placed}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da8ad18ae3d6a238d1417f196699759869}{SPB\_NOPC}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0020,\ \textcolor{comment}{//\ May\ not\ target\ players}}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3da860317b139f7d5c369d1e71ed4084}{SPB\_NOMOB}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0040,\ \textcolor{comment}{//\ May\ not\ target\ mobs}}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da04dcbd51c1de3d207b17882d4941f0fb}{SPB\_SKILL}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0080,\ \textcolor{comment}{//\ May\ target\ skills}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab24da7916d23b69ae3125316636cb1f2}{SPB\_DANCE}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0100,\ \textcolor{comment}{//\ Dance}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa598ef238dd6eb5131f1b5238215e23b}{SPB\_ENSEMBLE}}\ \ \ \ \ \ \ \ \ =\ 0x0200,\ \textcolor{comment}{//\ Duet}}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da2b12128e080be481e7a6031158546873}{SPB\_SONG}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0400,\ \textcolor{comment}{//\ Song}}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da16c96647af3dd9db6af9fcf0b61535b5}{SPB\_DUALMODE}}\ \ \ \ \ \ \ \ \ =\ 0x0800,\ \textcolor{comment}{//\ Spells\ should\ trigger\ both\ ontimer\ and\ onplace/onout/onleft\ effects.}}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da91a8f6268409e7592a0258441fba437b}{SPB\_RANGEDSINGLEUNIT}}\ =\ 0x2000,\ \textcolor{comment}{//\ Hack\ for\ ranged\ layout,\ only\ display\ center}}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164}{skill\_required\_state\_types}}\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a224bccb0ab5d8bec94d8acfa66af0eb9}{SRS\_NONE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae657122fcbdaeacd5cb7505933ede2a3}{SRS\_HIDING}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a7ad73b75a1ca998cef561dede3f19a33}{SRS\_CLOAKING}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae73afec78a4f38688bec433e5d47828c}{SRS\_HIDDEN}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x03,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad16c23893091d9e0e8a5389cf70fd1a0}{SRS\_RIDING}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a397c9c27898f7f8aecdd510d83716c95}{SRS\_FALCON}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x05,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a053f042656fdfbeaca6ffa94094d2574}{SRS\_CART}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x06,}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a71f2f0d2cc0175dbc9b49262645c82f7}{SRS\_SHIELD}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x07,}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a11d48ba7ba8e9f8321c31806f0fcf6d2}{SRS\_SIGHT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x08,}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164afb7985bcc7df1d2afc2526b2c909948f}{SRS\_EXPLOSIONSPIRITS}}\ \ \ =\ 0x09,}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aebd3b40a21c6ab1cd8b2d96cc636a31b}{SRS\_CARTBOOST}}\ \ \ \ \ \ \ \ \ \ =\ 0x0A,}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a87629ddfc2a3e555da1d77069d08e359}{SRS\_RECOV\_WEIGHT\_RATE}}\ \ =\ 0x0B,}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad5b152563dcf5b08cbed9c19b899aa0f}{SRS\_MOVE\_ENABLE}}\ \ \ \ \ \ \ \ =\ 0x0C,}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a84395fd982a7b289f055b06fe95dae13}{SRS\_WATER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0D,}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aa399f0190ae47645d1311bf3bf39ddfb}{SRS\_RIDINGDRAGON}}\ \ \ \ \ \ \ =\ 0x0E,}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a172dfc8601e290bd3a4484fdd29345e4}{SRS\_WUG}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0F,}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abe7553bbb078477796640a9b94cb83cf}{SRS\_RIDINGWUG}}\ \ \ \ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a46bcef9cdd7830b9851690b1f2da9d09}{SRS\_MADO}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x11,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ac304c7494380664660e1fbba731167f0}{SRS\_ELEMENTALSPIRIT}}\ \ \ \ =\ 0x12,}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abdbc7dc40ad8bf1031d04db5483dd941}{SRS\_POISONINGWEAPON}}\ \ \ \ =\ 0x13,}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a88da2d7d56f3c9720dbdafb33135c0cf}{SRS\_ROLLINGCUTTER}}\ \ \ \ \ \ =\ 0x14,}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ab337fe36fd66dc5f3684d07bafea68d2}{SRS\_MH\_FIGHTING}}\ \ \ \ \ \ \ \ =\ 0x15,}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a5f8dad19faa1dd087c20eb2993df3834}{SRS\_MH\_GRAPPLING}}\ \ \ \ \ \ \ =\ 0x16,}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a216b7fc38fdfe8833e57661a013ccbcd}{SRS\_PECO}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x17,}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164af8d3b77edd0d0812c24b98f0fd629b76}{SRS\_MAX}}}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891}{skill\_primary\_type}}\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8}{SK\_TYPE\_PASSIVE}}\ \ \ \ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a96f7804e526092d83c3485ae2d3f1ae7}{SK\_TYPE\_ATTACK}}\ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891aa646921a019a4874d4353f9f0b072c9f}{SK\_TYPE\_PLACEMENT}}\ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a0c4cf62202eac81b4a084b9c027cbe56}{SK\_TYPE\_SELF}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x04,\ \textcolor{comment}{//\ Skills\ casted\ on\ self\ where\ target\ is\ automatically\ chosen}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ 0x08\ not\ assigned}}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a1602cfb5af33dea0e293c3bc9c53d305}{SK\_TYPE\_FRIENDLY}}\ \ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a80b99f006a6981e60eb98274e8d78ec9}{SK\_TYPE\_TRAP}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575}{skill\_secondary\_type}}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011}{SK\_SUBTYPE\_NONE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000,}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a0223a78812027e36cdceaf742317389d}{SK\_SUBTYPE\_QUEST\_SKILL}}\ \ \ \ \ \ \ =\ 0x00001,}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a9e88700e0187c2690377999b2cd376a2}{SK\_SUBTYPE\_NPC\_SKILL}}\ \ \ \ \ \ \ \ \ =\ 0x00002,\ \textcolor{comment}{//\ NPC\ skills\ are\ those\ that\ players\ can't\ have\ in\ their\ skill\ tree.}}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a21e24a6834ee519270e667ece4fa899c}{SK\_SUBTYPE\_WEDDING\_SKILL}}\ \ \ \ \ =\ 0x00004,}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5ada9de755dbd715f3e17d3a34fded87}{SK\_SUBTYPE\_SPIRIT\_SKILL}}\ \ \ \ \ \ =\ 0x00008,}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a1592d2689328dc487897ef9c7c6b26ff}{SK\_SUBTYPE\_GUILD\_SKILL}}\ \ \ \ \ \ \ =\ 0x00010,}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a124b0604440320a403a3644a5007ef16}{SK\_SUBTYPE\_SONG\_DANCE}}\ \ \ \ \ \ \ \ =\ 0x00020,}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aeb9bdc7de99cdbe172ac7b025dd768f3}{SK\_SUBTYPE\_ENSEMBLE\_SKILL}}\ \ \ \ =\ 0x00040,}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5106f60b1a187106051899c7127e11c5}{SK\_SUBTYPE\_TRAP\_SKILL}}\ \ \ \ \ \ \ \ =\ 0x00080,}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a59460986bcaac872d88a6f05b6ed9652}{SK\_SUBTYPE\_TARGET\_SELF}}\ \ \ \ \ \ \ =\ 0x00100,\ \textcolor{comment}{//\ Refers\ to\ ground\ placed\ skills\ that\ will\ target\ the\ caster\ as\ well\ (like\ Grandcross)}}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a2eebcd37a483c8d5e38d36d60997efcf}{SK\_SUBTYPE\_NO\_TARGET\_SELF}}\ \ \ \ =\ 0x00200,}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7d4004f9566c318431de1ad6a3327fba}{SK\_SUBTYPE\_PARTY\_ONLY}}\ \ \ \ \ \ \ \ =\ 0x00400,}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a8937f11be97435c1272226aeac307ba7}{SK\_SUBTYPE\_GUILD\_ONLY}}\ \ \ \ \ \ \ \ =\ 0x00800,}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a026938d2120f2979a136f5f613c5ec28}{SK\_SUBTYPE\_NO\_ENEMY}}\ \ \ \ \ \ \ \ \ \ =\ 0x01000,}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acb6ae3755cbca4485cadc8e52757cebe}{SK\_SUBTYPE\_NO\_LAND\_PROTECTOR}}\ =\ 0x02000,\ \textcolor{comment}{//\ Spells\ that\ can\ ignore\ Land\ Protector}}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a478635eb91ed2af1ff13e90e60e7ef04}{SK\_SUBTYPE\_CHORUS\_SKILL}}\ \ \ \ \ \ =\ 0x04000,\ \textcolor{comment}{//\ Chorus\ skill}}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7a42044240e5a3ffa5a7c29ee3431640}{SK\_SUBTYPE\_FREE\_CAST\_NORMAL}}\ \ =\ 0x08000,}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3f7667a6e66791d40911d9a80c0e10e8}{SK\_SUBTYPE\_FREE\_CAST\_REDUCED}}\ =\ 0x10000,}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aa96356799a596e9c5b034c7463c4673e}{SK\_SUBTYPE\_SHOW\_SKILL\_SCALE}}\ \ =\ 0x20000,}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acf042f42b0a00045d223677a00973142}{SK\_SUBTYPE\_ALLOW\_REPRODUCE}}\ \ \ =\ 0x40000,}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a196b9806c04c7120826ea07a3e3aea2b}{SK\_SUBTYPE\_HIDDEN\_TRAP}}\ \ \ \ \ \ \ =\ 0x80000,\ \textcolor{comment}{//\ Traps\ that\ are\ hidden\ (based\ on\ trap\_visiblity\ battle\ conf)}}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a990545c07f9247ffb402a4ce0ab8af00}{SK\_SUBTYPE\_IS\_COMBO\_SKILL}}\ \ \ \ =\ 0x100000,\ \textcolor{comment}{//\ Sets\ whether\ a\ skill\ can\ be\ used\ in\ combos\ or\ not}}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1}{skill\_damage\_property\_type}}\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210}{SK\_DMG\_PROP\_NONE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a79afc7760d4d5e94bc6c09ee34446360}{SK\_DMG\_PROP\_NO\_DAMAGE}}\ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a56562c731b18e06f7e8c660ee7efcbd7}{SK\_DMG\_PROP\_SPLASH}}\ \ \ \ \ \ \ \ \ =\ 0x02\ |\ 0x04,\ \textcolor{comment}{//\ 0x4\ =\ splash\ \&\ split}}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a61f3e985124025c44142cf27d5454d49}{SK\_DMG\_PROP\_SPLASH\_ONLY}}\ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a43b4a99f2bf0d473839b161339f4292d}{SK\_DMG\_PROP\_SPLASHSPLIT}}\ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a22170dcfc59a1da4325ca633e8a0a338}{SK\_DMG\_PROP\_NO\_CARDFIX\_ATK}}\ =\ 0x08,}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a577f5ee42a21cecf31638b22e2376062}{SK\_DMG\_PROP\_NO\_ELEFIX}}\ \ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a7324bed363a068e2c994b4deb12d1ba4}{SK\_DMG\_PROP\_IGNORE\_DEF}}\ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1af4fd84dfc896c1a25cb1cd06cc26d367}{SK\_DMG\_PROP\_IGNORE\_FLEE}}\ \ \ \ =\ 0x40,}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1aa1c6609d9dd50b0e3018d1564bcca35e}{SK\_DMG\_PROP\_NO\_CARDFIX\_DEF}}\ =\ 0x80,}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86f}{skill\_learn\_type}}}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fae862efe13c93cded6d55e9d77fcc6151}{SKILL\_LEARN\_PERMANENT}}\ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6d9545fcc10b4aa9f4aa1ff85068b14d}{SKILL\_LEARN\_TEMPORARY}}\ \ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6b2b9a47bfae1df97879c181e8a2613c}{SKILL\_LEARN\_PLAGIARIZED}}\ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa84720457f426cb236623ccca287f8437}{SKILL\_LEARN\_UNUSED}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 3,\ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86faa1beed090d45e0c7c6b2d2e2dabcc669}{SKILL\_LEARN\_PERM\_GRANTED}}\ \ \ \ \ \ =\ 4,\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{comment}{/*\ */}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{/*\ MUST\ be\ the\ last,\ because\ with\ it\ the\ flag\ value\ stores\ a\ dynamic\ value\ (flag+lv)\ */}}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fab7157df8fd7131a96337aefd62c36b78}{SKILL\_LEARN\_REPLACED\_LV\_0}}\ \ \ \ \ =\ 5,\ \ \ \textcolor{comment}{//\ Temporary\ skill\ overshadowing\ permanent\ skill\ of\ level\ 'N\ -\/\ SKILL\_FLAG\_REPLACED\_LV\_0',}}
+\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7b}{skill\_use\_fail\_cause\_type}}\ \{\ \textcolor{comment}{//\ clif\_skill\_fail}}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac4f7ed91012c4fc8ec6e0ff7faeb8c5c}{SKILL\_USE\_FAIL\_LEVEL}}\ =\ 0,}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babf7cbb7bd39b751b083ad097d82c39b9}{SKILL\_USE\_FAIL\_SP\_INSUFFICIENT}}\ =\ 1,}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba293971a37d47764055f58c2a89443730}{SKILL\_USE\_FAIL\_HP\_INSUFFICIENT}}\ =\ 2,}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba82075340295bc5039dac496bcf666e50}{SKILL\_USE\_FAIL\_STUFF\_INSUFFICIENT}}\ =\ 3,}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babc4eebde71c00566314c3cce04d8327c}{SKILL\_USE\_FAIL\_SKILLINTERVAL}}\ =\ 4,}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6dd3de74af61f2949792d784d274afdb}{SKILL\_USE\_FAIL\_MONEY}}\ =\ 5,}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5ef9aabce0b63e6e03193b009435ad5b}{SKILL\_USE\_FAIL\_THIS\_WEAPON}}\ =\ 6,}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba136285ea30075c8867fd3a03c9f3f5e8}{SKILL\_USE\_FAIL\_REDJAMSTONE}}\ =\ 7,}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bafa38c5894b5a32d8f275f4745354b761}{SKILL\_USE\_FAIL\_BLUEJAMSTONE}}\ =\ 8,}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba1b2a63e8ab4439bec3def5146b59307f}{SKILL\_USE\_FAIL\_WEIGHTOVER}}\ =\ 9,}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba0c5b94aaeff1fdfd4b98ebb71c8e62a2}{SKILL\_USE\_FAIL}}\ =\ 10,}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6cb9ffe498660bc15d3fdd2767de5065}{SKILL\_USE\_FAIL\_TOTARGET}}\ =\ 11,}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bacb9cdc2940ad4c860db0f1adc1eff0e3}{SKILL\_USE\_FAIL\_ANCILLA\_NUMOVER}}\ =\ 12,}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3b7e08d453918137ecaf5f78e169a8e0}{SKILL\_USE\_FAIL\_HOLYWATER}}\ =\ 13,}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba392ba3be422c1602f47aa18ccce20cc1}{SKILL\_USE\_FAIL\_ANCILLA}}\ =\ 14,}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3940c9a9e11e92331259d535cf4131f3}{SKILL\_USE\_FAIL\_DUPLICATE\_RANGEIN}}\ =\ 15,}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac23edec0195ff83df06a825b1cfce194}{SKILL\_USE\_FAIL\_NEED\_OTHER\_SKILL}}\ =\ 16,}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2b9f24c7a27e0d4ac08907abc5d89da3}{SKILL\_USE\_FAIL\_NEED\_HELPER}}\ =\ 17,}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6a0bbc2c2fc4f26b586675a804128b6}{SKILL\_USE\_FAIL\_INVALID\_DIR}}\ =\ 18,}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad98194b0f42e99104e3cc5af853d75b9}{SKILL\_USE\_FAIL\_SUMMON}}\ =\ 19,}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba9ace83a27151ac0ff1855b6b82df93e3}{SKILL\_USE\_FAIL\_SUMMON\_NONE}}\ =\ 20,}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba13c5b02fc08f30eace0cfbcee1b85bee}{SKILL\_USE\_FAIL\_IMITATION\_SKILL\_NONE}}\ =\ 21,}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5f2ee42d5f06d38ada69888d9157a276}{SKILL\_USE\_FAIL\_DUPLICATE}}\ =\ 22,}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba03de7f8df97aed2872a4d673783675e7}{SKILL\_USE\_FAIL\_CONDITION}}\ =\ 23,}
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae5eba21ff24530635b7cfba6fc9c481f}{SKILL\_USE\_FAIL\_PAINTBRUSH}}\ =\ 24,}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba4edf3b1c3b955a0d823b94b9fedacf1d}{SKILL\_USE\_FAIL\_DRAGON}}\ =\ 25,}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3e68396a89beee185f6188364325f9b7}{SKILL\_USE\_FAIL\_POS}}\ =\ 26,}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5d69dac9284acd04b2b9025e3b3b5902}{SKILL\_USE\_FAIL\_HELPER\_SP\_INSUFFICIENT}}\ =\ 27,}
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba530ad0233bbc8616bc9c81769e1c55b5}{SKILL\_USE\_FAIL\_NEER\_WALL}}\ =\ 28,}
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa73c93f44665c3f5eaab68555fd0571b}{SKILL\_USE\_FAIL\_NEED\_EXP\_1PERCENT}}\ =\ 29,}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba51b31983e3e8427d90c6ada59587a27a}{SKILL\_USE\_FAIL\_CHORUS\_SP\_INSUFFICIENT}}\ =\ 30,}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba00b5405ead2c053a7c28f59393750acd}{SKILL\_USE\_FAIL\_GC\_WEAPONBLOCKING}}\ =\ 31,}
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac42a10222fcac674eac988b8fe6e307f}{SKILL\_USE\_FAIL\_GC\_POISONINGWEAPON}}\ =\ 32,}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad32bccae3aad74b465871e50b9731300}{SKILL\_USE\_FAIL\_MADOGEAR}}\ =\ 33,}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf6bf9882b65f5331fe2e479020dd28a5}{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT\_KUNAI}}\ =\ 34,}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba484db6053d5c7f8dd296676807d92403}{SKILL\_USE\_FAIL\_TOTARGET\_PLAYER}}\ =\ 35,}
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae11d641f5cee484cbefb504dec35c014}{SKILL\_USE\_FAIL\_SIZE}}\ =\ 36,}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae722fd400e747bbbdd500693c236d866}{SKILL\_USE\_FAIL\_CANONBALL}}\ =\ 37,}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_ACCELERATION\ =\ 38,}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_HOVERING\_BOOSTER\ =\ 39,}}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_MADOGEAR\_HOVERING\ =\ 40,}}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_SELFDESTRUCTION\_DEVICE\ =\ 41,}}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_SHAPESHIFTER\ =\ 42,}}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba671c7e1069a16c6c578ebc0cf5da8e0c}{SKILL\_USE\_FAIL\_GUILLONTINE\_POISON}}\ =\ 43,}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_COOLING\_DEVICE\ =\ 44,}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_MAGNETICFIELD\_GENERATOR\ =\ 45,}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_BARRIER\_GENERATOR\ =\ 46,}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_OPTICALCAMOUFLAGE\_GENERATOR\ =\ 47,}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MADOGEAR\_REPAIRKIT\ =\ 48,}}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MONKEY\_SPANNER\ =\ 49,}}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba8f87d6ac4d19ec0f1efae9bb4800fd86}{SKILL\_USE\_FAIL\_MADOGEAR\_RIDE}}\ =\ 50,}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2ff346a8dcbf241291cc66cc775dd2ac}{SKILL\_USE\_FAIL\_SPELLBOOK}}\ =\ 51,}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa18d95483b90ac9eaac3c5696399ee81}{SKILL\_USE\_FAIL\_SPELLBOOK\_DIFFICULT\_SLEEP}}\ =\ 52,}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba01ba7f2a613807000bf558a14afbc58b}{SKILL\_USE\_FAIL\_SPELLBOOK\_PRESERVATION\_POINT}}\ =\ 53,}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac0fc9a48f61e2c5f76f3f84f4ab8b155}{SKILL\_USE\_FAIL\_SPELLBOOK\_READING}}\ =\ 54,}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_FACE\_PAINTS\ =\ 55,}}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MAKEUP\_BRUSH\ =\ 56,}}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba152737ef35b06e3bfc930648f59f6fd9}{SKILL\_USE\_FAIL\_CART}}\ =\ 57,}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_THORNS\_SEED\ =\ 58,}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_BLOOD\_SUCKER\_SEED\ =\ 59,}}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba55cf7b6f923dcc69c206953a156a894e}{SKILL\_USE\_FAIL\_NO\_MORE\_SPELL}}\ =\ 60,}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_BOMB\_MUSHROOM\_SPORE\ =\ 61,}}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_GASOLINE\_BOOMB\ =\ 62,}}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_OIL\_BOTTLE\ =\ 63,}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_EXPLOSION\_POWDER\ =\ 64,}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_SMOKE\_POWDER\ =\ 65,}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_TEAR\_GAS\ =\ 66,}}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_HYDROCHLORIC\_ACID\_BOTTLE\ =\ 67,}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_HELLS\_PLANT\_BOTTLE\ =\ 68,}}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//XXX\_SKILL\_USE\_FAIL\_II\_MANDRAGORA\_FLOWERPOT\ =\ 69,}}
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac3ee8e629f7a0cbe3f8ec44c6abe465d}{SKILL\_USE\_FAIL\_MANUAL\_NOTIFY}}\ =\ 70,}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba785313b1f4de72235b0c831867c0c6f7}{SKILL\_USE\_FAIL\_NEED\_ITEM}}\ =\ 71,}
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba38976c2b48575031ad492d827516cd30}{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT}}\ =\ 72,}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baea78e41b3ecf736006d2bf5ed20d05e6}{SKILL\_USE\_FAIL\_COMBOSKILL}}\ =\ 73,}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba745b58e6f5b3276512e1ed4802c7dcce}{SKILL\_USE\_FAIL\_SPIRITS}}\ =\ 74,}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba974f5284970554f044436b5e0fb9361c}{SKILL\_USE\_FAIL\_EXPLOSIONSPIRITS}}\ =\ 75,}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bab2d06573d84e6fb5f347e74e9fd4b189}{SKILL\_USE\_FAIL\_HP\_TOOMANY}}\ =\ 76,}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae36199364c4671b011abc769f787581c}{SKILL\_USE\_FAIL\_NEED\_ROYAL\_GUARD\_BANDING}}\ =\ 77,}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babdfa1ef86cb55ec3ec6d01b5e9db37b0}{SKILL\_USE\_FAIL\_NEED\_EQUIPPED\_WEAPON\_CLASS}}\ =\ 78,}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba04170eb5c869823d1860ebad25b360d7}{SKILL\_USE\_FAIL\_EL\_SUMMON}}\ =\ 79,}
+\DoxyCodeLine{00244\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf47e1841a677abad66ffa55e711f648f}{SKILL\_USE\_FAIL\_RELATIONGRADE}}\ =\ 80,}
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6232e2de2ed7cc0c3b44ea9f6bc44b8}{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_FIGHTER}}\ =\ 81,}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae3fda9add7a14711dc927aa8b6b215e4}{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_GRAPPLER}}\ =\ 82,}
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babbd1de6fb7091a066a267027ff43a6bd}{SKILL\_USE\_FAIL\_THERE\_ARE\_NPC\_AROUND}}\ =\ 83,}
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba922647103c5e49812b9814e87b06e1ef}{SKILL\_USE\_FAIL\_NEED\_MORE\_BULLET}}\ =\ 84,}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{//\ max\ known\ value\ 96}}
+\DoxyCodeLine{00250\ \};}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__learnt__info}{skill\_learnt\_info}}\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structskill__learnt__info_adce8316e33a76a2bc0e161163ecee801}{skill\_id}}\{0\};}
+\DoxyCodeLine{00254\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structskill__learnt__info_a3d1aae6ac35120006f4cd76056922efe}{level}}\{0\};}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86f}{skill\_learn\_type}}\ \mbox{\hyperlink{structskill__learnt__info_ac2292461fd7fa0d437096441c91f3f5a}{learn\_type}}\{\mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fae862efe13c93cded6d55e9d77fcc6151}{SKILL\_LEARN\_PERMANENT}}\};}
+\DoxyCodeLine{00256\ \};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__skill__info__data}{zc\_skill\_info\_data}}\ }
+\DoxyCodeLine{00259\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__skill__info__data_adc2ea1a11d14a093ab485348d599f4c4}{skill\_id}}\{0\};}
+\DoxyCodeLine{00261\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structzc__skill__info__data_a0b4d884385745273d113ba05856274a3}{skill\_type}}\{0\};}
+\DoxyCodeLine{00262\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__skill__info__data_a1492d8ddffb828ea058880432069d3a1}{level}}\{0\};}
+\DoxyCodeLine{00263\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__skill__info__data_a612b0abddf5b1ea823bbc13d5e1c196b}{sp\_cost}}\{0\};}
+\DoxyCodeLine{00264\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__skill__info__data_a1b7263f359138883a35c242911d99fba}{range}}\{0\};}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structzc__skill__info__data_a08aad71890f8348a8c56510c0d679081}{name}}[\mbox{\hyperlink{_skill_definitions_8hpp_a36b1b99e37013978ef14c1e594335808}{MAX\_SKILL\_NAME\_LENGTH}}]\{0\};}
+\DoxyCodeLine{00266\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structzc__skill__info__data_a46f32070ec1a3ae469d8e282718175eb}{upgradeable}};}
+\DoxyCodeLine{00267\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__skill__info__data_ada91a9756123269fbe799e098cacd087}{level2}}\{0\};}
+\DoxyCodeLine{00268\ \};}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__required__item__data}{skill\_required\_item\_data}}\ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__required__item__data_a0ff251d1909b6cef2dcf2f794e5b2af5}{id}};}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__required__item__data_a7500328677ea2effe6e39eeb393829ee}{amount}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}];}
+\DoxyCodeLine{00274\ \ \ \ \ \}\ \mbox{\hyperlink{structskill__required__item__data_a006e5aa6abddc7620b9f7d1e3d1edbb9}{item}}[\mbox{\hyperlink{_skill_definitions_8hpp_a2b1b735eb71a9afca05bf87d3f6df78b}{MAX\_SKILL\_ITEM\_REQUIRE}}];}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structskill__required__item__data_aa6cf52af8938078b9d2cbc32f1c1718d}{any}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}];}
+\DoxyCodeLine{00276\ \};}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}}
+\DoxyCodeLine{00279\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structskill__config__data_a89a89be4ec7dd2a1e00341144befc9ca}{skill\_id}}\{0\};}
+\DoxyCodeLine{00281\ \ \ \ \ std::string\ \mbox{\hyperlink{structskill__config__data_a33cb8d8e54c1e91edb6da31bff5c2375}{name}},\ \mbox{\hyperlink{structskill__config__data_a6be60dfa378be6e5a9b19ffee6516568}{desc}};}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a5c384a3d0303aab4025c3cc01cea038a}{max\_level}}\{1\};}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a9b090f0413917bae04b477cc2d376a2b}{use\_range}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{_battle_definitions_8hpp_a9c81e42060561767ff6220cdf683058a}{battle\_damage\_type}}\ \mbox{\hyperlink{structskill__config__data_aef6e1ff15d33695f6cac262e7fcbca24}{damage\_type}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{\mbox{\hyperlink{_battle_definitions_8hpp_a9c81e42060561767ff6220cdf683058aa31bca692f4fe05f39b0e9fa683e28a97}{BDT\_NORMAL}}\};\ \textcolor{comment}{//\ hittype}}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a325bc2360b675d1a9949591abdf700e3}{primary\_type}}\{\mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8}{SK\_TYPE\_PASSIVE}}\};\ \textcolor{comment}{//\ skill\_primary\_type\ /\ inf}}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a4bbcc3db1bc29c5186e71301929c4335}{secondary\_type}}\{\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011}{SK\_SUBTYPE\_NONE}}\};\ \ \ \textcolor{comment}{//\ skill\_secondary\_type\ /\ inf2}}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{_battle_definitions_8hpp_a2496d1239b412d74c30a721411747c66}{battle\_attack\_type}}\ \mbox{\hyperlink{structskill__config__data_ae56ceccbd45423c3bbd9fdc9a20fb861}{attack\_type}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{\mbox{\hyperlink{_battle_definitions_8hpp_a2496d1239b412d74c30a721411747c66ac60efe2cbbd01310e9de0e9a89fd351e}{BAT\_NONE}}\};\ \textcolor{comment}{//\ skill\_type}}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\_type}}\ \mbox{\hyperlink{structskill__config__data_a44cf61f234d1a0e1b1e942022bfb32ac}{element}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9a075c68b83c36eb75798d0851302ec66b}{ELE\_NEUTRAL}}\};}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a807f83e453397521aac458d09a7008b7}{dmg\_property}}\{\mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210}{SK\_DMG\_PROP\_NONE}}\};\ \ \textcolor{comment}{//\ skill\_damage\_property\_type\ /<\ nk}}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a45f909e2161e6f8ac6ed7a967faeb1ad}{splash\_range}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a76dc3de0a6848823940eb80389d1a790}{number\_of\_hits}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structskill__config__data_a5adc168c778ac5a7977fda1c44141bae}{interrupt\_cast}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a76f0240a3e8a1b996ef5a0df1cd8ca56}{cast\_defense\_rate}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a431b242603103f59642b3d71dc210fd8}{max\_skill\_instances}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a1043c018c069c939977a76cf38b82a3b}{knock\_back\_tiles}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ blewcount}}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a7e3464fe755909ca57a7472b29e124f1}{cast\_time}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a9e20da84cb828fed1156a589472b7259}{after\_cast\_actor\_delay}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_adcf855bbeec1634cc636c777bd0e9672}{after\_cast\_walk\_delay}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a3d820bea6132762519348e0788d6a228}{upkeep\_time}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_ab6187baa7652bb1e40c827c8789be8d9}{upkeep\_time2}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a75f2c362722fc22096663b6f6ad28ec7}{cooldown}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a1459c7465add057b05f5888f147ed647}{fixed\_cast\_time}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_af94fcd31a7e6554e44170bd63a8d3bae}{cast\_time\_options}}\{0\};}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a24c2a5d8aa4327b8f38b9a4174ef970e}{skill\_delay\_options}}\{0\};}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a2ea020a51417f4df39b11a68535c3df7}{hp\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ hp}}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_aef8395baad986362a46026bd69fa61e6}{sp\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sp}}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a2fca45fc24351bc5af626842e4670a29}{hp\_percent\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ hp\_rate\_cost}}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_afa37d01d9c718b7d858cd41a3034a3bc}{sp\_percent\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sp\_rate\_cost}}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_aa058f124805bb4d5b343641f3330326f}{max\_hp\_trigger}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mhp}}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_ac312a5e4a0882c7f5905e46cf681fb11}{max\_sp\_trigger}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ msp}}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_af97be25b650bac345e0bb7e32e5e4fc3}{zeny\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a5470c09f253e536e9fcc73c5d76bfb70}{weapon\_type}}\{\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa0230f49391fae3f066a761601afb2a21}{IT\_WT\_FIST}}\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ item\_weapon\_type\ \ /\ weapon}}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_aba6070b7bc3d8a9712ce4be8421d15b6}{ammunition\_type}}\{\mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acbeb53d94e5085c11332ceaf6ed11a31}{IT\_AT\_NONE}}\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ item\_ammunition\_type\ /\ ammo}}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a409db3b0b8b81bda4ab54c834b708c2b}{ammunition\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a64e23b5c2ff7fc6ae06bfa6a3f1ef3bf}{required\_state}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ skill\_required\_state\_types}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_ab04ad9feec7d9464f05551c7897bd665}{spirit\_sphere\_cost}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__required__item__data}{skill\_required\_item\_data}}\ \mbox{\hyperlink{structskill__config__data_a51e618e5b4772ac2d4650f2a75de60e1}{req\_items}};}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__required__item__data}{skill\_required\_item\_data}}\ \mbox{\hyperlink{structskill__config__data_a7e6a18994004f25776d4b938e24d9aa5}{req\_equip}};}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_aea7e319bfd4b6f7990bf78b8670aef4c}{placement\_id}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}][2]\{\{0\}\};}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_aedec325699a54cd8d2139a35ea67c6a5}{placement\_layout\_type}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_af709fc45dc526d50cb075ff3b1627a0a}{placement\_range}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a4c17fd8c0e3fe6569ff5525b3eaf8b2b}{placement\_interval}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a2740317ed023719aeddb05ed9acbf7e9}{placement\_target}}[\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}}]\{0\};}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__config__data_a938fd5d82cee0b5edbdf3ad2a6f1873c}{placement\_flag}}\{0\};}
+\DoxyCodeLine{00327\ \};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__tree__config}{skill\_tree\_config}}\ }
+\DoxyCodeLine{00330\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structskill__tree__config_1_1requirement}{requirement}}\ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__tree__config_1_1requirement_af305454c892b40908885559523c34646}{skill\_id}}\{0\};}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structskill__tree__config_1_1requirement_ab0524c7aa3d89033a664351bb43a5fbc}{level}}\{0\};}
+\DoxyCodeLine{00334\ \ \ \ \ \};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structskill__tree__config_a5556399d6f3b67d243d9ea9d31201fbc}{skill\_id}}\{0\};}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structskill__tree__config_a5773eb1ed0a5d0d40dcf80a7b5e1c764}{max\_level}}\{0\};}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structskill__tree__config_aba518cdf57efc33c8b03d4343168b547}{job\_level}}\{0\};}
+\DoxyCodeLine{00339\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\_class\_type}}\ \mbox{\hyperlink{structskill__tree__config_a75eb1b364b56aa4a2e135e1536532b95}{inherited\_from}}\{\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00a881ca0565d6f15042674f075390e5c65}{JOB\_INVALID}}\};}
+\DoxyCodeLine{00340\ \ \ \ \ std::vector<struct\ requirement>\ \mbox{\hyperlink{structskill__tree__config_a4f81769a0ef483c0301a2b165d7ed347}{requirements}};}
+\DoxyCodeLine{00341\ \};}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098}{skill\_target\_type}}\ \{}
+\DoxyCodeLine{00344\ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098a9c4b2e417e3d416d1ba126396f03f58e}{SKTT\_SINGLE\_TARGETED}}\ =\ 1,}
+\DoxyCodeLine{00345\ \ \ \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098ab618f17a95ccba238f02d9744fcadec6}{SKTT\_GROUND\_TARGETED}}\ =\ 2}
+\DoxyCodeLine{00346\ \};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_SKILL\_DEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

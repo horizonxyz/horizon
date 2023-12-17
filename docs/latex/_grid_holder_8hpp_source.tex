@@ -1,0 +1,94 @@
+\doxysection{Grid\+Holder.\+hpp}
+\hypertarget{_grid_holder_8hpp_source}{}\label{_grid_holder_8hpp_source}\index{src/Server/Zone/Game/Map/Grid/GridHolder.hpp@{src/Server/Zone/Game/Map/Grid/GridHolder.hpp}}
+\mbox{\hyperlink{_grid_holder_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_GRIDHOLDER\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_GRIDHOLDER\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_definitions_8hpp}{GridDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_coordinates_8hpp}{Server/Zone/Game/Map/Coordinates.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_8hpp}{Server/Zone/Game/Map/Grid/Grid.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_reference_container_visitor_8hpp}{Server/Zone/Game/Map/Grid/Container/GridReferenceContainerVisitor.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_manager_8hpp}{Server/Zone/Game/Map/MapManager.hpp}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ ZONE\_OBJECT\_TYPES>}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grid_holder}{GridHolder}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager}{Horizon::Zone::MapManager}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_grid}{Grid<ZONE\_OBJECT\_TYPES>}}\ \mbox{\hyperlink{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807}{GridType}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_grid_holder_ab25ade03474b818115f3820a8b0ba439}{GridHolder}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27}{height}})}
+\DoxyCodeLine{00051\ \ \ \ \ :\ \_height(\mbox{\hyperlink{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27}{height}}),\ \_width(\mbox{\hyperlink{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd}{width}})}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_grid_holder_a471b7905b38181fb01153590acd3c37e}{\string~GridHolder}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_grid}{GridType}}\ \&\mbox{\hyperlink{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33}{get\_grid}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ assert(x\ <=\ \_width);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ assert(y\ <=\ \_height);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ assert(x\ >=\ 0\ \&\&\ y\ >=\ 0);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_grids[x][y];}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27}{height}}()\ \{\ \textcolor{keywordflow}{return}\ \_height;\ \}}
+\DoxyCodeLine{00069\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd}{width}}()\ \{\ \textcolor{keywordflow}{return}\ \_width;\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR,\ \textcolor{keyword}{class}\ CONTAINER\_TYPE>}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grid_holder_a7110477519d39ecdc1e376fedbb14abc}{visit\_all}}(\mbox{\hyperlink{class_grid_reference_container_visitor}{GridReferenceContainerVisitor}}<VISITOR,\ \mbox{\hyperlink{class_grid_reference_container}{GridReferenceContainer<CONTAINER\_TYPE>}}>\ \&visitor)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ x\ =\ 0;\ x\ <\ \_width;\ ++x)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint16\_t\ y\ =\ 0;\ y\ <\ \_height;\ ++y)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33}{get\_grid}}(x,\ y).\mbox{\hyperlink{class_grid_a8fc9a2c774dafccfeace8f4360d00e14}{visit}}(visitor);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR,\ \textcolor{keyword}{class}\ CONTAINER\_TYPE>}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grid_holder_a2413c2857158bdcfac7389554a993d39}{visit}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \mbox{\hyperlink{class_grid_reference_container_visitor}{GridReferenceContainerVisitor}}<VISITOR,\ \mbox{\hyperlink{class_grid_reference_container}{GridReferenceContainer<CONTAINER\_TYPE>}}>\ \&visitor)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33}{get\_grid}}(x,\ y).Visit(visitor);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \_width\{\ 0\ \},\ \_height\{\ 0\ \};}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807}{GridType}}\ \_grids[\mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\_GRIDS\_PER\_MAP}}][\mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\_GRIDS\_PER\_MAP}}];}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_GRIDHOLDER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

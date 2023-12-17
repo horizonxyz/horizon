@@ -1,0 +1,133 @@
+\doxysection{Inventory.\+hpp}
+\hypertarget{_inventory_8hpp_source}{}\label{_inventory_8hpp_source}\index{src/Server/Zone/Game/Entities/Player/Assets/Inventory.hpp@{src/Server/Zone/Game/Entities/Player/Assets/Inventory.hpp}}
+\mbox{\hyperlink{_inventory_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_ASSETS\_INVENTORY\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_ASSETS\_INVENTORY\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_definitions_8hpp}{Server/Zone/Definitions/ItemDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{class\ }Item;}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }Assets}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{inventory\_addition\_result\_type}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa4308b17a255aef56d30a06db4963829}{INVENTORY\_ADD\_SUCCESS}}\ \ \ \ \ \ \ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa7e846e08fc6c2ea20044161251870a9}{INVENTORY\_ADD\_INVALID}}\ \ \ \ \ \ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaabbb79a5fe91a0c3a5c1caa7827fdab8}{INVENTORY\_ADD\_OVER\_WEIGHT}}\ \ \ \ \ \ =\ 2,\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfacc3853be1fd506c632d4b8296e783ab8}{INVENTORY\_ADD\_NO\_INV\_SPACE}}\ \ \ \ \ =\ 3,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfab77c790c172c32fc60fa30912385a651}{INVENTORY\_ADD\_OVER\_QUANTITY}}\ \ \ \ =\ 4,\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfa38d5a06e553a06c19c95feb82e7571da}{INVENTORY\_ADD\_OVER\_STACK\_LIMIT}}\ =\ 5,\ }
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1}{inventory\_removal\_result\_type}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1a3c9817bf5051fc83c6aae0647ae3734f}{INVENTORY\_REMOVE\_SUCCESS}}\ \ \ \ \ \ \ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1ad244fb213a0fa27fbbee5b0a207fb263}{INVENTORY\_REMOVE\_INVALID}}\ \ \ \ \ \ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaee}{inventory\_deletion\_reason\_type}}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeab5454832fbd21005749268f88c8dc43b}{INVENTORY\_DEL\_NORMAL}}\ \ \ \ \ \ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea51ff8d9973b074f802e39e45a152271a}{INVENTORY\_DEL\_SKILLUSE}}\ \ \ \ \ \ \ =\ 1,\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea0c8462d45afc3b535c7457d9fa12b605}{INVENTORY\_DEL\_FAILREFINE}}\ \ \ \ \ =\ 2,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaad56761685f9eb0fbad15a7040be36fc}{INVENTORY\_DEL\_MATERIALCHANGE}}\ =\ 3,\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeead63e6d10a824969398be96a05a0b76b5}{INVENTORY\_DEL\_TOSTORAGE}}\ \ \ \ \ \ =\ 4,\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf6c8955a06e02bb49628f9978cfaf26b}{INVENTORY\_DEL\_TOCART}}\ \ \ \ \ \ \ \ \ =\ 5,\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf9b16b01cd977717833defa025ad9762}{INVENTORY\_DEL\_SOLD}}\ \ \ \ \ \ \ \ \ \ \ =\ 6,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeabfb02e245cae6cb7276c4def3eada427}{INVENTORY\_DEL\_ANALYSIS}}\ \ \ \ \ \ \ =\ 7,\ }
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory}{Inventory}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<std::shared\_ptr<item\_entry\_data>>\ storage\_type;}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory}{Inventory}}(std::shared\_ptr<Horizon::Zone::Entities::Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a2bd02c7143d531565661c1923cda784b}{player}},\ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a1cd07ec3da7f762cc36c54aee999f158}{max\_storage}});}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}{\string~Inventory}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a98ad99db25c69992794fcabfe090d230}{get\_free\_index}}();}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ std::shared\_ptr<Horizon::Zone::Entities::Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a2bd02c7143d531565661c1923cda784b}{player}}()\ \{\ \textcolor{keywordflow}{return}\ \_player.lock();\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{inventory\_addition\_result\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ab46b65d9d5e4ad5c2419bee325a70c15}{add\_item}}(std::shared\_ptr<Horizon::Zone::Entities::Item>\ floor\_item);}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{inventory\_addition\_result\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ab46b65d9d5e4ad5c2419bee325a70c15}{add\_item}}(uint32\_t\ item\_id,\ uint16\_t\ amount,\ \textcolor{keywordtype}{bool}\ is\_identified\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{inventory\_addition\_result\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ab46b65d9d5e4ad5c2419bee325a70c15}{add\_item}}(std::shared\_ptr<item\_entry\_data>\ item,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00086\ \ \ \ \ std::shared\_ptr<item\_entry\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a08eb07625b1086f7f5349d44fcbe6e18}{get\_item}}(uint32\_t\ inventory\_index);}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1}{inventory\_removal\_result\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a02e9bfe2358edc93cccdac4b8ad4cf12}{remove\_item}}(int16\_t\ inventory\_index,\ \textcolor{keywordtype}{int}\ amount,\ \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15d}{item\_deletion\_reason\_type}}\ reason\ =\ \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da304518d892e004b16544c179307079c1}{ITEM\_DEL\_NORMAL}});}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a32df1a4730267deae771e9d6cf42f703}{drop\_item}}(uint32\_t\ inventory\_index,\ uint16\_t\ amount);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a6c7927c7d0aa5836fc8862801cc783bf}{initialize}}();}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a2c65d92054018809cdd8f1b8d648fc99}{use\_item}}(uint32\_t\ inventory\_index,\ uint32\_t\ guid);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ae103ea8abab7257be62a646ab2ad406b}{can\_equip}}(uint32\_t\ inventory\_index);}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730}{item\_equip\_result\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a9355c371817eb667c970b97416cb4ed5}{equip\_item}}(uint32\_t\ inventory\_index,\ uint16\_t\ equip\_location\_mask);}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599}{item\_unequip\_result\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a487b5a09e01b7245f6a595896d84c322}{unequip\_item}}(uint32\_t\ inventory\_index);}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_item_definitions_8hpp_afdbd89ec013139e8474419bf60449ce5}{EquipmentListType}}\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a1adeb0e45c29be6925fb486884696ef5}{equipments}}()\ \{\ \textcolor{keywordflow}{return}\ \_equipments;\ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a30e285a18a36a5e1dd87e14f12c6c3ee}{add\_to\_equipment\_list}}(std::shared\_ptr<item\_entry\_data>\ item);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a50586287ded6b3fdf33261f5341f362e}{remove\_from\_equipment\_list}}(std::shared\_ptr<item\_entry\_data>\ item);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ad32c96a02d1640c2cc69c347a80e8047}{notify\_all}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a714d45c97dd1f1f3fbd6d4b350e6dca6}{notify\_without\_equipments}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a78482ac242e6d253ea582898bf2e9716}{notify\_only\_equipments}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ad8f4d1a255f95449e90887ef67472727}{notify\_add}}(std::shared\_ptr<item\_entry\_data>\ \textcolor{keyword}{const}\ \&item,\ uint16\_t\ amount,\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{inventory\_addition\_result\_type}}\ \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a939214a590fc05fccc7600a7da3dd7e9}{fail}});}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_aec6013830f53462adc865de18738dd5d}{notify\_deletion}}(uint16\_t\ idx,\ uint16\_t\ amount,\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaee}{inventory\_deletion\_reason\_type}}\ reason);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_aaca7cb46a97936725a99a82a01c73609}{notify\_drop}}(uint16\_t\ idx,\ uint16\_t\ amount);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a9ef250e9df127a11337f728c1b611863}{notify\_move\_fail}}(uint16\_t\ idx,\ \textcolor{keywordtype}{bool}\ silent);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_aedc65dc5edab8d1abc669126138755bb}{save}}();}
+\DoxyCodeLine{00109\ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ae61f57db1429bf2ecfdf293f2a8a1d88}{load}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_abc8125e8fbb2f36fdb67fe36b95910b9}{set\_max\_storage}}(uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a1cd07ec3da7f762cc36c54aee999f158}{max\_storage}})\ \{\ \_max\_storage\ =\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a1cd07ec3da7f762cc36c54aee999f158}{max\_storage}};\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_a1cd07ec3da7f762cc36c54aee999f158}{max\_storage}}()\ \{\ \textcolor{keywordflow}{return}\ \_max\_storage;\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ae62554132d887166eb846fed28fc8625}{print\_inventory}}();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00117\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory_ab402fbd921cdbf0baca5d4e17ad72cbd}{calculate\_current\_equip\_location\_mask}}(std::shared\_ptr<const\ item\_config\_data>\ item);}
+\DoxyCodeLine{00118\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00119\ \ \ \ \ int32\_t\ \_max\_storage;}
+\DoxyCodeLine{00120\ \ \ \ \ std::weak\_ptr<Horizon::Zone::Entities::Player>\ \_player;}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{_item_definitions_8hpp_afdbd89ec013139e8474419bf60449ce5}{EquipmentListType}}\ \_equipments;}
+\DoxyCodeLine{00122\ \ \ \ \ storage\_type\ \_inventory\_items,\ \_saved\_inventory\_items;}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ \}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_ASSETS\_INVENTORY\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

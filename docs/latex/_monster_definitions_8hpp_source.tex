@@ -1,0 +1,272 @@
+\doxysection{Monster\+Definitions.\+hpp}
+\hypertarget{_monster_definitions_8hpp_source}{}\label{_monster_definitions_8hpp_source}\index{src/Server/Zone/Definitions/MonsterDefinitions.hpp@{src/Server/Zone/Definitions/MonsterDefinitions.hpp}}
+\mbox{\hyperlink{_monster_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_MONSTER\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_MONSTER\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_definitions_8hpp}{Server/Zone/Game/Map/Grid/GridDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{Server/Zone/Definitions/EntityDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ MAX\_MOB\_DROP\ 10}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ MAX\_MVP\_DROP\ 10}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MAX\_MOB\_DB\ 22000}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514}{monster\_boss\_type}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4ba1327d40100eff68f348eaa50b6987}{BOSS\_TYPE\_NONE}}\ =\ 0,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a0ae2e333aafb7fe4981fb0fe800197bc}{BOSS\_TYPE\_MINI}}\ =\ 1,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4651962316ea587323e5e10071560a03}{BOSS\_TYPE\_MVP}}\ =\ 2,}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94}{monster\_primary\_race\_type}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Base\ Races}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a9c4bd75a4c913e51b2b7525d415adb6f}{MONSTER\_RACE\_FORMLESS}}\ =\ 0,\ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a69fcc1cbb4734b09808db9966da461cb}{MONSTER\_RACE\_UNDEAD}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94af8e7f8724195e519e30c3ba483c42146}{MONSTER\_RACE\_BRUTE}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5cbf610c5d6d530751417e405ef2ca77}{MONSTER\_RACE\_PLANT}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a81fe8d486750deea0a123f38b256bd67}{MONSTER\_RACE\_INSECT}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aca420a600b9ce4e65179a78a75f1db8f}{MONSTER\_RACE\_FISH}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a64da626ad4fca27bbc5ab84bd9dcf499}{MONSTER\_RACE\_DEMON}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a80d16959a300b507e8faf5b1f5187110}{MONSTER\_RACE\_DEMIHUMAN}},\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a4cbc1fa865fecb6a0ef1189e3413907d}{MONSTER\_RACE\_ANGEL}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a3329b46077a9e9ee316c20d17b1d599f}{MONSTER\_RACE\_DRAGON}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5da8b6d4ba5db7385c48ad400c26f49b}{MONSTER\_RACE\_PLAYER}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Boss}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a515f8527b029a53d1893b67e3c2d7f02}{MONSTER\_RACE\_BOSS}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94ae05b0db951db07f168344db9421fc252}{MONSTER\_RACE\_NONBOSS}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a1c4e843ee120d7c8883a2887bbd34ea3}{MONSTER\_RACE\_MAX}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Array\ size\ delimiter\ (keep\ before\ the\ combination\ races)}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Combination\ Races}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a079239d0630dfdbe3b75105a9e6f7c1d}{MONSTER\_RACE\_NONDEMIHUMAN}},\ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aa83c1e922c33ee6f85a7dc4ae5fc0b1e}{MONSTER\_RACE\_NONPLAYER}},\ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a88d9095bb6b5bf2c5f26030a7499a338}{MONSTER\_RACE\_DEMIPLAYER}},\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0fb33ed983102638d30118cdd4b3539c}{MONSTER\_RACE\_NONDEMIPLAYER}},\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0ff67ede8bcc7ac48b01275cfc1a73d2}{MONSTER\_RACE\_ALL}}\ =\ 0xFF,\ \ \ \ \ }
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65}{monster\_secondary\_race\_type}}\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a239c631c6eb725195857631a3a0ee1cc}{MONSTER\_RACE2\_NONE}}\ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a3cf1cb2dd40fe9d47fdf9156e8b13206}{MONSTER\_RACE2\_GOBLIN}}\ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a1f89ad400cd946215868c62ac0b42212}{MONSTER\_RACE2\_KOBOLD}}\ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a2d82ec62b7444671f397a8ff437db232}{MONSTER\_RACE2\_ORC}}\ \ \ \ \ \ \ \ =\ 3,}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af9ddb8358529b9f0bc1e208f5562e3cb}{MONSTER\_RACE2\_GOLEM}}\ \ \ \ \ \ =\ 4,}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a120563f599dea3d033de383e096462aa}{MONSTER\_RACE2\_GUARDIAN}}\ \ \ =\ 5,}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a695b275a7cea2947be37c2079ce45ad1}{MONSTER\_RACE2\_NINJA}}\ \ \ \ \ \ =\ 6,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a5b9a453c943651c0892b069694af38dd}{MONSTER\_RACE2\_SCARABA}}\ \ \ \ =\ 7,}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af321acceb5cbeb2d662910df10ff58b9}{MONSTER\_RACE2\_TURTLE}}\ \ \ \ \ =\ 8,}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65ac347abd1b325b27a91276b4463e2bff5}{MONSTER\_RACE2\_MAX}}}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5}{monster\_mode\_type}}}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa71ef9594e7f50908e87ece6c854384f}{MONSTER\_MODE\_MASK\_NONE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000000,}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a73a0397e2df363c103fb8560642a1152}{MONSTER\_MODE\_MASK\_CANMOVE}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000001,}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0f4a723eff238b2782d3b2bc37d5c3f6}{MONSTER\_MODE\_MASK\_LOOTER}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000002,}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a69bc6aad25fa4f3d4e0a43984f85bbb6}{MONSTER\_MODE\_MASK\_AGGRESSIVE}}\ \ \ \ \ \ \ \ \ =\ 0x00000004,}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad558d5ec7b8bcc7552d7dcf71932f986}{MONSTER\_MODE\_MASK\_ASSIST}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000008,}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a20b3c75bd8b6b3bf7187409e60540e1d}{MONSTER\_MODE\_MASK\_CASTSENSOR\_IDLE}}\ \ \ \ =\ 0x00000010,}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3e928d59b2e5e14ad1ed1d99b5bd3ba6}{MONSTER\_MODE\_MASK\_BOSS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000020,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a2c036ea19f0ca0caf403a1f6687d317f}{MONSTER\_MODE\_MASK\_PLANT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000040,}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3ec32b879643b1bf968a82c08ec1239e}{MONSTER\_MODE\_MASK\_CANATTACK}}\ \ \ \ \ \ \ \ \ \ =\ 0x00000080,}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a8ec62cf799cfd0731ad240857e4df074}{MONSTER\_MODE\_MASK\_DETECTOR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x00000100,}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a555d277cb5f238ab9cfefe5230dfb975}{MONSTER\_MODE\_MASK\_CASTSENSOR\_CHASE}}\ \ \ =\ 0x00000200,}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a16b4603edbae58ef3d13ec5dc69cfe9a}{MONSTER\_MODE\_MASK\_CHANGECHASE}}\ \ \ \ \ \ \ \ =\ 0x00000400,}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa389157684cf1517be61a1ae57b9eda9}{MONSTER\_MODE\_MASK\_ANGRY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00000800,}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad110f2c1aaeb7657e1e032b9107c4173}{MONSTER\_MODE\_MASK\_CHANGETARGET\_MELEE}}\ =\ 0x00001000,}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa1dfa6a324b601e39b2fd18b2a951c32}{MONSTER\_MODE\_MASK\_CHANGETARGET\_CHASE}}\ =\ 0x00002000,}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0146f518b3f4bf795132856d857ec1cd}{MONSTER\_MODE\_MASK\_TARGETWEAK}}\ \ \ \ \ \ \ \ \ =\ 0x00004000,}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3c3182d27bd14a00a14c01bd05af01ab}{MONSTER\_MODE\_MASK\_NOKNOCKBACK}}\ \ \ \ \ \ \ \ =\ 0x00008000,}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//MD\_RANDOMTARGET\ \ \ \ \ =\ 0x00010000,\ //\ Not\ implemented}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Note:\ This\ should\ be\ kept\ within\ INT\_MAX,\ since\ it's\ often\ cast\ to\ int.}}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad0adbbf709f8916a4d13c56f68effcc3}{MONSTER\_MODE\_MASK\_ALL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x7FFFFFFF,}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77}{monster\_skill\_state\_type}}\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77ad0843164375df64434eaf6dfe497bff2}{MONSTER\_SKILL\_STATE\_ANY}}\ =\ -\/1,}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a4c7c553a609fa0ba2a9933a15fb52c5e}{MONSTER\_SKILL\_STATE\_IDLE}},}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a91239dd6ec0db7e29361cd1631919ce8}{MONSTER\_SKILL\_STATE\_WALK}},}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a9436f3f2025f0364520ad36e951cea7d}{MONSTER\_SKILL\_STATE\_LOOT}},}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a61e2c4badc01f92aeb18ae552a029ccc}{MONSTER\_SKILL\_STATE\_DEAD}},}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a2f4b35d72bfa022fe3ef629aac1e8bd3}{MONSTER\_SKILL\_STATE\_BERSERK}},\ \textcolor{comment}{//Aggressive\ mob\ attacking}}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77aa7b75bdbb9183e6c2bdec32f1a42d9ed}{MONSTER\_SKILL\_STATE\_ANGRY}},\ \ \ \textcolor{comment}{//Mob\ retaliating\ from\ being\ attacked.}}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a24b274978035f5d728c237c9ccbc692b}{MONSTER\_SKILL\_STATE\_RUSH}},\ \ \ \ \textcolor{comment}{//Mob\ following\ a\ player\ after\ being\ attacked.}}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a93ecf06e046d975a5bc5b300781c6e2f}{MONSTER\_SKILL\_STATE\_FOLLOW}},\ \ \textcolor{comment}{//Mob\ following\ a\ player\ without\ being\ attacked.}}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a1d232fffbec69fd171092f77664e0095}{MONSTER\_SKILL\_STATE\_ANYTARGET}},}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ec}{monster\_skill\_target\_type}}\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab066323d6423c14fb34f11c4e7d08929}{MONSTER\_SKILL\_TARGET\_CURRENT}}\ =\ 0,}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecad90f6db178f6061e475076b064b9e528}{MONSTER\_SKILL\_TARGET\_RANDOM}},\ \textcolor{comment}{//Random\ Target!}}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab5153dce6a1d2d4cde1fb93f73372785}{MONSTER\_SKILL\_TARGET\_SELF}},}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4cbd61f004983b355905c99751b13b99}{MONSTER\_SKILL\_TARGET\_FRIEND}},}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca27a337384deebb55eaf4b51d6b145522}{MONSTER\_SKILL\_TARGET\_MASTER}},}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca95d77e735250ff5e9ada107bb08d4d45}{MONSTER\_SKILL\_TARGET\_AROUND5}},}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca6586e43f794a3ceef31ff43e8c18cd22}{MONSTER\_SKILL\_TARGET\_AROUND6}},}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecabd600a6a774046721726fb7f2af017df}{MONSTER\_SKILL\_TARGET\_AROUND7}},}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecaa6069640526fce10a1c0d482cf1d8aab}{MONSTER\_SKILL\_TARGET\_AROUND8}},}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecafe788390b23bf904fc00a3bb3a4c440f}{MONSTER\_SKILL\_TARGET\_AROUND1}},}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca8c0c25fb15412e652d15c224a5a3904c}{MONSTER\_SKILL\_TARGET\_AROUND2}},}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab189d1716bb6a024d40f510b57e7ce4d}{MONSTER\_SKILL\_TARGET\_AROUND3}},}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca5c599990fefca02d497db75f071d1be2}{MONSTER\_SKILL\_TARGET\_AROUND4}},}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4c16c3830a0c4986f030909418542280}{MONSTER\_SKILL\_TARGET\_AROUND}}\ =\ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca5c599990fefca02d497db75f071d1be2}{MONSTER\_SKILL\_TARGET\_AROUND4}},}
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ce}{monster\_skill\_cast\_condition\_type}}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea641be3a9c4a65ba6844f9a589908be74}{MONSTER\_SKILL\_CC\_ALWAYS}}\ =\ 0x0000,}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9d8a37ee6f490006aa63f8e4708df7a6}{MONSTER\_SKILL\_CC\_MYHPLTMAXRATE}},}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaef3bd627b184287b5c01f9835a5acc9c}{MONSTER\_SKILL\_CC\_MYHPINRATE}},}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceab11fe2c3d6f8b26f39e85ebce5e4f4ca}{MONSTER\_SKILL\_CC\_FRIENDHPLTMAXRATE}},}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0a74275e685ce5d9c3cf1725db37554e}{MONSTER\_SKILL\_CC\_FRIENDHPINRATE}},}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceadd95286cf7498de023cdced3a4410cc4}{MONSTER\_SKILL\_CC\_MYSTATUSON}},}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead07fee2cf38b8999337fe9a53df7c26d}{MONSTER\_SKILL\_CC\_MYSTATUSOFF}},}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea130c052bf3ee97d673fcec4ee317585b}{MONSTER\_SKILL\_CC\_FRIENDSTATUSON}},}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0115a2f82c17a9e42df54a34b63e15ef}{MONSTER\_SKILL\_CC\_FRIENDSTATUSOFF}},}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea66af633024ede1bfcb331c2e7979628b}{MONSTER\_SKILL\_CC\_ATTACKPCGT}},}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9e690f126f451fbf254ed985899529bb}{MONSTER\_SKILL\_CC\_ATTACKPCGE}},}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead62fb3c66f29dabbb1dc905b4608e1bc}{MONSTER\_SKILL\_CC\_SLAVELT}},}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaa6124849f82bbba2a4c377dc23354833}{MONSTER\_SKILL\_CC\_SLAVELE}},}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea6db037d763f65d42d33c0e42a6861dfb}{MONSTER\_SKILL\_CC\_CLOSERANGEATTACKED}},}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7a61b1f5965ca709b35e41acb1612a0e}{MONSTER\_SKILL\_CC\_LONGRANGEATTACKED}},}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead448a356f3238dd81b08a5efcad764d3}{MONSTER\_SKILL\_CC\_AFTERSKILL}},}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea1a54650e9614188bbf354aba1865ef4e}{MONSTER\_SKILL\_CC\_SKILLUSED}},}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea63cc8296ab9be43fe2d91415c1214ef9}{MONSTER\_SKILL\_CC\_CASTTARGETED}},}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf4a60cd124781021b5a6e47cf84c1b55}{MONSTER\_SKILL\_CC\_RUDEATTACKED}},}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4dedc6ce9f1a3194e097d6fd4f87c111}{MONSTER\_SKILL\_CC\_MASTERHPLTMAXRATE}},}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4ba92774754a97dbffb147de038957f3}{MONSTER\_SKILL\_CC\_MASTERATTACKED}},}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7476ec4e1a913048738016adbf1b571e}{MONSTER\_SKILL\_CC\_ALCHEMIST}},}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf0bc281f4d7af5af54e8c0064946f99f}{MONSTER\_SKILL\_CC\_SPAWN}},}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea21a61d37ce9453dcfa0b1390fb0f56d2}{MONSTER\_SKILL\_CC\_MAGICATTACKED}},}
+\DoxyCodeLine{00164\ \};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__spawn__data}{monster\_spawn\_data}}\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__spawn__data_a5b60ae333166b5c66c1927aa88bd2e98}{spawn\_dataset\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__spawn__data_af01eb009eca1f77e1c194bcdde35127e}{monster\_id}}\{0\};}
+\DoxyCodeLine{00169\ \ \ \ \ std::string\ \mbox{\hyperlink{structmonster__spawn__data_a8590b9c0688ee4f1ba6a7c29a88a0092}{map\_name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ \mbox{\hyperlink{structmonster__spawn__data_ae0776ca640862458195c3f451564644d}{coords}}\{0,0\};}
+\DoxyCodeLine{00171\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__spawn__data_a58bc8083887a53ed2914840b01a57e0b}{x}}\{0\},\ \mbox{\hyperlink{structmonster__spawn__data_a033b0bd4d2b996f0b2beb3f9e5ca6ea0}{y}}\{0\},\ \mbox{\hyperlink{structmonster__spawn__data_a21a7d51276e24173e31b17af541c029f}{x\_area}}\{0\},\ \mbox{\hyperlink{structmonster__spawn__data_af135a125910d0856e7e4b4669a70c2f4}{y\_area}}\{0\};}
+\DoxyCodeLine{00172\ \ \ \ \ std::string\ \mbox{\hyperlink{structmonster__spawn__data_a97a13f7c0e853205e27e6ef2081e1ee0}{mob\_name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00173\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__spawn__data_a87f6e2385dd3d2c17f114810bf12f7fa}{amount}}\{0\};}
+\DoxyCodeLine{00174\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__spawn__data_a9723a62c5adffdf95e911f8fb2c1b11a}{spawn\_delay\_base}}\{0\},\ \mbox{\hyperlink{structmonster__spawn__data_a1287ae82c339f5fcbfda913aab63fc7e}{spawn\_delay\_variance}}\{0\};}
+\DoxyCodeLine{00175\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__spawn__data_abfea39d7b55a669008f16af35c764efd}{dead\_amount}}\{\ 0\ \};}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache}{s\_monster\_spawn\_time\_cache}}\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ int64\_t\ \mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache_a7d82ce4a11fbf3f1f2b772aa59160cb3}{dead\_time}}\{\ 0\ \};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ int64\_t\ \mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache_a42a2b3e010ad43bc599876e7d19adcda}{spawn\_time}}\{\ 0\ \};}
+\DoxyCodeLine{00179\ \ \ \ \ \};}
+\DoxyCodeLine{00180\ \ \ \ \ std::unordered\_map<int64\_t,\ s\_monster\_spawn\_time\_cache>\ \mbox{\hyperlink{structmonster__spawn__data_a333ab514bdcdc0a78a8167c56fcf4495}{dead\_spawn\_time\_list}};}
+\DoxyCodeLine{00181\ \};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__skill__config__data}{monster\_skill\_config\_data}}\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmonster__skill__config__data_a30b384309495ebb1d3ea1040e88350b8}{skill\_id}}\{0\};}
+\DoxyCodeLine{00185\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmonster__skill__config__data_a2bb7e449f555395e8f0a69947372a587}{skill\_level}}\{0\};}
+\DoxyCodeLine{00186\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__skill__config__data_a6ecb0a920725590d9d196e2acbc83756}{skill\_invoke\_rate}}\{0\};}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__skill__config__data_a2a7c09b06db05d3805df1715100198fd}{cast\_time}}\{0\};}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__skill__config__data_a52ba73df7e1d8832eb6e45350f9a2c81}{delay}}\{0\};}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structmonster__skill__config__data_a444fea7a6e5a416f893c235db272f1be}{cancelable}}\{0\};}
+\DoxyCodeLine{00190\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__skill__config__data_a4f611f398de7fbccea67d3afebf230b6}{cast\_condition}}\{0\};}
+\DoxyCodeLine{00191\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__skill__config__data_ad6a36751429f0c134bebe433878c23f9}{condition\_data}}\{0\};}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__skill__config__data_a6aa65d8b7bddbc9b168e2f2b89ae29d5}{val}}[5]\{0\};}
+\DoxyCodeLine{00193\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__skill__config__data_a1b95419a2633ca83b265b95b653a22bd}{emotion\_id}}\{0\};}
+\DoxyCodeLine{00194\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmonster__skill__config__data_a67917ec1a328a8b0de4deb10e2a4a53a}{msg\_id}}\{0\};}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ec}{monster\_skill\_target\_type}}\ target\{\mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab066323d6423c14fb34f11c4e7d08929}{MONSTER\_SKILL\_TARGET\_CURRENT}}\};}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77}{monster\_skill\_state\_type}}\ state\{\mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77ad0843164375df64434eaf6dfe497bff2}{MONSTER\_SKILL\_STATE\_ANY}}\};}
+\DoxyCodeLine{00197\ \};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__config__data}{monster\_config\_data}}}
+\DoxyCodeLine{00200\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmonster__config__data_ac9ed30c69e6de21d51268415d62818ea}{monster\_id}}\{0\};}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmonster__config__data_a204ec68c845c2767030b50f7751bb3cc}{sprite\_name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}]\{0\};}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmonster__config__data_af99ecce20c4f80687071afb688af79e2}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}]\{0\};}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmonster__config__data_a39a561165b4d00c11a348e8d05aa5074}{alt\_name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}]\{0\};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structmonster__config__data_a37758be33af15ae45153b4abf71507cd}{level}}\{1\};}
+\DoxyCodeLine{00207\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a7ae256846f64ba45d322813de7528d18}{hp}}\{0\};}
+\DoxyCodeLine{00208\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a0fb8730bdc3a3508812c2bc8d6157cfd}{sp}}\{0\};}
+\DoxyCodeLine{00209\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_aff5d32f9685e5de2ae95d6ff10b169b0}{attack\_range}}\{0\};}
+\DoxyCodeLine{00210\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_aa7d5e05829c854722584962d5da0e7e1}{attack\_damage}}[2]\{0\};}
+\DoxyCodeLine{00211\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_ab2e28bcbe1b0ec730f7363e4e082dc10}{defense}}\{0\};}
+\DoxyCodeLine{00212\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a68a6f06b5558a1a4a9d76f3bbafb4157}{magic\_defense}}\{0\};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__config__data_a7fecba79768f3fadf4c27e627b7c469c}{str}}\{0\};}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__config__data_a0f4e22cfe2555247063ac3dd36aa882b}{agi}}\{0\};}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__config__data_a0b273b752be123bc120f21c9c2df3873}{vit}}\{0\};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__config__data_af08df27d523b7f626fb354e4e913d9df}{int\_}}\{0\};}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__config__data_a4a9d398e64390e7cf51b880ca8ef3134}{dex}}\{0\};}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structmonster__config__data_adb34479a6c6b5ec7cde5ec9ed9f1a8f3}{luk}}\{0\};}
+\DoxyCodeLine{00221\ \ \ \ \ \}\ \mbox{\hyperlink{structmonster__config__data_a5a74d3e0f7d3abdb9afcd1a7865a52a1}{stats}};}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structmonster__config__data_a3c8b9b57aa2a62b9ceadfb0d818940d1}{view\_range}}\{1\};}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{structmonster__config__data_acc091d850b7a789cae4727484b3757f5}{chase\_range}}\{1\};}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_a36f051cd7b886dfac96f7b994d67c7db}{entity\_size\_type}}\ \mbox{\hyperlink{structmonster__config__data_a6433addba2e911e767ef2620636448b7}{size}}\{\mbox{\hyperlink{_entity_definitions_8hpp_a36f051cd7b886dfac96f7b994d67c7dba5bd1c5bf2af3afe85a3abeb3a46f7899}{ESZ\_MEDIUM}}\};}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94}{monster\_primary\_race\_type}}\ \mbox{\hyperlink{structmonster__config__data_af94526a7d28a6e27a5f9b1cc5d74cec6}{primary\_race}}\{\mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a9c4bd75a4c913e51b2b7525d415adb6f}{MONSTER\_RACE\_FORMLESS}}\};}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65}{monster\_secondary\_race\_type}}\ \mbox{\hyperlink{structmonster__config__data_ae22f121d1766c3a0456d560889a3d40c}{secondary\_race}}\{\ \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a239c631c6eb725195857631a3a0ee1cc}{MONSTER\_RACE2\_NONE}}\ \};}
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\_type}}\ \mbox{\hyperlink{structmonster__config__data_a38fca6c1be71c7245b90a2802da34335}{element}}\{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9a075c68b83c36eb75798d0851302ec66b}{ELE\_NEUTRAL}}\};}
+\DoxyCodeLine{00229\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structmonster__config__data_abbdc4f3e56ceb9a6a668eb1dd24112f7}{element\_level}}\{0\};}
+\DoxyCodeLine{00230\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a0a2e2f01cdd5d36073b828797399e18f}{mode}}\{0\};}
+\DoxyCodeLine{00231\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_af030a02b1392a9ace35349c91e61e5dc}{move\_speed}}\{0\};}
+\DoxyCodeLine{00232\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a81c32946b515baf280cc302c3649b540}{attack\_delay}}\{0\};}
+\DoxyCodeLine{00233\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a68cb334c43b1192bff1afb5164681af8}{attack\_motion}}\{0\};}
+\DoxyCodeLine{00234\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a186a68f8f2b398272acc87db551d3467}{damage\_motion}}\{0\};}
+\DoxyCodeLine{00235\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_a49532ec29ff5bbc96ae14c905069708a}{damage\_taken\_rate}}\{100\};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__config__data_1_1monster__view__data}{monster\_view\_data}}\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_adaa461c2c36ced48f2948761ee297630}{sprite\_id}}\{0\};}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_acebc7b61cad813d3caa4e0a9e7ce32f7}{weapon\_id}}\{0\};}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a9b053d7d1152b5524c5aecd805d3f80d}{shield\_id}}\{0\};}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_abdce9d7b508f4e4ff81d4cc20a717cc0}{robe\_id}}\{0\};}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a43760d1f762327393151ede64c5a39e9}{headgear\_top\_id}}\{0\};}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_aa1510e94f1aa1999c438e0b436a25dad}{headgear\_middle\_id}}\{0\};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a55e098909e304d58806c1150b5fdccfb}{headgear\_bottom\_id}}\{0\};}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a7c3ddbe087cd58c175f343168fce4c05}{hair\_style\_id}}\{0\};}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a2a24b946226170aceb2d599b6a0e3a4c}{body\_style\_id}}\{0\};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a5642b8753a78078b781b0eced2a76bea}{hair\_color\_id}}\{0\};}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_a194275c54eb622817791a67f264ccb16}{body\_color\_id}}\{0\};}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_aacccafa9c44f16e7202cfa89fd90603f}{entity\_gender\_types}}\ \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data_aa487071ca39494c77aea592b1eeeb97f}{gender}}\{\mbox{\hyperlink{_entity_definitions_8hpp_aacccafa9c44f16e7202cfa89fd90603fa4a7c2ad2f223c731dfd3f05b49ada645}{ENTITY\_GENDER\_FEMALE}}\};}
+\DoxyCodeLine{00250\ \ \ \ \ \}\ \mbox{\hyperlink{structmonster__config__data_a2268fdb0ccc2b4814a7b584a8860f64a}{view}}\{0\};}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{comment}{//struct\ view\_data\ vd;}}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__config__data_afbbe2837c4570d302ef5c96441361523}{option}};}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{comment}{//struct\ mob\_skill\ skill[MAX\_MOBSKILL];}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{comment}{//struct\ spawn\_info\ spawn[10];}}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__config__data_1_1rewards}{rewards}}}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__config__data_1_1rewards_1_1drops}{drops}}\ \{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_1_1drops_a37cbd3a9bc972232534a41b46b1902f6}{item\_id}}\{0\},\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_1_1drops_a55e9cb027e8b3b8bc8874a30b8ce8596}{chance}}\{0\};\ \};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_ab5a0844394f05eb674ddde24c41ce604}{base\_exp}}\{0\},\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_a2b202d69912715530686c6b8448b0be4}{job\_exp}}\{0\};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_aa1438bdc6df14bb58b613b328360680f}{mvp\_exp}}\{0\};}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__config__data_1_1rewards_1_1drops}{drops}}\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_aeed1197dabc19ee5d1cb295728fb1c72}{items}}[\mbox{\hyperlink{_monster_definitions_8hpp_a9f5e2aaab78fce91070a5fd86f24550e}{MAX\_MOB\_DROP}}]\{0\};}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmonster__config__data_1_1rewards_1_1drops}{drops}}\ \mbox{\hyperlink{structmonster__config__data_1_1rewards_a0b9bf6dafa62221d51d8dffc877861d0}{items\_mvp}}[\mbox{\hyperlink{_monster_definitions_8hpp_a9473687a002ff7547d7dc1e246b927a3}{MAX\_MVP\_DROP}}]\{0\};}
+\DoxyCodeLine{00263\ \ \ \ \ \}\ rewards;}
+\DoxyCodeLine{00264\ \};}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_MONSTER\_DEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

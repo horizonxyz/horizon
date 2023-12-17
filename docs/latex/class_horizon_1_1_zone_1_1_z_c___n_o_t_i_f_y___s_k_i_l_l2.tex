@@ -1,0 +1,217 @@
+\doxysection{Horizon\+::Zone\+::ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2 Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2}{}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2}\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2}{ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2}.  
+
+
+
+
+{\ttfamily \#include $<$Transmitted\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a1b1a1528b11004e51826005880978835}{ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a3a8106d95c3d79d059e0f06cde10f15e}{\texorpdfstring{$\sim$}{\string~}\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_aa44496d6efa0195688b245e83af8feb9}{deliver}} (uint32\+\_\+t source, uint32\+\_\+t target, uint16\+\_\+t skill\+\_\+id, uint16\+\_\+t skill\+\_\+lv, uint32\+\_\+t start\+\_\+time, int32\+\_\+t attack\+\_\+motion, int32\+\_\+t attacked\+\_\+motion, int32\+\_\+t damage, \mbox{\hyperlink{_definitions_8hpp_aa0d0fdc87fd135ef2bedb030901cdb9c}{int16}} count, enum \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684}{zc\+\_\+notify\+\_\+act\+\_\+3\+\_\+action\+\_\+types}} action\+\_\+type)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4ae1818d3254a68e1f499eebf60e8fce}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Horizon\+::\+Base\+::\+Network\+Packet\+Transmitter$<$ Zone\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{Network\+Packet\+Transmitter}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Zone\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_acad36e1f8be629d774358381069a3d7e}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Transmitter}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a9e1b1c61d7a2fa7eb9e14c810055466c}{transmit}} ()
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a894983a07731b6ad07b306b795350262}{transmit}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4565b6348f942eb6127e7547dacd90ca}{\+\_\+skill\+\_\+id}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a298e56e10da7726aa26780dd5e460072}{\+\_\+source\+\_\+id}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a74b6246bbdde4ba5a4205966e93e19d6}{\+\_\+target\+\_\+id}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a7e337450830eb21fba8b36733a5c9663}{\+\_\+start\+\_\+time}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a3bacb5ef189bdf3bc9094b2551a15ca6}{\+\_\+attack\+\_\+motion}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_ab12582fd06fcab346aa58a4b9dfa9464}{\+\_\+attacked\+\_\+motion}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a1376c24f1f0fda361c685a068215cdfe}{\+\_\+damage}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_ac8efcdf274b0ba85a64475b3325d540d}{\+\_\+level}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a7f3684dff3ed2b49f4086b4f0901139e}{\+\_\+count}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a60d1374a31de5012068dc5bbd2ea9613}{\+\_\+action}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2}{ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a1b1a1528b11004e51826005880978835}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a1b1a1528b11004e51826005880978835} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!ZC\_NOTIFY\_SKILL2@{ZC\_NOTIFY\_SKILL2}}
+\index{ZC\_NOTIFY\_SKILL2@{ZC\_NOTIFY\_SKILL2}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{ZC\_NOTIFY\_SKILL2()}{ZC\_NOTIFY\_SKILL2()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a3a8106d95c3d79d059e0f06cde10f15e}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a3a8106d95c3d79d059e0f06cde10f15e} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!````~ZC\_NOTIFY\_SKILL2@{\texorpdfstring{$\sim$}{\string~}ZC\_NOTIFY\_SKILL2}}
+\index{````~ZC\_NOTIFY\_SKILL2@{\texorpdfstring{$\sim$}{\string~}ZC\_NOTIFY\_SKILL2}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ZC\_NOTIFY\_SKILL2()}{\string~ZC\_NOTIFY\_SKILL2()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\texorpdfstring{$\sim$}{\string~}\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_aa44496d6efa0195688b245e83af8feb9}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_aa44496d6efa0195688b245e83af8feb9} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!deliver@{deliver}}
+\index{deliver@{deliver}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{deliver()}{deliver()}}
+{\footnotesize\ttfamily void ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::deliver (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{source,  }\item[{uint32\+\_\+t}]{target,  }\item[{uint16\+\_\+t}]{skill\+\_\+id,  }\item[{uint16\+\_\+t}]{skill\+\_\+lv,  }\item[{uint32\+\_\+t}]{start\+\_\+time,  }\item[{int32\+\_\+t}]{attack\+\_\+motion,  }\item[{int32\+\_\+t}]{attacked\+\_\+motion,  }\item[{int32\+\_\+t}]{damage,  }\item[{\mbox{\hyperlink{_definitions_8hpp_aa0d0fdc87fd135ef2bedb030901cdb9c}{int16}}}]{count,  }\item[{enum \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684}{zc\+\_\+notify\+\_\+act\+\_\+3\+\_\+action\+\_\+types}}}]{action\+\_\+type }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2}{ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2} \Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4ae1818d3254a68e1f499eebf60e8fce}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4ae1818d3254a68e1f499eebf60e8fce} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!serialize@{serialize}}
+\index{serialize@{serialize}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4ae1818d3254a68e1f499eebf60e8fce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4ae1818d3254a68e1f499eebf60e8fce_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a60d1374a31de5012068dc5bbd2ea9613}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a60d1374a31de5012068dc5bbd2ea9613} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_action@{\_action}}
+\index{\_action@{\_action}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_action}{\_action}}
+{\footnotesize\ttfamily int8\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+action}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a3bacb5ef189bdf3bc9094b2551a15ca6}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a3bacb5ef189bdf3bc9094b2551a15ca6} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_attack\_motion@{\_attack\_motion}}
+\index{\_attack\_motion@{\_attack\_motion}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_attack\_motion}{\_attack\_motion}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+attack\+\_\+motion}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_ab12582fd06fcab346aa58a4b9dfa9464}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_ab12582fd06fcab346aa58a4b9dfa9464} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_attacked\_motion@{\_attacked\_motion}}
+\index{\_attacked\_motion@{\_attacked\_motion}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_attacked\_motion}{\_attacked\_motion}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+attacked\+\_\+motion}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a7f3684dff3ed2b49f4086b4f0901139e}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a7f3684dff3ed2b49f4086b4f0901139e} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_count@{\_count}}
+\index{\_count@{\_count}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_count}{\_count}}
+{\footnotesize\ttfamily int16\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+count}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a1376c24f1f0fda361c685a068215cdfe}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a1376c24f1f0fda361c685a068215cdfe} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_damage@{\_damage}}
+\index{\_damage@{\_damage}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_damage}{\_damage}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+damage}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_ac8efcdf274b0ba85a64475b3325d540d}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_ac8efcdf274b0ba85a64475b3325d540d} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_level@{\_level}}
+\index{\_level@{\_level}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_level}{\_level}}
+{\footnotesize\ttfamily int16\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+level}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4565b6348f942eb6127e7547dacd90ca}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a4565b6348f942eb6127e7547dacd90ca} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_skill\_id@{\_skill\_id}}
+\index{\_skill\_id@{\_skill\_id}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_skill\_id}{\_skill\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+skill\+\_\+id}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a298e56e10da7726aa26780dd5e460072}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a298e56e10da7726aa26780dd5e460072} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_source\_id@{\_source\_id}}
+\index{\_source\_id@{\_source\_id}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_source\_id}{\_source\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+source\+\_\+id}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a7e337450830eb21fba8b36733a5c9663}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a7e337450830eb21fba8b36733a5c9663} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_start\_time@{\_start\_time}}
+\index{\_start\_time@{\_start\_time}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_start\_time}{\_start\_time}}
+{\footnotesize\ttfamily uint32\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+start\+\_\+time}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a74b6246bbdde4ba5a4205966e93e19d6}\label{class_horizon_1_1_zone_1_1_z_c___n_o_t_i_f_y___s_k_i_l_l2_a74b6246bbdde4ba5a4205966e93e19d6} 
+\index{Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}!\_target\_id@{\_target\_id}}
+\index{\_target\_id@{\_target\_id}!Horizon::Zone::ZC\_NOTIFY\_SKILL2@{Horizon::Zone::ZC\_NOTIFY\_SKILL2}}
+\doxysubsubsection{\texorpdfstring{\_target\_id}{\_target\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+NOTIFY\+\_\+\+SKILL2\+::\+\_\+target\+\_\+id}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Packets/\mbox{\hyperlink{_zone_2_packets_2_transmitted_packets_8hpp}{Transmitted\+Packets.\+hpp}}\item 
+src/\+Server/\+Zone/\+Packets/\mbox{\hyperlink{_zone_2_packets_2_transmitted_packets_8cpp}{Transmitted\+Packets.\+cpp}}\end{DoxyCompactItemize}

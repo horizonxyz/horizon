@@ -1,0 +1,25 @@
+var class_g_r_f =
+[
+    [ "GRF", "class_g_r_f.html#a8265d50eda2df9c2ce2401bc52b6713b", null ],
+    [ "decode", "class_g_r_f.html#af00be034100eb8916ad28e6e34f8fcb2", null ],
+    [ "decodeFull", "class_g_r_f.html#a0d62090ac82ebbbb27738dbb1337df43", null ],
+    [ "decodeHeader", "class_g_r_f.html#a84d6d5ade7a11988e2867440e1ef083a", null ],
+    [ "decodeShuffledBytes", "class_g_r_f.html#a4050d0cdd20ded558f5662ed5076ebbd", null ],
+    [ "extractAllFiles", "class_g_r_f.html#ac07390ae906258905c15ceb25e8af09b", null ],
+    [ "extractFile", "class_g_r_f.html#af0ed197c966f95c106a8f1eac5625b5a", null ],
+    [ "get_id", "class_g_r_f.html#a6b5e988a2f5e25b485864e3bbc113ac9", null ],
+    [ "getFileErrorMap", "class_g_r_f.html#a2d62e5c0cca5ffa836e32f1fb1e23625", null ],
+    [ "getFileMap", "class_g_r_f.html#a00ed715dde32def3bc9bdb0c94c78527", null ],
+    [ "getGRFPath", "class_g_r_f.html#a27e4d41dd51e2f0ca78c0473a2a517aa", null ],
+    [ "getGRFSize", "class_g_r_f.html#a7c0386dcd0fb1d464c986afd79c09766", null ],
+    [ "getGRFVersion", "class_g_r_f.html#ab0d1fe790e66c54909779ee05ec39ab9", null ],
+    [ "getTotalFiles", "class_g_r_f.html#a58b8115d23a1ca322121400d2b051562", null ],
+    [ "load", "class_g_r_f.html#a6f2c010cb061e49075854abf75eee2fb", null ],
+    [ "read", "class_g_r_f.html#a9ef9210001ff34a4295716d1a30b7e15", null ],
+    [ "set_id", "class_g_r_f.html#a6f9f1d0775e1bf850d94f11c54c78c93", null ],
+    [ "setGRFPath", "class_g_r_f.html#a71ec3fba1c85caf1ef2fdc6606600d7d", null ],
+    [ "setGRFSize", "class_g_r_f.html#a31e07473f10fb341d5666d5ac890023a", null ],
+    [ "setGRFVersion", "class_g_r_f.html#ad32defe95dddad1214d68ed8d7dbaf5d", null ],
+    [ "setTotalFiles", "class_g_r_f.html#a755d1c0fed2f9972b714944d0663d28e", null ],
+    [ "substituteObfuscatedByte", "class_g_r_f.html#adc489a2eaef9224d33075b1482a98708", null ]
+];

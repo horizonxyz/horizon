@@ -1,0 +1,243 @@
+\doxysection{src/\+Tests/\+Reference\+Type\+List\+Test.cpp File Reference}
+\hypertarget{_reference_type_list_test_8cpp}{}\label{_reference_type_list_test_8cpp}\index{src/Tests/ReferenceTypeListTest.cpp@{src/Tests/ReferenceTypeListTest.cpp}}
+{\ttfamily \#include "{}Core/\+Structures/\+Linked\+List/\+Reference\+List/\+Reference.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Structures/\+Linked\+List/\+Reference\+List/\+Ref\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Structures/\+Type\+List.\+hpp"{}}\newline
+{\ttfamily \#include $<$boost/test/unit\+\_\+test.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+Include dependency graph for Reference\+Type\+List\+Test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_reference_type_list_test_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_test_ref_manager}{Test\+Ref\+Manager$<$ OBJECT $>$}}
+\item 
+class \mbox{\hyperlink{class_test_reference}{Test\+Reference$<$ OBJECT $>$}}
+\item 
+class \mbox{\hyperlink{class_reference_object}{Reference\+Object$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{class_generic_test_object}{Generic\+Test\+Object}}
+\item 
+class \mbox{\hyperlink{class_a}{A}}
+\item 
+class \mbox{\hyperlink{class_b}{B}}
+\item 
+class \mbox{\hyperlink{class_c}{C}}
+\item 
+struct \mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List$<$ OBJECT $>$}}
+\item 
+struct \mbox{\hyperlink{struct_container_map_list_3_01_type_null_01_4}{Container\+Map\+List$<$ Type\+Null $>$}}
+\item 
+struct \mbox{\hyperlink{struct_container_map_list_3_01_type_list_3_01_h_e_a_d_00_01_t_a_i_l_01_4_01_4}{Container\+Map\+List$<$ Type\+List$<$ HEAD, TAIL $>$ $>$}}
+\item 
+class \mbox{\hyperlink{class_type_ref_container}{Type\+Ref\+Container$<$ OBJECT\+\_\+\+TYPES $>$}}
+\item 
+class \mbox{\hyperlink{class_type_container_visitor}{Type\+Container\+Visitor$<$ VISITOR, TYPE\+\_\+\+CONTAINER $>$}}
+\item 
+class \mbox{\hyperlink{class_compare_generic_test_object_i_d}{Compare\+Generic\+Test\+Object\+ID}}
+\item 
+struct \mbox{\hyperlink{struct_generic_test_object_searcher}{Generic\+Test\+Object\+Searcher$<$ PREDICATE $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_type_list_iterator}{Type\+List\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_reference_type_list_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1}{BOOST\+\_\+\+TEST\+\_\+\+DYN\+\_\+\+LINK}}
+\item 
+\#define \mbox{\hyperlink{_reference_type_list_test_8cpp_a6b2a3852db8bb19ab6909bac01859985}{BOOST\+\_\+\+TEST\+\_\+\+MODULE}}~"{}Reference\+Type\+List\+Test"{}
+\item 
+\#define \mbox{\hyperlink{_reference_type_list_test_8cpp_a29700bd8de0c6dc1a35ef5739e9f4f05}{MAX\+\_\+\+A\+\_\+\+TYPES}}~3
+\item 
+\#define \mbox{\hyperlink{_reference_type_list_test_8cpp_ac71e22f6db03b1dcf34da41779d48e4c}{MAX\+\_\+\+B\+\_\+\+TYPES}}~6
+\item 
+\#define \mbox{\hyperlink{_reference_type_list_test_8cpp_a960f8cf521c3b03afde66bc7e7c56216}{MAX\+\_\+\+C\+\_\+\+TYPES}}~9
+\item 
+\#define \mbox{\hyperlink{_reference_type_list_test_8cpp_abb28b18539450f1de9ff2088a2487ba0}{ID\+\_\+\+CHECK}}~42
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE $>$ }\\SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_type_list_iterator_a812e90e7868af23d2fec7cdc39b37587}{Type\+List\+Iterator\+::\+Insert}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ SPECIFIC\+\_\+\+TYPE $>$ \&elements, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*}obj)
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE $>$ }\\SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_type_list_iterator_a8cde9a9e0ea266c47299240dd9584dbd}{Type\+List\+Iterator\+::\+Insert}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ Type\+Null $>$ \&, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE , class T $>$ }\\SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_type_list_iterator_a0d7f4d5e27fd4cb256981fbe7b80caf0}{Type\+List\+Iterator\+::\+Insert}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ T $>$ \&, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE , class HEAD , class TAIL $>$ }\\SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_type_list_iterator_ab7e2eb7574bdea7a2ece97330f356b1b}{Type\+List\+Iterator\+::\+Insert}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$ HEAD, TAIL $>$ $>$ \&elements, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*}obj)
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_a0cce859f4b4e19d8b2bd21d8de44306f}{Type\+List\+Iterator\+::count}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ SPECIFIC\+\_\+\+TYPE $>$ const \&elements, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_a60b7d0e63bd5e237185db489e33ba4f2}{Type\+List\+Iterator\+::count}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ Type\+Null $>$ const \&, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE , class T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_ac60c06046793861282a7dd925ce698e8}{Type\+List\+Iterator\+::count}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ T $>$ const \&, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*})
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE , class T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_ad745bba372d7a2cc947a232013d4f221}{Type\+List\+Iterator\+::count}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$ SPECIFIC\+\_\+\+TYPE, T $>$ $>$ const \&elements, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*}fake)
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+TYPE , class H , class T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_aaa30efc6286e86fdc89e8e5df710daf9}{Type\+List\+Iterator\+::count}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$ H, T $>$ $>$ const \&elements, SPECIFIC\+\_\+\+TYPE \texorpdfstring{$\ast$}{*}fake)
+\item 
+{\footnotesize template$<$class Type\+Null $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_ab77b5e0eb2eaa1b5679de543277de129}{Type\+List\+Iterator\+::count\+\_\+all}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ Type\+Null $>$ const \&elements)
+\item 
+{\footnotesize template$<$class H , class T $>$ }\\size\+\_\+t \mbox{\hyperlink{namespace_type_list_iterator_a7ab41e37b92f0dca597e2362fd904228}{Type\+List\+Iterator\+::count\+\_\+all}} (\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$ H, T $>$ $>$ const \&elements)
+\item 
+{\footnotesize template$<$class VISITOR $>$ }\\void \mbox{\hyperlink{_reference_type_list_test_8cpp_afb97c1925d9afe2b9cb0f316b722b286}{Visitor\+Helper}} (VISITOR \&, \mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ Type\+Null $>$ \&)
+\item 
+{\footnotesize template$<$class VISITOR , class T $>$ }\\void \mbox{\hyperlink{_reference_type_list_test_8cpp_a2bba031b226b147ad62a069694924b83}{Visitor\+Helper}} (VISITOR \&v, \mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ T $>$ \&c)
+\item 
+{\footnotesize template$<$class VISITOR , class H , class T $>$ }\\void \mbox{\hyperlink{_reference_type_list_test_8cpp_a521e8e3b3a45439e572e9769ad39b512}{Visitor\+Helper}} (VISITOR \&v, \mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$ H, T $>$ $>$ \&c)
+\item 
+{\footnotesize template$<$class VISITOR , class OBJECT\+\_\+\+TYPES $>$ }\\void \mbox{\hyperlink{_reference_type_list_test_8cpp_a9429c61cf2c630e5adef85d9b7f2ac42}{Visitor\+Helper}} (VISITOR \&v, \mbox{\hyperlink{class_type_ref_container}{Type\+Ref\+Container}}$<$ OBJECT\+\_\+\+TYPES $>$ \&c)
+\item 
+typedef \mbox{\hyperlink{_reference_type_list_test_8cpp_a4390ce8dee780bbde7bf0f7a96683949}{TYPELIST\+\_\+3}} (\mbox{\hyperlink{class_a}{A}}, \mbox{\hyperlink{class_b}{B}}, \mbox{\hyperlink{class_c}{C}}) My\+Types
+\item 
+void \mbox{\hyperlink{_reference_type_list_test_8cpp_a7d41dc2c9625c5d775a4a4c92ce2baea}{print\+\_\+count}} (\mbox{\hyperlink{class_type_ref_container}{Type\+Ref\+Container}}$<$ My\+Types $>$ \&ref\+Container)
+\item 
+\mbox{\hyperlink{_reference_type_list_test_8cpp_a74183cec960a901a51f523a7c7705aa4}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (Reference\+Type\+List\+Test)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_reference_type_list_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1}\label{_reference_type_list_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!BOOST\_TEST\_DYN\_LINK@{BOOST\_TEST\_DYN\_LINK}}
+\index{BOOST\_TEST\_DYN\_LINK@{BOOST\_TEST\_DYN\_LINK}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_DYN\_LINK}{BOOST\_TEST\_DYN\_LINK}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+DYN\+\_\+\+LINK}
+
+\Hypertarget{_reference_type_list_test_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{_reference_type_list_test_8cpp_a6b2a3852db8bb19ab6909bac01859985} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}}
+\index{BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_MODULE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+MODULE~"{}Reference\+Type\+List\+Test"{}}
+
+\Hypertarget{_reference_type_list_test_8cpp_abb28b18539450f1de9ff2088a2487ba0}\label{_reference_type_list_test_8cpp_abb28b18539450f1de9ff2088a2487ba0} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!ID\_CHECK@{ID\_CHECK}}
+\index{ID\_CHECK@{ID\_CHECK}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{ID\_CHECK}{ID\_CHECK}}
+{\footnotesize\ttfamily \#define ID\+\_\+\+CHECK~42}
+
+\Hypertarget{_reference_type_list_test_8cpp_a29700bd8de0c6dc1a35ef5739e9f4f05}\label{_reference_type_list_test_8cpp_a29700bd8de0c6dc1a35ef5739e9f4f05} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!MAX\_A\_TYPES@{MAX\_A\_TYPES}}
+\index{MAX\_A\_TYPES@{MAX\_A\_TYPES}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_A\_TYPES}{MAX\_A\_TYPES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+A\+\_\+\+TYPES~3}
+
+\Hypertarget{_reference_type_list_test_8cpp_ac71e22f6db03b1dcf34da41779d48e4c}\label{_reference_type_list_test_8cpp_ac71e22f6db03b1dcf34da41779d48e4c} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!MAX\_B\_TYPES@{MAX\_B\_TYPES}}
+\index{MAX\_B\_TYPES@{MAX\_B\_TYPES}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_B\_TYPES}{MAX\_B\_TYPES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+B\+\_\+\+TYPES~6}
+
+\Hypertarget{_reference_type_list_test_8cpp_a960f8cf521c3b03afde66bc7e7c56216}\label{_reference_type_list_test_8cpp_a960f8cf521c3b03afde66bc7e7c56216} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!MAX\_C\_TYPES@{MAX\_C\_TYPES}}
+\index{MAX\_C\_TYPES@{MAX\_C\_TYPES}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_C\_TYPES}{MAX\_C\_TYPES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+C\+\_\+\+TYPES~9}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_reference_type_list_test_8cpp_a74183cec960a901a51f523a7c7705aa4}\label{_reference_type_list_test_8cpp_a74183cec960a901a51f523a7c7705aa4} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{Reference\+Type\+List\+Test}]{ }\end{DoxyParamCaption})}
+
+Searcher \& Checker tests.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_reference_type_list_test_8cpp_a74183cec960a901a51f523a7c7705aa4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_reference_type_list_test_8cpp_a7d41dc2c9625c5d775a4a4c92ce2baea}\label{_reference_type_list_test_8cpp_a7d41dc2c9625c5d775a4a4c92ce2baea} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!print\_count@{print\_count}}
+\index{print\_count@{print\_count}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_count()}{print\_count()}}
+{\footnotesize\ttfamily void print\+\_\+count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_type_ref_container}{Type\+Ref\+Container}}$<$ My\+Types $>$ \&}]{ref\+Container }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_reference_type_list_test_8cpp_a7d41dc2c9625c5d775a4a4c92ce2baea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{_reference_type_list_test_8cpp_a7d41dc2c9625c5d775a4a4c92ce2baea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_reference_type_list_test_8cpp_a4390ce8dee780bbde7bf0f7a96683949}\label{_reference_type_list_test_8cpp_a4390ce8dee780bbde7bf0f7a96683949} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!TYPELIST\_3@{TYPELIST\_3}}
+\index{TYPELIST\_3@{TYPELIST\_3}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_3()}{TYPELIST\_3()}}
+{\footnotesize\ttfamily typedef TYPELIST\+\_\+3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a}{A}}}]{,  }\item[{\mbox{\hyperlink{class_b}{B}}}]{,  }\item[{\mbox{\hyperlink{class_c}{C}}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_reference_type_list_test_8cpp_afb97c1925d9afe2b9cb0f316b722b286}\label{_reference_type_list_test_8cpp_afb97c1925d9afe2b9cb0f316b722b286} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!VisitorHelper@{VisitorHelper}}
+\index{VisitorHelper@{VisitorHelper}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{VisitorHelper()}{VisitorHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class VISITOR $>$ \\
+void Visitor\+Helper (\begin{DoxyParamCaption}\item[{VISITOR \&}]{,  }\item[{\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ Type\+Null $>$ \&}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_reference_type_list_test_8cpp_afb97c1925d9afe2b9cb0f316b722b286_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_reference_type_list_test_8cpp_a2bba031b226b147ad62a069694924b83}\label{_reference_type_list_test_8cpp_a2bba031b226b147ad62a069694924b83} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!VisitorHelper@{VisitorHelper}}
+\index{VisitorHelper@{VisitorHelper}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{VisitorHelper()}{VisitorHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class VISITOR , class T $>$ \\
+void Visitor\+Helper (\begin{DoxyParamCaption}\item[{VISITOR \&}]{v,  }\item[{\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ T $>$ \&}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{_reference_type_list_test_8cpp_a521e8e3b3a45439e572e9769ad39b512}\label{_reference_type_list_test_8cpp_a521e8e3b3a45439e572e9769ad39b512} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!VisitorHelper@{VisitorHelper}}
+\index{VisitorHelper@{VisitorHelper}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{VisitorHelper()}{VisitorHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class VISITOR , class H , class T $>$ \\
+void Visitor\+Helper (\begin{DoxyParamCaption}\item[{VISITOR \&}]{v,  }\item[{\mbox{\hyperlink{struct_container_map_list}{Container\+Map\+List}}$<$ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$ H, T $>$ $>$ \&}]{c }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{_reference_type_list_test_8cpp_a521e8e3b3a45439e572e9769ad39b512_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_reference_type_list_test_8cpp_a9429c61cf2c630e5adef85d9b7f2ac42}\label{_reference_type_list_test_8cpp_a9429c61cf2c630e5adef85d9b7f2ac42} 
+\index{ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}!VisitorHelper@{VisitorHelper}}
+\index{VisitorHelper@{VisitorHelper}!ReferenceTypeListTest.cpp@{ReferenceTypeListTest.cpp}}
+\doxysubsubsection{\texorpdfstring{VisitorHelper()}{VisitorHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class VISITOR , class OBJECT\+\_\+\+TYPES $>$ \\
+void Visitor\+Helper (\begin{DoxyParamCaption}\item[{VISITOR \&}]{v,  }\item[{\mbox{\hyperlink{class_type_ref_container}{Type\+Ref\+Container}}$<$ OBJECT\+\_\+\+TYPES $>$ \&}]{c }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_reference_type_list_test_8cpp_a9429c61cf2c630e5adef85d9b7f2ac42_cgraph}
+\end{center}
+\end{figure}

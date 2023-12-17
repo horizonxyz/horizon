@@ -1,0 +1,7 @@
+var class_horizon_1_1_zone_1_1_c_z___c_o_m_p_l_e_t_e___a_p_p_l_y___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a =
+[
+    [ "CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA", "class_horizon_1_1_zone_1_1_c_z___c_o_m_p_l_e_t_e___a_p_p_l_y___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#a411c82ec096fdea1c6c501b98af563b4", null ],
+    [ "~CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA", "class_horizon_1_1_zone_1_1_c_z___c_o_m_p_l_e_t_e___a_p_p_l_y___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#abdcfe8a790835e40a3309459ded8d846", null ],
+    [ "deserialize", "class_horizon_1_1_zone_1_1_c_z___c_o_m_p_l_e_t_e___a_p_p_l_y___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#a801c1cd6e0621957c2c1c82bcb64f40d", null ],
+    [ "handle", "class_horizon_1_1_zone_1_1_c_z___c_o_m_p_l_e_t_e___a_p_p_l_y___m_a_c_r_o___d_e_t_e_c_t_o_r___c_a_p_t_c_h_a.html#a0f5043ae7cb869149a7a3cdfad9a3252", null ]
+];

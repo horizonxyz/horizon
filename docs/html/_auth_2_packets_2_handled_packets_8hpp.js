@@ -1,0 +1,27 @@
+var _auth_2_packets_2_handled_packets_8hpp =
+[
+    [ "Horizon::Auth::CA_ACK_LOGIN_ACCOUNT_INFO", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o.html", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o" ],
+    [ "Horizon::Auth::CA_ACK_LOGIN_CARDPASS", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___c_a_r_d_p_a_s_s.html", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___c_a_r_d_p_a_s_s" ],
+    [ "Horizon::Auth::CA_ACK_LOGIN_NEWEKEY", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___n_e_w_e_k_e_y.html", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___n_e_w_e_k_e_y" ],
+    [ "Horizon::Auth::CA_ACK_LOGIN_OLDEKEY", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___o_l_d_e_k_e_y.html", "class_horizon_1_1_auth_1_1_c_a___a_c_k___l_o_g_i_n___o_l_d_e_k_e_y" ],
+    [ "Horizon::Auth::CA_ACK_MOBILE_OTP", "class_horizon_1_1_auth_1_1_c_a___a_c_k___m_o_b_i_l_e___o_t_p.html", "class_horizon_1_1_auth_1_1_c_a___a_c_k___m_o_b_i_l_e___o_t_p" ],
+    [ "Horizon::Auth::CA_ACK_NEW_USER", "class_horizon_1_1_auth_1_1_c_a___a_c_k___n_e_w___u_s_e_r.html", "class_horizon_1_1_auth_1_1_c_a___a_c_k___n_e_w___u_s_e_r" ],
+    [ "Horizon::Auth::CA_CLIENT_TYPE", "class_horizon_1_1_auth_1_1_c_a___c_l_i_e_n_t___t_y_p_e.html", "class_horizon_1_1_auth_1_1_c_a___c_l_i_e_n_t___t_y_p_e" ],
+    [ "Horizon::Auth::CA_CONNECT_INFO_CHANGED", "class_horizon_1_1_auth_1_1_c_a___c_o_n_n_e_c_t___i_n_f_o___c_h_a_n_g_e_d.html", "class_horizon_1_1_auth_1_1_c_a___c_o_n_n_e_c_t___i_n_f_o___c_h_a_n_g_e_d" ],
+    [ "Horizon::Auth::CA_EXE_HASHCHECK", "class_horizon_1_1_auth_1_1_c_a___e_x_e___h_a_s_h_c_h_e_c_k.html", "class_horizon_1_1_auth_1_1_c_a___e_x_e___h_a_s_h_c_h_e_c_k" ],
+    [ "Horizon::Auth::CA_LOGIN", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n" ],
+    [ "Horizon::Auth::CA_LOGIN2", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n2.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n2" ],
+    [ "Horizon::Auth::CA_LOGIN3", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n3.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n3" ],
+    [ "Horizon::Auth::CA_LOGIN4", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n4.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n4" ],
+    [ "Horizon::Auth::CA_LOGIN5", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n5.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n5" ],
+    [ "Horizon::Auth::CA_LOGIN6", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n6.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n6" ],
+    [ "Horizon::Auth::CA_LOGIN_HAN", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n___h_a_n.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n___h_a_n" ],
+    [ "Horizon::Auth::CA_LOGIN_OTP", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n___o_t_p.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n___o_t_p" ],
+    [ "Horizon::Auth::CA_LOGIN_PCBANG", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n___p_c_b_a_n_g.html", "class_horizon_1_1_auth_1_1_c_a___l_o_g_i_n___p_c_b_a_n_g" ],
+    [ "Horizon::Auth::CA_OTP_AUTH_REQ", "class_horizon_1_1_auth_1_1_c_a___o_t_p___a_u_t_h___r_e_q.html", "class_horizon_1_1_auth_1_1_c_a___o_t_p___a_u_t_h___r_e_q" ],
+    [ "Horizon::Auth::CA_OTP_CODE", "class_horizon_1_1_auth_1_1_c_a___o_t_p___c_o_d_e.html", "class_horizon_1_1_auth_1_1_c_a___o_t_p___c_o_d_e" ],
+    [ "Horizon::Auth::CA_REPLY_PNGAMEROOM", "class_horizon_1_1_auth_1_1_c_a___r_e_p_l_y___p_n_g_a_m_e_r_o_o_m.html", "class_horizon_1_1_auth_1_1_c_a___r_e_p_l_y___p_n_g_a_m_e_r_o_o_m" ],
+    [ "Horizon::Auth::CA_REQ_GAME_GUARD_CHECK", "class_horizon_1_1_auth_1_1_c_a___r_e_q___g_a_m_e___g_u_a_r_d___c_h_e_c_k.html", "class_horizon_1_1_auth_1_1_c_a___r_e_q___g_a_m_e___g_u_a_r_d___c_h_e_c_k" ],
+    [ "Horizon::Auth::CA_REQ_HASH", "class_horizon_1_1_auth_1_1_c_a___r_e_q___h_a_s_h.html", "class_horizon_1_1_auth_1_1_c_a___r_e_q___h_a_s_h" ],
+    [ "Horizon::Auth::CA_SSO_LOGIN_REQ", "class_horizon_1_1_auth_1_1_c_a___s_s_o___l_o_g_i_n___r_e_q.html", "class_horizon_1_1_auth_1_1_c_a___s_s_o___l_o_g_i_n___r_e_q" ]
+];

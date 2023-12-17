@@ -1,0 +1,165 @@
+\doxysection{Horizon\+::Zone\+::UI\+::Mail Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail}{}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail}\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+
+
+{\ttfamily \#include $<$User\+Interface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_aba1ad03365d0ad11408a8e6af5f3984b}{Mail}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a3de4c3e0ccf0bf1d00480f3b30b3cca6}{\texorpdfstring{$\sim$}{\string~}\+Mail}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a84916798a84d03c22a567c22df7f3f7d}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a134667b0de127fe887750cbaf24b6b2b}{check\+\_\+receiver\+\_\+name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a8fb7dc00e0cc84fab2c7a7daf746ea87}{add\+\_\+item}} (int inventory\+\_\+index, int amount)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ae0f18fde68502c0b71d2d559a959b296}{delete\+\_\+}} (int mail\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a5bfa9725b9fc3900e768fb40476ce6ba}{retrieve\+\_\+attachment}} (int mail\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a38572929cf31a7f9fe4d0f186f6ba5ce}{list}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_af55643412192a85de316b5cecef18dba}{open}} (int mail\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a74d5bf2f4f3fde8fa2bc691d83ed1995}{reset}} (\mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500}{cz\+\_\+mail\+\_\+reset\+\_\+item\+\_\+type}} reset)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_afdad2087a4148640464f677eb7d789a9}{send}} (std\+::string recipient, std\+::string title, std\+::string body)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4cf28ca075b28172dc0dfb919f6a1372}{return\+\_\+}} (int mail\+\_\+id, std\+::string receiver\+\_\+name)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ad4c9acf5667752b48b3151134f76bb17}{notify\+\_\+add\+\_\+item}} (int inventory\+\_\+index, \mbox{\hyperlink{_client_definitions_8hpp_ab75ad40ae73ef73382f095c7738c7882}{zc\+\_\+ack\+\_\+mail\+\_\+add\+\_\+item\+\_\+result\+\_\+type}} result)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a6d310f9e15004299310ddc38e5a800f5}{notify\+\_\+delete}} (int mail\+\_\+id, \mbox{\hyperlink{_client_definitions_8hpp_aaf4469cbbc166701f6ff0c55d87ff342}{zc\+\_\+ack\+\_\+mail\+\_\+delete\+\_\+result\+\_\+type}} result)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4da3bebe353afca2457a1b781cea99b0}{notify\+\_\+return}} (int mail\+\_\+id, \mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922}{zc\+\_\+ack\+\_\+mail\+\_\+return\+\_\+result\+\_\+type}} result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_aba1ad03365d0ad11408a8e6af5f3984b}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_aba1ad03365d0ad11408a8e6af5f3984b} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!Mail@{Mail}}
+\index{Mail@{Mail}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{Mail()}{Mail()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::\+Mail (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_u_i_1_1_mail}{Mail} \Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a3de4c3e0ccf0bf1d00480f3b30b3cca6}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a3de4c3e0ccf0bf1d00480f3b30b3cca6} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!````~Mail@{\texorpdfstring{$\sim$}{\string~}Mail}}
+\index{````~Mail@{\texorpdfstring{$\sim$}{\string~}Mail}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Mail()}{\string~Mail()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::\texorpdfstring{$\sim$}{\string~}\+Mail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a8fb7dc00e0cc84fab2c7a7daf746ea87}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a8fb7dc00e0cc84fab2c7a7daf746ea87} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!add\_item@{add\_item}}
+\index{add\_item@{add\_item}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{add\_item()}{add\_item()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::add\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{inventory\+\_\+index,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a134667b0de127fe887750cbaf24b6b2b}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a134667b0de127fe887750cbaf24b6b2b} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!check\_receiver\_name@{check\_receiver\_name}}
+\index{check\_receiver\_name@{check\_receiver\_name}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{check\_receiver\_name()}{check\_receiver\_name()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::check\+\_\+receiver\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ae0f18fde68502c0b71d2d559a959b296}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ae0f18fde68502c0b71d2d559a959b296} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!delete\_@{delete\_}}
+\index{delete\_@{delete\_}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{delete\_()}{delete\_()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::delete\+\_\+ (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a84916798a84d03c22a567c22df7f3f7d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a84916798a84d03c22a567c22df7f3f7d} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a38572929cf31a7f9fe4d0f186f6ba5ce}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a38572929cf31a7f9fe4d0f186f6ba5ce} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!list@{list}}
+\index{list@{list}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ad4c9acf5667752b48b3151134f76bb17}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ad4c9acf5667752b48b3151134f76bb17} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!notify\_add\_item@{notify\_add\_item}}
+\index{notify\_add\_item@{notify\_add\_item}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{notify\_add\_item()}{notify\_add\_item()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::notify\+\_\+add\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{inventory\+\_\+index,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_ab75ad40ae73ef73382f095c7738c7882}{zc\+\_\+ack\+\_\+mail\+\_\+add\+\_\+item\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ad4c9acf5667752b48b3151134f76bb17_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a6d310f9e15004299310ddc38e5a800f5}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a6d310f9e15004299310ddc38e5a800f5} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!notify\_delete@{notify\_delete}}
+\index{notify\_delete@{notify\_delete}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{notify\_delete()}{notify\_delete()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::notify\+\_\+delete (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_aaf4469cbbc166701f6ff0c55d87ff342}{zc\+\_\+ack\+\_\+mail\+\_\+delete\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a6d310f9e15004299310ddc38e5a800f5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4da3bebe353afca2457a1b781cea99b0}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4da3bebe353afca2457a1b781cea99b0} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!notify\_return@{notify\_return}}
+\index{notify\_return@{notify\_return}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{notify\_return()}{notify\_return()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::notify\+\_\+return (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922}{zc\+\_\+ack\+\_\+mail\+\_\+return\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4da3bebe353afca2457a1b781cea99b0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_af55643412192a85de316b5cecef18dba}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_af55643412192a85de316b5cecef18dba} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!open@{open}}
+\index{open@{open}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::open (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a74d5bf2f4f3fde8fa2bc691d83ed1995}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a74d5bf2f4f3fde8fa2bc691d83ed1995} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!reset@{reset}}
+\index{reset@{reset}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500}{cz\+\_\+mail\+\_\+reset\+\_\+item\+\_\+type}}}]{reset }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a5bfa9725b9fc3900e768fb40476ce6ba}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a5bfa9725b9fc3900e768fb40476ce6ba} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!retrieve\_attachment@{retrieve\_attachment}}
+\index{retrieve\_attachment@{retrieve\_attachment}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{retrieve\_attachment()}{retrieve\_attachment()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::retrieve\+\_\+attachment (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4cf28ca075b28172dc0dfb919f6a1372}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4cf28ca075b28172dc0dfb919f6a1372} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!return\_@{return\_}}
+\index{return\_@{return\_}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{return\_()}{return\_()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::return\+\_\+ (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id,  }\item[{std\+::string}]{receiver\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_mail_afdad2087a4148640464f677eb7d789a9}\label{class_horizon_1_1_zone_1_1_u_i_1_1_mail_afdad2087a4148640464f677eb7d789a9} 
+\index{Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}!send@{send}}
+\index{send@{send}!Horizon::Zone::UI::Mail@{Horizon::Zone::UI::Mail}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Mail\+::send (\begin{DoxyParamCaption}\item[{std\+::string}]{recipient,  }\item[{std\+::string}]{title,  }\item[{std\+::string}]{body }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8hpp}{User\+Interface.\+hpp}}\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

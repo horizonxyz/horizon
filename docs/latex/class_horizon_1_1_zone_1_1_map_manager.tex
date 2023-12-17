@@ -1,0 +1,144 @@
+\doxysection{Horizon\+::Zone\+::Map\+Manager Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_map_manager}{}\label{class_horizon_1_1_zone_1_1_map_manager}\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+
+
+{\ttfamily \#include $<$Map\+Manager.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a16ce0764c904db90b6c65deb4598f9f8}{Map\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_ac4024a4688cb432385228b584593b3a0}{\texorpdfstring{$\sim$}{\string~}\+Map\+Manager}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a4643d3249e73d7e1ce4f2bec51cab8b3}{initialize}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a5769b752ee73dcff984330ac355faf31}{finalize}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a8fb67dc6e32b171b66fb5b3637ff85d6}{Load\+Map\+Cache}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_afe8b7eab69b5fae458b744ff07120cd7}{manage\+\_\+session\+\_\+in\+\_\+map}} (\mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{map\+\_\+container\+\_\+session\+\_\+action}} action, std\+::string map\+\_\+name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ s)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a6b44ee709c49ac401ae201982f76196b}{get\+\_\+map}} (std\+::string map\+\_\+name)
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a7ee88f3cad8514b95e65a71252be9de1}{get\+Scheduler}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_aac92f0db8bfd91b70d2cf51e2e2dbaf6}{find\+\_\+player}} (std\+::string name)
+\item 
+std\+::map$<$ int32\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_af7c2b07d7747393d4321020fe4e72b44}{get\+\_\+containers}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager}{Map\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager_a9561e0a00b00d5a0b56c070a1d1d6460}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a16ce0764c904db90b6c65deb4598f9f8}\label{class_horizon_1_1_zone_1_1_map_manager_a16ce0764c904db90b6c65deb4598f9f8} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!MapManager@{MapManager}}
+\index{MapManager@{MapManager}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{MapManager()}{MapManager()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Map\+Manager\+::\+Map\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_ac4024a4688cb432385228b584593b3a0}\label{class_horizon_1_1_zone_1_1_map_manager_ac4024a4688cb432385228b584593b3a0} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!````~MapManager@{\texorpdfstring{$\sim$}{\string~}MapManager}}
+\index{````~MapManager@{\texorpdfstring{$\sim$}{\string~}MapManager}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapManager()}{\string~MapManager()}}
+{\footnotesize\ttfamily Map\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a5769b752ee73dcff984330ac355faf31}\label{class_horizon_1_1_zone_1_1_map_manager_a5769b752ee73dcff984330ac355faf31} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!finalize@{finalize}}
+\index{finalize@{finalize}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily bool Map\+Manager\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_aac92f0db8bfd91b70d2cf51e2e2dbaf6}\label{class_horizon_1_1_zone_1_1_map_manager_aac92f0db8bfd91b70d2cf51e2e2dbaf6} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!find\_player@{find\_player}}
+\index{find\_player@{find\_player}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{find\_player()}{find\_player()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ Map\+Manager\+::find\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_af7c2b07d7747393d4321020fe4e72b44}\label{class_horizon_1_1_zone_1_1_map_manager_af7c2b07d7747393d4321020fe4e72b44} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!get\_containers@{get\_containers}}
+\index{get\_containers@{get\_containers}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{get\_containers()}{get\_containers()}}
+{\footnotesize\ttfamily std\+::map$<$ int32\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ $>$ Horizon\+::\+Zone\+::\+Map\+Manager\+::get\+\_\+containers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a6b44ee709c49ac401ae201982f76196b}\label{class_horizon_1_1_zone_1_1_map_manager_a6b44ee709c49ac401ae201982f76196b} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!get\_map@{get\_map}}
+\index{get\_map@{get\_map}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{get\_map()}{get\_map()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ Map\+Manager\+::get\+\_\+map (\begin{DoxyParamCaption}\item[{std\+::string}]{map\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a9561e0a00b00d5a0b56c070a1d1d6460}\label{class_horizon_1_1_zone_1_1_map_manager_a9561e0a00b00d5a0b56c070a1d1d6460} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager}{Map\+Manager}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Map\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a7ee88f3cad8514b95e65a71252be9de1}\label{class_horizon_1_1_zone_1_1_map_manager_a7ee88f3cad8514b95e65a71252be9de1} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!getScheduler@{getScheduler}}
+\index{getScheduler@{getScheduler}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{getScheduler()}{getScheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Horizon\+::\+Zone\+::\+Map\+Manager\+::get\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a4643d3249e73d7e1ce4f2bec51cab8b3}\label{class_horizon_1_1_zone_1_1_map_manager_a4643d3249e73d7e1ce4f2bec51cab8b3} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool Map\+Manager\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_manager_a4643d3249e73d7e1ce4f2bec51cab8b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_manager_a4643d3249e73d7e1ce4f2bec51cab8b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_a8fb67dc6e32b171b66fb5b3637ff85d6}\label{class_horizon_1_1_zone_1_1_map_manager_a8fb67dc6e32b171b66fb5b3637ff85d6} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!LoadMapCache@{LoadMapCache}}
+\index{LoadMapCache@{LoadMapCache}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{LoadMapCache()}{LoadMapCache()}}
+{\footnotesize\ttfamily bool Map\+Manager\+::\+Load\+Map\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_manager_a8fb67dc6e32b171b66fb5b3637ff85d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_manager_a8fb67dc6e32b171b66fb5b3637ff85d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_manager_afe8b7eab69b5fae458b744ff07120cd7}\label{class_horizon_1_1_zone_1_1_map_manager_afe8b7eab69b5fae458b744ff07120cd7} 
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!manage\_session\_in\_map@{manage\_session\_in\_map}}
+\index{manage\_session\_in\_map@{manage\_session\_in\_map}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\doxysubsubsection{\texorpdfstring{manage\_session\_in\_map()}{manage\_session\_in\_map()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ Map\+Manager\+::manage\+\_\+session\+\_\+in\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{map\+\_\+container\+\_\+session\+\_\+action}}}]{action,  }\item[{std\+::string}]{map\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{s }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_map_manager_8hpp}{Map\+Manager.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_map_manager_8cpp}{Map\+Manager.\+cpp}}\end{DoxyCompactItemize}

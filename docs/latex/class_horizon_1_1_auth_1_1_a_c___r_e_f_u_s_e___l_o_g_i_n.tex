@@ -1,0 +1,177 @@
+\doxysection{Horizon\+::Auth\+::AC\+\_\+\+REFUSE\+\_\+\+LOGIN Class Reference}
+\hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}{}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}{AC\+\_\+\+REFUSE\+\_\+\+LOGIN}.  
+
+
+
+
+{\ttfamily \#include $<$Transmitted\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Auth\+::AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Auth\+::AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a586db043cb65807bc5ed54af3c6f4716}{AC\+\_\+\+REFUSE\+\_\+\+LOGIN}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a839ea91ad1284b64aac519e76378b288}{\texorpdfstring{$\sim$}{\string~}\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a11f5ca9a6ec5b3e52aabc39d516f41b6}{deliver}} (\mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813}{login\+\_\+error\+\_\+codes}} error\+\_\+code, char \texorpdfstring{$\ast$}{*}block\+\_\+date, std\+::size\+\_\+t bd\+\_\+size)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_ae73a617b20374341160a599b2dcaf006}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Horizon\+::\+Base\+::\+Network\+Packet\+Transmitter$<$ Auth\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{Network\+Packet\+Transmitter}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Auth\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_acad36e1f8be629d774358381069a3d7e}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Transmitter}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a9e1b1c61d7a2fa7eb9e14c810055466c}{transmit}} ()
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a894983a07731b6ad07b306b795350262}{transmit}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a22bc8204ea87f34b3198785aed23700d}{\+\_\+error\+\_\+code}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Error code. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a5932b61d5ddc13a197eac6abbad6e7e9}{\+\_\+block\+\_\+date}} \mbox{[}20\mbox{]} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Ban expiration date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}{AC\+\_\+\+REFUSE\+\_\+\+LOGIN}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a586db043cb65807bc5ed54af3c6f4716}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a586db043cb65807bc5ed54af3c6f4716} 
+\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}!AC\_REFUSE\_LOGIN@{AC\_REFUSE\_LOGIN}}
+\index{AC\_REFUSE\_LOGIN@{AC\_REFUSE\_LOGIN}!Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+\doxysubsubsection{\texorpdfstring{AC\_REFUSE\_LOGIN()}{AC\_REFUSE\_LOGIN()}}
+{\footnotesize\ttfamily Horizon\+::\+Auth\+::\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+::\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a839ea91ad1284b64aac519e76378b288}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a839ea91ad1284b64aac519e76378b288} 
+\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}!````~AC\_REFUSE\_LOGIN@{\texorpdfstring{$\sim$}{\string~}AC\_REFUSE\_LOGIN}}
+\index{````~AC\_REFUSE\_LOGIN@{\texorpdfstring{$\sim$}{\string~}AC\_REFUSE\_LOGIN}!Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AC\_REFUSE\_LOGIN()}{\string~AC\_REFUSE\_LOGIN()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Auth\+::\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+::\texorpdfstring{$\sim$}{\string~}\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a11f5ca9a6ec5b3e52aabc39d516f41b6}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a11f5ca9a6ec5b3e52aabc39d516f41b6} 
+\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}!deliver@{deliver}}
+\index{deliver@{deliver}!Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+\doxysubsubsection{\texorpdfstring{deliver()}{deliver()}}
+{\footnotesize\ttfamily void AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+::deliver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813}{login\+\_\+error\+\_\+codes}}}]{error\+\_\+code,  }\item[{char \texorpdfstring{$\ast$}{*}}]{block\+\_\+date,  }\item[{std\+::size\+\_\+t}]{bd\+\_\+size }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}{AC\+\_\+\+REFUSE\+\_\+\+LOGIN} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a11f5ca9a6ec5b3e52aabc39d516f41b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a11f5ca9a6ec5b3e52aabc39d516f41b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_ae73a617b20374341160a599b2dcaf006}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_ae73a617b20374341160a599b2dcaf006} 
+\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}!serialize@{serialize}}
+\index{serialize@{serialize}!Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_ae73a617b20374341160a599b2dcaf006_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_ae73a617b20374341160a599b2dcaf006_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a5932b61d5ddc13a197eac6abbad6e7e9}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a5932b61d5ddc13a197eac6abbad6e7e9} 
+\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}!\_block\_date@{\_block\_date}}
+\index{\_block\_date@{\_block\_date}!Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+\doxysubsubsection{\texorpdfstring{\_block\_date}{\_block\_date}}
+{\footnotesize\ttfamily char Horizon\+::\+Auth\+::\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+::\+\_\+block\+\_\+date\mbox{[}20\mbox{]} \{ 0 \}}
+
+
+
+Ban expiration date. 
+
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a22bc8204ea87f34b3198785aed23700d}\label{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a22bc8204ea87f34b3198785aed23700d} 
+\index{Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}!\_error\_code@{\_error\_code}}
+\index{\_error\_code@{\_error\_code}!Horizon::Auth::AC\_REFUSE\_LOGIN@{Horizon::Auth::AC\_REFUSE\_LOGIN}}
+\doxysubsubsection{\texorpdfstring{\_error\_code}{\_error\_code}}
+{\footnotesize\ttfamily uint8\+\_\+t Horizon\+::\+Auth\+::\+AC\+\_\+\+REFUSE\+\_\+\+LOGIN\+::\+\_\+error\+\_\+code \{ 0 \}}
+
+
+
+Error code. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Auth/\+Packets/\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8hpp}{Transmitted\+Packets.\+hpp}}\item 
+src/\+Server/\+Auth/\+Packets/\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8cpp}{Transmitted\+Packets.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,289 @@
+\doxysection{Socket.\+hpp}
+\hypertarget{_socket_8hpp_source}{}\label{_socket_8hpp_source}\index{src/Libraries/Networking/Socket.hpp@{src/Libraries/Networking/Socket.hpp}}
+\mbox{\hyperlink{_socket_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_NETWORKING\_SOCKET\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_NETWORKING\_SOCKET\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8hpp}{Core/Logging/Logger.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_byte_buffer_8hpp}{Buffer/ByteBuffer.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_thread_safe_queue_8hpp}{Core/Multithreading/ThreadSafeQueue.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <boost/asio/ip/tcp.hpp>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <boost/bind.hpp>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <boost/asio/write.hpp>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <boost/asio/use\_future.hpp>}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ READ\_BLOCK\_SIZE\ 0x1000}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{namespace\ }Networking}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00079\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SocketType>}
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<SocketType>}
+\DoxyCodeLine{00081\ \{}
+\DoxyCodeLine{00082\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a516682034ec65a1554cd2fbc6d700c71}{Socket}}(uint64\_t\ socket\_id,\ std::shared\_ptr<tcp::socket>\ socket)}
+\DoxyCodeLine{00084\ \ \ \ \ :\ \_socket\_id(socket\_id),\ \_socket(socket),\ \_remote\_ip\_address(\_socket-\/>remote\_endpoint().address().to\_string()),}
+\DoxyCodeLine{00085\ \ \ \ \ \_remote\_port(\_socket-\/>remote\_endpoint().port()),\ \_read\_buffer(),\ \_closed(false),\ \_closing(false),\ \_is\_writing\_async(false)}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a16ab545c983ff0605bc0a2ca1c40f0b8}{resize}}(\mbox{\hyperlink{_socket_8hpp_a16ba013af02b9d4400b5e47d8daa022b}{READ\_BLOCK\_SIZE}});}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a0d3bcf6cb3e7aaba096a6ce5c54f3f49}{\string~Socket}}()}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ boost::system::error\_code\ error;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \_socket-\/>close(error);}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a0771eb7f7860874879f379cf383f561e}{start}}()\ =\ 0;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_afb9cddbb3529c0f90977aa394a0fe6e9}{update}}()}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_closed)}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_is\_writing\_async\ ||\ (\_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}{empty}}()\ \&\&\ !\_closing))}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (handle\_queue())}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{/*\ Socket\ Id\ */}}
+\DoxyCodeLine{00122\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5dc5b5c012e1878cd77a55f5a669ad61}{get\_socket\_id}}()\ \{\ \textcolor{keywordflow}{return}\ \_socket\_id;\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{/*\ Remote\ IP\ and\ Port\ */}}
+\DoxyCodeLine{00125\ \ \ \ \ std::string\ \&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aafee17dfecd4126e12e68711a4659b63}{remote\_ip\_address}}()\ \{\ \textcolor{keywordflow}{return}\ \_remote\_ip\_address;\ \}}
+\DoxyCodeLine{00126\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a789aa1fe451b6f4a4a06f85a98546a4f}{remote\_port}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_remote\_port;\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a9a3ec6ce1aa190ef14d2894380082a59}{async\_read}}()}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac819c2aa5b0f4debc6d9cb0b1b3058f9}{is\_open}}())}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5}{flush}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376}{ensure\_free\_space}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \_socket-\/>async\_read\_some(boost::asio::buffer(\_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793}{get\_write\_pointer}}(),\ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a}{remaining\_space}}()),}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::bind(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket<SocketType>::read\_handler\_internal}},\ \textcolor{keyword}{this},\ boost::placeholders::\_1,\ boost::placeholders::\_2));}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a6910185c7a1ad235adc2a6326a708097}{async\_read\_with\_callback}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&buf,\ \textcolor{keywordtype}{void}\ (\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket<SocketType>}}::*)(boost::system::error\_code,\ std::size\_t))}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac819c2aa5b0f4debc6d9cb0b1b3058f9}{is\_open}}())}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5}{flush}}();}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376}{ensure\_free\_space}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \_socket-\/>async\_read\_some(boost::asio::buffer(buf.\mbox{\hyperlink{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793}{get\_write\_pointer}}(),\ buf.\mbox{\hyperlink{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a}{remaining\_space}}()),}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::bind(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket<SocketType>::read\_handler\_internal}},\ \textcolor{keyword}{this},\ boost::placeholders::\_1,\ boost::placeholders::\_2));}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a76ebf8e33b4af739924a689e50e01f50}{queue\_buffer}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\&buffer)\ \{\ \_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c}{push}}(std::move(buffer));\ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac819c2aa5b0f4debc6d9cb0b1b3058f9}{is\_open}}()\ \{\ \textcolor{keywordflow}{return}\ !\_closed\ \&\&\ !\_closing;\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\_socket}}()}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ boost::system::error\_code\ socket\_error;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_closed.exchange(\textcolor{keyword}{true}))}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Finalise\ the\ child-\/class\ socket\ first.}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a49a8b4278571322b502c38c719b6e9b9}{on\_close}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Shutdown\ the\ socket.}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \_socket-\/>shutdown(boost::asio::socket\_base::shutdown\_send,\ socket\_error);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ the\ socket.}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \_socket-\/>close();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (socket\_error)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Error\ when\ shutting\ down\ socket\ from\ IP\ "{}}\ <<}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aafee17dfecd4126e12e68711a4659b63}{remote\_ip\_address}}()\ <<\ \textcolor{stringliteral}{"{}(error\ code:"{}}\ <<\ socket\_error.value()\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ socket\_error.message().c\_str()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a6aeebaa8bc9d7af19a9df0e4366b66bf}{delayed\_close\_socket}}()\ \{\ \textcolor{keywordflow}{if}\ (\_closing.exchange(\textcolor{keyword}{true}))\ \textcolor{keywordflow}{return};\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a051e2e0113e7f53c8bc34f59bc300e2b}{get\_read\_buffer}}()\ \{\ \textcolor{keywordflow}{return}\ \_read\_buffer;\ \}}
+\DoxyCodeLine{00195\ \ \ \ \ }
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue<ByteBuffer>}}\ \&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a4048fe23cc95fe493a4417f652c678fa}{get\_recv\_queue}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5421847b448e162fd9f9e53df7fdbea1}{\_buffer\_recv\_queue}};\ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a49a8b4278571322b502c38c719b6e9b9}{on\_close}}()\ =\ 0;}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a81ffe90fe0e8be907894733bb8762f30}{read\_handler}}()\ =\ 0;}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a8b8ba5afa9b7386077518a5dd6b95d4d}{on\_error}}()\ =\ 0;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a487a76ef4e4568fbf57eaa6bdabe0279}{async\_process\_queue}}()}
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_is\_writing\_async)}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \_is\_writing\_async\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \_socket-\/>async\_write\_some(boost::asio::null\_buffers(),}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::bind(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket<SocketType>::write\_handler\_wrapper}},}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},\ boost::placeholders::\_1,\ boost::placeholders::\_2));}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac274c8f50298674dc526e8c87856fe3b}{set\_no\_delay}}(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00226\ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ boost::system::error\_code\ error;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \_socket-\/>set\_option(tcp::no\_delay(enable),\ error);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (error)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Networking:\ Socket::set\_no\_delay:\ failed\ to\ set\_option(boost::asio::ip::tcp::no\_delay)\ for\ IP\ "{}}\ <<\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aafee17dfecd4126e12e68711a4659b63}{remote\_ip\_address}}()\ <<\ \textcolor{stringliteral}{"{}\ (error\_code:\ "{}}\ <<\ error.value()\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ error.message().c\_str()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00240\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aa5b1d93d376372cb26ed87094dfa7f0f}{write\_buffer\_and\_send}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&to\_send,\ boost::system::error\_code\ \&error)}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ int16\_t\ packet\_id;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ std::size\_t\ bytes\_to\_send\ =\ to\_send.\mbox{\hyperlink{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b}{active\_length}}();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ memcpy(\&packet\_id,\ to\_send.\mbox{\hyperlink{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}{get\_read\_pointer}}(),\ \textcolor{keyword}{sizeof}(int16\_t));}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ std::size\_t\ bytes\_sent\ =\ \_socket-\/>write\_some(boost::asio::buffer(to\_send.\mbox{\hyperlink{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}{get\_read\_pointer}}(),\ bytes\_to\_send),\ error);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bytes\_sent;}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00249\ \ \ \ \ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{void}\ read\_handler\_internal(boost::system::error\_code\ error,\ \textcolor{keywordtype}{size\_t}\ transferredBytes)}
+\DoxyCodeLine{00257\ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ there\ is\ an\ error\ on\ the\ socket,\ we\ need\ to\ close\ it.}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (error)\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ socket\ is\ already\ closed,\ we\ don't\ need\ to\ do\ anything.}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (error.value()\ ==\ boost::asio::error::eof)\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\_socket}}();}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ connection\ was\ reset\ or\ timed\ out,\ we\ need\ to\ close\ the\ socket.}}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (error.value()\ ==\ boost::system::errc::connection\_reset}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ error.value()\ ==\ boost::system::errc::timed\_out)\ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a8b8ba5afa9b7386077518a5dd6b95d4d}{on\_error}}();}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\_socket}}();}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ there\ was\ any\ unknown\ error\ on\ the\ socket,\ we\ need\ to\ close\ it.}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a8b8ba5afa9b7386077518a5dd6b95d4d}{on\_error}}();}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\_socket}}();}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Retreive\ the\ error\ code\ and\ handle\ it\ accordingly.}}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (error.value())}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \textcolor{comment}{//\ End\ of\ file}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(debug)\ <<\ \textcolor{stringliteral}{"{}Socket::read\_handler\_internal:\ "{}}\ <<\ error.value()\ <<\ \textcolor{stringliteral}{"{}\ (Code:\ "{}}\ <<\ error.message()\ <<\ \textcolor{stringliteral}{"{})."{}};}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (transferredBytes\ >\ 0)\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ write\_completed\ will\ move\ the\ write\ pointer\ forward,\ so\ we\ need\ to\ save\ the\ current\ position\ of\ the\ write\ pointer.}}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \_read\_buffer.\mbox{\hyperlink{class_byte_buffer_abc2c0ea57bfbfb19a42714f23b65dea7}{write\_completed}}(transferredBytes);}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ handler\ will\ process\ the\ data\ that\ has\ been\ written\ to\ the\ buffer.}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a81ffe90fe0e8be907894733bb8762f30}{read\_handler}}();}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Invoke\ the\ next\ read\ operation.}}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a9a3ec6ce1aa190ef14d2894380082a59}{async\_read}}();}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{void}\ write\_handler\_wrapper(boost::system::error\_code\ \textcolor{comment}{/*error*/},\ std::size\_t\ \textcolor{comment}{/*transferedBytes*/})}
+\DoxyCodeLine{00301\ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \_is\_writing\_async\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ handle\_queue();}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{bool}\ handle\_queue()}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ boost::system::error\_code\ error;}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}{empty}}())}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ std::shared\_ptr<ByteBuffer>\ to\_send\ =\ \_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3}{front}}();}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ std::size\_t\ bytes\_sent\ =\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aa5b1d93d376372cb26ed87094dfa7f0f}{write\_buffer\_and\_send}}(*to\_send,\ error);}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (error\ ==\ boost::asio::error::would\_block\ ||\ error\ ==\ boost::asio::error::try\_again)}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a487a76ef4e4568fbf57eaa6bdabe0279}{async\_process\_queue}}();}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error\ \&\&\ bytes\_sent\ <\ to\_send-\/>active\_length())\ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ to\_send-\/>read\_completed(bytes\_sent);}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a487a76ef4e4568fbf57eaa6bdabe0279}{async\_process\_queue}}();}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pop\ the\ front\ element.}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a}{try\_pop}}();}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Close\ if\ required.}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_closing\ \&\&\ \_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}{empty}}())}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\_socket}}();}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Return\ true\ if\ the\ queue\ is\ not\ empty.\ Indicating\ that\ the\ sending\ operation\ was\ successful.}}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !\_write\_queue.\mbox{\hyperlink{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}{empty}}()\ \&\&\ bytes\_sent;}
+\DoxyCodeLine{00345\ \ \ \ \ \}}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00348\ \ \ \ \ uint64\_t\ \_socket\_id;}
+\DoxyCodeLine{00349\ \ \ \ \ std::shared\_ptr<tcp::socket>\ \_socket;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00350\ \ \ \ \ std::string\ \_remote\_ip\_address;}
+\DoxyCodeLine{00351\ \ \ \ \ uint16\_t\ \_remote\_port;}
+\DoxyCodeLine{00352\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \_read\_buffer;}
+\DoxyCodeLine{00353\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue<ByteBuffer>}}\ \_write\_queue;}
+\DoxyCodeLine{00354\ \ \ \ \ std::atomic<bool>\ \_closed;}
+\DoxyCodeLine{00355\ \ \ \ \ std::atomic<bool>\ \_closing;}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_is\_writing\_async;}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue<ByteBuffer>}}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5421847b448e162fd9f9e53df7fdbea1}{\_buffer\_recv\_queue}};}
+\DoxyCodeLine{00360\ \};}
+\DoxyCodeLine{00361\ \}}
+\DoxyCodeLine{00362\ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_NETWORKING\_SOCKET\_HPP}}
+
+\end{DoxyCode}

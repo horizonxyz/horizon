@@ -1,0 +1,115 @@
+\doxysection{Cell.\+hpp}
+\hypertarget{_cell_8hpp_source}{}\label{_cell_8hpp_source}\index{src/Server/Zone/Game/Map/Grid/Cell/Cell.hpp@{src/Server/Zone/Game/Map/Grid/Cell/Cell.hpp}}
+\mbox{\hyperlink{_cell_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_CELL\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_CELL\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_utility_8hpp}{Utility/Utility.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_definitions_8hpp}{Server/Zone/Definitions/MapDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell}{Cell}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a55c8ec42c814693ef967100e71fc06ee}{Cell}}(uint8\_t\ type)}
+\DoxyCodeLine{00045\ \ \ \ \ :\ \_type((\mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\_cell\_types}})\ type)}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ad5bade99b2ebb3dac41a1cc4b7910eb7}{validate\_type}}(\_type);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_aa58ecf71ee96d29ddb67e185a092f7ec}{Cell}}()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a1bf342f7656cc97af5aa20fcf49415f9}{\string~Cell}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a4b07495d2d2cc106f79e765413307f68}{set\_type}}(uint8\_t\ type)\ \{\ \_type\ =\ (\mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\_cell\_types}})\ type;\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ad5bade99b2ebb3dac41a1cc4b7910eb7}{validate\_type}}(\_type);\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\_cell\_types}}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a2952bd2b2af3465b03d4a75513e07805}{get\_type}}()\ \{\ \textcolor{keywordflow}{return}\ \_type;\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ad5bade99b2ebb3dac41a1cc4b7910eb7}{validate\_type}}(\mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\_cell\_types}}\ type)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46afbaa6c09326e12081066cc8ff7502980}{CELL\_WALKABLE\_SHOOTABLE\_WATER}}:\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_aea524923de930d28cc30b99cf4abb729}{setWater}}();\ \textcolor{comment}{//\ walkable\ water}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a9939cc66ad0cb7763a7aa3fcfab4e4ce}{CELL\_WALKABLE\_SHOOTABLE\_GROUND\_0}}:\ \textcolor{comment}{//\ ground}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a6c151835965c6d467a3ce8ad2a7f9f56}{CELL\_WALKABLE\_SHOOTABLE\_2}}:\ \textcolor{comment}{//\ ???}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46aba07c512be1f7bee22db4e1231d113e2}{CELL\_WALKABLE\_SHOOTABLE\_4}}:\ \textcolor{comment}{//\ ???}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a9a71ccb16c5824e2d6f702d851d08665}{CELL\_WALKABLE\_SHOOTABLE\_6}}:\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a46e21ddb48085b04afe16e79a4dc9ff7}{setWalkable}}();\ \textcolor{comment}{//\ ???}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a7d513267553916dc30f2d9e743901174}{CELL\_CLIFF\_ONLY\_SHOOTABLE\_5}}:\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a1bc8ea41c1647bf6781853f9b8305331}{setShootable}}();\ \textcolor{comment}{//\ gap\ (snipable)}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46a54a7ecfb901861668bc2012e28f78619}{CELL\_NONWALKABLE\_GROUND}}:\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 0:\ cell.walkable\ =\ 1;\ cell.shootable\ =\ 1;\ cell.water\ =\ 0;\ break;\ //\ walkable\ ground}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 1:\ cell.walkable\ =\ 0;\ cell.shootable\ =\ 0;\ cell.water\ =\ 0;\ break;\ //\ non-\/walkable\ ground}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 2:\ cell.walkable\ =\ 1;\ cell.shootable\ =\ 1;\ cell.water\ =\ 0;\ break;\ //\ ???}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 3:\ cell.walkable\ =\ 1;\ cell.shootable\ =\ 1;\ cell.water\ =\ 1;\ break;\ //\ walkable\ water}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 4:\ cell.walkable\ =\ 1;\ cell.shootable\ =\ 1;\ cell.water\ =\ 0;\ break;\ //\ ???}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 5:\ cell.walkable\ =\ 0;\ cell.shootable\ =\ 1;\ cell.water\ =\ 0;\ break;\ //\ gap\ (snipable)}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ case\ 6:\ cell.walkable\ =\ 1;\ cell.shootable\ =\ 1;\ cell.water\ =\ 0;\ break;\ //\ ???}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ad0811c9d351a134d2e3e1b97ddfafc0f}{isWalkable}}()\ \{\ \textcolor{keywordflow}{return}\ setting.\_walkable\ ?\ true\ :\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a46e21ddb48085b04afe16e79a4dc9ff7}{setWalkable}}()\ \{\ setting.\_walkable\ =\ 1;\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a9a22fe62121ca8a9fa944e0635e89e82}{isShootable}}()\ \{\ \textcolor{keywordflow}{return}\ setting.\_shootable\ ?\ true\ :\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a1bc8ea41c1647bf6781853f9b8305331}{setShootable}}()\ \{\ setting.\_shootable\ =\ 1;\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ab0a69ad6a59fe70af1407a594876a49c}{isWater}}()\ \{\ \textcolor{keywordflow}{return}\ setting.\_is\_water\ ?\ true\ :\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_aea524923de930d28cc30b99cf4abb729}{setWater}}()\ \{\ setting.\_is\_water\ =\ 1;\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a99d13174b9904e5b37cd59c04012a2e1}{\_walkable}}\ :\ 1;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ac30ec816459488d52be3ed2068ed9252}{\_shootable}}\ :\ 1;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_a9fe2e00c9a07bcf04489459ab20fccb0}{\_is\_water}}\ :\ 1;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_cell_ab925ca673e5c525669430d3663c7a9fd}{unused}}\ :\ 5;}
+\DoxyCodeLine{00102\ \ \ \ \ \}\ setting\{0\};}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\_cell\_types}}\ \_type\{0\};}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_CELL\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

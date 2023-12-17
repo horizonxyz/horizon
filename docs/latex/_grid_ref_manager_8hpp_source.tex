@@ -1,0 +1,61 @@
+\doxysection{Grid\+Ref\+Manager.\+hpp}
+\hypertarget{_grid_ref_manager_8hpp_source}{}\label{_grid_ref_manager_8hpp_source}\index{src/Server/Zone/Game/Map/Grid/GridRefManager.hpp@{src/Server/Zone/Game/Map/Grid/GridRefManager.hpp}}
+\mbox{\hyperlink{_grid_ref_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_GRIDREFMANAGER\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_GRIDREFMANAGER\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ref_manager_8hpp}{Core/Structures/LinkedList/ReferenceList/RefManager.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_reference_8hpp}{Core/Structures/LinkedList/ReferenceList/Reference.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_reference_8hpp}{GridReference.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ OBJECT>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grid_ref_manager}{GridRefManager}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon::Structures::LinkedList::RefManager}}<GridRefManager<OBJECT>,\ OBJECT>}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Horizon::Structures::LinkedList::Head::Iterator<GridReference<OBJECT>}}>\ \mbox{\hyperlink{class_grid_ref_manager_aa95ac5b1226dfcd8eaae65a21b328394}{iterator}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_grid_reference}{GridReference<OBJECT>}}\ *\mbox{\hyperlink{class_grid_ref_manager_ac55acdcb5736b7a515dfef9e5879a565}{first}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_grid_reference}{GridReference<OBJECT>}}\ *\textcolor{keyword}{>}\ (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon::Structures::LinkedList::RefManager<GridRefManager<OBJECT>}},\ OBJECT>\mbox{\hyperlink{class_grid_ref_manager_ac55acdcb5736b7a515dfef9e5879a565}{::first}}());}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_grid_reference}{GridReference<OBJECT>}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_grid_ref_manager_a5cc59ff454289591ab8de158f8a7425a}{first}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_grid_reference}{GridReference<OBJECT>}}\ \textcolor{keyword}{const\ }*\textcolor{keyword}{>}\ (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon::Structures::LinkedList::RefManager<GridRefManager<OBJECT>}},\ OBJECT>\mbox{\hyperlink{class_grid_ref_manager_ac55acdcb5736b7a515dfef9e5879a565}{::first}}());}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{iterator}}\ \mbox{\hyperlink{class_grid_ref_manager_ab15e2b40dca056a93877212c640caad2}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_grid_ref_manager_aa95ac5b1226dfcd8eaae65a21b328394}{iterator}}(\mbox{\hyperlink{class_grid_ref_manager_ac55acdcb5736b7a515dfef9e5879a565}{first}}());\ \}}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_GRIDREFMANAGER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

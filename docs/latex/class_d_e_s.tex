@@ -1,0 +1,174 @@
+\doxysection{DES Class Reference}
+\hypertarget{class_d_e_s}{}\label{class_d_e_s}\index{DES@{DES}}
+
+
+{\ttfamily \#include $<$DES.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_e_s_a412c42a713b1968a54b8f70913e6ede1}{decrypt\+Block}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}block)
+\item 
+void \mbox{\hyperlink{class_d_e_s_a8ad88d06db5eb0c51f941d86438ddf39}{decrypt}} (unsigned char \texorpdfstring{$\ast$}{*}data, size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{class_d_e_s_a04b76e33ba2d313cf41d5faf47d3996b}{round\+Function}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\item 
+void \mbox{\hyperlink{class_d_e_s_aabb65e9ad0d827420e149ae2fc0ad98a}{SBOX}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\item 
+void \mbox{\hyperlink{class_d_e_s_afe50c03e65a2ac57c20423f2894b3afa}{E}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\item 
+void \mbox{\hyperlink{class_d_e_s_a5b70972d2eb827075f87fe486884c1df}{TP}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\begin{DoxyCompactList}\small\item\em Transposition (P-\/\+BOX). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_e_s_a8cf8d39ecb1c5ade614e503cc25545dc}{IP}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\begin{DoxyCompactList}\small\item\em Initial permutation (IP). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_e_s_aa0a4861b873430c68acae55e98700f4d}{FP}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\begin{DoxyCompactList}\small\item\em Final permutation (IP\texorpdfstring{$^\wedge$}{\string^}-\/1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_d_e_s_a8ad88d06db5eb0c51f941d86438ddf39}\label{class_d_e_s_a8ad88d06db5eb0c51f941d86438ddf39} 
+\index{DES@{DES}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily void DES\+::decrypt (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_a8ad88d06db5eb0c51f941d86438ddf39_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_a412c42a713b1968a54b8f70913e6ede1}\label{class_d_e_s_a412c42a713b1968a54b8f70913e6ede1} 
+\index{DES@{DES}!decryptBlock@{decryptBlock}}
+\index{decryptBlock@{decryptBlock}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{decryptBlock()}{decryptBlock()}}
+{\footnotesize\ttfamily void DES\+::decrypt\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{block }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_a412c42a713b1968a54b8f70913e6ede1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_a412c42a713b1968a54b8f70913e6ede1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_afe50c03e65a2ac57c20423f2894b3afa}\label{class_d_e_s_afe50c03e65a2ac57c20423f2894b3afa} 
+\index{DES@{DES}!E@{E}}
+\index{E@{E}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{E()}{E()}}
+{\footnotesize\ttfamily void DES\+::E (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+Expansion (E). Expands upper four 8-\/bits (32b) into eight 6-\/bits (48b). Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_afe50c03e65a2ac57c20423f2894b3afa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_aa0a4861b873430c68acae55e98700f4d}\label{class_d_e_s_aa0a4861b873430c68acae55e98700f4d} 
+\index{DES@{DES}!FP@{FP}}
+\index{FP@{FP}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{FP()}{FP()}}
+{\footnotesize\ttfamily void DES\+::\+FP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+
+
+Final permutation (IP\texorpdfstring{$^\wedge$}{\string^}-\/1). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_aa0a4861b873430c68acae55e98700f4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_a8cf8d39ecb1c5ade614e503cc25545dc}\label{class_d_e_s_a8cf8d39ecb1c5ade614e503cc25545dc} 
+\index{DES@{DES}!IP@{IP}}
+\index{IP@{IP}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{IP()}{IP()}}
+{\footnotesize\ttfamily void DES\+::\+IP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+
+
+Initial permutation (IP). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_a8cf8d39ecb1c5ade614e503cc25545dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_a04b76e33ba2d313cf41d5faf47d3996b}\label{class_d_e_s_a04b76e33ba2d313cf41d5faf47d3996b} 
+\index{DES@{DES}!roundFunction@{roundFunction}}
+\index{roundFunction@{roundFunction}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{roundFunction()}{roundFunction()}}
+{\footnotesize\ttfamily void DES\+::round\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+\doxylink{class_d_e_s}{DES} round function. XORs src\mbox{[}0..3\mbox{]} with TP(SBOX(E(src\mbox{[}4..7\mbox{]}))). Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_d_e_s_a04b76e33ba2d313cf41d5faf47d3996b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_a04b76e33ba2d313cf41d5faf47d3996b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_aabb65e9ad0d827420e149ae2fc0ad98a}\label{class_d_e_s_aabb65e9ad0d827420e149ae2fc0ad98a} 
+\index{DES@{DES}!SBOX@{SBOX}}
+\index{SBOX@{SBOX}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{SBOX()}{SBOX()}}
+{\footnotesize\ttfamily void DES\+::\+SBOX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_aabb65e9ad0d827420e149ae2fc0ad98a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_d_e_s_a5b70972d2eb827075f87fe486884c1df}\label{class_d_e_s_a5b70972d2eb827075f87fe486884c1df} 
+\index{DES@{DES}!TP@{TP}}
+\index{TP@{TP}!DES@{DES}}
+\doxysubsubsection{\texorpdfstring{TP()}{TP()}}
+{\footnotesize\ttfamily void DES\+::\+TP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+
+
+Transposition (P-\/\+BOX). 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_d_e_s_a5b70972d2eb827075f87fe486884c1df_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+GRF/\mbox{\hyperlink{_d_e_s_8hpp}{DES.\+hpp}}\item 
+src/\+Libraries/\+GRF/\mbox{\hyperlink{_d_e_s_8cpp}{DES.\+cpp}}\end{DoxyCompactItemize}

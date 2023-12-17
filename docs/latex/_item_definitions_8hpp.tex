@@ -1,0 +1,1266 @@
+\doxysection{src/\+Server/\+Zone/\+Definitions/\+Item\+Definitions.hpp File Reference}
+\hypertarget{_item_definitions_8hpp}{}\label{_item_definitions_8hpp}\index{src/Server/Zone/Definitions/ItemDefinitions.hpp@{src/Server/Zone/Definitions/ItemDefinitions.hpp}}
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Entity\+Definitions.\+hpp"{}}\newline
+Include dependency graph for Item\+Definitions.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{_item_definitions_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_item_definitions_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structitem__entry__data_1_1options}{item\+\_\+entry\+\_\+data\+::options}}
+\item 
+struct \mbox{\hyperlink{structitem__entry__data_1_1item__entry__info}{item\+\_\+entry\+\_\+data\+::item\+\_\+entry\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{structitem__slot}{item\+\_\+slot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_ada1cd2b01a5dc3f9356ee845d0b6585a}{ITEM\+\_\+\+NAME\+\_\+\+LENGTH}}~50
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_aad371aba90c0bc2ea9a3e14536d201e0}{UNKNOWN\+\_\+\+ITEM\+\_\+\+ID}}~512
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_ae54c2a9d708638645204e80596084221}{MAX\+\_\+\+ITEM\+\_\+\+OPTIONS}}~5
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a729f4ffbd795db913bebb235882c1185}{MAX\+\_\+\+ITEM\+\_\+\+SLOTS}}~4
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a927589708e5149ce01a924db0d915f1b}{MAX\+\_\+\+REFINE\+\_\+\+LEVEL}}~20
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_ae72fc102b1643a224a40b30cd781d3bb}{MIN\+\_\+\+INVENTORY\+\_\+\+SIZE}}~100
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a428c4db813a3903aa8d062bff5db5df5}{MAX\+\_\+\+INVENTORY\+\_\+\+SIZE}}~300
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a3848370c8f5575e3d54145d999124ce7}{MIN\+\_\+\+STORAGE\+\_\+\+SIZE}}~600
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_af1e3307f2655f3820b36e12468fc2469}{MAX\+\_\+\+STORAGE\+\_\+\+SIZE}}~600
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a0ab1a38dee3c6a86b17a960b1a498e21}{MAX\+\_\+\+INVENTORY\+\_\+\+STACK\+\_\+\+LIMIT}}~30000
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a4b0c527a7a114bb56e2f9ec8d7dde28c}{MAX\+\_\+\+CART\+\_\+\+STACK\+\_\+\+LIMIT}}~30000
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_a5779d381b8a2de2a88dd9be36ded7fa1}{MAX\+\_\+\+STORAGE\+\_\+\+STACK\+\_\+\+LIMIT}}~30000
+\item 
+\#define \mbox{\hyperlink{_item_definitions_8hpp_ab1c7568d814d52dea69f942f1c3b68f4}{MAX\+\_\+\+GSTORAGE\+\_\+\+STACK\+\_\+\+LIMIT}}~30000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::array$<$ std\+::pair$<$ \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8}{item\+\_\+equip\+\_\+location\+\_\+mask}}, std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$ $>$, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6acb157d0a3797b090d90ec5fd08fc5e0f}{IT\+\_\+\+EQPI\+\_\+\+MAX}} $>$ \mbox{\hyperlink{_item_definitions_8hpp_afdbd89ec013139e8474419bf60449ce5}{Equipment\+List\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23}{refine\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a26698a12c788aa2bf03332c7439be834}{REFINE\+\_\+\+TYPE\+\_\+\+ARMOR}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a1ac8b855fa9ed891b4aedf444e456079}{REFINE\+\_\+\+TYPE\+\_\+\+WEAPON1}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a76913bff83fe39e3a96f88d1ef655f46}{REFINE\+\_\+\+TYPE\+\_\+\+WEAPON2}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23ab23bd54b1fdfc98a48abfbab8e347707}{REFINE\+\_\+\+TYPE\+\_\+\+WEAPON3}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a1c6e48c0735888bb6edc9597d05a37bc}{REFINE\+\_\+\+TYPE\+\_\+\+WEAPON4}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23ab17a09def74a3fdbe71f4adcc66d10dd}{REFINE\+\_\+\+TYPE\+\_\+\+MAX}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ff}{refine\+\_\+chance\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffac8af3a9e22d7070aed197a7b26701e1c}{REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+NORMAL}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffa32e0d63fd55017cf0586e9abac61b22b}{REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+ENRICHED}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffaa6db5329912c5fcebd22037e6bfdf102}{REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+E\+\_\+\+NORMAL}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffadf401c1d41e748fb2466b12bff72c61e}{REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+E\+\_\+\+ENRICHED}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffa651b342d16da140392add471bc5d7fff}{REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\+\_\+weapon\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa0230f49391fae3f066a761601afb2a21}{IT\+\_\+\+WT\+\_\+\+FIST}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faae5b0f19352751c675088c48e24ff6031}{IT\+\_\+\+WT\+\_\+\+DAGGER}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa03fadbfef4ecd574c769cbacfd63ceed}{IT\+\_\+\+WT\+\_\+1\+HSWORD}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faab497d5fe169bae5d45ccd34b290c80fd}{IT\+\_\+\+WT\+\_\+2\+HSWORD}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa5e3aeaa2095a43e9053d69633f58bf20}{IT\+\_\+\+WT\+\_\+1\+HSPEAR}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa163ddeb907dfdba1f42c3288bb8fb1e6}{IT\+\_\+\+WT\+\_\+2\+HSPEAR}} = 5
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faac6b6269889cba9707a8b45f231df870b}{IT\+\_\+\+WT\+\_\+1\+HAXE}} = 6
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2b944993e1ff65182737bd4dc343b325}{IT\+\_\+\+WT\+\_\+2\+HAXE}} = 7
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faac7f034d20bd861f35f42f299509c9864}{IT\+\_\+\+WT\+\_\+1\+HMACE}} = 8
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa1670bc37ecf9a8d7143deaf9fda9f8ef}{IT\+\_\+\+WT\+\_\+2\+HMACE}} = 9
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7d54ca946184d6e5ce4ea8d3bbabac46}{IT\+\_\+\+WT\+\_\+\+STAFF}} = 10
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2bd297d44e40418b8d333c4a289e3bfe}{IT\+\_\+\+WT\+\_\+\+BOW}} = 11
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa90c2de7d6d035cf2fe87a118b18bd502}{IT\+\_\+\+WT\+\_\+\+KNUCKLE}} = 12
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa6c016a60e57e3c7ecce7d170cd234376}{IT\+\_\+\+WT\+\_\+\+MUSICAL}} = 13
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa658246f82310aba9799c140d63c62dd6}{IT\+\_\+\+WT\+\_\+\+WHIP}} = 14
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa60e9a57c6332d1cc0b47970646df3bee}{IT\+\_\+\+WT\+\_\+\+BOOK}} = 15
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa109584bfef866ad95eaeab282e28bf45}{IT\+\_\+\+WT\+\_\+\+KATAR}} = 16
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaec09e34e6ebe8474829bdd986cb5b50c}{IT\+\_\+\+WT\+\_\+\+REVOLVER}} = 17
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa298d27e9fddd9422cbab6cb0685ab997}{IT\+\_\+\+WT\+\_\+\+RIFLE}} = 18
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa169498a8daa00b1d794d440a83e08629}{IT\+\_\+\+WT\+\_\+\+GATLING}} = 19
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa3c891a309afd317283e24e384a1e5e78}{IT\+\_\+\+WT\+\_\+\+SHOTGUN}} = 20
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2132c5b670709943108637edbda6baa8}{IT\+\_\+\+WT\+\_\+\+GRENADE}} = 21
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa4b80e2ee46b28ea2cea9f63ece36edd3}{IT\+\_\+\+WT\+\_\+\+HUUMA}} = 22
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa30ea967cb100573cead2b46f9097e36c}{IT\+\_\+\+WT\+\_\+2\+HSTAFF}} = 23
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaf89c2a1574bb2bc7581e226c78404c14}{IT\+\_\+\+WT\+\_\+\+SINGLE\+\_\+\+MAX}}
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaf4df027e58e2b369a8f59ed91b55ec8b}{IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+DAGGERS}}
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa4a5b38c7a3c682c2715fab6fc1ed36d4}{IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+SWORDS}}
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaeb87f918dae73e1365b3ffd38fcf021d}{IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+AXES}}
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7017bb95309d5cc12f4bc8e71f93b53d}{IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+DAGGER\+\_\+\+SWORD}}
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2774087aae7bceecd35afa9703eb8ad5}{IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+DAGGER\+\_\+\+AXE}}
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faab1f23c6958a6e57a9b2da3d9e0cf6eaf}{IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+SWORD\+\_\+\+AXE}}
+, \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7e84aedef694b59ee2a3e989f84a5b71}{IT\+\_\+\+WT\+\_\+\+MAX\+\_\+\+WEAPON\+\_\+\+TYPE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_aba673059b5c209682501405134e1e59a}{item\+\_\+weapon\+\_\+type\+\_\+mask}} \{ \mbox{\hyperlink{_item_definitions_8hpp_aba673059b5c209682501405134e1e59aafaa0f5d19470098800f1c8fec01166f2}{IT\+\_\+\+WTM\+\_\+\+RANGED}}
+, \mbox{\hyperlink{_item_definitions_8hpp_aba673059b5c209682501405134e1e59aa8ecd49a9aeef2436631662d30e5b921c}{IT\+\_\+\+WTM\+\_\+\+MELEE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546}{item\+\_\+level\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a31ffff1913deb7d41e6b018d05485794}{IT\+\_\+\+LVL\+\_\+\+ARMOR}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546ae8803f00c954a128431f00441141447f}{IT\+\_\+\+LVL\+\_\+\+WEAPON1}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546acbc5b462bb22cd8c7adc8395473f1e17}{IT\+\_\+\+LVL\+\_\+\+WEAPON2}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a09c236df8230ab9f2bce6b38d830aae3}{IT\+\_\+\+LVL\+\_\+\+WEAPON3}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546ad485405996025658911fecd70b6ca269}{IT\+\_\+\+LVL\+\_\+\+WEAPON4}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a3258737f543b9eb8d533a56c38da0beb}{IT\+\_\+\+LVL\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532}{item\+\_\+gender\+\_\+type}} \{ \mbox{\hyperlink{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532a11299cbd53c7093bb33fb71c7e476cca}{IT\+\_\+\+GENDER\+\_\+\+FEMALE}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532ac2a60824559f9b97da447d538ba04df1}{IT\+\_\+\+GENDER\+\_\+\+MALE}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532a92e9865d341e7ef31065728768256139}{IT\+\_\+\+GENDER\+\_\+\+ANY}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8}{item\+\_\+equip\+\_\+location\+\_\+mask}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8adb146a09eb2b0a711bde5cdc29918c49}{IT\+\_\+\+EQPM\+\_\+\+NONE}} = 0x000000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a77ec495175c58bbb7dda31850795e971}{IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+LOW}} = 0x000001
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a59da5aae74c5b224e372ff44a309dd71}{IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+R}} = 0x000002
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ae6371db517916d387fcf306884612356}{IT\+\_\+\+EQPM\+\_\+\+GARMENT}} = 0x000004
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ad7c99f21545f15708c11e34c0c17d432}{IT\+\_\+\+EQPM\+\_\+\+ACC\+\_\+L}} = 0x000008
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a3d9f1e3b09bffa1b5fb84a628968f254}{IT\+\_\+\+EQPM\+\_\+\+ARMOR}} = 0x000010
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a8cd3e804e9e56ea74ba7fd35f1811ad9}{IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+L}} = 0x000020
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a0b3bc09c649c8209be2546899b9990e6}{IT\+\_\+\+EQPM\+\_\+\+SHOES}} = 0x000040
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8acdac8e72bcaa0ccd3b5ebd83933e6893}{IT\+\_\+\+EQPM\+\_\+\+ACC\+\_\+R}} = 0x000080
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a7f7dffaf73956b0df6bce2a922d318ae}{IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+TOP}} = 0x000100
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a4af15329f31a6bf6e6f75a84f6225131}{IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+MID}} = 0x000200
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a10865fa3438c1e9820cb37dc32ff4483}{IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+TOP}} = 0x000400
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ac18396bc4df132d2b601c70a7bc232ee}{IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+MID}} = 0x000800
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9b9674da3f9ea99c5913dc0e54c7f511}{IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+LOW}} = 0x001000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8aa5b0124300f1da389dea3b8fcf31198d}{IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+GARMENT}} = 0x002000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a1f25a7b9aaeee7e957ea2ef045da801e}{IT\+\_\+\+EQPM\+\_\+\+AMMO}} = 0x008000
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9d16ccf26c12d10406669df3b8c07f2c}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ARMOR}} = 0x010000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a022a03491c65d5a5c3202232f24e5b39}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+WEAPON}} = 0x020000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8aa85eb1a044f3cb1c985f6dec0e48c821}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+SHIELD}} = 0x040000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a8be6e6db0d2dc3052ca2ea06153ac17f}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+SHOES}} = 0x080000
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a08080113c63a8f3ea59b4df18ad594ff}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+R}} = 0x100000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8af4b20477993589b05e9d915a826c9361}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+L}} = 0x200000
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a5d733ff6a3e1ff9614d53d37a99ba954}{IT\+\_\+\+EQPM\+\_\+\+WEAPON}} = IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+R
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a95a70c0c6edba65e5bfbacc5e0114d02}{IT\+\_\+\+EQPM\+\_\+\+SHIELD}} = IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+L
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9aea6844b11d75b654f3a7e8a66025cb}{IT\+\_\+\+EQPM\+\_\+\+ARMS}} = IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+R \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+L
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a603f60476af26f3cf4d56e3145de9e36}{IT\+\_\+\+EQPM\+\_\+\+HELM}} = IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+LOW \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+MID \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+TOP
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a537e67d6aaee12ff46baf1cffcec7044}{IT\+\_\+\+EQPM\+\_\+\+ACC}} = IT\+\_\+\+EQPM\+\_\+\+ACC\+\_\+L \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+ACC\+\_\+R
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a546acc8b4ddb6806af2d886712599d31}{IT\+\_\+\+EQPM\+\_\+\+COSTUME}} = IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+TOP \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+MID \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+LOW \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+GARMENT
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a544f534eeafad1e79e9f0253d47cb839}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC}} = IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+R \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+L
+, \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a599fbb8196d00154417ca6d5cf6d5bd5}{IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ARMS}} = IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+WEAPON \texorpdfstring{$\vert$}{|} IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+SHIELD
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}{item\+\_\+equip\+\_\+location\+\_\+index}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a202ed1841127bf1945a07c12a4ffd3ed}{IT\+\_\+\+EQPI\+\_\+\+ACC\+\_\+L}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6ad2a64498a5da9280da6413b4ced650e8}{IT\+\_\+\+EQPI\+\_\+\+ACC\+\_\+R}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a34dba5aa1edfca3acc317c5f0354b46d}{IT\+\_\+\+EQPI\+\_\+\+SHOES}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a8e2bed7f991fd1f68314b8f47c7ed856}{IT\+\_\+\+EQPI\+\_\+\+GARMENT}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a7f9ec79ba217c61ac7861a74a8934a20}{IT\+\_\+\+EQPI\+\_\+\+HEAD\+\_\+\+LOW}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a9083cfbe0e07d4b2c229de18045061fb}{IT\+\_\+\+EQPI\+\_\+\+HEAD\+\_\+\+MID}} = 5
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af579a28b12349394043089a9d7927f31}{IT\+\_\+\+EQPI\+\_\+\+HEAD\+\_\+\+TOP}} = 6
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6aa399c4649190b4d6ec38d5b568c5f7af}{IT\+\_\+\+EQPI\+\_\+\+ARMOR}} = 7
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a2a8e0b311fb489453ffaabec889e8e19}{IT\+\_\+\+EQPI\+\_\+\+HAND\+\_\+L}} = 8
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a99507477c959768a1cf9f208bf117545}{IT\+\_\+\+EQPI\+\_\+\+HAND\+\_\+R}} = 9
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af1198955134e167b3de4e1f539e5a868}{IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+TOP}} = 10
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6aa40989aacb6abbe91428342e2aefb983}{IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+MID}} = 11
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a294bbcfbc46e569fca6af788e790383d}{IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+LOW}} = 12
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a483bdac8f9c9853dd7b931ab156cb42f}{IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+GARMENT}} = 13
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a42c2ddceb90123a65d13d1d72b501fd7}{IT\+\_\+\+EQPI\+\_\+\+AMMO}} = 14
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a34592c4c590b35c9bb536e5efe0cd4ab}{IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+ARMOR}} = 15
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a671182b84735d2fb7cdb1f2e3bdd8c34}{IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+WEAPON}} = 16
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a308f4329c4c75203015d15e2bd5c32ee}{IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+SHIELD}} = 17
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af9e97f9f198fff7e3088fba37838cb3b}{IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+SHOES}} = 18
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6ade78eb27ff5d7ed65cb0d029dedc7e48}{IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+R}} = 19
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a25217ca37edc4fa9b954db77e383fd38}{IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+L}} = 20
+, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6acb157d0a3797b090d90ec5fd08fc5e0f}{IT\+\_\+\+EQPI\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82c}{item\+\_\+transaction\+\_\+mask}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cac331a2a0475ada25e835415228fa7a6f}{ITRMASK\+\_\+\+NONE}} = 0x0000
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca608eb74826e608296ba2c924e74daa63}{ITRMASK\+\_\+\+DROP}} = 0x0001
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca6c287fb428e3c1ee6e66cafd4f461fc6}{ITRMASK\+\_\+\+TRADE}} = 0x0002
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cab5cc12a648a0c7257f8171abc38fa5d8}{ITRMASK\+\_\+\+TRADEWPARTNER}} = 0x0004
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca78589644301666be8d68a182c8ec0ff6}{ITRMASK\+\_\+\+SELL\+\_\+\+TO\+\_\+\+NPC}} = 0x0008
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad5d965259cdc03bd330cd54562285ed7}{ITRMASK\+\_\+\+CART}} = 0x0010
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad9e6768896a0995772ffc7ccc19d58d3}{ITRMASK\+\_\+\+STORAGE}} = 0x0020
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82caf34d5441717b9ca6280c286730ff0c85}{ITRMASK\+\_\+\+GSTORAGE}} = 0x0040
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad26663e24bbc773c961d6a7cb95956a9}{ITRMASK\+\_\+\+MAIL}} = 0x0080
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca2d6c5a1bde69aa72cba96e9bb93f46fa}{ITRMASK\+\_\+\+AUCTION}} = 0x0100
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca7f5c2c4663840607be4cb5518b2bfbe3}{ITRMASK\+\_\+\+BUYING\+\_\+\+STORE}} = 0x0200
+, \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca9b442caa01013218cd34195922334758}{ITRMASK\+\_\+\+ALL}} = 0x03ff
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5}{item\+\_\+usage\+\_\+restriction\+\_\+mask}} \{ \mbox{\hyperlink{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5a9a7c62b06428fb5b514faf7c6501cd64}{IURMASK\+\_\+\+NONE}} = 0x0
+, \mbox{\hyperlink{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5af219f02892ae3cf3576c34214cb95990}{IURMASK\+\_\+\+SITTING}} = 0x1
+, \mbox{\hyperlink{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5ae24520b49bd12ed01f48479368d70fc8}{IURMASK\+\_\+\+ALL}} = 0x1
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059a}{item\+\_\+type}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa297f66991322aec1b9aa697748d19f86}{IT\+\_\+\+TYPE\+\_\+\+HEALING}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa4cc4ac30b9df98ca38ec81782d10daab}{IT\+\_\+\+TYPE\+\_\+\+UNKNOWN}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa6633d9ffe831a0c681bdc02d708be13c}{IT\+\_\+\+TYPE\+\_\+\+USABLE}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa0a87f51c6c7c8bf3d92e79b27e5ad8a1}{IT\+\_\+\+TYPE\+\_\+\+ETC}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aac421c42fc32034a82fca2d6830ef7e0f}{IT\+\_\+\+TYPE\+\_\+\+WEAPON}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aabec08b8ed299bc47af3e6041e287b180}{IT\+\_\+\+TYPE\+\_\+\+ARMOR}} = 5
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aad8cb040f0039aaf830a1f1446927bfdc}{IT\+\_\+\+TYPE\+\_\+\+CARD}} = 6
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa4dedafc8bf2188e93929ed42470415e3}{IT\+\_\+\+TYPE\+\_\+\+PET\+\_\+\+EGG}} = 7
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa15ad192d40578765af8abab1ccc65f15}{IT\+\_\+\+TYPE\+\_\+\+PET\+\_\+\+ARMOR}} = 8
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aae85f970b5d0acb6a1d1379dac5363dca}{IT\+\_\+\+TYPE\+\_\+\+UNKNOWN2}} = 9
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aaf812c335686838f2645f6358c944ba6b}{IT\+\_\+\+TYPE\+\_\+\+AMMO}} = 10
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aab28a649179bbf8f810bd537f904a7029}{IT\+\_\+\+TYPE\+\_\+\+CONSUMPTION\+\_\+\+DELAY}} = 11
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa24775e0c3fdd48f18f0cc4cb70db282d}{IT\+\_\+\+TYPE\+\_\+\+CASH}} = 18
+, \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aad8850420a437ae4b6e06afddbb7828c9}{IT\+\_\+\+TYPE\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9}{item\+\_\+ammunition\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acbeb53d94e5085c11332ceaf6ed11a31}{IT\+\_\+\+AT\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9aa7c23926e29dbfcb58371c6f00d140d8}{IT\+\_\+\+AT\+\_\+\+ARROW}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a9ea094c8d187fa4967890921e0acb07b}{IT\+\_\+\+AT\+\_\+\+DAGGER}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a1f2a97ca7b9adb8330e31e77244603e8}{IT\+\_\+\+AT\+\_\+\+BULLET}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a98315bd26ca29071eb01898b88486a1c}{IT\+\_\+\+AT\+\_\+\+SHELL}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a606cae14f1095ea7f537a428114c4365}{IT\+\_\+\+AT\+\_\+\+GRENADE}} = 5
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a81aedb7223e522d202aea2441f9b5aa7}{IT\+\_\+\+AT\+\_\+\+SHURIKEN}} = 6
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a5f296a8c70a464780932a73097d9d946}{IT\+\_\+\+AT\+\_\+\+KUNAI}} = 7
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a4d6355dcf9f1eb77402716174faf9cbb}{IT\+\_\+\+AT\+\_\+\+CANNONBALL}} = 8
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9af39d4d63f9d6a5034746aa1a921bbb81}{IT\+\_\+\+AT\+\_\+\+THROWABLE\+\_\+\+ITEM}} = 9
+, \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acdcddaf56d8db7815516203ca61aec3c}{IT\+\_\+\+AT\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1f}{item\+\_\+bind\+\_\+type}} \+: uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fad62b56bc48e1f0262d86ca0a4c88d259}{IT\+\_\+\+BIND\+\_\+\+NONE}} = 0x0
+, \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1faa4c0f1d3988879a1419080abf9fc5e4e}{IT\+\_\+\+BIND\+\_\+\+MIN}} = 0x1
+, \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa13d8d1b44d540d9837078dcf6940af8c}{IT\+\_\+\+BIND\+\_\+\+ACCOUNT}} = 0x1
+, \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa8456a9a2858c72aa9fe918b36d8a5667}{IT\+\_\+\+BIND\+\_\+\+GUILD}} = 0x2
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa3e8704bc7c3c3072a91bde6c86ad7569}{IT\+\_\+\+BIND\+\_\+\+PARTY}} = 0x3
+, \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1faaa7f3b871093e0def6fa2f99d9258e5a}{IT\+\_\+\+BIND\+\_\+\+CHARACTER}} = 0x4
+, \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa8bb30153a243d426ed5524d17cc7aed8}{IT\+\_\+\+BIND\+\_\+\+MAX}} = 0x4
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203ca}{item\+\_\+inventory\+\_\+addition\+\_\+notif\+\_\+type}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa39b0942b1ff58afad923d1eb3d3e1481}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+SUCCESS}}
+, \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa6dfb2e108d79ac8270113782c83db913}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+INVALID}}
+, \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa21e8a3349f6b6ed6812b2f2a8e8ecece}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+WEIGHT}}
+, \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa21ab6b24b9d9462e15e05aee9e88d823}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+UNKNOWN}}
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa44e1c4a7b1fef7d0f3dddb75f3025c83}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+NO\+\_\+\+INV\+\_\+\+SPACE}}
+, \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caabd93d53745c349e8b97616bb050da6c6}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+QUANTITY}}
+, \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa538393399f3cf648c04dd7b06b683c0b}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+UNKNOWN2}}
+, \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa465ddfff766df7bd5b2829286e982ab5}{ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+STACK\+\_\+\+LIMIT}}
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15d}{item\+\_\+deletion\+\_\+reason\+\_\+type}} \+: uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da304518d892e004b16544c179307079c1}{ITEM\+\_\+\+DEL\+\_\+\+NORMAL}} = 0
+, \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da69e310521e71454052acee22124210c2}{ITEM\+\_\+\+DEL\+\_\+\+SKILLUSE}} = 1
+, \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da39fe086b577f79af64528b8dc4253f18}{ITEM\+\_\+\+DEL\+\_\+\+FAILREFINE}} = 2
+, \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da699923bed97a29b882a77a3ae8e2e647}{ITEM\+\_\+\+DEL\+\_\+\+MATERIALCHANGE}} = 3
+, \newline
+\mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da3072225cbd4b12f2d389872a79ef6277}{ITEM\+\_\+\+DEL\+\_\+\+TOSTORAGE}} = 4
+, \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da7a3fde0b5edc38a2120ff7759ce58cc6}{ITEM\+\_\+\+DEL\+\_\+\+TOCART}} = 5
+, \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15dae55b8cc15dc98337c288676c3f152d79}{ITEM\+\_\+\+DEL\+\_\+\+SOLD}} = 6
+, \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15daadd4cf9bd85e79f8b70c662c6d4ed04a}{ITEM\+\_\+\+DEL\+\_\+\+ANALYSIS}} = 7
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730}{item\+\_\+equip\+\_\+result\+\_\+type}} \{ \mbox{\hyperlink{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a91af820632ddc2832d3b2352f941ad31}{IT\+\_\+\+EQUIP\+\_\+\+SUCCESS}} = 0x0
+, \mbox{\hyperlink{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a9a8c4a267053927096833e236c9fa6ea}{IT\+\_\+\+EQUIP\+\_\+\+FAIL\+\_\+\+LV}} = 0x1
+, \mbox{\hyperlink{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a39bb31309cc8eed3a8e5d544bde9a8e8}{IT\+\_\+\+EQUIP\+\_\+\+FAIL}} = 0x2
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599}{item\+\_\+unequip\+\_\+result\+\_\+type}} \{ \mbox{\hyperlink{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599aebacdaf141704acb566a9a4ffb1cd2c5}{IT\+\_\+\+UNEQUIP\+\_\+\+SUCCESS}} = 0x0
+, \mbox{\hyperlink{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599ad752471900b9487f01419c069950e539}{IT\+\_\+\+UNEQUIP\+\_\+\+FAIL}} = 0x1
+ \}
+\item 
+enum \mbox{\hyperlink{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3}{item\+\_\+storage\+\_\+type}} \{ \mbox{\hyperlink{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3a06b4bfae0fdfd34c6d585a96bde254c7}{ITEM\+\_\+\+STORE\+\_\+\+INVENTORY}}
+, \mbox{\hyperlink{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3a06d5af81cf181831621fb292811bc701}{ITEM\+\_\+\+STORE\+\_\+\+STORAGE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_item_definitions_8hpp_ada1cd2b01a5dc3f9356ee845d0b6585a}\label{_item_definitions_8hpp_ada1cd2b01a5dc3f9356ee845d0b6585a} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_NAME\_LENGTH@{ITEM\_NAME\_LENGTH}}
+\index{ITEM\_NAME\_LENGTH@{ITEM\_NAME\_LENGTH}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{ITEM\_NAME\_LENGTH}{ITEM\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define ITEM\+\_\+\+NAME\+\_\+\+LENGTH~50}
+
+\Hypertarget{_item_definitions_8hpp_a4b0c527a7a114bb56e2f9ec8d7dde28c}\label{_item_definitions_8hpp_a4b0c527a7a114bb56e2f9ec8d7dde28c} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_CART\_STACK\_LIMIT@{MAX\_CART\_STACK\_LIMIT}}
+\index{MAX\_CART\_STACK\_LIMIT@{MAX\_CART\_STACK\_LIMIT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_CART\_STACK\_LIMIT}{MAX\_CART\_STACK\_LIMIT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CART\+\_\+\+STACK\+\_\+\+LIMIT~30000}
+
+\Hypertarget{_item_definitions_8hpp_ab1c7568d814d52dea69f942f1c3b68f4}\label{_item_definitions_8hpp_ab1c7568d814d52dea69f942f1c3b68f4} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_GSTORAGE\_STACK\_LIMIT@{MAX\_GSTORAGE\_STACK\_LIMIT}}
+\index{MAX\_GSTORAGE\_STACK\_LIMIT@{MAX\_GSTORAGE\_STACK\_LIMIT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_GSTORAGE\_STACK\_LIMIT}{MAX\_GSTORAGE\_STACK\_LIMIT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GSTORAGE\+\_\+\+STACK\+\_\+\+LIMIT~30000}
+
+\Hypertarget{_item_definitions_8hpp_a428c4db813a3903aa8d062bff5db5df5}\label{_item_definitions_8hpp_a428c4db813a3903aa8d062bff5db5df5} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_INVENTORY\_SIZE@{MAX\_INVENTORY\_SIZE}}
+\index{MAX\_INVENTORY\_SIZE@{MAX\_INVENTORY\_SIZE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_INVENTORY\_SIZE}{MAX\_INVENTORY\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+INVENTORY\+\_\+\+SIZE~300}
+
+\Hypertarget{_item_definitions_8hpp_a0ab1a38dee3c6a86b17a960b1a498e21}\label{_item_definitions_8hpp_a0ab1a38dee3c6a86b17a960b1a498e21} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_INVENTORY\_STACK\_LIMIT@{MAX\_INVENTORY\_STACK\_LIMIT}}
+\index{MAX\_INVENTORY\_STACK\_LIMIT@{MAX\_INVENTORY\_STACK\_LIMIT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_INVENTORY\_STACK\_LIMIT}{MAX\_INVENTORY\_STACK\_LIMIT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+INVENTORY\+\_\+\+STACK\+\_\+\+LIMIT~30000}
+
+\Hypertarget{_item_definitions_8hpp_ae54c2a9d708638645204e80596084221}\label{_item_definitions_8hpp_ae54c2a9d708638645204e80596084221} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_ITEM\_OPTIONS@{MAX\_ITEM\_OPTIONS}}
+\index{MAX\_ITEM\_OPTIONS@{MAX\_ITEM\_OPTIONS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_ITEM\_OPTIONS}{MAX\_ITEM\_OPTIONS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ITEM\+\_\+\+OPTIONS~5}
+
+\Hypertarget{_item_definitions_8hpp_a729f4ffbd795db913bebb235882c1185}\label{_item_definitions_8hpp_a729f4ffbd795db913bebb235882c1185} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_ITEM\_SLOTS@{MAX\_ITEM\_SLOTS}}
+\index{MAX\_ITEM\_SLOTS@{MAX\_ITEM\_SLOTS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_ITEM\_SLOTS}{MAX\_ITEM\_SLOTS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ITEM\+\_\+\+SLOTS~4}
+
+\Hypertarget{_item_definitions_8hpp_a927589708e5149ce01a924db0d915f1b}\label{_item_definitions_8hpp_a927589708e5149ce01a924db0d915f1b} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_REFINE\_LEVEL@{MAX\_REFINE\_LEVEL}}
+\index{MAX\_REFINE\_LEVEL@{MAX\_REFINE\_LEVEL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_REFINE\_LEVEL}{MAX\_REFINE\_LEVEL}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+REFINE\+\_\+\+LEVEL~20}
+
+\Hypertarget{_item_definitions_8hpp_af1e3307f2655f3820b36e12468fc2469}\label{_item_definitions_8hpp_af1e3307f2655f3820b36e12468fc2469} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_STORAGE\_SIZE@{MAX\_STORAGE\_SIZE}}
+\index{MAX\_STORAGE\_SIZE@{MAX\_STORAGE\_SIZE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_STORAGE\_SIZE}{MAX\_STORAGE\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+STORAGE\+\_\+\+SIZE~600}
+
+\Hypertarget{_item_definitions_8hpp_a5779d381b8a2de2a88dd9be36ded7fa1}\label{_item_definitions_8hpp_a5779d381b8a2de2a88dd9be36ded7fa1} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MAX\_STORAGE\_STACK\_LIMIT@{MAX\_STORAGE\_STACK\_LIMIT}}
+\index{MAX\_STORAGE\_STACK\_LIMIT@{MAX\_STORAGE\_STACK\_LIMIT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_STORAGE\_STACK\_LIMIT}{MAX\_STORAGE\_STACK\_LIMIT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+STORAGE\+\_\+\+STACK\+\_\+\+LIMIT~30000}
+
+\Hypertarget{_item_definitions_8hpp_ae72fc102b1643a224a40b30cd781d3bb}\label{_item_definitions_8hpp_ae72fc102b1643a224a40b30cd781d3bb} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MIN\_INVENTORY\_SIZE@{MIN\_INVENTORY\_SIZE}}
+\index{MIN\_INVENTORY\_SIZE@{MIN\_INVENTORY\_SIZE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_INVENTORY\_SIZE}{MIN\_INVENTORY\_SIZE}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+INVENTORY\+\_\+\+SIZE~100}
+
+\Hypertarget{_item_definitions_8hpp_a3848370c8f5575e3d54145d999124ce7}\label{_item_definitions_8hpp_a3848370c8f5575e3d54145d999124ce7} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!MIN\_STORAGE\_SIZE@{MIN\_STORAGE\_SIZE}}
+\index{MIN\_STORAGE\_SIZE@{MIN\_STORAGE\_SIZE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_STORAGE\_SIZE}{MIN\_STORAGE\_SIZE}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+STORAGE\+\_\+\+SIZE~600}
+
+\Hypertarget{_item_definitions_8hpp_aad371aba90c0bc2ea9a3e14536d201e0}\label{_item_definitions_8hpp_aad371aba90c0bc2ea9a3e14536d201e0} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!UNKNOWN\_ITEM\_ID@{UNKNOWN\_ITEM\_ID}}
+\index{UNKNOWN\_ITEM\_ID@{UNKNOWN\_ITEM\_ID}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{UNKNOWN\_ITEM\_ID}{UNKNOWN\_ITEM\_ID}}
+{\footnotesize\ttfamily \#define UNKNOWN\+\_\+\+ITEM\+\_\+\+ID~512}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_item_definitions_8hpp_afdbd89ec013139e8474419bf60449ce5}\label{_item_definitions_8hpp_afdbd89ec013139e8474419bf60449ce5} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!EquipmentListType@{EquipmentListType}}
+\index{EquipmentListType@{EquipmentListType}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{EquipmentListType}{EquipmentListType}}
+{\footnotesize\ttfamily typedef std\+::array$<$std\+::pair$<$\mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8}{item\+\_\+equip\+\_\+location\+\_\+mask}}, std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}}$>$ $>$, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6acb157d0a3797b090d90ec5fd08fc5e0f}{IT\+\_\+\+EQPI\+\_\+\+MAX}}$>$ \mbox{\hyperlink{_item_definitions_8hpp_afdbd89ec013139e8474419bf60449ce5}{Equipment\+List\+Type}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_ammunition\_type@{item\_ammunition\_type}}
+\index{item\_ammunition\_type@{item\_ammunition\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_ammunition\_type}{item\_ammunition\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9}{item\+\_\+ammunition\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_NONE@{IT\_AT\_NONE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_NONE@{IT\_AT\_NONE}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acbeb53d94e5085c11332ceaf6ed11a31}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acbeb53d94e5085c11332ceaf6ed11a31} 
+IT\+\_\+\+AT\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_ARROW@{IT\_AT\_ARROW}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_ARROW@{IT\_AT\_ARROW}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9aa7c23926e29dbfcb58371c6f00d140d8}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9aa7c23926e29dbfcb58371c6f00d140d8} 
+IT\+\_\+\+AT\+\_\+\+ARROW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_DAGGER@{IT\_AT\_DAGGER}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_DAGGER@{IT\_AT\_DAGGER}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a9ea094c8d187fa4967890921e0acb07b}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a9ea094c8d187fa4967890921e0acb07b} 
+IT\+\_\+\+AT\+\_\+\+DAGGER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_BULLET@{IT\_AT\_BULLET}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_BULLET@{IT\_AT\_BULLET}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a1f2a97ca7b9adb8330e31e77244603e8}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a1f2a97ca7b9adb8330e31e77244603e8} 
+IT\+\_\+\+AT\+\_\+\+BULLET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_SHELL@{IT\_AT\_SHELL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_SHELL@{IT\_AT\_SHELL}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a98315bd26ca29071eb01898b88486a1c}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a98315bd26ca29071eb01898b88486a1c} 
+IT\+\_\+\+AT\+\_\+\+SHELL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_GRENADE@{IT\_AT\_GRENADE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_GRENADE@{IT\_AT\_GRENADE}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a606cae14f1095ea7f537a428114c4365}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a606cae14f1095ea7f537a428114c4365} 
+IT\+\_\+\+AT\+\_\+\+GRENADE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_SHURIKEN@{IT\_AT\_SHURIKEN}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_SHURIKEN@{IT\_AT\_SHURIKEN}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a81aedb7223e522d202aea2441f9b5aa7}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a81aedb7223e522d202aea2441f9b5aa7} 
+IT\+\_\+\+AT\+\_\+\+SHURIKEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_KUNAI@{IT\_AT\_KUNAI}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_KUNAI@{IT\_AT\_KUNAI}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a5f296a8c70a464780932a73097d9d946}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a5f296a8c70a464780932a73097d9d946} 
+IT\+\_\+\+AT\+\_\+\+KUNAI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_CANNONBALL@{IT\_AT\_CANNONBALL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_CANNONBALL@{IT\_AT\_CANNONBALL}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a4d6355dcf9f1eb77402716174faf9cbb}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9a4d6355dcf9f1eb77402716174faf9cbb} 
+IT\+\_\+\+AT\+\_\+\+CANNONBALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_THROWABLE\_ITEM@{IT\_AT\_THROWABLE\_ITEM}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_THROWABLE\_ITEM@{IT\_AT\_THROWABLE\_ITEM}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9af39d4d63f9d6a5034746aa1a921bbb81}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9af39d4d63f9d6a5034746aa1a921bbb81} 
+IT\+\_\+\+AT\+\_\+\+THROWABLE\+\_\+\+ITEM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_AT\_MAX@{IT\_AT\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_AT\_MAX@{IT\_AT\_MAX}}}\Hypertarget{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acdcddaf56d8db7815516203ca61aec3c}\label{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acdcddaf56d8db7815516203ca61aec3c} 
+IT\+\_\+\+AT\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1f}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1f} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_bind\_type@{item\_bind\_type}}
+\index{item\_bind\_type@{item\_bind\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_bind\_type}{item\_bind\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1f}{item\+\_\+bind\+\_\+type}} \+: uint16\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_NONE@{IT\_BIND\_NONE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_NONE@{IT\_BIND\_NONE}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fad62b56bc48e1f0262d86ca0a4c88d259}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fad62b56bc48e1f0262d86ca0a4c88d259} 
+IT\+\_\+\+BIND\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_MIN@{IT\_BIND\_MIN}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_MIN@{IT\_BIND\_MIN}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1faa4c0f1d3988879a1419080abf9fc5e4e}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1faa4c0f1d3988879a1419080abf9fc5e4e} 
+IT\+\_\+\+BIND\+\_\+\+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_ACCOUNT@{IT\_BIND\_ACCOUNT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_ACCOUNT@{IT\_BIND\_ACCOUNT}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa13d8d1b44d540d9837078dcf6940af8c}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa13d8d1b44d540d9837078dcf6940af8c} 
+IT\+\_\+\+BIND\+\_\+\+ACCOUNT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_GUILD@{IT\_BIND\_GUILD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_GUILD@{IT\_BIND\_GUILD}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa8456a9a2858c72aa9fe918b36d8a5667}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa8456a9a2858c72aa9fe918b36d8a5667} 
+IT\+\_\+\+BIND\+\_\+\+GUILD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_PARTY@{IT\_BIND\_PARTY}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_PARTY@{IT\_BIND\_PARTY}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa3e8704bc7c3c3072a91bde6c86ad7569}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa3e8704bc7c3c3072a91bde6c86ad7569} 
+IT\+\_\+\+BIND\+\_\+\+PARTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_CHARACTER@{IT\_BIND\_CHARACTER}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_CHARACTER@{IT\_BIND\_CHARACTER}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1faaa7f3b871093e0def6fa2f99d9258e5a}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1faaa7f3b871093e0def6fa2f99d9258e5a} 
+IT\+\_\+\+BIND\+\_\+\+CHARACTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_BIND\_MAX@{IT\_BIND\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_BIND\_MAX@{IT\_BIND\_MAX}}}\Hypertarget{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa8bb30153a243d426ed5524d17cc7aed8}\label{_item_definitions_8hpp_a8079cdd73ba24afe73b40f1b2390af1fa8bb30153a243d426ed5524d17cc7aed8} 
+IT\+\_\+\+BIND\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15d}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15d} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_deletion\_reason\_type@{item\_deletion\_reason\_type}}
+\index{item\_deletion\_reason\_type@{item\_deletion\_reason\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_deletion\_reason\_type}{item\_deletion\_reason\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15d}{item\+\_\+deletion\+\_\+reason\+\_\+type}} \+: uint16\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_NORMAL@{ITEM\_DEL\_NORMAL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_NORMAL@{ITEM\_DEL\_NORMAL}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da304518d892e004b16544c179307079c1}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da304518d892e004b16544c179307079c1} 
+ITEM\+\_\+\+DEL\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_SKILLUSE@{ITEM\_DEL\_SKILLUSE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_SKILLUSE@{ITEM\_DEL\_SKILLUSE}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da69e310521e71454052acee22124210c2}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da69e310521e71454052acee22124210c2} 
+ITEM\+\_\+\+DEL\+\_\+\+SKILLUSE&Normal. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_FAILREFINE@{ITEM\_DEL\_FAILREFINE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_FAILREFINE@{ITEM\_DEL\_FAILREFINE}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da39fe086b577f79af64528b8dc4253f18}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da39fe086b577f79af64528b8dc4253f18} 
+ITEM\+\_\+\+DEL\+\_\+\+FAILREFINE&Item used for a skill. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_MATERIALCHANGE@{ITEM\_DEL\_MATERIALCHANGE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_MATERIALCHANGE@{ITEM\_DEL\_MATERIALCHANGE}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da699923bed97a29b882a77a3ae8e2e647}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da699923bed97a29b882a77a3ae8e2e647} 
+ITEM\+\_\+\+DEL\+\_\+\+MATERIALCHANGE&Refine failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_TOSTORAGE@{ITEM\_DEL\_TOSTORAGE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_TOSTORAGE@{ITEM\_DEL\_TOSTORAGE}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da3072225cbd4b12f2d389872a79ef6277}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da3072225cbd4b12f2d389872a79ef6277} 
+ITEM\+\_\+\+DEL\+\_\+\+TOSTORAGE&Material changed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_TOCART@{ITEM\_DEL\_TOCART}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_TOCART@{ITEM\_DEL\_TOCART}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da7a3fde0b5edc38a2120ff7759ce58cc6}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15da7a3fde0b5edc38a2120ff7759ce58cc6} 
+ITEM\+\_\+\+DEL\+\_\+\+TOCART&Moved to storage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_SOLD@{ITEM\_DEL\_SOLD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_SOLD@{ITEM\_DEL\_SOLD}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15dae55b8cc15dc98337c288676c3f152d79}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15dae55b8cc15dc98337c288676c3f152d79} 
+ITEM\+\_\+\+DEL\+\_\+\+SOLD&Moved to cart. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_DEL\_ANALYSIS@{ITEM\_DEL\_ANALYSIS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_DEL\_ANALYSIS@{ITEM\_DEL\_ANALYSIS}}}\Hypertarget{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15daadd4cf9bd85e79f8b70c662c6d4ed04a}\label{_item_definitions_8hpp_a5addb57e66f4de69f4bd59a6a94de15daadd4cf9bd85e79f8b70c662c6d4ed04a} 
+ITEM\+\_\+\+DEL\+\_\+\+ANALYSIS&Item sold. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_equip\_location\_index@{item\_equip\_location\_index}}
+\index{item\_equip\_location\_index@{item\_equip\_location\_index}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_equip\_location\_index}{item\_equip\_location\_index}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}{item\+\_\+equip\+\_\+location\+\_\+index}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_ACC\_L@{IT\_EQPI\_ACC\_L}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_ACC\_L@{IT\_EQPI\_ACC\_L}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a202ed1841127bf1945a07c12a4ffd3ed}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a202ed1841127bf1945a07c12a4ffd3ed} 
+IT\+\_\+\+EQPI\+\_\+\+ACC\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_ACC\_R@{IT\_EQPI\_ACC\_R}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_ACC\_R@{IT\_EQPI\_ACC\_R}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6ad2a64498a5da9280da6413b4ced650e8}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6ad2a64498a5da9280da6413b4ced650e8} 
+IT\+\_\+\+EQPI\+\_\+\+ACC\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHOES@{IT\_EQPI\_SHOES}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHOES@{IT\_EQPI\_SHOES}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a34dba5aa1edfca3acc317c5f0354b46d}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a34dba5aa1edfca3acc317c5f0354b46d} 
+IT\+\_\+\+EQPI\+\_\+\+SHOES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_GARMENT@{IT\_EQPI\_GARMENT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_GARMENT@{IT\_EQPI\_GARMENT}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a8e2bed7f991fd1f68314b8f47c7ed856}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a8e2bed7f991fd1f68314b8f47c7ed856} 
+IT\+\_\+\+EQPI\+\_\+\+GARMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_HEAD\_LOW@{IT\_EQPI\_HEAD\_LOW}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_HEAD\_LOW@{IT\_EQPI\_HEAD\_LOW}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a7f9ec79ba217c61ac7861a74a8934a20}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a7f9ec79ba217c61ac7861a74a8934a20} 
+IT\+\_\+\+EQPI\+\_\+\+HEAD\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_HEAD\_MID@{IT\_EQPI\_HEAD\_MID}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_HEAD\_MID@{IT\_EQPI\_HEAD\_MID}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a9083cfbe0e07d4b2c229de18045061fb}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a9083cfbe0e07d4b2c229de18045061fb} 
+IT\+\_\+\+EQPI\+\_\+\+HEAD\+\_\+\+MID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_HEAD\_TOP@{IT\_EQPI\_HEAD\_TOP}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_HEAD\_TOP@{IT\_EQPI\_HEAD\_TOP}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af579a28b12349394043089a9d7927f31}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af579a28b12349394043089a9d7927f31} 
+IT\+\_\+\+EQPI\+\_\+\+HEAD\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_ARMOR@{IT\_EQPI\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_ARMOR@{IT\_EQPI\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6aa399c4649190b4d6ec38d5b568c5f7af}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6aa399c4649190b4d6ec38d5b568c5f7af} 
+IT\+\_\+\+EQPI\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_HAND\_L@{IT\_EQPI\_HAND\_L}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_HAND\_L@{IT\_EQPI\_HAND\_L}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a2a8e0b311fb489453ffaabec889e8e19}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a2a8e0b311fb489453ffaabec889e8e19} 
+IT\+\_\+\+EQPI\+\_\+\+HAND\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_HAND\_R@{IT\_EQPI\_HAND\_R}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_HAND\_R@{IT\_EQPI\_HAND\_R}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a99507477c959768a1cf9f208bf117545}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a99507477c959768a1cf9f208bf117545} 
+IT\+\_\+\+EQPI\+\_\+\+HAND\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_COSTUME\_TOP@{IT\_EQPI\_COSTUME\_TOP}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_COSTUME\_TOP@{IT\_EQPI\_COSTUME\_TOP}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af1198955134e167b3de4e1f539e5a868}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af1198955134e167b3de4e1f539e5a868} 
+IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_COSTUME\_MID@{IT\_EQPI\_COSTUME\_MID}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_COSTUME\_MID@{IT\_EQPI\_COSTUME\_MID}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6aa40989aacb6abbe91428342e2aefb983}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6aa40989aacb6abbe91428342e2aefb983} 
+IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+MID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_COSTUME\_LOW@{IT\_EQPI\_COSTUME\_LOW}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_COSTUME\_LOW@{IT\_EQPI\_COSTUME\_LOW}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a294bbcfbc46e569fca6af788e790383d}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a294bbcfbc46e569fca6af788e790383d} 
+IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_COSTUME\_GARMENT@{IT\_EQPI\_COSTUME\_GARMENT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_COSTUME\_GARMENT@{IT\_EQPI\_COSTUME\_GARMENT}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a483bdac8f9c9853dd7b931ab156cb42f}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a483bdac8f9c9853dd7b931ab156cb42f} 
+IT\+\_\+\+EQPI\+\_\+\+COSTUME\+\_\+\+GARMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_AMMO@{IT\_EQPI\_AMMO}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_AMMO@{IT\_EQPI\_AMMO}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a42c2ddceb90123a65d13d1d72b501fd7}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a42c2ddceb90123a65d13d1d72b501fd7} 
+IT\+\_\+\+EQPI\+\_\+\+AMMO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHADOW\_ARMOR@{IT\_EQPI\_SHADOW\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHADOW\_ARMOR@{IT\_EQPI\_SHADOW\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a34592c4c590b35c9bb536e5efe0cd4ab}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a34592c4c590b35c9bb536e5efe0cd4ab} 
+IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHADOW\_WEAPON@{IT\_EQPI\_SHADOW\_WEAPON}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHADOW\_WEAPON@{IT\_EQPI\_SHADOW\_WEAPON}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a671182b84735d2fb7cdb1f2e3bdd8c34}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a671182b84735d2fb7cdb1f2e3bdd8c34} 
+IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+WEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHADOW\_SHIELD@{IT\_EQPI\_SHADOW\_SHIELD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHADOW\_SHIELD@{IT\_EQPI\_SHADOW\_SHIELD}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a308f4329c4c75203015d15e2bd5c32ee}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a308f4329c4c75203015d15e2bd5c32ee} 
+IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+SHIELD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHADOW\_SHOES@{IT\_EQPI\_SHADOW\_SHOES}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHADOW\_SHOES@{IT\_EQPI\_SHADOW\_SHOES}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af9e97f9f198fff7e3088fba37838cb3b}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6af9e97f9f198fff7e3088fba37838cb3b} 
+IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+SHOES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHADOW\_ACC\_R@{IT\_EQPI\_SHADOW\_ACC\_R}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHADOW\_ACC\_R@{IT\_EQPI\_SHADOW\_ACC\_R}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6ade78eb27ff5d7ed65cb0d029dedc7e48}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6ade78eb27ff5d7ed65cb0d029dedc7e48} 
+IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_SHADOW\_ACC\_L@{IT\_EQPI\_SHADOW\_ACC\_L}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_SHADOW\_ACC\_L@{IT\_EQPI\_SHADOW\_ACC\_L}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a25217ca37edc4fa9b954db77e383fd38}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6a25217ca37edc4fa9b954db77e383fd38} 
+IT\+\_\+\+EQPI\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPI\_MAX@{IT\_EQPI\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPI\_MAX@{IT\_EQPI\_MAX}}}\Hypertarget{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6acb157d0a3797b090d90ec5fd08fc5e0f}\label{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6acb157d0a3797b090d90ec5fd08fc5e0f} 
+IT\+\_\+\+EQPI\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_equip\_location\_mask@{item\_equip\_location\_mask}}
+\index{item\_equip\_location\_mask@{item\_equip\_location\_mask}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_equip\_location\_mask}{item\_equip\_location\_mask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8}{item\+\_\+equip\+\_\+location\+\_\+mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_NONE@{IT\_EQPM\_NONE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_NONE@{IT\_EQPM\_NONE}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8adb146a09eb2b0a711bde5cdc29918c49}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8adb146a09eb2b0a711bde5cdc29918c49} 
+IT\+\_\+\+EQPM\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_HEAD\_LOW@{IT\_EQPM\_HEAD\_LOW}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_HEAD\_LOW@{IT\_EQPM\_HEAD\_LOW}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a77ec495175c58bbb7dda31850795e971}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a77ec495175c58bbb7dda31850795e971} 
+IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_HAND\_R@{IT\_EQPM\_HAND\_R}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_HAND\_R@{IT\_EQPM\_HAND\_R}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a59da5aae74c5b224e372ff44a309dd71}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a59da5aae74c5b224e372ff44a309dd71} 
+IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_GARMENT@{IT\_EQPM\_GARMENT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_GARMENT@{IT\_EQPM\_GARMENT}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ae6371db517916d387fcf306884612356}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ae6371db517916d387fcf306884612356} 
+IT\+\_\+\+EQPM\+\_\+\+GARMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_ACC\_L@{IT\_EQPM\_ACC\_L}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_ACC\_L@{IT\_EQPM\_ACC\_L}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ad7c99f21545f15708c11e34c0c17d432}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ad7c99f21545f15708c11e34c0c17d432} 
+IT\+\_\+\+EQPM\+\_\+\+ACC\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_ARMOR@{IT\_EQPM\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_ARMOR@{IT\_EQPM\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a3d9f1e3b09bffa1b5fb84a628968f254}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a3d9f1e3b09bffa1b5fb84a628968f254} 
+IT\+\_\+\+EQPM\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_HAND\_L@{IT\_EQPM\_HAND\_L}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_HAND\_L@{IT\_EQPM\_HAND\_L}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a8cd3e804e9e56ea74ba7fd35f1811ad9}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a8cd3e804e9e56ea74ba7fd35f1811ad9} 
+IT\+\_\+\+EQPM\+\_\+\+HAND\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHOES@{IT\_EQPM\_SHOES}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHOES@{IT\_EQPM\_SHOES}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a0b3bc09c649c8209be2546899b9990e6}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a0b3bc09c649c8209be2546899b9990e6} 
+IT\+\_\+\+EQPM\+\_\+\+SHOES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_ACC\_R@{IT\_EQPM\_ACC\_R}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_ACC\_R@{IT\_EQPM\_ACC\_R}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8acdac8e72bcaa0ccd3b5ebd83933e6893}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8acdac8e72bcaa0ccd3b5ebd83933e6893} 
+IT\+\_\+\+EQPM\+\_\+\+ACC\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_HEAD\_TOP@{IT\_EQPM\_HEAD\_TOP}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_HEAD\_TOP@{IT\_EQPM\_HEAD\_TOP}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a7f7dffaf73956b0df6bce2a922d318ae}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a7f7dffaf73956b0df6bce2a922d318ae} 
+IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_HEAD\_MID@{IT\_EQPM\_HEAD\_MID}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_HEAD\_MID@{IT\_EQPM\_HEAD\_MID}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a4af15329f31a6bf6e6f75a84f6225131}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a4af15329f31a6bf6e6f75a84f6225131} 
+IT\+\_\+\+EQPM\+\_\+\+HEAD\+\_\+\+MID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_COSTUME\_HEAD\_TOP@{IT\_EQPM\_COSTUME\_HEAD\_TOP}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_COSTUME\_HEAD\_TOP@{IT\_EQPM\_COSTUME\_HEAD\_TOP}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a10865fa3438c1e9820cb37dc32ff4483}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a10865fa3438c1e9820cb37dc32ff4483} 
+IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_COSTUME\_HEAD\_MID@{IT\_EQPM\_COSTUME\_HEAD\_MID}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_COSTUME\_HEAD\_MID@{IT\_EQPM\_COSTUME\_HEAD\_MID}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ac18396bc4df132d2b601c70a7bc232ee}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8ac18396bc4df132d2b601c70a7bc232ee} 
+IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+MID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_COSTUME\_HEAD\_LOW@{IT\_EQPM\_COSTUME\_HEAD\_LOW}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_COSTUME\_HEAD\_LOW@{IT\_EQPM\_COSTUME\_HEAD\_LOW}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9b9674da3f9ea99c5913dc0e54c7f511}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9b9674da3f9ea99c5913dc0e54c7f511} 
+IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+HEAD\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_COSTUME\_GARMENT@{IT\_EQPM\_COSTUME\_GARMENT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_COSTUME\_GARMENT@{IT\_EQPM\_COSTUME\_GARMENT}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8aa5b0124300f1da389dea3b8fcf31198d}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8aa5b0124300f1da389dea3b8fcf31198d} 
+IT\+\_\+\+EQPM\+\_\+\+COSTUME\+\_\+\+GARMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_AMMO@{IT\_EQPM\_AMMO}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_AMMO@{IT\_EQPM\_AMMO}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a1f25a7b9aaeee7e957ea2ef045da801e}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a1f25a7b9aaeee7e957ea2ef045da801e} 
+IT\+\_\+\+EQPM\+\_\+\+AMMO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_ARMOR@{IT\_EQPM\_SHADOW\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_ARMOR@{IT\_EQPM\_SHADOW\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9d16ccf26c12d10406669df3b8c07f2c}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9d16ccf26c12d10406669df3b8c07f2c} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_WEAPON@{IT\_EQPM\_SHADOW\_WEAPON}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_WEAPON@{IT\_EQPM\_SHADOW\_WEAPON}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a022a03491c65d5a5c3202232f24e5b39}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a022a03491c65d5a5c3202232f24e5b39} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+WEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_SHIELD@{IT\_EQPM\_SHADOW\_SHIELD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_SHIELD@{IT\_EQPM\_SHADOW\_SHIELD}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8aa85eb1a044f3cb1c985f6dec0e48c821}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8aa85eb1a044f3cb1c985f6dec0e48c821} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+SHIELD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_SHOES@{IT\_EQPM\_SHADOW\_SHOES}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_SHOES@{IT\_EQPM\_SHADOW\_SHOES}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a8be6e6db0d2dc3052ca2ea06153ac17f}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a8be6e6db0d2dc3052ca2ea06153ac17f} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+SHOES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_ACC\_R@{IT\_EQPM\_SHADOW\_ACC\_R}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_ACC\_R@{IT\_EQPM\_SHADOW\_ACC\_R}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a08080113c63a8f3ea59b4df18ad594ff}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a08080113c63a8f3ea59b4df18ad594ff} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_ACC\_L@{IT\_EQPM\_SHADOW\_ACC\_L}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_ACC\_L@{IT\_EQPM\_SHADOW\_ACC\_L}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8af4b20477993589b05e9d915a826c9361}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8af4b20477993589b05e9d915a826c9361} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_WEAPON@{IT\_EQPM\_WEAPON}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_WEAPON@{IT\_EQPM\_WEAPON}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a5d733ff6a3e1ff9614d53d37a99ba954}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a5d733ff6a3e1ff9614d53d37a99ba954} 
+IT\+\_\+\+EQPM\+\_\+\+WEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHIELD@{IT\_EQPM\_SHIELD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHIELD@{IT\_EQPM\_SHIELD}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a95a70c0c6edba65e5bfbacc5e0114d02}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a95a70c0c6edba65e5bfbacc5e0114d02} 
+IT\+\_\+\+EQPM\+\_\+\+SHIELD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_ARMS@{IT\_EQPM\_ARMS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_ARMS@{IT\_EQPM\_ARMS}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9aea6844b11d75b654f3a7e8a66025cb}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a9aea6844b11d75b654f3a7e8a66025cb} 
+IT\+\_\+\+EQPM\+\_\+\+ARMS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_HELM@{IT\_EQPM\_HELM}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_HELM@{IT\_EQPM\_HELM}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a603f60476af26f3cf4d56e3145de9e36}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a603f60476af26f3cf4d56e3145de9e36} 
+IT\+\_\+\+EQPM\+\_\+\+HELM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_ACC@{IT\_EQPM\_ACC}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_ACC@{IT\_EQPM\_ACC}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a537e67d6aaee12ff46baf1cffcec7044}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a537e67d6aaee12ff46baf1cffcec7044} 
+IT\+\_\+\+EQPM\+\_\+\+ACC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_COSTUME@{IT\_EQPM\_COSTUME}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_COSTUME@{IT\_EQPM\_COSTUME}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a546acc8b4ddb6806af2d886712599d31}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a546acc8b4ddb6806af2d886712599d31} 
+IT\+\_\+\+EQPM\+\_\+\+COSTUME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_ACC@{IT\_EQPM\_SHADOW\_ACC}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_ACC@{IT\_EQPM\_SHADOW\_ACC}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a544f534eeafad1e79e9f0253d47cb839}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a544f534eeafad1e79e9f0253d47cb839} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ACC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQPM\_SHADOW\_ARMS@{IT\_EQPM\_SHADOW\_ARMS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQPM\_SHADOW\_ARMS@{IT\_EQPM\_SHADOW\_ARMS}}}\Hypertarget{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a599fbb8196d00154417ca6d5cf6d5bd5}\label{_item_definitions_8hpp_aa3193068418e49996c89d8f864b732b8a599fbb8196d00154417ca6d5cf6d5bd5} 
+IT\+\_\+\+EQPM\+\_\+\+SHADOW\+\_\+\+ARMS&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730}\label{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_equip\_result\_type@{item\_equip\_result\_type}}
+\index{item\_equip\_result\_type@{item\_equip\_result\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_equip\_result\_type}{item\_equip\_result\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730}{item\+\_\+equip\+\_\+result\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQUIP\_SUCCESS@{IT\_EQUIP\_SUCCESS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQUIP\_SUCCESS@{IT\_EQUIP\_SUCCESS}}}\Hypertarget{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a91af820632ddc2832d3b2352f941ad31}\label{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a91af820632ddc2832d3b2352f941ad31} 
+IT\+\_\+\+EQUIP\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQUIP\_FAIL\_LV@{IT\_EQUIP\_FAIL\_LV}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQUIP\_FAIL\_LV@{IT\_EQUIP\_FAIL\_LV}}}\Hypertarget{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a9a8c4a267053927096833e236c9fa6ea}\label{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a9a8c4a267053927096833e236c9fa6ea} 
+IT\+\_\+\+EQUIP\+\_\+\+FAIL\+\_\+\+LV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_EQUIP\_FAIL@{IT\_EQUIP\_FAIL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_EQUIP\_FAIL@{IT\_EQUIP\_FAIL}}}\Hypertarget{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a39bb31309cc8eed3a8e5d544bde9a8e8}\label{_item_definitions_8hpp_a0bb6eac851fc0fdfb46bbece811a2730a39bb31309cc8eed3a8e5d544bde9a8e8} 
+IT\+\_\+\+EQUIP\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532}\label{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_gender\_type@{item\_gender\_type}}
+\index{item\_gender\_type@{item\_gender\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_gender\_type}{item\_gender\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532}{item\+\_\+gender\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_GENDER\_FEMALE@{IT\_GENDER\_FEMALE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_GENDER\_FEMALE@{IT\_GENDER\_FEMALE}}}\Hypertarget{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532a11299cbd53c7093bb33fb71c7e476cca}\label{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532a11299cbd53c7093bb33fb71c7e476cca} 
+IT\+\_\+\+GENDER\+\_\+\+FEMALE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_GENDER\_MALE@{IT\_GENDER\_MALE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_GENDER\_MALE@{IT\_GENDER\_MALE}}}\Hypertarget{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532ac2a60824559f9b97da447d538ba04df1}\label{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532ac2a60824559f9b97da447d538ba04df1} 
+IT\+\_\+\+GENDER\+\_\+\+MALE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_GENDER\_ANY@{IT\_GENDER\_ANY}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_GENDER\_ANY@{IT\_GENDER\_ANY}}}\Hypertarget{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532a92e9865d341e7ef31065728768256139}\label{_item_definitions_8hpp_ad16d2689568ffdb5a4018025d4043532a92e9865d341e7ef31065728768256139} 
+IT\+\_\+\+GENDER\+\_\+\+ANY&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203ca}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203ca} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_inventory\_addition\_notif\_type@{item\_inventory\_addition\_notif\_type}}
+\index{item\_inventory\_addition\_notif\_type@{item\_inventory\_addition\_notif\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_inventory\_addition\_notif\_type}{item\_inventory\_addition\_notif\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203ca}{item\+\_\+inventory\+\_\+addition\+\_\+notif\+\_\+type}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_SUCCESS@{ITEM\_INV\_ADD\_SUCCESS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_SUCCESS@{ITEM\_INV\_ADD\_SUCCESS}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa39b0942b1ff58afad923d1eb3d3e1481}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa39b0942b1ff58afad923d1eb3d3e1481} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_INVALID@{ITEM\_INV\_ADD\_INVALID}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_INVALID@{ITEM\_INV\_ADD\_INVALID}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa6dfb2e108d79ac8270113782c83db913}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa6dfb2e108d79ac8270113782c83db913} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+INVALID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_OVER\_WEIGHT@{ITEM\_INV\_ADD\_OVER\_WEIGHT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_OVER\_WEIGHT@{ITEM\_INV\_ADD\_OVER\_WEIGHT}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa21e8a3349f6b6ed6812b2f2a8e8ecece}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa21e8a3349f6b6ed6812b2f2a8e8ecece} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+WEIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_UNKNOWN@{ITEM\_INV\_ADD\_UNKNOWN}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_UNKNOWN@{ITEM\_INV\_ADD\_UNKNOWN}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa21ab6b24b9d9462e15e05aee9e88d823}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa21ab6b24b9d9462e15e05aee9e88d823} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_NO\_INV\_SPACE@{ITEM\_INV\_ADD\_NO\_INV\_SPACE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_NO\_INV\_SPACE@{ITEM\_INV\_ADD\_NO\_INV\_SPACE}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa44e1c4a7b1fef7d0f3dddb75f3025c83}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa44e1c4a7b1fef7d0f3dddb75f3025c83} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+NO\+\_\+\+INV\+\_\+\+SPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_OVER\_QUANTITY@{ITEM\_INV\_ADD\_OVER\_QUANTITY}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_OVER\_QUANTITY@{ITEM\_INV\_ADD\_OVER\_QUANTITY}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caabd93d53745c349e8b97616bb050da6c6}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caabd93d53745c349e8b97616bb050da6c6} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+QUANTITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_UNKNOWN2@{ITEM\_INV\_ADD\_UNKNOWN2}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_UNKNOWN2@{ITEM\_INV\_ADD\_UNKNOWN2}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa538393399f3cf648c04dd7b06b683c0b}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa538393399f3cf648c04dd7b06b683c0b} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+UNKNOWN2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_INV\_ADD\_OVER\_STACK\_LIMIT@{ITEM\_INV\_ADD\_OVER\_STACK\_LIMIT}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_INV\_ADD\_OVER\_STACK\_LIMIT@{ITEM\_INV\_ADD\_OVER\_STACK\_LIMIT}}}\Hypertarget{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa465ddfff766df7bd5b2829286e982ab5}\label{_item_definitions_8hpp_a0b4c0e00be5cf7e60f473ee937b203caa465ddfff766df7bd5b2829286e982ab5} 
+ITEM\+\_\+\+INV\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+STACK\+\_\+\+LIMIT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_level\_type@{item\_level\_type}}
+\index{item\_level\_type@{item\_level\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_level\_type}{item\_level\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546}{item\+\_\+level\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_LVL\_ARMOR@{IT\_LVL\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_LVL\_ARMOR@{IT\_LVL\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a31ffff1913deb7d41e6b018d05485794}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a31ffff1913deb7d41e6b018d05485794} 
+IT\+\_\+\+LVL\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_LVL\_WEAPON1@{IT\_LVL\_WEAPON1}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_LVL\_WEAPON1@{IT\_LVL\_WEAPON1}}}\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546ae8803f00c954a128431f00441141447f}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546ae8803f00c954a128431f00441141447f} 
+IT\+\_\+\+LVL\+\_\+\+WEAPON1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_LVL\_WEAPON2@{IT\_LVL\_WEAPON2}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_LVL\_WEAPON2@{IT\_LVL\_WEAPON2}}}\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546acbc5b462bb22cd8c7adc8395473f1e17}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546acbc5b462bb22cd8c7adc8395473f1e17} 
+IT\+\_\+\+LVL\+\_\+\+WEAPON2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_LVL\_WEAPON3@{IT\_LVL\_WEAPON3}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_LVL\_WEAPON3@{IT\_LVL\_WEAPON3}}}\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a09c236df8230ab9f2bce6b38d830aae3}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a09c236df8230ab9f2bce6b38d830aae3} 
+IT\+\_\+\+LVL\+\_\+\+WEAPON3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_LVL\_WEAPON4@{IT\_LVL\_WEAPON4}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_LVL\_WEAPON4@{IT\_LVL\_WEAPON4}}}\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546ad485405996025658911fecd70b6ca269}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546ad485405996025658911fecd70b6ca269} 
+IT\+\_\+\+LVL\+\_\+\+WEAPON4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_LVL\_MAX@{IT\_LVL\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_LVL\_MAX@{IT\_LVL\_MAX}}}\Hypertarget{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a3258737f543b9eb8d533a56c38da0beb}\label{_item_definitions_8hpp_ad796d167655de4d9592a0da99a8ea546a3258737f543b9eb8d533a56c38da0beb} 
+IT\+\_\+\+LVL\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3}\label{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_storage\_type@{item\_storage\_type}}
+\index{item\_storage\_type@{item\_storage\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_storage\_type}{item\_storage\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3}{item\+\_\+storage\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_STORE\_INVENTORY@{ITEM\_STORE\_INVENTORY}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_STORE\_INVENTORY@{ITEM\_STORE\_INVENTORY}}}\Hypertarget{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3a06b4bfae0fdfd34c6d585a96bde254c7}\label{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3a06b4bfae0fdfd34c6d585a96bde254c7} 
+ITEM\+\_\+\+STORE\+\_\+\+INVENTORY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITEM\_STORE\_STORAGE@{ITEM\_STORE\_STORAGE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITEM\_STORE\_STORAGE@{ITEM\_STORE\_STORAGE}}}\Hypertarget{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3a06d5af81cf181831621fb292811bc701}\label{_item_definitions_8hpp_aa2fc243f3a7c1a49745417d8ef6546a3a06d5af81cf181831621fb292811bc701} 
+ITEM\+\_\+\+STORE\+\_\+\+STORAGE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82c}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82c} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_transaction\_mask@{item\_transaction\_mask}}
+\index{item\_transaction\_mask@{item\_transaction\_mask}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_transaction\_mask}{item\_transaction\_mask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82c}{item\+\_\+transaction\+\_\+mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_NONE@{ITRMASK\_NONE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_NONE@{ITRMASK\_NONE}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cac331a2a0475ada25e835415228fa7a6f}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cac331a2a0475ada25e835415228fa7a6f} 
+ITRMASK\+\_\+\+NONE&No restrictions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_DROP@{ITRMASK\_DROP}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_DROP@{ITRMASK\_DROP}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca608eb74826e608296ba2c924e74daa63}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca608eb74826e608296ba2c924e74daa63} 
+ITRMASK\+\_\+\+DROP&Item can be dropped. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_TRADE@{ITRMASK\_TRADE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_TRADE@{ITRMASK\_TRADE}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca6c287fb428e3c1ee6e66cafd4f461fc6}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca6c287fb428e3c1ee6e66cafd4f461fc6} 
+ITRMASK\+\_\+\+TRADE&Item can be traded (nor vended) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_TRADEWPARTNER@{ITRMASK\_TRADEWPARTNER}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_TRADEWPARTNER@{ITRMASK\_TRADEWPARTNER}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cab5cc12a648a0c7257f8171abc38fa5d8}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cab5cc12a648a0c7257f8171abc38fa5d8} 
+ITRMASK\+\_\+\+TRADEWPARTNER&Wedded partner can override ITR\+\_\+\+NOTRADE restriction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_SELL\_TO\_NPC@{ITRMASK\_SELL\_TO\_NPC}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_SELL\_TO\_NPC@{ITRMASK\_SELL\_TO\_NPC}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca78589644301666be8d68a182c8ec0ff6}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca78589644301666be8d68a182c8ec0ff6} 
+ITRMASK\+\_\+\+SELL\+\_\+\+TO\+\_\+\+NPC&Item can be sold to NPCs. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_CART@{ITRMASK\_CART}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_CART@{ITRMASK\_CART}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad5d965259cdc03bd330cd54562285ed7}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad5d965259cdc03bd330cd54562285ed7} 
+ITRMASK\+\_\+\+CART&Item can be placed in the cart. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_STORAGE@{ITRMASK\_STORAGE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_STORAGE@{ITRMASK\_STORAGE}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad9e6768896a0995772ffc7ccc19d58d3}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad9e6768896a0995772ffc7ccc19d58d3} 
+ITRMASK\+\_\+\+STORAGE&Item can be placed in the storage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_GSTORAGE@{ITRMASK\_GSTORAGE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_GSTORAGE@{ITRMASK\_GSTORAGE}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82caf34d5441717b9ca6280c286730ff0c85}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82caf34d5441717b9ca6280c286730ff0c85} 
+ITRMASK\+\_\+\+GSTORAGE&Item can be placed in the guild storage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_MAIL@{ITRMASK\_MAIL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_MAIL@{ITRMASK\_MAIL}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad26663e24bbc773c961d6a7cb95956a9}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82cad26663e24bbc773c961d6a7cb95956a9} 
+ITRMASK\+\_\+\+MAIL&Item can be attached to mail messages. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_AUCTION@{ITRMASK\_AUCTION}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_AUCTION@{ITRMASK\_AUCTION}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca2d6c5a1bde69aa72cba96e9bb93f46fa}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca2d6c5a1bde69aa72cba96e9bb93f46fa} 
+ITRMASK\+\_\+\+AUCTION&Item can be auctioned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_BUYING\_STORE@{ITRMASK\_BUYING\_STORE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_BUYING\_STORE@{ITRMASK\_BUYING\_STORE}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca7f5c2c4663840607be4cb5518b2bfbe3}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca7f5c2c4663840607be4cb5518b2bfbe3} 
+ITRMASK\+\_\+\+BUYING\+\_\+\+STORE&Item can be listed in the buying store. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ITRMASK\_ALL@{ITRMASK\_ALL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!ITRMASK\_ALL@{ITRMASK\_ALL}}}\Hypertarget{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca9b442caa01013218cd34195922334758}\label{_item_definitions_8hpp_a46d4ece5500e10e8d916d34de7bda82ca9b442caa01013218cd34195922334758} 
+ITRMASK\+\_\+\+ALL&Sum of all the above values. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059a}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059a} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_type@{item\_type}}
+\index{item\_type@{item\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_type}{item\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059a}{item\+\_\+type}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_HEALING@{IT\_TYPE\_HEALING}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_HEALING@{IT\_TYPE\_HEALING}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa297f66991322aec1b9aa697748d19f86}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa297f66991322aec1b9aa697748d19f86} 
+IT\+\_\+\+TYPE\+\_\+\+HEALING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_UNKNOWN@{IT\_TYPE\_UNKNOWN}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_UNKNOWN@{IT\_TYPE\_UNKNOWN}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa4cc4ac30b9df98ca38ec81782d10daab}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa4cc4ac30b9df98ca38ec81782d10daab} 
+IT\+\_\+\+TYPE\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_USABLE@{IT\_TYPE\_USABLE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_USABLE@{IT\_TYPE\_USABLE}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa6633d9ffe831a0c681bdc02d708be13c}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa6633d9ffe831a0c681bdc02d708be13c} 
+IT\+\_\+\+TYPE\+\_\+\+USABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_ETC@{IT\_TYPE\_ETC}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_ETC@{IT\_TYPE\_ETC}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa0a87f51c6c7c8bf3d92e79b27e5ad8a1}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa0a87f51c6c7c8bf3d92e79b27e5ad8a1} 
+IT\+\_\+\+TYPE\+\_\+\+ETC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_WEAPON@{IT\_TYPE\_WEAPON}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_WEAPON@{IT\_TYPE\_WEAPON}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aac421c42fc32034a82fca2d6830ef7e0f}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aac421c42fc32034a82fca2d6830ef7e0f} 
+IT\+\_\+\+TYPE\+\_\+\+WEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_ARMOR@{IT\_TYPE\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_ARMOR@{IT\_TYPE\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aabec08b8ed299bc47af3e6041e287b180}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aabec08b8ed299bc47af3e6041e287b180} 
+IT\+\_\+\+TYPE\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_CARD@{IT\_TYPE\_CARD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_CARD@{IT\_TYPE\_CARD}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aad8cb040f0039aaf830a1f1446927bfdc}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aad8cb040f0039aaf830a1f1446927bfdc} 
+IT\+\_\+\+TYPE\+\_\+\+CARD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_PET\_EGG@{IT\_TYPE\_PET\_EGG}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_PET\_EGG@{IT\_TYPE\_PET\_EGG}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa4dedafc8bf2188e93929ed42470415e3}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa4dedafc8bf2188e93929ed42470415e3} 
+IT\+\_\+\+TYPE\+\_\+\+PET\+\_\+\+EGG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_PET\_ARMOR@{IT\_TYPE\_PET\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_PET\_ARMOR@{IT\_TYPE\_PET\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa15ad192d40578765af8abab1ccc65f15}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa15ad192d40578765af8abab1ccc65f15} 
+IT\+\_\+\+TYPE\+\_\+\+PET\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_UNKNOWN2@{IT\_TYPE\_UNKNOWN2}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_UNKNOWN2@{IT\_TYPE\_UNKNOWN2}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aae85f970b5d0acb6a1d1379dac5363dca}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aae85f970b5d0acb6a1d1379dac5363dca} 
+IT\+\_\+\+TYPE\+\_\+\+UNKNOWN2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_AMMO@{IT\_TYPE\_AMMO}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_AMMO@{IT\_TYPE\_AMMO}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aaf812c335686838f2645f6358c944ba6b}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aaf812c335686838f2645f6358c944ba6b} 
+IT\+\_\+\+TYPE\+\_\+\+AMMO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_CONSUMPTION\_DELAY@{IT\_TYPE\_CONSUMPTION\_DELAY}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_CONSUMPTION\_DELAY@{IT\_TYPE\_CONSUMPTION\_DELAY}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aab28a649179bbf8f810bd537f904a7029}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aab28a649179bbf8f810bd537f904a7029} 
+IT\+\_\+\+TYPE\+\_\+\+CONSUMPTION\+\_\+\+DELAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_CASH@{IT\_TYPE\_CASH}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_CASH@{IT\_TYPE\_CASH}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa24775e0c3fdd48f18f0cc4cb70db282d}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aa24775e0c3fdd48f18f0cc4cb70db282d} 
+IT\+\_\+\+TYPE\+\_\+\+CASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_TYPE\_MAX@{IT\_TYPE\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_TYPE\_MAX@{IT\_TYPE\_MAX}}}\Hypertarget{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aad8850420a437ae4b6e06afddbb7828c9}\label{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059aad8850420a437ae4b6e06afddbb7828c9} 
+IT\+\_\+\+TYPE\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599}\label{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_unequip\_result\_type@{item\_unequip\_result\_type}}
+\index{item\_unequip\_result\_type@{item\_unequip\_result\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_unequip\_result\_type}{item\_unequip\_result\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599}{item\+\_\+unequip\+\_\+result\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_UNEQUIP\_SUCCESS@{IT\_UNEQUIP\_SUCCESS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_UNEQUIP\_SUCCESS@{IT\_UNEQUIP\_SUCCESS}}}\Hypertarget{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599aebacdaf141704acb566a9a4ffb1cd2c5}\label{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599aebacdaf141704acb566a9a4ffb1cd2c5} 
+IT\+\_\+\+UNEQUIP\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_UNEQUIP\_FAIL@{IT\_UNEQUIP\_FAIL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_UNEQUIP\_FAIL@{IT\_UNEQUIP\_FAIL}}}\Hypertarget{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599ad752471900b9487f01419c069950e539}\label{_item_definitions_8hpp_abb55f35e10d1ee3d7104e0c3bf620599ad752471900b9487f01419c069950e539} 
+IT\+\_\+\+UNEQUIP\+\_\+\+FAIL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5}\label{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_usage\_restriction\_mask@{item\_usage\_restriction\_mask}}
+\index{item\_usage\_restriction\_mask@{item\_usage\_restriction\_mask}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_usage\_restriction\_mask}{item\_usage\_restriction\_mask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5}{item\+\_\+usage\+\_\+restriction\+\_\+mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IURMASK\_NONE@{IURMASK\_NONE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IURMASK\_NONE@{IURMASK\_NONE}}}\Hypertarget{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5a9a7c62b06428fb5b514faf7c6501cd64}\label{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5a9a7c62b06428fb5b514faf7c6501cd64} 
+IURMASK\+\_\+\+NONE&No restrictions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IURMASK\_SITTING@{IURMASK\_SITTING}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IURMASK\_SITTING@{IURMASK\_SITTING}}}\Hypertarget{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5af219f02892ae3cf3576c34214cb95990}\label{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5af219f02892ae3cf3576c34214cb95990} 
+IURMASK\+\_\+\+SITTING&Item can\textquotesingle{}t be used while sitting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IURMASK\_ALL@{IURMASK\_ALL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IURMASK\_ALL@{IURMASK\_ALL}}}\Hypertarget{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5ae24520b49bd12ed01f48479368d70fc8}\label{_item_definitions_8hpp_abcf38cad4be456c94237520b4ee1dab5ae24520b49bd12ed01f48479368d70fc8} 
+IURMASK\+\_\+\+ALL&Sum of all the above values. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_weapon\_type@{item\_weapon\_type}}
+\index{item\_weapon\_type@{item\_weapon\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_weapon\_type}{item\_weapon\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\+\_\+weapon\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_FIST@{IT\_WT\_FIST}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_FIST@{IT\_WT\_FIST}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa0230f49391fae3f066a761601afb2a21}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa0230f49391fae3f066a761601afb2a21} 
+IT\+\_\+\+WT\+\_\+\+FIST&Bare hands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DAGGER@{IT\_WT\_DAGGER}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DAGGER@{IT\_WT\_DAGGER}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faae5b0f19352751c675088c48e24ff6031}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faae5b0f19352751c675088c48e24ff6031} 
+IT\+\_\+\+WT\+\_\+\+DAGGER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_1HSWORD@{IT\_WT\_1HSWORD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_1HSWORD@{IT\_WT\_1HSWORD}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa03fadbfef4ecd574c769cbacfd63ceed}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa03fadbfef4ecd574c769cbacfd63ceed} 
+IT\+\_\+\+WT\+\_\+1\+HSWORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_2HSWORD@{IT\_WT\_2HSWORD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_2HSWORD@{IT\_WT\_2HSWORD}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faab497d5fe169bae5d45ccd34b290c80fd}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faab497d5fe169bae5d45ccd34b290c80fd} 
+IT\+\_\+\+WT\+\_\+2\+HSWORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_1HSPEAR@{IT\_WT\_1HSPEAR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_1HSPEAR@{IT\_WT\_1HSPEAR}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa5e3aeaa2095a43e9053d69633f58bf20}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa5e3aeaa2095a43e9053d69633f58bf20} 
+IT\+\_\+\+WT\+\_\+1\+HSPEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_2HSPEAR@{IT\_WT\_2HSPEAR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_2HSPEAR@{IT\_WT\_2HSPEAR}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa163ddeb907dfdba1f42c3288bb8fb1e6}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa163ddeb907dfdba1f42c3288bb8fb1e6} 
+IT\+\_\+\+WT\+\_\+2\+HSPEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_1HAXE@{IT\_WT\_1HAXE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_1HAXE@{IT\_WT\_1HAXE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faac6b6269889cba9707a8b45f231df870b}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faac6b6269889cba9707a8b45f231df870b} 
+IT\+\_\+\+WT\+\_\+1\+HAXE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_2HAXE@{IT\_WT\_2HAXE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_2HAXE@{IT\_WT\_2HAXE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2b944993e1ff65182737bd4dc343b325}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2b944993e1ff65182737bd4dc343b325} 
+IT\+\_\+\+WT\+\_\+2\+HAXE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_1HMACE@{IT\_WT\_1HMACE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_1HMACE@{IT\_WT\_1HMACE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faac7f034d20bd861f35f42f299509c9864}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faac7f034d20bd861f35f42f299509c9864} 
+IT\+\_\+\+WT\+\_\+1\+HMACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_2HMACE@{IT\_WT\_2HMACE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_2HMACE@{IT\_WT\_2HMACE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa1670bc37ecf9a8d7143deaf9fda9f8ef}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa1670bc37ecf9a8d7143deaf9fda9f8ef} 
+IT\+\_\+\+WT\+\_\+2\+HMACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_STAFF@{IT\_WT\_STAFF}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_STAFF@{IT\_WT\_STAFF}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7d54ca946184d6e5ce4ea8d3bbabac46}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7d54ca946184d6e5ce4ea8d3bbabac46} 
+IT\+\_\+\+WT\+\_\+\+STAFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_BOW@{IT\_WT\_BOW}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_BOW@{IT\_WT\_BOW}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2bd297d44e40418b8d333c4a289e3bfe}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2bd297d44e40418b8d333c4a289e3bfe} 
+IT\+\_\+\+WT\+\_\+\+BOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_KNUCKLE@{IT\_WT\_KNUCKLE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_KNUCKLE@{IT\_WT\_KNUCKLE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa90c2de7d6d035cf2fe87a118b18bd502}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa90c2de7d6d035cf2fe87a118b18bd502} 
+IT\+\_\+\+WT\+\_\+\+KNUCKLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_MUSICAL@{IT\_WT\_MUSICAL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_MUSICAL@{IT\_WT\_MUSICAL}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa6c016a60e57e3c7ecce7d170cd234376}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa6c016a60e57e3c7ecce7d170cd234376} 
+IT\+\_\+\+WT\+\_\+\+MUSICAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_WHIP@{IT\_WT\_WHIP}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_WHIP@{IT\_WT\_WHIP}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa658246f82310aba9799c140d63c62dd6}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa658246f82310aba9799c140d63c62dd6} 
+IT\+\_\+\+WT\+\_\+\+WHIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_BOOK@{IT\_WT\_BOOK}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_BOOK@{IT\_WT\_BOOK}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa60e9a57c6332d1cc0b47970646df3bee}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa60e9a57c6332d1cc0b47970646df3bee} 
+IT\+\_\+\+WT\+\_\+\+BOOK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_KATAR@{IT\_WT\_KATAR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_KATAR@{IT\_WT\_KATAR}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa109584bfef866ad95eaeab282e28bf45}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa109584bfef866ad95eaeab282e28bf45} 
+IT\+\_\+\+WT\+\_\+\+KATAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_REVOLVER@{IT\_WT\_REVOLVER}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_REVOLVER@{IT\_WT\_REVOLVER}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaec09e34e6ebe8474829bdd986cb5b50c}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaec09e34e6ebe8474829bdd986cb5b50c} 
+IT\+\_\+\+WT\+\_\+\+REVOLVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_RIFLE@{IT\_WT\_RIFLE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_RIFLE@{IT\_WT\_RIFLE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa298d27e9fddd9422cbab6cb0685ab997}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa298d27e9fddd9422cbab6cb0685ab997} 
+IT\+\_\+\+WT\+\_\+\+RIFLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_GATLING@{IT\_WT\_GATLING}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_GATLING@{IT\_WT\_GATLING}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa169498a8daa00b1d794d440a83e08629}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa169498a8daa00b1d794d440a83e08629} 
+IT\+\_\+\+WT\+\_\+\+GATLING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_SHOTGUN@{IT\_WT\_SHOTGUN}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_SHOTGUN@{IT\_WT\_SHOTGUN}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa3c891a309afd317283e24e384a1e5e78}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa3c891a309afd317283e24e384a1e5e78} 
+IT\+\_\+\+WT\+\_\+\+SHOTGUN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_GRENADE@{IT\_WT\_GRENADE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_GRENADE@{IT\_WT\_GRENADE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2132c5b670709943108637edbda6baa8}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2132c5b670709943108637edbda6baa8} 
+IT\+\_\+\+WT\+\_\+\+GRENADE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_HUUMA@{IT\_WT\_HUUMA}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_HUUMA@{IT\_WT\_HUUMA}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa4b80e2ee46b28ea2cea9f63ece36edd3}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa4b80e2ee46b28ea2cea9f63ece36edd3} 
+IT\+\_\+\+WT\+\_\+\+HUUMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_2HSTAFF@{IT\_WT\_2HSTAFF}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_2HSTAFF@{IT\_WT\_2HSTAFF}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa30ea967cb100573cead2b46f9097e36c}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa30ea967cb100573cead2b46f9097e36c} 
+IT\+\_\+\+WT\+\_\+2\+HSTAFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_SINGLE\_MAX@{IT\_WT\_SINGLE\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_SINGLE\_MAX@{IT\_WT\_SINGLE\_MAX}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaf89c2a1574bb2bc7581e226c78404c14}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaf89c2a1574bb2bc7581e226c78404c14} 
+IT\+\_\+\+WT\+\_\+\+SINGLE\+\_\+\+MAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DOUBLE\_DAGGERS@{IT\_WT\_DOUBLE\_DAGGERS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DOUBLE\_DAGGERS@{IT\_WT\_DOUBLE\_DAGGERS}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaf4df027e58e2b369a8f59ed91b55ec8b}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaf4df027e58e2b369a8f59ed91b55ec8b} 
+IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+DAGGERS&2 daggers \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DOUBLE\_SWORDS@{IT\_WT\_DOUBLE\_SWORDS}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DOUBLE\_SWORDS@{IT\_WT\_DOUBLE\_SWORDS}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa4a5b38c7a3c682c2715fab6fc1ed36d4}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa4a5b38c7a3c682c2715fab6fc1ed36d4} 
+IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+SWORDS&2 swords \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DOUBLE\_AXES@{IT\_WT\_DOUBLE\_AXES}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DOUBLE\_AXES@{IT\_WT\_DOUBLE\_AXES}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaeb87f918dae73e1365b3ffd38fcf021d}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faaeb87f918dae73e1365b3ffd38fcf021d} 
+IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+AXES&2 axes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DOUBLE\_DAGGER\_SWORD@{IT\_WT\_DOUBLE\_DAGGER\_SWORD}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DOUBLE\_DAGGER\_SWORD@{IT\_WT\_DOUBLE\_DAGGER\_SWORD}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7017bb95309d5cc12f4bc8e71f93b53d}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7017bb95309d5cc12f4bc8e71f93b53d} 
+IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+DAGGER\+\_\+\+SWORD&dagger + sword \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DOUBLE\_DAGGER\_AXE@{IT\_WT\_DOUBLE\_DAGGER\_AXE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DOUBLE\_DAGGER\_AXE@{IT\_WT\_DOUBLE\_DAGGER\_AXE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2774087aae7bceecd35afa9703eb8ad5}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa2774087aae7bceecd35afa9703eb8ad5} 
+IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+DAGGER\+\_\+\+AXE&dagger + axe \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_DOUBLE\_SWORD\_AXE@{IT\_WT\_DOUBLE\_SWORD\_AXE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_DOUBLE\_SWORD\_AXE@{IT\_WT\_DOUBLE\_SWORD\_AXE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faab1f23c6958a6e57a9b2da3d9e0cf6eaf}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faab1f23c6958a6e57a9b2da3d9e0cf6eaf} 
+IT\+\_\+\+WT\+\_\+\+DOUBLE\+\_\+\+SWORD\+\_\+\+AXE&sword + axe \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WT\_MAX\_WEAPON\_TYPE@{IT\_WT\_MAX\_WEAPON\_TYPE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WT\_MAX\_WEAPON\_TYPE@{IT\_WT\_MAX\_WEAPON\_TYPE}}}\Hypertarget{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7e84aedef694b59ee2a3e989f84a5b71}\label{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa7e84aedef694b59ee2a3e989f84a5b71} 
+IT\+\_\+\+WT\+\_\+\+MAX\+\_\+\+WEAPON\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_aba673059b5c209682501405134e1e59a}\label{_item_definitions_8hpp_aba673059b5c209682501405134e1e59a} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!item\_weapon\_type\_mask@{item\_weapon\_type\_mask}}
+\index{item\_weapon\_type\_mask@{item\_weapon\_type\_mask}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{item\_weapon\_type\_mask}{item\_weapon\_type\_mask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_aba673059b5c209682501405134e1e59a}{item\+\_\+weapon\+\_\+type\+\_\+mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WTM\_RANGED@{IT\_WTM\_RANGED}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WTM\_RANGED@{IT\_WTM\_RANGED}}}\Hypertarget{_item_definitions_8hpp_aba673059b5c209682501405134e1e59aafaa0f5d19470098800f1c8fec01166f2}\label{_item_definitions_8hpp_aba673059b5c209682501405134e1e59aafaa0f5d19470098800f1c8fec01166f2} 
+IT\+\_\+\+WTM\+\_\+\+RANGED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IT\_WTM\_MELEE@{IT\_WTM\_MELEE}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!IT\_WTM\_MELEE@{IT\_WTM\_MELEE}}}\Hypertarget{_item_definitions_8hpp_aba673059b5c209682501405134e1e59aa8ecd49a9aeef2436631662d30e5b921c}\label{_item_definitions_8hpp_aba673059b5c209682501405134e1e59aa8ecd49a9aeef2436631662d30e5b921c} 
+IT\+\_\+\+WTM\+\_\+\+MELEE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ff}\label{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ff} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!refine\_chance\_type@{refine\_chance\_type}}
+\index{refine\_chance\_type@{refine\_chance\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{refine\_chance\_type}{refine\_chance\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ff}{refine\+\_\+chance\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_CHANCE\_TYPE\_NORMAL@{REFINE\_CHANCE\_TYPE\_NORMAL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_CHANCE\_TYPE\_NORMAL@{REFINE\_CHANCE\_TYPE\_NORMAL}}}\Hypertarget{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffac8af3a9e22d7070aed197a7b26701e1c}\label{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffac8af3a9e22d7070aed197a7b26701e1c} 
+REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_CHANCE\_TYPE\_ENRICHED@{REFINE\_CHANCE\_TYPE\_ENRICHED}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_CHANCE\_TYPE\_ENRICHED@{REFINE\_CHANCE\_TYPE\_ENRICHED}}}\Hypertarget{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffa32e0d63fd55017cf0586e9abac61b22b}\label{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffa32e0d63fd55017cf0586e9abac61b22b} 
+REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+ENRICHED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_CHANCE\_TYPE\_E\_NORMAL@{REFINE\_CHANCE\_TYPE\_E\_NORMAL}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_CHANCE\_TYPE\_E\_NORMAL@{REFINE\_CHANCE\_TYPE\_E\_NORMAL}}}\Hypertarget{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffaa6db5329912c5fcebd22037e6bfdf102}\label{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffaa6db5329912c5fcebd22037e6bfdf102} 
+REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+E\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_CHANCE\_TYPE\_E\_ENRICHED@{REFINE\_CHANCE\_TYPE\_E\_ENRICHED}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_CHANCE\_TYPE\_E\_ENRICHED@{REFINE\_CHANCE\_TYPE\_E\_ENRICHED}}}\Hypertarget{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffadf401c1d41e748fb2466b12bff72c61e}\label{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffadf401c1d41e748fb2466b12bff72c61e} 
+REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+E\+\_\+\+ENRICHED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_CHANCE\_TYPE\_MAX@{REFINE\_CHANCE\_TYPE\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_CHANCE\_TYPE\_MAX@{REFINE\_CHANCE\_TYPE\_MAX}}}\Hypertarget{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffa651b342d16da140392add471bc5d7fff}\label{_item_definitions_8hpp_ac3d7c6b81de5d6694de525d9ae3f48ffa651b342d16da140392add471bc5d7fff} 
+REFINE\+\_\+\+CHANCE\+\_\+\+TYPE\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23} 
+\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!refine\_type@{refine\_type}}
+\index{refine\_type@{refine\_type}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{refine\_type}{refine\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23}{refine\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_TYPE\_ARMOR@{REFINE\_TYPE\_ARMOR}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_TYPE\_ARMOR@{REFINE\_TYPE\_ARMOR}}}\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a26698a12c788aa2bf03332c7439be834}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a26698a12c788aa2bf03332c7439be834} 
+REFINE\+\_\+\+TYPE\+\_\+\+ARMOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_TYPE\_WEAPON1@{REFINE\_TYPE\_WEAPON1}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_TYPE\_WEAPON1@{REFINE\_TYPE\_WEAPON1}}}\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a1ac8b855fa9ed891b4aedf444e456079}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a1ac8b855fa9ed891b4aedf444e456079} 
+REFINE\+\_\+\+TYPE\+\_\+\+WEAPON1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_TYPE\_WEAPON2@{REFINE\_TYPE\_WEAPON2}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_TYPE\_WEAPON2@{REFINE\_TYPE\_WEAPON2}}}\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a76913bff83fe39e3a96f88d1ef655f46}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a76913bff83fe39e3a96f88d1ef655f46} 
+REFINE\+\_\+\+TYPE\+\_\+\+WEAPON2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_TYPE\_WEAPON3@{REFINE\_TYPE\_WEAPON3}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_TYPE\_WEAPON3@{REFINE\_TYPE\_WEAPON3}}}\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23ab23bd54b1fdfc98a48abfbab8e347707}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23ab23bd54b1fdfc98a48abfbab8e347707} 
+REFINE\+\_\+\+TYPE\+\_\+\+WEAPON3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_TYPE\_WEAPON4@{REFINE\_TYPE\_WEAPON4}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_TYPE\_WEAPON4@{REFINE\_TYPE\_WEAPON4}}}\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a1c6e48c0735888bb6edc9597d05a37bc}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23a1c6e48c0735888bb6edc9597d05a37bc} 
+REFINE\+\_\+\+TYPE\+\_\+\+WEAPON4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REFINE\_TYPE\_MAX@{REFINE\_TYPE\_MAX}!ItemDefinitions.hpp@{ItemDefinitions.hpp}}\index{ItemDefinitions.hpp@{ItemDefinitions.hpp}!REFINE\_TYPE\_MAX@{REFINE\_TYPE\_MAX}}}\Hypertarget{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23ab17a09def74a3fdbe71f4adcc66d10dd}\label{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23ab17a09def74a3fdbe71f4adcc66d10dd} 
+REFINE\+\_\+\+TYPE\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}

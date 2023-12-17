@@ -1,0 +1,87 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\+Combat.hpp File Reference}
+\hypertarget{_combat_8hpp}{}\label{_combat_8hpp}\index{src/Server/Zone/Game/Entities/Battle/Combat.hpp@{src/Server/Zone/Game/Entities/Battle/Combat.hpp}}
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Combat\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Entity.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Multithreading/\+Thread\+Safe\+Queue.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Traits/\+Attribute.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Skill\+System/\+Skill\+Execution.\+hpp"{}}\newline
+Include dependency graph for Combat.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_combat_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_combat_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry}{Horizon\+::\+Zone\+::\+Combat\+Registry}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+Value}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_value_integer}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Value\+Integer}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_value_damage}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Value\+Damage}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_value_healing}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Value\+Healing}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_attribute_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Attribute\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_attribute_operation_1_1_attribute_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Attribute\+Operation\+::\+Attribute\+Operand}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_status_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Status\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_status_operation_1_1_status_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Status\+Operation\+::\+Status\+Operand}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_status_operation_1_1_status_operand_1_1s__combat__status__operation__config}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Status\+Operation\+::\+Status\+Operand\+::s\+\_\+combat\+\_\+status\+\_\+operation\+\_\+config}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_execution_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Execution\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_execution_operation_1_1_skill_execution_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Execution\+Operation\+::\+Skill\+Execution\+Operand}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_skill_execution_operation_1_1_skill_execution_op2ce824aae0cf3beac567c6aa7c38d3f4}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Execution\+Operation\+::\+Skill\+Execution\+Operand\+::s\+\_\+skill\+\_\+execution\+\_\+operation\+\_\+config}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_result_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Result\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_result_operation_1_1_skill_result_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Result\+Operation\+::\+Skill\+Result\+Operand}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_skill_result_operation_1_1_skill_result_operand_272814ca553d56a000e0fa81b13c683d}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Result\+Operation\+::\+Skill\+Result\+Operand\+::s\+\_\+skill\+\_\+result\+\_\+operation\+\_\+config}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Execution\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation_1_1_melee_execution_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Execution\+Operation\+::\+Melee\+Execution\+Operand}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation_1_1_melee_execution_op95081be12c19fc39626d90ff3386181b}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Execution\+Operation\+::\+Melee\+Execution\+Operand\+::s\+\_\+melee\+\_\+execution\+\_\+operation\+\_\+config}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_result_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Result\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_result_operation_1_1_melee_result_operand}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Result\+Operation\+::\+Melee\+Result\+Operand}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_compare_combat_operation}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Compare\+Combat\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_stage}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Stage}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_compare_combat_stage}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Compare\+Combat\+Stage}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat}{Horizon\+::\+Zone\+::\+Combat}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone}{Horizon\+::\+Zone}}
+\end{DoxyCompactItemize}

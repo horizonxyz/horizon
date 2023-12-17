@@ -1,0 +1,175 @@
+\doxysection{Grid\+Entity\+Skill\+Use\+Notifier Struct Reference}
+\hypertarget{struct_grid_entity_skill_use_notifier}{}\label{struct_grid_entity_skill_use_notifier}\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+
+
+{\ttfamily \#include $<$Grid\+Notifiers.\+hpp$>$}
+
+
+
+Collaboration diagram for Grid\+Entity\+Skill\+Use\+Notifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{struct_grid_entity_skill_use_notifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid_entity_skill_use_notifier_af62025435b7d570ea71dd030afc9e1c5}{Grid\+Entity\+Skill\+Use\+Notifier}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \&entity, \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notification\+\_\+type}} notification\+\_\+type, \mbox{\hyperlink{structs__entity__skill__use__notifier__config}{s\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notifier\+\_\+config}} config)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_ad4ff4d11f7b4e32a350aeeb26284eaa6}{notify}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_afd354a367b3a5e661f9616447f7951b4}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})$>$ \&m)
+\item 
+{\footnotesize template$<$class NOT\+\_\+\+INTERESTED $>$ }\\void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a1db16aa3c6e273be4dab1f09f8494358}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a10154338ba3dffe5e47a42d975b6b5ef}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_n_p_c}{NPC}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a896148541c6bad8fe46a6286e8728392}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_elemental}{Elemental}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_aaf546c0db1974ba2807851602788d289}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_homunculus}{Homunculus}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a4e6cf2e6dab15b673d874cc2481f183a}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_mercenary}{Mercenary}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_aa897710bfbca599de2d085e80ef22c50}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_pet}{Pet}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_ac2fc7555713f8e515e4c0767766efda6}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a446d62d75175cedd2b274c67cde708df}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_skill}{Skill}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_afbeea341dc310203832505bb0f1536a3}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_item}{Item}} $>$ \&m)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a6ce26ff74f1d8687a9c6d1e1652c6f71}{\+\_\+entity}}
+\item 
+\mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notification\+\_\+type}} \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a6dbfddfa050a1025ac9f3b63b89d83f5}{\+\_\+notification\+\_\+type}}
+\item 
+\mbox{\hyperlink{structs__entity__skill__use__notifier__config}{s\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notifier\+\_\+config}} \mbox{\hyperlink{struct_grid_entity_skill_use_notifier_a7a2c20f16b82b16abc4c352be096b349}{\+\_\+config}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_grid_entity_skill_use_notifier_af62025435b7d570ea71dd030afc9e1c5}\label{struct_grid_entity_skill_use_notifier_af62025435b7d570ea71dd030afc9e1c5} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{GridEntitySkillUseNotifier()}{GridEntitySkillUseNotifier()}}
+{\footnotesize\ttfamily Grid\+Entity\+Skill\+Use\+Notifier\+::\+Grid\+Entity\+Skill\+Use\+Notifier (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \&}]{entity,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notification\+\_\+type}}}]{notification\+\_\+type,  }\item[{\mbox{\hyperlink{structs__entity__skill__use__notifier__config}{s\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notifier\+\_\+config}}}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_grid_entity_skill_use_notifier_ad4ff4d11f7b4e32a350aeeb26284eaa6}\label{struct_grid_entity_skill_use_notifier_ad4ff4d11f7b4e32a350aeeb26284eaa6} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!notify@{notify}}
+\index{notify@{notify}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&}]{m }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_entity_skill_use_notifier_ad4ff4d11f7b4e32a350aeeb26284eaa6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_grid_entity_skill_use_notifier_a896148541c6bad8fe46a6286e8728392}\label{struct_grid_entity_skill_use_notifier_a896148541c6bad8fe46a6286e8728392} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_elemental}{Elemental}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_afd354a367b3a5e661f9616447f7951b4}\label{struct_grid_entity_skill_use_notifier_afd354a367b3a5e661f9616447f7951b4} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_aaf546c0db1974ba2807851602788d289}\label{struct_grid_entity_skill_use_notifier_aaf546c0db1974ba2807851602788d289} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_homunculus}{Homunculus}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_afbeea341dc310203832505bb0f1536a3}\label{struct_grid_entity_skill_use_notifier_afbeea341dc310203832505bb0f1536a3} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_item}{Item}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_a4e6cf2e6dab15b673d874cc2481f183a}\label{struct_grid_entity_skill_use_notifier_a4e6cf2e6dab15b673d874cc2481f183a} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_mercenary}{Mercenary}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_ac2fc7555713f8e515e4c0767766efda6}\label{struct_grid_entity_skill_use_notifier_ac2fc7555713f8e515e4c0767766efda6} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_a1db16aa3c6e273be4dab1f09f8494358}\label{struct_grid_entity_skill_use_notifier_a1db16aa3c6e273be4dab1f09f8494358} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$class NOT\+\_\+\+INTERESTED $>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_a10154338ba3dffe5e47a42d975b6b5ef}\label{struct_grid_entity_skill_use_notifier_a10154338ba3dffe5e47a42d975b6b5ef} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_n_p_c}{NPC}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_aa897710bfbca599de2d085e80ef22c50}\label{struct_grid_entity_skill_use_notifier_aa897710bfbca599de2d085e80ef22c50} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_pet}{Pet}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_a446d62d75175cedd2b274c67cde708df}\label{struct_grid_entity_skill_use_notifier_a446d62d75175cedd2b274c67cde708df} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Skill\+Use\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_skill}{Skill}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_grid_entity_skill_use_notifier_a7a2c20f16b82b16abc4c352be096b349}\label{struct_grid_entity_skill_use_notifier_a7a2c20f16b82b16abc4c352be096b349} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!\_config@{\_config}}
+\index{\_config@{\_config}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{\_config}{\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs__entity__skill__use__notifier__config}{s\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notifier\+\_\+config}} Grid\+Entity\+Skill\+Use\+Notifier\+::\+\_\+config}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_a6ce26ff74f1d8687a9c6d1e1652c6f71}\label{struct_grid_entity_skill_use_notifier_a6ce26ff74f1d8687a9c6d1e1652c6f71} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!\_entity@{\_entity}}
+\index{\_entity@{\_entity}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{\_entity}{\_entity}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}}$>$ Grid\+Entity\+Skill\+Use\+Notifier\+::\+\_\+entity}
+
+\Hypertarget{struct_grid_entity_skill_use_notifier_a6dbfddfa050a1025ac9f3b63b89d83f5}\label{struct_grid_entity_skill_use_notifier_a6dbfddfa050a1025ac9f3b63b89d83f5} 
+\index{GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}!\_notification\_type@{\_notification\_type}}
+\index{\_notification\_type@{\_notification\_type}!GridEntitySkillUseNotifier@{GridEntitySkillUseNotifier}}
+\doxysubsubsection{\texorpdfstring{\_notification\_type}{\_notification\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notification\+\_\+type}} Grid\+Entity\+Skill\+Use\+Notifier\+::\+\_\+notification\+\_\+type}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8hpp}{Grid\+Notifiers.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8cpp}{Grid\+Notifiers.\+cpp}}\end{DoxyCompactItemize}

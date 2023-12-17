@@ -1,0 +1,147 @@
+\doxysection{Inter\+Server\+API.\+hpp}
+\hypertarget{_inter_server_a_p_i_8hpp_source}{}\label{_inter_server_a_p_i_8hpp_source}\index{src/Server/Common/Interfaces/InterServerAPI.hpp@{src/Server/Common/Interfaces/InterServerAPI.hpp}}
+\mbox{\hyperlink{_inter_server_a_p_i_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_INTERFACES\_INTERSERVERAPI\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_INTERFACES\_INTERSERVERAPI\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}Server/Common/Models/GameAccount.hpp"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}Server/Common/Models/SessionData.hpp"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }Interface}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SessionType>}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{InterServerAPI}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_af4a208c4f4d8e9449a94ef7e381f9057}{InterServerAPI}}()}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a2479e950d2c48643cce80f5014a50b44}{\string~InterServerAPI}}()}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::shared\_ptr<Horizon::Models::SessionData>\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a1dc6b8e5b4738edb4e90457e38a2179b}{get\_session\_data}}(uint32\_t\ auth\_code)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ std::shared\_ptr<SessionData>\ session\_data\ =\ std::make\_shared<Horizon::Models::SessionData>();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ PACKET\_CI\_SESSION\_REQ\ send\_pkt;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ PACKET\_IC\_SESSION\_REQ\_ACK\ recv\_pkt;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ send\_pkt.auth\_code\ =\ auth\_code;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>send\_and\_receive\_packet(send\_pkt,\ \&recv\_pkt)\ ==\ Horizon::Base::inter\_packets::IC\_SESSION\_REQ\_ACK)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ *session\_data\ <<\ recv\_pkt.s;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ session\_data;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a25b687f91d87e7fa2b72dbb05dff3d85}{request\_authorisation}}()}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>Send\_CI\_CONNECT\_AUTH();}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_abc4946e1f5adbb513d4aa9046d89a332}{delete\_session}}(uint32\_t\ auth\_code)}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>Send\_CI\_SESSION\_DEL(auth\_code);}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_ae809fd1894173032a4bf93cee001da83}{store\_session\_data}}(std::shared\_ptr<Horizon::Models::SessionData>\ \textcolor{keyword}{const}\ \&session\_data)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>Send\_CI\_SESSION\_SET(*session\_data);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::shared\_ptr<Horizon::Models::GameAccount>\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_acba7f5344aac409b8d6d448022e421a2}{get\_game\_account}}(uint32\_t\ account\_id)}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::shared\_ptr<Horizon::Models::GameAccount>\ game\_account\ =\ std::make\_shared<Horizon::Models::GameAccount>();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ PACKET\_CI\_GAME\_ACCOUNT\_REQ\ send\_pkt;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ PACKET\_IC\_GAME\_ACCOUNT\_REQ\_ACK\ recv\_pkt;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ send\_pkt.account\_id\ =\ account\_id;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>send\_and\_receive\_packet(send\_pkt,\ \&recv\_pkt)\ ==\ Horizon::Base::inter\_packets::IC\_GAME\_ACCOUNT\_REQ\_ACK)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ *game\_account\ <<\ recv\_pkt.s;}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game\_account;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a85370d41a09eaee02b63b597b3cb667e}{delete\_game\_account}}(uint32\_t\ account\_id)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>Send\_CI\_GAME\_ACCOUNT\_DEL(account\_id);}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_aec7074ce31f5428dc9854199771f87e5}{store\_game\_account}}(std::shared\_ptr<Horizon::Models::GameAccount>\ game\_account)}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>Send\_CI\_GAME\_ACCOUNT\_SET(*game\_account);}
+\DoxyCodeLine{00150\ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a3412c77d6e6ac4813feba6d188cce83d}{ping\_inter\_server}}()}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ PACKET\_CI\_PING\ send\_pkt;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ PACKET\_IC\_PONG\ recv\_pkt;}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inter\_socket\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ \_inter\_socket-\/>get\_session()\ \&\&\ \_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\_inter\_socket-\/>get\_session()-\/>get\_packet\_handler()-\/>send\_and\_receive\_packet(send\_pkt,\ \&recv\_pkt)\ ==\ Horizon::Base::inter\_packets::IC\_PONG)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ std::shared\_ptr<SessionType>\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_afb9b28f0f0494cab3ff3c72b10070ee7}{get\_inter\_socket}}()\ \{\ \textcolor{keywordflow}{return}\ std::atomic\_load(\&\_inter\_socket);\ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a8f2e483ef14b4f1d8f72e4f201d928ad}{set\_inter\_socket}}(std::shared\_ptr<SessionType>\ socket)\ \{\ std::atomic\_store(\&\_inter\_socket,\ socket);\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00168\ \ \ \ \ std::shared\_ptr<SessionType>\ \_inter\_socket;}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_INTERFACES\_INTER\_SERVER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

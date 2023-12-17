@@ -1,0 +1,61 @@
+\doxysection{src/\+Server/\+Common/\+Server.hpp File Reference}
+\hypertarget{_server_8hpp}{}\label{_server_8hpp}\index{src/Server/Common/Server.hpp@{src/Server/Common/Server.hpp}}
+{\ttfamily \#include "{}CLI/\+CLICommand.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Database/\+Connection\+Pool.\+hpp"{}}\newline
+Include dependency graph for Server.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_server_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_server_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_server}{Server}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} \{ \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567bab0abc6b9be041e5b476bbabe5d21ecd7}{SHUTDOWN\+\_\+\+NOT\+\_\+\+STARTED}} = 0
+, \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567baf9cc470777291615c0b41054277f8ba3}{SHUTDOWN\+\_\+\+INITIATED}} = 1
+, \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567bae9a2b0a4c342ed87b856b474788b493e}{SHUTDOWN\+\_\+\+CLEANUP\+\_\+\+COMPLETE}} = 2
+, \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567ba1ac9ae29771c5095efe16ce822d561d7}{SHUTDOWN\+\_\+\+COMPLETE}} = 3
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_server_8hpp_a9b41a641afff82ad642c95c60610567b}\label{_server_8hpp_a9b41a641afff82ad642c95c60610567b} 
+\index{Server.hpp@{Server.hpp}!shutdown\_stages@{shutdown\_stages}}
+\index{shutdown\_stages@{shutdown\_stages}!Server.hpp@{Server.hpp}}
+\doxysubsubsection{\texorpdfstring{shutdown\_stages}{shutdown\_stages}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHUTDOWN\_NOT\_STARTED@{SHUTDOWN\_NOT\_STARTED}!Server.hpp@{Server.hpp}}\index{Server.hpp@{Server.hpp}!SHUTDOWN\_NOT\_STARTED@{SHUTDOWN\_NOT\_STARTED}}}\Hypertarget{_server_8hpp_a9b41a641afff82ad642c95c60610567bab0abc6b9be041e5b476bbabe5d21ecd7}\label{_server_8hpp_a9b41a641afff82ad642c95c60610567bab0abc6b9be041e5b476bbabe5d21ecd7} 
+SHUTDOWN\+\_\+\+NOT\+\_\+\+STARTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHUTDOWN\_INITIATED@{SHUTDOWN\_INITIATED}!Server.hpp@{Server.hpp}}\index{Server.hpp@{Server.hpp}!SHUTDOWN\_INITIATED@{SHUTDOWN\_INITIATED}}}\Hypertarget{_server_8hpp_a9b41a641afff82ad642c95c60610567baf9cc470777291615c0b41054277f8ba3}\label{_server_8hpp_a9b41a641afff82ad642c95c60610567baf9cc470777291615c0b41054277f8ba3} 
+SHUTDOWN\+\_\+\+INITIATED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHUTDOWN\_CLEANUP\_COMPLETE@{SHUTDOWN\_CLEANUP\_COMPLETE}!Server.hpp@{Server.hpp}}\index{Server.hpp@{Server.hpp}!SHUTDOWN\_CLEANUP\_COMPLETE@{SHUTDOWN\_CLEANUP\_COMPLETE}}}\Hypertarget{_server_8hpp_a9b41a641afff82ad642c95c60610567bae9a2b0a4c342ed87b856b474788b493e}\label{_server_8hpp_a9b41a641afff82ad642c95c60610567bae9a2b0a4c342ed87b856b474788b493e} 
+SHUTDOWN\+\_\+\+CLEANUP\+\_\+\+COMPLETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHUTDOWN\_COMPLETE@{SHUTDOWN\_COMPLETE}!Server.hpp@{Server.hpp}}\index{Server.hpp@{Server.hpp}!SHUTDOWN\_COMPLETE@{SHUTDOWN\_COMPLETE}}}\Hypertarget{_server_8hpp_a9b41a641afff82ad642c95c60610567ba1ac9ae29771c5095efe16ce822d561d7}\label{_server_8hpp_a9b41a641afff82ad642c95c60610567ba1ac9ae29771c5095efe16ce822d561d7} 
+SHUTDOWN\+\_\+\+COMPLETE&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,82 @@
+\doxysection{Auth\+Session.\+hpp}
+\hypertarget{_auth_session_8hpp_source}{}\label{_auth_session_8hpp_source}\index{src/Server/Auth/Session/AuthSession.hpp@{src/Server/Auth/Session/AuthSession.hpp}}
+\mbox{\hyperlink{_auth_session_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{*\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{*\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{*}}
+\DoxyCodeLine{00014\ \textcolor{comment}{*\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{*\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{**************************************************/}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_AUTH\_AUTHSESSION\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_AUTH\_AUTHSESSION\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_session_8hpp}{Libraries/Networking/Session.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'S'}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_sakray_2_client_packet_length_table_8hpp}{Server/Auth/Packets/Sakray/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_r_e_2_client_packet_length_table_8hpp}{Server/Auth/Packets/RE/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_zero_2_client_packet_length_table_8hpp}{Server/Auth/Packets/Zero/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_ragexe_2_client_packet_length_table_8hpp}{Server/Auth/Packets/Ragexe/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'A'}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp}{Server/Auth/Packets/AD/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{namespace\ }Auth}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }AuthClientInterface;}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }AuthSocket;}
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon::Networking::Session}}<AuthSocket,\ AuthSession>}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}(int64\_t\ uid,\ std::shared\_ptr<AuthSocket>\ socket);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a06ddc2628c4eace2ffbedcd23f2789f3}{\string~AuthSession}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*\ */}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a69e47e11613357cb4cd19d27c659856b}{initialize}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_ab9a1c7b99c8500463e38e794f7cb98e9}{update}}(uint32\_t\ diff);}
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ std::unique\_ptr<AuthClientInterface>\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a6c3df7550ef43582e34f1b0753b9bf76}{clif}}()\ \{\ \textcolor{keywordflow}{return}\ \_clif;\ \}}
+\DoxyCodeLine{00066\ \ \ \ \ std::unique\_ptr<ClientPacketLengthTable>\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a674a374762192b71b538662bb0a23c04}{pkt\_tbl}}()\ \{\ \textcolor{keywordflow}{return}\ \_pkt\_tbl;\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a39088a14a2a9ab1902dea8999e211798}{transmit\_buffer}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \_buffer,\ std::size\_t\ size);}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ std::unique\_ptr<AuthClientInterface>\ \_clif;}
+\DoxyCodeLine{00072\ \ \ \ \ std::unique\_ptr<ClientPacketLengthTable>\ \_pkt\_tbl;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_SESSION\_AuthSession\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

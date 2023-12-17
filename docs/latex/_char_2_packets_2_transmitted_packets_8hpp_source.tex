@@ -1,0 +1,1250 @@
+\doxysection{Transmitted\+Packets.\+hpp}
+\hypertarget{_char_2_packets_2_transmitted_packets_8hpp_source}{}\label{_char_2_packets_2_transmitted_packets_8hpp_source}\index{src/Server/Char/Packets/TransmittedPackets.hpp@{src/Server/Char/Packets/TransmittedPackets.hpp}}
+\mbox{\hyperlink{_char_2_packets_2_transmitted_packets_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sephus.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CHAR\_TRANSMITTED\_PACKETS\_HPP}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HORIZON\_CHAR\_TRANSMITTED\_PACKETS\_HPP}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_network_packet_8hpp}{Server/Common/Base/NetworkPacket.hpp}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }Char}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }CharSession;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_o_u_n_t___i_d}{HC\_ACCOUNT\_ID}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_o_u_n_t___i_d_a9dbb791bd758a39add1fe159fcba7bb7}{HC\_ACCOUNT\_ID}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}(0,\ s)}
+\DoxyCodeLine{00048\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_o_u_n_t___i_d_a689a25badde922bcabbd066ed8a92d6d}{\string~HC\_ACCOUNT\_ID}}()\ \{\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_o_u_n_t___i_d_afff741976bb776f146be0fa1c2f0b127}{deliver}}(int32\_t\ account\_id);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\&\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_o_u_n_t___i_d_ae8991248b182dee202a67f3a26596bc5}{serialize}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00055\ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_o_u_n_t___i_d_a4c1aa55e6c3e81d49b57b00c0aa71d2c}{\_account\_id}};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}}\ =\ 0x006f}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00063\ \mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}}\ =\ 0x006f}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}}\ =\ 0x006f}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}}\ =\ 0x006f}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00072\ \mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}}\ =\ 0x006f}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00081\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___d_e_l_e_t_e_c_h_a_r}{HC\_ACCEPT\_DELETECHAR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___d_e_l_e_t_e_c_h_a_r_a9ef2423aa605532c893b6bc4c547614d}{HC\_ACCEPT\_DELETECHAR}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00085\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a262ae4911605d6fa982afbdc4215f8ddafae47aaaff8af5dfdd55061143f40693}{ID\_HC\_ACCEPT\_DELETECHAR}},\ s)}
+\DoxyCodeLine{00086\ \ \ \ \ \{\}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___d_e_l_e_t_e_c_h_a_r_aadfa8af540091f7709a096448af8620b}{\string~HC\_ACCEPT\_DELETECHAR}}()\ \{\}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___d_e_l_e_t_e_c_h_a_r_a6fb1182e887f79ce2f160b3121d901da}{deliver}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___d_e_l_e_t_e_c_h_a_r_ad382d04252494e07f85518c0b6f6196f}{serialize}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}}\ =\ 0x006b}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00101\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}}\ =\ 0x006b}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00104\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}}\ =\ 0x006b}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00107\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}}\ =\ 0x006b}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00110\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}}\ =\ 0x006b}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00112\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00119\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r}{HC\_ACCEPT\_ENTER}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_adbfebfe9e1a2835d7b4fbde40aa7bf3f}{HC\_ACCEPT\_ENTER}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00123\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_ad46693bdee3df870ae681810b88af213a0f3b5ab26074d9c663525e70009ba340}{ID\_HC\_ACCEPT\_ENTER}},\ s)}
+\DoxyCodeLine{00124\ \ \ \ \ \{\}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_a3ff9d65ac466a339d1e21c0564092384}{\string~HC\_ACCEPT\_ENTER}}()\ \{\}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_acede89b7172d3245878eb95e4bd66b09}{prepare}}(uint32\_t\ account\_id,\ uint8\_t\ max\_char\_slots,\ uint8\_t\ permitted\_slots,\ uint8\_t\ total\_premium\_slots);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_a26ecd6e329e4ca29f4c9e38f52a7f129}{deliver}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_aec10a12b69480306e79ba6f644f95396}{serialize}}();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00132\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_ac3b26ef8b2bf80810cb58324588c0151}{\_packet\_length}}\{\ 24\ \};}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#if\ PACKET\_VERSION\ >=\ 20100413}}
+\DoxyCodeLine{00134\ \ \ \ \ uint8\_t\ \_max\_char\_slots\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00135\ \ \ \ \ uint8\_t\ \_permitted\_slots\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{//\ Total\ premium\ slots\ out\ of\ the\ max\_char\_slots\ which\ are\ premium.\ (if\ not\ permitted\ will\ show\ red)}}
+\DoxyCodeLine{00137\ \ \ \ \ uint8\_t\ \_total\_premium\_slots\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00139\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_a557782a0b98fbd5e8a9d7c1644bd6885}{\_unknown\_bytes}}[20]\{\ 0\ \};\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ std::vector<s\_hc\_character\_list\_data>\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r_a66552d4c040a4309a888c544995634b2}{\_characters}};}
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20101221}}
+\DoxyCodeLine{00147\ \mbox{\hyperlink{namespace_horizon_1_1_char_a31422d0bc1e535b3434f019acbe0f039a1cb679fda54ef6d855e41a702e9f8d8e}{ID\_HC\_ACCEPT\_ENTER2}}\ =\ 0x082d}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20101221}}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{namespace_horizon_1_1_char_a31422d0bc1e535b3434f019acbe0f039a1cb679fda54ef6d855e41a702e9f8d8e}{ID\_HC\_ACCEPT\_ENTER2}}\ =\ 0x082d}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00153\ \mbox{\hyperlink{namespace_horizon_1_1_char_a31422d0bc1e535b3434f019acbe0f039a1cb679fda54ef6d855e41a702e9f8d8e}{ID\_HC\_ACCEPT\_ENTER2}}\ =\ 0x082d}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00155\ \mbox{\hyperlink{namespace_horizon_1_1_char_a31422d0bc1e535b3434f019acbe0f039a1cb679fda54ef6d855e41a702e9f8d8e}{ID\_HC\_ACCEPT\_ENTER2}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00162\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2}{HC\_ACCEPT\_ENTER2}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00163\ \{}
+\DoxyCodeLine{00164\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_adedc0df990c04d3d38c4a2fb8f3dbe87}{HC\_ACCEPT\_ENTER2}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00166\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a31422d0bc1e535b3434f019acbe0f039a1cb679fda54ef6d855e41a702e9f8d8e}{ID\_HC\_ACCEPT\_ENTER2}},\ s)}
+\DoxyCodeLine{00167\ \ \ \ \ \{\}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_aee3d788a3f5f25bb051dae83bd3190e1}{\string~HC\_ACCEPT\_ENTER2}}()\ \{\}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_a9a80591dc101c6a9c175fd633bcb61c2}{deliver}}(uint8\_t\ total\_slots,\ uint8\_t\ premium\_slots);}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\&\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_a81f150b2fe2a1c9abca4448b0d7f729a}{serialize}}();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00174\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_ad72ef4eba678f455b9a4782122b1633a}{\_packet\_length}}\{\ 29\ \};}
+\DoxyCodeLine{00175\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_a02f709f56e23bdd5e23d9d36d161b15f}{\_total\_slots}}\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00176\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_a51ae7903c541bb5eeecea48d648e5b84}{\_premium\_slots}}\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00177\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_aed3ee01eb8699ed168f204b4c5e9da2b}{\_unknown\_byte}}\{\ 0\ \};}
+\DoxyCodeLine{00178\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_a9bce8b144346fc8b78dfeefb89f4407b}{\_char\_slots\_1}}\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00179\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_ab59d1199ff89e7b3e65945c10d9f9cbb}{\_char\_slots\_2}}\{\ \mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \};}
+\DoxyCodeLine{00180\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2_a1f0cf624a1605c6e48376070865b5eed}{\_unknown\_bytes}}[20]\{\ 0\ \};}
+\DoxyCodeLine{00181\ \};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00186\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x006d}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 2020107}}
+\DoxyCodeLine{00189\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x0b6f}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x006d}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20081217}}
+\DoxyCodeLine{00195\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x006d}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00198\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x006d}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00201\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x006d}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00203\ \mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00205\ \};}
+\DoxyCodeLine{00210\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r}{HC\_ACCEPT\_MAKECHAR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00211\ \{}
+\DoxyCodeLine{00212\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r_aac8b909bd97db7f7117abda7952ff417}{HC\_ACCEPT\_MAKECHAR}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00214\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a5d2490a96a8c6079d6488c7132667d79ae9c3fc2c3baf6ac2c320126feafc43fe}{ID\_HC\_ACCEPT\_MAKECHAR}},\ s)}
+\DoxyCodeLine{00215\ \ \ \ \ \{\}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r_ac2fa446c4bde5191212ddc64149b2e77}{\string~HC\_ACCEPT\_MAKECHAR}}()\ \{\}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r_ad3483b9cd904fbe4f38b859d0a8212cf}{deliver}}(uint32\_t\ char\_id,\ uint32\_t\ start\_zeny,\ std::string\ map\_name,\ std::string\ name,\ uint8\_t\ slot,\ uint32\_t\ hair\_color,\ uint32\_t\ hair\_style,\ uint32\_t\ job\_class,\ uint8\_t\ gender);}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r_abed0919c704571374b3f6867970fb59a}{serialize}}();}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{structs__hc__character__list__data}{s\_hc\_character\_list\_data}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r_a484565ee19d201310d948cbadd6a857f}{\_c}};}
+\DoxyCodeLine{00223\ \};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110906}}
+\DoxyCodeLine{00228\ \mbox{\hyperlink{namespace_horizon_1_1_char_ac2d9682c089fc02ffac63e3250eb43b7a469fd69840ca57373b77da6136bbfa7a}{ID\_HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}\ =\ 0x08d5}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110906}}
+\DoxyCodeLine{00231\ \mbox{\hyperlink{namespace_horizon_1_1_char_ac2d9682c089fc02ffac63e3250eb43b7a469fd69840ca57373b77da6136bbfa7a}{ID\_HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}\ =\ 0x08d5}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00234\ \mbox{\hyperlink{namespace_horizon_1_1_char_ac2d9682c089fc02ffac63e3250eb43b7a469fd69840ca57373b77da6136bbfa7a}{ID\_HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}\ =\ 0x08d5}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00236\ \mbox{\hyperlink{namespace_horizon_1_1_char_ac2d9682c089fc02ffac63e3250eb43b7a469fd69840ca57373b77da6136bbfa7a}{ID\_HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00238\ \};}
+\DoxyCodeLine{00243\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t}{HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00244\ \{}
+\DoxyCodeLine{00245\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t_aba1dfed46e0407d699036618eaa4461c}{HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00247\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_ac2d9682c089fc02ffac63e3250eb43b7a469fd69840ca57373b77da6136bbfa7a}{ID\_HC\_ACK\_CHANGE\_CHARACTER\_SLOT}},\ s)}
+\DoxyCodeLine{00248\ \ \ \ \ \{\}}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t_aa91e0f099c4647442756906e3d9c2475}{\string~HC\_ACK\_CHANGE\_CHARACTER\_SLOT}}()\ \{\}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t_a333c90f3c93156fc50979533ec042979}{deliver}}();}
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t_ae9ed38a3b374919c06c0ff273a08c851}{serialize}}();}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00255\ \};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061030}}
+\DoxyCodeLine{00260\ \mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}}\ =\ 0x0290}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061030}}
+\DoxyCodeLine{00263\ \mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}}\ =\ 0x0290}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00266\ \mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}}\ =\ 0x0290}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061023}}
+\DoxyCodeLine{00269\ \mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}}\ =\ 0x0290}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00272\ \mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}}\ =\ 0x0290}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00274\ \mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00276\ \};}
+\DoxyCodeLine{00281\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_n_a_m_e}{HC\_ACK\_CHANGE\_CHARNAME}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00282\ \{}
+\DoxyCodeLine{00283\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_n_a_m_e_a1fa4087abf973b5d40cc664852e0fc07}{HC\_ACK\_CHANGE\_CHARNAME}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00285\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a327f368dc975c79a1baf7b73a2b90c01a407ac3fc148d6bb9b683c124e5ff92b7}{ID\_HC\_ACK\_CHANGE\_CHARNAME}},\ s)}
+\DoxyCodeLine{00286\ \ \ \ \ \{\}}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_n_a_m_e_a70ced1f776b80cf284e2134619e17816}{\string~HC\_ACK\_CHANGE\_CHARNAME}}()\ \{\}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_n_a_m_e_a6315236c8b930651ee63ce163d8efa1a}{deliver}}();}
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_n_a_m_e_af2bf97f0ffd15abc891f99f5a3d3065f}{serialize}}();}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00293\ \};}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20201007}}
+\DoxyCodeLine{00298\ \mbox{\hyperlink{namespace_horizon_1_1_char_af6ca7d7ebed5e68fc60e734c26877328a556ea7a678965543bb970ebf822ad604}{ID\_HC\_ACK\_CHARINFO\_PER\_PAGE}}\ =\ 0x0b72}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20121024}}
+\DoxyCodeLine{00301\ \mbox{\hyperlink{namespace_horizon_1_1_char_af6ca7d7ebed5e68fc60e734c26877328a556ea7a678965543bb970ebf822ad604}{ID\_HC\_ACK\_CHARINFO\_PER\_PAGE}}\ =\ 0x099d}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20121024}}
+\DoxyCodeLine{00304\ \mbox{\hyperlink{namespace_horizon_1_1_char_af6ca7d7ebed5e68fc60e734c26877328a556ea7a678965543bb970ebf822ad604}{ID\_HC\_ACK\_CHARINFO\_PER\_PAGE}}\ =\ 0x099d}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00307\ \mbox{\hyperlink{namespace_horizon_1_1_char_af6ca7d7ebed5e68fc60e734c26877328a556ea7a678965543bb970ebf822ad604}{ID\_HC\_ACK\_CHARINFO\_PER\_PAGE}}\ =\ 0x099d}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00309\ \mbox{\hyperlink{namespace_horizon_1_1_char_af6ca7d7ebed5e68fc60e734c26877328a556ea7a678965543bb970ebf822ad604}{ID\_HC\_ACK\_CHARINFO\_PER\_PAGE}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00311\ \};}
+\DoxyCodeLine{00316\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e}{HC\_ACK\_CHARINFO\_PER\_PAGE}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00317\ \{}
+\DoxyCodeLine{00318\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_af9bfce0ff37fb334f7d78a10bf67286d}{HC\_ACK\_CHARINFO\_PER\_PAGE}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00320\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_af6ca7d7ebed5e68fc60e734c26877328a556ea7a678965543bb970ebf822ad604}{ID\_HC\_ACK\_CHARINFO\_PER\_PAGE}},\ s)}
+\DoxyCodeLine{00321\ \ \ \ \ \{\}}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_a901f80c2bf06842bd56b1bc8d28873b6}{\string~HC\_ACK\_CHARINFO\_PER\_PAGE}}()\ \{\}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_a024b2f94f4102f588f249390200a949e}{prepare}}(\textcolor{keywordtype}{bool}\ empty\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_a57937dbd408138817138deb8c3af8c41}{deliver}}();}
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_a4df8059b72be147cdf58c6668dcec976}{serialize}}();}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00329\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_a10a96a8fd7386fd0ee3cfe954ad175e6}{\_packet\_length}}\{\ 24\ \};}
+\DoxyCodeLine{00330\ \ \ \ \ std::vector<s\_hc\_character\_list\_data>\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e_a9616e1e1804c770f3f2e07953692ca6e}{\_characters}};}
+\DoxyCodeLine{00331\ \};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061030}}
+\DoxyCodeLine{00336\ \mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}}\ =\ 0x028e}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061030}}
+\DoxyCodeLine{00339\ \mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}}\ =\ 0x028e}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00342\ \mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}}\ =\ 0x028e}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061023}}
+\DoxyCodeLine{00345\ \mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}}\ =\ 0x028e}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00348\ \mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}}\ =\ 0x028e}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00350\ \mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00352\ \};}
+\DoxyCodeLine{00357\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e}{HC\_ACK\_IS\_VALID\_CHARNAME}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00358\ \{}
+\DoxyCodeLine{00359\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00360\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e_ad0c23099e541dd4ef73ee7bd3660f802}{HC\_ACK\_IS\_VALID\_CHARNAME}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00361\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a965b2f299c8d6f6da44957a44e70278ea99f61e525ffdf992abdba30a4e874769}{ID\_HC\_ACK\_IS\_VALID\_CHARNAME}},\ s)}
+\DoxyCodeLine{00362\ \ \ \ \ \{\}}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e_a051f36b2bfc92d52013208f2c616a69e}{\string~HC\_ACK\_IS\_VALID\_CHARNAME}}()\ \{\}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e_a04c530230a54f18d8127d01b87cb8f12}{deliver}}();}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e_a88c1bd621c65ac40e9987f029ad912ba}{serialize}}();}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00369\ \};}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110228}}
+\DoxyCodeLine{00374\ \mbox{\hyperlink{namespace_horizon_1_1_char_a10278bfafc94d23655a949bd3d5cfb2aa93d11e39e992f253ebea17514620555b}{ID\_HC\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x08c6}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110228}}
+\DoxyCodeLine{00377\ \mbox{\hyperlink{namespace_horizon_1_1_char_a10278bfafc94d23655a949bd3d5cfb2aa93d11e39e992f253ebea17514620555b}{ID\_HC\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x08c6}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00380\ \mbox{\hyperlink{namespace_horizon_1_1_char_a10278bfafc94d23655a949bd3d5cfb2aa93d11e39e992f253ebea17514620555b}{ID\_HC\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x08c6}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00382\ \mbox{\hyperlink{namespace_horizon_1_1_char_a10278bfafc94d23655a949bd3d5cfb2aa93d11e39e992f253ebea17514620555b}{ID\_HC\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00384\ \};}
+\DoxyCodeLine{00389\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_AVAILABLE\_SECOND\_PASSWD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00390\ \{}
+\DoxyCodeLine{00391\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00392\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a4c996712e41591d47529b8de007a1bf0}{HC\_AVAILABLE\_SECOND\_PASSWD}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00393\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a10278bfafc94d23655a949bd3d5cfb2aa93d11e39e992f253ebea17514620555b}{ID\_HC\_AVAILABLE\_SECOND\_PASSWD}},\ s)}
+\DoxyCodeLine{00394\ \ \ \ \ \{\}}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a1c780a3f7c6687925d27b5e456941d8e}{\string~HC\_AVAILABLE\_SECOND\_PASSWD}}()\ \{\}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_aeb44cfd4912b9c075cb62b301ec42a36}{deliver}}();}
+\DoxyCodeLine{00398\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a4d2e31d473c48085bab3725ad8acfd92}{serialize}}();}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00401\ \};}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00406\ \mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}}\ =\ 0x020d}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040621}}
+\DoxyCodeLine{00409\ \mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}}\ =\ 0x020d}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00412\ \mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}}\ =\ 0x020d}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040621}}
+\DoxyCodeLine{00415\ \mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}}\ =\ 0x020d}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00418\ \mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}}\ =\ 0x020d}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00420\ \mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00422\ \};}
+\DoxyCodeLine{00427\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r}{HC\_BLOCK\_CHARACTER}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00428\ \{}
+\DoxyCodeLine{00429\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00430\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r_aa470ed67b6f152d43f83190c1a0ddc4f}{HC\_BLOCK\_CHARACTER}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00431\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a45f60e055a488b2e386bf3ece8f66ef2a6012f155297967eedebf1546b355eb0b}{ID\_HC\_BLOCK\_CHARACTER}},\ s)}
+\DoxyCodeLine{00432\ \ \ \ \ \{\}}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r_a04866ffa21fba1441117950d689be151}{\string~HC\_BLOCK\_CHARACTER}}()\ \{\}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r_a28bfe044cf4d7b928464b425bff0f43a}{deliver}}();}
+\DoxyCodeLine{00436\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r_ad5421de1e30d9b0c4809c697f6a05ef8}{serialize}}();}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00439\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r_aabfad8d5e6c382944b7eeac59937e3a1}{\_packet\_length}}\{\ 4\ \};}
+\DoxyCodeLine{00440\ \};}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090225}}
+\DoxyCodeLine{00445\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa2be0297391c159cb037ad76b005a54a29b4dd20fb1336a89a9e3ed9abb60f92}{ID\_HC\_CHARACTER\_LIST}}\ =\ 0x0448}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090226}}
+\DoxyCodeLine{00448\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa2be0297391c159cb037ad76b005a54a29b4dd20fb1336a89a9e3ed9abb60f92}{ID\_HC\_CHARACTER\_LIST}}\ =\ 0x0448}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090225}}
+\DoxyCodeLine{00451\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa2be0297391c159cb037ad76b005a54a29b4dd20fb1336a89a9e3ed9abb60f92}{ID\_HC\_CHARACTER\_LIST}}\ =\ 0x0448}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00454\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa2be0297391c159cb037ad76b005a54a29b4dd20fb1336a89a9e3ed9abb60f92}{ID\_HC\_CHARACTER\_LIST}}\ =\ 0x0448}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00456\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa2be0297391c159cb037ad76b005a54a29b4dd20fb1336a89a9e3ed9abb60f92}{ID\_HC\_CHARACTER\_LIST}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00458\ \};}
+\DoxyCodeLine{00463\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_a_c_t_e_r___l_i_s_t}{HC\_CHARACTER\_LIST}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00464\ \{}
+\DoxyCodeLine{00465\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_a_c_t_e_r___l_i_s_t_a8b4b3aa7bbd932b9b0ce7a5be03f5aa4}{HC\_CHARACTER\_LIST}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00467\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_afa2be0297391c159cb037ad76b005a54a29b4dd20fb1336a89a9e3ed9abb60f92}{ID\_HC\_CHARACTER\_LIST}},\ s)}
+\DoxyCodeLine{00468\ \ \ \ \ \{\}}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_a_c_t_e_r___l_i_s_t_a397231e3ead19d02431876eddc95a878}{\string~HC\_CHARACTER\_LIST}}()\ \{\}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_a_c_t_e_r___l_i_s_t_a548bebd35f703373094d14e0077c49b7}{deliver}}();}
+\DoxyCodeLine{00472\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_a_c_t_e_r___l_i_s_t_a161370835db50adce25e99af8e15366e}{serialize}}();}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00475\ \};}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20121212}}
+\DoxyCodeLine{00480\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8a811d8f5e5c7c5059e9366b0b187b05a57c5778347ed9333d431f1dd6d6b9b27}{ID\_HC\_CHARLIST\_NOTIFY}}\ =\ 0x09a0}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20121212}}
+\DoxyCodeLine{00483\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8a811d8f5e5c7c5059e9366b0b187b05a57c5778347ed9333d431f1dd6d6b9b27}{ID\_HC\_CHARLIST\_NOTIFY}}\ =\ 0x09a0}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00486\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8a811d8f5e5c7c5059e9366b0b187b05a57c5778347ed9333d431f1dd6d6b9b27}{ID\_HC\_CHARLIST\_NOTIFY}}\ =\ 0x09a0}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00488\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8a811d8f5e5c7c5059e9366b0b187b05a57c5778347ed9333d431f1dd6d6b9b27}{ID\_HC\_CHARLIST\_NOTIFY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00490\ \};}
+\DoxyCodeLine{00495\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_l_i_s_t___n_o_t_i_f_y}{HC\_CHARLIST\_NOTIFY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00496\ \{}
+\DoxyCodeLine{00497\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00498\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_l_i_s_t___n_o_t_i_f_y_ad5bcbbd00e768e379b068d53b5904e4e}{HC\_CHARLIST\_NOTIFY}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00499\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a8a811d8f5e5c7c5059e9366b0b187b05a57c5778347ed9333d431f1dd6d6b9b27}{ID\_HC\_CHARLIST\_NOTIFY}},\ s)}
+\DoxyCodeLine{00500\ \ \ \ \ \{\}}
+\DoxyCodeLine{00501\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_l_i_s_t___n_o_t_i_f_y_a95a61af4a4009c9b544be1b311ce550c}{\string~HC\_CHARLIST\_NOTIFY}}()\ \{\}}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_l_i_s_t___n_o_t_i_f_y_aa1c8f9d4333a1038c58f5408ec85fb7a}{deliver}}();}
+\DoxyCodeLine{00504\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_l_i_s_t___n_o_t_i_f_y_acf7020d800a5f3af8946c672f530346e}{serialize}}();}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00507\ \};}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061030}}
+\DoxyCodeLine{00512\ \mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}}\ =\ 0x028b}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061030}}
+\DoxyCodeLine{00515\ \mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}}\ =\ 0x028b}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00518\ \mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}}\ =\ 0x028b}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20061023}}
+\DoxyCodeLine{00521\ \mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}}\ =\ 0x028b}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00524\ \mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}}\ =\ 0x028b}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00526\ \mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00528\ \};}
+\DoxyCodeLine{00533\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_n_o_t_b_e_e_n_s_e_l_e_c_t_e_d}{HC\_CHARNOTBEENSELECTED}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00534\ \{}
+\DoxyCodeLine{00535\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00536\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_n_o_t_b_e_e_n_s_e_l_e_c_t_e_d_a3673f74e40847f0a56ab53d4c558cd92}{HC\_CHARNOTBEENSELECTED}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00537\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_aafe24fb9083e8490eaa1df178a7404f0a4de73c04198377de7bf936a6be24c20a}{ID\_HC\_CHARNOTBEENSELECTED}},\ s)}
+\DoxyCodeLine{00538\ \ \ \ \ \{\}}
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_n_o_t_b_e_e_n_s_e_l_e_c_t_e_d_ac19aadd501b16a7d1d15472dac109404}{\string~HC\_CHARNOTBEENSELECTED}}()\ \{\}}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_n_o_t_b_e_e_n_s_e_l_e_c_t_e_d_a52f4a221935ba19506b6b9237dd2633f}{deliver}}();}
+\DoxyCodeLine{00542\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_n_o_t_b_e_e_n_s_e_l_e_c_t_e_d_ae3f598d3760ca46956b377fcbc623d15}{serialize}}();}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00545\ \};}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090922}}
+\DoxyCodeLine{00550\ \mbox{\hyperlink{namespace_horizon_1_1_char_a813a66e67f0aa36e596c81d3dcfb04f3a1962530dfe0fea8874d52390ca765192}{ID\_HC\_CHECKBOT}}\ =\ 0x07e8}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090922}}
+\DoxyCodeLine{00553\ \mbox{\hyperlink{namespace_horizon_1_1_char_a813a66e67f0aa36e596c81d3dcfb04f3a1962530dfe0fea8874d52390ca765192}{ID\_HC\_CHECKBOT}}\ =\ 0x07e8}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00556\ \mbox{\hyperlink{namespace_horizon_1_1_char_a813a66e67f0aa36e596c81d3dcfb04f3a1962530dfe0fea8874d52390ca765192}{ID\_HC\_CHECKBOT}}\ =\ 0x07e8}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00558\ \mbox{\hyperlink{namespace_horizon_1_1_char_a813a66e67f0aa36e596c81d3dcfb04f3a1962530dfe0fea8874d52390ca765192}{ID\_HC\_CHECKBOT}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00560\ \};}
+\DoxyCodeLine{00565\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t}{HC\_CHECKBOT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00566\ \{}
+\DoxyCodeLine{00567\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00568\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t_ad967b7fd8c681fbaaa459848d1b2db8d}{HC\_CHECKBOT}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00569\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a813a66e67f0aa36e596c81d3dcfb04f3a1962530dfe0fea8874d52390ca765192}{ID\_HC\_CHECKBOT}},\ s)}
+\DoxyCodeLine{00570\ \ \ \ \ \{\}}
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t_ad3353ab1c6cdf0e1ca27c36368d9389b}{\string~HC\_CHECKBOT}}()\ \{\}}
+\DoxyCodeLine{00572\ }
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t_a7220268cad6e48c1f2b131bab8398e4c}{deliver}}();}
+\DoxyCodeLine{00574\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t_af3d3a167e4cfc722b4879e47d510e924}{serialize}}();}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00577\ \};}
+\DoxyCodeLine{00578\ }
+\DoxyCodeLine{00579\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090922}}
+\DoxyCodeLine{00582\ \mbox{\hyperlink{namespace_horizon_1_1_char_a2257ad235cdfedad5604b063bb4ce886a146662e3da0e8e237b14413f999f1b4c}{ID\_HC\_CHECKBOT\_RESULT}}\ =\ 0x07e9}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090922}}
+\DoxyCodeLine{00585\ \mbox{\hyperlink{namespace_horizon_1_1_char_a2257ad235cdfedad5604b063bb4ce886a146662e3da0e8e237b14413f999f1b4c}{ID\_HC\_CHECKBOT\_RESULT}}\ =\ 0x07e9}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00588\ \mbox{\hyperlink{namespace_horizon_1_1_char_a2257ad235cdfedad5604b063bb4ce886a146662e3da0e8e237b14413f999f1b4c}{ID\_HC\_CHECKBOT\_RESULT}}\ =\ 0x07e9}
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00590\ \mbox{\hyperlink{namespace_horizon_1_1_char_a2257ad235cdfedad5604b063bb4ce886a146662e3da0e8e237b14413f999f1b4c}{ID\_HC\_CHECKBOT\_RESULT}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00592\ \};}
+\DoxyCodeLine{00597\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t___r_e_s_u_l_t}{HC\_CHECKBOT\_RESULT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00598\ \{}
+\DoxyCodeLine{00599\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00600\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t___r_e_s_u_l_t_afaf67afe8d9ae548b44797c4e1fdcab5}{HC\_CHECKBOT\_RESULT}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00601\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a2257ad235cdfedad5604b063bb4ce886a146662e3da0e8e237b14413f999f1b4c}{ID\_HC\_CHECKBOT\_RESULT}},\ s)}
+\DoxyCodeLine{00602\ \ \ \ \ \{\}}
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t___r_e_s_u_l_t_a9aa78a4f265a4d46e3f922f8df02f954}{\string~HC\_CHECKBOT\_RESULT}}()\ \{\}}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t___r_e_s_u_l_t_a13697740f2ab8730d45f123c91e08fc8}{deliver}}();}
+\DoxyCodeLine{00606\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t___r_e_s_u_l_t_acbc1f4d14ee6fed4fd514f8aea9e2f5b}{serialize}}();}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00609\ \};}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100713}}
+\DoxyCodeLine{00614\ \mbox{\hyperlink{namespace_horizon_1_1_char_a801e288a3cb7407f42d925811b2faea8a4b31293b916ded1cf67e56865b0dd40c}{ID\_HC\_DELETE\_CHAR3}}\ =\ 0x082a}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100713}}
+\DoxyCodeLine{00617\ \mbox{\hyperlink{namespace_horizon_1_1_char_a801e288a3cb7407f42d925811b2faea8a4b31293b916ded1cf67e56865b0dd40c}{ID\_HC\_DELETE\_CHAR3}}\ =\ 0x082a}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00620\ \mbox{\hyperlink{namespace_horizon_1_1_char_a801e288a3cb7407f42d925811b2faea8a4b31293b916ded1cf67e56865b0dd40c}{ID\_HC\_DELETE\_CHAR3}}\ =\ 0x082a}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00622\ \mbox{\hyperlink{namespace_horizon_1_1_char_a801e288a3cb7407f42d925811b2faea8a4b31293b916ded1cf67e56865b0dd40c}{ID\_HC\_DELETE\_CHAR3}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00624\ \};}
+\DoxyCodeLine{00629\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3}{HC\_DELETE\_CHAR3}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00630\ \{}
+\DoxyCodeLine{00631\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00632\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3_a86946cafc34c2b3102391662f5670a96}{HC\_DELETE\_CHAR3}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00633\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a801e288a3cb7407f42d925811b2faea8a4b31293b916ded1cf67e56865b0dd40c}{ID\_HC\_DELETE\_CHAR3}},\ s)}
+\DoxyCodeLine{00634\ \ \ \ \ \{\}}
+\DoxyCodeLine{00635\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3_ad6d3f1ab6d03a4b2bf53efd2eff7651a}{\string~HC\_DELETE\_CHAR3}}()\ \{\}}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3_ad3625e4d33e4e6940543e328ebed2cc5}{deliver}}(uint32\_t\ char\_id,\ \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}{character\_delete\_accept\_result}}\ result);}
+\DoxyCodeLine{00638\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3_aa916933e601d0097648e2316c019b5dc}{serialize}}();}
+\DoxyCodeLine{00639\ }
+\DoxyCodeLine{00640\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00641\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3_a768f252e6fbc3b4480a78e334243dac4}{\_character\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00642\ \ \ \ \ \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}{character\_delete\_accept\_result}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3_a55b387f6bc82b4919a04c8fe3df2c995}{\_result}}\{\ \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a1eb57a63f599ebe689635b8d5d50a905}{CHAR\_DEL\_ACCEPT\_RESULT\_SUCCESS}}\ \};}
+\DoxyCodeLine{00643\ \};}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_char_a441230b95579bc4e12977e5af379cd72}{hc\_delete\_cancel\_result}}\ :\ uint32\_t\ \{}
+\DoxyCodeLine{00646\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a441230b95579bc4e12977e5af379cd72aa0f7112021219015ae600b9d4749917c}{CHAR3\_DEL\_CANCEL\_SUCCESS}}\ =\ 1,}
+\DoxyCodeLine{00647\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a441230b95579bc4e12977e5af379cd72a208bc41b8f3634ca2355798d3d4e4daa}{CHAR3\_DEL\_CANCEL\_FAILURE}}\ =\ 2}
+\DoxyCodeLine{00648\ \};}
+\DoxyCodeLine{00649\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100720}}
+\DoxyCodeLine{00652\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8f21f02e04d4bd3c1d5bda472326da42ab9fdfc50cebf440c6f304d19fb334e15}{ID\_HC\_DELETE\_CHAR3\_CANCEL}}\ =\ 0x082c}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100720}}
+\DoxyCodeLine{00655\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8f21f02e04d4bd3c1d5bda472326da42ab9fdfc50cebf440c6f304d19fb334e15}{ID\_HC\_DELETE\_CHAR3\_CANCEL}}\ =\ 0x082c}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00658\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8f21f02e04d4bd3c1d5bda472326da42ab9fdfc50cebf440c6f304d19fb334e15}{ID\_HC\_DELETE\_CHAR3\_CANCEL}}\ =\ 0x082c}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00660\ \mbox{\hyperlink{namespace_horizon_1_1_char_a8f21f02e04d4bd3c1d5bda472326da42ab9fdfc50cebf440c6f304d19fb334e15}{ID\_HC\_DELETE\_CHAR3\_CANCEL}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00662\ \};}
+\DoxyCodeLine{00667\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l}{HC\_DELETE\_CHAR3\_CANCEL}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00668\ \{}
+\DoxyCodeLine{00669\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00670\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l_a41f7eda9436a55ce6a5421333736dfc0}{HC\_DELETE\_CHAR3\_CANCEL}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00671\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a8f21f02e04d4bd3c1d5bda472326da42ab9fdfc50cebf440c6f304d19fb334e15}{ID\_HC\_DELETE\_CHAR3\_CANCEL}},\ s)}
+\DoxyCodeLine{00672\ \ \ \ \ \{\}}
+\DoxyCodeLine{00673\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l_acdbcd8c3f7213008b26fa894faf4d6ae}{\string~HC\_DELETE\_CHAR3\_CANCEL}}()\ \{\}}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00675\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l_a0ccba168f338fc27b2f216f907a0da9d}{deliver}}(uint32\_t\ char\_id,\ \mbox{\hyperlink{namespace_horizon_1_1_char_a441230b95579bc4e12977e5af379cd72}{hc\_delete\_cancel\_result}}\ result);}
+\DoxyCodeLine{00676\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l_af7807622654f740e6152a2b3e0b898a0}{serialize}}();}
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00678\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00679\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l_a993d1e589917bbc9732db951cf8ff2a7}{\_character\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00680\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a441230b95579bc4e12977e5af379cd72}{hc\_delete\_cancel\_result}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l_a5143d11e7098028117ec5eed82387ca0}{\_result}}\{\ 0\ \};\ \textcolor{comment}{//\ either\ 1\ or\ 2.}}
+\DoxyCodeLine{00681\ \};}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00683\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100713}}
+\DoxyCodeLine{00686\ \mbox{\hyperlink{namespace_horizon_1_1_char_abea6a51ed9297388f21b7dcfaf670b66a439052a1b9238dc1eb189cb15094e967}{ID\_HC\_DELETE\_CHAR3\_RESERVED}}\ =\ 0x0828}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100713}}
+\DoxyCodeLine{00689\ \mbox{\hyperlink{namespace_horizon_1_1_char_abea6a51ed9297388f21b7dcfaf670b66a439052a1b9238dc1eb189cb15094e967}{ID\_HC\_DELETE\_CHAR3\_RESERVED}}\ =\ 0x0828}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00692\ \mbox{\hyperlink{namespace_horizon_1_1_char_abea6a51ed9297388f21b7dcfaf670b66a439052a1b9238dc1eb189cb15094e967}{ID\_HC\_DELETE\_CHAR3\_RESERVED}}\ =\ 0x0828}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00694\ \mbox{\hyperlink{namespace_horizon_1_1_char_abea6a51ed9297388f21b7dcfaf670b66a439052a1b9238dc1eb189cb15094e967}{ID\_HC\_DELETE\_CHAR3\_RESERVED}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00696\ \};}
+\DoxyCodeLine{00701\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d}{HC\_DELETE\_CHAR3\_RESERVED}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00702\ \{}
+\DoxyCodeLine{00703\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00704\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_a7dbdce6c21adf5d1dcafe33a4e1b2c11}{HC\_DELETE\_CHAR3\_RESERVED}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00705\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_abea6a51ed9297388f21b7dcfaf670b66a439052a1b9238dc1eb189cb15094e967}{ID\_HC\_DELETE\_CHAR3\_RESERVED}},\ s)}
+\DoxyCodeLine{00706\ \ \ \ \ \{\}}
+\DoxyCodeLine{00707\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_ae058fb63362ce0543db16cb29c4d9920}{\string~HC\_DELETE\_CHAR3\_RESERVED}}()\ \{\}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_a5799b3fd8a859983c9b1011049079c0b}{deliver}}(uint32\_t\ char\_id,\ \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\_delete\_result}}\ res,\ uint32\_t\ date);}
+\DoxyCodeLine{00710\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_a56d647ff70590c7cfe397eee2ef6546b}{serialize}}();}
+\DoxyCodeLine{00711\ }
+\DoxyCodeLine{00712\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00713\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_a09327b2544457b5c32ba8181ae2f204f}{\_character\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00714\ \ \ \ \ \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\_delete\_result}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_ac2c1696a626930176b9173b30f925784}{\_result}}\{\ \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fca3a9f5f21c8a3626839c8719735ca33ae}{CHAR\_DEL\_RESULT\_UNKNOWN}}\ \};}
+\DoxyCodeLine{00715\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d_a46add7751891d5a7eb243966cf4670d1}{\_deletion\_date}}\{\ 0\ \};}
+\DoxyCodeLine{00716\ \};}
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00718\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20111207}}
+\DoxyCodeLine{00721\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3c23dd1c0ecb2f72aa8d5f13555f22f2a39c5844fdc75e8b572d222e6d5d795b2}{ID\_HC\_DELETE\_SECOND\_PASSWD}}\ =\ 0x08bd}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20111207}}
+\DoxyCodeLine{00724\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3c23dd1c0ecb2f72aa8d5f13555f22f2a39c5844fdc75e8b572d222e6d5d795b2}{ID\_HC\_DELETE\_SECOND\_PASSWD}}\ =\ 0x08bd}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00726\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00727\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3c23dd1c0ecb2f72aa8d5f13555f22f2a39c5844fdc75e8b572d222e6d5d795b2}{ID\_HC\_DELETE\_SECOND\_PASSWD}}\ =\ 0x08bd}
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00729\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3c23dd1c0ecb2f72aa8d5f13555f22f2a39c5844fdc75e8b572d222e6d5d795b2}{ID\_HC\_DELETE\_SECOND\_PASSWD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00731\ \};}
+\DoxyCodeLine{00736\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_DELETE\_SECOND\_PASSWD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00737\ \{}
+\DoxyCodeLine{00738\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00739\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d_a75adbb97540210a5b6935edf0315b186}{HC\_DELETE\_SECOND\_PASSWD}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00740\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a3c23dd1c0ecb2f72aa8d5f13555f22f2a39c5844fdc75e8b572d222e6d5d795b2}{ID\_HC\_DELETE\_SECOND\_PASSWD}},\ s)}
+\DoxyCodeLine{00741\ \ \ \ \ \{\}}
+\DoxyCodeLine{00742\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d_aa8eb4bad35a92686cca4f45aea539915}{\string~HC\_DELETE\_SECOND\_PASSWD}}()\ \{\}}
+\DoxyCodeLine{00743\ }
+\DoxyCodeLine{00744\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d_ae1761c56cc51f9050e9e256213949711}{deliver}}();}
+\DoxyCodeLine{00745\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d_a0165af21e17f2989ab1489f015aa8be0}{serialize}}();}
+\DoxyCodeLine{00746\ }
+\DoxyCodeLine{00747\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00748\ \};}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00752\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110308}}
+\DoxyCodeLine{00753\ \mbox{\hyperlink{namespace_horizon_1_1_char_a0880d41d75e6bc6a8b967736af624d9aac7fb92b40a504fa20840935b2a0b4e31}{ID\_HC\_EDIT\_SECOND\_PASSWD}}\ =\ 0x08bf}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110308}}
+\DoxyCodeLine{00756\ \mbox{\hyperlink{namespace_horizon_1_1_char_a0880d41d75e6bc6a8b967736af624d9aac7fb92b40a504fa20840935b2a0b4e31}{ID\_HC\_EDIT\_SECOND\_PASSWD}}\ =\ 0x08bf}
+\DoxyCodeLine{00757\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00758\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00759\ \mbox{\hyperlink{namespace_horizon_1_1_char_a0880d41d75e6bc6a8b967736af624d9aac7fb92b40a504fa20840935b2a0b4e31}{ID\_HC\_EDIT\_SECOND\_PASSWD}}\ =\ 0x08bf}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00761\ \mbox{\hyperlink{namespace_horizon_1_1_char_a0880d41d75e6bc6a8b967736af624d9aac7fb92b40a504fa20840935b2a0b4e31}{ID\_HC\_EDIT\_SECOND\_PASSWD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00763\ \};}
+\DoxyCodeLine{00764\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2}{pincode\_edit\_response}}\ :\ \textcolor{keywordtype}{short}\ \{}
+\DoxyCodeLine{00765\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2a9b9403f5ebecf6477f5a20b7520fb49e}{PINCODE\_EDIT\_SUCCESS}}\ =\ 0x0,}
+\DoxyCodeLine{00766\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2ad175ab93e4e145ecea14bb95d52df5c8}{PINCODE\_EDIT\_FAILED}}\ =\ 0x1,}
+\DoxyCodeLine{00767\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2ac4c347fb8f4c7b53555cc526d311c6fc}{PINCODE\_EDIT\_RESTRICT\_PW}}\ =\ 0x2,}
+\DoxyCodeLine{00768\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2a8b2e0c18bd4bbd1ae830b65c13a6da60}{PINCODE\_EDIT\_PERSONALNUM\_PW}}\ =\ 0x3,}
+\DoxyCodeLine{00769\ \};}
+\DoxyCodeLine{00774\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_EDIT\_SECOND\_PASSWD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00775\ \{}
+\DoxyCodeLine{00776\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00777\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d_a1ba5204932f0fbdf54ba1cfdea41fa1d}{HC\_EDIT\_SECOND\_PASSWD}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00778\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a0880d41d75e6bc6a8b967736af624d9aac7fb92b40a504fa20840935b2a0b4e31}{ID\_HC\_EDIT\_SECOND\_PASSWD}},\ s)}
+\DoxyCodeLine{00779\ \ \ \ \ \{\}}
+\DoxyCodeLine{00780\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d_a66edbdb3a5dc280238173bd714b7d904}{\string~HC\_EDIT\_SECOND\_PASSWD}}()\ \{\}}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d_aae5a503c5bf748c38d3e4888e6b0f6ff}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2}{pincode\_edit\_response}}\ state);}
+\DoxyCodeLine{00783\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d_a409bee2ff22f9909e763cf70a9c130db}{serialize}}();}
+\DoxyCodeLine{00784\ }
+\DoxyCodeLine{00785\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00786\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a7588d5cb8254332f35c3ed06f1b4dba2}{pincode\_edit\_response}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d_a435456b45432653d79f407384a319240}{\_state}};}
+\DoxyCodeLine{00787\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d_aa0938421f83ec0ca0adb9e23ccf3ae74}{\_seed}};}
+\DoxyCodeLine{00788\ \};}
+\DoxyCodeLine{00789\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543f}{pincode\_make\_response}}\ :\ \textcolor{keywordtype}{short}\ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543fa13d4a0489327f87c576f9abd7e52f45f}{PINCODE\_MAKE\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00791\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543fa09580ee3035afac7ad59cb7836eb8e1c}{PINCODE\_MAKE\_DUPLICATED}}\ =\ 1,}
+\DoxyCodeLine{00792\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543faadcc1869e82d396d1a2e82dc525427c1}{PINCODE\_MAKE\_RESTRICT\_PW}}\ =\ 2,}
+\DoxyCodeLine{00793\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543fa41ed738b5d8abb7a0757598e96101929}{PINCODE\_MAKE\_PERSONALNUM\_PW}}\ =\ 3,}
+\DoxyCodeLine{00794\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543fab33b5153d0c9f3310f435eb151a36269}{PINCODE\_MAKE\_FAILED}}\ =\ 4,}
+\DoxyCodeLine{00795\ \};}
+\DoxyCodeLine{00796\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00797\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00798\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110308}}
+\DoxyCodeLine{00799\ \mbox{\hyperlink{namespace_horizon_1_1_char_a36d54a68f178c38869d5fe14d46f6b2fa500ca070ae933a5bf2a006cf3d537ac9}{ID\_HC\_MAKE\_SECOND\_PASSWD}}\ =\ 0x08bb}
+\DoxyCodeLine{00800\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00801\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110308}}
+\DoxyCodeLine{00802\ \mbox{\hyperlink{namespace_horizon_1_1_char_a36d54a68f178c38869d5fe14d46f6b2fa500ca070ae933a5bf2a006cf3d537ac9}{ID\_HC\_MAKE\_SECOND\_PASSWD}}\ =\ 0x08bb}
+\DoxyCodeLine{00803\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00804\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00805\ \mbox{\hyperlink{namespace_horizon_1_1_char_a36d54a68f178c38869d5fe14d46f6b2fa500ca070ae933a5bf2a006cf3d537ac9}{ID\_HC\_MAKE\_SECOND\_PASSWD}}\ =\ 0x08bb}
+\DoxyCodeLine{00806\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00807\ \mbox{\hyperlink{namespace_horizon_1_1_char_a36d54a68f178c38869d5fe14d46f6b2fa500ca070ae933a5bf2a006cf3d537ac9}{ID\_HC\_MAKE\_SECOND\_PASSWD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00809\ \};}
+\DoxyCodeLine{00814\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_MAKE\_SECOND\_PASSWD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00815\ \{}
+\DoxyCodeLine{00816\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00817\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d_a14c070fffbe5a288ae0003dcb3502c4a}{HC\_MAKE\_SECOND\_PASSWD}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00818\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a36d54a68f178c38869d5fe14d46f6b2fa500ca070ae933a5bf2a006cf3d537ac9}{ID\_HC\_MAKE\_SECOND\_PASSWD}},\ s)}
+\DoxyCodeLine{00819\ \ \ \ \ \{\}}
+\DoxyCodeLine{00820\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d_a3e3689a213fa27826418e91753e61bb2}{\string~HC\_MAKE\_SECOND\_PASSWD}}()\ \{\}}
+\DoxyCodeLine{00821\ }
+\DoxyCodeLine{00822\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d_a6e7371000ce34b02fa6eee594366fdb5}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543f}{pincode\_make\_response}}\ state);}
+\DoxyCodeLine{00823\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d_a0a26025421c5729cf3b09413ef34e6d6}{serialize}}();}
+\DoxyCodeLine{00824\ }
+\DoxyCodeLine{00825\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00826\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a0f43ff56182cdd3939ba64db050f543f}{pincode\_make\_response}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d_a3c52a071212be7ca4136530863c5c7db}{\_state}};}
+\DoxyCodeLine{00827\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d_aa5f4778a196657d34b6c2745b579c47c}{\_seed}};}
+\DoxyCodeLine{00828\ \};}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00831\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00832\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100713}}
+\DoxyCodeLine{00833\ \mbox{\hyperlink{namespace_horizon_1_1_char_a9195951e43122a392d0af6611282b4cfa60204d51819d8dacc9edca41c8b40812}{ID\_HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}\ =\ 0x0840}
+\DoxyCodeLine{00834\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100713}}
+\DoxyCodeLine{00836\ \mbox{\hyperlink{namespace_horizon_1_1_char_a9195951e43122a392d0af6611282b4cfa60204d51819d8dacc9edca41c8b40812}{ID\_HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}\ =\ 0x0840}
+\DoxyCodeLine{00837\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00838\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00839\ \mbox{\hyperlink{namespace_horizon_1_1_char_a9195951e43122a392d0af6611282b4cfa60204d51819d8dacc9edca41c8b40812}{ID\_HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}\ =\ 0x0840}
+\DoxyCodeLine{00840\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00841\ \mbox{\hyperlink{namespace_horizon_1_1_char_a9195951e43122a392d0af6611282b4cfa60204d51819d8dacc9edca41c8b40812}{ID\_HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00842\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00843\ \};}
+\DoxyCodeLine{00848\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e}{HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00849\ \{}
+\DoxyCodeLine{00850\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00851\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e_a4e0e187bd6b65f27b77988ce9bd627e8}{HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00852\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a9195951e43122a392d0af6611282b4cfa60204d51819d8dacc9edca41c8b40812}{ID\_HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}},\ s)}
+\DoxyCodeLine{00853\ \ \ \ \ \{\}}
+\DoxyCodeLine{00854\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e_a27d394cfbd5a8ae022754d8d0d0bbe9b}{\string~HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}}()\ \{\}}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e_a47e8f5b54b54d7137792da88f593925b}{deliver}}();}
+\DoxyCodeLine{00857\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e_ab8b95eeead6a672e109e83815cf63fe5}{serialize}}();}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00859\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00860\ \};}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00862\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00863\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00864\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00865\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0071}
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00868\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0071}
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00870\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170228}}
+\DoxyCodeLine{00871\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0ac5}
+\DoxyCodeLine{00872\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00873\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00874\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0071}
+\DoxyCodeLine{00875\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00876\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170228}}
+\DoxyCodeLine{00877\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0ac5}
+\DoxyCodeLine{00878\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00880\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0071}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00882\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00883\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0ac5}
+\DoxyCodeLine{00884\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00885\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20180000}}
+\DoxyCodeLine{00886\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0071}
+\DoxyCodeLine{00887\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00888\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00889\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00890\ \};}
+\DoxyCodeLine{00895\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r}{HC\_NOTIFY\_ZONESVR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00896\ \{}
+\DoxyCodeLine{00897\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00898\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_a4c144440e44ef4e6f643aa22657914d6}{HC\_NOTIFY\_ZONESVR}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00899\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_aa30a77bfb623c86f3821c74b7d9cb2c7ac14c392e30a2491537922955dcac3821}{ID\_HC\_NOTIFY\_ZONESVR}},\ s)}
+\DoxyCodeLine{00900\ \ \ \ \ \{\}}
+\DoxyCodeLine{00901\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_a138e26d32dbfad96813fb21e89949239}{\string~HC\_NOTIFY\_ZONESVR}}()\ \{\}}
+\DoxyCodeLine{00902\ }
+\DoxyCodeLine{00903\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_ac2ba013e22e483b830ec7c91acab5867}{deliver}}(uint32\_t\ char\_id,\ std::string\ map\_name,\ uint32\_t\ ip\_address,\ uint16\_t\ port);}
+\DoxyCodeLine{00904\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_ab6828e46c18f85d04ada37fcce5c9237}{serialize}}();}
+\DoxyCodeLine{00905\ }
+\DoxyCodeLine{00906\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00907\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_a47a9c1f9cbc48c14201813632279f83c}{\_char\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00908\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_a7e86857dce1011560573e0d28f39c397}{\_map\_name}}[\mbox{\hyperlink{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}{MAP\_NAME\_LENGTH\_EXT}}]\{\ 0\ \};}
+\DoxyCodeLine{00909\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_aa92cc18044021ea6e111c14fd85a04e2}{\_ip\_address}}\{\ 0\ \};}
+\DoxyCodeLine{00910\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r_a8888771fc3085372ce8031b9f89a7a42}{\_port}}\{\ 0\ \};}
+\DoxyCodeLine{00911\ \};}
+\DoxyCodeLine{00912\ }
+\DoxyCodeLine{00913\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00914\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00915\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110308}}
+\DoxyCodeLine{00916\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3a68dc61d99454c3edf7dcd5f5744402aeeb72a5eabf8fd75764bbb727ac40fe0}{ID\_HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x08c4}
+\DoxyCodeLine{00917\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00918\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110308}}
+\DoxyCodeLine{00919\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3a68dc61d99454c3edf7dcd5f5744402aeeb72a5eabf8fd75764bbb727ac40fe0}{ID\_HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x08c4}
+\DoxyCodeLine{00920\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00921\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00922\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3a68dc61d99454c3edf7dcd5f5744402aeeb72a5eabf8fd75764bbb727ac40fe0}{ID\_HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x08c4}
+\DoxyCodeLine{00923\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00924\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3a68dc61d99454c3edf7dcd5f5744402aeeb72a5eabf8fd75764bbb727ac40fe0}{ID\_HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00925\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00926\ \};}
+\DoxyCodeLine{00931\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00932\ \{}
+\DoxyCodeLine{00933\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00934\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a34ec9caa9900e24dc9fa44688ef13ec6}{HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00935\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a3a68dc61d99454c3edf7dcd5f5744402aeeb72a5eabf8fd75764bbb727ac40fe0}{ID\_HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}},\ s)}
+\DoxyCodeLine{00936\ \ \ \ \ \{\}}
+\DoxyCodeLine{00937\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a9f95ad5338061cb2f4166da3146eb807}{\string~HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}}()\ \{\}}
+\DoxyCodeLine{00938\ }
+\DoxyCodeLine{00939\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a91b4c781407ef7f01a1fd498186a3fe0}{deliver}}();}
+\DoxyCodeLine{00940\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d_a0c78345a7ea0d8661d3424fefc9a96b4}{serialize}}();}
+\DoxyCodeLine{00941\ }
+\DoxyCodeLine{00942\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00943\ \};}
+\DoxyCodeLine{00944\ }
+\DoxyCodeLine{00945\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00946\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00947\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20121128}}
+\DoxyCodeLine{00948\ \mbox{\hyperlink{namespace_horizon_1_1_char_a4f39dc0dcb3448d8f8358b7873fb53d5a5dcbace3d6912804c2f658a480b367c0}{ID\_HC\_QUEUE\_ORDER}}\ =\ 0x099e}
+\DoxyCodeLine{00949\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00950\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20121128}}
+\DoxyCodeLine{00951\ \mbox{\hyperlink{namespace_horizon_1_1_char_a4f39dc0dcb3448d8f8358b7873fb53d5a5dcbace3d6912804c2f658a480b367c0}{ID\_HC\_QUEUE\_ORDER}}\ =\ 0x099e}
+\DoxyCodeLine{00952\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00953\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00954\ \mbox{\hyperlink{namespace_horizon_1_1_char_a4f39dc0dcb3448d8f8358b7873fb53d5a5dcbace3d6912804c2f658a480b367c0}{ID\_HC\_QUEUE\_ORDER}}\ =\ 0x099e}
+\DoxyCodeLine{00955\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00956\ \mbox{\hyperlink{namespace_horizon_1_1_char_a4f39dc0dcb3448d8f8358b7873fb53d5a5dcbace3d6912804c2f658a480b367c0}{ID\_HC\_QUEUE\_ORDER}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00957\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00958\ \};}
+\DoxyCodeLine{00963\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___q_u_e_u_e___o_r_d_e_r}{HC\_QUEUE\_ORDER}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{00964\ \{}
+\DoxyCodeLine{00965\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00966\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___q_u_e_u_e___o_r_d_e_r_a262d50f57cc6b5a57b7acd4e3de9a87e}{HC\_QUEUE\_ORDER}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00967\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a4f39dc0dcb3448d8f8358b7873fb53d5a5dcbace3d6912804c2f658a480b367c0}{ID\_HC\_QUEUE\_ORDER}},\ s)}
+\DoxyCodeLine{00968\ \ \ \ \ \{\}}
+\DoxyCodeLine{00969\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___q_u_e_u_e___o_r_d_e_r_af8d9d3d4d44e8e6cc51c54c128f4ab86}{\string~HC\_QUEUE\_ORDER}}()\ \{\}}
+\DoxyCodeLine{00970\ }
+\DoxyCodeLine{00971\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___q_u_e_u_e___o_r_d_e_r_a25716722a94985bbe782d4531cd8669d}{deliver}}();}
+\DoxyCodeLine{00972\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___q_u_e_u_e___o_r_d_e_r_a0576ea7a2103bf39916e7a876aa86ec0}{serialize}}();}
+\DoxyCodeLine{00973\ }
+\DoxyCodeLine{00974\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00975\ \};}
+\DoxyCodeLine{00976\ }
+\DoxyCodeLine{00977\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00978\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00979\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00980\ \mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}}\ =\ 0x0070}
+\DoxyCodeLine{00981\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00982\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00983\ \mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}}\ =\ 0x0070}
+\DoxyCodeLine{00984\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00985\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00986\ \mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}}\ =\ 0x0070}
+\DoxyCodeLine{00987\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00988\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00989\ \mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}}\ =\ 0x0070}
+\DoxyCodeLine{00990\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00991\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00992\ \mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}}\ =\ 0x0070}
+\DoxyCodeLine{00993\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00994\ \mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00995\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00996\ \};}
+\DoxyCodeLine{01001\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r}{HC\_REFUSE\_DELETECHAR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01002\ \{}
+\DoxyCodeLine{01003\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01004\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r_a046139e16dcfc6dddf608f861cb64735}{HC\_REFUSE\_DELETECHAR}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01005\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_af141c7a6a3bddf00666fc51dffd49a3dafa653ec58e468a20015187fc92ccf5b2}{ID\_HC\_REFUSE\_DELETECHAR}},\ s)}
+\DoxyCodeLine{01006\ \ \ \ \ \{\}}
+\DoxyCodeLine{01007\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r_a44a81dc26b33305c09bd1b632dda7273}{\string~HC\_REFUSE\_DELETECHAR}}()\ \{\}}
+\DoxyCodeLine{01008\ }
+\DoxyCodeLine{01009\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r_a609ebd5646aa9e61864294fcf99fe051}{deliver}}();}
+\DoxyCodeLine{01010\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r_aded422db970dc4fab619b7d03dc94510}{serialize}}();}
+\DoxyCodeLine{01011\ }
+\DoxyCodeLine{01012\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01013\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r_ac5607530131b25c34cac137836c6b973}{\_error}}\{\ 0\ \};}
+\DoxyCodeLine{01014\ \};}
+\DoxyCodeLine{01015\ }
+\DoxyCodeLine{01016\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01017\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01018\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{01019\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}}\ =\ 0x006c}
+\DoxyCodeLine{01020\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01021\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{01022\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}}\ =\ 0x006c}
+\DoxyCodeLine{01023\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01024\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01025\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}}\ =\ 0x006c}
+\DoxyCodeLine{01026\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01027\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{01028\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}}\ =\ 0x006c}
+\DoxyCodeLine{01029\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01030\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01031\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}}\ =\ 0x006c}
+\DoxyCodeLine{01032\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01033\ \mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01035\ \};}
+\DoxyCodeLine{01036\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_char_a3ec346c61837ddb2fc07509a1117c111}{hc\_char\_connect\_error\_type}}\ :\ uint8\_t}
+\DoxyCodeLine{01037\ \{}
+\DoxyCodeLine{01038\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a3ec346c61837ddb2fc07509a1117c111abf17b1490735ba074de90027dcf44cfd}{CHAR\_ERR\_REJECTED\_FROM\_SERVER}}\ =\ 0,\ \textcolor{comment}{//\ 0\ =\ Rejected\ from\ server.}}
+\DoxyCodeLine{01039\ \};}
+\DoxyCodeLine{01044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r}{HC\_REFUSE\_ENTER}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01045\ \{}
+\DoxyCodeLine{01046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01047\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r_a2889fac5728c34d2266cbe52d6be5f32}{HC\_REFUSE\_ENTER}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01048\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_aa1a7c4729b6c00d35afd5eb4568721aba106e11852a218db1b07e7c0940e49b7a}{ID\_HC\_REFUSE\_ENTER}},\ s)}
+\DoxyCodeLine{01049\ \ \ \ \ \{\}}
+\DoxyCodeLine{01050\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r_a930c92bf8f90fc3d959bc2843751bdab}{\string~HC\_REFUSE\_ENTER}}()\ \{\}}
+\DoxyCodeLine{01051\ }
+\DoxyCodeLine{01052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r_afbf1869cb4365022d59908f3a95228af}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_char_a3ec346c61837ddb2fc07509a1117c111}{hc\_char\_connect\_error\_type}}\ error);}
+\DoxyCodeLine{01053\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r_acaa10c6e4a2c56626ad96b81d011f0b4}{serialize}}();}
+\DoxyCodeLine{01054\ }
+\DoxyCodeLine{01055\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01056\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a3ec346c61837ddb2fc07509a1117c111}{hc\_char\_connect\_error\_type}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r_ae728a0d3e3c1264e7fb3c38dc2209e5b}{\_error}};}
+\DoxyCodeLine{01057\ \};}
+\DoxyCodeLine{01058\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0}{hc\_char\_create\_error\_type}}\ :\ uint8\_t}
+\DoxyCodeLine{01059\ \{}
+\DoxyCodeLine{01060\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0abadc6e2567e69517839b01494ec67db4}{HC\_CREATE\_ERROR\_ALREADY\_EXISTS}}\ =\ 0x00,}
+\DoxyCodeLine{01061\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0a4ddbc8d6aacc817284d4cbe592d8047a}{HC\_CREATE\_ERROR\_DENIED}}\ =\ 0xFF,}
+\DoxyCodeLine{01062\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0a34ea4cb070ed87a4f500ca2a32763a51}{HC\_CREATE\_ERROR\_UNDERAGE}}\ =\ 0x01,}
+\DoxyCodeLine{01063\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0a669aa09827600902de04afe90ef030eb}{HC\_CREATE\_ERROR\_SYMBOLS}}\ =\ 0x02,}
+\DoxyCodeLine{01064\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0a4e2d62e6edd3872d2772dbd4e0461685}{HC\_CREATE\_ERROR\_CHAR\_SLOT}}\ =\ 0x03}
+\DoxyCodeLine{01065\ \};}
+\DoxyCodeLine{01066\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01067\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01068\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{01069\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}}\ =\ 0x006e}
+\DoxyCodeLine{01070\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01071\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{01072\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}}\ =\ 0x006e}
+\DoxyCodeLine{01073\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01074\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01075\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}}\ =\ 0x006e}
+\DoxyCodeLine{01076\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01077\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{01078\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}}\ =\ 0x006e}
+\DoxyCodeLine{01079\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01080\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01081\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}}\ =\ 0x006e}
+\DoxyCodeLine{01082\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01083\ \mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01085\ \};}
+\DoxyCodeLine{01090\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r}{HC\_REFUSE\_MAKECHAR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01091\ \{}
+\DoxyCodeLine{01092\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01093\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r_ade52fb031bc9e3efb6d861b1ffba212e}{HC\_REFUSE\_MAKECHAR}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01094\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_afa57f553e645ea2316e16c3210240392a09cbf5602ce56194bc49eccd083bea1c}{ID\_HC\_REFUSE\_MAKECHAR}},\ s)}
+\DoxyCodeLine{01095\ \ \ \ \ \{\}}
+\DoxyCodeLine{01096\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r_a84776099f351687be841cab813395d1d}{\string~HC\_REFUSE\_MAKECHAR}}()\ \{\}}
+\DoxyCodeLine{01097\ }
+\DoxyCodeLine{01098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r_a496abbd344bb6dfcb34ed152343f17d0}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0}{hc\_char\_create\_error\_type}}\ error);}
+\DoxyCodeLine{01099\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r_adbaa63625fdedfd7065cb8fb0ef55912}{serialize}}();}
+\DoxyCodeLine{01100\ }
+\DoxyCodeLine{01101\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01102\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_acdd3bc2af4337bb8626d04803eac28f0}{hc\_char\_create\_error\_type}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r_a7ba2964bec3601c24851b472a0b6659c}{\_error}};}
+\DoxyCodeLine{01103\ \};}
+\DoxyCodeLine{01104\ }
+\DoxyCodeLine{01105\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01106\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01107\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20070821}}
+\DoxyCodeLine{01108\ \mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}}\ =\ 0x02ca}
+\DoxyCodeLine{01109\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01110\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20070821}}
+\DoxyCodeLine{01111\ \mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}}\ =\ 0x02ca}
+\DoxyCodeLine{01112\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01113\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01114\ \mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}}\ =\ 0x02ca}
+\DoxyCodeLine{01115\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01116\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20070821}}
+\DoxyCodeLine{01117\ \mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}}\ =\ 0x02ca}
+\DoxyCodeLine{01118\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01119\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01120\ \mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}}\ =\ 0x02ca}
+\DoxyCodeLine{01121\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01122\ \mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01123\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01124\ \};}
+\DoxyCodeLine{01129\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}{HC\_REFUSE\_SELECTCHAR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01130\ \{}
+\DoxyCodeLine{01131\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01132\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_ac1e8effeb729f161a6fec24099d39e3c}{HC\_REFUSE\_SELECTCHAR}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01133\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_abb7238aa8a7575bb03569162d5f8466aa3195c3b95a8928c58a0e7d9ad24bf12f}{ID\_HC\_REFUSE\_SELECTCHAR}},\ s)}
+\DoxyCodeLine{01134\ \ \ \ \ \{\}}
+\DoxyCodeLine{01135\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_adafcf6de9da9cda5447395fd290c33d2}{\string~HC\_REFUSE\_SELECTCHAR}}()\ \{\}}
+\DoxyCodeLine{01136\ }
+\DoxyCodeLine{01137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_acd195111d788cc11a5730a9b53ca7ca1}{deliver}}();}
+\DoxyCodeLine{01138\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_abfededc12ceb02fbeed6391612c0dbb2}{serialize}}();}
+\DoxyCodeLine{01139\ }
+\DoxyCodeLine{01140\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01141\ \};}
+\DoxyCodeLine{01142\ }
+\DoxyCodeLine{01143\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01144\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01145\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050628}}
+\DoxyCodeLine{01146\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}}\ =\ 0x023e}
+\DoxyCodeLine{01147\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01148\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050628}}
+\DoxyCodeLine{01149\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}}\ =\ 0x023e}
+\DoxyCodeLine{01150\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01151\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01152\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}}\ =\ 0x023e}
+\DoxyCodeLine{01153\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01154\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050628}}
+\DoxyCodeLine{01155\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}}\ =\ 0x023e}
+\DoxyCodeLine{01156\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01157\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01158\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}}\ =\ 0x023e}
+\DoxyCodeLine{01159\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01160\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01161\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01162\ \};}
+\DoxyCodeLine{01167\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_q_u_e_s_t___c_h_a_r_a_c_t_e_r___p_a_s_s_w_o_r_d}{HC\_REQUEST\_CHARACTER\_PASSWORD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01168\ \{}
+\DoxyCodeLine{01169\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01170\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_q_u_e_s_t___c_h_a_r_a_c_t_e_r___p_a_s_s_w_o_r_d_aae0ea2f5aa54559d58ec8cea4f240117}{HC\_REQUEST\_CHARACTER\_PASSWORD}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01171\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_ab5b291f7085af385519e949aad8f305ca4bcc6b99c8238f36a8f56e28db5aa680}{ID\_HC\_REQUEST\_CHARACTER\_PASSWORD}},\ s)}
+\DoxyCodeLine{01172\ \ \ \ \ \{\}}
+\DoxyCodeLine{01173\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_q_u_e_s_t___c_h_a_r_a_c_t_e_r___p_a_s_s_w_o_r_d_ab566a0fb919461e3d452c4d8ce2c7355}{\string~HC\_REQUEST\_CHARACTER\_PASSWORD}}()\ \{\}}
+\DoxyCodeLine{01174\ }
+\DoxyCodeLine{01175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_q_u_e_s_t___c_h_a_r_a_c_t_e_r___p_a_s_s_w_o_r_d_a9ffc3c347a4c07a7b5d1a8c5252d07d6}{deliver}}();}
+\DoxyCodeLine{01176\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_q_u_e_s_t___c_h_a_r_a_c_t_e_r___p_a_s_s_w_o_r_d_a659005139b4b7255aec10f4d703d7792}{serialize}}();}
+\DoxyCodeLine{01177\ }
+\DoxyCodeLine{01178\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01179\ \};}
+\DoxyCodeLine{01180\ }
+\DoxyCodeLine{01181\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01182\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01183\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20171220}}
+\DoxyCodeLine{01184\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x0ae9}
+\DoxyCodeLine{01185\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01186\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110222}}
+\DoxyCodeLine{01187\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x08b9}
+\DoxyCodeLine{01188\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01189\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20171220}}
+\DoxyCodeLine{01190\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x0ae9}
+\DoxyCodeLine{01191\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01192\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110222}}
+\DoxyCodeLine{01193\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x08b9}
+\DoxyCodeLine{01194\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01195\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01196\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x08b9}
+\DoxyCodeLine{01197\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01198\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20171220}}
+\DoxyCodeLine{01199\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x0ae9}
+\DoxyCodeLine{01200\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01201\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01202\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01203\ \};}
+\DoxyCodeLine{01204\ }
+\DoxyCodeLine{01205\ }
+\DoxyCodeLine{01206\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84d}{hc\_pincode\_state\_type}}\ :\ uint16\_t}
+\DoxyCodeLine{01207\ \{}
+\DoxyCodeLine{01208\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84daa1fbfb9013830fb53e39487d767b2a77}{PINCODE\_CORRECT}}\ =\ 0,}
+\DoxyCodeLine{01209\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84daca88c695d8e51b8b6d7762f9dfa0595e}{PINCODE\_REQUEST\_PIN}}\ =\ 1,}
+\DoxyCodeLine{01210\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84daeb84a0415e2eb8d55093c2147091fb5e}{PINCODE\_REQUEST\_NEW}}\ =\ 2,}
+\DoxyCodeLine{01211\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84da0e324b1506a97852561ea0b9ec590ee9}{PINCODE\_REQUEST\_CHANGE}}\ =\ 3,}
+\DoxyCodeLine{01212\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84da156f19f17d0904f686bcfb565dfd12dc}{PINCODE\_REQUEST\_NEW\_2}}\ =\ 4,}
+\DoxyCodeLine{01213\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84da1f709ba619c38ab4e49f26640a5cf9ad}{PINCODE\_LOGIN\_RESTRICT}}\ =\ 5,}
+\DoxyCodeLine{01214\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84dad661cfddb26c78708e6ac6bbdfde0460}{PINCODE\_LOGIN\_UNUSED}}\ =\ 6,}
+\DoxyCodeLine{01215\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84da596bde89e0f377d4501d4fe6fd9b5617}{PINCODE\_SHOW\_BUTTON}}\ =\ 7,}
+\DoxyCodeLine{01216\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84da1e0bc3688c376b2f62722d415028839e}{PINCODE\_INCORRECT}}\ =\ 8}
+\DoxyCodeLine{01217\ \};}
+\DoxyCodeLine{01218\ }
+\DoxyCodeLine{01219\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20180124\ \(\backslash\)}}
+\DoxyCodeLine{01220\ \textcolor{preprocessor}{||\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20180124\ \(\backslash\)}}
+\DoxyCodeLine{01221\ \textcolor{preprocessor}{||\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20180131}}
+\DoxyCodeLine{01222\ \textcolor{keyword}{enum}\ hc\_pincode\_login\_response2\ \{}
+\DoxyCodeLine{01223\ \ \ \ \ PINCODE\_LOGIN\_FLAG\_LOCKED\ =\ 0,}
+\DoxyCodeLine{01224\ \ \ \ \ PINCODE\_LOGIN\_FLAG\_CORRECT\ =\ 1,}
+\DoxyCodeLine{01225\ \ \ \ \ PINCODE\_LOGIN\_FLAG\_WRONG\ =\ 2,}
+\DoxyCodeLine{01226\ \};}
+\DoxyCodeLine{01227\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01228\ }
+\DoxyCodeLine{01233\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n}{HC\_SECOND\_PASSWD\_LOGIN}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01234\ \{}
+\DoxyCodeLine{01235\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01236\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_a6c9d170fa639e1315559f10e11056461}{HC\_SECOND\_PASSWD\_LOGIN}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01237\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_ad62fff00680bb2e564968787f05adc44aecb776e2de415160e112c46f1ffa97d3}{ID\_HC\_SECOND\_PASSWD\_LOGIN}},\ s)}
+\DoxyCodeLine{01238\ \ \ \ \ \{\}}
+\DoxyCodeLine{01239\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_ab636b5d0a3bc394b411169f2d1b8f307}{\string~HC\_SECOND\_PASSWD\_LOGIN}}()\ \{\}}
+\DoxyCodeLine{01240\ }
+\DoxyCodeLine{01241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_a7adcd8fd761e6a9bdbef9877b9cdd493}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84d}{hc\_pincode\_state\_type}}\ state);}
+\DoxyCodeLine{01242\ }
+\DoxyCodeLine{01243\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20180124\ \(\backslash\)}}
+\DoxyCodeLine{01244\ \textcolor{preprocessor}{||\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20180124\ \(\backslash\)}}
+\DoxyCodeLine{01245\ \textcolor{preprocessor}{||\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20180131}}
+\DoxyCodeLine{01246\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_a7adcd8fd761e6a9bdbef9877b9cdd493}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84d}{hc\_pincode\_state\_type}}\ state,\ hc\_pincode\_login\_response2\ state2);}
+\DoxyCodeLine{01247\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01248\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_a4a62283848b7e41e7678e0963aabfd11}{serialize}}();}
+\DoxyCodeLine{01249\ }
+\DoxyCodeLine{01250\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01251\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_aa8a7d5c8f7662ad5ea1f53c74c50a74c}{\_pincode\_seed}}\{\ 0\ \};}
+\DoxyCodeLine{01252\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_a101bf55c1f3addd726ce271d398f3434}{\_account\_id}}\{\ 0\ \};}
+\DoxyCodeLine{01253\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84d}{hc\_pincode\_state\_type}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n_a3cfbe34b5e71433b77665d6371d763f7}{\_state}}\{\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab20e895293f026e0e25a5b02ee06a84daa1fbfb9013830fb53e39487d767b2a77}{PINCODE\_CORRECT}}\ \};}
+\DoxyCodeLine{01254\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20180124\ \(\backslash\)}}
+\DoxyCodeLine{01255\ \textcolor{preprocessor}{||\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20180124\ \(\backslash\)}}
+\DoxyCodeLine{01256\ \textcolor{preprocessor}{||\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20180131}}
+\DoxyCodeLine{01257\ \ \ \ \ hc\_pincode\_login\_response2\ \_state2\{\ PINCODE\_LOGIN\_FLAG\_WRONG\ \};}
+\DoxyCodeLine{01258\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01259\ \};}
+\DoxyCodeLine{01260\ }
+\DoxyCodeLine{01261\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01262\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01263\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110215}}
+\DoxyCodeLine{01264\ \mbox{\hyperlink{namespace_horizon_1_1_char_a6c878e26dcaa88d16db07c31d453b174a5310c27c2957f22659a1c716ed96ec91}{ID\_HC\_SECOND\_PASSWD\_REQ}}\ =\ 0x08b7}
+\DoxyCodeLine{01265\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01266\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20110215}}
+\DoxyCodeLine{01267\ \mbox{\hyperlink{namespace_horizon_1_1_char_a6c878e26dcaa88d16db07c31d453b174a5310c27c2957f22659a1c716ed96ec91}{ID\_HC\_SECOND\_PASSWD\_REQ}}\ =\ 0x08b7}
+\DoxyCodeLine{01268\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01269\ \mbox{\hyperlink{namespace_horizon_1_1_char_a6c878e26dcaa88d16db07c31d453b174a5310c27c2957f22659a1c716ed96ec91}{ID\_HC\_SECOND\_PASSWD\_REQ}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01270\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01271\ \};}
+\DoxyCodeLine{01276\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___r_e_q}{HC\_SECOND\_PASSWD\_REQ}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01277\ \{}
+\DoxyCodeLine{01278\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01279\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___r_e_q_acb0892c613d70a22d1fbbbeeade289e6}{HC\_SECOND\_PASSWD\_REQ}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01280\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a6c878e26dcaa88d16db07c31d453b174a5310c27c2957f22659a1c716ed96ec91}{ID\_HC\_SECOND\_PASSWD\_REQ}},\ s)}
+\DoxyCodeLine{01281\ \ \ \ \ \{\}}
+\DoxyCodeLine{01282\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___r_e_q_afc06386794f6e26bef4c3556d6ba764f}{\string~HC\_SECOND\_PASSWD\_REQ}}()\ \{\}}
+\DoxyCodeLine{01283\ }
+\DoxyCodeLine{01284\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___r_e_q_a0c82475bf5e3d39b6ab596357fb0c9a5}{deliver}}();}
+\DoxyCodeLine{01285\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___r_e_q_aa573d66e47fea8d7700837580dde7d74}{serialize}}();}
+\DoxyCodeLine{01286\ }
+\DoxyCodeLine{01287\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01288\ \};}
+\DoxyCodeLine{01289\ }
+\DoxyCodeLine{01290\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01291\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01292\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20130522}}
+\DoxyCodeLine{01293\ \mbox{\hyperlink{namespace_horizon_1_1_char_a34f7729510b8d65fde8f1337d54efccca879ea77fac6775563cfe976074a8091f}{ID\_HC\_SECRETSCAN\_DATA}}\ =\ 0x09c2}
+\DoxyCodeLine{01294\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01295\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20130522}}
+\DoxyCodeLine{01296\ \mbox{\hyperlink{namespace_horizon_1_1_char_a34f7729510b8d65fde8f1337d54efccca879ea77fac6775563cfe976074a8091f}{ID\_HC\_SECRETSCAN\_DATA}}\ =\ 0x09c2}
+\DoxyCodeLine{01297\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01298\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01299\ \mbox{\hyperlink{namespace_horizon_1_1_char_a34f7729510b8d65fde8f1337d54efccca879ea77fac6775563cfe976074a8091f}{ID\_HC\_SECRETSCAN\_DATA}}\ =\ 0x09c2}
+\DoxyCodeLine{01300\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01301\ \mbox{\hyperlink{namespace_horizon_1_1_char_a34f7729510b8d65fde8f1337d54efccca879ea77fac6775563cfe976074a8091f}{ID\_HC\_SECRETSCAN\_DATA}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01302\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01303\ \};}
+\DoxyCodeLine{01308\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_r_e_t_s_c_a_n___d_a_t_a}{HC\_SECRETSCAN\_DATA}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01309\ \{}
+\DoxyCodeLine{01310\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01311\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_r_e_t_s_c_a_n___d_a_t_a_ae5a81df9c39b44b4933f5e01dcca3759}{HC\_SECRETSCAN\_DATA}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01312\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a34f7729510b8d65fde8f1337d54efccca879ea77fac6775563cfe976074a8091f}{ID\_HC\_SECRETSCAN\_DATA}},\ s)}
+\DoxyCodeLine{01313\ \ \ \ \ \{\}}
+\DoxyCodeLine{01314\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_r_e_t_s_c_a_n___d_a_t_a_a41764fe3be0b580c17731162318ea255}{\string~HC\_SECRETSCAN\_DATA}}()\ \{\}}
+\DoxyCodeLine{01315\ }
+\DoxyCodeLine{01316\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_r_e_t_s_c_a_n___d_a_t_a_a3c0b2a49ca285908baa530e2ab65aa4c}{deliver}}();}
+\DoxyCodeLine{01317\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_r_e_t_s_c_a_n___d_a_t_a_ade7c739043c4b842f47a4feccdf2556b}{serialize}}();}
+\DoxyCodeLine{01318\ }
+\DoxyCodeLine{01319\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01320\ \};}
+\DoxyCodeLine{01321\ }
+\DoxyCodeLine{01322\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01323\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01324\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20111101}}
+\DoxyCodeLine{01325\ \mbox{\hyperlink{namespace_horizon_1_1_char_a67b1c129c50a231a7981c90cd473716fab71be30490575ffa8a64d610f46ae21f}{ID\_HC\_UPDATE\_CHARINFO}}\ =\ 0x08e3}
+\DoxyCodeLine{01326\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01327\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20111025}}
+\DoxyCodeLine{01328\ \mbox{\hyperlink{namespace_horizon_1_1_char_a67b1c129c50a231a7981c90cd473716fab71be30490575ffa8a64d610f46ae21f}{ID\_HC\_UPDATE\_CHARINFO}}\ =\ 0x08e3}
+\DoxyCodeLine{01329\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01330\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01331\ \mbox{\hyperlink{namespace_horizon_1_1_char_a67b1c129c50a231a7981c90cd473716fab71be30490575ffa8a64d610f46ae21f}{ID\_HC\_UPDATE\_CHARINFO}}\ =\ 0x08e3}
+\DoxyCodeLine{01332\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01333\ \mbox{\hyperlink{namespace_horizon_1_1_char_a67b1c129c50a231a7981c90cd473716fab71be30490575ffa8a64d610f46ae21f}{ID\_HC\_UPDATE\_CHARINFO}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01334\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01335\ \};}
+\DoxyCodeLine{01340\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___u_p_d_a_t_e___c_h_a_r_i_n_f_o}{HC\_UPDATE\_CHARINFO}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01341\ \{}
+\DoxyCodeLine{01342\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01343\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___u_p_d_a_t_e___c_h_a_r_i_n_f_o_aecd770a97a5873dacc7707dc8265fe47}{HC\_UPDATE\_CHARINFO}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01344\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_a67b1c129c50a231a7981c90cd473716fab71be30490575ffa8a64d610f46ae21f}{ID\_HC\_UPDATE\_CHARINFO}},\ s)}
+\DoxyCodeLine{01345\ \ \ \ \ \{\}}
+\DoxyCodeLine{01346\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___u_p_d_a_t_e___c_h_a_r_i_n_f_o_aec578a6de0788d80d7ce36e68a4d60e8}{\string~HC\_UPDATE\_CHARINFO}}()\ \{\}}
+\DoxyCodeLine{01347\ }
+\DoxyCodeLine{01348\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___u_p_d_a_t_e___c_h_a_r_i_n_f_o_a4c8cec9aba1065219c6621b2f1c6d16f}{deliver}}();}
+\DoxyCodeLine{01349\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___u_p_d_a_t_e___c_h_a_r_i_n_f_o_a4b948ab40ece2f41d7da7ea929345f65}{serialize}}();}
+\DoxyCodeLine{01350\ }
+\DoxyCodeLine{01351\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01352\ \};}
+\DoxyCodeLine{01353\ }
+\DoxyCodeLine{01354\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01355\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01356\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20101228}}
+\DoxyCodeLine{01357\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad04a1bc629d9d1a61430dbd5c60dd8c9ad5f3bb9ce8a2de44f2be84489fff766a}{ID\_HC\_WAITING\_LOGIN}}\ =\ 0x08af}
+\DoxyCodeLine{01358\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01359\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20101228}}
+\DoxyCodeLine{01360\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad04a1bc629d9d1a61430dbd5c60dd8c9ad5f3bb9ce8a2de44f2be84489fff766a}{ID\_HC\_WAITING\_LOGIN}}\ =\ 0x08af}
+\DoxyCodeLine{01361\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01362\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01363\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad04a1bc629d9d1a61430dbd5c60dd8c9ad5f3bb9ce8a2de44f2be84489fff766a}{ID\_HC\_WAITING\_LOGIN}}\ =\ 0x08af}
+\DoxyCodeLine{01364\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01365\ \mbox{\hyperlink{namespace_horizon_1_1_char_ad04a1bc629d9d1a61430dbd5c60dd8c9ad5f3bb9ce8a2de44f2be84489fff766a}{ID\_HC\_WAITING\_LOGIN}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01366\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01367\ \};}
+\DoxyCodeLine{01372\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___w_a_i_t_i_n_g___l_o_g_i_n}{HC\_WAITING\_LOGIN}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<CharSession>}
+\DoxyCodeLine{01373\ \{}
+\DoxyCodeLine{01374\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01375\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___w_a_i_t_i_n_g___l_o_g_i_n_a48c4222a6740c5176df011a16de02520}{HC\_WAITING\_LOGIN}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{01376\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{CharSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_char_ad04a1bc629d9d1a61430dbd5c60dd8c9ad5f3bb9ce8a2de44f2be84489fff766a}{ID\_HC\_WAITING\_LOGIN}},\ s)}
+\DoxyCodeLine{01377\ \ \ \ \ \{\}}
+\DoxyCodeLine{01378\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___w_a_i_t_i_n_g___l_o_g_i_n_a13d8ee8f1d51fdec331369225bad8dd3}{\string~HC\_WAITING\_LOGIN}}()\ \{\}}
+\DoxyCodeLine{01379\ }
+\DoxyCodeLine{01380\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___w_a_i_t_i_n_g___l_o_g_i_n_a236fb1e3f9fc7d220bd7af5ca619f668}{deliver}}();}
+\DoxyCodeLine{01381\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___w_a_i_t_i_n_g___l_o_g_i_n_a8331c4dfa1ce62e58366abad3d820342}{serialize}}();}
+\DoxyCodeLine{01382\ }
+\DoxyCodeLine{01383\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01384\ \};}
+\DoxyCodeLine{01385\ }
+\DoxyCodeLine{01386\ \}\ \textcolor{comment}{/*\ namespace\ Char}}
+\DoxyCodeLine{01387\ \textcolor{comment}{\ */}\}\ \textcolor{comment}{/*\ namespace\ Horizon\ */}}
+\DoxyCodeLine{01388\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CHAR\_TRANSMITTED\_PACKETS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

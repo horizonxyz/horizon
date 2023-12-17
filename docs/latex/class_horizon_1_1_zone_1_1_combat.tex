@@ -1,0 +1,157 @@
+\doxysection{Horizon\+::Zone\+::Combat Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_combat}{}\label{class_horizon_1_1_zone_1_1_combat}\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+
+
+{\ttfamily \#include $<$Combat.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a4f34a06cfd4b2fd1f388b36433d4b649}{Combat}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a3a3f20883aaf1e0ebd405a07d389d6c4}{entity}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a56bf7daed7009d63f4b97763192e3518}{target}})
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a044df77ec24b76ca8b1cc3dde0de5049}{\texorpdfstring{$\sim$}{\string~}\+Combat}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a3a3f20883aaf1e0ebd405a07d389d6c4}{entity}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a56bf7daed7009d63f4b97763192e3518}{target}} () const
+\item 
+\mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}{combat\+\_\+retaliate\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a59898542b031e5f6659df5b34ca86a9e}{weapon\+\_\+attack}} ()
+\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_ab4debc2b28f3da6ffd198c4227a543da}{calculate\+\_\+weapon\+\_\+attack}} (int64\+\_\+t damage)
+\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a9d99c144d05e53b88eaf50cf23bcbb80}{calculate\+\_\+magic\+\_\+attack}} (int64\+\_\+t damage)
+\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a967a9ef27276ea1cf4953766ed570f6b}{calculate\+\_\+misc\+\_\+attack}} (int64\+\_\+t damage)
+\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a7a65e002ef2bd63d1f393603e8a4ee70}{deduce\+\_\+weapon\+\_\+element\+\_\+attack}} (int64\+\_\+t damage, \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}} def\+\_\+ele, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}{item\+\_\+equip\+\_\+location\+\_\+index}} loc)
+\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_a8b8a4d88491044fc1cfa59e70c54ea04}{deduce\+\_\+damage\+\_\+size\+\_\+modifier}} (int64\+\_\+t damage, \mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}{item\+\_\+equip\+\_\+location\+\_\+index}} loc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a4f34a06cfd4b2fd1f388b36433d4b649}\label{class_horizon_1_1_zone_1_1_combat_a4f34a06cfd4b2fd1f388b36433d4b649} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!Combat@{Combat}}
+\index{Combat@{Combat}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{Combat()}{Combat()}}
+{\footnotesize\ttfamily Combat\+::\+Combat (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{entity,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a044df77ec24b76ca8b1cc3dde0de5049}\label{class_horizon_1_1_zone_1_1_combat_a044df77ec24b76ca8b1cc3dde0de5049} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!````~Combat@{\texorpdfstring{$\sim$}{\string~}Combat}}
+\index{````~Combat@{\texorpdfstring{$\sim$}{\string~}Combat}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Combat()}{\string~Combat()}}
+{\footnotesize\ttfamily Combat\+::\texorpdfstring{$\sim$}{\string~}\+Combat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a9d99c144d05e53b88eaf50cf23bcbb80}\label{class_horizon_1_1_zone_1_1_combat_a9d99c144d05e53b88eaf50cf23bcbb80} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!calculate\_magic\_attack@{calculate\_magic\_attack}}
+\index{calculate\_magic\_attack@{calculate\_magic\_attack}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{calculate\_magic\_attack()}{calculate\_magic\_attack()}}
+{\footnotesize\ttfamily int64\+\_\+t Combat\+::calculate\+\_\+magic\+\_\+attack (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{damage }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a967a9ef27276ea1cf4953766ed570f6b}\label{class_horizon_1_1_zone_1_1_combat_a967a9ef27276ea1cf4953766ed570f6b} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!calculate\_misc\_attack@{calculate\_misc\_attack}}
+\index{calculate\_misc\_attack@{calculate\_misc\_attack}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{calculate\_misc\_attack()}{calculate\_misc\_attack()}}
+{\footnotesize\ttfamily int64\+\_\+t Combat\+::calculate\+\_\+misc\+\_\+attack (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{damage }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_ab4debc2b28f3da6ffd198c4227a543da}\label{class_horizon_1_1_zone_1_1_combat_ab4debc2b28f3da6ffd198c4227a543da} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!calculate\_weapon\_attack@{calculate\_weapon\_attack}}
+\index{calculate\_weapon\_attack@{calculate\_weapon\_attack}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{calculate\_weapon\_attack()}{calculate\_weapon\_attack()}}
+{\footnotesize\ttfamily int64\+\_\+t Combat\+::calculate\+\_\+weapon\+\_\+attack (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{damage }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a8b8a4d88491044fc1cfa59e70c54ea04}\label{class_horizon_1_1_zone_1_1_combat_a8b8a4d88491044fc1cfa59e70c54ea04} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!deduce\_damage\_size\_modifier@{deduce\_damage\_size\_modifier}}
+\index{deduce\_damage\_size\_modifier@{deduce\_damage\_size\_modifier}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{deduce\_damage\_size\_modifier()}{deduce\_damage\_size\_modifier()}}
+{\footnotesize\ttfamily int64\+\_\+t Combat\+::deduce\+\_\+damage\+\_\+size\+\_\+modifier (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{damage,  }\item[{\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}{item\+\_\+equip\+\_\+location\+\_\+index}}}]{loc }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_a8b8a4d88491044fc1cfa59e70c54ea04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_horizon_1_1_zone_1_1_combat_a8b8a4d88491044fc1cfa59e70c54ea04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a7a65e002ef2bd63d1f393603e8a4ee70}\label{class_horizon_1_1_zone_1_1_combat_a7a65e002ef2bd63d1f393603e8a4ee70} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!deduce\_weapon\_element\_attack@{deduce\_weapon\_element\_attack}}
+\index{deduce\_weapon\_element\_attack@{deduce\_weapon\_element\_attack}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{deduce\_weapon\_element\_attack()}{deduce\_weapon\_element\_attack()}}
+{\footnotesize\ttfamily int64\+\_\+t Combat\+::deduce\+\_\+weapon\+\_\+element\+\_\+attack (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{damage,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}}}]{def\+\_\+ele,  }\item[{\mbox{\hyperlink{_item_definitions_8hpp_a7c5b6f73d77adb40bdb00db50f0890b6}{item\+\_\+equip\+\_\+location\+\_\+index}}}]{loc }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_a7a65e002ef2bd63d1f393603e8a4ee70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_a7a65e002ef2bd63d1f393603e8a4ee70_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a3a3f20883aaf1e0ebd405a07d389d6c4}\label{class_horizon_1_1_zone_1_1_combat_a3a3f20883aaf1e0ebd405a07d389d6c4} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!entity@{entity}}
+\index{entity@{entity}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{entity()}{entity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Combat\+::entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_a3a3f20883aaf1e0ebd405a07d389d6c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a56bf7daed7009d63f4b97763192e3518}\label{class_horizon_1_1_zone_1_1_combat_a56bf7daed7009d63f4b97763192e3518} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!target@{target}}
+\index{target@{target}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Combat\+::target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_a56bf7daed7009d63f4b97763192e3518_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_a59898542b031e5f6659df5b34ca86a9e}\label{class_horizon_1_1_zone_1_1_combat_a59898542b031e5f6659df5b34ca86a9e} 
+\index{Horizon::Zone::Combat@{Horizon::Zone::Combat}!weapon\_attack@{weapon\_attack}}
+\index{weapon\_attack@{weapon\_attack}!Horizon::Zone::Combat@{Horizon::Zone::Combat}}
+\doxysubsubsection{\texorpdfstring{weapon\_attack()}{weapon\_attack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}{combat\+\_\+retaliate\+\_\+type}} Combat\+::weapon\+\_\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_a59898542b031e5f6659df5b34ca86a9e_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\mbox{\hyperlink{_combat_8hpp}{Combat.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\mbox{\hyperlink{_combat_8cpp}{Combat.\+cpp}}\end{DoxyCompactItemize}

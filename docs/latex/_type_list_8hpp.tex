@@ -1,0 +1,101 @@
+\doxysection{src/\+Core/\+Structures/\+Type\+List.hpp File Reference}
+\hypertarget{_type_list_8hpp}{}\label{_type_list_8hpp}\index{src/Core/Structures/TypeList.hpp@{src/Core/Structures/TypeList.hpp}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_type_list_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_type_list}{Type\+List$<$ HEAD, TAIL $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_a6a7a6aa3dece450c8d239713e2952df7}{TYPELIST\+\_\+1}}(T1)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, Type\+Null$>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_a311cb99af993804c6737ae46c5cbfaff}{TYPELIST\+\_\+2}}(T1,  T2)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a6a7a6aa3dece450c8d239713e2952df7}{TYPELIST\+\_\+1}}(T2) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_a0309f68a543c5c0994f9edc0e56dc59f}{TYPELIST\+\_\+3}}(T1,  T2,  T3)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a311cb99af993804c6737ae46c5cbfaff}{TYPELIST\+\_\+2}}(T2, T3) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_a7a156c571ab21a16b0495e1c882a07fa}{TYPELIST\+\_\+4}}(T1,  T2,  T3,  T4)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a0309f68a543c5c0994f9edc0e56dc59f}{TYPELIST\+\_\+3}}(T2, T3, T4) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_aad5d9b3c82c8503c85c625acd41c0a2f}{TYPELIST\+\_\+5}}(T1,  T2,  T3,  T4,  T5)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a7a156c571ab21a16b0495e1c882a07fa}{TYPELIST\+\_\+4}}(T2, T3, T4, T5) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_ac6f3277dcaade98ceeaa5c0e1c454816}{TYPELIST\+\_\+6}}(T1,  T2,  T3,  T4,  T5,  T6)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_aad5d9b3c82c8503c85c625acd41c0a2f}{TYPELIST\+\_\+5}}(T2, T3, T4, T5, T6) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_aeb724ee75c2a90ed93d4eddef2357a8b}{TYPELIST\+\_\+7}}(T1,  T2,  T3,  T4,  T5,  T6,  T7)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_ac6f3277dcaade98ceeaa5c0e1c454816}{TYPELIST\+\_\+6}}(T2, T3, T4, T5, T6, T7) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_ad828864baaf3cc2505a37b8227c53c20}{TYPELIST\+\_\+8}}(T1,  T2,  T3,  T4,  T5,  T6,  T7,  T8)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_aeb724ee75c2a90ed93d4eddef2357a8b}{TYPELIST\+\_\+7}}(T2, T3, T4, T5, T6, T7, T8) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_ac938e9eedc71479614ff131e99f58f38}{TYPELIST\+\_\+9}}(T1,  T2,  T3,  T4,  T5,  T6,  T7,  T8,  T9)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_ad828864baaf3cc2505a37b8227c53c20}{TYPELIST\+\_\+8}}(T2, T3, T4, T5, T6, T7, T8, T9) $>$
+\item 
+\#define \mbox{\hyperlink{_type_list_8hpp_ab1b1b381fea18c4c22a2484f0d5c04a2}{TYPELIST\+\_\+10}}(T1,  T2,  T3,  T4,  T5,  T6,  T7,  T8,  T9,  T10)~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_ac938e9eedc71479614ff131e99f58f38}{TYPELIST\+\_\+9}}(T2, T3, T4, T5, T6, T7, T8, T9, T10) $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_type_list_8hpp_a6a7a6aa3dece450c8d239713e2952df7}\label{_type_list_8hpp_a6a7a6aa3dece450c8d239713e2952df7} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_1@{TYPELIST\_1}}
+\index{TYPELIST\_1@{TYPELIST\_1}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_1}{TYPELIST\_1}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+1(\begin{DoxyParamCaption}\item[{}]{T1 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, Type\+Null$>$}
+
+\Hypertarget{_type_list_8hpp_ab1b1b381fea18c4c22a2484f0d5c04a2}\label{_type_list_8hpp_ab1b1b381fea18c4c22a2484f0d5c04a2} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_10@{TYPELIST\_10}}
+\index{TYPELIST\_10@{TYPELIST\_10}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_10}{TYPELIST\_10}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+10(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4,  }\item[{}]{T5,  }\item[{}]{T6,  }\item[{}]{T7,  }\item[{}]{T8,  }\item[{}]{T9,  }\item[{}]{T10 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_ac938e9eedc71479614ff131e99f58f38}{TYPELIST\+\_\+9}}(T2, T3, T4, T5, T6, T7, T8, T9, T10) $>$}
+
+\Hypertarget{_type_list_8hpp_a311cb99af993804c6737ae46c5cbfaff}\label{_type_list_8hpp_a311cb99af993804c6737ae46c5cbfaff} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_2@{TYPELIST\_2}}
+\index{TYPELIST\_2@{TYPELIST\_2}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_2}{TYPELIST\_2}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+2(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a6a7a6aa3dece450c8d239713e2952df7}{TYPELIST\+\_\+1}}(T2) $>$}
+
+\Hypertarget{_type_list_8hpp_a0309f68a543c5c0994f9edc0e56dc59f}\label{_type_list_8hpp_a0309f68a543c5c0994f9edc0e56dc59f} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_3@{TYPELIST\_3}}
+\index{TYPELIST\_3@{TYPELIST\_3}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_3}{TYPELIST\_3}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+3(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a311cb99af993804c6737ae46c5cbfaff}{TYPELIST\+\_\+2}}(T2, T3) $>$}
+
+\Hypertarget{_type_list_8hpp_a7a156c571ab21a16b0495e1c882a07fa}\label{_type_list_8hpp_a7a156c571ab21a16b0495e1c882a07fa} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_4@{TYPELIST\_4}}
+\index{TYPELIST\_4@{TYPELIST\_4}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_4}{TYPELIST\_4}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+4(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a0309f68a543c5c0994f9edc0e56dc59f}{TYPELIST\+\_\+3}}(T2, T3, T4) $>$}
+
+\Hypertarget{_type_list_8hpp_aad5d9b3c82c8503c85c625acd41c0a2f}\label{_type_list_8hpp_aad5d9b3c82c8503c85c625acd41c0a2f} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_5@{TYPELIST\_5}}
+\index{TYPELIST\_5@{TYPELIST\_5}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_5}{TYPELIST\_5}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+5(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4,  }\item[{}]{T5 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_a7a156c571ab21a16b0495e1c882a07fa}{TYPELIST\+\_\+4}}(T2, T3, T4, T5) $>$}
+
+\Hypertarget{_type_list_8hpp_ac6f3277dcaade98ceeaa5c0e1c454816}\label{_type_list_8hpp_ac6f3277dcaade98ceeaa5c0e1c454816} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_6@{TYPELIST\_6}}
+\index{TYPELIST\_6@{TYPELIST\_6}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_6}{TYPELIST\_6}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+6(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4,  }\item[{}]{T5,  }\item[{}]{T6 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_aad5d9b3c82c8503c85c625acd41c0a2f}{TYPELIST\+\_\+5}}(T2, T3, T4, T5, T6) $>$}
+
+\Hypertarget{_type_list_8hpp_aeb724ee75c2a90ed93d4eddef2357a8b}\label{_type_list_8hpp_aeb724ee75c2a90ed93d4eddef2357a8b} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_7@{TYPELIST\_7}}
+\index{TYPELIST\_7@{TYPELIST\_7}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_7}{TYPELIST\_7}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+7(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4,  }\item[{}]{T5,  }\item[{}]{T6,  }\item[{}]{T7 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_ac6f3277dcaade98ceeaa5c0e1c454816}{TYPELIST\+\_\+6}}(T2, T3, T4, T5, T6, T7) $>$}
+
+\Hypertarget{_type_list_8hpp_ad828864baaf3cc2505a37b8227c53c20}\label{_type_list_8hpp_ad828864baaf3cc2505a37b8227c53c20} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_8@{TYPELIST\_8}}
+\index{TYPELIST\_8@{TYPELIST\_8}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_8}{TYPELIST\_8}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+8(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4,  }\item[{}]{T5,  }\item[{}]{T6,  }\item[{}]{T7,  }\item[{}]{T8 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_aeb724ee75c2a90ed93d4eddef2357a8b}{TYPELIST\+\_\+7}}(T2, T3, T4, T5, T6, T7, T8) $>$}
+
+\Hypertarget{_type_list_8hpp_ac938e9eedc71479614ff131e99f58f38}\label{_type_list_8hpp_ac938e9eedc71479614ff131e99f58f38} 
+\index{TypeList.hpp@{TypeList.hpp}!TYPELIST\_9@{TYPELIST\_9}}
+\index{TYPELIST\_9@{TYPELIST\_9}!TypeList.hpp@{TypeList.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_9}{TYPELIST\_9}}
+{\footnotesize\ttfamily \#define TYPELIST\+\_\+9(\begin{DoxyParamCaption}\item[{}]{T1,  }\item[{}]{T2,  }\item[{}]{T3,  }\item[{}]{T4,  }\item[{}]{T5,  }\item[{}]{T6,  }\item[{}]{T7,  }\item[{}]{T8,  }\item[{}]{T9 }\end{DoxyParamCaption})~ \mbox{\hyperlink{struct_type_list}{Type\+List}}$<$T1, \mbox{\hyperlink{_type_list_8hpp_ad828864baaf3cc2505a37b8227c53c20}{TYPELIST\+\_\+8}}(T2, T3, T4, T5, T6, T7, T8, T9) $>$}
+

@@ -1,0 +1,301 @@
+\doxysection{Horizon\+::Zone\+::Assets\+::Storage Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage}{}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage}\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+
+
+{\ttfamily \#include $<$Storage.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0336782f16b623c99a971907491393e1}{Storage}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_abd99caee2256fa0cb5f2423c3a75178e}{player}}, int32\+\_\+t storage\+\_\+id, std\+::string \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_aee1c496e5067d45551055ba4f8a30362}{name}}, uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a84a6f280ef8c58a195d932bd5e930a08}{max\+\_\+storage}})
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a73cf30f0a34250396f9eabee7dc5c93d}{\texorpdfstring{$\sim$}{\string~}\+Storage}} ()
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_ad04009625e390ccb988a62753981f70c}{load}} ()
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0fe997a5cb733d6ee60525e981345e5b}{save}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a43e20ad6d282fcbfbb546e0ccbc234ac}{get\+\_\+free\+\_\+index}} ()
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a86b7fd6ca5f9ba95996ccd2db41655b7}{get\+\_\+storage\+\_\+id}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_aee1c496e5067d45551055ba4f8a30362}{name}} ()
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a84a6f280ef8c58a195d932bd5e930a08}{max\+\_\+storage}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_abd99caee2256fa0cb5f2423c3a75178e}{player}} ()
+\item 
+\mbox{\hyperlink{namespace_horizon_1_1_zone_aa598d9b1cd87d7eecc878de0e8cbc337}{storage\+\_\+add\+\_\+item\+\_\+result\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_aa7d5d8ea211a114905aff8b733e16a2b}{add\+\_\+item}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$ item, int amount)
+\item 
+\mbox{\hyperlink{namespace_horizon_1_1_zone_a1759c5b6c7dcf26bb2e08f0fb76f3a37}{storage\+\_\+remove\+\_\+item\+\_\+result\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a1edbdf986a9bfe361021db5f6de89737}{remove\+\_\+item}} (int32\+\_\+t index, int amount)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a64217c2b8b08a2c6037636cb7485a133}{get\+\_\+item}} (int32\+\_\+t storage\+\_\+index)
+\item 
+\mbox{\hyperlink{namespace_horizon_1_1_zone_aa598d9b1cd87d7eecc878de0e8cbc337}{storage\+\_\+add\+\_\+item\+\_\+result\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab7afdcdbb37c73ab2347ea4ab1930536}{add\+\_\+item\+\_\+from\+\_\+inventory}} (int16\+\_\+t inventory\+\_\+index, int amount)
+\item 
+\mbox{\hyperlink{namespace_horizon_1_1_zone_a8d51bc2f5a5f4d65843dd2de4c5a8e00}{storage\+\_\+to\+\_\+inventory\+\_\+result\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac792757695c261b776c056e1cb991ee8}{add\+\_\+item\+\_\+to\+\_\+inventory}} (int storage\+\_\+index, int amount)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_a743f020c1740cca6af036914581e4a23}{notify\+\_\+all}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab8f530120d37f0e427d74440f7de34af}{notify\+\_\+normal}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac6bd4e516170b509276e3069489808f4}{notify\+\_\+equips}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0336782f16b623c99a971907491393e1}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0336782f16b623c99a971907491393e1} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!Storage@{Storage}}
+\index{Storage@{Storage}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{Storage()}{Storage()}}
+{\footnotesize\ttfamily Storage\+::\+Storage (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$}]{player,  }\item[{int32\+\_\+t}]{storage\+\_\+id,  }\item[{std\+::string}]{name,  }\item[{uint32\+\_\+t}]{max\+\_\+storage }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a73cf30f0a34250396f9eabee7dc5c93d}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a73cf30f0a34250396f9eabee7dc5c93d} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!````~Storage@{\texorpdfstring{$\sim$}{\string~}Storage}}
+\index{````~Storage@{\texorpdfstring{$\sim$}{\string~}Storage}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Storage()}{\string~Storage()}}
+{\footnotesize\ttfamily Storage\+::\texorpdfstring{$\sim$}{\string~}\+Storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_aa7d5d8ea211a114905aff8b733e16a2b}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_aa7d5d8ea211a114905aff8b733e16a2b} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!add\_item@{add\_item}}
+\index{add\_item@{add\_item}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{add\_item()}{add\_item()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_horizon_1_1_zone_aa598d9b1cd87d7eecc878de0e8cbc337}{Horizon\+::\+Zone\+::storage\+\_\+add\+\_\+item\+\_\+result\+\_\+type}} Storage\+::add\+\_\+item (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$}]{item,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_aa7d5d8ea211a114905aff8b733e16a2b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_aa7d5d8ea211a114905aff8b733e16a2b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab7afdcdbb37c73ab2347ea4ab1930536}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab7afdcdbb37c73ab2347ea4ab1930536} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!add\_item\_from\_inventory@{add\_item\_from\_inventory}}
+\index{add\_item\_from\_inventory@{add\_item\_from\_inventory}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{add\_item\_from\_inventory()}{add\_item\_from\_inventory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_horizon_1_1_zone_aa598d9b1cd87d7eecc878de0e8cbc337}{Horizon\+::\+Zone\+::storage\+\_\+add\+\_\+item\+\_\+result\+\_\+type}} Storage\+::add\+\_\+item\+\_\+from\+\_\+inventory (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{inventory\+\_\+index,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab7afdcdbb37c73ab2347ea4ab1930536_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab7afdcdbb37c73ab2347ea4ab1930536_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac792757695c261b776c056e1cb991ee8}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac792757695c261b776c056e1cb991ee8} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!add\_item\_to\_inventory@{add\_item\_to\_inventory}}
+\index{add\_item\_to\_inventory@{add\_item\_to\_inventory}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{add\_item\_to\_inventory()}{add\_item\_to\_inventory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_horizon_1_1_zone_a8d51bc2f5a5f4d65843dd2de4c5a8e00}{Horizon\+::\+Zone\+::storage\+\_\+to\+\_\+inventory\+\_\+result\+\_\+type}} Storage\+::add\+\_\+item\+\_\+to\+\_\+inventory (\begin{DoxyParamCaption}\item[{int}]{storage\+\_\+index,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac792757695c261b776c056e1cb991ee8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a43e20ad6d282fcbfbb546e0ccbc234ac}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a43e20ad6d282fcbfbb546e0ccbc234ac} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!get\_free\_index@{get\_free\_index}}
+\index{get\_free\_index@{get\_free\_index}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{get\_free\_index()}{get\_free\_index()}}
+{\footnotesize\ttfamily int16\+\_\+t Storage\+::get\+\_\+free\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a43e20ad6d282fcbfbb546e0ccbc234ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a64217c2b8b08a2c6037636cb7485a133}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a64217c2b8b08a2c6037636cb7485a133} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!get\_item@{get\_item}}
+\index{get\_item@{get\_item}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{get\_item()}{get\_item()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$ Storage\+::get\+\_\+item (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{storage\+\_\+index }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a64217c2b8b08a2c6037636cb7485a133_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a86b7fd6ca5f9ba95996ccd2db41655b7}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a86b7fd6ca5f9ba95996ccd2db41655b7} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!get\_storage\_id@{get\_storage\_id}}
+\index{get\_storage\_id@{get\_storage\_id}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{get\_storage\_id()}{get\_storage\_id()}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Assets\+::\+Storage\+::get\+\_\+storage\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_ad04009625e390ccb988a62753981f70c}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_ad04009625e390ccb988a62753981f70c} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!load@{load}}
+\index{load@{load}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily int32\+\_\+t Storage\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ad04009625e390ccb988a62753981f70c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a84a6f280ef8c58a195d932bd5e930a08}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a84a6f280ef8c58a195d932bd5e930a08} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!max\_storage@{max\_storage}}
+\index{max\_storage@{max\_storage}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{max\_storage()}{max\_storage()}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Assets\+::\+Storage\+::max\+\_\+storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_aee1c496e5067d45551055ba4f8a30362}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_aee1c496e5067d45551055ba4f8a30362} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!name@{name}}
+\index{name@{name}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string Horizon\+::\+Zone\+::\+Assets\+::\+Storage\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a743f020c1740cca6af036914581e4a23}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a743f020c1740cca6af036914581e4a23} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!notify\_all@{notify\_all}}
+\index{notify\_all@{notify\_all}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{notify\_all()}{notify\_all()}}
+{\footnotesize\ttfamily void Storage\+::notify\+\_\+all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a743f020c1740cca6af036914581e4a23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a743f020c1740cca6af036914581e4a23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac6bd4e516170b509276e3069489808f4}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac6bd4e516170b509276e3069489808f4} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!notify\_equips@{notify\_equips}}
+\index{notify\_equips@{notify\_equips}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{notify\_equips()}{notify\_equips()}}
+{\footnotesize\ttfamily void Storage\+::notify\+\_\+equips (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac6bd4e516170b509276e3069489808f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ac6bd4e516170b509276e3069489808f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab8f530120d37f0e427d74440f7de34af}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab8f530120d37f0e427d74440f7de34af} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!notify\_normal@{notify\_normal}}
+\index{notify\_normal@{notify\_normal}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{notify\_normal()}{notify\_normal()}}
+{\footnotesize\ttfamily void Storage\+::notify\+\_\+normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab8f530120d37f0e427d74440f7de34af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_ab8f530120d37f0e427d74440f7de34af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_abd99caee2256fa0cb5f2423c3a75178e}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_abd99caee2256fa0cb5f2423c3a75178e} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!player@{player}}
+\index{player@{player}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{player()}{player()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$ Horizon\+::\+Zone\+::\+Assets\+::\+Storage\+::player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_abd99caee2256fa0cb5f2423c3a75178e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a1edbdf986a9bfe361021db5f6de89737}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a1edbdf986a9bfe361021db5f6de89737} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!remove\_item@{remove\_item}}
+\index{remove\_item@{remove\_item}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{remove\_item()}{remove\_item()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_horizon_1_1_zone_a1759c5b6c7dcf26bb2e08f0fb76f3a37}{Horizon\+::\+Zone\+::storage\+\_\+remove\+\_\+item\+\_\+result\+\_\+type}} Storage\+::remove\+\_\+item (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{index,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a1edbdf986a9bfe361021db5f6de89737_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a1edbdf986a9bfe361021db5f6de89737_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0fe997a5cb733d6ee60525e981345e5b}\label{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0fe997a5cb733d6ee60525e981345e5b} 
+\index{Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}!save@{save}}
+\index{save@{save}!Horizon::Zone::Assets::Storage@{Horizon::Zone::Assets::Storage}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily int32\+\_\+t Storage\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_horizon_1_1_zone_1_1_assets_1_1_storage_a0fe997a5cb733d6ee60525e981345e5b_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Player/\+Assets/\mbox{\hyperlink{_storage_8hpp}{Storage.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Player/\+Assets/\mbox{\hyperlink{_storage_8cpp}{Storage.\+cpp}}\end{DoxyCompactItemize}

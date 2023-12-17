@@ -1,0 +1,125 @@
+\doxysection{Horizon\+::Zone\+::UI\+::Auction Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction}{}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction}\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+
+
+{\ttfamily \#include $<$User\+Interface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a67e5e808acf1491ca87402539cc4e4d8}{Auction}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a334d3b410beba62f5160fb6696310485}{\texorpdfstring{$\sim$}{\string~}\+Auction}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4de66b00abe0078baed47cfb5a83e74e}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_acf1fbf7a225c027e62ad55e01c9d1058}{add}} (int now\+\_\+money, int max\+\_\+money, int16\+\_\+t delete\+\_\+hour)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9dae62eb59c8bee0e892fd34f1f4ac25}{add\+\_\+cancel}} (int auction\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a6dd27f39f2d9548b73f5fa0f60a610ca}{add\+\_\+item}} (int inventory\+\_\+index, int amount)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4d895eed2a8c36b4456f70bba89fc66d}{buy}} (int auction\+\_\+id, int money)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a066a58bec50979c918b0d0d2499dd2eb}{create}} (\mbox{\hyperlink{_client_definitions_8hpp_a6bca213bf3b6aef17c7628f7f86be6e5}{cz\+\_\+auction\+\_\+create\+\_\+type}} type)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9b0555f2750f7cc735204ad195dd2d80}{search\+\_\+item}} (\mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14d}{cz\+\_\+auction\+\_\+search\+\_\+type}} search\+\_\+type, int auction\+\_\+id, std\+::string search\+\_\+text, int page\+\_\+number)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a35f240d33e7c5d82b16fc74261557d2f}{own\+\_\+information}} (\mbox{\hyperlink{_client_definitions_8hpp_a81e2833c5675c199d0b08177d3e7557c}{cz\+\_\+auction\+\_\+reqmyinfo\+\_\+type}} type)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a2518ce279b8e085ac5251c93d3201240}{stop}} (int auction\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_af3c2957b7ffb0871e69be532da6ef72d}{notify\+\_\+add\+\_\+item}} (int inventory\+\_\+index, \mbox{\hyperlink{_client_definitions_8hpp_a1bfec5a1c2370be3f0fce4cf0a2fbb5c}{zc\+\_\+ack\+\_\+auction\+\_\+add\+\_\+item\+\_\+result\+\_\+type}} result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a67e5e808acf1491ca87402539cc4e4d8}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a67e5e808acf1491ca87402539cc4e4d8} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!Auction@{Auction}}
+\index{Auction@{Auction}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{Auction()}{Auction()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::\+Auction (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_u_i_1_1_auction}{Auction} \Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a334d3b410beba62f5160fb6696310485}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a334d3b410beba62f5160fb6696310485} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!````~Auction@{\texorpdfstring{$\sim$}{\string~}Auction}}
+\index{````~Auction@{\texorpdfstring{$\sim$}{\string~}Auction}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Auction()}{\string~Auction()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::\texorpdfstring{$\sim$}{\string~}\+Auction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_acf1fbf7a225c027e62ad55e01c9d1058}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_acf1fbf7a225c027e62ad55e01c9d1058} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!add@{add}}
+\index{add@{add}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::add (\begin{DoxyParamCaption}\item[{int}]{now\+\_\+money,  }\item[{int}]{max\+\_\+money,  }\item[{int16\+\_\+t}]{delete\+\_\+hour }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9dae62eb59c8bee0e892fd34f1f4ac25}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9dae62eb59c8bee0e892fd34f1f4ac25} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!add\_cancel@{add\_cancel}}
+\index{add\_cancel@{add\_cancel}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{add\_cancel()}{add\_cancel()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::add\+\_\+cancel (\begin{DoxyParamCaption}\item[{int}]{auction\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a6dd27f39f2d9548b73f5fa0f60a610ca}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a6dd27f39f2d9548b73f5fa0f60a610ca} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!add\_item@{add\_item}}
+\index{add\_item@{add\_item}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{add\_item()}{add\_item()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::add\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{inventory\+\_\+index,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4d895eed2a8c36b4456f70bba89fc66d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4d895eed2a8c36b4456f70bba89fc66d} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!buy@{buy}}
+\index{buy@{buy}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{buy()}{buy()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::buy (\begin{DoxyParamCaption}\item[{int}]{auction\+\_\+id,  }\item[{int}]{money }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a066a58bec50979c918b0d0d2499dd2eb}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a066a58bec50979c918b0d0d2499dd2eb} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!create@{create}}
+\index{create@{create}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_a6bca213bf3b6aef17c7628f7f86be6e5}{cz\+\_\+auction\+\_\+create\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4de66b00abe0078baed47cfb5a83e74e}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4de66b00abe0078baed47cfb5a83e74e} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_af3c2957b7ffb0871e69be532da6ef72d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_af3c2957b7ffb0871e69be532da6ef72d} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!notify\_add\_item@{notify\_add\_item}}
+\index{notify\_add\_item@{notify\_add\_item}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{notify\_add\_item()}{notify\_add\_item()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::notify\+\_\+add\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{inventory\+\_\+index,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_a1bfec5a1c2370be3f0fce4cf0a2fbb5c}{zc\+\_\+ack\+\_\+auction\+\_\+add\+\_\+item\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_auction_af3c2957b7ffb0871e69be532da6ef72d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a35f240d33e7c5d82b16fc74261557d2f}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a35f240d33e7c5d82b16fc74261557d2f} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!own\_information@{own\_information}}
+\index{own\_information@{own\_information}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{own\_information()}{own\_information()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::own\+\_\+information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_a81e2833c5675c199d0b08177d3e7557c}{cz\+\_\+auction\+\_\+reqmyinfo\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9b0555f2750f7cc735204ad195dd2d80}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9b0555f2750f7cc735204ad195dd2d80} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!search\_item@{search\_item}}
+\index{search\_item@{search\_item}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{search\_item()}{search\_item()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::search\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14d}{cz\+\_\+auction\+\_\+search\+\_\+type}}}]{search\+\_\+type,  }\item[{int}]{auction\+\_\+id,  }\item[{std\+::string}]{search\+\_\+text,  }\item[{int}]{page\+\_\+number }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a2518ce279b8e085ac5251c93d3201240}\label{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a2518ce279b8e085ac5251c93d3201240} 
+\index{Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}!stop@{stop}}
+\index{stop@{stop}!Horizon::Zone::UI::Auction@{Horizon::Zone::UI::Auction}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Auction\+::stop (\begin{DoxyParamCaption}\item[{int}]{auction\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8hpp}{User\+Interface.\+hpp}}\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

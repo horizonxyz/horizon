@@ -1,0 +1,157 @@
+\doxysection{Grid\+Entity\+Existence\+Notifier Struct Reference}
+\hypertarget{struct_grid_entity_existence_notifier}{}\label{struct_grid_entity_existence_notifier}\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+
+
+{\ttfamily \#include $<$Grid\+Notifiers.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid_entity_existence_notifier_a69846d45828e56ebe46a2eefc2371955}{Grid\+Entity\+Existence\+Notifier}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \&entity, \mbox{\hyperlink{_entity_definitions_8hpp_af621b90201a35ce0d5e9863d04441bf4}{entity\+\_\+viewport\+\_\+notification\+\_\+type}} notif\+\_\+type)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a4ea0c3249e2543bde0f7aeb238db4e3a}{notify}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_existence_notifier_aba87e33ca0eb1e6fec1f085cfea1701d}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})$>$ \&m)
+\item 
+{\footnotesize template$<$class NOT\+\_\+\+INTERESTED $>$ }\\void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a632e608da52bf1800bc3db37fa34624e}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a893ae68a8a0e40134a75139d96c82410}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_n_p_c}{NPC}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a11b738c80f21926b3bde28f823f51d85}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_elemental}{Elemental}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a859495c3a4782508ec1eaee5a52b3a17}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_homunculus}{Homunculus}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a4e6347bd4d458a46d1f4d0888e4dbfff}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_mercenary}{Mercenary}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_aa25398e09cb2ab2b933e94873f350732}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_pet}{Pet}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a67b3d411646a904c1132d898a39ea2d5}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a9d53582ba69ea8405dab451f04bedbaf}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_skill}{Skill}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_entity_existence_notifier_a7f06624cdf13e89079982e86045b273b}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_item}{Item}} $>$ \&m)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \mbox{\hyperlink{struct_grid_entity_existence_notifier_a2c8b6d073e8df8be64db4e65796478d0}{\+\_\+entity}}
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_af621b90201a35ce0d5e9863d04441bf4}{entity\+\_\+viewport\+\_\+notification\+\_\+type}} \mbox{\hyperlink{struct_grid_entity_existence_notifier_aad1a5d9bfd1bc74f9edf9246df5f479c}{\+\_\+notif\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_grid_entity_existence_notifier_a69846d45828e56ebe46a2eefc2371955}\label{struct_grid_entity_existence_notifier_a69846d45828e56ebe46a2eefc2371955} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{GridEntityExistenceNotifier()}{GridEntityExistenceNotifier()}}
+{\footnotesize\ttfamily Grid\+Entity\+Existence\+Notifier\+::\+Grid\+Entity\+Existence\+Notifier (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \&}]{entity,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_af621b90201a35ce0d5e9863d04441bf4}{entity\+\_\+viewport\+\_\+notification\+\_\+type}}}]{notif\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_grid_entity_existence_notifier_a4ea0c3249e2543bde0f7aeb238db4e3a}\label{struct_grid_entity_existence_notifier_a4ea0c3249e2543bde0f7aeb238db4e3a} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!notify@{notify}}
+\index{notify@{notify}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&}]{m }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_entity_existence_notifier_a4ea0c3249e2543bde0f7aeb238db4e3a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_grid_entity_existence_notifier_a11b738c80f21926b3bde28f823f51d85}\label{struct_grid_entity_existence_notifier_a11b738c80f21926b3bde28f823f51d85} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_elemental}{Elemental}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_aba87e33ca0eb1e6fec1f085cfea1701d}\label{struct_grid_entity_existence_notifier_aba87e33ca0eb1e6fec1f085cfea1701d} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a859495c3a4782508ec1eaee5a52b3a17}\label{struct_grid_entity_existence_notifier_a859495c3a4782508ec1eaee5a52b3a17} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_homunculus}{Homunculus}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a7f06624cdf13e89079982e86045b273b}\label{struct_grid_entity_existence_notifier_a7f06624cdf13e89079982e86045b273b} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_item}{Item}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a4e6347bd4d458a46d1f4d0888e4dbfff}\label{struct_grid_entity_existence_notifier_a4e6347bd4d458a46d1f4d0888e4dbfff} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_mercenary}{Mercenary}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a67b3d411646a904c1132d898a39ea2d5}\label{struct_grid_entity_existence_notifier_a67b3d411646a904c1132d898a39ea2d5} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a632e608da52bf1800bc3db37fa34624e}\label{struct_grid_entity_existence_notifier_a632e608da52bf1800bc3db37fa34624e} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$class NOT\+\_\+\+INTERESTED $>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a893ae68a8a0e40134a75139d96c82410}\label{struct_grid_entity_existence_notifier_a893ae68a8a0e40134a75139d96c82410} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_n_p_c}{NPC}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_aa25398e09cb2ab2b933e94873f350732}\label{struct_grid_entity_existence_notifier_aa25398e09cb2ab2b933e94873f350732} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_pet}{Pet}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_existence_notifier_a9d53582ba69ea8405dab451f04bedbaf}\label{struct_grid_entity_existence_notifier_a9d53582ba69ea8405dab451f04bedbaf} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+Entity\+Existence\+Notifier\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_skill}{Skill}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_grid_entity_existence_notifier_a2c8b6d073e8df8be64db4e65796478d0}\label{struct_grid_entity_existence_notifier_a2c8b6d073e8df8be64db4e65796478d0} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!\_entity@{\_entity}}
+\index{\_entity@{\_entity}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{\_entity}{\_entity}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}}$>$ Grid\+Entity\+Existence\+Notifier\+::\+\_\+entity}
+
+\Hypertarget{struct_grid_entity_existence_notifier_aad1a5d9bfd1bc74f9edf9246df5f479c}\label{struct_grid_entity_existence_notifier_aad1a5d9bfd1bc74f9edf9246df5f479c} 
+\index{GridEntityExistenceNotifier@{GridEntityExistenceNotifier}!\_notif\_type@{\_notif\_type}}
+\index{\_notif\_type@{\_notif\_type}!GridEntityExistenceNotifier@{GridEntityExistenceNotifier}}
+\doxysubsubsection{\texorpdfstring{\_notif\_type}{\_notif\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_af621b90201a35ce0d5e9863d04441bf4}{entity\+\_\+viewport\+\_\+notification\+\_\+type}} Grid\+Entity\+Existence\+Notifier\+::\+\_\+notif\+\_\+type}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8hpp}{Grid\+Notifiers.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8cpp}{Grid\+Notifiers.\+cpp}}\end{DoxyCompactItemize}

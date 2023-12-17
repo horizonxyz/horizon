@@ -1,0 +1,186 @@
+\doxysection{Horizon\+::Zone\+::Traits\+::Status\+::Status\+Registry Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry}{}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+
+
+{\ttfamily \#include $<$Status.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_compare_status_operation}{Compare\+Status\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60}{status\+\_\+operation\+\_\+type}} \{ \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a73c3c0371c7cca5970118b5c674020a8}{STATUS\+\_\+\+OPERATION\+\_\+\+ADD\+\_\+\+TO\+\_\+\+BASE}} = 0
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a6ad3f4e9410bb5d23f5deda1c583cab6}{STATUS\+\_\+\+OPERATION\+\_\+\+SUBTRACT\+\_\+\+FROM\+\_\+\+BASE}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60acd12085af51d5633c4a2ba77c68805ba}{STATUS\+\_\+\+OPERATION\+\_\+\+ADD\+\_\+\+TO\+\_\+\+EQUIP}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a80009b21106834ed94fee5e031f0200b}{STATUS\+\_\+\+OPERATION\+\_\+\+SUBTRACT\+\_\+\+FROM\+\_\+\+EQUIP}}
+, \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60ab95ef6c9885ad34032d41d0c4f8d2f2b}{STATUS\+\_\+\+OPERATION\+\_\+\+ADD\+\_\+\+TO\+\_\+\+STATUS}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60aefa6e84cf40bd7e1a59d83eab0fb0f87}{STATUS\+\_\+\+OPERATION\+\_\+\+SUBTRACT\+\_\+\+FROM\+\_\+\+STATUS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a12a5b8f5aa9e30fcffc3543d5d095782}{Status\+Registry}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3b6d7abab53b4a9bb1a3ed5e933bf423}{\texorpdfstring{$\sim$}{\string~}\+Status\+Registry}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_af79f11273f4077cbca0ce64ee7dcafd3}{add\+\_\+to\+\_\+base}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, uint16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_aa570f7eff7b0a23eb0416ebe6a9be2b8}{subtract\+\_\+from\+\_\+base}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, uint16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a755415fe50ea0e6901f8726dda47ac37}{add\+\_\+to\+\_\+equip}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, uint16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a838ce442202fa742ef2d1b8d6a5e59cc}{subtract\+\_\+from\+\_\+equip}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, uint16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_ac88fbe195b48a103b304a84e0fcaed57}{add\+\_\+to\+\_\+status}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, uint16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3d1e7bd416d83bd912a833fc9a827f61}{subtract\+\_\+from\+\_\+status}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, uint16\+\_\+t value)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_abb92eea5c1f8aa4c06c1895d85e714b7}{has\+\_\+next\+\_\+operation}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_aa0eea202a194ab52306952b83830bf87}{get\+\_\+next\+\_\+operation}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a94b5f4d3ce1458ca3d60b120ab102be5}{process\+\_\+queue}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::priority\+\_\+queue$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}} \texorpdfstring{$\ast$}{*}, std\+::vector$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}} \texorpdfstring{$\ast$}{*} $>$, \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_compare_status_operation}{Compare\+Status\+Operation}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a218566cf160b8c42fe46f48bcc627824}{\+\_\+status\+\_\+operation\+\_\+queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!status\_operation\_type@{status\_operation\_type}}
+\index{status\_operation\_type@{status\_operation\_type}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{status\_operation\_type}{status\_operation\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60}{Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+Status\+Registry\+::status\+\_\+operation\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_OPERATION\_ADD\_TO\_BASE@{STATUS\_OPERATION\_ADD\_TO\_BASE}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!STATUS\_OPERATION\_ADD\_TO\_BASE@{STATUS\_OPERATION\_ADD\_TO\_BASE}}}\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a73c3c0371c7cca5970118b5c674020a8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a73c3c0371c7cca5970118b5c674020a8} 
+STATUS\+\_\+\+OPERATION\+\_\+\+ADD\+\_\+\+TO\+\_\+\+BASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_OPERATION\_SUBTRACT\_FROM\_BASE@{STATUS\_OPERATION\_SUBTRACT\_FROM\_BASE}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!STATUS\_OPERATION\_SUBTRACT\_FROM\_BASE@{STATUS\_OPERATION\_SUBTRACT\_FROM\_BASE}}}\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a6ad3f4e9410bb5d23f5deda1c583cab6}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a6ad3f4e9410bb5d23f5deda1c583cab6} 
+STATUS\+\_\+\+OPERATION\+\_\+\+SUBTRACT\+\_\+\+FROM\+\_\+\+BASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_OPERATION\_ADD\_TO\_EQUIP@{STATUS\_OPERATION\_ADD\_TO\_EQUIP}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!STATUS\_OPERATION\_ADD\_TO\_EQUIP@{STATUS\_OPERATION\_ADD\_TO\_EQUIP}}}\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60acd12085af51d5633c4a2ba77c68805ba}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60acd12085af51d5633c4a2ba77c68805ba} 
+STATUS\+\_\+\+OPERATION\+\_\+\+ADD\+\_\+\+TO\+\_\+\+EQUIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_OPERATION\_SUBTRACT\_FROM\_EQUIP@{STATUS\_OPERATION\_SUBTRACT\_FROM\_EQUIP}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!STATUS\_OPERATION\_SUBTRACT\_FROM\_EQUIP@{STATUS\_OPERATION\_SUBTRACT\_FROM\_EQUIP}}}\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a80009b21106834ed94fee5e031f0200b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60a80009b21106834ed94fee5e031f0200b} 
+STATUS\+\_\+\+OPERATION\+\_\+\+SUBTRACT\+\_\+\+FROM\+\_\+\+EQUIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_OPERATION\_ADD\_TO\_STATUS@{STATUS\_OPERATION\_ADD\_TO\_STATUS}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!STATUS\_OPERATION\_ADD\_TO\_STATUS@{STATUS\_OPERATION\_ADD\_TO\_STATUS}}}\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60ab95ef6c9885ad34032d41d0c4f8d2f2b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60ab95ef6c9885ad34032d41d0c4f8d2f2b} 
+STATUS\+\_\+\+OPERATION\+\_\+\+ADD\+\_\+\+TO\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_OPERATION\_SUBTRACT\_FROM\_STATUS@{STATUS\_OPERATION\_SUBTRACT\_FROM\_STATUS}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!STATUS\_OPERATION\_SUBTRACT\_FROM\_STATUS@{STATUS\_OPERATION\_SUBTRACT\_FROM\_STATUS}}}\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60aefa6e84cf40bd7e1a59d83eab0fb0f87}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3dbd00bce1abbe8af758faaef5529f60aefa6e84cf40bd7e1a59d83eab0fb0f87} 
+STATUS\+\_\+\+OPERATION\+\_\+\+SUBTRACT\+\_\+\+FROM\+\_\+\+STATUS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a12a5b8f5aa9e30fcffc3543d5d095782}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a12a5b8f5aa9e30fcffc3543d5d095782} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!StatusRegistry@{StatusRegistry}}
+\index{StatusRegistry@{StatusRegistry}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{StatusRegistry()}{StatusRegistry()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+Status\+Registry\+::\+Status\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3b6d7abab53b4a9bb1a3ed5e933bf423}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3b6d7abab53b4a9bb1a3ed5e933bf423} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!````~StatusRegistry@{\texorpdfstring{$\sim$}{\string~}StatusRegistry}}
+\index{````~StatusRegistry@{\texorpdfstring{$\sim$}{\string~}StatusRegistry}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StatusRegistry()}{\string~StatusRegistry()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+Status\+Registry\+::\texorpdfstring{$\sim$}{\string~}\+Status\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_af79f11273f4077cbca0ce64ee7dcafd3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_af79f11273f4077cbca0ce64ee7dcafd3} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!add\_to\_base@{add\_to\_base}}
+\index{add\_to\_base@{add\_to\_base}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{add\_to\_base()}{add\_to\_base()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::add\+\_\+to\+\_\+base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a755415fe50ea0e6901f8726dda47ac37}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a755415fe50ea0e6901f8726dda47ac37} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!add\_to\_equip@{add\_to\_equip}}
+\index{add\_to\_equip@{add\_to\_equip}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{add\_to\_equip()}{add\_to\_equip()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::add\+\_\+to\+\_\+equip (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_ac88fbe195b48a103b304a84e0fcaed57}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_ac88fbe195b48a103b304a84e0fcaed57} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!add\_to\_status@{add\_to\_status}}
+\index{add\_to\_status@{add\_to\_status}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{add\_to\_status()}{add\_to\_status()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::add\+\_\+to\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_aa0eea202a194ab52306952b83830bf87}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_aa0eea202a194ab52306952b83830bf87} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!get\_next\_operation@{get\_next\_operation}}
+\index{get\_next\_operation@{get\_next\_operation}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{get\_next\_operation()}{get\_next\_operation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+Status\+Registry\+::get\+\_\+next\+\_\+operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_abb92eea5c1f8aa4c06c1895d85e714b7}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_abb92eea5c1f8aa4c06c1895d85e714b7} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!has\_next\_operation@{has\_next\_operation}}
+\index{has\_next\_operation@{has\_next\_operation}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{has\_next\_operation()}{has\_next\_operation()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+Status\+Registry\+::has\+\_\+next\+\_\+operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a94b5f4d3ce1458ca3d60b120ab102be5}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a94b5f4d3ce1458ca3d60b120ab102be5} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!process\_queue@{process\_queue}}
+\index{process\_queue@{process\_queue}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{process\_queue()}{process\_queue()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::process\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a94b5f4d3ce1458ca3d60b120ab102be5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_aa570f7eff7b0a23eb0416ebe6a9be2b8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_aa570f7eff7b0a23eb0416ebe6a9be2b8} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!subtract\_from\_base@{subtract\_from\_base}}
+\index{subtract\_from\_base@{subtract\_from\_base}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{subtract\_from\_base()}{subtract\_from\_base()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::subtract\+\_\+from\+\_\+base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a838ce442202fa742ef2d1b8d6a5e59cc}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a838ce442202fa742ef2d1b8d6a5e59cc} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!subtract\_from\_equip@{subtract\_from\_equip}}
+\index{subtract\_from\_equip@{subtract\_from\_equip}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{subtract\_from\_equip()}{subtract\_from\_equip()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::subtract\+\_\+from\+\_\+equip (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3d1e7bd416d83bd912a833fc9a827f61}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a3d1e7bd416d83bd912a833fc9a827f61} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!subtract\_from\_status@{subtract\_from\_status}}
+\index{subtract\_from\_status@{subtract\_from\_status}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{subtract\_from\_status()}{subtract\_from\_status()}}
+{\footnotesize\ttfamily void Status\+::\+Status\+Registry\+::subtract\+\_\+from\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a218566cf160b8c42fe46f48bcc627824}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_a218566cf160b8c42fe46f48bcc627824} 
+\index{Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}!\_status\_operation\_queue@{\_status\_operation\_queue}}
+\index{\_status\_operation\_queue@{\_status\_operation\_queue}!Horizon::Zone::Traits::Status::StatusRegistry@{Horizon::Zone::Traits::Status::StatusRegistry}}
+\doxysubsubsection{\texorpdfstring{\_status\_operation\_queue}{\_status\_operation\_queue}}
+{\footnotesize\ttfamily std\+::priority\+\_\+queue$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}} \texorpdfstring{$\ast$}{*}, std\+::vector$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_status_operation}{Status\+Operation}} \texorpdfstring{$\ast$}{*}$>$, \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry_1_1_compare_status_operation}{Compare\+Status\+Operation}}$>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+Status\+Registry\+::\+\_\+status\+\_\+operation\+\_\+queue\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_status_8hpp}{Status.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_status_8cpp}{Status.\+cpp}}\end{DoxyCompactItemize}

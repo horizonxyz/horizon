@@ -1,0 +1,177 @@
+\doxysection{Horizon\+::Auth\+::AC\+\_\+\+LOGIN\+\_\+\+OTP Class Reference}
+\hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p}{}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p}\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p}{AC\+\_\+\+LOGIN\+\_\+\+OTP}.  
+
+
+
+
+{\ttfamily \#include $<$Transmitted\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Auth\+::AC\+\_\+\+LOGIN\+\_\+\+OTP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Auth\+::AC\+\_\+\+LOGIN\+\_\+\+OTP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a7104a4b54b5423bdb68ce72b5819cd7f}{AC\+\_\+\+LOGIN\+\_\+\+OTP}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a9c218388b254ea4020b0e0cfe526a772}{\texorpdfstring{$\sim$}{\string~}\+AC\+\_\+\+LOGIN\+\_\+\+OTP}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ac71fbf35f314d954c914879d326cbd14}{deliver}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ad85c71254bcadac307c5137b052bf7de}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Horizon\+::\+Base\+::\+Network\+Packet\+Transmitter$<$ Auth\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{Network\+Packet\+Transmitter}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Auth\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_acad36e1f8be629d774358381069a3d7e}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Transmitter}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a9e1b1c61d7a2fa7eb9e14c810055466c}{transmit}} ()
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a894983a07731b6ad07b306b795350262}{transmit}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_af5e1c015b986a995a149dfde6e52fb8b}{\+\_\+packet\+\_\+length}} \{ 0 \}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a3a195c23477b1c9ae126e277f1acc749}{\+\_\+login\+Flag}} \{ 0 \}
+\item 
+char \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ae1797306b3b71a4436b6791f245d4ab2}{\+\_\+token}} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p}{AC\+\_\+\+LOGIN\+\_\+\+OTP}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a7104a4b54b5423bdb68ce72b5819cd7f}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a7104a4b54b5423bdb68ce72b5819cd7f} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!AC\_LOGIN\_OTP@{AC\_LOGIN\_OTP}}
+\index{AC\_LOGIN\_OTP@{AC\_LOGIN\_OTP}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{AC\_LOGIN\_OTP()}{AC\_LOGIN\_OTP()}}
+{\footnotesize\ttfamily Horizon\+::\+Auth\+::\+AC\+\_\+\+LOGIN\+\_\+\+OTP\+::\+AC\+\_\+\+LOGIN\+\_\+\+OTP (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a9c218388b254ea4020b0e0cfe526a772}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a9c218388b254ea4020b0e0cfe526a772} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!````~AC\_LOGIN\_OTP@{\texorpdfstring{$\sim$}{\string~}AC\_LOGIN\_OTP}}
+\index{````~AC\_LOGIN\_OTP@{\texorpdfstring{$\sim$}{\string~}AC\_LOGIN\_OTP}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AC\_LOGIN\_OTP()}{\string~AC\_LOGIN\_OTP()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Auth\+::\+AC\+\_\+\+LOGIN\+\_\+\+OTP\+::\texorpdfstring{$\sim$}{\string~}\+AC\+\_\+\+LOGIN\+\_\+\+OTP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ac71fbf35f314d954c914879d326cbd14}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ac71fbf35f314d954c914879d326cbd14} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!deliver@{deliver}}
+\index{deliver@{deliver}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{deliver()}{deliver()}}
+{\footnotesize\ttfamily void AC\+\_\+\+LOGIN\+\_\+\+OTP\+::deliver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p}{AC\+\_\+\+LOGIN\+\_\+\+OTP} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ac71fbf35f314d954c914879d326cbd14_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ac71fbf35f314d954c914879d326cbd14_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ad85c71254bcadac307c5137b052bf7de}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ad85c71254bcadac307c5137b052bf7de} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!serialize@{serialize}}
+\index{serialize@{serialize}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& AC\+\_\+\+LOGIN\+\_\+\+OTP\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ad85c71254bcadac307c5137b052bf7de_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ad85c71254bcadac307c5137b052bf7de_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a3a195c23477b1c9ae126e277f1acc749}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a3a195c23477b1c9ae126e277f1acc749} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!\_loginFlag@{\_loginFlag}}
+\index{\_loginFlag@{\_loginFlag}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{\_loginFlag}{\_loginFlag}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Auth\+::\+AC\+\_\+\+LOGIN\+\_\+\+OTP\+::\+\_\+login\+Flag \{ 0 \}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_af5e1c015b986a995a149dfde6e52fb8b}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_af5e1c015b986a995a149dfde6e52fb8b} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!\_packet\_length@{\_packet\_length}}
+\index{\_packet\_length@{\_packet\_length}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{\_packet\_length}{\_packet\_length}}
+{\footnotesize\ttfamily int16\+\_\+t Horizon\+::\+Auth\+::\+AC\+\_\+\+LOGIN\+\_\+\+OTP\+::\+\_\+packet\+\_\+length \{ 0 \}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ae1797306b3b71a4436b6791f245d4ab2}\label{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ae1797306b3b71a4436b6791f245d4ab2} 
+\index{Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}!\_token@{\_token}}
+\index{\_token@{\_token}!Horizon::Auth::AC\_LOGIN\_OTP@{Horizon::Auth::AC\_LOGIN\_OTP}}
+\doxysubsubsection{\texorpdfstring{\_token}{\_token}}
+{\footnotesize\ttfamily char Horizon\+::\+Auth\+::\+AC\+\_\+\+LOGIN\+\_\+\+OTP\+::\+\_\+token\mbox{[}6\mbox{]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Auth/\+Packets/\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8hpp}{Transmitted\+Packets.\+hpp}}\item 
+src/\+Server/\+Auth/\+Packets/\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8cpp}{Transmitted\+Packets.\+cpp}}\end{DoxyCompactItemize}

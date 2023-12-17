@@ -1,0 +1,140 @@
+\doxysection{Socket\+Mgr.\+hpp}
+\hypertarget{_socket_mgr_8hpp_source}{}\label{_socket_mgr_8hpp_source}\index{src/Libraries/Networking/SocketMgr.hpp@{src/Libraries/Networking/SocketMgr.hpp}}
+\mbox{\hyperlink{_socket_mgr_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_NETWORKING\_SOCKETMGR\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_NETWORKING\_SOCKETMGR\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8hpp}{Core/Logging/Logger.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_async_acceptor_8hpp}{Libraries/Networking/AsyncAcceptor.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_network_thread_8hpp}{Libraries/Networking/NetworkThread.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connector_8hpp}{Libraries/Networking/Connector.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <boost/scoped\_ptr.hpp>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{namespace\ }Networking}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SocketType>}
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{SocketMgr}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{typedef}\ std::shared\_ptr<NetworkThread<SocketType>>\ NetworkThreadPtr;}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ab8c95611a2804ced3b244dc7f44a0c61}{SocketMgr}}()\ \{\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a0cce6513bda7032cb0213f45a7c211d6}{\string~SocketMgr}}()}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ assert(\_thread\_map.empty());}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a77af28e7a7be0e3108bb6558db9973b3}{StartNetworkThreads}}(uint32\_t\ threads\ =\ 1)}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ threads;\ i++)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkThreadPtr\ network\_thr\ =\ std::make\_shared<NetworkThread<SocketType>>();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (network\_thr\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Networking:\ Error\ in\ creating\ threads,\ SocketMgr::StartThreadForNetworks."{}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ network\_thr-\/>start();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \_thread\_map.insert(std::make\_pair(i,\ network\_thr));}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ad4dc29dac960bda7710852716369d2bf}{stop\_network}}()}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ the\ thread\ map.\ */}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \_thread\_map.begin();\ it\ !=\ \_thread\_map.end();)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkThreadPtr\ thr\ =\ it-\/>second;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ thr-\/>finalize();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ thread\ to\ finalize\ all\ sockets.}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (thr-\/>is\_finalizing())}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ thr-\/>join();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Finalized\ network\ thread\ "{}}\ <<\ (\textcolor{keywordtype}{void}\ *)\ thr.get();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ \_thread\_map.erase(it);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ace99794cfb19741ed28f34b6b301c3b4}{GetNetworkThreadCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (uint32\_t)\ \_thread\_map.size();\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a1aa5f0a67e7f1e7a0f7a9f18ca4b28a8}{SelectThreadWithMinConnections}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ uint32\_t\ min\_idx\ =\ 0;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&thr\ :\ \_thread\_map)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (thr.second-\/>connection\_count()\ <\ NetworkThreadPtr(\_thread\_map.at(min\_idx))-\/>connection\_count())}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ min\_idx\ =\ thr.first;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ min\_idx;}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ \ \ std::shared\_ptr<SocketType>\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_af926bc3f7cd3b66a66c1912a5e61ceb3}{on\_socket\_open}}(std::shared\_ptr<tcp::socket>\ \textcolor{keyword}{const}\ \&socket,\ uint32\_t\ thread\_index)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::shared\_ptr<SocketType>\ new\_socket\ =\ std::make\_shared<SocketType>(++\_last\_socket\_id,\ std::move(socket));}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ socket\ to\ thread.}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ NetworkThreadPtr(\_thread\_map.at(thread\_index))-\/>add\_socket(new\_socket);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (boost::system::system\_error\ \textcolor{keyword}{const}\ \&error)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Networking:\ Failed\ to\ retrieve\ client's\ remote\ address\ "{}}\ <<\ error.what();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ new\_socket;}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ \ \ std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a02b5d07a1bd8370494db5f31cd1faa9a}{get\_new\_socket}}()}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ min\_idx\ =\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a1aa5f0a67e7f1e7a0f7a9f18ca4b28a8}{SelectThreadWithMinConnections}}();}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(NetworkThreadPtr(\_thread\_map.at(min\_idx))-\/>get\_new\_socket(),\ min\_idx);}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00155\ \ \ \ \ uint64\_t\ \_last\_socket\_id\{0\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ std::unordered\_map<uint32\_t,\ NetworkThreadPtr>\ \_thread\_map;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{00159\ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_NETWORKING\_SOCKETMGR\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,421 @@
+\doxysection{GRF Class Reference}
+\hypertarget{class_g_r_f}{}\label{class_g_r_f}\index{GRF@{GRF}}
+
+
+{\ttfamily \#include $<$GRF.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_r_f_a8265d50eda2df9c2ce2401bc52b6713b}{GRF}} ()
+\item 
+\mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79e}{grf\+\_\+load\+\_\+result\+\_\+type}} \mbox{\hyperlink{class_g_r_f_a6f2c010cb061e49075854abf75eee2fb}{load}} ()
+\item 
+void \mbox{\hyperlink{class_g_r_f_ac07390ae906258905c15ceb25e8af09b}{extract\+All\+Files}} ()
+\item 
+void \mbox{\hyperlink{class_g_r_f_af0ed197c966f95c106a8f1eac5625b5a}{extract\+File}} (std\+::string file\+\_\+name, std\+::string output\+\_\+path, clock\+\_\+t begin\+\_\+time)
+\item 
+std\+::pair$<$ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3ef}{grf\+\_\+read\+\_\+error\+\_\+type}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_g_r_f_a9ef9210001ff34a4295716d1a30b7e15}{read}} (const char \texorpdfstring{$\ast$}{*}in\+\_\+name, int \texorpdfstring{$\ast$}{*}size)
+\item 
+void \mbox{\hyperlink{class_g_r_f_af00be034100eb8916ad28e6e34f8fcb2}{decode}} (unsigned char \texorpdfstring{$\ast$}{*}buf, size\+\_\+t len, char entry\+\_\+type, int entry\+\_\+len)
+\item 
+void \mbox{\hyperlink{class_g_r_f_a0d62090ac82ebbbb27738dbb1337df43}{decode\+Full}} (unsigned char \texorpdfstring{$\ast$}{*}buf, size\+\_\+t len, int cycle)
+\item 
+void \mbox{\hyperlink{class_g_r_f_a84d6d5ade7a11988e2867440e1ef083a}{decode\+Header}} (unsigned char \texorpdfstring{$\ast$}{*}buf, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{class_g_r_f_a4050d0cdd20ded558f5662ed5076ebbd}{decode\+Shuffled\+Bytes}} (\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}src)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_g_r_f_adc489a2eaef9224d33075b1482a98708}{substitute\+Obfuscated\+Byte}} (uint8\+\_\+t in)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_g_r_f_a6b5e988a2f5e25b485864e3bbc113ac9}{get\+\_\+id}} ()
+\item 
+void \mbox{\hyperlink{class_g_r_f_a6f9f1d0775e1bf850d94f11c54c78c93}{set\+\_\+id}} (uint8\+\_\+t id)
+\item 
+const boost\+::filesystem\+::path \& \mbox{\hyperlink{class_g_r_f_a27e4d41dd51e2f0ca78c0473a2a517aa}{get\+GRFPath}} () const
+\item 
+void \mbox{\hyperlink{class_g_r_f_a71ec3fba1c85caf1ef2fdc6606600d7d}{set\+GRFPath}} (std\+::string const \&path)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_g_r_f_a7c0386dcd0fb1d464c986afd79c09766}{get\+GRFSize}} () const
+\item 
+void \mbox{\hyperlink{class_g_r_f_a31e07473f10fb341d5666d5ac890023a}{set\+GRFSize}} (std\+::size\+\_\+t const \&size)
+\item 
+int \mbox{\hyperlink{class_g_r_f_ab0d1fe790e66c54909779ee05ec39ab9}{get\+GRFVersion}} () const
+\item 
+void \mbox{\hyperlink{class_g_r_f_ad32defe95dddad1214d68ed8d7dbaf5d}{set\+GRFVersion}} (int version)
+\item 
+int \mbox{\hyperlink{class_g_r_f_a58b8115d23a1ca322121400d2b051562}{get\+Total\+Files}} () const
+\item 
+void \mbox{\hyperlink{class_g_r_f_a755d1c0fed2f9972b714944d0663d28e}{set\+Total\+Files}} (int total)
+\item 
+File\+Map\+Type \& \mbox{\hyperlink{class_g_r_f_a00ed715dde32def3bc9bdb0c94c78527}{get\+File\+Map}} ()
+\item 
+File\+Error\+Map\+Type \& \mbox{\hyperlink{class_g_r_f_a2d62e5c0cca5ffa836e32f1fb1e23625}{get\+File\+Error\+Map}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_g_r_f_a8265d50eda2df9c2ce2401bc52b6713b}\label{class_g_r_f_a8265d50eda2df9c2ce2401bc52b6713b} 
+\index{GRF@{GRF}!GRF@{GRF}}
+\index{GRF@{GRF}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{GRF()}{GRF()}}
+{\footnotesize\ttfamily GRF\+::\+GRF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_g_r_f_af00be034100eb8916ad28e6e34f8fcb2}\label{class_g_r_f_af00be034100eb8916ad28e6e34f8fcb2} 
+\index{GRF@{GRF}!decode@{decode}}
+\index{decode@{decode}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily void GRF\+::decode (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{char}]{entry\+\_\+type,  }\item[{int}]{entry\+\_\+len }\end{DoxyParamCaption})}
+
+Decodes grf data. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & data to decode (in-\/place) \\
+\hline
+{\em len} & length of the data \\
+\hline
+{\em entry\+\_\+type} & flags associated with the data \\
+\hline
+{\em entry\+\_\+len} & true (unaligned) length of the data \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_af00be034100eb8916ad28e6e34f8fcb2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_af00be034100eb8916ad28e6e34f8fcb2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a0d62090ac82ebbbb27738dbb1337df43}\label{class_g_r_f_a0d62090ac82ebbbb27738dbb1337df43} 
+\index{GRF@{GRF}!decodeFull@{decodeFull}}
+\index{decodeFull@{decodeFull}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{decodeFull()}{decodeFull()}}
+{\footnotesize\ttfamily void GRF\+::decode\+Full (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{cycle }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a0d62090ac82ebbbb27738dbb1337df43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a0d62090ac82ebbbb27738dbb1337df43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a84d6d5ade7a11988e2867440e1ef083a}\label{class_g_r_f_a84d6d5ade7a11988e2867440e1ef083a} 
+\index{GRF@{GRF}!decodeHeader@{decodeHeader}}
+\index{decodeHeader@{decodeHeader}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{decodeHeader()}{decodeHeader()}}
+{\footnotesize\ttfamily void GRF\+::decode\+Header (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a84d6d5ade7a11988e2867440e1ef083a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a84d6d5ade7a11988e2867440e1ef083a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a4050d0cdd20ded558f5662ed5076ebbd}\label{class_g_r_f_a4050d0cdd20ded558f5662ed5076ebbd} 
+\index{GRF@{GRF}!decodeShuffledBytes@{decodeShuffledBytes}}
+\index{decodeShuffledBytes@{decodeShuffledBytes}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{decodeShuffledBytes()}{decodeShuffledBytes()}}
+{\footnotesize\ttfamily void GRF\+::decode\+Shuffled\+Bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_t64}{BIT64}} \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+Substitutes some specific values for others, leaves rest intact. Obfuscation. NOTE\+: Operation is symmetric (calling it twice gives back the original input). 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & src source to be decoded. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a4050d0cdd20ded558f5662ed5076ebbd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a4050d0cdd20ded558f5662ed5076ebbd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_ac07390ae906258905c15ceb25e8af09b}\label{class_g_r_f_ac07390ae906258905c15ceb25e8af09b} 
+\index{GRF@{GRF}!extractAllFiles@{extractAllFiles}}
+\index{extractAllFiles@{extractAllFiles}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{extractAllFiles()}{extractAllFiles()}}
+{\footnotesize\ttfamily void GRF\+::extract\+All\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_ac07390ae906258905c15ceb25e8af09b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_af0ed197c966f95c106a8f1eac5625b5a}\label{class_g_r_f_af0ed197c966f95c106a8f1eac5625b5a} 
+\index{GRF@{GRF}!extractFile@{extractFile}}
+\index{extractFile@{extractFile}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{extractFile()}{extractFile()}}
+{\footnotesize\ttfamily void GRF\+::extract\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+name,  }\item[{std\+::string}]{output\+\_\+path,  }\item[{clock\+\_\+t}]{begin\+\_\+time }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_af0ed197c966f95c106a8f1eac5625b5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_g_r_f_af0ed197c966f95c106a8f1eac5625b5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a6b5e988a2f5e25b485864e3bbc113ac9}\label{class_g_r_f_a6b5e988a2f5e25b485864e3bbc113ac9} 
+\index{GRF@{GRF}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily uint8\+\_\+t GRF\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_g_r_f_a2d62e5c0cca5ffa836e32f1fb1e23625}\label{class_g_r_f_a2d62e5c0cca5ffa836e32f1fb1e23625} 
+\index{GRF@{GRF}!getFileErrorMap@{getFileErrorMap}}
+\index{getFileErrorMap@{getFileErrorMap}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{getFileErrorMap()}{getFileErrorMap()}}
+{\footnotesize\ttfamily File\+Error\+Map\+Type \& GRF\+::get\+File\+Error\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_g_r_f_a2d62e5c0cca5ffa836e32f1fb1e23625_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a00ed715dde32def3bc9bdb0c94c78527}\label{class_g_r_f_a00ed715dde32def3bc9bdb0c94c78527} 
+\index{GRF@{GRF}!getFileMap@{getFileMap}}
+\index{getFileMap@{getFileMap}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{getFileMap()}{getFileMap()}}
+{\footnotesize\ttfamily File\+Map\+Type \& GRF\+::get\+File\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a00ed715dde32def3bc9bdb0c94c78527_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a27e4d41dd51e2f0ca78c0473a2a517aa}\label{class_g_r_f_a27e4d41dd51e2f0ca78c0473a2a517aa} 
+\index{GRF@{GRF}!getGRFPath@{getGRFPath}}
+\index{getGRFPath@{getGRFPath}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{getGRFPath()}{getGRFPath()}}
+{\footnotesize\ttfamily const boost\+::filesystem\+::path \& GRF\+::get\+GRFPath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a27e4d41dd51e2f0ca78c0473a2a517aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a7c0386dcd0fb1d464c986afd79c09766}\label{class_g_r_f_a7c0386dcd0fb1d464c986afd79c09766} 
+\index{GRF@{GRF}!getGRFSize@{getGRFSize}}
+\index{getGRFSize@{getGRFSize}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{getGRFSize()}{getGRFSize()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t GRF\+::get\+GRFSize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{class_g_r_f_a7c0386dcd0fb1d464c986afd79c09766_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_ab0d1fe790e66c54909779ee05ec39ab9}\label{class_g_r_f_ab0d1fe790e66c54909779ee05ec39ab9} 
+\index{GRF@{GRF}!getGRFVersion@{getGRFVersion}}
+\index{getGRFVersion@{getGRFVersion}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{getGRFVersion()}{getGRFVersion()}}
+{\footnotesize\ttfamily int GRF\+::get\+GRFVersion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_ab0d1fe790e66c54909779ee05ec39ab9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a58b8115d23a1ca322121400d2b051562}\label{class_g_r_f_a58b8115d23a1ca322121400d2b051562} 
+\index{GRF@{GRF}!getTotalFiles@{getTotalFiles}}
+\index{getTotalFiles@{getTotalFiles}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{getTotalFiles()}{getTotalFiles()}}
+{\footnotesize\ttfamily int GRF\+::get\+Total\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_g_r_f_a58b8115d23a1ca322121400d2b051562_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a6f2c010cb061e49075854abf75eee2fb}\label{class_g_r_f_a6f2c010cb061e49075854abf75eee2fb} 
+\index{GRF@{GRF}!load@{load}}
+\index{load@{load}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79e}{grf\+\_\+load\+\_\+result\+\_\+type}} GRF\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Set the file pointer.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a6f2c010cb061e49075854abf75eee2fb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a9ef9210001ff34a4295716d1a30b7e15}\label{class_g_r_f_a9ef9210001ff34a4295716d1a30b7e15} 
+\index{GRF@{GRF}!read@{read}}
+\index{read@{read}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3ef}{grf\+\_\+read\+\_\+error\+\_\+type}}, uint8\+\_\+t \texorpdfstring{$\ast$}{*} $>$ GRF\+::read (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{in\+\_\+name,  }\item[{int \texorpdfstring{$\ast$}{*}}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a9ef9210001ff34a4295716d1a30b7e15_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a9ef9210001ff34a4295716d1a30b7e15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a6f9f1d0775e1bf850d94f11c54c78c93}\label{class_g_r_f_a6f9f1d0775e1bf850d94f11c54c78c93} 
+\index{GRF@{GRF}!set\_id@{set\_id}}
+\index{set\_id@{set\_id}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{set\_id()}{set\_id()}}
+{\footnotesize\ttfamily void GRF\+::set\+\_\+id (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_g_r_f_a6f9f1d0775e1bf850d94f11c54c78c93_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a71ec3fba1c85caf1ef2fdc6606600d7d}\label{class_g_r_f_a71ec3fba1c85caf1ef2fdc6606600d7d} 
+\index{GRF@{GRF}!setGRFPath@{setGRFPath}}
+\index{setGRFPath@{setGRFPath}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{setGRFPath()}{setGRFPath()}}
+{\footnotesize\ttfamily void GRF\+::set\+GRFPath (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_a71ec3fba1c85caf1ef2fdc6606600d7d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a31e07473f10fb341d5666d5ac890023a}\label{class_g_r_f_a31e07473f10fb341d5666d5ac890023a} 
+\index{GRF@{GRF}!setGRFSize@{setGRFSize}}
+\index{setGRFSize@{setGRFSize}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{setGRFSize()}{setGRFSize()}}
+{\footnotesize\ttfamily void GRF\+::set\+GRFSize (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t const \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_g_r_f_ad32defe95dddad1214d68ed8d7dbaf5d}\label{class_g_r_f_ad32defe95dddad1214d68ed8d7dbaf5d} 
+\index{GRF@{GRF}!setGRFVersion@{setGRFVersion}}
+\index{setGRFVersion@{setGRFVersion}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{setGRFVersion()}{setGRFVersion()}}
+{\footnotesize\ttfamily void GRF\+::set\+GRFVersion (\begin{DoxyParamCaption}\item[{int}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_g_r_f_ad32defe95dddad1214d68ed8d7dbaf5d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_a755d1c0fed2f9972b714944d0663d28e}\label{class_g_r_f_a755d1c0fed2f9972b714944d0663d28e} 
+\index{GRF@{GRF}!setTotalFiles@{setTotalFiles}}
+\index{setTotalFiles@{setTotalFiles}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{setTotalFiles()}{setTotalFiles()}}
+{\footnotesize\ttfamily void GRF\+::set\+Total\+Files (\begin{DoxyParamCaption}\item[{int}]{total }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_g_r_f_a755d1c0fed2f9972b714944d0663d28e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_g_r_f_adc489a2eaef9224d33075b1482a98708}\label{class_g_r_f_adc489a2eaef9224d33075b1482a98708} 
+\index{GRF@{GRF}!substituteObfuscatedByte@{substituteObfuscatedByte}}
+\index{substituteObfuscatedByte@{substituteObfuscatedByte}!GRF@{GRF}}
+\doxysubsubsection{\texorpdfstring{substituteObfuscatedByte()}{substituteObfuscatedByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t GRF\+::substitute\+Obfuscated\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{in }\end{DoxyParamCaption})}
+
+Substitutes some specific values for others, leaves rest intact. Obfuscation. NOTE\+: Operation is symmetric (calling it twice gives back the original input). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in} & the byte needed to be swapped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the substitute or itself if none. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_g_r_f_adc489a2eaef9224d33075b1482a98708_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+GRF/\mbox{\hyperlink{_g_r_f_8hpp}{GRF.\+hpp}}\item 
+src/\+Libraries/\+GRF/\mbox{\hyperlink{_g_r_f_8cpp}{GRF.\+cpp}}\end{DoxyCompactItemize}

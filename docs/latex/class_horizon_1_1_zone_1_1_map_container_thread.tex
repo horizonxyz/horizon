@@ -1,0 +1,250 @@
+\doxysection{Horizon\+::Zone\+::Map\+Container\+Thread Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_map_container_thread}{}\label{class_horizon_1_1_zone_1_1_map_container_thread}\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+
+
+{\ttfamily \#include $<$Map\+Container\+Thread.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Map\+Container\+Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_horizon_1_1_zone_1_1_map_container_thread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Map\+Container\+Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_horizon_1_1_zone_1_1_map_container_thread__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a34d173a7ca848c790bd35ed33e903584}{Map\+Container\+Thread}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_ad16d8e0723bec6dbd741d7d9a24d94d6}{\texorpdfstring{$\sim$}{\string~}\+Map\+Container\+Thread}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a5e10582cbbb44b7479501b8b07a2b1bc}{get\+\_\+map}} (std\+::string const \&name) const
+\begin{DoxyCompactList}\small\item\em Retrieves a shared pointer to a map managed by the container. Managed maps are saved in thread-\/safe tables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a6ece9593dadcd1c7e8321dee99e2c60f}{add\+\_\+map}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ \&\&map)
+\begin{DoxyCompactList}\small\item\em Adds a map to the container in real time. Managed map objects are stored in thread-\/safe tables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a8e0b6d6cefb063aba591ce86253ebf28}{remove\+\_\+map}} (std\+::string const \&name)
+\begin{DoxyCompactList}\small\item\em Removes a map from the container in real time. Managed maps are saved in thread-\/safe tables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_aa69dbb479da79c695697aa7f3de3287d}{manage\+\_\+session}} (\mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{map\+\_\+container\+\_\+session\+\_\+action}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ s)
+\begin{DoxyCompactList}\small\item\em Adds a session to the session buffer, marking him for removal from the list of managed sessions by this container on the next update. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_aa6c0d1fde6a8c802100cf778616ac44e}{get\+\_\+player}} (std\+::string const \&name)
+\begin{DoxyCompactList}\small\item\em Returns a player if found, nullptr otherwise. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a3486272ae849d6027cd18183e8b0f36f}{get\+\_\+player}} (int32\+\_\+t guid)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_ab3e97e848804190332bcd7371d912854}{get\+\_\+session}} (int64\+\_\+t session\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns a session if found, nullptr otherwise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_af522c5bd8fd3e9449020e3ecb86e9a33}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Responsible for initialization of the container and is called externally. This is mainly for members that can\textquotesingle{}t be initialized from the constructor method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a7e3b7d44aafb870f7109cc06b62c8f7d}{finalize}} ()
+\begin{DoxyCompactList}\small\item\em Process container finalization by cleanly disconnecting players after saving their data. Clears all managed map instances from itself and joins the internally running thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a44d91f7f9115c6e15af1bbfd64e05fd7}{start}} ()
+\begin{DoxyCompactList}\small\item\em Begins running the container\textquotesingle{}s thread and notifies of doing so. This function is a wrapper for the internal start function which the internal thread instance is responsible for calling. The internal start function deals with actual data loading/initializing, world update loop and finalization of the same on shutdown. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager}{LUAManager}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a87031c7590f9e871b7b1babf1dabedc4}{get\+\_\+lua\+\_\+manager}} ()
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a3ffad592477b95e3014d63f5853aefdf}{get\+Scheduler}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a7d88bc01ebd7f9ad4fb571a341188852}{add\+\_\+entity}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Add entity to vector of entities to be updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a6c81e622c6cfab951192a4028a8b2311}{remove\+\_\+entity}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Remove entity from vector of entities to be updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a34d173a7ca848c790bd35ed33e903584}\label{class_horizon_1_1_zone_1_1_map_container_thread_a34d173a7ca848c790bd35ed33e903584} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!MapContainerThread@{MapContainerThread}}
+\index{MapContainerThread@{MapContainerThread}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{MapContainerThread()}{MapContainerThread()}}
+{\footnotesize\ttfamily Map\+Container\+Thread\+::\+Map\+Container\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_ad16d8e0723bec6dbd741d7d9a24d94d6}\label{class_horizon_1_1_zone_1_1_map_container_thread_ad16d8e0723bec6dbd741d7d9a24d94d6} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!````~MapContainerThread@{\texorpdfstring{$\sim$}{\string~}MapContainerThread}}
+\index{````~MapContainerThread@{\texorpdfstring{$\sim$}{\string~}MapContainerThread}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapContainerThread()}{\string~MapContainerThread()}}
+{\footnotesize\ttfamily Map\+Container\+Thread\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Container\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a7d88bc01ebd7f9ad4fb571a341188852}\label{class_horizon_1_1_zone_1_1_map_container_thread_a7d88bc01ebd7f9ad4fb571a341188852} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!add\_entity@{add\_entity}}
+\index{add\_entity@{add\_entity}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{add\_entity()}{add\_entity()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::add\+\_\+entity (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+
+
+Add entity to vector of entities to be updated. 
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a6ece9593dadcd1c7e8321dee99e2c60f}\label{class_horizon_1_1_zone_1_1_map_container_thread_a6ece9593dadcd1c7e8321dee99e2c60f} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!add\_map@{add\_map}}
+\index{add\_map@{add\_map}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{add\_map()}{add\_map()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::add\+\_\+map (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ \&\&}]{m }\end{DoxyParamCaption})}
+
+
+
+Adds a map to the container in real time. Managed map objects are stored in thread-\/safe tables. 
+
+Adds a map to the container in real time. Managed maps are saved in thread-\/safe tables.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em m} & r-\/value reference to a shared\+\_\+ptr of a map object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a7e3b7d44aafb870f7109cc06b62c8f7d}\label{class_horizon_1_1_zone_1_1_map_container_thread_a7e3b7d44aafb870f7109cc06b62c8f7d} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!finalize@{finalize}}
+\index{finalize@{finalize}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Process container finalization by cleanly disconnecting players after saving their data. Clears all managed map instances from itself and joins the internally running thread. 
+
+Process container finalization by cleanly disconnecting players after saving their data. Clears all managed map instances from itself. This method must not be called from within the thread itself!
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_horizon_1_1_zone_1_1_map_manager_a5769b752ee73dcff984330ac355faf31}{Map\+Manager\+::finalize()} 
+\end{DoxySeeAlso}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a87031c7590f9e871b7b1babf1dabedc4}\label{class_horizon_1_1_zone_1_1_map_container_thread_a87031c7590f9e871b7b1babf1dabedc4} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!get\_lua\_manager@{get\_lua\_manager}}
+\index{get\_lua\_manager@{get\_lua\_manager}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{get\_lua\_manager()}{get\_lua\_manager()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager}{LUAManager}} $>$ Horizon\+::\+Zone\+::\+Map\+Container\+Thread\+::get\+\_\+lua\+\_\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a5e10582cbbb44b7479501b8b07a2b1bc}\label{class_horizon_1_1_zone_1_1_map_container_thread_a5e10582cbbb44b7479501b8b07a2b1bc} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!get\_map@{get\_map}}
+\index{get\_map@{get\_map}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{get\_map()}{get\_map()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ Map\+Container\+Thread\+::get\+\_\+map (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a shared pointer to a map managed by the container. Managed maps are saved in thread-\/safe tables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & const reference to the name of the map to lookup. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Managed map if found, else a null shared\+\_\+ptr instance. 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a3486272ae849d6027cd18183e8b0f36f}\label{class_horizon_1_1_zone_1_1_map_container_thread_a3486272ae849d6027cd18183e8b0f36f} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!get\_player@{get\_player}}
+\index{get\_player@{get\_player}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{get\_player()}{get\_player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ Horizon\+::\+Zone\+::\+Map\+Container\+Thread\+::get\+\_\+player (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{guid }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_aa6c0d1fde6a8c802100cf778616ac44e}\label{class_horizon_1_1_zone_1_1_map_container_thread_aa6c0d1fde6a8c802100cf778616ac44e} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!get\_player@{get\_player}}
+\index{get\_player@{get\_player}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{get\_player()}{get\_player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ Map\+Container\+Thread\+::get\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Returns a player if found, nullptr otherwise. 
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_ab3e97e848804190332bcd7371d912854}\label{class_horizon_1_1_zone_1_1_map_container_thread_ab3e97e848804190332bcd7371d912854} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Map\+Container\+Thread\+::get\+\_\+session (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{session\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Returns a session if found, nullptr otherwise. 
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a3ffad592477b95e3014d63f5853aefdf}\label{class_horizon_1_1_zone_1_1_map_container_thread_a3ffad592477b95e3014d63f5853aefdf} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!getScheduler@{getScheduler}}
+\index{getScheduler@{getScheduler}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{getScheduler()}{getScheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Horizon\+::\+Zone\+::\+Map\+Container\+Thread\+::get\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_af522c5bd8fd3e9449020e3ecb86e9a33}\label{class_horizon_1_1_zone_1_1_map_container_thread_af522c5bd8fd3e9449020e3ecb86e9a33} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Responsible for initialization of the container and is called externally. This is mainly for members that can\textquotesingle{}t be initialized from the constructor method. 
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_aa69dbb479da79c695697aa7f3de3287d}\label{class_horizon_1_1_zone_1_1_map_container_thread_aa69dbb479da79c695697aa7f3de3287d} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!manage\_session@{manage\_session}}
+\index{manage\_session@{manage\_session}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{manage\_session()}{manage\_session()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::manage\+\_\+session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{map\+\_\+container\+\_\+session\+\_\+action}}}]{action,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{s }\end{DoxyParamCaption})}
+
+
+
+Adds a session to the session buffer, marking him for removal from the list of managed sessions by this container on the next update. 
+
+Adds a session to the session buffer, marking him for management in the list of the managed session by this container on the next update.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em action} & enum value of the action to be performed on the session. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p} & shared\+\_\+ptr to a session object which should be managed by this map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\doxylink{class_a}{A} session added for management by this container must be the only owner of the session object. 
+\end{DoxyNote}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a6c81e622c6cfab951192a4028a8b2311}\label{class_horizon_1_1_zone_1_1_map_container_thread_a6c81e622c6cfab951192a4028a8b2311} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!remove\_entity@{remove\_entity}}
+\index{remove\_entity@{remove\_entity}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{remove\_entity()}{remove\_entity()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::remove\+\_\+entity (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+
+
+Remove entity from vector of entities to be updated. 
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a8e0b6d6cefb063aba591ce86253ebf28}\label{class_horizon_1_1_zone_1_1_map_container_thread_a8e0b6d6cefb063aba591ce86253ebf28} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!remove\_map@{remove\_map}}
+\index{remove\_map@{remove\_map}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{remove\_map()}{remove\_map()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::remove\+\_\+map (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Removes a map from the container in real time. Managed maps are saved in thread-\/safe tables. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em m} & r-\/value reference to a shared\+\_\+ptr of a map object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_container_thread_a44d91f7f9115c6e15af1bbfd64e05fd7}\label{class_horizon_1_1_zone_1_1_map_container_thread_a44d91f7f9115c6e15af1bbfd64e05fd7} 
+\index{Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}!start@{start}}
+\index{start@{start}!Horizon::Zone::MapContainerThread@{Horizon::Zone::MapContainerThread}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Map\+Container\+Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Begins running the container\textquotesingle{}s thread and notifies of doing so. This function is a wrapper for the internal start function which the internal thread instance is responsible for calling. The internal start function deals with actual data loading/initializing, world update loop and finalization of the same on shutdown. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_map_container_thread_8hpp}{Map\+Container\+Thread.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_map_container_thread_8cpp}{Map\+Container\+Thread.\+cpp}}\end{DoxyCompactItemize}

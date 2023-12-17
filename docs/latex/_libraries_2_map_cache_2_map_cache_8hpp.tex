@@ -1,0 +1,218 @@
+\doxysection{src/\+Libraries/\+Map\+Cache/\+Map\+Cache.hpp File Reference}
+\hypertarget{_libraries_2_map_cache_2_map_cache_8hpp}{}\label{_libraries_2_map_cache_2_map_cache_8hpp}\index{src/Libraries/MapCache/MapCache.hpp@{src/Libraries/MapCache/MapCache.hpp}}
+{\ttfamily \#include "{}Libraries/\+GRF/\+GRF.\+hpp"{}}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$boost/optional.\+hpp$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+Include dependency graph for Map\+Cache.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_libraries_2_map_cache_2_map_cache_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_libraries_2_map_cache_2_map_cache_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmapcache__header}{mapcache\+\_\+header}}
+\item 
+struct \mbox{\hyperlink{structmap__info}{map\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{structmap__data}{map\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structmap__cache}{map\+\_\+cache}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache}{Horizon\+::\+Libraries\+::\+Map\+Cache}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_libraries}{Horizon\+::\+Libraries}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739}{mcache\+\_\+error\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739ae13616e1f269598afe7a213fc3243534}{MCACHE\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a14b666b607f84a09c66e1cf5a0de6d90}{MCACHE\+\_\+\+INVALID\+\_\+\+GRF\+\_\+\+PATH}} = 1
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739acc9c9d4d839d4404ac73669fc052bed7}{MCACHE\+\_\+\+INVALID\+\_\+\+CONFIG\+\_\+\+PATH}} = 2
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a036aa753bc0acb9f194a3f73838b323e}{MCACHE\+\_\+\+INVALID\+\_\+\+OUTPUT\+\_\+\+PATH}} = 3
+, \newline
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a99a1ec0eef857fdbaf0257c48b30c853}{MCACHE\+\_\+\+CONFIG\+\_\+\+READ\+\_\+\+ERROR}} = 4
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739af9aab309ffe264cd0bed517aae439e8d}{MCACHE\+\_\+\+GRF\+\_\+\+CONFIG\+\_\+\+READ\+\_\+\+ERROR}} = 5
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739af9773e49ffe972576d05c289016fa270}{MCACHE\+\_\+\+GRF\+\_\+\+LOAD\+\_\+\+ERROR}} = 6
+ \}
+\item 
+enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47f}{mcache\+\_\+config\+\_\+error\+\_\+type}} \{ \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47faf230485dbcf302ce03b96cd627941500}{MCACHE\+\_\+\+CONFIG\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47fa1fe177a76b6c2d3122b767b29e8a2aff}{MCACHE\+\_\+\+CONFIG\+\_\+\+PARSE\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47fab88177d8b99cd402c4f82d2a927fa25b}{MCACHE\+\_\+\+CONFIG\+\_\+\+INVALID\+\_\+\+VALUE\+\_\+\+TYPE}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218}{mcache\+\_\+grf\+\_\+config\+\_\+error\+\_\+type}} \{ \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a17e5814998a2134af38229c26bfc978a}{MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a61880f42b484d190a1230c5577906f15}{MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+INVALID\+\_\+\+FILE}} = 1
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218acaafb7119ee44006d415099bc9667526}{MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+PARSE\+\_\+\+ERROR}} = 2
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a4be3da665094225672d10c98da0f458e}{MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+INVALID\+\_\+\+VALUE\+\_\+\+TYPE}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3b}{mcache\+\_\+import\+\_\+error\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba4cc99fcea43adc5b9d151a36c5823f08}{MCACHE\+\_\+\+IMPORT\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba2d483802545eca601c5f12bdfefda166}{MCACHE\+\_\+\+IMPORT\+\_\+\+NONEXISTENT\+\_\+\+FILE}} = 1
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bac4b384bfd8f6d6e66bb28891063834f6}{MCACHE\+\_\+\+IMPORT\+\_\+\+READ\+\_\+\+ERROR}} = 2
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba0378443f3a6c9ff969e344734d794817}{MCACHE\+\_\+\+IMPORT\+\_\+\+INVALID\+\_\+\+CHECKSUM}} = 3
+, \newline
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bac813a822ca53147f0fd48a608f4ef6c4}{MCACHE\+\_\+\+IMPORT\+\_\+\+DECOMPRESS\+\_\+\+ERROR}} = 4
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3badfc445045b8cb594270ec4c1ee97cc0d}{MCACHE\+\_\+\+IMPORT\+\_\+\+MAPINFO\+\_\+\+ERROR}} = 5
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bae69c471e26903a912c87ad614d83c511}{MCACHE\+\_\+\+IMPORT\+\_\+\+CELLINFO\+\_\+\+ERROR}} = 6
+ \}
+\item 
+enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965}{mcache\+\_\+map\+\_\+cell\+\_\+type}} \{ \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965aa90bd6a444fce762647d0a8657786f8f}{MAP\+\_\+\+CELL\+\_\+\+WALKABLE}} = 0
+, \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965a5f4e58f4a2c6fafb8000eb0f104c53a6}{MAP\+\_\+\+CELL\+\_\+\+WALKABLE\+\_\+\+UNDER\+\_\+\+WATER}} = 3
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47f}\label{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47f} 
+\index{MapCache.hpp@{MapCache.hpp}!mcache\_config\_error\_type@{mcache\_config\_error\_type}}
+\index{mcache\_config\_error\_type@{mcache\_config\_error\_type}!MapCache.hpp@{MapCache.hpp}}
+\doxysubsubsection{\texorpdfstring{mcache\_config\_error\_type}{mcache\_config\_error\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47f}{mcache\+\_\+config\+\_\+error\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_CONFIG\_OK@{MCACHE\_CONFIG\_OK}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_CONFIG\_OK@{MCACHE\_CONFIG\_OK}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47faf230485dbcf302ce03b96cd627941500}\label{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47faf230485dbcf302ce03b96cd627941500} 
+MCACHE\+\_\+\+CONFIG\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_CONFIG\_PARSE\_ERROR@{MCACHE\_CONFIG\_PARSE\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_CONFIG\_PARSE\_ERROR@{MCACHE\_CONFIG\_PARSE\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47fa1fe177a76b6c2d3122b767b29e8a2aff}\label{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47fa1fe177a76b6c2d3122b767b29e8a2aff} 
+MCACHE\+\_\+\+CONFIG\+\_\+\+PARSE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_CONFIG\_INVALID\_VALUE\_TYPE@{MCACHE\_CONFIG\_INVALID\_VALUE\_TYPE}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_CONFIG\_INVALID\_VALUE\_TYPE@{MCACHE\_CONFIG\_INVALID\_VALUE\_TYPE}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47fab88177d8b99cd402c4f82d2a927fa25b}\label{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47fab88177d8b99cd402c4f82d2a927fa25b} 
+MCACHE\+\_\+\+CONFIG\+\_\+\+INVALID\+\_\+\+VALUE\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739} 
+\index{MapCache.hpp@{MapCache.hpp}!mcache\_error\_type@{mcache\_error\_type}}
+\index{mcache\_error\_type@{mcache\_error\_type}!MapCache.hpp@{MapCache.hpp}}
+\doxysubsubsection{\texorpdfstring{mcache\_error\_type}{mcache\_error\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739}{mcache\+\_\+error\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_OK@{MCACHE\_OK}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_OK@{MCACHE\_OK}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739ae13616e1f269598afe7a213fc3243534}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739ae13616e1f269598afe7a213fc3243534} 
+MCACHE\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_INVALID\_GRF\_PATH@{MCACHE\_INVALID\_GRF\_PATH}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_INVALID\_GRF\_PATH@{MCACHE\_INVALID\_GRF\_PATH}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a14b666b607f84a09c66e1cf5a0de6d90}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a14b666b607f84a09c66e1cf5a0de6d90} 
+MCACHE\+\_\+\+INVALID\+\_\+\+GRF\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_INVALID\_CONFIG\_PATH@{MCACHE\_INVALID\_CONFIG\_PATH}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_INVALID\_CONFIG\_PATH@{MCACHE\_INVALID\_CONFIG\_PATH}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739acc9c9d4d839d4404ac73669fc052bed7}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739acc9c9d4d839d4404ac73669fc052bed7} 
+MCACHE\+\_\+\+INVALID\+\_\+\+CONFIG\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_INVALID\_OUTPUT\_PATH@{MCACHE\_INVALID\_OUTPUT\_PATH}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_INVALID\_OUTPUT\_PATH@{MCACHE\_INVALID\_OUTPUT\_PATH}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a036aa753bc0acb9f194a3f73838b323e}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a036aa753bc0acb9f194a3f73838b323e} 
+MCACHE\+\_\+\+INVALID\+\_\+\+OUTPUT\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_CONFIG\_READ\_ERROR@{MCACHE\_CONFIG\_READ\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_CONFIG\_READ\_ERROR@{MCACHE\_CONFIG\_READ\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a99a1ec0eef857fdbaf0257c48b30c853}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739a99a1ec0eef857fdbaf0257c48b30c853} 
+MCACHE\+\_\+\+CONFIG\+\_\+\+READ\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_GRF\_CONFIG\_READ\_ERROR@{MCACHE\_GRF\_CONFIG\_READ\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_GRF\_CONFIG\_READ\_ERROR@{MCACHE\_GRF\_CONFIG\_READ\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739af9aab309ffe264cd0bed517aae439e8d}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739af9aab309ffe264cd0bed517aae439e8d} 
+MCACHE\+\_\+\+GRF\+\_\+\+CONFIG\+\_\+\+READ\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_GRF\_LOAD\_ERROR@{MCACHE\_GRF\_LOAD\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_GRF\_LOAD\_ERROR@{MCACHE\_GRF\_LOAD\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739af9773e49ffe972576d05c289016fa270}\label{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739af9773e49ffe972576d05c289016fa270} 
+MCACHE\+\_\+\+GRF\+\_\+\+LOAD\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218}\label{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218} 
+\index{MapCache.hpp@{MapCache.hpp}!mcache\_grf\_config\_error\_type@{mcache\_grf\_config\_error\_type}}
+\index{mcache\_grf\_config\_error\_type@{mcache\_grf\_config\_error\_type}!MapCache.hpp@{MapCache.hpp}}
+\doxysubsubsection{\texorpdfstring{mcache\_grf\_config\_error\_type}{mcache\_grf\_config\_error\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218}{mcache\+\_\+grf\+\_\+config\+\_\+error\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_GRF\_CONF\_OK@{MCACHE\_GRF\_CONF\_OK}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_GRF\_CONF\_OK@{MCACHE\_GRF\_CONF\_OK}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a17e5814998a2134af38229c26bfc978a}\label{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a17e5814998a2134af38229c26bfc978a} 
+MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_GRF\_CONF\_INVALID\_FILE@{MCACHE\_GRF\_CONF\_INVALID\_FILE}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_GRF\_CONF\_INVALID\_FILE@{MCACHE\_GRF\_CONF\_INVALID\_FILE}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a61880f42b484d190a1230c5577906f15}\label{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a61880f42b484d190a1230c5577906f15} 
+MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+INVALID\+\_\+\+FILE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_GRF\_CONF\_PARSE\_ERROR@{MCACHE\_GRF\_CONF\_PARSE\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_GRF\_CONF\_PARSE\_ERROR@{MCACHE\_GRF\_CONF\_PARSE\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218acaafb7119ee44006d415099bc9667526}\label{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218acaafb7119ee44006d415099bc9667526} 
+MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+PARSE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_GRF\_CONF\_INVALID\_VALUE\_TYPE@{MCACHE\_GRF\_CONF\_INVALID\_VALUE\_TYPE}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_GRF\_CONF\_INVALID\_VALUE\_TYPE@{MCACHE\_GRF\_CONF\_INVALID\_VALUE\_TYPE}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a4be3da665094225672d10c98da0f458e}\label{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218a4be3da665094225672d10c98da0f458e} 
+MCACHE\+\_\+\+GRF\+\_\+\+CONF\+\_\+\+INVALID\+\_\+\+VALUE\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3b}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3b} 
+\index{MapCache.hpp@{MapCache.hpp}!mcache\_import\_error\_type@{mcache\_import\_error\_type}}
+\index{mcache\_import\_error\_type@{mcache\_import\_error\_type}!MapCache.hpp@{MapCache.hpp}}
+\doxysubsubsection{\texorpdfstring{mcache\_import\_error\_type}{mcache\_import\_error\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3b}{mcache\+\_\+import\+\_\+error\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_OK@{MCACHE\_IMPORT\_OK}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_OK@{MCACHE\_IMPORT\_OK}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba4cc99fcea43adc5b9d151a36c5823f08}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba4cc99fcea43adc5b9d151a36c5823f08} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_NONEXISTENT\_FILE@{MCACHE\_IMPORT\_NONEXISTENT\_FILE}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_NONEXISTENT\_FILE@{MCACHE\_IMPORT\_NONEXISTENT\_FILE}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba2d483802545eca601c5f12bdfefda166}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba2d483802545eca601c5f12bdfefda166} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+NONEXISTENT\+\_\+\+FILE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_READ\_ERROR@{MCACHE\_IMPORT\_READ\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_READ\_ERROR@{MCACHE\_IMPORT\_READ\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bac4b384bfd8f6d6e66bb28891063834f6}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bac4b384bfd8f6d6e66bb28891063834f6} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+READ\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_INVALID\_CHECKSUM@{MCACHE\_IMPORT\_INVALID\_CHECKSUM}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_INVALID\_CHECKSUM@{MCACHE\_IMPORT\_INVALID\_CHECKSUM}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba0378443f3a6c9ff969e344734d794817}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3ba0378443f3a6c9ff969e344734d794817} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+INVALID\+\_\+\+CHECKSUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_DECOMPRESS\_ERROR@{MCACHE\_IMPORT\_DECOMPRESS\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_DECOMPRESS\_ERROR@{MCACHE\_IMPORT\_DECOMPRESS\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bac813a822ca53147f0fd48a608f4ef6c4}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bac813a822ca53147f0fd48a608f4ef6c4} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+DECOMPRESS\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_MAPINFO\_ERROR@{MCACHE\_IMPORT\_MAPINFO\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_MAPINFO\_ERROR@{MCACHE\_IMPORT\_MAPINFO\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3badfc445045b8cb594270ec4c1ee97cc0d}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3badfc445045b8cb594270ec4c1ee97cc0d} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+MAPINFO\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCACHE\_IMPORT\_CELLINFO\_ERROR@{MCACHE\_IMPORT\_CELLINFO\_ERROR}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MCACHE\_IMPORT\_CELLINFO\_ERROR@{MCACHE\_IMPORT\_CELLINFO\_ERROR}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bae69c471e26903a912c87ad614d83c511}\label{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3bae69c471e26903a912c87ad614d83c511} 
+MCACHE\+\_\+\+IMPORT\+\_\+\+CELLINFO\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965}\label{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965} 
+\index{MapCache.hpp@{MapCache.hpp}!mcache\_map\_cell\_type@{mcache\_map\_cell\_type}}
+\index{mcache\_map\_cell\_type@{mcache\_map\_cell\_type}!MapCache.hpp@{MapCache.hpp}}
+\doxysubsubsection{\texorpdfstring{mcache\_map\_cell\_type}{mcache\_map\_cell\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965}{mcache\+\_\+map\+\_\+cell\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAP\_CELL\_WALKABLE@{MAP\_CELL\_WALKABLE}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MAP\_CELL\_WALKABLE@{MAP\_CELL\_WALKABLE}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965aa90bd6a444fce762647d0a8657786f8f}\label{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965aa90bd6a444fce762647d0a8657786f8f} 
+MAP\+\_\+\+CELL\+\_\+\+WALKABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAP\_CELL\_WALKABLE\_UNDER\_WATER@{MAP\_CELL\_WALKABLE\_UNDER\_WATER}!MapCache.hpp@{MapCache.hpp}}\index{MapCache.hpp@{MapCache.hpp}!MAP\_CELL\_WALKABLE\_UNDER\_WATER@{MAP\_CELL\_WALKABLE\_UNDER\_WATER}}}\Hypertarget{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965a5f4e58f4a2c6fafb8000eb0f104c53a6}\label{_libraries_2_map_cache_2_map_cache_8hpp_a7f614e3198a546d2812df7cf9bf0c965a5f4e58f4a2c6fafb8000eb0f104c53a6} 
+MAP\+\_\+\+CELL\+\_\+\+WALKABLE\+\_\+\+UNDER\+\_\+\+WATER&\\
+\hline
+
+\end{DoxyEnumFields}

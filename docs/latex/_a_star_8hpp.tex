@@ -1,0 +1,52 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Map/\+Path/\+AStar.hpp File Reference}
+\hypertarget{_a_star_8hpp}{}\label{_a_star_8hpp}\index{src/Server/Zone/Game/Map/Path/AStar.hpp@{src/Server/Zone/Game/Map/Path/AStar.hpp}}
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Coordinates.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Grid/\+Grid\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Common/\+Configuration/\+Horizon.\+hpp"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for AStar.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_star_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_star_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic}{Horizon\+::\+Zone\+::\+AStar\+::\+Heuristic}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node}{Horizon\+::\+Zone\+::\+AStar\+::\+Node}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator}{Horizon\+::\+Zone\+::\+AStar\+::\+Generator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone}{Horizon\+::\+Zone}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star}{Horizon\+::\+Zone\+::\+AStar}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ uint32\+\_\+t(\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}})$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Horizon\+::\+Zone\+::\+AStar\+::\+Heuristic\+Function}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} $>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{Horizon\+::\+Zone\+::\+AStar\+::\+Coordinate\+List}}
+\begin{DoxyCompactList}\small\item\em We use a vector because the \doxylink{namespace_horizon_1_1_zone_1_1_a_star}{AStar} algorithm is only searching on small datasets. Other data structures such as a priority queue can be used for larger datasets. \end{DoxyCompactList}\item 
+typedef std\+::function$<$ bool(uint16\+\_\+t x, uint16\+\_\+t y)$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Horizon\+::\+Zone\+::\+AStar\+::\+Collision\+Detection\+Function}}
+\item 
+using \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{Horizon\+::\+Zone\+::\+AStar\+::\+Node\+Set}} = std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node}{Node}} $>$ $>$
+\end{DoxyCompactItemize}

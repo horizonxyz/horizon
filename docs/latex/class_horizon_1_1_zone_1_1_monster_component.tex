@@ -1,0 +1,310 @@
+\doxysection{Horizon\+::Zone\+::Monster\+Component Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_monster_component}{}\label{class_horizon_1_1_zone_1_1_monster_component}\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+
+
+{\ttfamily \#include $<$Monster\+Component.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Monster\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_horizon_1_1_zone_1_1_monster_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Monster\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_horizon_1_1_zone_1_1_monster_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a572480f3878e361f29d312afff90111b}{Monster\+Component}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a01946ff3cc8b8f4efcb297c5ae6212fd}{Monster\+Component}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a5f8609552906d78cb0b07eddf3fcfea4}{\texorpdfstring{$\sim$}{\string~}\+Monster\+Component}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a230be7aee3080c51efa270fce53bb11c}{sync\+\_\+definitions}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_abeb517740d438616e18c81f2b3be7ca4}{sync\+\_\+data\+\_\+types}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a70f0fb9469fc61101c449b1a7cdd66e2}{sync\+\_\+functions}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a09adf7803889ca28d039fc7e0721496d}{sync\+\_\+functions}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a3b5c23901c8ddae04b0ada11642ed1f0}{register\+\_\+monster\+\_\+spawn\+\_\+info}} (uint32\+\_\+t id, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}} $>$ data)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a82ab1c82fc26c115b782ad9995ee2087}{get\+\_\+monster\+\_\+spawn\+\_\+info}} (uint32\+\_\+t id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a95d7039ca41a0a5c65610d390abd9ce2}{reschedule\+\_\+single\+\_\+monster\+\_\+spawn}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Horizon\+::\+Zone\+::\+Entities\+::\+Monster}} $>$ monster)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a54d4f30dbb48970db893f787ed92feef}{register\+\_\+single\+\_\+spawned\+\_\+monster}} (uint64\+\_\+t guid, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Entities\+::\+Monster}} $>$ data)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Entities\+::\+Monster}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_aa3602c107b828eac81fb72e977f0870b}{get\+\_\+single\+\_\+spawned\+\_\+monster}} (uint64\+\_\+t guid)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a9baa2c04238117102d4f2688f068ff66}{deregister\+\_\+single\+\_\+spawned\+\_\+monster}} (uint64\+\_\+t guid)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_ac72f66c63fdcda9c9d565de915d98f35}{spawn\+\_\+monsters}} (std\+::string map\+\_\+name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a20fa33e683a3985555f63a82756a57db}{spawn\+\_\+monster}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$ map, int spawn\+\_\+dataset\+\_\+id, int monster\+\_\+id, int16\+\_\+t amount, int16\+\_\+t x, int16\+\_\+t y, int16\+\_\+t x\+\_\+area, int16\+\_\+t y\+\_\+area)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_af2b0cf67ce18250f77b67679a79d2481}{despawn\+\_\+monsters}} (std\+::string map\+\_\+name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component}{Horizon\+::\+Zone\+::\+LUAComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a569dc4b8d0950c250a69c7e7d481e4ac}{LUAComponent}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a75bf0587364912cc77b3bc1d7eaa1e2d}{LUAComponent}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_aa1aea394f967cc874612ddd55d1c0cd3}{\texorpdfstring{$\sim$}{\string~}\+LUAComponent}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a887f33147aa510533aceb9203d921eb3}{get\+\_\+container}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ uint32\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}} $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a0be26f371a19d2eb7e56b4772dc62e27}{\+\_\+monster\+\_\+spawn\+\_\+db}}
+\item 
+std\+::map$<$ uint64\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Entities\+::\+Monster}} $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_a297c854e28751304517b8eac17b9e6c6}{\+\_\+monster\+\_\+spawned\+\_\+map}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component_ade92a598b1be3990165b3eb6f4630b70}{\+\_\+last\+\_\+monster\+\_\+spawn\+\_\+id}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a572480f3878e361f29d312afff90111b}\label{class_horizon_1_1_zone_1_1_monster_component_a572480f3878e361f29d312afff90111b} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!MonsterComponent@{MonsterComponent}}
+\index{MonsterComponent@{MonsterComponent}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{MonsterComponent()}{MonsterComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Monster\+Component\+::\+Monster\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a01946ff3cc8b8f4efcb297c5ae6212fd}\label{class_horizon_1_1_zone_1_1_monster_component_a01946ff3cc8b8f4efcb297c5ae6212fd} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!MonsterComponent@{MonsterComponent}}
+\index{MonsterComponent@{MonsterComponent}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{MonsterComponent()}{MonsterComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Monster\+Component\+::\+Monster\+Component (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a5f8609552906d78cb0b07eddf3fcfea4}\label{class_horizon_1_1_zone_1_1_monster_component_a5f8609552906d78cb0b07eddf3fcfea4} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!````~MonsterComponent@{\texorpdfstring{$\sim$}{\string~}MonsterComponent}}
+\index{````~MonsterComponent@{\texorpdfstring{$\sim$}{\string~}MonsterComponent}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MonsterComponent()}{\string~MonsterComponent()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Monster\+Component\+::\texorpdfstring{$\sim$}{\string~}\+Monster\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a9baa2c04238117102d4f2688f068ff66}\label{class_horizon_1_1_zone_1_1_monster_component_a9baa2c04238117102d4f2688f068ff66} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!deregister\_single\_spawned\_monster@{deregister\_single\_spawned\_monster}}
+\index{deregister\_single\_spawned\_monster@{deregister\_single\_spawned\_monster}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{deregister\_single\_spawned\_monster()}{deregister\_single\_spawned\_monster()}}
+{\footnotesize\ttfamily void Monster\+Component\+::deregister\+\_\+single\+\_\+spawned\+\_\+monster (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{guid }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a9baa2c04238117102d4f2688f068ff66_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_af2b0cf67ce18250f77b67679a79d2481}\label{class_horizon_1_1_zone_1_1_monster_component_af2b0cf67ce18250f77b67679a79d2481} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!despawn\_monsters@{despawn\_monsters}}
+\index{despawn\_monsters@{despawn\_monsters}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{despawn\_monsters()}{despawn\_monsters()}}
+{\footnotesize\ttfamily void Monster\+Component\+::despawn\+\_\+monsters (\begin{DoxyParamCaption}\item[{std\+::string}]{map\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a82ab1c82fc26c115b782ad9995ee2087}\label{class_horizon_1_1_zone_1_1_monster_component_a82ab1c82fc26c115b782ad9995ee2087} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!get\_monster\_spawn\_info@{get\_monster\_spawn\_info}}
+\index{get\_monster\_spawn\_info@{get\_monster\_spawn\_info}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{get\_monster\_spawn\_info()}{get\_monster\_spawn\_info()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Monster\+Component\+::get\+\_\+monster\+\_\+spawn\+\_\+info (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a82ab1c82fc26c115b782ad9995ee2087_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_aa3602c107b828eac81fb72e977f0870b}\label{class_horizon_1_1_zone_1_1_monster_component_aa3602c107b828eac81fb72e977f0870b} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!get\_single\_spawned\_monster@{get\_single\_spawned\_monster}}
+\index{get\_single\_spawned\_monster@{get\_single\_spawned\_monster}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{get\_single\_spawned\_monster()}{get\_single\_spawned\_monster()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Entities\+::\+Monster}} $>$ Horizon\+::\+Zone\+::\+Monster\+Component\+::get\+\_\+single\+\_\+spawned\+\_\+monster (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a3b5c23901c8ddae04b0ada11642ed1f0}\label{class_horizon_1_1_zone_1_1_monster_component_a3b5c23901c8ddae04b0ada11642ed1f0} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!register\_monster\_spawn\_info@{register\_monster\_spawn\_info}}
+\index{register\_monster\_spawn\_info@{register\_monster\_spawn\_info}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{register\_monster\_spawn\_info()}{register\_monster\_spawn\_info()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Monster\+Component\+::register\+\_\+monster\+\_\+spawn\+\_\+info (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a3b5c23901c8ddae04b0ada11642ed1f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a54d4f30dbb48970db893f787ed92feef}\label{class_horizon_1_1_zone_1_1_monster_component_a54d4f30dbb48970db893f787ed92feef} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!register\_single\_spawned\_monster@{register\_single\_spawned\_monster}}
+\index{register\_single\_spawned\_monster@{register\_single\_spawned\_monster}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{register\_single\_spawned\_monster()}{register\_single\_spawned\_monster()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Monster\+Component\+::register\+\_\+single\+\_\+spawned\+\_\+monster (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{guid,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Entities\+::\+Monster}} $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a54d4f30dbb48970db893f787ed92feef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a95d7039ca41a0a5c65610d390abd9ce2}\label{class_horizon_1_1_zone_1_1_monster_component_a95d7039ca41a0a5c65610d390abd9ce2} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!reschedule\_single\_monster\_spawn@{reschedule\_single\_monster\_spawn}}
+\index{reschedule\_single\_monster\_spawn@{reschedule\_single\_monster\_spawn}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{reschedule\_single\_monster\_spawn()}{reschedule\_single\_monster\_spawn()}}
+{\footnotesize\ttfamily void Monster\+Component\+::reschedule\+\_\+single\+\_\+monster\+\_\+spawn (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Horizon\+::\+Zone\+::\+Entities\+::\+Monster}} $>$}]{monster }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a95d7039ca41a0a5c65610d390abd9ce2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a95d7039ca41a0a5c65610d390abd9ce2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a20fa33e683a3985555f63a82756a57db}\label{class_horizon_1_1_zone_1_1_monster_component_a20fa33e683a3985555f63a82756a57db} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!spawn\_monster@{spawn\_monster}}
+\index{spawn\_monster@{spawn\_monster}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{spawn\_monster()}{spawn\_monster()}}
+{\footnotesize\ttfamily void Monster\+Component\+::spawn\+\_\+monster (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map}{Map}} $>$}]{map,  }\item[{int}]{spawn\+\_\+dataset\+\_\+id,  }\item[{int}]{monster\+\_\+id,  }\item[{int16\+\_\+t}]{amount,  }\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{x\+\_\+area,  }\item[{int16\+\_\+t}]{y\+\_\+area }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a20fa33e683a3985555f63a82756a57db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a20fa33e683a3985555f63a82756a57db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_ac72f66c63fdcda9c9d565de915d98f35}\label{class_horizon_1_1_zone_1_1_monster_component_ac72f66c63fdcda9c9d565de915d98f35} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!spawn\_monsters@{spawn\_monsters}}
+\index{spawn\_monsters@{spawn\_monsters}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{spawn\_monsters()}{spawn\_monsters()}}
+{\footnotesize\ttfamily void Monster\+Component\+::spawn\+\_\+monsters (\begin{DoxyParamCaption}\item[{std\+::string}]{map\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_ac72f66c63fdcda9c9d565de915d98f35_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_abeb517740d438616e18c81f2b3be7ca4}\label{class_horizon_1_1_zone_1_1_monster_component_abeb517740d438616e18c81f2b3be7ca4} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!sync\_data\_types@{sync\_data\_types}}
+\index{sync\_data\_types@{sync\_data\_types}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_data\_types()}{sync\_data\_types()}}
+{\footnotesize\ttfamily void Monster\+Component\+::sync\+\_\+data\+\_\+types (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_af4d64fa3fe0b6573f1fb5f57162e6491}{Horizon\+::\+Zone\+::\+LUAComponent}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_abeb517740d438616e18c81f2b3be7ca4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a230be7aee3080c51efa270fce53bb11c}\label{class_horizon_1_1_zone_1_1_monster_component_a230be7aee3080c51efa270fce53bb11c} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!sync\_definitions@{sync\_definitions}}
+\index{sync\_definitions@{sync\_definitions}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_definitions()}{sync\_definitions()}}
+{\footnotesize\ttfamily void Monster\+Component\+::sync\+\_\+definitions (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_aa0141caecc5a96e299b7f47025f0c0fe}{Horizon\+::\+Zone\+::\+LUAComponent}}.
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a70f0fb9469fc61101c449b1a7cdd66e2}\label{class_horizon_1_1_zone_1_1_monster_component_a70f0fb9469fc61101c449b1a7cdd66e2} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!sync\_functions@{sync\_functions}}
+\index{sync\_functions@{sync\_functions}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_functions()}{sync\_functions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Monster\+Component\+::sync\+\_\+functions (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a2ae24287a1e6f10c3d775b65c6df98db}{Horizon\+::\+Zone\+::\+LUAComponent}}.
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a09adf7803889ca28d039fc7e0721496d}\label{class_horizon_1_1_zone_1_1_monster_component_a09adf7803889ca28d039fc7e0721496d} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!sync\_functions@{sync\_functions}}
+\index{sync\_functions@{sync\_functions}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_functions()}{sync\_functions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Monster\+Component\+::sync\+\_\+functions (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_component_a09adf7803889ca28d039fc7e0721496d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_ade92a598b1be3990165b3eb6f4630b70}\label{class_horizon_1_1_zone_1_1_monster_component_ade92a598b1be3990165b3eb6f4630b70} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!\_last\_monster\_spawn\_id@{\_last\_monster\_spawn\_id}}
+\index{\_last\_monster\_spawn\_id@{\_last\_monster\_spawn\_id}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{\_last\_monster\_spawn\_id}{\_last\_monster\_spawn\_id}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Monster\+Component\+::\+\_\+last\+\_\+monster\+\_\+spawn\+\_\+id \{0\}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a0be26f371a19d2eb7e56b4772dc62e27}\label{class_horizon_1_1_zone_1_1_monster_component_a0be26f371a19d2eb7e56b4772dc62e27} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!\_monster\_spawn\_db@{\_monster\_spawn\_db}}
+\index{\_monster\_spawn\_db@{\_monster\_spawn\_db}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{\_monster\_spawn\_db}{\_monster\_spawn\_db}}
+{\footnotesize\ttfamily std\+::map$<$uint32\+\_\+t, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}}$>$ $>$ Horizon\+::\+Zone\+::\+Monster\+Component\+::\+\_\+monster\+\_\+spawn\+\_\+db}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_component_a297c854e28751304517b8eac17b9e6c6}\label{class_horizon_1_1_zone_1_1_monster_component_a297c854e28751304517b8eac17b9e6c6} 
+\index{Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}!\_monster\_spawned\_map@{\_monster\_spawned\_map}}
+\index{\_monster\_spawned\_map@{\_monster\_spawned\_map}!Horizon::Zone::MonsterComponent@{Horizon::Zone::MonsterComponent}}
+\doxysubsubsection{\texorpdfstring{\_monster\_spawned\_map}{\_monster\_spawned\_map}}
+{\footnotesize\ttfamily std\+::map$<$uint64\+\_\+t, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Entities\+::\+Monster}}$>$ $>$ Horizon\+::\+Zone\+::\+Monster\+Component\+::\+\_\+monster\+\_\+spawned\+\_\+map}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+LUA/\+Components/\mbox{\hyperlink{_monster_component_8hpp}{Monster\+Component.\+hpp}}\item 
+src/\+Server/\+Zone/\+LUA/\+Components/\mbox{\hyperlink{_monster_component_8cpp}{Monster\+Component.\+cpp}}\end{DoxyCompactItemize}

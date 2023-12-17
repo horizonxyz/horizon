@@ -1,0 +1,123 @@
+\doxysection{Horizon\+::Auth\+::AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY Class Reference}
+\hypertarget{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y}{}\label{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y}\index{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y}{AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY}.  
+
+
+
+
+{\ttfamily \#include $<$Transmitted\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Auth\+::AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Auth\+::AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a419e05371b45a8518a81536d91979330}{AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a35c915c8b1b2cea35f3674cc630859f1}{\texorpdfstring{$\sim$}{\string~}\+AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a02b886ba8e5e2d89033493405dd959ad}{deliver}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a927d58c5a02461ccbb32319c6dd1be4f}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Horizon\+::\+Base\+::\+Network\+Packet\+Transmitter$<$ Auth\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{Network\+Packet\+Transmitter}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Auth\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_acad36e1f8be629d774358381069a3d7e}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Transmitter}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a9e1b1c61d7a2fa7eb9e14c810055466c}{transmit}} ()
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a894983a07731b6ad07b306b795350262}{transmit}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y}{AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a419e05371b45a8518a81536d91979330}\label{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a419e05371b45a8518a81536d91979330} 
+\index{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}!AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+\index{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}!Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+\doxysubsubsection{\texorpdfstring{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY()}{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY()}}
+{\footnotesize\ttfamily Horizon\+::\+Auth\+::\+AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY\+::\+AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a35c915c8b1b2cea35f3674cc630859f1}\label{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a35c915c8b1b2cea35f3674cc630859f1} 
+\index{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}!````~AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{\texorpdfstring{$\sim$}{\string~}AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+\index{````~AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{\texorpdfstring{$\sim$}{\string~}AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}!Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY()}{\string~AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Auth\+::\+AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY\+::\texorpdfstring{$\sim$}{\string~}\+AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a02b886ba8e5e2d89033493405dd959ad}\label{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a02b886ba8e5e2d89033493405dd959ad} 
+\index{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}!deliver@{deliver}}
+\index{deliver@{deliver}!Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+\doxysubsubsection{\texorpdfstring{deliver()}{deliver()}}
+{\footnotesize\ttfamily void AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY\+::deliver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y}{AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY} \Hypertarget{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a927d58c5a02461ccbb32319c6dd1be4f}\label{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a927d58c5a02461ccbb32319c6dd1be4f} 
+\index{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}!serialize@{serialize}}
+\index{serialize@{serialize}!Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY@{Horizon::Auth::AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& AC\+\_\+\+ACK\+\_\+\+EKEY\+\_\+\+FAIL\+\_\+\+NOTUSEDEKEY\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a927d58c5a02461ccbb32319c6dd1be4f_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Auth/\+Packets/\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8hpp}{Transmitted\+Packets.\+hpp}}\item 
+src/\+Server/\+Auth/\+Packets/\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8cpp}{Transmitted\+Packets.\+cpp}}\end{DoxyCompactItemize}

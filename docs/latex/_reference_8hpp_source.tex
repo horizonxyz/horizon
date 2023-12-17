@@ -1,0 +1,104 @@
+\doxysection{Reference.\+hpp}
+\hypertarget{_reference_8hpp_source}{}\label{_reference_8hpp_source}\index{src/Core/Structures/LinkedList/ReferenceList/Reference.hpp@{src/Core/Structures/LinkedList/ReferenceList/Reference.hpp}}
+\mbox{\hyperlink{_reference_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_STRUCTURES\_REFERENCE\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_STRUCTURES\_REFERENCE\_HPP}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_element_8hpp}{Core/Structures/LinkedList/Element.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }Structures}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }LinkedList}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ TO,\ \textcolor{keyword}{class}\ FROM>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ TO\ *\_ref\_to;}
+\DoxyCodeLine{00031\ \ \ \ \ FROM\ *\_ref\_from;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Tell\ our\ refTo\ (target)\ object\ that\ we\ have\ a\ link}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_afd5b28bf09a867fc376fa090a73f7ff5}{target\_object\_build\_link}}()\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Tell\ our\ refTo\ (taget)\ object,\ that\ the\ link\ is\ cut}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a209c7935fd5a45167825a2fe1e9a2084}{target\_object\_destroy\_link}}()\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Tell\ our\ refFrom\ (source)\ object,\ that\ the\ link\ is\ cut\ (Target\ destroyed)}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a5ced99d59462fa402ddb12430f1fdca5}{source\_object\_destroy\_link}}()\ =\ 0;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_adf1dafebcfe28032ce57523d4898f83e}{Reference}}()\ \{\ \_ref\_to\ =\ \textcolor{keyword}{nullptr};\ \_ref\_from\ =\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_ad357f40be10e2a79f0e5c68eafe986ac}{\string~Reference}}()\ \{\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a0093058835ce6a1d75c9f0743b1bd979}{link}}(TO\ *toObj,\ FROM\ *fromObj)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ assert(fromObj);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Clear\ if\ any\ previous\ references\ to\ a\ reference\ manager.}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a85b2e9577d48a2d631963ada6223fc19}{is\_valid}}())}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_ab30fcbfaabb1c5209c72f9870467d80d}{remove}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Build\ the\ link.}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (toObj\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \_ref\_to\ =\ toObj;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \_ref\_from\ =\ fromObj;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_afd5b28bf09a867fc376fa090a73f7ff5}{target\_object\_build\_link}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ We\ don't\ need\ the\ reference\ anymore.\ Call\ comes\ from\ the\ refFrom\ object}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Tell\ our\ refTo\ object,\ that\ the\ link\ is\ cut}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_ab30fcbfaabb1c5209c72f9870467d80d}{remove}}()}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a209c7935fd5a45167825a2fe1e9a2084}{target\_object\_destroy\_link}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34}{delink}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \_ref\_to\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_ref\_from\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Link\ is\ invalid\ due\ to\ destruction\ of\ referenced\ target\ object.\ Call\ comes\ from\ the\ refTo\ object}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Tell\ our\ refFrom\ object,\ that\ the\ link\ is\ cut}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a004c498762f8168a19bd517237089c43}{invalidate}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ \_ref\_from\ MUST\ remain!!}}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a5ced99d59462fa402ddb12430f1fdca5}{source\_object\_destroy\_link}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34}{delink}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \_ref\_to\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a85b2e9577d48a2d631963ada6223fc19}{is\_valid}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_ref\_to\ !=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_ad203fecad0d7e55d2cb665eee7fd82c6}{next}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d}{Element::next}}());\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a0911418454e896b8adbeb549da05c074}{next}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}*)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d}{Element::next}}());\ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a2365be842236127fb7b458a7a95b8950}{prev}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11}{Element::prev}}());\ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a5636d6eeb40600b980be2cbf8ead97be}{prev}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}*)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11}{Element::prev}}());\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a78534c81b91d587aef3dd8a33b79bc58}{nocheck\_next}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4}{Element::nocheck\_next}}());\ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_aeb30df4fe3207f4ee66c982219a6c542}{nocheck\_next}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4}{Element::nocheck\_next}}());\ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_af3c9475af6aa9ac6de9b91a1ff372c4b}{nocheck\_prev}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013}{Element::nocheck\_prev}}());\ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_ab01ecc1c734b2669717dafc12f9836b0}{nocheck\_prev}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}((\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013}{Element::nocheck\_prev}}());\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ TO\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_ac39b272840810507a786e7b1da5b0618}{operator-\/>}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ref\_to;\ \}}
+\DoxyCodeLine{00100\ \ \ \ \ TO\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a0649befeadf20c47162401fb3f325e41}{target}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ref\_to;\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ FROM\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_a702b0907614132fdcaa2b8752770d18c}{source}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_ref\_from;\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference_adf1dafebcfe28032ce57523d4898f83e}{Reference}}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}\&\ operator=(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

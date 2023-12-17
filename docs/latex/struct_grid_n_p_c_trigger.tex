@@ -1,0 +1,167 @@
+\doxysection{Grid\+NPCTrigger Struct Reference}
+\hypertarget{struct_grid_n_p_c_trigger}{}\label{struct_grid_n_p_c_trigger}\index{GridNPCTrigger@{GridNPCTrigger}}
+
+
+{\ttfamily \#include $<$Grid\+Notifiers.\+hpp$>$}
+
+
+
+Collaboration diagram for Grid\+NPCTrigger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{struct_grid_n_p_c_trigger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid_n_p_c_trigger_aefe41bbf56417d8373db2a1d8875f242}{Grid\+NPCTrigger}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \&entity)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{struct_grid_n_p_c_trigger_ac16578d12ee4258e91b5a72000effc42}{check\+\_\+and\+\_\+trigger}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a6e0659759f665eeea9b475461038a535}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(NPC)$>$ \&m)
+\item 
+{\footnotesize template$<$class NOT\+\_\+\+INTERESTED $>$ }\\void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a0e1b7830e1bd604b83d45e7241c3e5a3}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_accabbd2c2031ab406c291397d78c45f0}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Player}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a7c4ea259c78f0f7b08ea4cfd48f1ef35}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_elemental}{Elemental}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a68417442fb70a2525fac0c0feeaa40ca}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_homunculus}{Homunculus}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a4f875929a66372f9850aca0f8823a03d}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_mercenary}{Mercenary}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a040789e1040c0212c6eba1c8f3af86de}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_pet}{Pet}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a967240d2c085bd46999bc0a7b6c23fd4}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_aff8a918fd8b9c27dd66c544bc7d6934e}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_skill}{Skill}} $>$ \&m)
+\item 
+template$<$$>$ void \mbox{\hyperlink{struct_grid_n_p_c_trigger_a0bd387b0ff435db585e67c00e0a4041b}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_item}{Item}} $>$ \&m)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \mbox{\hyperlink{struct_grid_n_p_c_trigger_a00bc42a686c83b596c08e9e5925f6ea9}{\+\_\+source}}
+\item 
+\mbox{\hyperlink{class_range_check_predicate}{Range\+Check\+Predicate}} \mbox{\hyperlink{struct_grid_n_p_c_trigger_a4e6c24eb41db09eb202829f476b3e3b7}{\+\_\+predicate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_grid_n_p_c_trigger_aefe41bbf56417d8373db2a1d8875f242}\label{struct_grid_n_p_c_trigger_aefe41bbf56417d8373db2a1d8875f242} 
+\index{GridNPCTrigger@{GridNPCTrigger}!GridNPCTrigger@{GridNPCTrigger}}
+\index{GridNPCTrigger@{GridNPCTrigger}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{GridNPCTrigger()}{GridNPCTrigger()}}
+{\footnotesize\ttfamily Grid\+NPCTrigger\+::\+Grid\+NPCTrigger (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_grid_n_p_c_trigger_ac16578d12ee4258e91b5a72000effc42}\label{struct_grid_n_p_c_trigger_ac16578d12ee4258e91b5a72000effc42} 
+\index{GridNPCTrigger@{GridNPCTrigger}!check\_and\_trigger@{check\_and\_trigger}}
+\index{check\_and\_trigger@{check\_and\_trigger}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{check\_and\_trigger()}{check\_and\_trigger()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Grid\+NPCTrigger\+::check\+\_\+and\+\_\+trigger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&}]{m }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_n_p_c_trigger_ac16578d12ee4258e91b5a72000effc42_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_grid_n_p_c_trigger_a7c4ea259c78f0f7b08ea4cfd48f1ef35}\label{struct_grid_n_p_c_trigger_a7c4ea259c78f0f7b08ea4cfd48f1ef35} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_elemental}{Elemental}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a6e0659759f665eeea9b475461038a535}\label{struct_grid_n_p_c_trigger_a6e0659759f665eeea9b475461038a535} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(NPC)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a68417442fb70a2525fac0c0feeaa40ca}\label{struct_grid_n_p_c_trigger_a68417442fb70a2525fac0c0feeaa40ca} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_homunculus}{Homunculus}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a0bd387b0ff435db585e67c00e0a4041b}\label{struct_grid_n_p_c_trigger_a0bd387b0ff435db585e67c00e0a4041b} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_item}{Item}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a4f875929a66372f9850aca0f8823a03d}\label{struct_grid_n_p_c_trigger_a4f875929a66372f9850aca0f8823a03d} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_mercenary}{Mercenary}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a967240d2c085bd46999bc0a7b6c23fd4}\label{struct_grid_n_p_c_trigger_a967240d2c085bd46999bc0a7b6c23fd4} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a0e1b7830e1bd604b83d45e7241c3e5a3}\label{struct_grid_n_p_c_trigger_a0e1b7830e1bd604b83d45e7241c3e5a3} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$class NOT\+\_\+\+INTERESTED $>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a040789e1040c0212c6eba1c8f3af86de}\label{struct_grid_n_p_c_trigger_a040789e1040c0212c6eba1c8f3af86de} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_pet}{Pet}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_accabbd2c2031ab406c291397d78c45f0}\label{struct_grid_n_p_c_trigger_accabbd2c2031ab406c291397d78c45f0} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Player}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_n_p_c_trigger_aff8a918fd8b9c27dd66c544bc7d6934e}\label{struct_grid_n_p_c_trigger_aff8a918fd8b9c27dd66c544bc7d6934e} 
+\index{GridNPCTrigger@{GridNPCTrigger}!Visit@{Visit}}
+\index{Visit@{Visit}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Grid\+NPCTrigger\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_skill}{Skill}} $>$ \&}]{m }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_grid_n_p_c_trigger_a4e6c24eb41db09eb202829f476b3e3b7}\label{struct_grid_n_p_c_trigger_a4e6c24eb41db09eb202829f476b3e3b7} 
+\index{GridNPCTrigger@{GridNPCTrigger}!\_predicate@{\_predicate}}
+\index{\_predicate@{\_predicate}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{\_predicate}{\_predicate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_range_check_predicate}{Range\+Check\+Predicate}} Grid\+NPCTrigger\+::\+\_\+predicate}
+
+\Hypertarget{struct_grid_n_p_c_trigger_a00bc42a686c83b596c08e9e5925f6ea9}\label{struct_grid_n_p_c_trigger_a00bc42a686c83b596c08e9e5925f6ea9} 
+\index{GridNPCTrigger@{GridNPCTrigger}!\_source@{\_source}}
+\index{\_source@{\_source}!GridNPCTrigger@{GridNPCTrigger}}
+\doxysubsubsection{\texorpdfstring{\_source}{\_source}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}}$>$ Grid\+NPCTrigger\+::\+\_\+source}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8hpp}{Grid\+Notifiers.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8cpp}{Grid\+Notifiers.\+cpp}}\end{DoxyCompactItemize}

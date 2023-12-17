@@ -1,0 +1,41 @@
+\doxysection{src/\+Server/\+Char/\+Char.cpp File Reference}
+\hypertarget{_char_8cpp}{}\label{_char_8cpp}\index{src/Server/Char/Char.cpp@{src/Server/Char/Char.cpp}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_char_8cpp_aceb9fdea3c71712b8bff428cb443f783}{Signal\+Handler}} (const boost\+::system\+::error\+\_\+code \&error, int)
+\item 
+int \mbox{\hyperlink{_char_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_char_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{_char_8cpp_ac0f2228420376f4db7e1274f2b41667c} 
+\index{Char.cpp@{Char.cpp}!main@{main}}
+\index{main@{main}!Char.cpp@{Char.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Main entry point of the char-\/server application. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer of shutdown signal. 
+\end{DoxyReturn}
+\Hypertarget{_char_8cpp_aceb9fdea3c71712b8bff428cb443f783}\label{_char_8cpp_aceb9fdea3c71712b8bff428cb443f783} 
+\index{Char.cpp@{Char.cpp}!SignalHandler@{SignalHandler}}
+\index{SignalHandler@{SignalHandler}!Char.cpp@{Char.cpp}}
+\doxysubsubsection{\texorpdfstring{SignalHandler()}{SignalHandler()}}
+{\footnotesize\ttfamily void Signal\+Handler (\begin{DoxyParamCaption}\item[{const boost\+::system\+::error\+\_\+code \&}]{error,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+Signal handler for the Char-\/\+Server main thread. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & error boost system error code. \\
+\hline
+\mbox{\texttt{ in}}  & {\em signal} & interrupt signal code \\
+\hline
+\end{DoxyParams}

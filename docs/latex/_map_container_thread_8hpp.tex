@@ -1,0 +1,63 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Map/\+Map\+Container\+Thread.hpp File Reference}
+\hypertarget{_map_container_thread_8hpp}{}\label{_map_container_thread_8hpp}\index{src/Server/Zone/Game/Map/MapContainerThread.hpp@{src/Server/Zone/Game/Map/MapContainerThread.hpp}}
+{\ttfamily \#include "{}Core/\+Multithreading/\+Thread\+Safe\+Queue.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+LUA/\+LUAManager.\+hpp"{}}\newline
+{\ttfamily \#include "{}Utility/\+Task\+Scheduler.\+hpp"{}}\newline
+Include dependency graph for Map\+Container\+Thread.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_map_container_thread_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_map_container_thread_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Horizon\+::\+Zone\+::\+Map\+Container\+Thread}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone}{Horizon\+::\+Zone}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_entities}{Horizon\+::\+Zone\+::\+Entities}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_map_container_thread_8hpp_a79ce116362bba038a873ad953133c801}{MAP\+\_\+\+CONTAINER\+\_\+\+THREAD\+\_\+\+ASSERT\+\_\+\+MAP}}(map,  container,  map\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{Horizon\+::\+Zone\+::map\+\_\+container\+\_\+session\+\_\+action}} \{ \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2a9e894a49f374a6141bcf5b569dedf576}{Horizon\+::\+Zone\+::\+SESSION\+\_\+\+ACTION\+\_\+\+ADD}}
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2a53527c182d2ee8283f1a74026e2c123a}{Horizon\+::\+Zone\+::\+SESSION\+\_\+\+ACTION\+\_\+\+REMOVE}}
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2a311c2ab3e23923292fbe3f85100e421c}{Horizon\+::\+Zone\+::\+SESSION\+\_\+\+ACTION\+\_\+\+LOGOUT\+\_\+\+AND\+\_\+\+REMOVE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_map_container_thread_8hpp_a79ce116362bba038a873ad953133c801}\label{_map_container_thread_8hpp_a79ce116362bba038a873ad953133c801} 
+\index{MapContainerThread.hpp@{MapContainerThread.hpp}!MAP\_CONTAINER\_THREAD\_ASSERT\_MAP@{MAP\_CONTAINER\_THREAD\_ASSERT\_MAP}}
+\index{MAP\_CONTAINER\_THREAD\_ASSERT\_MAP@{MAP\_CONTAINER\_THREAD\_ASSERT\_MAP}!MapContainerThread.hpp@{MapContainerThread.hpp}}
+\doxysubsubsection{\texorpdfstring{MAP\_CONTAINER\_THREAD\_ASSERT\_MAP}{MAP\_CONTAINER\_THREAD\_ASSERT\_MAP}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+CONTAINER\+\_\+\+THREAD\+\_\+\+ASSERT\+\_\+\+MAP(\begin{DoxyParamCaption}\item[{}]{map,  }\item[{}]{container,  }\item[{}]{map\+\_\+name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ ((map\ =\ container-\/>get\_map(map\_name))\ ==\ \textcolor{keyword}{nullptr})\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+
+\end{DoxyCode}

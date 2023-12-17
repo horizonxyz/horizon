@@ -1,0 +1,1211 @@
+\doxysection{Transmitted\+Packets.\+hpp}
+\hypertarget{_auth_2_packets_2_transmitted_packets_8hpp_source}{}\label{_auth_2_packets_2_transmitted_packets_8hpp_source}\index{src/Server/Auth/Packets/TransmittedPackets.hpp@{src/Server/Auth/Packets/TransmittedPackets.hpp}}
+\mbox{\hyperlink{_auth_2_packets_2_transmitted_packets_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sephus.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_AUTH\_TRANSMITTED\_PACKETS\_HPP}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HORIZON\_AUTH\_TRANSMITTED\_PACKETS\_HPP}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_network_packet_8hpp}{Server/Common/Base/NetworkPacket.hpp}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }Auth}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }AuthSession;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Size:\ 47\ +\ (32\ *\ char\ server\ count)\ bytes\ */}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login}{s\_ac\_accept\_login}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ int16\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_a25b6eba3d4112465563448ca4f218219}{packet\_len}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_af5aed9757afe7d505470c4c1f591d336}{auth\_code}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_a98596eb5e74ba9b3846e273b86b6f609}{aid}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_a9b91928659aa19c9248f4cc126310127}{user\_level}}\{\ 0\ \};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_a043d85d8cadb1766a621e6ad439ad489}{last\_login\_ip}}\{\ 0\ \};\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_a04de685ff90211eff43106c9716ef60e}{last\_login\_time}}[26]\{\ 0\ \};\ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login_afe2bd423c80039ff10c785184919711f}{sex}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#if\ PACKET\_VERSION\ >=\ 20170315}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{char}\ twitter\_auth\_token[16]\{\ 0\ \};}
+\DoxyCodeLine{00052\ \ \ \ \ uint8\_t\ twitter\_flag\{\ 0\ \};}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list}{s\_ac\_char\_server\_list}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list_a76e0e46d5d7aabae77ff10f231e00774}{ip}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ int16\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list_af4e07ad96900cfec270f901181e1ba34}{port}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list_a51acad3f4d2a08a7ee330f6b39b510ba}{name}}[20]\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list_ab360e098249b5fa4e50097410053ee62}{usercount}}\{\ 0\ \};\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list_a0134caa29841d897d2fd869506942fef}{is\_new}}\{\ 0\ \};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__char__server__list_a7880a159c77d2352ac09fdad3cdb6d7a}{type}}\{\ 0\ \};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#if\ PACKET\_VERSION\ >=\ 20170315}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{char}\ unknown2[128]\{\ 0\ \};}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00073\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0069}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170228}}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0ac4}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00079\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0069}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170228}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0ac4}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0069}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00088\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0069}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20180000}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0069}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00094\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0ac4}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00096\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00103\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n}{AC\_ACCEPT\_LOGIN}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n_ab31c2bfda96fc0bbc03f585d579f469c}{AC\_ACCEPT\_LOGIN}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00107\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a79bee9f6fb18470bc93d8b438dfce5d9a6b6028514cd53d5dfb62fe2007ca3d8d}{ID\_AC\_ACCEPT\_LOGIN}},\ s)}
+\DoxyCodeLine{00108\ \ \ \ \ \{\}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n_af59105e127ccd0f372e608ee34ce36dd}{\string~AC\_ACCEPT\_LOGIN}}()\ \{\}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n_aaec84a6e31ee426bc8646b75781ec5e8}{deliver}}(int32\_t\ auth\_code,\ uint32\_t\ aid,\ uint32\_t\ user\_level,\ uint8\_t\ sex);}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n_add5c9e20f2933f329d3273bdc5044cf7}{serialize}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1s__ac__accept__login}{s\_ac\_accept\_login}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n_ade9da9542eba447840465432d17e967a}{\_al}};}
+\DoxyCodeLine{00116\ \ \ \ \ std::vector<s\_ac\_char\_server\_list>\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n_acf85a93588e090b5a8c460b3afb0771b}{\_c}};}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090701}}
+\DoxyCodeLine{00122\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ace0d9d3f160eb584762fcd2551c4c099ac56e1a818d4217c0b552ee91b41ec066}{ID\_AC\_ACCEPT\_LOGIN2}}\ =\ 0x0276}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20090701}}
+\DoxyCodeLine{00125\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ace0d9d3f160eb584762fcd2551c4c099ac56e1a818d4217c0b552ee91b41ec066}{ID\_AC\_ACCEPT\_LOGIN2}}\ =\ 0x0276}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00128\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ace0d9d3f160eb584762fcd2551c4c099ac56e1a818d4217c0b552ee91b41ec066}{ID\_AC\_ACCEPT\_LOGIN2}}\ =\ 0x0276}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00130\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ace0d9d3f160eb584762fcd2551c4c099ac56e1a818d4217c0b552ee91b41ec066}{ID\_AC\_ACCEPT\_LOGIN2}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00137\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n2}{AC\_ACCEPT\_LOGIN2}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00138\ \{}
+\DoxyCodeLine{00139\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n2_afdfe2f5eba83af5a0016a1d1bd736a49}{AC\_ACCEPT\_LOGIN2}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00141\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ace0d9d3f160eb584762fcd2551c4c099ac56e1a818d4217c0b552ee91b41ec066}{ID\_AC\_ACCEPT\_LOGIN2}},\ s)}
+\DoxyCodeLine{00142\ \ \ \ \ \{\}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n2_af383cb49453772250dad56b768ee9890}{\string~AC\_ACCEPT\_LOGIN2}}()\ \{\}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n2_ac3d82938d4e604569cf81723945db5af}{deliver}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_c_e_p_t___l_o_g_i_n2_a159c16ff74b39888c0507721008dae71}{serialize}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00154\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ =\ 0x026a}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00157\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ =\ 0x026a}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00160\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ =\ 0x026a}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00163\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ =\ 0x026a}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00166\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ =\ 0x026a}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00168\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00170\ \};}
+\DoxyCodeLine{00175\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___a_u_t_h_r_e_f_u_s_e}{AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___a_u_t_h_r_e_f_u_s_e_ac01f86a2d2819b55c5908d1ff02f3189}{AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00179\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a5edd78a0fba034ad60198a97a3c54c1caed13ff7393cef2a79ae1ced5be206b55}{ID\_AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}},\ s)}
+\DoxyCodeLine{00180\ \ \ \ \ \{\}}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___a_u_t_h_r_e_f_u_s_e_a4bc71d49b84a0a8d08d9f45d59f14f0a}{\string~AC\_ACK\_EKEY\_FAIL\_AUTHREFUSE}}()\ \{\}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___a_u_t_h_r_e_f_u_s_e_a94d9f95ebcf180666346ce9329569c71}{deliver}}();}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___a_u_t_h_r_e_f_u_s_e_aec98e63b2af30fab70b1c8c7dfe8393a}{serialize}}();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ =\ 0x026b}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00195\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ =\ 0x026b}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00198\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ =\ 0x026b}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00201\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ =\ 0x026b}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00204\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ =\ 0x026b}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00206\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00208\ \};}
+\DoxyCodeLine{00213\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___i_n_p_u_t_e_k_e_y}{AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00214\ \{}
+\DoxyCodeLine{00215\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___i_n_p_u_t_e_k_e_y_a8f37471b7b9f9a9a98a6fbea19606f54}{AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00217\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a4ae7a30297fe8a867b66b14a2e157b37a75cc43279466627bcfb7523971674228}{ID\_AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}},\ s)}
+\DoxyCodeLine{00218\ \ \ \ \ \{\}}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___i_n_p_u_t_e_k_e_y_a0fc229ca2751fa3b48b9263ebbdb1e3a}{\string~AC\_ACK\_EKEY\_FAIL\_INPUTEKEY}}()\ \{\}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___i_n_p_u_t_e_k_e_y_aaf0d0f06d6c6368416ee646c103a653f}{deliver}}();}
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___i_n_p_u_t_e_k_e_y_a9f2e457dace5e62242d063596926c42b}{serialize}}();}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00225\ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00230\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ =\ 0x026d}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00233\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ =\ 0x026d}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00236\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ =\ 0x026d}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00239\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ =\ 0x026d}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00242\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ =\ 0x026d}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00244\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00246\ \};}
+\DoxyCodeLine{00251\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_e_e_d_c_a_r_d_p_a_s_s}{AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00252\ \{}
+\DoxyCodeLine{00253\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_e_e_d_c_a_r_d_p_a_s_s_a912aedefd5841e947e0de1732c4f5c65}{AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00255\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ab2d5b0c0edfebb23b1b19f8d71bd8b20ae724c24401493d91cd6cc83647bf8fca}{ID\_AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}},\ s)}
+\DoxyCodeLine{00256\ \ \ \ \ \{\}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_e_e_d_c_a_r_d_p_a_s_s_a0dbca3aee093086e27aeb378cc7daaa0}{\string~AC\_ACK\_EKEY\_FAIL\_NEEDCARDPASS}}()\ \{\}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_e_e_d_c_a_r_d_p_a_s_s_a23e32c0261432cdb6deb4494aae00596}{deliver}}();}
+\DoxyCodeLine{00260\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_e_e_d_c_a_r_d_p_a_s_s_a50244c054378443a07216ad8e8a12f54}{serialize}}();}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00263\ \};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00268\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ =\ 0x0267}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00271\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ =\ 0x0267}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00274\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ =\ 0x0267}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00277\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ =\ 0x0267}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00280\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ =\ 0x0267}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00282\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00284\ \};}
+\DoxyCodeLine{00289\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_e_x_i_s_t}{AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00290\ \{}
+\DoxyCodeLine{00291\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_e_x_i_s_t_afe847a683a3183d98870b598fe6c8942}{AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00293\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_aabe9139ae9ff3d96fa54cae22f52bb54abdfa944299c91689e16ddee7a329dcbf}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTEXIST}},\ s)}
+\DoxyCodeLine{00294\ \ \ \ \ \{\}}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_e_x_i_s_t_a87d3c6095ceaa5c86f20445dcf9c782f}{\string~AC\_ACK\_EKEY\_FAIL\_NOTEXIST}}()\ \{\}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_e_x_i_s_t_a0a02292a9913d515b01730d3a8e0c8ea}{deliver}}();}
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_e_x_i_s_t_a5185a100b9318219a701d5c13b6fa1df}{serialize}}();}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00301\ \};}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00306\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ =\ 0x026c}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00309\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ =\ 0x026c}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00312\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ =\ 0x026c}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00315\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ =\ 0x026c}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00318\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ =\ 0x026c}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00320\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00322\ \};}
+\DoxyCodeLine{00327\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_i_c_e}{AC\_ACK\_EKEY\_FAIL\_NOTICE}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00328\ \{}
+\DoxyCodeLine{00329\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00330\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_i_c_e_aaeec54cb1bc4f588eb6b2189c00c671b}{AC\_ACK\_EKEY\_FAIL\_NOTICE}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00331\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_aee6b84dec4c0abaedab0323f393e8a87a3f10f42ca0899dd24ef58d23ea091641}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTICE}},\ s)}
+\DoxyCodeLine{00332\ \ \ \ \ \{\}}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_i_c_e_abd9e570b384876e6878db07d56c36d40}{\string~AC\_ACK\_EKEY\_FAIL\_NOTICE}}()\ \{\}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_i_c_e_adab430f24e4b3041435d94aba21cdcae}{deliver}}();}
+\DoxyCodeLine{00336\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_i_c_e_aaec604534f41f94e5fdc8c8aafd102e2}{serialize}}();}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00339\ \};}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00344\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ =\ 0x0269}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00347\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ =\ 0x0269}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00350\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ =\ 0x0269}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00353\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ =\ 0x0269}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00356\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ =\ 0x0269}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00358\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00360\ \};}
+\DoxyCodeLine{00365\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y}{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00366\ \{}
+\DoxyCodeLine{00367\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00368\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a419e05371b45a8518a81536d91979330}{AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00369\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ae4a267451c15b194926799af5bcbf9aea27dd4e4d5aced972013d6311529e623b}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}},\ s)}
+\DoxyCodeLine{00370\ \ \ \ \ \{\}}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a35c915c8b1b2cea35f3674cc630859f1}{\string~AC\_ACK\_EKEY\_FAIL\_NOTUSEDEKEY}}()\ \{\}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a02b886ba8e5e2d89033493405dd959ad}{deliver}}();}
+\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_d_e_k_e_y_a927d58c5a02461ccbb32319c6dd1be4f}{serialize}}();}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00377\ \};}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00382\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ =\ 0x0268}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00385\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ =\ 0x0268}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00388\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ =\ 0x0268}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00391\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ =\ 0x0268}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00394\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ =\ 0x0268}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00396\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00398\ \};}
+\DoxyCodeLine{00403\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_s_e_k_e_y}{AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00404\ \{}
+\DoxyCodeLine{00405\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00406\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_s_e_k_e_y_a3447851e137ef19d4bd6d3d7ca4c3d14}{AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00407\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_af19b0022f40d76145d9ae322a94a3e5ba3c5cc5a7fafa6a02b9e764370e220397}{ID\_AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}},\ s)}
+\DoxyCodeLine{00408\ \ \ \ \ \{\}}
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_s_e_k_e_y_a1577e06767c6494c373ced5afbf721ab}{\string~AC\_ACK\_EKEY\_FAIL\_NOTUSESEKEY}}()\ \{\}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_s_e_k_e_y_aa0ead92b4e6aa8acd504a88e3aed3dfc}{deliver}}();}
+\DoxyCodeLine{00412\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___e_k_e_y___f_a_i_l___n_o_t_u_s_e_s_e_k_e_y_ab7ad9004df927c975445475b1a12d344}{serialize}}();}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00415\ \};}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00420\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}}\ =\ 0x026f}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00423\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}}\ =\ 0x026f}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00426\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}}\ =\ 0x026f}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00429\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}}\ =\ 0x026f}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00432\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}}\ =\ 0x026f}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00434\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00436\ \};}
+\DoxyCodeLine{00441\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___f_i_r_s_t___l_o_g_i_n}{AC\_ACK\_FIRST\_LOGIN}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00442\ \{}
+\DoxyCodeLine{00443\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00444\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___f_i_r_s_t___l_o_g_i_n_a1e81ff475be88d2de77ae1cd37e688ba}{AC\_ACK\_FIRST\_LOGIN}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00445\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a781f7713c22213e2c2601d86d68ce104aef67527cbffcfcb30235bc1f13bfa18e}{ID\_AC\_ACK\_FIRST\_LOGIN}},\ s)}
+\DoxyCodeLine{00446\ \ \ \ \ \{\}}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___f_i_r_s_t___l_o_g_i_n_a95de0196cd08b9a667dcf54a995080d9}{\string~AC\_ACK\_FIRST\_LOGIN}}()\ \{\}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___f_i_r_s_t___l_o_g_i_n_a8f1f54fdb8b10f67170ece532f14f138}{deliver}}();}
+\DoxyCodeLine{00450\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___f_i_r_s_t___l_o_g_i_n_ab2a38a72e22ac8e82b111af875649e35}{serialize}}();}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00453\ \};}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050912}}
+\DoxyCodeLine{00458\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}}\ =\ 0x0259}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050912}}
+\DoxyCodeLine{00461\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}}\ =\ 0x0259}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00464\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}}\ =\ 0x0259}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050912}}
+\DoxyCodeLine{00467\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}}\ =\ 0x0259}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00470\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}}\ =\ 0x0259}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00472\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00474\ \};}
+\DoxyCodeLine{00479\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___g_a_m_e___g_u_a_r_d}{AC\_ACK\_GAME\_GUARD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00480\ \{}
+\DoxyCodeLine{00481\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00482\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___g_a_m_e___g_u_a_r_d_a37dbb3561ef7a23ef2ed6d28845e8faa}{AC\_ACK\_GAME\_GUARD}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00483\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ab6b905ee87e7bf52433780ce60794305a34e078b6e82e57856cf28e7e04a170c0}{ID\_AC\_ACK\_GAME\_GUARD}},\ s)}
+\DoxyCodeLine{00484\ \ \ \ \ \{\}}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___g_a_m_e___g_u_a_r_d_a2394e63ec16f59d9668685e74970e629}{\string~AC\_ACK\_GAME\_GUARD}}()\ \{\}}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___g_a_m_e___g_u_a_r_d_adbd909efb38a5cc98011f8afee00eba9}{deliver}}();}
+\DoxyCodeLine{00488\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___g_a_m_e___g_u_a_r_d_aa2852d70b975ff277a7fda9bfe9a3a16}{serialize}}();}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00491\ \};}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00496\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}}\ =\ 0x01dc}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00499\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}}\ =\ 0x01dc}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00502\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}}\ =\ 0x01dc}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00505\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}}\ =\ 0x01dc}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00508\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}}\ =\ 0x01dc}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00510\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00512\ \};}
+\DoxyCodeLine{00517\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___h_a_s_h}{AC\_ACK\_HASH}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00518\ \{}
+\DoxyCodeLine{00519\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00520\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___h_a_s_h_afcd6991cfeaba0e2400c154fa3c15b9a}{AC\_ACK\_HASH}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00521\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a0b600e10d3d1bfdf5130046843419032a293f4b71420d062f6726e33b7dac28d7}{ID\_AC\_ACK\_HASH}},\ s)}
+\DoxyCodeLine{00522\ \ \ \ \ \{\}}
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___h_a_s_h_aa5506457f561ba09a4db5b1720d9932d}{\string~AC\_ACK\_HASH}}()\ \{\}}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___h_a_s_h_a68b11531522f133f0d9ee72e43c8f6aa}{deliver}}();}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___h_a_s_h_ada511a63ab23c81c115fefe237e3011e}{serialize}}();}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00529\ \};}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00534\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}}\ =\ 0x0272}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00537\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}}\ =\ 0x0272}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00540\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}}\ =\ 0x0272}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{00543\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}}\ =\ 0x0272}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00546\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}}\ =\ 0x0272}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00548\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00550\ \};}
+\DoxyCodeLine{00555\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___p_t___i_d___i_n_f_o}{AC\_ACK\_PT\_ID\_INFO}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00556\ \{}
+\DoxyCodeLine{00557\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00558\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___p_t___i_d___i_n_f_o_a90098a7e62a4c7c97bbfb7f5c84f6e79}{AC\_ACK\_PT\_ID\_INFO}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00559\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a2188a6470c73265681d9db78fc367e92ae43a6d656644fd36b2812fc15bac9d3f}{ID\_AC\_ACK\_PT\_ID\_INFO}},\ s)}
+\DoxyCodeLine{00560\ \ \ \ \ \{\}}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___p_t___i_d___i_n_f_o_a5335584d89dacafbb50b2b65d08192d1}{\string~AC\_ACK\_PT\_ID\_INFO}}()\ \{\}}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___p_t___i_d___i_n_f_o_a376f915c49db169a0b62db17a9b7b183}{deliver}}();}
+\DoxyCodeLine{00564\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_c_k___p_t___i_d___i_n_f_o_a3c4aa47b320d440e3d1a7690c7f1a92c}{serialize}}();}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00567\ \};}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00572\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}}\ =\ 0x01be}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00575\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}}\ =\ 0x01be}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00578\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}}\ =\ 0x01be}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00581\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}}\ =\ 0x01be}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00584\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}}\ =\ 0x01be}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00586\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00588\ \};}
+\DoxyCodeLine{00593\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_s_k___p_n_g_a_m_e_r_o_o_m}{AC\_ASK\_PNGAMEROOM}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00594\ \{}
+\DoxyCodeLine{00595\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00596\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_s_k___p_n_g_a_m_e_r_o_o_m_aa2dc36579d4e52aae1cb50b61cce87ba}{AC\_ASK\_PNGAMEROOM}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00597\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a20c10434b8933188991863ce81bf4cd2a3fefd27d98083eaa66d0286887cefb82}{ID\_AC\_ASK\_PNGAMEROOM}},\ s)}
+\DoxyCodeLine{00598\ \ \ \ \ \{\}}
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_s_k___p_n_g_a_m_e_r_o_o_m_a19b595ecd319a576de435e2860df5fae}{\string~AC\_ASK\_PNGAMEROOM}}()\ \{\}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_s_k___p_n_g_a_m_e_r_o_o_m_ace638a72b17d9f85789710135dc35b76}{deliver}}();}
+\DoxyCodeLine{00602\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___a_s_k___p_n_g_a_m_e_r_o_o_m_a2d18ad3d88953a1ec7565def1e610e0e}{serialize}}();}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00605\ \};}
+\DoxyCodeLine{00606\ }
+\DoxyCodeLine{00607\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050628}}
+\DoxyCodeLine{00610\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}}\ =\ 0x023d}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050628}}
+\DoxyCodeLine{00613\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}}\ =\ 0x023d}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00616\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}}\ =\ 0x023d}
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20050628}}
+\DoxyCodeLine{00619\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}}\ =\ 0x023d}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00622\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}}\ =\ 0x023d}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00624\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00626\ \};}
+\DoxyCodeLine{00631\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___e_v_e_n_t___r_e_s_u_l_t}{AC\_EVENT\_RESULT}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00632\ \{}
+\DoxyCodeLine{00633\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00634\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___e_v_e_n_t___r_e_s_u_l_t_a274f49bb3104d8316cfcf25a8e80273c}{AC\_EVENT\_RESULT}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00635\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a4476ad3bfa4f345869448a2355f2c1f8acb7b1d09bf062d649d056036103af4e6}{ID\_AC\_EVENT\_RESULT}},\ s)}
+\DoxyCodeLine{00636\ \ \ \ \ \{\}}
+\DoxyCodeLine{00637\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___e_v_e_n_t___r_e_s_u_l_t_aed14de1f0b1bbe3b6e59113379039156}{\string~AC\_EVENT\_RESULT}}()\ \{\}}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___e_v_e_n_t___r_e_s_u_l_t_a219c9bd43409e9cb9e695953762a4e1b}{deliver}}();}
+\DoxyCodeLine{00640\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___e_v_e_n_t___r_e_s_u_l_t_a91702b3638e2a10f76c7667e8e89e924}{serialize}}();}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00643\ \};}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20190000}}
+\DoxyCodeLine{00648\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0ad1}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20171213}}
+\DoxyCodeLine{00651\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0ae3}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20190000}}
+\DoxyCodeLine{00654\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0ad1}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20171213}}
+\DoxyCodeLine{00657\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0ae3}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20190000}}
+\DoxyCodeLine{00660\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0ad1}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20171123}}
+\DoxyCodeLine{00663\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0ae3}
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00665\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00667\ \};}
+\DoxyCodeLine{00672\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p}{AC\_LOGIN\_OTP}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00673\ \{}
+\DoxyCodeLine{00674\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00675\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a7104a4b54b5423bdb68ce72b5819cd7f}{AC\_LOGIN\_OTP}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00676\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ac8d777a428d754ee06ab9a10d012afafaa93ea14a0bb7d4f020e01bb0fa3e3173}{ID\_AC\_LOGIN\_OTP}},\ s)}
+\DoxyCodeLine{00677\ \ \ \ \ \{\}}
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a9c218388b254ea4020b0e0cfe526a772}{\string~AC\_LOGIN\_OTP}}()\ \{\}}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ac71fbf35f314d954c914879d326cbd14}{deliver}}();}
+\DoxyCodeLine{00681\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ad85c71254bcadac307c5137b052bf7de}{serialize}}();}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00683\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00684\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_af5e1c015b986a995a149dfde6e52fb8b}{\_packet\_length}}\{\ 0\ \};}
+\DoxyCodeLine{00685\ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a3a195c23477b1c9ae126e277f1acc749}{\_loginFlag}}\{\ 0\ \};}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20171213)\ \(\backslash\)}}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\ \ \ \ ||\ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20171213)}}
+\DoxyCodeLine{00688\ \ \ \ \ \textcolor{keywordtype}{char}\ \_loginFlag2[20];}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#elif\ CLEINT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20171123\ }}
+\DoxyCodeLine{00690\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_a3a195c23477b1c9ae126e277f1acc749}{\_loginFlag}}[6];}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00692\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___l_o_g_i_n___o_t_p_ae1797306b3b71a4436b6791f245d4ab2}{\_token}}[6];}
+\DoxyCodeLine{00693\ \};}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00698\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}}\ =\ 0x01f1}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20031223}}
+\DoxyCodeLine{00701\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}}\ =\ 0x01f1}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00704\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}}\ =\ 0x01f1}
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00706\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20031223}}
+\DoxyCodeLine{00707\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}}\ =\ 0x01f1}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00710\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}}\ =\ 0x01f1}
+\DoxyCodeLine{00711\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00712\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00713\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00714\ \};}
+\DoxyCodeLine{00719\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___n_o_t_i_f_y___e_r_r_o_r}{AC\_NOTIFY\_ERROR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00720\ \{}
+\DoxyCodeLine{00721\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00722\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___n_o_t_i_f_y___e_r_r_o_r_afd67cdf99c77417da48049b4978fec04}{AC\_NOTIFY\_ERROR}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00723\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ade88807346c78ba32495fa22587ad4bca4a7135b9ba90a8af75bd6356c94ce2d4}{ID\_AC\_NOTIFY\_ERROR}},\ s)}
+\DoxyCodeLine{00724\ \ \ \ \ \{\}}
+\DoxyCodeLine{00725\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___n_o_t_i_f_y___e_r_r_o_r_a8bb8768428faa4d2a568f819fcda5b85}{\string~AC\_NOTIFY\_ERROR}}()\ \{\}}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00727\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___n_o_t_i_f_y___e_r_r_o_r_a2dd08805de491555767b5e5fa2f2e72f}{deliver}}();}
+\DoxyCodeLine{00728\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___n_o_t_i_f_y___e_r_r_o_r_aad9b98208a10a2f82a5d103ad02be294}{serialize}}();}
+\DoxyCodeLine{00729\ }
+\DoxyCodeLine{00730\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00731\ \};}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00733\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100413}}
+\DoxyCodeLine{00736\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ad8c1aabe591e31acc4db9a590a9c331da382e72f0a5be98034420d879f040b3c1}{ID\_AC\_OTP\_AUTH\_ACK}}\ =\ 0x0823}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100413}}
+\DoxyCodeLine{00739\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ad8c1aabe591e31acc4db9a590a9c331da382e72f0a5be98034420d879f040b3c1}{ID\_AC\_OTP\_AUTH\_ACK}}\ =\ 0x0823}
+\DoxyCodeLine{00740\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00742\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ad8c1aabe591e31acc4db9a590a9c331da382e72f0a5be98034420d879f040b3c1}{ID\_AC\_OTP\_AUTH\_ACK}}\ =\ 0x0823}
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00744\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ad8c1aabe591e31acc4db9a590a9c331da382e72f0a5be98034420d879f040b3c1}{ID\_AC\_OTP\_AUTH\_ACK}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00746\ \};}
+\DoxyCodeLine{00751\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___a_u_t_h___a_c_k}{AC\_OTP\_AUTH\_ACK}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00752\ \{}
+\DoxyCodeLine{00753\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00754\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___a_u_t_h___a_c_k_a6857af545daa5fc06a92116a48be62ec}{AC\_OTP\_AUTH\_ACK}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00755\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ad8c1aabe591e31acc4db9a590a9c331da382e72f0a5be98034420d879f040b3c1}{ID\_AC\_OTP\_AUTH\_ACK}},\ s)}
+\DoxyCodeLine{00756\ \ \ \ \ \{\}}
+\DoxyCodeLine{00757\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___a_u_t_h___a_c_k_a69fac7e2bf6cc6a73b8c4ac53359aeac}{\string~AC\_OTP\_AUTH\_ACK}}()\ \{\}}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___a_u_t_h___a_c_k_af267930027aca7f938235dc2fdce5bab}{deliver}}();}
+\DoxyCodeLine{00760\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___a_u_t_h___a_c_k_a1b4a631dd72fd8d183f172ddae86dec2}{serialize}}();}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00762\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00763\ \};}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00765\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00767\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100413}}
+\DoxyCodeLine{00768\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a89518f19850e3f8c7e5978d437422cb2ae8c2e541126e767c471f26d71e53defc}{ID\_AC\_OTP\_USER}}\ =\ 0x0821}
+\DoxyCodeLine{00769\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100413}}
+\DoxyCodeLine{00771\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a89518f19850e3f8c7e5978d437422cb2ae8c2e541126e767c471f26d71e53defc}{ID\_AC\_OTP\_USER}}\ =\ 0x0821}
+\DoxyCodeLine{00772\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00774\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a89518f19850e3f8c7e5978d437422cb2ae8c2e541126e767c471f26d71e53defc}{ID\_AC\_OTP\_USER}}\ =\ 0x0821}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00776\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a89518f19850e3f8c7e5978d437422cb2ae8c2e541126e767c471f26d71e53defc}{ID\_AC\_OTP\_USER}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00777\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00778\ \};}
+\DoxyCodeLine{00783\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___u_s_e_r}{AC\_OTP\_USER}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00784\ \{}
+\DoxyCodeLine{00785\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00786\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___u_s_e_r_af536ea302cf07f2e0222943a730e3277}{AC\_OTP\_USER}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00787\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a89518f19850e3f8c7e5978d437422cb2ae8c2e541126e767c471f26d71e53defc}{ID\_AC\_OTP\_USER}},\ s)}
+\DoxyCodeLine{00788\ \ \ \ \ \{\}}
+\DoxyCodeLine{00789\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___u_s_e_r_adec61c54e5362cfab983e15f5cf2aaef}{\string~AC\_OTP\_USER}}()\ \{\}}
+\DoxyCodeLine{00790\ }
+\DoxyCodeLine{00791\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___u_s_e_r_aaff003210f19d947e1e44ec4643e1040}{deliver}}();}
+\DoxyCodeLine{00792\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___o_t_p___u_s_e_r_a7057b76372c84d2c06c182ac2051c00d}{serialize}}();}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00795\ \};}
+\DoxyCodeLine{00796\ }
+\DoxyCodeLine{00797\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00798\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00799\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20101228}}
+\DoxyCodeLine{00800\ \mbox{\hyperlink{namespace_horizon_1_1_auth_abb996e4dc4763a8f62288d259668c3dea3bd7e3bf7fbeda13871cd60bbcf227f3}{ID\_AC\_REALNAME\_AUTH}}\ =\ 0x08b2}
+\DoxyCodeLine{00801\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20101228}}
+\DoxyCodeLine{00803\ \mbox{\hyperlink{namespace_horizon_1_1_auth_abb996e4dc4763a8f62288d259668c3dea3bd7e3bf7fbeda13871cd60bbcf227f3}{ID\_AC\_REALNAME\_AUTH}}\ =\ 0x08b2}
+\DoxyCodeLine{00804\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00805\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00806\ \mbox{\hyperlink{namespace_horizon_1_1_auth_abb996e4dc4763a8f62288d259668c3dea3bd7e3bf7fbeda13871cd60bbcf227f3}{ID\_AC\_REALNAME\_AUTH}}\ =\ 0x08b2}
+\DoxyCodeLine{00807\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00808\ \mbox{\hyperlink{namespace_horizon_1_1_auth_abb996e4dc4763a8f62288d259668c3dea3bd7e3bf7fbeda13871cd60bbcf227f3}{ID\_AC\_REALNAME\_AUTH}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00809\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00810\ \};}
+\DoxyCodeLine{00815\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_a_l_n_a_m_e___a_u_t_h}{AC\_REALNAME\_AUTH}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00816\ \{}
+\DoxyCodeLine{00817\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00818\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_a_l_n_a_m_e___a_u_t_h_a1b077cb58d5ff762a4ac870b861356f3}{AC\_REALNAME\_AUTH}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00819\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_abb996e4dc4763a8f62288d259668c3dea3bd7e3bf7fbeda13871cd60bbcf227f3}{ID\_AC\_REALNAME\_AUTH}},\ s)}
+\DoxyCodeLine{00820\ \ \ \ \ \{\}}
+\DoxyCodeLine{00821\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_a_l_n_a_m_e___a_u_t_h_aa02b526856122d9c83e8bb059082baaf}{\string~AC\_REALNAME\_AUTH}}()\ \{\}}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00823\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_a_l_n_a_m_e___a_u_t_h_a4a2eaba26b02be8fb5b9aa92946020ba}{deliver}}();}
+\DoxyCodeLine{00824\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_a_l_n_a_m_e___a_u_t_h_abc3b4fc03071237a9dffc3cdb04454b0}{serialize}}();}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00827\ \};}
+\DoxyCodeLine{00828\ }
+\DoxyCodeLine{00829\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813}{login\_error\_codes}}}
+\DoxyCodeLine{00830\ \{}
+\DoxyCodeLine{00831\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813ab6b613fb4c8216406f88febb257494df}{ERR\_NONE}}\ =\ -\/1,\ \ \textcolor{comment}{//\ All\ ok!}}
+\DoxyCodeLine{00832\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813ac160838e3df521d4d56bcc36675114f9}{ERR\_UNREGISTERED\_ID}}\ =\ 0,\ \ \textcolor{comment}{//\ Unregistered\ ID}}
+\DoxyCodeLine{00833\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a3a7b12a4b70eabd37a18daeb5629a68e}{ERR\_INCORRECT\_PASSWORD}}\ =\ 1,\ \ \textcolor{comment}{//\ Incorrect\ Password}}
+\DoxyCodeLine{00834\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a1daa07668ca56a9450c384cbcc0d94f5}{ERR\_EXPIRED\_ID}}\ =\ 2,\ \ \textcolor{comment}{//\ This\ ID\ is\ expired}}
+\DoxyCodeLine{00835\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a7ba95b27ccd61491d228a3fe63d8bfb7}{ERR\_REJECTED\_FROM\_SERVER}}\ =\ 3,\ \ \textcolor{comment}{//\ Rejected\ from\ Server}}
+\DoxyCodeLine{00836\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a5f798f4ab14b165c2408ca7fcf90c4cc}{ERR\_GM\_BLOCK}}\ =\ 4,\ \ \textcolor{comment}{//\ You\ have\ been\ blocked\ by\ the\ GM\ Team}}
+\DoxyCodeLine{00837\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a1f5514b3d2cf56c247206d60366ac8e2}{ERR\_INCORRECT\_CLIENT\_VERSION}}\ =\ 5,\ \ \textcolor{comment}{//\ Your\ Game's\ EXE\ file\ is\ not\ the\ latest\ version}}
+\DoxyCodeLine{00838\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a2968de15a50ead254e25ffc2f0c4bd50}{ERR\_BAN\_TIMESTAMP}}\ =\ 6,\ \ \textcolor{comment}{//\ Your\ are\ Prohibited\ to\ log\ in\ until\ \%s}}
+\DoxyCodeLine{00839\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a5c57174107a1b9a9be716847a05bdcc3}{ERR\_SERVER\_OVERPOPULATED}}\ =\ 7,\ \ \textcolor{comment}{//\ Server\ is\ jammed\ due\ to\ over\ populated}}
+\DoxyCodeLine{00840\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a55dab5cf94820a7c48b2ec13bc875b5f}{ERR\_COMPANY\_LIMIT}}\ =\ 8,\ \ \textcolor{comment}{//\ No\ more\ accounts\ may\ be\ connected\ from\ this\ company}}
+\DoxyCodeLine{00841\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a0a8c40e7b3da6f41d05f63d3c1176e79}{ERR\_MSI\_REFUSE\_BAN\_BY\_DBA}}\ =\ 9,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_BAN\_BY\_DBA}}
+\DoxyCodeLine{00842\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813acad457f3ff1094d36a338453cf9ef29b}{ERR\_MSI\_REFUSE\_EMAIL\_NOT\_CONFIRMED}}\ =\ 10,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_EMAIL\_NOT\_CONFIRMED}}
+\DoxyCodeLine{00843\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a3a5833b2e2905b59bb7d361f90880408}{ERR\_MSI\_REFUSE\_BAN\_BY\_GM}}\ =\ 11,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_BAN\_BY\_GM}}
+\DoxyCodeLine{00844\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813aa3cf90a74443cd5a2383ce62d93ce00e}{ERR\_MSI\_REFUSE\_TEMP\_BAN\_FOR\_DBWORK}}\ =\ 12,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_TEMP\_BAN\_FOR\_DBWORK}}
+\DoxyCodeLine{00845\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a44cfd3cce049b5ce9bd773a0ef4e9226}{ERR\_MSI\_REFUSE\_SELF\_LOCK}}\ =\ 13,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_SELF\_LOCK}}
+\DoxyCodeLine{00846\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813af429c6f75605f97301b216aefd1a4864}{ERR\_MSI\_REFUSE\_NOT\_PERMITTED\_GROUP}}\ =\ 14,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_NOT\_PERMITTED\_GROUP}}
+\DoxyCodeLine{00847\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a29b729d0050cf3322b4f5b439d69474a}{ERR\_MSI\_REFUSE\_NOT\_PERMITTED\_GROUP2}}\ =\ 15,\ \ \textcolor{comment}{//\ MSI\_REFUSE\_NOT\_PERMITTED\_GROUP}}
+\DoxyCodeLine{00848\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a29e17bf6bcea4eb891b8a975730f8fa2}{ERR\_DELETED\_ACCOUNT}}\ =\ 99,\ \ \textcolor{comment}{//\ This\ ID\ has\ been\ totally\ erased}}
+\DoxyCodeLine{00849\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813ab84557afd49d851102553ef3a49fedc4}{ERR\_SESSION\_CONNECTED}}\ =\ 100,\ \textcolor{comment}{//\ Login\ information\ remains\ at\ \%s}}
+\DoxyCodeLine{00850\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813ada0d2df3802281b41b2f21508f23eb13}{ERR\_HACKING\_INVESTIGATION}}\ =\ 101,\ \textcolor{comment}{//\ Account\ has\ been\ locked\ for\ a\ hacking\ investigation.\ Please\ contact\ the\ GM\ Team\ for\ more\ information}}
+\DoxyCodeLine{00851\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a4f94720e379144c150c45ada95272923}{ERR\_BUG\_INVESTIGATION}}\ =\ 102,\ \textcolor{comment}{//\ This\ account\ has\ been\ temporarily\ prohibited\ from\ login\ due\ to\ a\ bug-\/related\ investigation}}
+\DoxyCodeLine{00852\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813a265aae7b53ea12e98492a28816071857}{ERR\_DELETING\_CHAR}}\ =\ 103,\ \textcolor{comment}{//\ This\ character\ is\ being\ deleted.\ Login\ is\ temporarily\ unavailable\ for\ the\ time\ being}}
+\DoxyCodeLine{00853\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813abf6d0c5b31048201cd1115c57926844d}{ERR\_DELETING\_SPOUSE}}\ =\ 104,\ \textcolor{comment}{//\ This\ character\ is\ being\ deleted.\ Login\ is\ temporarily\ unavailable\ for\ the\ time\ being}}
+\DoxyCodeLine{00854\ \};}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00857\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00858\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20040000}}
+\DoxyCodeLine{00859\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}}\ =\ 0x006a}
+\DoxyCodeLine{00860\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00861\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00862\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}}\ =\ 0x006a}
+\DoxyCodeLine{00863\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00864\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{00865\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}}\ =\ 0x006a}
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20030000}}
+\DoxyCodeLine{00868\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}}\ =\ 0x006a}
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00870\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00871\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}}\ =\ 0x006a}
+\DoxyCodeLine{00872\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00873\ \mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00874\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00875\ \};}
+\DoxyCodeLine{00880\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n}{AC\_REFUSE\_LOGIN}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00881\ \{}
+\DoxyCodeLine{00882\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00883\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a586db043cb65807bc5ed54af3c6f4716}{AC\_REFUSE\_LOGIN}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00884\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_ada745d9ce8c3d2af227230944a0d4a59ad8326da9991d9e9acdbef1a6167c3880}{ID\_AC\_REFUSE\_LOGIN}},\ s)}
+\DoxyCodeLine{00885\ \ \ \ \ \{\}}
+\DoxyCodeLine{00886\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a839ea91ad1284b64aac519e76378b288}{\string~AC\_REFUSE\_LOGIN}}()\ \{\}}
+\DoxyCodeLine{00887\ }
+\DoxyCodeLine{00888\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a11f5ca9a6ec5b3e52aabc39d516f41b6}{deliver}}(\mbox{\hyperlink{namespace_horizon_1_1_auth_a73c2116d647c4a55941eb77a711a1813}{login\_error\_codes}}\ error\_code,\ \textcolor{keywordtype}{char}*\ block\_date,\ std::size\_t\ bd\_size);}
+\DoxyCodeLine{00889\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_ae73a617b20374341160a599b2dcaf006}{serialize}}();}
+\DoxyCodeLine{00890\ }
+\DoxyCodeLine{00891\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00892\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a22bc8204ea87f34b3198785aed23700d}{\_error\_code}}\{\ 0\ \};\ \ \ \ \ \ }
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n_a5932b61d5ddc13a197eac6abbad6e7e9}{\_block\_date}}[20]\{\ 0\ \};\ \ \ \ \ \ }
+\DoxyCodeLine{00894\ \};}
+\DoxyCodeLine{00895\ }
+\DoxyCodeLine{00896\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00897\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00898\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100615}}
+\DoxyCodeLine{00899\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee04e07dd86b736d655ed2c54561a94aae14328bd7ce887a271bf11eaa7e8e2ed}{ID\_AC\_REFUSE\_LOGIN2}}\ =\ 0x083e}
+\DoxyCodeLine{00900\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00901\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100615}}
+\DoxyCodeLine{00902\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee04e07dd86b736d655ed2c54561a94aae14328bd7ce887a271bf11eaa7e8e2ed}{ID\_AC\_REFUSE\_LOGIN2}}\ =\ 0x083e}
+\DoxyCodeLine{00903\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00904\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00905\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee04e07dd86b736d655ed2c54561a94aae14328bd7ce887a271bf11eaa7e8e2ed}{ID\_AC\_REFUSE\_LOGIN2}}\ =\ 0x083e}
+\DoxyCodeLine{00906\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00907\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aee04e07dd86b736d655ed2c54561a94aae14328bd7ce887a271bf11eaa7e8e2ed}{ID\_AC\_REFUSE\_LOGIN2}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00908\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00909\ \};}
+\DoxyCodeLine{00914\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n2}{AC\_REFUSE\_LOGIN2}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00915\ \{}
+\DoxyCodeLine{00916\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00917\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n2_a18b578c3c14701b8cd9b2561c4939b52}{AC\_REFUSE\_LOGIN2}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00918\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_aee04e07dd86b736d655ed2c54561a94aae14328bd7ce887a271bf11eaa7e8e2ed}{ID\_AC\_REFUSE\_LOGIN2}},\ s)}
+\DoxyCodeLine{00919\ \ \ \ \ \{\}}
+\DoxyCodeLine{00920\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n2_a95fe85494c925c2377fcca181f40edf1}{\string~AC\_REFUSE\_LOGIN2}}()\ \{\}}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00922\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n2_acdb1bc2b193662b3f7c30446d13bf339}{deliver}}();}
+\DoxyCodeLine{00923\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n2_affc969644b46a5c48e4d568bc4df1a71}{serialize}}();}
+\DoxyCodeLine{00924\ }
+\DoxyCodeLine{00925\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00926\ \};}
+\DoxyCodeLine{00927\ }
+\DoxyCodeLine{00928\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00929\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00930\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20130220}}
+\DoxyCodeLine{00931\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0a9c8bc382f70310d8f9dc3c1dc52731aadb3310db6a4eb0a84737c7e7c918ef2}{ID\_AC\_REFUSE\_LOGIN3}}\ =\ 0x09a5}
+\DoxyCodeLine{00932\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00933\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20130220}}
+\DoxyCodeLine{00934\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0a9c8bc382f70310d8f9dc3c1dc52731aadb3310db6a4eb0a84737c7e7c918ef2}{ID\_AC\_REFUSE\_LOGIN3}}\ =\ 0x09a5}
+\DoxyCodeLine{00935\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00936\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{00937\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0a9c8bc382f70310d8f9dc3c1dc52731aadb3310db6a4eb0a84737c7e7c918ef2}{ID\_AC\_REFUSE\_LOGIN3}}\ =\ 0x09a5}
+\DoxyCodeLine{00938\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00939\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0a9c8bc382f70310d8f9dc3c1dc52731aadb3310db6a4eb0a84737c7e7c918ef2}{ID\_AC\_REFUSE\_LOGIN3}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00940\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00941\ \};}
+\DoxyCodeLine{00946\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n3}{AC\_REFUSE\_LOGIN3}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00947\ \{}
+\DoxyCodeLine{00948\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00949\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n3_ac41f860ee5dabb84f138af13ea194765}{AC\_REFUSE\_LOGIN3}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00950\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a0a9c8bc382f70310d8f9dc3c1dc52731aadb3310db6a4eb0a84737c7e7c918ef2}{ID\_AC\_REFUSE\_LOGIN3}},\ s)}
+\DoxyCodeLine{00951\ \ \ \ \ \{\}}
+\DoxyCodeLine{00952\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n3_a0b553d295f8c05e3ca7a58f1eb47d955}{\string~AC\_REFUSE\_LOGIN3}}()\ \{\}}
+\DoxyCodeLine{00953\ }
+\DoxyCodeLine{00954\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n3_a0b43c6aada7b66c1823a56d21703fb69}{deliver}}();}
+\DoxyCodeLine{00955\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n3_a43586b10438ffc58051ef62c5530ce07}{serialize}}();}
+\DoxyCodeLine{00956\ }
+\DoxyCodeLine{00957\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00958\ \};}
+\DoxyCodeLine{00959\ }
+\DoxyCodeLine{00960\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00961\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00962\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20180704}}
+\DoxyCodeLine{00963\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a972b993f1a8ec24675e7831d38a8340ea610d19377c281905872347f18aecad04}{ID\_AC\_REFUSE\_LOGIN4}}\ =\ 0x0b02}
+\DoxyCodeLine{00964\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00965\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20180704}}
+\DoxyCodeLine{00966\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a972b993f1a8ec24675e7831d38a8340ea610d19377c281905872347f18aecad04}{ID\_AC\_REFUSE\_LOGIN4}}\ =\ 0x0b02}
+\DoxyCodeLine{00967\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00968\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20180627}}
+\DoxyCodeLine{00969\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a972b993f1a8ec24675e7831d38a8340ea610d19377c281905872347f18aecad04}{ID\_AC\_REFUSE\_LOGIN4}}\ =\ 0x0b02}
+\DoxyCodeLine{00970\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00971\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a972b993f1a8ec24675e7831d38a8340ea610d19377c281905872347f18aecad04}{ID\_AC\_REFUSE\_LOGIN4}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{00972\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00973\ \};}
+\DoxyCodeLine{00978\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n4}{AC\_REFUSE\_LOGIN4}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{00979\ \{}
+\DoxyCodeLine{00980\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00981\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n4_a38fd83e5acbfa9020a8177eb1bcaabd6}{AC\_REFUSE\_LOGIN4}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{00982\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a972b993f1a8ec24675e7831d38a8340ea610d19377c281905872347f18aecad04}{ID\_AC\_REFUSE\_LOGIN4}},\ s)}
+\DoxyCodeLine{00983\ \ \ \ \ \{\}}
+\DoxyCodeLine{00984\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n4_a9a11df33ad6ba1bd7101c137f4baad93}{\string~AC\_REFUSE\_LOGIN4}}()\ \{\}}
+\DoxyCodeLine{00985\ }
+\DoxyCodeLine{00986\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n4_a368660ec6ab9f03bc6034bcc694eb6bf}{deliver}}();}
+\DoxyCodeLine{00987\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_f_u_s_e___l_o_g_i_n4_a06bf393f5347ec848a824964e4eb1043}{serialize}}();}
+\DoxyCodeLine{00988\ }
+\DoxyCodeLine{00989\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00990\ \};}
+\DoxyCodeLine{00991\ }
+\DoxyCodeLine{00992\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00993\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00994\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20070227}}
+\DoxyCodeLine{00995\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}}\ =\ 0x02ad}
+\DoxyCodeLine{00996\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{00997\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20070227}}
+\DoxyCodeLine{00998\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}}\ =\ 0x02ad}
+\DoxyCodeLine{00999\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01000\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01001\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}}\ =\ 0x02ad}
+\DoxyCodeLine{01002\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01003\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20070227}}
+\DoxyCodeLine{01004\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}}\ =\ 0x02ad}
+\DoxyCodeLine{01005\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01006\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01007\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}}\ =\ 0x02ad}
+\DoxyCodeLine{01008\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01009\ \mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01011\ \};}
+\DoxyCodeLine{01016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q_u_e_s_t___s_e_c_o_n_d___p_a_s_s_w_o_r_d}{AC\_REQUEST\_SECOND\_PASSWORD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01017\ \{}
+\DoxyCodeLine{01018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01019\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q_u_e_s_t___s_e_c_o_n_d___p_a_s_s_w_o_r_d_a4a323424467df03eb09497cd14a6d09b}{AC\_REQUEST\_SECOND\_PASSWORD}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01020\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_af43f8a0d73d2f40ced81a0675ca22db8add36f0ebb4aefdb17861314a6116dccd}{ID\_AC\_REQUEST\_SECOND\_PASSWORD}},\ s)}
+\DoxyCodeLine{01021\ \ \ \ \ \{\}}
+\DoxyCodeLine{01022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q_u_e_s_t___s_e_c_o_n_d___p_a_s_s_w_o_r_d_a1bd7da17f2821fb1e70a825cece79ee8}{\string~AC\_REQUEST\_SECOND\_PASSWORD}}()\ \{\}}
+\DoxyCodeLine{01023\ }
+\DoxyCodeLine{01024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q_u_e_s_t___s_e_c_o_n_d___p_a_s_s_w_o_r_d_ac8a752428128aa502d1633c0196e9efb}{deliver}}();}
+\DoxyCodeLine{01025\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q_u_e_s_t___s_e_c_o_n_d___p_a_s_s_w_o_r_d_aa6d138c24640407c1444facb37e45735}{serialize}}();}
+\DoxyCodeLine{01026\ }
+\DoxyCodeLine{01027\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01028\ \};}
+\DoxyCodeLine{01029\ }
+\DoxyCodeLine{01030\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01031\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01032\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01033\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ =\ 0x0270}
+\DoxyCodeLine{01034\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01035\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01036\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ =\ 0x0270}
+\DoxyCodeLine{01037\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01038\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01039\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ =\ 0x0270}
+\DoxyCodeLine{01040\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01041\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01042\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ =\ 0x0270}
+\DoxyCodeLine{01043\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01044\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01045\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ =\ 0x0270}
+\DoxyCodeLine{01046\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01047\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01049\ \};}
+\DoxyCodeLine{01054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o}{AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01055\ \{}
+\DoxyCodeLine{01056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01057\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o_afa47a676a3f00eff6d5c27cb89114104}{AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01058\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a6d6ef0b039d6996ddcfca5482aaa4ea1a1247e4995118a12eae9dc585be832cd8}{ID\_AC\_REQ\_LOGIN\_ACCOUNT\_INFO}},\ s)}
+\DoxyCodeLine{01059\ \ \ \ \ \{\}}
+\DoxyCodeLine{01060\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o_adcaefe52cda8973fc219eeec90d314cf}{\string~AC\_REQ\_LOGIN\_ACCOUNT\_INFO}}()\ \{\}}
+\DoxyCodeLine{01061\ }
+\DoxyCodeLine{01062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o_aff4f65e7a014073f1f21ed88a619bcfb}{deliver}}();}
+\DoxyCodeLine{01063\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___a_c_c_o_u_n_t___i_n_f_o_a0af12a73b6cdac5760ddcdeb28d8d08c}{serialize}}();}
+\DoxyCodeLine{01064\ }
+\DoxyCodeLine{01065\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01066\ \};}
+\DoxyCodeLine{01067\ }
+\DoxyCodeLine{01068\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01069\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01070\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01071\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}}\ =\ 0x0263}
+\DoxyCodeLine{01072\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01073\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01074\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}}\ =\ 0x0263}
+\DoxyCodeLine{01075\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01076\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01077\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}}\ =\ 0x0263}
+\DoxyCodeLine{01078\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01079\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01080\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}}\ =\ 0x0263}
+\DoxyCodeLine{01081\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01082\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01083\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}}\ =\ 0x0263}
+\DoxyCodeLine{01084\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01085\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01087\ \};}
+\DoxyCodeLine{01092\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___c_a_r_d_p_a_s_s}{AC\_REQ\_LOGIN\_CARDPASS}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01093\ \{}
+\DoxyCodeLine{01094\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01095\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___c_a_r_d_p_a_s_s_a33dad8fddb73e9c831a1ca6693170491}{AC\_REQ\_LOGIN\_CARDPASS}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01096\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a54333f34b6a656702b396134e4192cd0a96b8b18d8c63bc134f4f938bf4caac19}{ID\_AC\_REQ\_LOGIN\_CARDPASS}},\ s)}
+\DoxyCodeLine{01097\ \ \ \ \ \{\}}
+\DoxyCodeLine{01098\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___c_a_r_d_p_a_s_s_a64d85785c986413006103d4ad13187da}{\string~AC\_REQ\_LOGIN\_CARDPASS}}()\ \{\}}
+\DoxyCodeLine{01099\ }
+\DoxyCodeLine{01100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___c_a_r_d_p_a_s_s_a222474998723cc1cd8b97363d3e6d6ef}{deliver}}();}
+\DoxyCodeLine{01101\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___c_a_r_d_p_a_s_s_a792b5dd81ea4d23f3c3177c6221068b4}{serialize}}();}
+\DoxyCodeLine{01102\ }
+\DoxyCodeLine{01103\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01104\ \};}
+\DoxyCodeLine{01105\ }
+\DoxyCodeLine{01106\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01107\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01108\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01109\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}}\ =\ 0x0262}
+\DoxyCodeLine{01110\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01111\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01112\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}}\ =\ 0x0262}
+\DoxyCodeLine{01113\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01114\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01115\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}}\ =\ 0x0262}
+\DoxyCodeLine{01116\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01117\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01118\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}}\ =\ 0x0262}
+\DoxyCodeLine{01119\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01120\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01121\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}}\ =\ 0x0262}
+\DoxyCodeLine{01122\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01123\ \mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01124\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01125\ \};}
+\DoxyCodeLine{01130\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___n_e_w_e_k_e_y}{AC\_REQ\_LOGIN\_NEWEKEY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01131\ \{}
+\DoxyCodeLine{01132\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01133\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___n_e_w_e_k_e_y_a310594fb1d2dccd7f9d809f570594ab3}{AC\_REQ\_LOGIN\_NEWEKEY}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01134\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_aa3524862903318fca1e9510706c51bb9a460a0aa437531bb21c2a4cb110485a9a}{ID\_AC\_REQ\_LOGIN\_NEWEKEY}},\ s)}
+\DoxyCodeLine{01135\ \ \ \ \ \{\}}
+\DoxyCodeLine{01136\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___n_e_w_e_k_e_y_af3105d298164f6c3fc409a330c4c1309}{\string~AC\_REQ\_LOGIN\_NEWEKEY}}()\ \{\}}
+\DoxyCodeLine{01137\ }
+\DoxyCodeLine{01138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___n_e_w_e_k_e_y_a9d186024f66710763f3d0f22d60bd7f6}{deliver}}();}
+\DoxyCodeLine{01139\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___n_e_w_e_k_e_y_ad4a6fa9639b283a266399c7528997619}{serialize}}();}
+\DoxyCodeLine{01140\ }
+\DoxyCodeLine{01141\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01142\ \};}
+\DoxyCodeLine{01143\ }
+\DoxyCodeLine{01144\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01145\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'A'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01146\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01147\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}}\ =\ 0x0261}
+\DoxyCodeLine{01148\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01149\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01150\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}}\ =\ 0x0261}
+\DoxyCodeLine{01151\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01152\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20080000}}
+\DoxyCodeLine{01153\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}}\ =\ 0x0261}
+\DoxyCodeLine{01154\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01155\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20060109}}
+\DoxyCodeLine{01156\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}}\ =\ 0x0261}
+\DoxyCodeLine{01157\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01158\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01159\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}}\ =\ 0x0261}
+\DoxyCodeLine{01160\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01161\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01163\ \};}
+\DoxyCodeLine{01168\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___o_l_d_e_k_e_y}{AC\_REQ\_LOGIN\_OLDEKEY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01169\ \{}
+\DoxyCodeLine{01170\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01171\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___o_l_d_e_k_e_y_afc73920aceb16dcc6b62e8efed162f07}{AC\_REQ\_LOGIN\_OLDEKEY}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01172\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a46720dece63396fd2684f8cc2169c1b1a584df7cef440eb0c85d3e7ee159917ed}{ID\_AC\_REQ\_LOGIN\_OLDEKEY}},\ s)}
+\DoxyCodeLine{01173\ \ \ \ \ \{\}}
+\DoxyCodeLine{01174\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___o_l_d_e_k_e_y_a4665fb857f0a5ddc23c8660743b86a94}{\string~AC\_REQ\_LOGIN\_OLDEKEY}}()\ \{\}}
+\DoxyCodeLine{01175\ }
+\DoxyCodeLine{01176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___o_l_d_e_k_e_y_a7d91dbff8bbbb22c0a50f9957a999dd2}{deliver}}();}
+\DoxyCodeLine{01177\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___l_o_g_i_n___o_l_d_e_k_e_y_a813fad6fffe30dfaa1cf92c381f3573c}{serialize}}();}
+\DoxyCodeLine{01178\ }
+\DoxyCodeLine{01179\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01180\ \};}
+\DoxyCodeLine{01181\ }
+\DoxyCodeLine{01182\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01183\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01184\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20130130}}
+\DoxyCodeLine{01185\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a477b0425f5a56edcc918e2a2a5752a51a43cf2d6e6f32beff4a764f2c1c14ed2b}{ID\_AC\_REQ\_MOBILE\_OTP}}\ =\ 0x09a2}
+\DoxyCodeLine{01186\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01187\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20130130}}
+\DoxyCodeLine{01188\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a477b0425f5a56edcc918e2a2a5752a51a43cf2d6e6f32beff4a764f2c1c14ed2b}{ID\_AC\_REQ\_MOBILE\_OTP}}\ =\ 0x09a2}
+\DoxyCodeLine{01189\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01190\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01191\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a477b0425f5a56edcc918e2a2a5752a51a43cf2d6e6f32beff4a764f2c1c14ed2b}{ID\_AC\_REQ\_MOBILE\_OTP}}\ =\ 0x09a2}
+\DoxyCodeLine{01192\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01193\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a477b0425f5a56edcc918e2a2a5752a51a43cf2d6e6f32beff4a764f2c1c14ed2b}{ID\_AC\_REQ\_MOBILE\_OTP}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01194\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01195\ \};}
+\DoxyCodeLine{01200\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___m_o_b_i_l_e___o_t_p}{AC\_REQ\_MOBILE\_OTP}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01201\ \{}
+\DoxyCodeLine{01202\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01203\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___m_o_b_i_l_e___o_t_p_aa8ffec6743b0d0e51e0032f8f5977722}{AC\_REQ\_MOBILE\_OTP}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01204\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a477b0425f5a56edcc918e2a2a5752a51a43cf2d6e6f32beff4a764f2c1c14ed2b}{ID\_AC\_REQ\_MOBILE\_OTP}},\ s)}
+\DoxyCodeLine{01205\ \ \ \ \ \{\}}
+\DoxyCodeLine{01206\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___m_o_b_i_l_e___o_t_p_a33f961e63d247638cc4a06b1130e09ca}{\string~AC\_REQ\_MOBILE\_OTP}}()\ \{\}}
+\DoxyCodeLine{01207\ }
+\DoxyCodeLine{01208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___m_o_b_i_l_e___o_t_p_a61adf24b9469b6458f3fe52e265db511}{deliver}}();}
+\DoxyCodeLine{01209\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___m_o_b_i_l_e___o_t_p_a3305a94bb8017e259e9caa19f6870086}{serialize}}();}
+\DoxyCodeLine{01210\ }
+\DoxyCodeLine{01211\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01212\ \};}
+\DoxyCodeLine{01213\ }
+\DoxyCodeLine{01214\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01215\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01216\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20120716}}
+\DoxyCodeLine{01217\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a65c0722f1d045b8be08bbd93318f3d21ad3296665aaba53e94ebf59609fbb8157}{ID\_AC\_REQ\_NEW\_USER}}\ =\ 0x098b}
+\DoxyCodeLine{01218\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01219\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20120716}}
+\DoxyCodeLine{01220\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a65c0722f1d045b8be08bbd93318f3d21ad3296665aaba53e94ebf59609fbb8157}{ID\_AC\_REQ\_NEW\_USER}}\ =\ 0x098b}
+\DoxyCodeLine{01221\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01222\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01223\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a65c0722f1d045b8be08bbd93318f3d21ad3296665aaba53e94ebf59609fbb8157}{ID\_AC\_REQ\_NEW\_USER}}\ =\ 0x098b}
+\DoxyCodeLine{01224\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01225\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a65c0722f1d045b8be08bbd93318f3d21ad3296665aaba53e94ebf59609fbb8157}{ID\_AC\_REQ\_NEW\_USER}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01226\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01227\ \};}
+\DoxyCodeLine{01232\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___n_e_w___u_s_e_r}{AC\_REQ\_NEW\_USER}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01233\ \{}
+\DoxyCodeLine{01234\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01235\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___n_e_w___u_s_e_r_afd5fd3e976841ce9afa42b22ace2176b}{AC\_REQ\_NEW\_USER}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01236\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a65c0722f1d045b8be08bbd93318f3d21ad3296665aaba53e94ebf59609fbb8157}{ID\_AC\_REQ\_NEW\_USER}},\ s)}
+\DoxyCodeLine{01237\ \ \ \ \ \{\}}
+\DoxyCodeLine{01238\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___n_e_w___u_s_e_r_a60cb9b4f49727a0bbd778a98dcb3380a}{\string~AC\_REQ\_NEW\_USER}}()\ \{\}}
+\DoxyCodeLine{01239\ }
+\DoxyCodeLine{01240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___n_e_w___u_s_e_r_ab096cc9c68fa0c2d50150948f31dfaad}{deliver}}();}
+\DoxyCodeLine{01241\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___r_e_q___n_e_w___u_s_e_r_a7cc939abc9df48595051bfac87681cd6}{serialize}}();}
+\DoxyCodeLine{01242\ }
+\DoxyCodeLine{01243\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01244\ \};}
+\DoxyCodeLine{01245\ }
+\DoxyCodeLine{01246\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01247\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01248\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20111025}}
+\DoxyCodeLine{01249\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5d54b7ac27d18504fc031c071686b1e1a858acc07a48fdbb86d7e961db69dea9b}{ID\_AC\_SHUTDOWN\_INFO}}\ =\ 0x08e4}
+\DoxyCodeLine{01250\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01251\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20111025}}
+\DoxyCodeLine{01252\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5d54b7ac27d18504fc031c071686b1e1a858acc07a48fdbb86d7e961db69dea9b}{ID\_AC\_SHUTDOWN\_INFO}}\ =\ 0x08e4}
+\DoxyCodeLine{01253\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01254\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01255\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5d54b7ac27d18504fc031c071686b1e1a858acc07a48fdbb86d7e961db69dea9b}{ID\_AC\_SHUTDOWN\_INFO}}\ =\ 0x08e4}
+\DoxyCodeLine{01256\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01257\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a5d54b7ac27d18504fc031c071686b1e1a858acc07a48fdbb86d7e961db69dea9b}{ID\_AC\_SHUTDOWN\_INFO}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01258\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01259\ \};}
+\DoxyCodeLine{01264\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___i_n_f_o}{AC\_SHUTDOWN\_INFO}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01265\ \{}
+\DoxyCodeLine{01266\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01267\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___i_n_f_o_ad848be084d7e2ba46dbb842dc1b71d98}{AC\_SHUTDOWN\_INFO}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01268\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a5d54b7ac27d18504fc031c071686b1e1a858acc07a48fdbb86d7e961db69dea9b}{ID\_AC\_SHUTDOWN\_INFO}},\ s)}
+\DoxyCodeLine{01269\ \ \ \ \ \{\}}
+\DoxyCodeLine{01270\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___i_n_f_o_a7a388bf3502f54479051bab42b629fcd}{\string~AC\_SHUTDOWN\_INFO}}()\ \{\}}
+\DoxyCodeLine{01271\ }
+\DoxyCodeLine{01272\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___i_n_f_o_a3130588f1e71d979232038762f913fb1}{deliver}}();}
+\DoxyCodeLine{01273\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___i_n_f_o_a9007ed4dd5afe81aa904d293866dc431}{serialize}}();}
+\DoxyCodeLine{01274\ }
+\DoxyCodeLine{01275\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01276\ \};}
+\DoxyCodeLine{01277\ }
+\DoxyCodeLine{01278\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01279\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01280\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20120626}}
+\DoxyCodeLine{01281\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a84446eff55e9fde10318a33f83cc02eca90a97f4ffac6882c06dc64ee041c0f93}{ID\_AC\_SHUTDOWN\_NOTIFY}}\ =\ 0x0986}
+\DoxyCodeLine{01282\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01283\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20120626}}
+\DoxyCodeLine{01284\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a84446eff55e9fde10318a33f83cc02eca90a97f4ffac6882c06dc64ee041c0f93}{ID\_AC\_SHUTDOWN\_NOTIFY}}\ =\ 0x0986}
+\DoxyCodeLine{01285\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01286\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20170000}}
+\DoxyCodeLine{01287\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a84446eff55e9fde10318a33f83cc02eca90a97f4ffac6882c06dc64ee041c0f93}{ID\_AC\_SHUTDOWN\_NOTIFY}}\ =\ 0x0986}
+\DoxyCodeLine{01288\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01289\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a84446eff55e9fde10318a33f83cc02eca90a97f4ffac6882c06dc64ee041c0f93}{ID\_AC\_SHUTDOWN\_NOTIFY}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01290\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01291\ \};}
+\DoxyCodeLine{01296\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___n_o_t_i_f_y}{AC\_SHUTDOWN\_NOTIFY}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01297\ \{}
+\DoxyCodeLine{01298\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01299\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___n_o_t_i_f_y_aa22f354dba543a9d53f848002afb2ea7}{AC\_SHUTDOWN\_NOTIFY}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01300\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a84446eff55e9fde10318a33f83cc02eca90a97f4ffac6882c06dc64ee041c0f93}{ID\_AC\_SHUTDOWN\_NOTIFY}},\ s)}
+\DoxyCodeLine{01301\ \ \ \ \ \{\}}
+\DoxyCodeLine{01302\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___n_o_t_i_f_y_aeb8e89cc315517de8326299242ba3e9f}{\string~AC\_SHUTDOWN\_NOTIFY}}()\ \{\}}
+\DoxyCodeLine{01303\ }
+\DoxyCodeLine{01304\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___n_o_t_i_f_y_a95ba84d1575cb8221697c9da6ab6f124}{deliver}}();}
+\DoxyCodeLine{01305\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_h_u_t_d_o_w_n___n_o_t_i_f_y_a59e7ceda6484a844a4503db40c5be5bd}{serialize}}();}
+\DoxyCodeLine{01306\ }
+\DoxyCodeLine{01307\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01308\ \};}
+\DoxyCodeLine{01309\ }
+\DoxyCodeLine{01310\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{01311\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'M'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01312\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100601}}
+\DoxyCodeLine{01313\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0ccf7c64d3973590d6606d2aef3b2d70a2a9f175df51b848a05944badfd3cca9c}{ID\_AC\_SSO\_LOGIN\_ACK}}\ =\ 0x0826}
+\DoxyCodeLine{01314\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'R'\ \&\&\ \ \(\backslash\)}}
+\DoxyCodeLine{01315\ \textcolor{preprocessor}{\ \ \ \ PACKET\_VERSION\ >=\ 20100601}}
+\DoxyCodeLine{01316\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0ccf7c64d3973590d6606d2aef3b2d70a2a9f175df51b848a05944badfd3cca9c}{ID\_AC\_SSO\_LOGIN\_ACK}}\ =\ 0x0826}
+\DoxyCodeLine{01317\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01318\ \mbox{\hyperlink{namespace_horizon_1_1_auth_a0ccf7c64d3973590d6606d2aef3b2d70a2a9f175df51b848a05944badfd3cca9c}{ID\_AC\_SSO\_LOGIN\_ACK}}\ =\ 0x0000\ \textcolor{comment}{//\ Disabled}}
+\DoxyCodeLine{01319\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01320\ \};}
+\DoxyCodeLine{01325\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_s_o___l_o_g_i_n___a_c_k}{AC\_SSO\_LOGIN\_ACK}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Base::NetworkPacketTransmitter}}<AuthSession>}
+\DoxyCodeLine{01326\ \{}
+\DoxyCodeLine{01327\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01328\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_s_o___l_o_g_i_n___a_c_k_a57790c9958804ec9ad764d939f5cd347}{AC\_SSO\_LOGIN\_ACK}}(std::shared\_ptr<AuthSession>\ s)}
+\DoxyCodeLine{01329\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{NetworkPacketTransmitter}}<\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{AuthSession}}>(\mbox{\hyperlink{namespace_horizon_1_1_auth_a0ccf7c64d3973590d6606d2aef3b2d70a2a9f175df51b848a05944badfd3cca9c}{ID\_AC\_SSO\_LOGIN\_ACK}},\ s)}
+\DoxyCodeLine{01330\ \ \ \ \ \{\}}
+\DoxyCodeLine{01331\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_s_o___l_o_g_i_n___a_c_k_a67f5df08a6c91fe612934758d01ef26e}{\string~AC\_SSO\_LOGIN\_ACK}}()\ \{\}}
+\DoxyCodeLine{01332\ }
+\DoxyCodeLine{01333\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_s_o___l_o_g_i_n___a_c_k_a8057ef3e6e9f61fc12cf6a363fac73e9}{deliver}}();}
+\DoxyCodeLine{01334\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_a_c___s_s_o___l_o_g_i_n___a_c_k_a6318e6685176c9cf231076878c13d102}{serialize}}();}
+\DoxyCodeLine{01335\ }
+\DoxyCodeLine{01336\ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{01337\ \};}
+\DoxyCodeLine{01338\ }
+\DoxyCodeLine{01339\ \}\ \textcolor{comment}{/*\ namespace\ Auth}}
+\DoxyCodeLine{01340\ \textcolor{comment}{\ */}\}\ \textcolor{comment}{/*\ namespace\ Horizon\ */}}
+\DoxyCodeLine{01341\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_AUTH\_TRANSMITTED\_PACKETS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

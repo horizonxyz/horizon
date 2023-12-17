@@ -1,0 +1,198 @@
+\doxysection{Horizon\+::Zone\+::Combat\+Registry\+::Combat\+Operand Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+
+
+{\ttfamily \#include $<$Combat.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Combat\+Registry\+::Combat\+Operand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}{combat\+\_\+operand\+\_\+type}} \{ \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a3ed8184f18d0858ec6f8ffba8dbbefbf}{COMBAT\+\_\+\+OPERAND\+\_\+\+ATTRIBUTE}} = 0
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a759cc909a0ee68adcfe16d9d0e459dcf}{COMBAT\+\_\+\+OPERAND\+\_\+\+APPEARANCE}} = 1
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a304bef34e6190f328ba9f233429f01ee}{COMBAT\+\_\+\+OPERAND\+\_\+\+STATUS}} = 2
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218ae3a00e51636f542d413cdc842d18298d}{COMBAT\+\_\+\+OPERAND\+\_\+\+SKILL\+\_\+\+EXECUTION}} = 3
+, \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218aa28b9fe6ce4fc465c8ff146af1e49e97}{COMBAT\+\_\+\+OPERAND\+\_\+\+MELEE\+\_\+\+EXECUTION}} = 4
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218aa70308748ea31ebeea83c738056a19f6}{COMBAT\+\_\+\+OPERAND\+\_\+\+SKILL\+\_\+\+RESULT}} = 5
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a697aaba1df84fcfb124f6971dbc5c4e8}{COMBAT\+\_\+\+OPERAND\+\_\+\+MELEE\+\_\+\+RESULT}} = 6
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_aeecdcd059c0f6f794c7d869a532edfb2}{\texorpdfstring{$\sim$}{\string~}\+Combat\+Operand}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}{combat\+\_\+operand\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a38252136384152608d3230bd37d8c752}{get\+\_\+type}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a726ba0a5b0d581ac7a423fa5245b54aa}{get\+\_\+source}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3c6743c2a74037a1747ecf07c09a852e}{get\+\_\+target}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a92af6721173732e7aaf60e0ef6caa220}{set\+\_\+source}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ source)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a4146d6774429bd9480710d16b0987a78}{set\+\_\+target}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ target)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a755d18318975d70730e61b08ffcbdb83}{Combat\+Operand}} ()=delete
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_adae3d1be43f5a24f47d6941a7d9bd69b}{Combat\+Operand}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&operand)=delete
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a2580b15aaebd22953a57a2e8e16672f7}{Combat\+Operand}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&\&operand)=delete
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_ae9b6736fec9ff27b92c8c77d1e70b4ba}{Combat\+Operand}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ source, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ target, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}{combat\+\_\+operand\+\_\+type}} type)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3a72d71125519888e3c3e84d4d5d17ae}{operator=}} (const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&operand)=delete
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a4ca3f0e460f9ad26f751cc6a96e8b0bb}{operator=}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&\&operand)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!combat\_operand\_type@{combat\_operand\_type}}
+\index{combat\_operand\_type@{combat\_operand\_type}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{combat\_operand\_type}{combat\_operand\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::combat\+\_\+operand\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_ATTRIBUTE@{COMBAT\_OPERAND\_ATTRIBUTE}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_ATTRIBUTE@{COMBAT\_OPERAND\_ATTRIBUTE}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a3ed8184f18d0858ec6f8ffba8dbbefbf}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a3ed8184f18d0858ec6f8ffba8dbbefbf} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+ATTRIBUTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_APPEARANCE@{COMBAT\_OPERAND\_APPEARANCE}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_APPEARANCE@{COMBAT\_OPERAND\_APPEARANCE}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a759cc909a0ee68adcfe16d9d0e459dcf}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a759cc909a0ee68adcfe16d9d0e459dcf} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+APPEARANCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_STATUS@{COMBAT\_OPERAND\_STATUS}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_STATUS@{COMBAT\_OPERAND\_STATUS}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a304bef34e6190f328ba9f233429f01ee}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a304bef34e6190f328ba9f233429f01ee} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_SKILL\_EXECUTION@{COMBAT\_OPERAND\_SKILL\_EXECUTION}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_SKILL\_EXECUTION@{COMBAT\_OPERAND\_SKILL\_EXECUTION}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218ae3a00e51636f542d413cdc842d18298d}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218ae3a00e51636f542d413cdc842d18298d} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+SKILL\+\_\+\+EXECUTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_MELEE\_EXECUTION@{COMBAT\_OPERAND\_MELEE\_EXECUTION}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_MELEE\_EXECUTION@{COMBAT\_OPERAND\_MELEE\_EXECUTION}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218aa28b9fe6ce4fc465c8ff146af1e49e97}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218aa28b9fe6ce4fc465c8ff146af1e49e97} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+MELEE\+\_\+\+EXECUTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_SKILL\_RESULT@{COMBAT\_OPERAND\_SKILL\_RESULT}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_SKILL\_RESULT@{COMBAT\_OPERAND\_SKILL\_RESULT}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218aa70308748ea31ebeea83c738056a19f6}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218aa70308748ea31ebeea83c738056a19f6} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+SKILL\+\_\+\+RESULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERAND\_MELEE\_RESULT@{COMBAT\_OPERAND\_MELEE\_RESULT}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!COMBAT\_OPERAND\_MELEE\_RESULT@{COMBAT\_OPERAND\_MELEE\_RESULT}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a697aaba1df84fcfb124f6971dbc5c4e8}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218a697aaba1df84fcfb124f6971dbc5c4e8} 
+COMBAT\+\_\+\+OPERAND\+\_\+\+MELEE\+\_\+\+RESULT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_aeecdcd059c0f6f794c7d869a532edfb2}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_aeecdcd059c0f6f794c7d869a532edfb2} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!````~CombatOperand@{\texorpdfstring{$\sim$}{\string~}CombatOperand}}
+\index{````~CombatOperand@{\texorpdfstring{$\sim$}{\string~}CombatOperand}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CombatOperand()}{\string~CombatOperand()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::\texorpdfstring{$\sim$}{\string~}\+Combat\+Operand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a755d18318975d70730e61b08ffcbdb83}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a755d18318975d70730e61b08ffcbdb83} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!CombatOperand@{CombatOperand}}
+\index{CombatOperand@{CombatOperand}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{CombatOperand()}{CombatOperand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::\+Combat\+Operand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_adae3d1be43f5a24f47d6941a7d9bd69b}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_adae3d1be43f5a24f47d6941a7d9bd69b} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!CombatOperand@{CombatOperand}}
+\index{CombatOperand@{CombatOperand}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{CombatOperand()}{CombatOperand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::\+Combat\+Operand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&}]{operand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a2580b15aaebd22953a57a2e8e16672f7}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a2580b15aaebd22953a57a2e8e16672f7} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!CombatOperand@{CombatOperand}}
+\index{CombatOperand@{CombatOperand}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{CombatOperand()}{CombatOperand()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::\+Combat\+Operand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&\&}]{operand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_ae9b6736fec9ff27b92c8c77d1e70b4ba}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_ae9b6736fec9ff27b92c8c77d1e70b4ba} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!CombatOperand@{CombatOperand}}
+\index{CombatOperand@{CombatOperand}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{CombatOperand()}{CombatOperand()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::\+Combat\+Operand (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{source,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{target,  }\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}{combat\+\_\+operand\+\_\+type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a726ba0a5b0d581ac7a423fa5245b54aa}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a726ba0a5b0d581ac7a423fa5245b54aa} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!get\_source@{get\_source}}
+\index{get\_source@{get\_source}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{get\_source()}{get\_source()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::get\+\_\+source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a726ba0a5b0d581ac7a423fa5245b54aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3c6743c2a74037a1747ecf07c09a852e}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3c6743c2a74037a1747ecf07c09a852e} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!get\_target@{get\_target}}
+\index{get\_target@{get\_target}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{get\_target()}{get\_target()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::get\+\_\+target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3c6743c2a74037a1747ecf07c09a852e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a38252136384152608d3230bd37d8c752}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a38252136384152608d3230bd37d8c752} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a1441d0b420962b24d23ba9cd9e5ab218}{combat\+\_\+operand\+\_\+type}} Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a4ca3f0e460f9ad26f751cc6a96e8b0bb}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a4ca3f0e460f9ad26f751cc6a96e8b0bb} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!operator=@{operator=}}
+\index{operator=@{operator=}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&\&}]{operand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3a72d71125519888e3c3e84d4d5d17ae}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a3a72d71125519888e3c3e84d4d5d17ae} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!operator=@{operator=}}
+\index{operator=@{operator=}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \&}]{operand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a92af6721173732e7aaf60e0ef6caa220}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a92af6721173732e7aaf60e0ef6caa220} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!set\_source@{set\_source}}
+\index{set\_source@{set\_source}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{set\_source()}{set\_source()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::set\+\_\+source (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a4146d6774429bd9480710d16b0987a78}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand_a4146d6774429bd9480710d16b0987a78} 
+\index{Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}!set\_target@{set\_target}}
+\index{set\_target@{set\_target}!Horizon::Zone::CombatRegistry::CombatOperand@{Horizon::Zone::CombatRegistry::CombatOperand}}
+\doxysubsubsection{\texorpdfstring{set\_target()}{set\_target()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operand\+::set\+\_\+target (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\mbox{\hyperlink{_combat_8hpp}{Combat.\+hpp}}\end{DoxyCompactItemize}

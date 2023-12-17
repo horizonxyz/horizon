@@ -1,0 +1,2433 @@
+\doxysection{Horizon\+::Zone\+::Traits\+::Status Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status}{}\label{class_horizon_1_1_zone_1_1_traits_1_1_status}\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+
+
+{\ttfamily \#include $<$Status.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry}{Status\+Registry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aca6aebc20023d2b5812fa682b507d925}{Status}} (std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_acd5aa3cf5ea080c8111aa28d74dca2cb}{entity}}, \mbox{\hyperlink{_entity_definitions_8hpp_a1fa5cdbc1a545e8f705067e0003f1f75}{entity\+\_\+type}} type)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a1b24d90ef2560afffe9d7183e279c63c}{\texorpdfstring{$\sim$}{\string~}\+Status}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ad1444b3425209281fe323ca0c8652d10}{initialize}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_creature}{Horizon\+::\+Zone\+::\+Entities\+::\+Creature}} $>$ creature, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} $>$ md)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a8846a966984a784100524cd853bfebf5}{initialize}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$ player)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a8f653bf5cdfe541af6aaa585793ee836}{initialize}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_n_p_c}{Horizon\+::\+Zone\+::\+Entities\+::\+NPC}} $>$ npc)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_afe273514777dfe95527f0a5a230b4d03}{get\+\_\+required\+\_\+statpoints}} (uint16\+\_\+t from, uint16\+\_\+t to)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ac064199ad5c2ce5aff2bf96ddd922556}{get\+\_\+status\+\_\+base}} (\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} type)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d1b6a88662c895e2cc56b60257e1f80}{increase\+\_\+status\+\_\+point}} (\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} type, uint16\+\_\+t amount)
+\begin{DoxyCompactList}\small\item\em Increases a status point to a certain limit and returns the current total of the stat. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_af8deb18d006f0e784bd26b0665d6f8cd}{save}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$ pl)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aff82e18411e22754b0da0bb1c105b7e4}{load}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$ pl)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aefc9a932481dbe96f3d074f61ffdf17c}{on\+\_\+equipment\+\_\+changed}} (bool equipped, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$ item)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a94c4d2579c1ccad9d1bfecb10c2c17ee}{strength}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_acd6a9d1871a0f6dd7ad12bf940281b80}{set\+\_\+strength}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}} $>$ str)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a8cf56c19e978c06b296eeb94a48c3bc5}{agility}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a4c800a952aae46a591a9dd8f1249fdc9}{set\+\_\+agility}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}} $>$ agi)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aed37754efda486d0e9324e99692b34f8}{vitality}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaff7503f1da5cd644ecad0578a3a906}{set\+\_\+vitality}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}} $>$ vit)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a0a7c5675d0e1a241287c53e4e5cdad62}{dexterity}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab137727d3e1beaf8a69d0001fb6e20c9}{set\+\_\+dexterity}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}} $>$ dex)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a5e71b182bba494887c131079bf75869b}{intelligence}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ade8d8342c45e2277ae7e94acabff5e3c}{set\+\_\+intelligence}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}} $>$ int\+\_\+)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a60d92f508ab5d365dbcfb1140b228d2d}{luck}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_af9f46a7eb8bd817c2f8e348b157b060f}{set\+\_\+luck}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a60d92f508ab5d365dbcfb1140b228d2d}{luck}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost}{Strength\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab385837535a0544bfa694d084562b840}{strength\+\_\+cost}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a34a0155c67881afe2be516899a466cd7}{set\+\_\+strength\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost}{Strength\+Point\+Cost}} $>$ str)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost}{Agility\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4d3bca5e1edf402391ac6dec9b1409d}{agility\+\_\+cost}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a537be0851257d19be02126812ae2b1fb}{set\+\_\+agility\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost}{Agility\+Point\+Cost}} $>$ agi)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost}{Vitality\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a45caf99fced2d89568be3be4b3cce16f}{vitality\+\_\+cost}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aab121dffcaed44422f4b2d81eb0b6ede}{set\+\_\+vitality\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost}{Vitality\+Point\+Cost}} $>$ vit)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost}{Dexterity\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a6318384fe12614e56b288cdf9894a306}{dexterity\+\_\+cost}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a1635b65d90ead0fc6d9b515e9747725e}{set\+\_\+dexterity\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost}{Dexterity\+Point\+Cost}} $>$ dex)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost}{Intelligence\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a598fd3a49acc5411248924fb9b3fd4d3}{intelligence\+\_\+cost}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a13d59696433a5150779180fdbba424ec}{set\+\_\+intelligence\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost}{Intelligence\+Point\+Cost}} $>$ int\+\_\+)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost}{Luck\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a04bc8fa7d3d1d470411bbe420abe53ca}{luck\+\_\+cost}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a88b41b9e322099a636fb7de279b5bba6}{set\+\_\+luck\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost}{Luck\+Point\+Cost}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a60d92f508ab5d365dbcfb1140b228d2d}{luck}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point}{Status\+Point}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab3c4214bd64d28f34af41e40d6210799}{status\+\_\+point}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aea7be3cea12c5d6f5b54ed3b8af74e37}{set\+\_\+status\+\_\+point}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point}{Status\+Point}} $>$ st)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point}{Skill\+Point}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a7c802bc81fffb14cbc87cb9089616e8e}{skill\+\_\+point}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a4ae1a92c53f19cd0e8357faff2201c27}{set\+\_\+skill\+\_\+point}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point}{Skill\+Point}} $>$ sk)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p}{Max\+HP}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_afecce3aa59b8e2aaa8b87c67fd014b92}{max\+\_\+hp}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa0568a6975b602106c42d24c68886ddd}{set\+\_\+max\+\_\+hp}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p}{Max\+HP}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_afecce3aa59b8e2aaa8b87c67fd014b92}{max\+\_\+hp}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p}{Max\+SP}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a09a904e85351f4e3153b57decdd609a7}{max\+\_\+sp}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a7f20566f526671a05b4d239faf002159}{set\+\_\+max\+\_\+sp}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p}{Max\+SP}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a09a904e85351f4e3153b57decdd609a7}{max\+\_\+sp}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p}{Current\+HP}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a614143e02a12cb3b792a643c5528a458}{current\+\_\+hp}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab0eefbc57192adb60b7abb7cb2e24e11}{set\+\_\+current\+\_\+hp}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p}{Current\+HP}} $>$ hp)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p}{Current\+SP}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a4351fc67b5bcc26916b57bf20081c8ee}{current\+\_\+sp}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a57155e7a49ae6f21ae32853a7ff4c8fc}{set\+\_\+current\+\_\+sp}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p}{Current\+SP}} $>$ sp)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{Base\+Level}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a045f6ec648dac6ecd4ec52c84e025035}{base\+\_\+level}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a97ddcae0f00e782ca240f45ea95dde33}{set\+\_\+base\+\_\+level}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{Base\+Level}} $>$ blvl)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{Job\+Level}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aed093e9b494eda4e95188fcce5ab6297}{job\+\_\+level}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a25adcaad323d79e1ceeb75119f5e7c50}{set\+\_\+job\+\_\+level}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{Job\+Level}} $>$ jlvl)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{Base\+Experience}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a7282764dc047beee113dbb0100ebb77e}{base\+\_\+experience}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a1a8e15152e624ba1b8038b89241473bf}{set\+\_\+base\+\_\+experience}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{Base\+Experience}} $>$ bexp)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{Job\+Experience}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a3b3ee295ea8a10650ba4e350d947e329}{job\+\_\+experience}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a0096a3938676eff63a2a357b7b5f4497}{set\+\_\+job\+\_\+experience}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{Job\+Experience}} $>$ jexp)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience}{Next\+Base\+Experience}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa2b93790828bade1b0bc06d06f2ee83f}{next\+\_\+base\+\_\+experience}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_af9d890c5fefde058fcf7a698fdc2c7d3}{set\+\_\+next\+\_\+base\+\_\+experience}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience}{Next\+Base\+Experience}} $>$ nbexp)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience}{Next\+Job\+Experience}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a31190b0ab7253862a053f32964cdb82e}{next\+\_\+job\+\_\+experience}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a081ab21a146a77edca8414de36d107b8}{set\+\_\+next\+\_\+job\+\_\+experience}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience}{Next\+Job\+Experience}} $>$ njexp)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed}{Movement\+Speed}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab2abab6a5a7092f340502722be95dda1}{movement\+\_\+speed}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a7363cf4df46a27f488c24e2d668d18a8}{set\+\_\+movement\+\_\+speed}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed}{Movement\+Speed}} $>$ speed)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight}{Max\+Weight}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a014c342bab4cbf260c442b5cd342d101}{max\+\_\+weight}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a25ca4000bcb068d5b8e193b7eb834d0a}{set\+\_\+max\+\_\+weight}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight}{Max\+Weight}} $>$ mw)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight}{Current\+Weight}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a04c54dca8afef0f88f830997406f578b}{current\+\_\+weight}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a5114cdd490871e95f0ae50a6bf1f5089}{set\+\_\+current\+\_\+weight}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight}{Current\+Weight}} $>$ cw)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range}{Attack\+Range}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a81b5763fea6247b1f61ae7ad75a1fb82}{attack\+\_\+range}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae9a78048cc801d0e5031b3ed7bc0820c}{set\+\_\+attack\+\_\+range}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range}{Attack\+Range}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k}{Status\+ATK}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a76dce588ac948a24dfd02ba5142fa33c}{status\+\_\+atk}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a3a67fa244040ce2efcf3b623db16dd77}{set\+\_\+status\+\_\+atk}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k}{Status\+ATK}} $>$ satk)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k}{Equip\+ATK}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_acbd01862a00379b0199778f923ee6090}{equip\+\_\+atk}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae3120d1720218882b6243723f051dcb3}{set\+\_\+equip\+\_\+atk}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k}{Equip\+ATK}} $>$ eatk)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k}{Status\+MATK}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae5058d51c9ac23c704e0dfb3fef30cdd}{status\+\_\+matk}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a4abaeb08a60efdbb2231598ed0198503}{set\+\_\+status\+\_\+matk}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k}{Status\+MATK}} $>$ smatk)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f}{Soft\+DEF}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ad5eb1675ab4f69e924bd6d6b84f515ea}{soft\+\_\+def}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a3ea4a0ef4f340e99473b62e7b5a5f202}{set\+\_\+soft\+\_\+def}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f}{Soft\+DEF}} $>$ sdef)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f}{Soft\+MDEF}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa70986ba24fb8893a45897a38de11d17}{soft\+\_\+mdef}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a3069a8f80c5daae5170c73614a4881a9}{set\+\_\+soft\+\_\+mdef}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f}{Soft\+MDEF}} $>$ smdef)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t}{HIT}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a51c607767b2a2cf6fe565756329cf451}{hit}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a44d607a7a5ee26a7b72ae2ed61a5d806}{set\+\_\+hit}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t}{HIT}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a51c607767b2a2cf6fe565756329cf451}{hit}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t}{CRIT}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a56cdccea5879ae49be5a216edfcf8c6f}{crit}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a5a958f9a10e7cd8d4b699c1c95dd118e}{set\+\_\+crit}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t}{CRIT}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a56cdccea5879ae49be5a216edfcf8c6f}{crit}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e}{FLEE}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a57748892fdbeec1f4a41c26e46210b86}{flee}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a64cada803d175a1c48c3f20bc220f137}{set\+\_\+flee}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e}{FLEE}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a57748892fdbeec1f4a41c26e46210b86}{flee}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{Attack\+Speed}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a29cb5ccf9528dc8935d41ec8aabdadab}{attack\+\_\+speed}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a30d833cc052af31ac6cd1e7cac51c0c0}{set\+\_\+attack\+\_\+speed}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{Attack\+Speed}} $>$ aspd)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance}{Base\+Appearance}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4a9f2d7d2d3242b2d496191006fc56e}{base\+\_\+appearance}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a15645ee903b63c344c1f8ce54ff35cc5}{set\+\_\+base\+\_\+appearance}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance}{Base\+Appearance}} $>$ ba)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color}{Hair\+Color}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a11bf7886e5f0a6e492f4ab887260c1b3}{hair\+\_\+color}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a33a351035065b0f50ef986e8377b5796}{set\+\_\+hair\+\_\+color}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color}{Hair\+Color}} $>$ hc)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color}{Cloth\+Color}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a7d5cc0c59b18e4b33aa5f6d7f7e0286b}{cloth\+\_\+color}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fd76a64fde9a7038cb56d94416b5c59}{set\+\_\+cloth\+\_\+color}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color}{Cloth\+Color}} $>$ cc)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite}{Weapon\+Sprite}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a2cebf1930809d5c43b585978f7627bcc}{weapon\+\_\+sprite}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a99ee6fed5e171270f09d4508108c39dc}{set\+\_\+weapon\+\_\+sprite}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite}{Weapon\+Sprite}} $>$ ws)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite}{Shield\+Sprite}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab5760eedf9003845bfe57bee176bf42c}{shield\+\_\+sprite}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a235ca562b4b33e46e78edab0b016656a}{set\+\_\+shield\+\_\+sprite}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite}{Shield\+Sprite}} $>$ ss)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite}{Robe\+Sprite}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a641c0ebc0f9d62147465cc4dbe7d39b6}{robe\+\_\+sprite}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a72630163a8fd36ee4893b3d978a005c8}{set\+\_\+robe\+\_\+sprite}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite}{Robe\+Sprite}} $>$ rs)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite}{Head\+Top\+Sprite}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a3991b88bacdb3dcb26e53fa6dc989f4a}{head\+\_\+top\+\_\+sprite}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a66462639104cf05939253c6edc837d9b}{set\+\_\+head\+\_\+top\+\_\+sprite}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite}{Head\+Top\+Sprite}} $>$ hts)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite}{Head\+Mid\+Sprite}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ad9cefa05019f2832c9a8cd70df9d054c}{head\+\_\+mid\+\_\+sprite}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a480e19e4f4aae712c525e112fa831148}{set\+\_\+head\+\_\+mid\+\_\+sprite}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite}{Head\+Mid\+Sprite}} $>$ hms)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite}{Head\+Bottom\+Sprite}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a939106cd2e3b1ef8f26f6199d45a194c}{head\+\_\+bottom\+\_\+sprite}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a15e0e0dfd8234e4ff67dc491548bd1}{set\+\_\+head\+\_\+bottom\+\_\+sprite}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite}{Head\+Bottom\+Sprite}} $>$ hbs)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style}{Hair\+Style}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a15927f244c9860ed9f94fc4f3f1d5a18}{hair\+\_\+style}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_abb14f1b94f39e727bf5bc12c1ccf36a6}{set\+\_\+hair\+\_\+style}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style}{Hair\+Style}} $>$ hs)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style}{Body\+Style}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_afd8ed9afcd8f00ce20aebb83d3a35450}{body\+\_\+style}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d997e390266bbb692874a3cfb1cbc1a}{set\+\_\+body\+\_\+style}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style}{Body\+Style}} $>$ bs)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny}{Zeny}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_adb624e7552cdfc3c6dd29e69bcb6983f}{zeny}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a9c18ace1f4540f5981637abefec1e2b1}{set\+\_\+zeny}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny}{Zeny}} $>$ z)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor}{Honor}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a182b5e48fd6e63885d84c0da9cfb24d2}{honor}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a54c90c6e343ec4f7d1452f4d129f6b49}{set\+\_\+honor}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor}{Honor}} $>$ h)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner}{Manner}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa3b181ce4cb829dc116f5547338920ad}{manner}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a729bb4225c1486ae541dcb5bbca9dff8}{set\+\_\+manner}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner}{Manner}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue}{Virtue}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_af6246fa68a723217e5bc1016e62a4eca}{virtue}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aaa617edd90ae68beab002999bc929b49}{set\+\_\+virtue}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue}{Virtue}} $>$ v)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{Attack\+Motion}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ad09041f082107b51602a6ca70653f218}{attack\+\_\+motion}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a473b946857dffc29a4056aa66f3b9ebe}{set\+\_\+attack\+\_\+motion}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{Attack\+Motion}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay}{Attack\+Delay}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae947c0f3bcb4025fffbdc6a73af3cbe1}{attack\+\_\+delay}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a57ff0d1c55dfc0a28ba430cc57f2a3ea}{set\+\_\+attack\+\_\+delay}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay}{Attack\+Delay}} $>$ a)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion}{Damage\+Motion}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a4a80ea839801c1d7856d361b0417dab0}{damage\+\_\+motion}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a7848d065bb301b48cc0262510b410b22}{set\+\_\+damage\+\_\+motion}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion}{Damage\+Motion}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack}{Base\+Attack}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a9906949d411a5a4a34be45959875b8b3}{base\+\_\+attack}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a10c17af2330531a28538e1ab1994576e}{set\+\_\+base\+\_\+attack}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack}{Base\+Attack}} $>$ b)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size}{Entity\+Size}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a0eeebbbda2daa68114ac3e68f130ce59}{size}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a6b67d365434d6313b20395dd211e372f}{set\+\_\+size}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size}{Entity\+Size}} $>$ s)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa403eb81be37d122df91b4154640af24}{creature\+\_\+weapon\+\_\+attack}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5c5b6c44fe3ff958e17bffead75de7a}{set\+\_\+creature\+\_\+weapon\+\_\+attack}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a09e5bc3a33eb9d1d30ba50a31483c2b7}{creature\+\_\+weapon\+\_\+attack\+\_\+magic}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a065b32a853a13d51329d73d264b03bd3}{set\+\_\+creature\+\_\+weapon\+\_\+attack\+\_\+magic}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage}{Creature\+Attack\+Damage}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a163c5af32bf436e4e5db357245931da6}{creature\+\_\+attack\+\_\+damage}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_afb8910d961de88359149e148ae7e4867}{set\+\_\+creature\+\_\+attack\+\_\+damage}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage}{Creature\+Attack\+Damage}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage}{Creature\+Magic\+Attack\+Damage}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaefa7093b5540747c06d9c1d7f4b74c}{creature\+\_\+magic\+\_\+attack\+\_\+damage}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_acae1c180f005be7cbdfb7767efa1b5d1}{set\+\_\+creature\+\_\+magic\+\_\+attack\+\_\+damage}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage}{Creature\+Magic\+Attack\+Damage}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range}{Creature\+View\+Range}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ae085d2485fe79870ba5bc1a6c6bdc755}{creature\+\_\+view\+\_\+range}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ac41168858d7603d62a43949d185a8a6c}{set\+\_\+creature\+\_\+view\+\_\+range}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range}{Creature\+View\+Range}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range}{Creature\+Chase\+Range}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_ab02bb1f149c11746f526a4950b2c20db}{creature\+\_\+chase\+\_\+range}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a143e3d2e2de909af20e96e3f86d0f58b}{set\+\_\+creature\+\_\+chase\+\_\+range}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range}{Creature\+Chase\+Range}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race}{Creature\+Primary\+Race}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aaed14a788a3fdf566d4cad3bbecc6272}{creature\+\_\+primary\+\_\+race}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a12f741a986e51c5295ac7b4690b6c73c}{set\+\_\+creature\+\_\+primary\+\_\+race}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race}{Creature\+Primary\+Race}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race}{Creature\+Secondary\+Race}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a8b293a4f10b9ce0380e33458a9f04ff0}{creature\+\_\+secondary\+\_\+race}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a9e11beef6eb356ea0fbd58ca1f89e8}{set\+\_\+creature\+\_\+secondary\+\_\+race}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race}{Creature\+Secondary\+Race}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element}{Creature\+Element}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa4beb9c370309b1cfeeaf7a1613cc89d}{creature\+\_\+element}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a1d502d18dca7ee2f7d6280352a151841}{set\+\_\+creature\+\_\+element}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element}{Creature\+Element}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level}{Creature\+Element\+Level}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a07644420d2207c8432bfa9308feb9394}{creature\+\_\+element\+\_\+level}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a66078f16b2bbc2c1831345474bf027c9}{set\+\_\+creature\+\_\+element\+\_\+level}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level}{Creature\+Element\+Level}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode}{Creature\+Mode}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a0aa9c85ff69075fbb98cfae63de58133}{creature\+\_\+mode}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a444e9d69be1f6d0b6f0886bf1cc4d9ce}{set\+\_\+creature\+\_\+mode}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode}{Creature\+Mode}} $>$ m)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry}{Status\+Registry}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a6ce9a300e77c72f9387c7e65e533ff72}{status\+\_\+registry}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a821acaaad7aa78a7fbce7e06e252fc66}{is\+\_\+initialized}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aaca463d83c6364017e03fc1402abf83e}{set\+\_\+initialized}} (bool b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_acd5aa3cf5ea080c8111aa28d74dca2cb}{entity}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_a1fa5cdbc1a545e8f705067e0003f1f75}{entity\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5f0482039b3cf8310a7f4c2627f2038}{\+\_\+type}} \{ \mbox{\hyperlink{_entity_definitions_8hpp_a1fa5cdbc1a545e8f705067e0003f1f75afe001c60f424227b9cb28c1cb272a77b}{ENTITY\+\_\+\+PLAYER}} \}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fcbd59350a64ea21e0ee6bce980fade}{\+\_\+is\+\_\+initialized}} \{ false \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aca6aebc20023d2b5812fa682b507d925}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aca6aebc20023d2b5812fa682b507d925} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!Status@{Status}}
+\index{Status@{Status}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{Status()}{Status()}}
+{\footnotesize\ttfamily Status\+::\+Status (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{entity,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_a1fa5cdbc1a545e8f705067e0003f1f75}{entity\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a1b24d90ef2560afffe9d7183e279c63c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a1b24d90ef2560afffe9d7183e279c63c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!````~Status@{\texorpdfstring{$\sim$}{\string~}Status}}
+\index{````~Status@{\texorpdfstring{$\sim$}{\string~}Status}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Status()}{\string~Status()}}
+{\footnotesize\ttfamily Status\+::\texorpdfstring{$\sim$}{\string~}\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a8cf56c19e978c06b296eeb94a48c3bc5}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a8cf56c19e978c06b296eeb94a48c3bc5} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!agility@{agility}}
+\index{agility@{agility}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{agility()}{agility()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::agility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a8cf56c19e978c06b296eeb94a48c3bc5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4d3bca5e1edf402391ac6dec9b1409d}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4d3bca5e1edf402391ac6dec9b1409d} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!agility\_cost@{agility\_cost}}
+\index{agility\_cost@{agility\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{agility\_cost()}{agility\_cost()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost}{Agility\+Point\+Cost}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::agility\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4d3bca5e1edf402391ac6dec9b1409d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae947c0f3bcb4025fffbdc6a73af3cbe1}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae947c0f3bcb4025fffbdc6a73af3cbe1} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!attack\_delay@{attack\_delay}}
+\index{attack\_delay@{attack\_delay}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{attack\_delay()}{attack\_delay()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay}{Attack\+Delay}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::attack\+\_\+delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ae947c0f3bcb4025fffbdc6a73af3cbe1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ad09041f082107b51602a6ca70653f218}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ad09041f082107b51602a6ca70653f218} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!attack\_motion@{attack\_motion}}
+\index{attack\_motion@{attack\_motion}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{attack\_motion()}{attack\_motion()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{Attack\+Motion}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::attack\+\_\+motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{class_horizon_1_1_zone_1_1_combat}{Combat} \doxylink{class_horizon_1_1_zone_1_1_traits_1_1_status}{Status} Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ad09041f082107b51602a6ca70653f218_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a81b5763fea6247b1f61ae7ad75a1fb82}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a81b5763fea6247b1f61ae7ad75a1fb82} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!attack\_range@{attack\_range}}
+\index{attack\_range@{attack\_range}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{attack\_range()}{attack\_range()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range}{Attack\+Range}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::attack\+\_\+range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a81b5763fea6247b1f61ae7ad75a1fb82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a29cb5ccf9528dc8935d41ec8aabdadab}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a29cb5ccf9528dc8935d41ec8aabdadab} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!attack\_speed@{attack\_speed}}
+\index{attack\_speed@{attack\_speed}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{attack\_speed()}{attack\_speed()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{Attack\+Speed}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::attack\+\_\+speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a29cb5ccf9528dc8935d41ec8aabdadab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4a9f2d7d2d3242b2d496191006fc56e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae4a9f2d7d2d3242b2d496191006fc56e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!base\_appearance@{base\_appearance}}
+\index{base\_appearance@{base\_appearance}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{base\_appearance()}{base\_appearance()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance}{Base\+Appearance}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::base\+\_\+appearance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance} \Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a9906949d411a5a4a34be45959875b8b3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a9906949d411a5a4a34be45959875b8b3} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!base\_attack@{base\_attack}}
+\index{base\_attack@{base\_attack}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{base\_attack()}{base\_attack()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack}{Base\+Attack}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::base\+\_\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a9906949d411a5a4a34be45959875b8b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a7282764dc047beee113dbb0100ebb77e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a7282764dc047beee113dbb0100ebb77e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!base\_experience@{base\_experience}}
+\index{base\_experience@{base\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{base\_experience()}{base\_experience()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{Base\+Experience}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::base\+\_\+experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7282764dc047beee113dbb0100ebb77e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a045f6ec648dac6ecd4ec52c84e025035}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a045f6ec648dac6ecd4ec52c84e025035} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!base\_level@{base\_level}}
+\index{base\_level@{base\_level}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{base\_level()}{base\_level()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{Base\+Level}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::base\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a045f6ec648dac6ecd4ec52c84e025035_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_afd8ed9afcd8f00ce20aebb83d3a35450}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_afd8ed9afcd8f00ce20aebb83d3a35450} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!body\_style@{body\_style}}
+\index{body\_style@{body\_style}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{body\_style()}{body\_style()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style}{Body\+Style}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::body\+\_\+style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_afd8ed9afcd8f00ce20aebb83d3a35450_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a7d5cc0c59b18e4b33aa5f6d7f7e0286b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a7d5cc0c59b18e4b33aa5f6d7f7e0286b} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!cloth\_color@{cloth\_color}}
+\index{cloth\_color@{cloth\_color}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{cloth\_color()}{cloth\_color()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color}{Cloth\+Color}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::cloth\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7d5cc0c59b18e4b33aa5f6d7f7e0286b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a163c5af32bf436e4e5db357245931da6}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a163c5af32bf436e4e5db357245931da6} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_attack\_damage@{creature\_attack\_damage}}
+\index{creature\_attack\_damage@{creature\_attack\_damage}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_attack\_damage()}{creature\_attack\_damage()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage}{Creature\+Attack\+Damage}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+attack\+\_\+damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a163c5af32bf436e4e5db357245931da6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab02bb1f149c11746f526a4950b2c20db}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab02bb1f149c11746f526a4950b2c20db} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_chase\_range@{creature\_chase\_range}}
+\index{creature\_chase\_range@{creature\_chase\_range}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_chase\_range()}{creature\_chase\_range()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range}{Creature\+Chase\+Range}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+chase\+\_\+range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa4beb9c370309b1cfeeaf7a1613cc89d}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa4beb9c370309b1cfeeaf7a1613cc89d} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_element@{creature\_element}}
+\index{creature\_element@{creature\_element}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_element()}{creature\_element()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element}{Creature\+Element}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a07644420d2207c8432bfa9308feb9394}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a07644420d2207c8432bfa9308feb9394} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_element\_level@{creature\_element\_level}}
+\index{creature\_element\_level@{creature\_element\_level}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_element\_level()}{creature\_element\_level()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level}{Creature\+Element\+Level}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+element\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaefa7093b5540747c06d9c1d7f4b74c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaefa7093b5540747c06d9c1d7f4b74c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_magic\_attack\_damage@{creature\_magic\_attack\_damage}}
+\index{creature\_magic\_attack\_damage@{creature\_magic\_attack\_damage}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_magic\_attack\_damage()}{creature\_magic\_attack\_damage()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage}{Creature\+Magic\+Attack\+Damage}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+magic\+\_\+attack\+\_\+damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaefa7093b5540747c06d9c1d7f4b74c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a0aa9c85ff69075fbb98cfae63de58133}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a0aa9c85ff69075fbb98cfae63de58133} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_mode@{creature\_mode}}
+\index{creature\_mode@{creature\_mode}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_mode()}{creature\_mode()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode}{Creature\+Mode}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aaed14a788a3fdf566d4cad3bbecc6272}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aaed14a788a3fdf566d4cad3bbecc6272} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_primary\_race@{creature\_primary\_race}}
+\index{creature\_primary\_race@{creature\_primary\_race}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_primary\_race()}{creature\_primary\_race()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race}{Creature\+Primary\+Race}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+primary\+\_\+race (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a8b293a4f10b9ce0380e33458a9f04ff0}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a8b293a4f10b9ce0380e33458a9f04ff0} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_secondary\_race@{creature\_secondary\_race}}
+\index{creature\_secondary\_race@{creature\_secondary\_race}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_secondary\_race()}{creature\_secondary\_race()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race}{Creature\+Secondary\+Race}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+secondary\+\_\+race (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae085d2485fe79870ba5bc1a6c6bdc755}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae085d2485fe79870ba5bc1a6c6bdc755} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_view\_range@{creature\_view\_range}}
+\index{creature\_view\_range@{creature\_view\_range}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_view\_range()}{creature\_view\_range()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range}{Creature\+View\+Range}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+view\+\_\+range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa403eb81be37d122df91b4154640af24}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa403eb81be37d122df91b4154640af24} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_weapon\_attack@{creature\_weapon\_attack}}
+\index{creature\_weapon\_attack@{creature\_weapon\_attack}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_weapon\_attack()}{creature\_weapon\_attack()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+weapon\+\_\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa403eb81be37d122df91b4154640af24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a09e5bc3a33eb9d1d30ba50a31483c2b7}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a09e5bc3a33eb9d1d30ba50a31483c2b7} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!creature\_weapon\_attack\_magic@{creature\_weapon\_attack\_magic}}
+\index{creature\_weapon\_attack\_magic@{creature\_weapon\_attack\_magic}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{creature\_weapon\_attack\_magic()}{creature\_weapon\_attack\_magic()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::creature\+\_\+weapon\+\_\+attack\+\_\+magic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a09e5bc3a33eb9d1d30ba50a31483c2b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a56cdccea5879ae49be5a216edfcf8c6f}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a56cdccea5879ae49be5a216edfcf8c6f} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!crit@{crit}}
+\index{crit@{crit}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{crit()}{crit()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t}{CRIT}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::crit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a56cdccea5879ae49be5a216edfcf8c6f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a614143e02a12cb3b792a643c5528a458}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a614143e02a12cb3b792a643c5528a458} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!current\_hp@{current\_hp}}
+\index{current\_hp@{current\_hp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{current\_hp()}{current\_hp()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p}{Current\+HP}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::current\+\_\+hp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a614143e02a12cb3b792a643c5528a458_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a4351fc67b5bcc26916b57bf20081c8ee}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a4351fc67b5bcc26916b57bf20081c8ee} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!current\_sp@{current\_sp}}
+\index{current\_sp@{current\_sp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{current\_sp()}{current\_sp()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p}{Current\+SP}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::current\+\_\+sp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a4351fc67b5bcc26916b57bf20081c8ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a04c54dca8afef0f88f830997406f578b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a04c54dca8afef0f88f830997406f578b} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!current\_weight@{current\_weight}}
+\index{current\_weight@{current\_weight}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{current\_weight()}{current\_weight()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight}{Current\+Weight}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::current\+\_\+weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a04c54dca8afef0f88f830997406f578b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a4a80ea839801c1d7856d361b0417dab0}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a4a80ea839801c1d7856d361b0417dab0} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!damage\_motion@{damage\_motion}}
+\index{damage\_motion@{damage\_motion}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{damage\_motion()}{damage\_motion()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion}{Damage\+Motion}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::damage\+\_\+motion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a4a80ea839801c1d7856d361b0417dab0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a0a7c5675d0e1a241287c53e4e5cdad62}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a0a7c5675d0e1a241287c53e4e5cdad62} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!dexterity@{dexterity}}
+\index{dexterity@{dexterity}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{dexterity()}{dexterity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::dexterity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a0a7c5675d0e1a241287c53e4e5cdad62_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a6318384fe12614e56b288cdf9894a306}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a6318384fe12614e56b288cdf9894a306} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!dexterity\_cost@{dexterity\_cost}}
+\index{dexterity\_cost@{dexterity\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{dexterity\_cost()}{dexterity\_cost()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost}{Dexterity\+Point\+Cost}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::dexterity\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a6318384fe12614e56b288cdf9894a306_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_acd5aa3cf5ea080c8111aa28d74dca2cb}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_acd5aa3cf5ea080c8111aa28d74dca2cb} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!entity@{entity}}
+\index{entity@{entity}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{entity()}{entity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_acbd01862a00379b0199778f923ee6090}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_acbd01862a00379b0199778f923ee6090} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!equip\_atk@{equip\_atk}}
+\index{equip\_atk@{equip\_atk}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{equip\_atk()}{equip\_atk()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k}{Equip\+ATK}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::equip\+\_\+atk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_acbd01862a00379b0199778f923ee6090_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a57748892fdbeec1f4a41c26e46210b86}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a57748892fdbeec1f4a41c26e46210b86} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!flee@{flee}}
+\index{flee@{flee}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{flee()}{flee()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e}{FLEE}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::flee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a57748892fdbeec1f4a41c26e46210b86_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_afe273514777dfe95527f0a5a230b4d03}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_afe273514777dfe95527f0a5a230b4d03} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!get\_required\_statpoints@{get\_required\_statpoints}}
+\index{get\_required\_statpoints@{get\_required\_statpoints}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{get\_required\_statpoints()}{get\_required\_statpoints()}}
+{\footnotesize\ttfamily uint32\+\_\+t Status\+::get\+\_\+required\+\_\+statpoints (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{from,  }\item[{uint16\+\_\+t}]{to }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_afe273514777dfe95527f0a5a230b4d03_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ac064199ad5c2ce5aff2bf96ddd922556}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ac064199ad5c2ce5aff2bf96ddd922556} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!get\_status\_base@{get\_status\_base}}
+\index{get\_status\_base@{get\_status\_base}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{get\_status\_base()}{get\_status\_base()}}
+{\footnotesize\ttfamily uint32\+\_\+t Status\+::get\+\_\+status\+\_\+base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}}}]{type }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ac064199ad5c2ce5aff2bf96ddd922556_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ac064199ad5c2ce5aff2bf96ddd922556_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a11bf7886e5f0a6e492f4ab887260c1b3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a11bf7886e5f0a6e492f4ab887260c1b3} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!hair\_color@{hair\_color}}
+\index{hair\_color@{hair\_color}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{hair\_color()}{hair\_color()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color}{Hair\+Color}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::hair\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a11bf7886e5f0a6e492f4ab887260c1b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a15927f244c9860ed9f94fc4f3f1d5a18}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a15927f244c9860ed9f94fc4f3f1d5a18} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!hair\_style@{hair\_style}}
+\index{hair\_style@{hair\_style}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{hair\_style()}{hair\_style()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style}{Hair\+Style}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::hair\+\_\+style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a15927f244c9860ed9f94fc4f3f1d5a18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a939106cd2e3b1ef8f26f6199d45a194c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a939106cd2e3b1ef8f26f6199d45a194c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!head\_bottom\_sprite@{head\_bottom\_sprite}}
+\index{head\_bottom\_sprite@{head\_bottom\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{head\_bottom\_sprite()}{head\_bottom\_sprite()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite}{Head\+Bottom\+Sprite}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::head\+\_\+bottom\+\_\+sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a939106cd2e3b1ef8f26f6199d45a194c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ad9cefa05019f2832c9a8cd70df9d054c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ad9cefa05019f2832c9a8cd70df9d054c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!head\_mid\_sprite@{head\_mid\_sprite}}
+\index{head\_mid\_sprite@{head\_mid\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{head\_mid\_sprite()}{head\_mid\_sprite()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite}{Head\+Mid\+Sprite}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::head\+\_\+mid\+\_\+sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ad9cefa05019f2832c9a8cd70df9d054c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a3991b88bacdb3dcb26e53fa6dc989f4a}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a3991b88bacdb3dcb26e53fa6dc989f4a} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!head\_top\_sprite@{head\_top\_sprite}}
+\index{head\_top\_sprite@{head\_top\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{head\_top\_sprite()}{head\_top\_sprite()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite}{Head\+Top\+Sprite}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::head\+\_\+top\+\_\+sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a3991b88bacdb3dcb26e53fa6dc989f4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a51c607767b2a2cf6fe565756329cf451}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a51c607767b2a2cf6fe565756329cf451} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!hit@{hit}}
+\index{hit@{hit}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t}{HIT}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::hit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a51c607767b2a2cf6fe565756329cf451_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a182b5e48fd6e63885d84c0da9cfb24d2}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a182b5e48fd6e63885d84c0da9cfb24d2} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!honor@{honor}}
+\index{honor@{honor}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{honor()}{honor()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor}{Honor}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::honor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a182b5e48fd6e63885d84c0da9cfb24d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d1b6a88662c895e2cc56b60257e1f80}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d1b6a88662c895e2cc56b60257e1f80} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!increase\_status\_point@{increase\_status\_point}}
+\index{increase\_status\_point@{increase\_status\_point}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{increase\_status\_point()}{increase\_status\_point()}}
+{\footnotesize\ttfamily bool Status\+::increase\+\_\+status\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}}}]{type,  }\item[{uint16\+\_\+t}]{limit }\end{DoxyParamCaption})}
+
+
+
+Increases a status point to a certain limit and returns the current total of the stat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\mbox{[}in\mbox{]}} & Type of the status point \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em limit\mbox{[}in\mbox{]}} & Limit to increase the status point to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total base value of the current status point. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d1b6a88662c895e2cc56b60257e1f80_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ad1444b3425209281fe323ca0c8652d10}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ad1444b3425209281fe323ca0c8652d10} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Status\+::initialize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_creature}{Horizon\+::\+Zone\+::\+Entities\+::\+Creature}} $>$}]{creature,  }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} $>$}]{md }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a8f653bf5cdfe541af6aaa585793ee836}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a8f653bf5cdfe541af6aaa585793ee836} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Status\+::initialize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_n_p_c}{Horizon\+::\+Zone\+::\+Entities\+::\+NPC}} $>$}]{npc }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a8f653bf5cdfe541af6aaa585793ee836_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a8846a966984a784100524cd853bfebf5}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a8846a966984a784100524cd853bfebf5} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Status\+::initialize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$}]{player }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a5e71b182bba494887c131079bf75869b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a5e71b182bba494887c131079bf75869b} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!intelligence@{intelligence}}
+\index{intelligence@{intelligence}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{intelligence()}{intelligence()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::intelligence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a5e71b182bba494887c131079bf75869b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a598fd3a49acc5411248924fb9b3fd4d3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a598fd3a49acc5411248924fb9b3fd4d3} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!intelligence\_cost@{intelligence\_cost}}
+\index{intelligence\_cost@{intelligence\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{intelligence\_cost()}{intelligence\_cost()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost}{Intelligence\+Point\+Cost}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::intelligence\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a598fd3a49acc5411248924fb9b3fd4d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a821acaaad7aa78a7fbce7e06e252fc66}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a821acaaad7aa78a7fbce7e06e252fc66} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::is\+\_\+initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a3b3ee295ea8a10650ba4e350d947e329}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a3b3ee295ea8a10650ba4e350d947e329} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!job\_experience@{job\_experience}}
+\index{job\_experience@{job\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{job\_experience()}{job\_experience()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{Job\+Experience}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::job\+\_\+experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a3b3ee295ea8a10650ba4e350d947e329_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aed093e9b494eda4e95188fcce5ab6297}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aed093e9b494eda4e95188fcce5ab6297} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!job\_level@{job\_level}}
+\index{job\_level@{job\_level}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{job\_level()}{job\_level()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{Job\+Level}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::job\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aed093e9b494eda4e95188fcce5ab6297_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aff82e18411e22754b0da0bb1c105b7e4}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aff82e18411e22754b0da0bb1c105b7e4} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!load@{load}}
+\index{load@{load}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Status\+::load (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$}]{pl }\end{DoxyParamCaption})}
+
+Main Attributes.
+
+MiscHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aff82e18411e22754b0da0bb1c105b7e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aff82e18411e22754b0da0bb1c105b7e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a60d92f508ab5d365dbcfb1140b228d2d}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a60d92f508ab5d365dbcfb1140b228d2d} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!luck@{luck}}
+\index{luck@{luck}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{luck()}{luck()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::luck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a60d92f508ab5d365dbcfb1140b228d2d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a04bc8fa7d3d1d470411bbe420abe53ca}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a04bc8fa7d3d1d470411bbe420abe53ca} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!luck\_cost@{luck\_cost}}
+\index{luck\_cost@{luck\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{luck\_cost()}{luck\_cost()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost}{Luck\+Point\+Cost}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::luck\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a04bc8fa7d3d1d470411bbe420abe53ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa3b181ce4cb829dc116f5547338920ad}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa3b181ce4cb829dc116f5547338920ad} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!manner@{manner}}
+\index{manner@{manner}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{manner()}{manner()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner}{Manner}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::manner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa3b181ce4cb829dc116f5547338920ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_afecce3aa59b8e2aaa8b87c67fd014b92}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_afecce3aa59b8e2aaa8b87c67fd014b92} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!max\_hp@{max\_hp}}
+\index{max\_hp@{max\_hp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{max\_hp()}{max\_hp()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p}{Max\+HP}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::max\+\_\+hp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_afecce3aa59b8e2aaa8b87c67fd014b92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a09a904e85351f4e3153b57decdd609a7}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a09a904e85351f4e3153b57decdd609a7} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!max\_sp@{max\_sp}}
+\index{max\_sp@{max\_sp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{max\_sp()}{max\_sp()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p}{Max\+SP}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::max\+\_\+sp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a09a904e85351f4e3153b57decdd609a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a014c342bab4cbf260c442b5cd342d101}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a014c342bab4cbf260c442b5cd342d101} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!max\_weight@{max\_weight}}
+\index{max\_weight@{max\_weight}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{max\_weight()}{max\_weight()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight}{Max\+Weight}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::max\+\_\+weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a014c342bab4cbf260c442b5cd342d101_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab2abab6a5a7092f340502722be95dda1}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab2abab6a5a7092f340502722be95dda1} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!movement\_speed@{movement\_speed}}
+\index{movement\_speed@{movement\_speed}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{movement\_speed()}{movement\_speed()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed}{Movement\+Speed}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::movement\+\_\+speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ab2abab6a5a7092f340502722be95dda1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa2b93790828bade1b0bc06d06f2ee83f}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa2b93790828bade1b0bc06d06f2ee83f} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!next\_base\_experience@{next\_base\_experience}}
+\index{next\_base\_experience@{next\_base\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{next\_base\_experience()}{next\_base\_experience()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience}{Next\+Base\+Experience}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::next\+\_\+base\+\_\+experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa2b93790828bade1b0bc06d06f2ee83f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a31190b0ab7253862a053f32964cdb82e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a31190b0ab7253862a053f32964cdb82e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!next\_job\_experience@{next\_job\_experience}}
+\index{next\_job\_experience@{next\_job\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{next\_job\_experience()}{next\_job\_experience()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience}{Next\+Job\+Experience}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::next\+\_\+job\+\_\+experience (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a31190b0ab7253862a053f32964cdb82e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aefc9a932481dbe96f3d074f61ffdf17c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aefc9a932481dbe96f3d074f61ffdf17c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!on\_equipment\_changed@{on\_equipment\_changed}}
+\index{on\_equipment\_changed@{on\_equipment\_changed}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{on\_equipment\_changed()}{on\_equipment\_changed()}}
+{\footnotesize\ttfamily void Status\+::on\+\_\+equipment\+\_\+changed (\begin{DoxyParamCaption}\item[{bool}]{equipped,  }\item[{std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$}]{item }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aefc9a932481dbe96f3d074f61ffdf17c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a641c0ebc0f9d62147465cc4dbe7d39b6}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a641c0ebc0f9d62147465cc4dbe7d39b6} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!robe\_sprite@{robe\_sprite}}
+\index{robe\_sprite@{robe\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{robe\_sprite()}{robe\_sprite()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite}{Robe\+Sprite}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::robe\+\_\+sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a641c0ebc0f9d62147465cc4dbe7d39b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_af8deb18d006f0e784bd26b0665d6f8cd}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_af8deb18d006f0e784bd26b0665d6f8cd} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!save@{save}}
+\index{save@{save}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool Status\+::save (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}} $>$}]{pl }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_af8deb18d006f0e784bd26b0665d6f8cd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a4c800a952aae46a591a9dd8f1249fdc9}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a4c800a952aae46a591a9dd8f1249fdc9} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_agility@{set\_agility}}
+\index{set\_agility@{set\_agility}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_agility()}{set\_agility()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+agility (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}} $>$}]{agi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a4c800a952aae46a591a9dd8f1249fdc9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a537be0851257d19be02126812ae2b1fb}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a537be0851257d19be02126812ae2b1fb} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_agility\_cost@{set\_agility\_cost}}
+\index{set\_agility\_cost@{set\_agility\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_agility\_cost()}{set\_agility\_cost()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+agility\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost}{Agility\+Point\+Cost}} $>$}]{agi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a537be0851257d19be02126812ae2b1fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a57ff0d1c55dfc0a28ba430cc57f2a3ea}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a57ff0d1c55dfc0a28ba430cc57f2a3ea} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_attack\_delay@{set\_attack\_delay}}
+\index{set\_attack\_delay@{set\_attack\_delay}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_attack\_delay()}{set\_attack\_delay()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+attack\+\_\+delay (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay}{Attack\+Delay}} $>$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a57ff0d1c55dfc0a28ba430cc57f2a3ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a473b946857dffc29a4056aa66f3b9ebe}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a473b946857dffc29a4056aa66f3b9ebe} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_attack\_motion@{set\_attack\_motion}}
+\index{set\_attack\_motion@{set\_attack\_motion}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_attack\_motion()}{set\_attack\_motion()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+attack\+\_\+motion (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{Attack\+Motion}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a473b946857dffc29a4056aa66f3b9ebe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae9a78048cc801d0e5031b3ed7bc0820c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae9a78048cc801d0e5031b3ed7bc0820c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_attack\_range@{set\_attack\_range}}
+\index{set\_attack\_range@{set\_attack\_range}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_attack\_range()}{set\_attack\_range()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+attack\+\_\+range (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range}{Attack\+Range}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ae9a78048cc801d0e5031b3ed7bc0820c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a30d833cc052af31ac6cd1e7cac51c0c0}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a30d833cc052af31ac6cd1e7cac51c0c0} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_attack\_speed@{set\_attack\_speed}}
+\index{set\_attack\_speed@{set\_attack\_speed}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_attack\_speed()}{set\_attack\_speed()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+attack\+\_\+speed (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{Attack\+Speed}} $>$}]{aspd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a30d833cc052af31ac6cd1e7cac51c0c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a15645ee903b63c344c1f8ce54ff35cc5}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a15645ee903b63c344c1f8ce54ff35cc5} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_base\_appearance@{set\_base\_appearance}}
+\index{set\_base\_appearance@{set\_base\_appearance}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_base\_appearance()}{set\_base\_appearance()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+base\+\_\+appearance (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance}{Base\+Appearance}} $>$}]{ba }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a15645ee903b63c344c1f8ce54ff35cc5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a10c17af2330531a28538e1ab1994576e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a10c17af2330531a28538e1ab1994576e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_base\_attack@{set\_base\_attack}}
+\index{set\_base\_attack@{set\_base\_attack}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_base\_attack()}{set\_base\_attack()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+base\+\_\+attack (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack}{Base\+Attack}} $>$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a10c17af2330531a28538e1ab1994576e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a1a8e15152e624ba1b8038b89241473bf}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a1a8e15152e624ba1b8038b89241473bf} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_base\_experience@{set\_base\_experience}}
+\index{set\_base\_experience@{set\_base\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_base\_experience()}{set\_base\_experience()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+base\+\_\+experience (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{Base\+Experience}} $>$}]{bexp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a1a8e15152e624ba1b8038b89241473bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a97ddcae0f00e782ca240f45ea95dde33}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a97ddcae0f00e782ca240f45ea95dde33} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_base\_level@{set\_base\_level}}
+\index{set\_base\_level@{set\_base\_level}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_base\_level()}{set\_base\_level()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+base\+\_\+level (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{Base\+Level}} $>$}]{blvl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a97ddcae0f00e782ca240f45ea95dde33_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d997e390266bbb692874a3cfb1cbc1a}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d997e390266bbb692874a3cfb1cbc1a} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_body\_style@{set\_body\_style}}
+\index{set\_body\_style@{set\_body\_style}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_body\_style()}{set\_body\_style()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+body\+\_\+style (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style}{Body\+Style}} $>$}]{bs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a2d997e390266bbb692874a3cfb1cbc1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fd76a64fde9a7038cb56d94416b5c59}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fd76a64fde9a7038cb56d94416b5c59} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_cloth\_color@{set\_cloth\_color}}
+\index{set\_cloth\_color@{set\_cloth\_color}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_cloth\_color()}{set\_cloth\_color()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+cloth\+\_\+color (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color}{Cloth\+Color}} $>$}]{cc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fd76a64fde9a7038cb56d94416b5c59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_afb8910d961de88359149e148ae7e4867}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_afb8910d961de88359149e148ae7e4867} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_attack\_damage@{set\_creature\_attack\_damage}}
+\index{set\_creature\_attack\_damage@{set\_creature\_attack\_damage}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_attack\_damage()}{set\_creature\_attack\_damage()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+attack\+\_\+damage (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage}{Creature\+Attack\+Damage}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_afb8910d961de88359149e148ae7e4867_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a143e3d2e2de909af20e96e3f86d0f58b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a143e3d2e2de909af20e96e3f86d0f58b} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_chase\_range@{set\_creature\_chase\_range}}
+\index{set\_creature\_chase\_range@{set\_creature\_chase\_range}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_chase\_range()}{set\_creature\_chase\_range()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+chase\+\_\+range (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range}{Creature\+Chase\+Range}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a143e3d2e2de909af20e96e3f86d0f58b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a1d502d18dca7ee2f7d6280352a151841}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a1d502d18dca7ee2f7d6280352a151841} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_element@{set\_creature\_element}}
+\index{set\_creature\_element@{set\_creature\_element}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_element()}{set\_creature\_element()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+element (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element}{Creature\+Element}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a1d502d18dca7ee2f7d6280352a151841_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a66078f16b2bbc2c1831345474bf027c9}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a66078f16b2bbc2c1831345474bf027c9} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_element\_level@{set\_creature\_element\_level}}
+\index{set\_creature\_element\_level@{set\_creature\_element\_level}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_element\_level()}{set\_creature\_element\_level()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+element\+\_\+level (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level}{Creature\+Element\+Level}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a66078f16b2bbc2c1831345474bf027c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_acae1c180f005be7cbdfb7767efa1b5d1}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_acae1c180f005be7cbdfb7767efa1b5d1} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_magic\_attack\_damage@{set\_creature\_magic\_attack\_damage}}
+\index{set\_creature\_magic\_attack\_damage@{set\_creature\_magic\_attack\_damage}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_magic\_attack\_damage()}{set\_creature\_magic\_attack\_damage()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+magic\+\_\+attack\+\_\+damage (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage}{Creature\+Magic\+Attack\+Damage}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_acae1c180f005be7cbdfb7767efa1b5d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a444e9d69be1f6d0b6f0886bf1cc4d9ce}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a444e9d69be1f6d0b6f0886bf1cc4d9ce} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_mode@{set\_creature\_mode}}
+\index{set\_creature\_mode@{set\_creature\_mode}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_mode()}{set\_creature\_mode()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+mode (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode}{Creature\+Mode}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a444e9d69be1f6d0b6f0886bf1cc4d9ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a12f741a986e51c5295ac7b4690b6c73c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a12f741a986e51c5295ac7b4690b6c73c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_primary\_race@{set\_creature\_primary\_race}}
+\index{set\_creature\_primary\_race@{set\_creature\_primary\_race}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_primary\_race()}{set\_creature\_primary\_race()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+primary\+\_\+race (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race}{Creature\+Primary\+Race}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a12f741a986e51c5295ac7b4690b6c73c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a9e11beef6eb356ea0fbd58ca1f89e8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a9e11beef6eb356ea0fbd58ca1f89e8} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_secondary\_race@{set\_creature\_secondary\_race}}
+\index{set\_creature\_secondary\_race@{set\_creature\_secondary\_race}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_secondary\_race()}{set\_creature\_secondary\_race()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+secondary\+\_\+race (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race}{Creature\+Secondary\+Race}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a9e11beef6eb356ea0fbd58ca1f89e8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ac41168858d7603d62a43949d185a8a6c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ac41168858d7603d62a43949d185a8a6c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_view\_range@{set\_creature\_view\_range}}
+\index{set\_creature\_view\_range@{set\_creature\_view\_range}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_view\_range()}{set\_creature\_view\_range()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+view\+\_\+range (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range}{Creature\+View\+Range}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ac41168858d7603d62a43949d185a8a6c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5c5b6c44fe3ff958e17bffead75de7a}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5c5b6c44fe3ff958e17bffead75de7a} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_weapon\_attack@{set\_creature\_weapon\_attack}}
+\index{set\_creature\_weapon\_attack@{set\_creature\_weapon\_attack}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_weapon\_attack()}{set\_creature\_weapon\_attack()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+weapon\+\_\+attack (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5c5b6c44fe3ff958e17bffead75de7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a065b32a853a13d51329d73d264b03bd3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a065b32a853a13d51329d73d264b03bd3} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_creature\_weapon\_attack\_magic@{set\_creature\_weapon\_attack\_magic}}
+\index{set\_creature\_weapon\_attack\_magic@{set\_creature\_weapon\_attack\_magic}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_creature\_weapon\_attack\_magic()}{set\_creature\_weapon\_attack\_magic()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+creature\+\_\+weapon\+\_\+attack\+\_\+magic (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Creature\+Weapon\+Attack}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a065b32a853a13d51329d73d264b03bd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a5a958f9a10e7cd8d4b699c1c95dd118e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a5a958f9a10e7cd8d4b699c1c95dd118e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_crit@{set\_crit}}
+\index{set\_crit@{set\_crit}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_crit()}{set\_crit()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+crit (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t}{CRIT}} $>$}]{crit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a5a958f9a10e7cd8d4b699c1c95dd118e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a5a958f9a10e7cd8d4b699c1c95dd118e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab0eefbc57192adb60b7abb7cb2e24e11}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab0eefbc57192adb60b7abb7cb2e24e11} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_current\_hp@{set\_current\_hp}}
+\index{set\_current\_hp@{set\_current\_hp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_current\_hp()}{set\_current\_hp()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+current\+\_\+hp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p}{Current\+HP}} $>$}]{hp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ab0eefbc57192adb60b7abb7cb2e24e11_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a57155e7a49ae6f21ae32853a7ff4c8fc}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a57155e7a49ae6f21ae32853a7ff4c8fc} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_current\_sp@{set\_current\_sp}}
+\index{set\_current\_sp@{set\_current\_sp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_current\_sp()}{set\_current\_sp()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+current\+\_\+sp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p}{Current\+SP}} $>$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a57155e7a49ae6f21ae32853a7ff4c8fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a5114cdd490871e95f0ae50a6bf1f5089}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a5114cdd490871e95f0ae50a6bf1f5089} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_current\_weight@{set\_current\_weight}}
+\index{set\_current\_weight@{set\_current\_weight}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_current\_weight()}{set\_current\_weight()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+current\+\_\+weight (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight}{Current\+Weight}} $>$}]{cw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a5114cdd490871e95f0ae50a6bf1f5089_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a7848d065bb301b48cc0262510b410b22}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a7848d065bb301b48cc0262510b410b22} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_damage\_motion@{set\_damage\_motion}}
+\index{set\_damage\_motion@{set\_damage\_motion}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_damage\_motion()}{set\_damage\_motion()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+damage\+\_\+motion (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion}{Damage\+Motion}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7848d065bb301b48cc0262510b410b22_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab137727d3e1beaf8a69d0001fb6e20c9}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab137727d3e1beaf8a69d0001fb6e20c9} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_dexterity@{set\_dexterity}}
+\index{set\_dexterity@{set\_dexterity}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_dexterity()}{set\_dexterity()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+dexterity (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}} $>$}]{dex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ab137727d3e1beaf8a69d0001fb6e20c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a1635b65d90ead0fc6d9b515e9747725e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a1635b65d90ead0fc6d9b515e9747725e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_dexterity\_cost@{set\_dexterity\_cost}}
+\index{set\_dexterity\_cost@{set\_dexterity\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_dexterity\_cost()}{set\_dexterity\_cost()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+dexterity\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost}{Dexterity\+Point\+Cost}} $>$}]{dex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a1635b65d90ead0fc6d9b515e9747725e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae3120d1720218882b6243723f051dcb3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae3120d1720218882b6243723f051dcb3} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_equip\_atk@{set\_equip\_atk}}
+\index{set\_equip\_atk@{set\_equip\_atk}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_equip\_atk()}{set\_equip\_atk()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+equip\+\_\+atk (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k}{Equip\+ATK}} $>$}]{eatk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ae3120d1720218882b6243723f051dcb3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a64cada803d175a1c48c3f20bc220f137}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a64cada803d175a1c48c3f20bc220f137} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_flee@{set\_flee}}
+\index{set\_flee@{set\_flee}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_flee()}{set\_flee()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+flee (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e}{FLEE}} $>$}]{flee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a64cada803d175a1c48c3f20bc220f137_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a64cada803d175a1c48c3f20bc220f137_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a33a351035065b0f50ef986e8377b5796}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a33a351035065b0f50ef986e8377b5796} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_hair\_color@{set\_hair\_color}}
+\index{set\_hair\_color@{set\_hair\_color}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_hair\_color()}{set\_hair\_color()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+hair\+\_\+color (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color}{Hair\+Color}} $>$}]{hc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a33a351035065b0f50ef986e8377b5796_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_abb14f1b94f39e727bf5bc12c1ccf36a6}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_abb14f1b94f39e727bf5bc12c1ccf36a6} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_hair\_style@{set\_hair\_style}}
+\index{set\_hair\_style@{set\_hair\_style}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_hair\_style()}{set\_hair\_style()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+hair\+\_\+style (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style}{Hair\+Style}} $>$}]{hs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_abb14f1b94f39e727bf5bc12c1ccf36a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a15e0e0dfd8234e4ff67dc491548bd1}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a15e0e0dfd8234e4ff67dc491548bd1} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_head\_bottom\_sprite@{set\_head\_bottom\_sprite}}
+\index{set\_head\_bottom\_sprite@{set\_head\_bottom\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_head\_bottom\_sprite()}{set\_head\_bottom\_sprite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+head\+\_\+bottom\+\_\+sprite (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite}{Head\+Bottom\+Sprite}} $>$}]{hbs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a9a15e0e0dfd8234e4ff67dc491548bd1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a480e19e4f4aae712c525e112fa831148}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a480e19e4f4aae712c525e112fa831148} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_head\_mid\_sprite@{set\_head\_mid\_sprite}}
+\index{set\_head\_mid\_sprite@{set\_head\_mid\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_head\_mid\_sprite()}{set\_head\_mid\_sprite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+head\+\_\+mid\+\_\+sprite (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite}{Head\+Mid\+Sprite}} $>$}]{hms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a480e19e4f4aae712c525e112fa831148_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a66462639104cf05939253c6edc837d9b}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a66462639104cf05939253c6edc837d9b} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_head\_top\_sprite@{set\_head\_top\_sprite}}
+\index{set\_head\_top\_sprite@{set\_head\_top\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_head\_top\_sprite()}{set\_head\_top\_sprite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+head\+\_\+top\+\_\+sprite (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite}{Head\+Top\+Sprite}} $>$}]{hts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a66462639104cf05939253c6edc837d9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a44d607a7a5ee26a7b72ae2ed61a5d806}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a44d607a7a5ee26a7b72ae2ed61a5d806} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_hit@{set\_hit}}
+\index{set\_hit@{set\_hit}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_hit()}{set\_hit()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+hit (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t}{HIT}} $>$}]{hit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a44d607a7a5ee26a7b72ae2ed61a5d806_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a44d607a7a5ee26a7b72ae2ed61a5d806_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a54c90c6e343ec4f7d1452f4d129f6b49}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a54c90c6e343ec4f7d1452f4d129f6b49} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_honor@{set\_honor}}
+\index{set\_honor@{set\_honor}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_honor()}{set\_honor()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+honor (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor}{Honor}} $>$}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a54c90c6e343ec4f7d1452f4d129f6b49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aaca463d83c6364017e03fc1402abf83e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aaca463d83c6364017e03fc1402abf83e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_initialized@{set\_initialized}}
+\index{set\_initialized@{set\_initialized}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_initialized()}{set\_initialized()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+initialized (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aaca463d83c6364017e03fc1402abf83e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ade8d8342c45e2277ae7e94acabff5e3c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ade8d8342c45e2277ae7e94acabff5e3c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_intelligence@{set\_intelligence}}
+\index{set\_intelligence@{set\_intelligence}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_intelligence()}{set\_intelligence()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+intelligence (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}} $>$}]{int\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ade8d8342c45e2277ae7e94acabff5e3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a13d59696433a5150779180fdbba424ec}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a13d59696433a5150779180fdbba424ec} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_intelligence\_cost@{set\_intelligence\_cost}}
+\index{set\_intelligence\_cost@{set\_intelligence\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_intelligence\_cost()}{set\_intelligence\_cost()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+intelligence\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost}{Intelligence\+Point\+Cost}} $>$}]{int\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a13d59696433a5150779180fdbba424ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a0096a3938676eff63a2a357b7b5f4497}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a0096a3938676eff63a2a357b7b5f4497} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_job\_experience@{set\_job\_experience}}
+\index{set\_job\_experience@{set\_job\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_job\_experience()}{set\_job\_experience()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+job\+\_\+experience (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{Job\+Experience}} $>$}]{jexp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a0096a3938676eff63a2a357b7b5f4497_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a25adcaad323d79e1ceeb75119f5e7c50}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a25adcaad323d79e1ceeb75119f5e7c50} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_job\_level@{set\_job\_level}}
+\index{set\_job\_level@{set\_job\_level}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_job\_level()}{set\_job\_level()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+job\+\_\+level (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{Job\+Level}} $>$}]{jlvl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a25adcaad323d79e1ceeb75119f5e7c50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_af9f46a7eb8bd817c2f8e348b157b060f}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_af9f46a7eb8bd817c2f8e348b157b060f} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_luck@{set\_luck}}
+\index{set\_luck@{set\_luck}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_luck()}{set\_luck()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+luck (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}} $>$}]{luck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_af9f46a7eb8bd817c2f8e348b157b060f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_af9f46a7eb8bd817c2f8e348b157b060f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a88b41b9e322099a636fb7de279b5bba6}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a88b41b9e322099a636fb7de279b5bba6} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_luck\_cost@{set\_luck\_cost}}
+\index{set\_luck\_cost@{set\_luck\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_luck\_cost()}{set\_luck\_cost()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+luck\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost}{Luck\+Point\+Cost}} $>$}]{luck }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a88b41b9e322099a636fb7de279b5bba6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a88b41b9e322099a636fb7de279b5bba6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a729bb4225c1486ae541dcb5bbca9dff8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a729bb4225c1486ae541dcb5bbca9dff8} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_manner@{set\_manner}}
+\index{set\_manner@{set\_manner}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_manner()}{set\_manner()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+manner (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner}{Manner}} $>$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a729bb4225c1486ae541dcb5bbca9dff8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa0568a6975b602106c42d24c68886ddd}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa0568a6975b602106c42d24c68886ddd} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_max\_hp@{set\_max\_hp}}
+\index{set\_max\_hp@{set\_max\_hp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_max\_hp()}{set\_max\_hp()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+max\+\_\+hp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p}{Max\+HP}} $>$}]{max\+\_\+hp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa0568a6975b602106c42d24c68886ddd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa0568a6975b602106c42d24c68886ddd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a7f20566f526671a05b4d239faf002159}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a7f20566f526671a05b4d239faf002159} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_max\_sp@{set\_max\_sp}}
+\index{set\_max\_sp@{set\_max\_sp}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_max\_sp()}{set\_max\_sp()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+max\+\_\+sp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p}{Max\+SP}} $>$}]{max\+\_\+sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7f20566f526671a05b4d239faf002159_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7f20566f526671a05b4d239faf002159_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a25ca4000bcb068d5b8e193b7eb834d0a}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a25ca4000bcb068d5b8e193b7eb834d0a} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_max\_weight@{set\_max\_weight}}
+\index{set\_max\_weight@{set\_max\_weight}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_max\_weight()}{set\_max\_weight()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+max\+\_\+weight (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight}{Max\+Weight}} $>$}]{mw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a25ca4000bcb068d5b8e193b7eb834d0a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a7363cf4df46a27f488c24e2d668d18a8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a7363cf4df46a27f488c24e2d668d18a8} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_movement\_speed@{set\_movement\_speed}}
+\index{set\_movement\_speed@{set\_movement\_speed}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_movement\_speed()}{set\_movement\_speed()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+movement\+\_\+speed (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed}{Movement\+Speed}} $>$}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7363cf4df46a27f488c24e2d668d18a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_af9d890c5fefde058fcf7a698fdc2c7d3}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_af9d890c5fefde058fcf7a698fdc2c7d3} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_next\_base\_experience@{set\_next\_base\_experience}}
+\index{set\_next\_base\_experience@{set\_next\_base\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_next\_base\_experience()}{set\_next\_base\_experience()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+next\+\_\+base\+\_\+experience (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience}{Next\+Base\+Experience}} $>$}]{nbexp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_af9d890c5fefde058fcf7a698fdc2c7d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a081ab21a146a77edca8414de36d107b8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a081ab21a146a77edca8414de36d107b8} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_next\_job\_experience@{set\_next\_job\_experience}}
+\index{set\_next\_job\_experience@{set\_next\_job\_experience}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_next\_job\_experience()}{set\_next\_job\_experience()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+next\+\_\+job\+\_\+experience (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience}{Next\+Job\+Experience}} $>$}]{njexp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a081ab21a146a77edca8414de36d107b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a72630163a8fd36ee4893b3d978a005c8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a72630163a8fd36ee4893b3d978a005c8} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_robe\_sprite@{set\_robe\_sprite}}
+\index{set\_robe\_sprite@{set\_robe\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_robe\_sprite()}{set\_robe\_sprite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+robe\+\_\+sprite (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite}{Robe\+Sprite}} $>$}]{rs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a72630163a8fd36ee4893b3d978a005c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a235ca562b4b33e46e78edab0b016656a}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a235ca562b4b33e46e78edab0b016656a} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_shield\_sprite@{set\_shield\_sprite}}
+\index{set\_shield\_sprite@{set\_shield\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_shield\_sprite()}{set\_shield\_sprite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+shield\+\_\+sprite (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite}{Shield\+Sprite}} $>$}]{ss }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a235ca562b4b33e46e78edab0b016656a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a6b67d365434d6313b20395dd211e372f}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a6b67d365434d6313b20395dd211e372f} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_size@{set\_size}}
+\index{set\_size@{set\_size}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_size()}{set\_size()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+size (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size}{Entity\+Size}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a6b67d365434d6313b20395dd211e372f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a4ae1a92c53f19cd0e8357faff2201c27}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a4ae1a92c53f19cd0e8357faff2201c27} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_skill\_point@{set\_skill\_point}}
+\index{set\_skill\_point@{set\_skill\_point}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_skill\_point()}{set\_skill\_point()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+skill\+\_\+point (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point}{Skill\+Point}} $>$}]{sk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a4ae1a92c53f19cd0e8357faff2201c27_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a3ea4a0ef4f340e99473b62e7b5a5f202}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a3ea4a0ef4f340e99473b62e7b5a5f202} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_soft\_def@{set\_soft\_def}}
+\index{set\_soft\_def@{set\_soft\_def}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_soft\_def()}{set\_soft\_def()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+soft\+\_\+def (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f}{Soft\+DEF}} $>$}]{sdef }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a3ea4a0ef4f340e99473b62e7b5a5f202_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a3069a8f80c5daae5170c73614a4881a9}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a3069a8f80c5daae5170c73614a4881a9} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_soft\_mdef@{set\_soft\_mdef}}
+\index{set\_soft\_mdef@{set\_soft\_mdef}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_soft\_mdef()}{set\_soft\_mdef()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+soft\+\_\+mdef (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f}{Soft\+MDEF}} $>$}]{smdef }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a3069a8f80c5daae5170c73614a4881a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a3a67fa244040ce2efcf3b623db16dd77}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a3a67fa244040ce2efcf3b623db16dd77} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_status\_atk@{set\_status\_atk}}
+\index{set\_status\_atk@{set\_status\_atk}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_status\_atk()}{set\_status\_atk()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+status\+\_\+atk (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k}{Status\+ATK}} $>$}]{satk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a3a67fa244040ce2efcf3b623db16dd77_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a4abaeb08a60efdbb2231598ed0198503}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a4abaeb08a60efdbb2231598ed0198503} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_status\_matk@{set\_status\_matk}}
+\index{set\_status\_matk@{set\_status\_matk}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_status\_matk()}{set\_status\_matk()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+status\+\_\+matk (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k}{Status\+MATK}} $>$}]{smatk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a4abaeb08a60efdbb2231598ed0198503_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aea7be3cea12c5d6f5b54ed3b8af74e37}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aea7be3cea12c5d6f5b54ed3b8af74e37} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_status\_point@{set\_status\_point}}
+\index{set\_status\_point@{set\_status\_point}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_status\_point()}{set\_status\_point()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+status\+\_\+point (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point}{Status\+Point}} $>$}]{st }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aea7be3cea12c5d6f5b54ed3b8af74e37_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_acd6a9d1871a0f6dd7ad12bf940281b80}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_acd6a9d1871a0f6dd7ad12bf940281b80} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_strength@{set\_strength}}
+\index{set\_strength@{set\_strength}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_strength()}{set\_strength()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+strength (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}} $>$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_acd6a9d1871a0f6dd7ad12bf940281b80_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a34a0155c67881afe2be516899a466cd7}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a34a0155c67881afe2be516899a466cd7} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_strength\_cost@{set\_strength\_cost}}
+\index{set\_strength\_cost@{set\_strength\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_strength\_cost()}{set\_strength\_cost()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+strength\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost}{Strength\+Point\+Cost}} $>$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a34a0155c67881afe2be516899a466cd7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aaa617edd90ae68beab002999bc929b49}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aaa617edd90ae68beab002999bc929b49} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_virtue@{set\_virtue}}
+\index{set\_virtue@{set\_virtue}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_virtue()}{set\_virtue()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+virtue (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue}{Virtue}} $>$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aaa617edd90ae68beab002999bc929b49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaff7503f1da5cd644ecad0578a3a906}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaff7503f1da5cd644ecad0578a3a906} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_vitality@{set\_vitality}}
+\index{set\_vitality@{set\_vitality}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_vitality()}{set\_vitality()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+vitality (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}} $>$}]{vit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aeaff7503f1da5cd644ecad0578a3a906_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aab121dffcaed44422f4b2d81eb0b6ede}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aab121dffcaed44422f4b2d81eb0b6ede} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_vitality\_cost@{set\_vitality\_cost}}
+\index{set\_vitality\_cost@{set\_vitality\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_vitality\_cost()}{set\_vitality\_cost()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+vitality\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost}{Vitality\+Point\+Cost}} $>$}]{vit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aab121dffcaed44422f4b2d81eb0b6ede_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a99ee6fed5e171270f09d4508108c39dc}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a99ee6fed5e171270f09d4508108c39dc} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_weapon\_sprite@{set\_weapon\_sprite}}
+\index{set\_weapon\_sprite@{set\_weapon\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_weapon\_sprite()}{set\_weapon\_sprite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+weapon\+\_\+sprite (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite}{Weapon\+Sprite}} $>$}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a99ee6fed5e171270f09d4508108c39dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a9c18ace1f4540f5981637abefec1e2b1}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a9c18ace1f4540f5981637abefec1e2b1} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!set\_zeny@{set\_zeny}}
+\index{set\_zeny@{set\_zeny}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{set\_zeny()}{set\_zeny()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::set\+\_\+zeny (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny}{Zeny}} $>$}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a9c18ace1f4540f5981637abefec1e2b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab5760eedf9003845bfe57bee176bf42c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab5760eedf9003845bfe57bee176bf42c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!shield\_sprite@{shield\_sprite}}
+\index{shield\_sprite@{shield\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{shield\_sprite()}{shield\_sprite()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite}{Shield\+Sprite}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::shield\+\_\+sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ab5760eedf9003845bfe57bee176bf42c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a0eeebbbda2daa68114ac3e68f130ce59}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a0eeebbbda2daa68114ac3e68f130ce59} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!size@{size}}
+\index{size@{size}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size}{Entity\+Size}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a7c802bc81fffb14cbc87cb9089616e8e}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a7c802bc81fffb14cbc87cb9089616e8e} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!skill\_point@{skill\_point}}
+\index{skill\_point@{skill\_point}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{skill\_point()}{skill\_point()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point}{Skill\+Point}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::skill\+\_\+point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a7c802bc81fffb14cbc87cb9089616e8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ad5eb1675ab4f69e924bd6d6b84f515ea}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ad5eb1675ab4f69e924bd6d6b84f515ea} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!soft\_def@{soft\_def}}
+\index{soft\_def@{soft\_def}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{soft\_def()}{soft\_def()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f}{Soft\+DEF}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::soft\+\_\+def (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ad5eb1675ab4f69e924bd6d6b84f515ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa70986ba24fb8893a45897a38de11d17}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa70986ba24fb8893a45897a38de11d17} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!soft\_mdef@{soft\_mdef}}
+\index{soft\_mdef@{soft\_mdef}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{soft\_mdef()}{soft\_mdef()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f}{Soft\+MDEF}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::soft\+\_\+mdef (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aa70986ba24fb8893a45897a38de11d17_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a76dce588ac948a24dfd02ba5142fa33c}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a76dce588ac948a24dfd02ba5142fa33c} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!status\_atk@{status\_atk}}
+\index{status\_atk@{status\_atk}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{status\_atk()}{status\_atk()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k}{Status\+ATK}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::status\+\_\+atk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sub\+Attributes Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a76dce588ac948a24dfd02ba5142fa33c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ae5058d51c9ac23c704e0dfb3fef30cdd}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ae5058d51c9ac23c704e0dfb3fef30cdd} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!status\_matk@{status\_matk}}
+\index{status\_matk@{status\_matk}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{status\_matk()}{status\_matk()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k}{Status\+MATK}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::status\+\_\+matk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ae5058d51c9ac23c704e0dfb3fef30cdd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab3c4214bd64d28f34af41e40d6210799}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab3c4214bd64d28f34af41e40d6210799} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!status\_point@{status\_point}}
+\index{status\_point@{status\_point}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{status\_point()}{status\_point()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point}{Status\+Point}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::status\+\_\+point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ab3c4214bd64d28f34af41e40d6210799_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a6ce9a300e77c72f9387c7e65e533ff72}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a6ce9a300e77c72f9387c7e65e533ff72} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!status\_registry@{status\_registry}}
+\index{status\_registry@{status\_registry}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{status\_registry()}{status\_registry()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_1_1_status_registry}{Status\+Registry}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::status\+\_\+registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a94c4d2579c1ccad9d1bfecb10c2c17ee}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a94c4d2579c1ccad9d1bfecb10c2c17ee} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!strength@{strength}}
+\index{strength@{strength}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{strength()}{strength()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::strength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Attributes Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a94c4d2579c1ccad9d1bfecb10c2c17ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_ab385837535a0544bfa694d084562b840}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_ab385837535a0544bfa694d084562b840} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!strength\_cost@{strength\_cost}}
+\index{strength\_cost@{strength\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{strength\_cost()}{strength\_cost()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost}{Strength\+Point\+Cost}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::strength\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_ab385837535a0544bfa694d084562b840_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_af6246fa68a723217e5bc1016e62a4eca}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_af6246fa68a723217e5bc1016e62a4eca} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!virtue@{virtue}}
+\index{virtue@{virtue}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{virtue()}{virtue()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue}{Virtue}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::virtue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_af6246fa68a723217e5bc1016e62a4eca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aed37754efda486d0e9324e99692b34f8}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aed37754efda486d0e9324e99692b34f8} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!vitality@{vitality}}
+\index{vitality@{vitality}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{vitality()}{vitality()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::vitality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_aed37754efda486d0e9324e99692b34f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a45caf99fced2d89568be3be4b3cce16f}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a45caf99fced2d89568be3be4b3cce16f} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!vitality\_cost@{vitality\_cost}}
+\index{vitality\_cost@{vitality\_cost}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{vitality\_cost()}{vitality\_cost()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost}{Vitality\+Point\+Cost}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::vitality\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a45caf99fced2d89568be3be4b3cce16f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a2cebf1930809d5c43b585978f7627bcc}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a2cebf1930809d5c43b585978f7627bcc} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!weapon\_sprite@{weapon\_sprite}}
+\index{weapon\_sprite@{weapon\_sprite}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{weapon\_sprite()}{weapon\_sprite()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite}{Weapon\+Sprite}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::weapon\+\_\+sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_a2cebf1930809d5c43b585978f7627bcc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_adb624e7552cdfc3c6dd29e69bcb6983f}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_adb624e7552cdfc3c6dd29e69bcb6983f} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!zeny@{zeny}}
+\index{zeny@{zeny}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{zeny()}{zeny()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny}{Zeny}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::zeny (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_status_adb624e7552cdfc3c6dd29e69bcb6983f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fcbd59350a64ea21e0ee6bce980fade}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_a5fcbd59350a64ea21e0ee6bce980fade} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!\_is\_initialized@{\_is\_initialized}}
+\index{\_is\_initialized@{\_is\_initialized}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{\_is\_initialized}{\_is\_initialized}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+\_\+is\+\_\+initialized \{ false \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5f0482039b3cf8310a7f4c2627f2038}\label{class_horizon_1_1_zone_1_1_traits_1_1_status_aa5f0482039b3cf8310a7f4c2627f2038} 
+\index{Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}!\_type@{\_type}}
+\index{\_type@{\_type}!Horizon::Zone::Traits::Status@{Horizon::Zone::Traits::Status}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_a1fa5cdbc1a545e8f705067e0003f1f75}{entity\+\_\+type}} Horizon\+::\+Zone\+::\+Traits\+::\+Status\+::\+\_\+type \{ \mbox{\hyperlink{_entity_definitions_8hpp_a1fa5cdbc1a545e8f705067e0003f1f75afe001c60f424227b9cb28c1cb272a77b}{ENTITY\+\_\+\+PLAYER}} \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_status_8hpp}{Status.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_status_8cpp}{Status.\+cpp}}\end{DoxyCompactItemize}

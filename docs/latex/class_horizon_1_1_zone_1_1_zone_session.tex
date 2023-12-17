@@ -1,0 +1,337 @@
+\doxysection{Horizon\+::Zone\+::Zone\+Session Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_zone_session}{}\label{class_horizon_1_1_zone_1_1_zone_session}\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+
+
+{\ttfamily \#include $<$Zone\+Session.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Zone\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_horizon_1_1_zone_1_1_zone_session__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Zone\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_horizon_1_1_zone_1_1_zone_session__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a2ddf847d865b872617502a9d5d6a4d76}{Zone\+Session}} (int64\+\_\+t uid, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket}{Zone\+Socket}} $>$ socket)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a98e96014347cbd1a3a1ce88e102940b9}{\texorpdfstring{$\sim$}{\string~}\+Zone\+Session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a67b49f3dc123b0e08fba0cda6a72665c}{transmit\+\_\+buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \+\_\+buffer, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Queues a buffer to be sent to the client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_ae2722c494eb0963208af2463ee3693d6}{update}} (uint32\+\_\+t diff)
+\begin{DoxyCompactList}\small\item\em Update loop for each \doxylink{namespace_horizon_1_1_zone}{Zone} Session. @thread called from \doxylink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_afbcb8b4309f941dde861bf3507364908}{perform\+\_\+cleanup}} ()
+\begin{DoxyCompactList}\small\item\em Performs generic logout of player in cases where the connection was closed abruptly or by instruction. Also marks the player for removal from the \doxylink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}. @thread Called from the Network\+Thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_acdf950989f1132f981dfe01d4b9f2aba}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the zone session\textquotesingle{}s members. @thread Initialized from the Network Thread after socket and session creation. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_client_interface}{Zone\+Client\+Interface}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a58187605b8e1c2963358bc2cac14b586}{clif}} ()
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a66a918cc97d8a79b69f0b3811151dfa3}{pkt\+\_\+tbl}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a0826dd04893bad38a9d2b1d77b52b9b3}{player}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a2e10d1ed178b769980f1ba9ff49a5ecb}{set\+\_\+player}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ pl)
+\item 
+std\+::string \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a3f275922f472182277b669a75b62216b}{get\+\_\+map\+\_\+name}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a2a6042423d3f1395ed2dade22613d87a}{set\+\_\+map\+\_\+name}} (std\+::string map\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session$<$ Zone\+Socket, Zone\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a4bd1f95d79df62511ef13833a850177f}{Session}} (int64\+\_\+t uid, std\+::weak\+\_\+ptr$<$ Zone\+Socket $>$ socket)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a2896280f57643ce058317c0a3281f333}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Zone\+Socket $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a659211b432102904d71e943a6fb64f89}{get\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Get the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a8c0962c994001e135aaac3b4d8006b65}{set\+\_\+socket}} (std\+::weak\+\_\+ptr$<$ Zone\+Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Set the socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a76dae24907a98fb3e4f4160e8d3aaa26}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Called to verify if the session is initialized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_abf7c01b5b5e7d010b3d296629ad87426}{set\+\_\+initialized}} (bool initialized)
+\begin{DoxyCompactList}\small\item\em Set whether the session is initialized or not. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a7627c9890ed35856be3bb4412e70e395}{get\+\_\+session\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the unique id of the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_client_interface}{Zone\+Client\+Interface}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a8d1e3f944283f30a9e409ca5db2202b3}{\+\_\+clif}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_aced064093a760f3ff0f4287922d3a0f9}{\+\_\+pkt\+\_\+tbl}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a34cd9e9029146a12fb8ccb02de2d611e}{\+\_\+player}}
+\item 
+std\+::string \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a02871bcda314d0eee50f5580f4a32cbb}{\+\_\+map\+\_\+name}} \{"{}"{}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session} is responsible for handling the session of a client. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a2ddf847d865b872617502a9d5d6a4d76}\label{class_horizon_1_1_zone_1_1_zone_session_a2ddf847d865b872617502a9d5d6a4d76} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!ZoneSession@{ZoneSession}}
+\index{ZoneSession@{ZoneSession}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{ZoneSession()}{ZoneSession()}}
+{\footnotesize\ttfamily Zone\+Session\+::\+Zone\+Session (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{uid,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket}{Zone\+Socket}} $>$}]{socket }\end{DoxyParamCaption})}
+
+This is the constructor of the class \doxylink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}. 
+\begin{DoxyParams}{Parameters}
+{\em uid} & is a int64\+\_\+t variable which is used to handle the unique id of the session. \\
+\hline
+{\em socket} & is a shared pointer of type \doxylink{class_horizon_1_1_zone_1_1_zone_socket}{Zone\+Socket} which is used to handle the socket. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a98e96014347cbd1a3a1ce88e102940b9}\label{class_horizon_1_1_zone_1_1_zone_session_a98e96014347cbd1a3a1ce88e102940b9} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!````~ZoneSession@{\texorpdfstring{$\sim$}{\string~}ZoneSession}}
+\index{````~ZoneSession@{\texorpdfstring{$\sim$}{\string~}ZoneSession}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ZoneSession()}{\string~ZoneSession()}}
+{\footnotesize\ttfamily Zone\+Session\+::\texorpdfstring{$\sim$}{\string~}\+Zone\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the destructor of the class \doxylink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a58187605b8e1c2963358bc2cac14b586}\label{class_horizon_1_1_zone_1_1_zone_session_a58187605b8e1c2963358bc2cac14b586} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!clif@{clif}}
+\index{clif@{clif}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{clif()}{clif()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_client_interface}{Zone\+Client\+Interface}} $>$ \& Horizon\+::\+Zone\+::\+Zone\+Session\+::clif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function is a getter function which is used to get the client interface. \begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Zone\+Client\+Interface$>$ \& 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a3f275922f472182277b669a75b62216b}\label{class_horizon_1_1_zone_1_1_zone_session_a3f275922f472182277b669a75b62216b} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!get\_map\_name@{get\_map\_name}}
+\index{get\_map\_name@{get\_map\_name}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{get\_map\_name()}{get\_map\_name()}}
+{\footnotesize\ttfamily std\+::string Horizon\+::\+Zone\+::\+Zone\+Session\+::get\+\_\+map\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function is a getter function which is used to get the map name. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_session_a3f275922f472182277b669a75b62216b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_acdf950989f1132f981dfe01d4b9f2aba}\label{class_horizon_1_1_zone_1_1_zone_session_acdf950989f1132f981dfe01d4b9f2aba} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Zone\+Session\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the zone session\textquotesingle{}s members. @thread Initialized from the Network Thread after socket and session creation. 
+
+This function is used to handle the initialization of the session. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a718a6229c5a8e917edc7cc1872b51690}{Horizon\+::\+Networking\+::\+Session$<$ Zone\+Socket, Zone\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_session_acdf950989f1132f981dfe01d4b9f2aba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_afbcb8b4309f941dde861bf3507364908}\label{class_horizon_1_1_zone_1_1_zone_session_afbcb8b4309f941dde861bf3507364908} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!perform\_cleanup@{perform\_cleanup}}
+\index{perform\_cleanup@{perform\_cleanup}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{perform\_cleanup()}{perform\_cleanup()}}
+{\footnotesize\ttfamily void Zone\+Session\+::perform\+\_\+cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Performs generic logout of player in cases where the connection was closed abruptly or by instruction. Also marks the player for removal from the \doxylink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}. @thread Called from the Network\+Thread. 
+
+This function is used to handle the cleanup of the session. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_session_afbcb8b4309f941dde861bf3507364908_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a66a918cc97d8a79b69f0b3811151dfa3}\label{class_horizon_1_1_zone_1_1_zone_session_a66a918cc97d8a79b69f0b3811151dfa3} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!pkt\_tbl@{pkt\_tbl}}
+\index{pkt\_tbl@{pkt\_tbl}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{pkt\_tbl()}{pkt\_tbl()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \& Horizon\+::\+Zone\+::\+Zone\+Session\+::pkt\+\_\+tbl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function is a getter function which is used to get the client packet length table. \begin{DoxyReturn}{Returns}
+std\+::unique\+\_\+ptr$<$\+Client\+Packet\+Length\+Table$>$ \& 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a0826dd04893bad38a9d2b1d77b52b9b3}\label{class_horizon_1_1_zone_1_1_zone_session_a0826dd04893bad38a9d2b1d77b52b9b3} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!player@{player}}
+\index{player@{player}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{player()}{player()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ Horizon\+::\+Zone\+::\+Zone\+Session\+::player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function is a getter function which is used to get the player. \begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Entities\+::\+Player$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a2a6042423d3f1395ed2dade22613d87a}\label{class_horizon_1_1_zone_1_1_zone_session_a2a6042423d3f1395ed2dade22613d87a} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!set\_map\_name@{set\_map\_name}}
+\index{set\_map\_name@{set\_map\_name}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{set\_map\_name()}{set\_map\_name()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Zone\+Session\+::set\+\_\+map\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{map\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a2e10d1ed178b769980f1ba9ff49a5ecb}\label{class_horizon_1_1_zone_1_1_zone_session_a2e10d1ed178b769980f1ba9ff49a5ecb} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!set\_player@{set\_player}}
+\index{set\_player@{set\_player}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{set\_player()}{set\_player()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Zone\+Session\+::set\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$}]{pl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function is a setter function which is used to set the player. 
+\begin{DoxyParams}{Parameters}
+{\em pl} & is a shared pointer of type \doxylink{class_player}{Player} which is used to set the \+\_\+player variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a67b49f3dc123b0e08fba0cda6a72665c}\label{class_horizon_1_1_zone_1_1_zone_session_a67b49f3dc123b0e08fba0cda6a72665c} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!transmit\_buffer@{transmit\_buffer}}
+\index{transmit\_buffer@{transmit\_buffer}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{transmit\_buffer()}{transmit\_buffer()}}
+{\footnotesize\ttfamily void Zone\+Session\+::transmit\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}}}]{\+\_\+buffer,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Queues a buffer to be sent to the client. 
+
+This function is used to queue the buffer to be sent to the client. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+buffer} & is a reference to a \doxylink{class_byte_buffer}{Byte\+Buffer} which is used to handle the buffer. \\
+\hline
+{\em size} & is a size\+\_\+t variable which is used to handle the size of the buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyParagraph}{Side Effects\+: None}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Thread Safety\+: None}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Sync/\+Async\+: None}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Reentrancy\+: None }
+
+\end{DoxyParagraph}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+buffer} & The buffer to be sent. \\
+\hline
+{\em size} & The size of the buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_session_a67b49f3dc123b0e08fba0cda6a72665c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_ae2722c494eb0963208af2463ee3693d6}\label{class_horizon_1_1_zone_1_1_zone_session_ae2722c494eb0963208af2463ee3693d6} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!update@{update}}
+\index{update@{update}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Zone\+Session\+::update (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update loop for each \doxylink{namespace_horizon_1_1_zone}{Zone} Session. @thread called from \doxylink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}. 
+
+This function is used to handle the incoming packets from the client and categorize the packets to be processed by the server. 
+\begin{DoxyParams}{Parameters}
+{\em diff} & is a uint32\+\_\+t variable which is used to handle the time difference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a08de1249359a3b2b8519bfc94afec177}{Horizon\+::\+Networking\+::\+Session$<$ Zone\+Socket, Zone\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_session_ae2722c494eb0963208af2463ee3693d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a8d1e3f944283f30a9e409ca5db2202b3}\label{class_horizon_1_1_zone_1_1_zone_session_a8d1e3f944283f30a9e409ca5db2202b3} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!\_clif@{\_clif}}
+\index{\_clif@{\_clif}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{\_clif}{\_clif}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_client_interface}{Zone\+Client\+Interface}}$>$ Horizon\+::\+Zone\+::\+Zone\+Session\+::\+\_\+clif\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a02871bcda314d0eee50f5580f4a32cbb}\label{class_horizon_1_1_zone_1_1_zone_session_a02871bcda314d0eee50f5580f4a32cbb} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!\_map\_name@{\_map\_name}}
+\index{\_map\_name@{\_map\_name}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{\_map\_name}{\_map\_name}}
+{\footnotesize\ttfamily std\+::string Horizon\+::\+Zone\+::\+Zone\+Session\+::\+\_\+map\+\_\+name \{"{}"{}\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_aced064093a760f3ff0f4287922d3a0f9}\label{class_horizon_1_1_zone_1_1_zone_session_aced064093a760f3ff0f4287922d3a0f9} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!\_pkt\_tbl@{\_pkt\_tbl}}
+\index{\_pkt\_tbl@{\_pkt\_tbl}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{\_pkt\_tbl}{\_pkt\_tbl}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}}$>$ Horizon\+::\+Zone\+::\+Zone\+Session\+::\+\_\+pkt\+\_\+tbl\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_session_a34cd9e9029146a12fb8ccb02de2d611e}\label{class_horizon_1_1_zone_1_1_zone_session_a34cd9e9029146a12fb8ccb02de2d611e} 
+\index{Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}!\_player@{\_player}}
+\index{\_player@{\_player}!Horizon::Zone::ZoneSession@{Horizon::Zone::ZoneSession}}
+\doxysubsubsection{\texorpdfstring{\_player}{\_player}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}}$>$ Horizon\+::\+Zone\+::\+Zone\+Session\+::\+\_\+player\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Session/\mbox{\hyperlink{_zone_session_8hpp}{Zone\+Session.\+hpp}}\item 
+src/\+Server/\+Zone/\+Session/\mbox{\hyperlink{_zone_session_8cpp}{Zone\+Session.\+cpp}}\end{DoxyCompactItemize}

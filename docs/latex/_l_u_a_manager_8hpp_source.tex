@@ -1,0 +1,116 @@
+\doxysection{LUAManager.\+hpp}
+\hypertarget{_l_u_a_manager_8hpp_source}{}\label{_l_u_a_manager_8hpp_source}\index{src/Server/Zone/LUA/LUAManager.hpp@{src/Server/Zone/LUA/LUAManager.hpp}}
+\mbox{\hyperlink{_l_u_a_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_LUAMANAGER}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_LUAMANAGER}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_n_p_c_definitions_8hpp}{Server/Zone/Definitions/NPCDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_definitions_8hpp}{Server/Zone/Definitions/MonsterDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_status_effect_component_8hpp}{Server/Zone/LUA/Components/StatusEffectComponent.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_skill_component_8hpp}{Server/Zone/LUA/Components/SkillComponent.hpp}}"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_combat_component_8hpp}{Server/Zone/LUA/Components/CombatComponent.hpp}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_component_8hpp}{Server/Zone/LUA/Components/EntityComponent.hpp}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_component_8hpp}{Server/Zone/LUA/Components/ItemComponent.hpp}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_component_8hpp}{Server/Zone/LUA/Components/MapComponent.hpp}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_component_8hpp}{Server/Zone/LUA/Components/MonsterComponent.hpp}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_n_p_c_component_8hpp}{Server/Zone/LUA/Components/NPCComponent.hpp}}"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_component_8hpp}{Server/Zone/LUA/Components/PlayerComponent.hpp}}"{}}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{class\ }NPC;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }Monster;}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }MapContainerThread;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager}{LUAManager}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{MapContainerThread}};}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager}{LUAManager}}(std::shared\_ptr<MapContainerThread>\ container);}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a72c116ac859185560e3c66404de7d319}{\string~LUAManager}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::shared\_ptr<MapContainerThread>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a12c37840c6098e9e03f82e40df7c476c}{get\_map\_container}}()\ \{\ \textcolor{keywordflow}{return}\ \_container.lock();\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a41d9d5dfe388e0b9528be9dd6990fd68}{initialize\_basic\_state}}(std::shared\_ptr<sol::state>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a5f9a41eb428bbd031bf7f82c1a074b6a}{initialize\_player\_state}}(std::shared\_ptr<sol::state>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a37540ec336b0c73309cc445ea21c3fb5}{initialize\_npc\_state}}(std::shared\_ptr<sol::state>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a5de66a23bfb64e81227ae197496918be}{initialize\_monster\_state}}(std::shared\_ptr<sol::state>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::shared\_ptr<PlayerComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_ad16ff2f04f630733dd1e1f620c1d57ba}{player}}()\ \{\ \textcolor{keywordflow}{return}\ \_player\_component;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ std::shared\_ptr<NPCComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a9e8c4fbfcc8a8ac65ebbc7d205bd4fb9}{npc}}()\ \{\ \textcolor{keywordflow}{return}\ \_npc\_component;\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ std::shared\_ptr<MonsterComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_aa6279efe6100060be197609d77a9a236}{monster}}()\ \{\ \textcolor{keywordflow}{return}\ \_monster\_component;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ std::shared\_ptr<MapComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{map}}()\ \{\ \textcolor{keywordflow}{return}\ \_map\_component;\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<ItemComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a054f41b93d24b9e731b26c7386350037}{item}}()\ \{\ \textcolor{keywordflow}{return}\ \_item\_component;\ \}}
+\DoxyCodeLine{00076\ \ \ \ \ std::shared\_ptr<EntityComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a9948ca55e1c0b51c30d212cf69c8c3e0}{entity}}()\ \{\ \textcolor{keywordflow}{return}\ \_entity\_component;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ std::shared\_ptr<SkillComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a9dacbf0e28adffe319af4fa52171e0fc}{skill}}()\ \{\ \textcolor{keywordflow}{return}\ \_skill\_component;\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ std::shared\_ptr<StatusEffectComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a159b546dd0be66f095e3d1f2ef6bc3ea}{status\_effect}}()\ \{\ \textcolor{keywordflow}{return}\ \_status\_effect\_component;\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ std::shared\_ptr<CombatComponent>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a20130f923bccfc4b1f9135244b1cf402}{combat}}()\ \{\ \textcolor{keywordflow}{return}\ \_combat\_component;\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::shared\_ptr<sol::state>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_ab5980477e069e94e9fec1a25e4d1c2e9}{lua\_state}}()\ \{\ \textcolor{keywordflow}{return}\ \_lua\_state;\ \}}
+\DoxyCodeLine{00082\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a939bf1aa58b950dd351f360b0f2a813e}{initialize\_for\_container}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_add5eb163d1c32dc3efd20df41e262eee}{finalize}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a4f81f6b91c332be8122bb52543966f6d}{prepare\_lua\_state}}(std::shared\_ptr<sol::state>\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{lua}});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_constants();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_scripts();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_scripts\_internal();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::vector<std::string>\ \_script\_files;}
+\DoxyCodeLine{00093\ \ \ \ \ std::shared\_ptr<sol::state>\ \_lua\_state;}
+\DoxyCodeLine{00094\ \ \ \ \ std::weak\_ptr<MapContainerThread>\ \_container;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ std::shared\_ptr<PlayerComponent>\ \_player\_component;}
+\DoxyCodeLine{00097\ \ \ \ \ std::shared\_ptr<NPCComponent>\ \_npc\_component;}
+\DoxyCodeLine{00098\ \ \ \ \ std::shared\_ptr<MonsterComponent>\ \_monster\_component;}
+\DoxyCodeLine{00099\ \ \ \ \ std::shared\_ptr<MapComponent>\ \_map\_component;}
+\DoxyCodeLine{00100\ \ \ \ \ std::shared\_ptr<ItemComponent>\ \_item\_component;}
+\DoxyCodeLine{00101\ \ \ \ \ std::shared\_ptr<EntityComponent>\ \_entity\_component;}
+\DoxyCodeLine{00102\ \ \ \ \ std::shared\_ptr<SkillComponent>\ \_skill\_component;}
+\DoxyCodeLine{00103\ \ \ \ \ std::shared\_ptr<StatusEffectComponent>\ \_status\_effect\_component;}
+\DoxyCodeLine{00104\ \ \ \ \ std::shared\_ptr<CombatComponent>\ \_combat\_component;}
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_LUAMANAGER\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

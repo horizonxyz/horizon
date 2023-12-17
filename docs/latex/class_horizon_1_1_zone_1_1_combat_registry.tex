@@ -1,0 +1,169 @@
+\doxysection{Horizon\+::Zone\+::Combat\+Registry Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_combat_registry}{}\label{class_horizon_1_1_zone_1_1_combat_registry}\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+
+
+{\ttfamily \#include $<$Combat.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_attribute_operation}{Attribute\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_stage}{Combat\+Stage}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_value_damage}{Combat\+Value\+Damage}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_value_healing}{Combat\+Value\+Healing}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_value_integer}{Combat\+Value\+Integer}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_compare_combat_operation}{Compare\+Combat\+Operation}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_combat_registry_1_1_compare_combat_stage}{Compare\+Combat\+Stage}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation}{Melee\+Execution\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_result_operation}{Melee\+Result\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_execution_operation}{Skill\+Execution\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_result_operation}{Skill\+Result\+Operation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_status_operation}{Status\+Operation}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31}{combat\+\_\+operation\+\_\+value\+\_\+type}} \{ \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a0c7a9a7cf4272e58179aa2e7de26436b}{COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+INTEGER}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a2f796b1ca5b478d599e03133417458c8}{COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+DAMAGE}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a471bc4ee9c58d267aeb36a9a42856e56}{COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+HEALING}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a61ac1764d283d269c277b65089310eff}{COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+STATUS}}
+, \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a8ce82631226ff6ce391d1e5577149fd3}{COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+NONE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_aa284f0b9aaf7fcfd4592f1e7b3ff3a63}{Combat\+Registry}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ entity)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a51cc0142c0a6d36e5fd37854871cff86}{\texorpdfstring{$\sim$}{\string~}\+Combat\+Registry}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a90dfaaf0e24f50fc31e4fff192b1f55c}{get\+\_\+entity}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_stage}{Combat\+Stage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_aaa80ec44c06e4baa73afb80c10ca422e}{create\+\_\+combat\+\_\+stage}} (int priority)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_ab9b75632fedffcfebf2dc9eeee2869eb}{queue\+\_\+combat\+\_\+stage}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_stage}{Combat\+Stage}} \texorpdfstring{$\ast$}{*}stage)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a990919ac7b3d4d6f0c741d74c6147534}{process\+\_\+queue}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31}\label{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!combat\_operation\_value\_type@{combat\_operation\_value\_type}}
+\index{combat\_operation\_value\_type@{combat\_operation\_value\_type}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{combat\_operation\_value\_type}{combat\_operation\_value\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::combat\+\_\+operation\+\_\+value\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_VALUE\_INTEGER@{COMBAT\_OPERATION\_VALUE\_INTEGER}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!COMBAT\_OPERATION\_VALUE\_INTEGER@{COMBAT\_OPERATION\_VALUE\_INTEGER}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a0c7a9a7cf4272e58179aa2e7de26436b}\label{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a0c7a9a7cf4272e58179aa2e7de26436b} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+INTEGER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_VALUE\_DAMAGE@{COMBAT\_OPERATION\_VALUE\_DAMAGE}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!COMBAT\_OPERATION\_VALUE\_DAMAGE@{COMBAT\_OPERATION\_VALUE\_DAMAGE}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a2f796b1ca5b478d599e03133417458c8}\label{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a2f796b1ca5b478d599e03133417458c8} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+DAMAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_VALUE\_HEALING@{COMBAT\_OPERATION\_VALUE\_HEALING}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!COMBAT\_OPERATION\_VALUE\_HEALING@{COMBAT\_OPERATION\_VALUE\_HEALING}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a471bc4ee9c58d267aeb36a9a42856e56}\label{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a471bc4ee9c58d267aeb36a9a42856e56} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+HEALING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_VALUE\_STATUS@{COMBAT\_OPERATION\_VALUE\_STATUS}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!COMBAT\_OPERATION\_VALUE\_STATUS@{COMBAT\_OPERATION\_VALUE\_STATUS}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a61ac1764d283d269c277b65089310eff}\label{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a61ac1764d283d269c277b65089310eff} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_VALUE\_NONE@{COMBAT\_OPERATION\_VALUE\_NONE}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!COMBAT\_OPERATION\_VALUE\_NONE@{COMBAT\_OPERATION\_VALUE\_NONE}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a8ce82631226ff6ce391d1e5577149fd3}\label{class_horizon_1_1_zone_1_1_combat_registry_a8aebfc0198073124b0d595bccd5f3d31a8ce82631226ff6ce391d1e5577149fd3} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+VALUE\+\_\+\+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_aa284f0b9aaf7fcfd4592f1e7b3ff3a63}\label{class_horizon_1_1_zone_1_1_combat_registry_aa284f0b9aaf7fcfd4592f1e7b3ff3a63} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!CombatRegistry@{CombatRegistry}}
+\index{CombatRegistry@{CombatRegistry}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{CombatRegistry()}{CombatRegistry()}}
+{\footnotesize\ttfamily Combat\+Registry\+::\+Combat\+Registry (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a51cc0142c0a6d36e5fd37854871cff86}\label{class_horizon_1_1_zone_1_1_combat_registry_a51cc0142c0a6d36e5fd37854871cff86} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!````~CombatRegistry@{\texorpdfstring{$\sim$}{\string~}CombatRegistry}}
+\index{````~CombatRegistry@{\texorpdfstring{$\sim$}{\string~}CombatRegistry}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CombatRegistry()}{\string~CombatRegistry()}}
+{\footnotesize\ttfamily Combat\+Registry\+::\texorpdfstring{$\sim$}{\string~}\+Combat\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_aaa80ec44c06e4baa73afb80c10ca422e}\label{class_horizon_1_1_zone_1_1_combat_registry_aaa80ec44c06e4baa73afb80c10ca422e} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!create\_combat\_stage@{create\_combat\_stage}}
+\index{create\_combat\_stage@{create\_combat\_stage}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{create\_combat\_stage()}{create\_combat\_stage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_stage}{Combat\+Stage}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Combat\+Registry\+::create\+\_\+combat\+\_\+stage (\begin{DoxyParamCaption}\item[{int}]{priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_aaa80ec44c06e4baa73afb80c10ca422e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a90dfaaf0e24f50fc31e4fff192b1f55c}\label{class_horizon_1_1_zone_1_1_combat_registry_a90dfaaf0e24f50fc31e4fff192b1f55c} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!get\_entity@{get\_entity}}
+\index{get\_entity@{get\_entity}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{get\_entity()}{get\_entity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Combat\+Registry\+::get\+\_\+entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_a990919ac7b3d4d6f0c741d74c6147534}\label{class_horizon_1_1_zone_1_1_combat_registry_a990919ac7b3d4d6f0c741d74c6147534} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!process\_queue@{process\_queue}}
+\index{process\_queue@{process\_queue}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{process\_queue()}{process\_queue()}}
+{\footnotesize\ttfamily void Combat\+Registry\+::process\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_a990919ac7b3d4d6f0c741d74c6147534_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_ab9b75632fedffcfebf2dc9eeee2869eb}\label{class_horizon_1_1_zone_1_1_combat_registry_ab9b75632fedffcfebf2dc9eeee2869eb} 
+\index{Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}!queue\_combat\_stage@{queue\_combat\_stage}}
+\index{queue\_combat\_stage@{queue\_combat\_stage}!Horizon::Zone::CombatRegistry@{Horizon::Zone::CombatRegistry}}
+\doxysubsubsection{\texorpdfstring{queue\_combat\_stage()}{queue\_combat\_stage()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::queue\+\_\+combat\+\_\+stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_stage}{Combat\+Stage}} \texorpdfstring{$\ast$}{*}}]{stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_ab9b75632fedffcfebf2dc9eeee2869eb_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\mbox{\hyperlink{_combat_8hpp}{Combat.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\mbox{\hyperlink{_combat_8cpp}{Combat.\+cpp}}\end{DoxyCompactItemize}

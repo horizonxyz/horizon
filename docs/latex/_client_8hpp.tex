@@ -1,0 +1,600 @@
+\doxysection{src/\+Server/\+Common/\+Configuration/\+Client.hpp File Reference}
+\hypertarget{_client_8hpp}{}\label{_client_8hpp}\index{src/Server/Common/Configuration/Client.hpp@{src/Server/Common/Configuration/Client.hpp}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for Client.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{_client_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_client_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__hc__character__list__data}{s\+\_\+hc\+\_\+character\+\_\+list\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\+\_\+\+UNIT\+\_\+\+NAME\+\_\+\+LENGTH}}~24
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_ae95494d5036e5f33258bdcee4bfb3f6b}{MAX\+\_\+\+PARTY\+\_\+\+NAME\+\_\+\+LENGTH}}~24
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_abae821b03e2a686ccc68b288b75fdd6e}{MAX\+\_\+\+GUILD\+\_\+\+NAME\+\_\+\+LENGTH}}~24
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_adba64c0e0fd376ef011ec018c13f0ef2}{MAX\+\_\+\+GUILD\+\_\+\+POSITION\+\_\+\+NAME\+\_\+\+LENGTH}}~24
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_ac32ea00c03c9a9afd1ffc9e1627a8506}{MAX\+\_\+\+USERNAME\+\_\+\+LENGTH}}~24
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_ad66fca7e296513623cb369c20bd5898a}{CLIENT\+\_\+\+BIRTHDATE\+\_\+\+STRING\+\_\+\+LENGTH}}~6
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_a4c7d2b1c3476afac8ffbddbb51cfd558}{MAX\+\_\+\+BIRTHDATE\+\_\+\+STRING\+\_\+\+LENGTH}}~\mbox{\hyperlink{_client_8hpp_ad66fca7e296513623cb369c20bd5898a}{CLIENT\+\_\+\+BIRTHDATE\+\_\+\+STRING\+\_\+\+LENGTH}} + 5
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_a71844e1b09e82f47bc287fdee4338608}{MAX\+\_\+\+PINCODE\+\_\+\+STRING\+\_\+\+LENGTH}}~5
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_a1659b77d6f36bc32eabfde54ef18de03}{MAX\+\_\+\+EMAIL\+\_\+\+LENGTH}}~40
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_a994853f194de06065d264d4292941de1}{MAX\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+STR\+\_\+\+LENGTH}}~16
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_a5457d92138b1582c69bed0aa20824def}{MAP\+\_\+\+NAME\+\_\+\+LENGTH}}~(11 + 1)
+\item 
+\#define \mbox{\hyperlink{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}{MAP\+\_\+\+NAME\+\_\+\+LENGTH\+\_\+\+EXT}}~(\mbox{\hyperlink{_client_8hpp_a5457d92138b1582c69bed0aa20824def}{MAP\+\_\+\+NAME\+\_\+\+LENGTH}} + 4)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}{character\+\_\+delete\+\_\+accept\+\_\+result}} \+: uint32\+\_\+t \{ \newline
+\mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930aa3e9b40d3c483312568e26019ea238b0}{CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a1eb57a63f599ebe689635b8d5d50a905}{CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+SUCCESS}} = 1
+, \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930aa689b299a9adc3dc1870af4546c8d246}{CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+SYSTEM\+\_\+\+ERR}} = 2
+, \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930af7876ffb03886965b9e85469eaff00c0}{CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+DATABASE\+\_\+\+ERR}} = 3
+, \newline
+\mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a8e014ceed139a2fa6fb6577138642f78}{CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+TIME\+\_\+\+ERR}} = 4
+, \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a243ecf9d489f5e1722ee9d0ad1dc1d72}{CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+BIRTHDAY\+\_\+\+ERR}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\+\_\+delete\+\_\+result}} \+: uint32\+\_\+t \{ \newline
+\mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fca3a9f5f21c8a3626839c8719735ca33ae}{CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fcad36f228f1e814a0be9583996347fa236}{CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+SUCCESS}} = 1
+, \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fca688a4555ea2f8d4299c794667dd2b282}{CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+SYSTEM\+\_\+\+ERR}} = 2
+, \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fcaae69bb5e6b9e4efd92f7b304fe7cf13f}{CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+DATABASE\+\_\+\+ERR}} = 3
+, \newline
+\mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fca97529875ec05f04fab54cf916ae568ed}{CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+GUILD\+\_\+\+ERR}} = 4
+, \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fca2582a0f6d06868bb00dae52e2fb49ff8}{CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+PARTY\+\_\+\+ERR}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__hc__character__list__data}{s\+\_\+hc\+\_\+character\+\_\+list\+\_\+data}} \mbox{\hyperlink{_client_8hpp_a57a03f206083f129f8d0166e3c64cd73}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a15dfd8acbf80f123942970f21f44f65d}{\+\_\+character\+\_\+id}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 4 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a6fdbcefffbc23dd6192d9968dfbe9664}{\+\_\+base\+\_\+experience}} \{ 0 \}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a6f8ed24939c800d505bf36718a0de606}{\+\_\+zeny}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 16 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_ac32532f843e369f768c40969e75f2891}{\+\_\+job\+\_\+experience}} \{ 0 \}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_ab47003e22e529fe85e24da591760b68e}{\+\_\+job\+\_\+level}} \{ 1 \}
+\begin{DoxyCompactList}\small\item\em 28 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_ae69c978dfb3319ca226bdbd49643ed19}{\+\_\+sc\+\_\+opt1}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 32 Probably OPT1 / 2 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a1b76e48a8b168163f4b6d467b16757b1}{\+\_\+sc\+\_\+opt2}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 36 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a4e54cdc7baa777ab9af553ebec5c51dc}{\+\_\+body\+\_\+state}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 40 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a3cf2b9c195648f1e8bf6df04ed6db20a}{\+\_\+virtue}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 44 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_client_8hpp_a3364cab08f22e97a0734e08c0c510c48}{\+\_\+honor}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 48 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a2f485d64d981b92a426d1e660cf29dcb}{\+\_\+status\+\_\+points}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 50 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a3a4533c9a7dd1cf01c7714f8dfa01f41}{\+\_\+hp}} \{ 1 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_adeb02eff680c6bae4c5fc811e50b3314}{\+\_\+maximum\+\_\+hp}} \{ 1 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a151eca1792e41a7034d810d8712ce868}{\+\_\+sp}} \{ 1 \}
+\begin{DoxyCompactList}\small\item\em 60 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_aebbe4dee66909e313b3117d1a2ac5749}{\+\_\+maximum\+\_\+sp}} \{ 1 \}
+\begin{DoxyCompactList}\small\item\em 62 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_afd5427b2b50b1b2fc7bf5173f14e5b45}{\+\_\+walk\+\_\+speed}} \{ \mbox{\hyperlink{_horizon_8hpp_acc076df423de72f5f7eb79b3744c7c1e}{DEFAULT\+\_\+\+MOVEMENT\+\_\+\+SPEED}} \}
+\begin{DoxyCompactList}\small\item\em 64 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_af1c81e472206e491b09ce74792f279b4}{\+\_\+job\+\_\+id}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 66 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a38a4dd080d718455fed904cdad568168}{\+\_\+hair\+\_\+view\+\_\+id}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 68 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a3ef40143b4c1255227bc72729a817d58}{\+\_\+weapon\+\_\+view\+\_\+id}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 72 OPTION\+\_\+\texorpdfstring{$\ast$}{*} in hercules. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_ac64fb20d24789551debe40691b3e66dd}{\+\_\+base\+\_\+level}} \{ 1 \}
+\begin{DoxyCompactList}\small\item\em 74 \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a485047ddc9a44db0dc73cc5e9d198d08}{\+\_\+skill\+\_\+point}} \{ 0 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a920845e9702aa05b01fa5a6377a2b778}{\+\_\+head\+\_\+bottom\+\_\+view\+\_\+id}} \{ 0 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a247da14f8aff690485b7dfe9041d5b64}{\+\_\+shield\+\_\+id}} \{ 0 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a8d76ec3299ffe57632819954f7e9cd6e}{\+\_\+head\+\_\+top\+\_\+view\+\_\+id}} \{ 0 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a6d9600db548ee53a453138bc49a438a2}{\+\_\+head\+\_\+mid\+\_\+view\+\_\+id}} \{ 0 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_a4a8390587c29f31abad4edf950aaa3b8}{\+\_\+hair\+\_\+color\+\_\+id}} \{ 0 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_aaea91629b342a493b91d36e5f1798b37}{\+\_\+clothes\+\_\+color\+\_\+id}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 88 \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{_client_8hpp_a2d461f6a1ad25090c5cf52cfda4aa3fe}{\+\_\+name}} \mbox{[}\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\+\_\+\+UNIT\+\_\+\+NAME\+\_\+\+LENGTH}}\mbox{]} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 112 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_client_8hpp_a1240ad9e6e86216117dc1bf3afe3a928}{\+\_\+strength}} \{ 1 \}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_client_8hpp_adfb29da28e45957623f838630986b6ee}{\+\_\+agility}} \{ 1 \}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_client_8hpp_a4d7af4d4f4a3694d7e9f9ca401594ba7}{\+\_\+vitality}} \{ 1 \}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_client_8hpp_afa1b790fb40a9f43df2246f32a349e17}{\+\_\+intelligence}} \{ 1 \}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_client_8hpp_ae622d8c5e3e65f4128135ca3aa1149d5}{\+\_\+dexterity}} \{ 1 \}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_client_8hpp_a6856bef7a0e0537686d84f274a733108}{\+\_\+luck}} \{ 1 \}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_client_8hpp_afd8df18c41151c52ec9cffb821711c9c}{\+\_\+char\+\_\+slot}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em 120 \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}{character\+\_\+delete\+\_\+accept\+\_\+result}} \mbox{\hyperlink{_client_8hpp_ae68714986c01e84c21aa9a2ca978fd95}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_client_8hpp_ad66fca7e296513623cb369c20bd5898a}\label{_client_8hpp_ad66fca7e296513623cb369c20bd5898a} 
+\index{Client.hpp@{Client.hpp}!CLIENT\_BIRTHDATE\_STRING\_LENGTH@{CLIENT\_BIRTHDATE\_STRING\_LENGTH}}
+\index{CLIENT\_BIRTHDATE\_STRING\_LENGTH@{CLIENT\_BIRTHDATE\_STRING\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_BIRTHDATE\_STRING\_LENGTH}{CLIENT\_BIRTHDATE\_STRING\_LENGTH}}
+{\footnotesize\ttfamily \#define CLIENT\+\_\+\+BIRTHDATE\+\_\+\+STRING\+\_\+\+LENGTH~6}
+
+\Hypertarget{_client_8hpp_a5457d92138b1582c69bed0aa20824def}\label{_client_8hpp_a5457d92138b1582c69bed0aa20824def} 
+\index{Client.hpp@{Client.hpp}!MAP\_NAME\_LENGTH@{MAP\_NAME\_LENGTH}}
+\index{MAP\_NAME\_LENGTH@{MAP\_NAME\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAP\_NAME\_LENGTH}{MAP\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+NAME\+\_\+\+LENGTH~(11 + 1)}
+
+\Hypertarget{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}\label{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974} 
+\index{Client.hpp@{Client.hpp}!MAP\_NAME\_LENGTH\_EXT@{MAP\_NAME\_LENGTH\_EXT}}
+\index{MAP\_NAME\_LENGTH\_EXT@{MAP\_NAME\_LENGTH\_EXT}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAP\_NAME\_LENGTH\_EXT}{MAP\_NAME\_LENGTH\_EXT}}
+{\footnotesize\ttfamily \#define MAP\+\_\+\+NAME\+\_\+\+LENGTH\+\_\+\+EXT~(\mbox{\hyperlink{_client_8hpp_a5457d92138b1582c69bed0aa20824def}{MAP\+\_\+\+NAME\+\_\+\+LENGTH}} + 4)}
+
+\Hypertarget{_client_8hpp_a4c7d2b1c3476afac8ffbddbb51cfd558}\label{_client_8hpp_a4c7d2b1c3476afac8ffbddbb51cfd558} 
+\index{Client.hpp@{Client.hpp}!MAX\_BIRTHDATE\_STRING\_LENGTH@{MAX\_BIRTHDATE\_STRING\_LENGTH}}
+\index{MAX\_BIRTHDATE\_STRING\_LENGTH@{MAX\_BIRTHDATE\_STRING\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_BIRTHDATE\_STRING\_LENGTH}{MAX\_BIRTHDATE\_STRING\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BIRTHDATE\+\_\+\+STRING\+\_\+\+LENGTH~\mbox{\hyperlink{_client_8hpp_ad66fca7e296513623cb369c20bd5898a}{CLIENT\+\_\+\+BIRTHDATE\+\_\+\+STRING\+\_\+\+LENGTH}} + 5}
+
+\Hypertarget{_client_8hpp_a1659b77d6f36bc32eabfde54ef18de03}\label{_client_8hpp_a1659b77d6f36bc32eabfde54ef18de03} 
+\index{Client.hpp@{Client.hpp}!MAX\_EMAIL\_LENGTH@{MAX\_EMAIL\_LENGTH}}
+\index{MAX\_EMAIL\_LENGTH@{MAX\_EMAIL\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_EMAIL\_LENGTH}{MAX\_EMAIL\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+EMAIL\+\_\+\+LENGTH~40}
+
+\Hypertarget{_client_8hpp_abae821b03e2a686ccc68b288b75fdd6e}\label{_client_8hpp_abae821b03e2a686ccc68b288b75fdd6e} 
+\index{Client.hpp@{Client.hpp}!MAX\_GUILD\_NAME\_LENGTH@{MAX\_GUILD\_NAME\_LENGTH}}
+\index{MAX\_GUILD\_NAME\_LENGTH@{MAX\_GUILD\_NAME\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_GUILD\_NAME\_LENGTH}{MAX\_GUILD\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GUILD\+\_\+\+NAME\+\_\+\+LENGTH~24}
+
+\Hypertarget{_client_8hpp_adba64c0e0fd376ef011ec018c13f0ef2}\label{_client_8hpp_adba64c0e0fd376ef011ec018c13f0ef2} 
+\index{Client.hpp@{Client.hpp}!MAX\_GUILD\_POSITION\_NAME\_LENGTH@{MAX\_GUILD\_POSITION\_NAME\_LENGTH}}
+\index{MAX\_GUILD\_POSITION\_NAME\_LENGTH@{MAX\_GUILD\_POSITION\_NAME\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_GUILD\_POSITION\_NAME\_LENGTH}{MAX\_GUILD\_POSITION\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GUILD\+\_\+\+POSITION\+\_\+\+NAME\+\_\+\+LENGTH~24}
+
+\Hypertarget{_client_8hpp_a994853f194de06065d264d4292941de1}\label{_client_8hpp_a994853f194de06065d264d4292941de1} 
+\index{Client.hpp@{Client.hpp}!MAX\_IP\_ADDRESS\_STR\_LENGTH@{MAX\_IP\_ADDRESS\_STR\_LENGTH}}
+\index{MAX\_IP\_ADDRESS\_STR\_LENGTH@{MAX\_IP\_ADDRESS\_STR\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_IP\_ADDRESS\_STR\_LENGTH}{MAX\_IP\_ADDRESS\_STR\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+IP\+\_\+\+ADDRESS\+\_\+\+STR\+\_\+\+LENGTH~16}
+
+\Hypertarget{_client_8hpp_ae95494d5036e5f33258bdcee4bfb3f6b}\label{_client_8hpp_ae95494d5036e5f33258bdcee4bfb3f6b} 
+\index{Client.hpp@{Client.hpp}!MAX\_PARTY\_NAME\_LENGTH@{MAX\_PARTY\_NAME\_LENGTH}}
+\index{MAX\_PARTY\_NAME\_LENGTH@{MAX\_PARTY\_NAME\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_PARTY\_NAME\_LENGTH}{MAX\_PARTY\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PARTY\+\_\+\+NAME\+\_\+\+LENGTH~24}
+
+\Hypertarget{_client_8hpp_a71844e1b09e82f47bc287fdee4338608}\label{_client_8hpp_a71844e1b09e82f47bc287fdee4338608} 
+\index{Client.hpp@{Client.hpp}!MAX\_PINCODE\_STRING\_LENGTH@{MAX\_PINCODE\_STRING\_LENGTH}}
+\index{MAX\_PINCODE\_STRING\_LENGTH@{MAX\_PINCODE\_STRING\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_PINCODE\_STRING\_LENGTH}{MAX\_PINCODE\_STRING\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PINCODE\+\_\+\+STRING\+\_\+\+LENGTH~5}
+
+\Hypertarget{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}\label{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb} 
+\index{Client.hpp@{Client.hpp}!MAX\_UNIT\_NAME\_LENGTH@{MAX\_UNIT\_NAME\_LENGTH}}
+\index{MAX\_UNIT\_NAME\_LENGTH@{MAX\_UNIT\_NAME\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_UNIT\_NAME\_LENGTH}{MAX\_UNIT\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+UNIT\+\_\+\+NAME\+\_\+\+LENGTH~24}
+
+\Hypertarget{_client_8hpp_ac32ea00c03c9a9afd1ffc9e1627a8506}\label{_client_8hpp_ac32ea00c03c9a9afd1ffc9e1627a8506} 
+\index{Client.hpp@{Client.hpp}!MAX\_USERNAME\_LENGTH@{MAX\_USERNAME\_LENGTH}}
+\index{MAX\_USERNAME\_LENGTH@{MAX\_USERNAME\_LENGTH}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_USERNAME\_LENGTH}{MAX\_USERNAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+USERNAME\+\_\+\+LENGTH~24}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930} 
+\index{Client.hpp@{Client.hpp}!character\_delete\_accept\_result@{character\_delete\_accept\_result}}
+\index{character\_delete\_accept\_result@{character\_delete\_accept\_result}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_accept\_result}{character\_delete\_accept\_result}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}{character\+\_\+delete\+\_\+accept\+\_\+result}} \+: uint32\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_ACCEPT\_RESULT\_UNKNOWN@{CHAR\_DEL\_ACCEPT\_RESULT\_UNKNOWN}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_ACCEPT\_RESULT\_UNKNOWN@{CHAR\_DEL\_ACCEPT\_RESULT\_UNKNOWN}}}\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930aa3e9b40d3c483312568e26019ea238b0}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930aa3e9b40d3c483312568e26019ea238b0} 
+CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_ACCEPT\_RESULT\_SUCCESS@{CHAR\_DEL\_ACCEPT\_RESULT\_SUCCESS}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_ACCEPT\_RESULT\_SUCCESS@{CHAR\_DEL\_ACCEPT\_RESULT\_SUCCESS}}}\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a1eb57a63f599ebe689635b8d5d50a905}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a1eb57a63f599ebe689635b8d5d50a905} 
+CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+SUCCESS&0 (0x718)\+: An unknown error has occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_ACCEPT\_RESULT\_SYSTEM\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_SYSTEM\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_ACCEPT\_RESULT\_SYSTEM\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_SYSTEM\_ERR}}}\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930aa689b299a9adc3dc1870af4546c8d246}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930aa689b299a9adc3dc1870af4546c8d246} 
+CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+SYSTEM\+\_\+\+ERR&1\+: none/success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_ACCEPT\_RESULT\_DATABASE\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_DATABASE\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_ACCEPT\_RESULT\_DATABASE\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_DATABASE\_ERR}}}\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930af7876ffb03886965b9e85469eaff00c0}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930af7876ffb03886965b9e85469eaff00c0} 
+CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+DATABASE\+\_\+\+ERR&2\+: Due to system settings can not be deleted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_ACCEPT\_RESULT\_TIME\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_TIME\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_ACCEPT\_RESULT\_TIME\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_TIME\_ERR}}}\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a8e014ceed139a2fa6fb6577138642f78}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a8e014ceed139a2fa6fb6577138642f78} 
+CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+TIME\+\_\+\+ERR&3\+: \doxylink{class_a}{A} database error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_ACCEPT\_RESULT\_BIRTHDAY\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_BIRTHDAY\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_ACCEPT\_RESULT\_BIRTHDAY\_ERR@{CHAR\_DEL\_ACCEPT\_RESULT\_BIRTHDAY\_ERR}}}\Hypertarget{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a243ecf9d489f5e1722ee9d0ad1dc1d72}\label{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930a243ecf9d489f5e1722ee9d0ad1dc1d72} 
+CHAR\+\_\+\+DEL\+\_\+\+ACCEPT\+\_\+\+RESULT\+\_\+\+BIRTHDAY\+\_\+\+ERR&4\+: Deleting is not yet possible. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fc}\label{_client_8hpp_a3f10adac01a04029333a305a847873fc} 
+\index{Client.hpp@{Client.hpp}!character\_delete\_result@{character\_delete\_result}}
+\index{character\_delete\_result@{character\_delete\_result}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_result}{character\_delete\_result}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\+\_\+delete\+\_\+result}} \+: uint32\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_RESULT\_UNKNOWN@{CHAR\_DEL\_RESULT\_UNKNOWN}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_RESULT\_UNKNOWN@{CHAR\_DEL\_RESULT\_UNKNOWN}}}\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fca3a9f5f21c8a3626839c8719735ca33ae}\label{_client_8hpp_a3f10adac01a04029333a305a847873fca3a9f5f21c8a3626839c8719735ca33ae} 
+CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_RESULT\_SUCCESS@{CHAR\_DEL\_RESULT\_SUCCESS}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_RESULT\_SUCCESS@{CHAR\_DEL\_RESULT\_SUCCESS}}}\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fcad36f228f1e814a0be9583996347fa236}\label{_client_8hpp_a3f10adac01a04029333a305a847873fcad36f228f1e814a0be9583996347fa236} 
+CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+SUCCESS&0 (0x718)\+: An unknown error has occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_RESULT\_SYSTEM\_ERR@{CHAR\_DEL\_RESULT\_SYSTEM\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_RESULT\_SYSTEM\_ERR@{CHAR\_DEL\_RESULT\_SYSTEM\_ERR}}}\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fca688a4555ea2f8d4299c794667dd2b282}\label{_client_8hpp_a3f10adac01a04029333a305a847873fca688a4555ea2f8d4299c794667dd2b282} 
+CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+SYSTEM\+\_\+\+ERR&1\+: none/success \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_RESULT\_DATABASE\_ERR@{CHAR\_DEL\_RESULT\_DATABASE\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_RESULT\_DATABASE\_ERR@{CHAR\_DEL\_RESULT\_DATABASE\_ERR}}}\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fcaae69bb5e6b9e4efd92f7b304fe7cf13f}\label{_client_8hpp_a3f10adac01a04029333a305a847873fcaae69bb5e6b9e4efd92f7b304fe7cf13f} 
+CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+DATABASE\+\_\+\+ERR&2\+: Due to system settings can not be deleted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_RESULT\_GUILD\_ERR@{CHAR\_DEL\_RESULT\_GUILD\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_RESULT\_GUILD\_ERR@{CHAR\_DEL\_RESULT\_GUILD\_ERR}}}\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fca97529875ec05f04fab54cf916ae568ed}\label{_client_8hpp_a3f10adac01a04029333a305a847873fca97529875ec05f04fab54cf916ae568ed} 
+CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+GUILD\+\_\+\+ERR&3\+: \doxylink{class_a}{A} database error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_DEL\_RESULT\_PARTY\_ERR@{CHAR\_DEL\_RESULT\_PARTY\_ERR}!Client.hpp@{Client.hpp}}\index{Client.hpp@{Client.hpp}!CHAR\_DEL\_RESULT\_PARTY\_ERR@{CHAR\_DEL\_RESULT\_PARTY\_ERR}}}\Hypertarget{_client_8hpp_a3f10adac01a04029333a305a847873fca2582a0f6d06868bb00dae52e2fb49ff8}\label{_client_8hpp_a3f10adac01a04029333a305a847873fca2582a0f6d06868bb00dae52e2fb49ff8} 
+CHAR\+\_\+\+DEL\+\_\+\+RESULT\+\_\+\+PARTY\+\_\+\+ERR&4\+: To delete a character you must withdraw from the guild. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_client_8hpp_a57a03f206083f129f8d0166e3c64cd73}\label{_client_8hpp_a57a03f206083f129f8d0166e3c64cd73} 
+\index{Client.hpp@{Client.hpp}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structs__hc__character__list__data}{s\+\_\+hc\+\_\+character\+\_\+list\+\_\+data}} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_client_8hpp_ae68714986c01e84c21aa9a2ca978fd95}\label{_client_8hpp_ae68714986c01e84c21aa9a2ca978fd95} 
+\index{Client.hpp@{Client.hpp}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_client_8hpp_ae0e0ecc5318646528a285fc0acd0c930}{character\+\_\+delete\+\_\+accept\+\_\+result}} \+\_\+\+\_\+attribute\+\_\+\+\_\+}
+
+\Hypertarget{_client_8hpp_adfb29da28e45957623f838630986b6ee}\label{_client_8hpp_adfb29da28e45957623f838630986b6ee} 
+\index{Client.hpp@{Client.hpp}!\_agility@{\_agility}}
+\index{\_agility@{\_agility}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_agility}{\_agility}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+agility \{ 1 \}}
+
+\Hypertarget{_client_8hpp_a6fdbcefffbc23dd6192d9968dfbe9664}\label{_client_8hpp_a6fdbcefffbc23dd6192d9968dfbe9664} 
+\index{Client.hpp@{Client.hpp}!\_base\_experience@{\_base\_experience}}
+\index{\_base\_experience@{\_base\_experience}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_base\_experience}{\_base\_experience}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+base\+\_\+experience \{ 0 \}}
+
+\Hypertarget{_client_8hpp_ac64fb20d24789551debe40691b3e66dd}\label{_client_8hpp_ac64fb20d24789551debe40691b3e66dd} 
+\index{Client.hpp@{Client.hpp}!\_base\_level@{\_base\_level}}
+\index{\_base\_level@{\_base\_level}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_base\_level}{\_base\_level}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+base\+\_\+level \{ 1 \}}
+
+
+
+74 
+
+\Hypertarget{_client_8hpp_a4e54cdc7baa777ab9af553ebec5c51dc}\label{_client_8hpp_a4e54cdc7baa777ab9af553ebec5c51dc} 
+\index{Client.hpp@{Client.hpp}!\_body\_state@{\_body\_state}}
+\index{\_body\_state@{\_body\_state}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_body\_state}{\_body\_state}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+body\+\_\+state \{ 0 \}}
+
+
+
+40 
+
+\Hypertarget{_client_8hpp_afd8df18c41151c52ec9cffb821711c9c}\label{_client_8hpp_afd8df18c41151c52ec9cffb821711c9c} 
+\index{Client.hpp@{Client.hpp}!\_char\_slot@{\_char\_slot}}
+\index{\_char\_slot@{\_char\_slot}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_char\_slot}{\_char\_slot}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+char\+\_\+slot \{ 0 \}}
+
+
+
+120 
+
+\Hypertarget{_client_8hpp_a15dfd8acbf80f123942970f21f44f65d}\label{_client_8hpp_a15dfd8acbf80f123942970f21f44f65d} 
+\index{Client.hpp@{Client.hpp}!\_character\_id@{\_character\_id}}
+\index{\_character\_id@{\_character\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_character\_id}{\_character\_id}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+character\+\_\+id \{ 0 \}}
+
+
+
+4 
+
+\Hypertarget{_client_8hpp_aaea91629b342a493b91d36e5f1798b37}\label{_client_8hpp_aaea91629b342a493b91d36e5f1798b37} 
+\index{Client.hpp@{Client.hpp}!\_clothes\_color\_id@{\_clothes\_color\_id}}
+\index{\_clothes\_color\_id@{\_clothes\_color\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_clothes\_color\_id}{\_clothes\_color\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+clothes\+\_\+color\+\_\+id \{ 0 \}}
+
+
+
+88 
+
+\Hypertarget{_client_8hpp_ae622d8c5e3e65f4128135ca3aa1149d5}\label{_client_8hpp_ae622d8c5e3e65f4128135ca3aa1149d5} 
+\index{Client.hpp@{Client.hpp}!\_dexterity@{\_dexterity}}
+\index{\_dexterity@{\_dexterity}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_dexterity}{\_dexterity}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+dexterity \{ 1 \}}
+
+\Hypertarget{_client_8hpp_a4a8390587c29f31abad4edf950aaa3b8}\label{_client_8hpp_a4a8390587c29f31abad4edf950aaa3b8} 
+\index{Client.hpp@{Client.hpp}!\_hair\_color\_id@{\_hair\_color\_id}}
+\index{\_hair\_color\_id@{\_hair\_color\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_hair\_color\_id}{\_hair\_color\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+hair\+\_\+color\+\_\+id \{ 0 \}}
+
+\Hypertarget{_client_8hpp_a38a4dd080d718455fed904cdad568168}\label{_client_8hpp_a38a4dd080d718455fed904cdad568168} 
+\index{Client.hpp@{Client.hpp}!\_hair\_view\_id@{\_hair\_view\_id}}
+\index{\_hair\_view\_id@{\_hair\_view\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_hair\_view\_id}{\_hair\_view\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+hair\+\_\+view\+\_\+id \{ 0 \}}
+
+
+
+68 
+
+\Hypertarget{_client_8hpp_a920845e9702aa05b01fa5a6377a2b778}\label{_client_8hpp_a920845e9702aa05b01fa5a6377a2b778} 
+\index{Client.hpp@{Client.hpp}!\_head\_bottom\_view\_id@{\_head\_bottom\_view\_id}}
+\index{\_head\_bottom\_view\_id@{\_head\_bottom\_view\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_head\_bottom\_view\_id}{\_head\_bottom\_view\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+head\+\_\+bottom\+\_\+view\+\_\+id \{ 0 \}}
+
+\Hypertarget{_client_8hpp_a6d9600db548ee53a453138bc49a438a2}\label{_client_8hpp_a6d9600db548ee53a453138bc49a438a2} 
+\index{Client.hpp@{Client.hpp}!\_head\_mid\_view\_id@{\_head\_mid\_view\_id}}
+\index{\_head\_mid\_view\_id@{\_head\_mid\_view\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_head\_mid\_view\_id}{\_head\_mid\_view\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+head\+\_\+mid\+\_\+view\+\_\+id \{ 0 \}}
+
+\Hypertarget{_client_8hpp_a8d76ec3299ffe57632819954f7e9cd6e}\label{_client_8hpp_a8d76ec3299ffe57632819954f7e9cd6e} 
+\index{Client.hpp@{Client.hpp}!\_head\_top\_view\_id@{\_head\_top\_view\_id}}
+\index{\_head\_top\_view\_id@{\_head\_top\_view\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_head\_top\_view\_id}{\_head\_top\_view\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+head\+\_\+top\+\_\+view\+\_\+id \{ 0 \}}
+
+\Hypertarget{_client_8hpp_a3364cab08f22e97a0734e08c0c510c48}\label{_client_8hpp_a3364cab08f22e97a0734e08c0c510c48} 
+\index{Client.hpp@{Client.hpp}!\_honor@{\_honor}}
+\index{\_honor@{\_honor}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_honor}{\_honor}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+honor \{ 0 \}}
+
+
+
+48 
+
+\Hypertarget{_client_8hpp_a3a4533c9a7dd1cf01c7714f8dfa01f41}\label{_client_8hpp_a3a4533c9a7dd1cf01c7714f8dfa01f41} 
+\index{Client.hpp@{Client.hpp}!\_hp@{\_hp}}
+\index{\_hp@{\_hp}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_hp}{\_hp}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+hp \{ 1 \}}
+
+\Hypertarget{_client_8hpp_afa1b790fb40a9f43df2246f32a349e17}\label{_client_8hpp_afa1b790fb40a9f43df2246f32a349e17} 
+\index{Client.hpp@{Client.hpp}!\_intelligence@{\_intelligence}}
+\index{\_intelligence@{\_intelligence}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_intelligence}{\_intelligence}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+intelligence \{ 1 \}}
+
+\Hypertarget{_client_8hpp_ac32532f843e369f768c40969e75f2891}\label{_client_8hpp_ac32532f843e369f768c40969e75f2891} 
+\index{Client.hpp@{Client.hpp}!\_job\_experience@{\_job\_experience}}
+\index{\_job\_experience@{\_job\_experience}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_job\_experience}{\_job\_experience}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+job\+\_\+experience \{ 0 \}}
+
+\Hypertarget{_client_8hpp_af1c81e472206e491b09ce74792f279b4}\label{_client_8hpp_af1c81e472206e491b09ce74792f279b4} 
+\index{Client.hpp@{Client.hpp}!\_job\_id@{\_job\_id}}
+\index{\_job\_id@{\_job\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_job\_id}{\_job\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+job\+\_\+id \{ 0 \}}
+
+
+
+66 
+
+\Hypertarget{_client_8hpp_ab47003e22e529fe85e24da591760b68e}\label{_client_8hpp_ab47003e22e529fe85e24da591760b68e} 
+\index{Client.hpp@{Client.hpp}!\_job\_level@{\_job\_level}}
+\index{\_job\_level@{\_job\_level}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_job\_level}{\_job\_level}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+job\+\_\+level \{ 1 \}}
+
+
+
+28 
+
+\Hypertarget{_client_8hpp_a6856bef7a0e0537686d84f274a733108}\label{_client_8hpp_a6856bef7a0e0537686d84f274a733108} 
+\index{Client.hpp@{Client.hpp}!\_luck@{\_luck}}
+\index{\_luck@{\_luck}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_luck}{\_luck}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+luck \{ 1 \}}
+
+\Hypertarget{_client_8hpp_adeb02eff680c6bae4c5fc811e50b3314}\label{_client_8hpp_adeb02eff680c6bae4c5fc811e50b3314} 
+\index{Client.hpp@{Client.hpp}!\_maximum\_hp@{\_maximum\_hp}}
+\index{\_maximum\_hp@{\_maximum\_hp}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_maximum\_hp}{\_maximum\_hp}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+maximum\+\_\+hp \{ 1 \}}
+
+\Hypertarget{_client_8hpp_aebbe4dee66909e313b3117d1a2ac5749}\label{_client_8hpp_aebbe4dee66909e313b3117d1a2ac5749} 
+\index{Client.hpp@{Client.hpp}!\_maximum\_sp@{\_maximum\_sp}}
+\index{\_maximum\_sp@{\_maximum\_sp}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_maximum\_sp}{\_maximum\_sp}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+maximum\+\_\+sp \{ 1 \}}
+
+
+
+62 
+
+\Hypertarget{_client_8hpp_a2d461f6a1ad25090c5cf52cfda4aa3fe}\label{_client_8hpp_a2d461f6a1ad25090c5cf52cfda4aa3fe} 
+\index{Client.hpp@{Client.hpp}!\_name@{\_name}}
+\index{\_name@{\_name}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_name}{\_name}}
+{\footnotesize\ttfamily char \+\_\+name\mbox{[}\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\+\_\+\+UNIT\+\_\+\+NAME\+\_\+\+LENGTH}}\mbox{]} \{ 0 \}}
+
+
+
+112 
+
+\Hypertarget{_client_8hpp_ae69c978dfb3319ca226bdbd49643ed19}\label{_client_8hpp_ae69c978dfb3319ca226bdbd49643ed19} 
+\index{Client.hpp@{Client.hpp}!\_sc\_opt1@{\_sc\_opt1}}
+\index{\_sc\_opt1@{\_sc\_opt1}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_sc\_opt1}{\_sc\_opt1}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+sc\+\_\+opt1 \{ 0 \}}
+
+
+
+32 Probably OPT1 / 2 
+
+\Hypertarget{_client_8hpp_a1b76e48a8b168163f4b6d467b16757b1}\label{_client_8hpp_a1b76e48a8b168163f4b6d467b16757b1} 
+\index{Client.hpp@{Client.hpp}!\_sc\_opt2@{\_sc\_opt2}}
+\index{\_sc\_opt2@{\_sc\_opt2}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_sc\_opt2}{\_sc\_opt2}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+sc\+\_\+opt2 \{ 0 \}}
+
+
+
+36 
+
+\Hypertarget{_client_8hpp_a247da14f8aff690485b7dfe9041d5b64}\label{_client_8hpp_a247da14f8aff690485b7dfe9041d5b64} 
+\index{Client.hpp@{Client.hpp}!\_shield\_id@{\_shield\_id}}
+\index{\_shield\_id@{\_shield\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_shield\_id}{\_shield\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+shield\+\_\+id \{ 0 \}}
+
+\Hypertarget{_client_8hpp_a485047ddc9a44db0dc73cc5e9d198d08}\label{_client_8hpp_a485047ddc9a44db0dc73cc5e9d198d08} 
+\index{Client.hpp@{Client.hpp}!\_skill\_point@{\_skill\_point}}
+\index{\_skill\_point@{\_skill\_point}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_skill\_point}{\_skill\_point}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+skill\+\_\+point \{ 0 \}}
+
+\Hypertarget{_client_8hpp_a151eca1792e41a7034d810d8712ce868}\label{_client_8hpp_a151eca1792e41a7034d810d8712ce868} 
+\index{Client.hpp@{Client.hpp}!\_sp@{\_sp}}
+\index{\_sp@{\_sp}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_sp}{\_sp}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+sp \{ 1 \}}
+
+
+
+60 
+
+\Hypertarget{_client_8hpp_a2f485d64d981b92a426d1e660cf29dcb}\label{_client_8hpp_a2f485d64d981b92a426d1e660cf29dcb} 
+\index{Client.hpp@{Client.hpp}!\_status\_points@{\_status\_points}}
+\index{\_status\_points@{\_status\_points}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_status\_points}{\_status\_points}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+status\+\_\+points \{ 0 \}}
+
+
+
+50 
+
+\Hypertarget{_client_8hpp_a1240ad9e6e86216117dc1bf3afe3a928}\label{_client_8hpp_a1240ad9e6e86216117dc1bf3afe3a928} 
+\index{Client.hpp@{Client.hpp}!\_strength@{\_strength}}
+\index{\_strength@{\_strength}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_strength}{\_strength}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+strength \{ 1 \}}
+
+\Hypertarget{_client_8hpp_a3cf2b9c195648f1e8bf6df04ed6db20a}\label{_client_8hpp_a3cf2b9c195648f1e8bf6df04ed6db20a} 
+\index{Client.hpp@{Client.hpp}!\_virtue@{\_virtue}}
+\index{\_virtue@{\_virtue}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_virtue}{\_virtue}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+virtue \{ 0 \}}
+
+
+
+44 
+
+\Hypertarget{_client_8hpp_a4d7af4d4f4a3694d7e9f9ca401594ba7}\label{_client_8hpp_a4d7af4d4f4a3694d7e9f9ca401594ba7} 
+\index{Client.hpp@{Client.hpp}!\_vitality@{\_vitality}}
+\index{\_vitality@{\_vitality}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_vitality}{\_vitality}}
+{\footnotesize\ttfamily uint8\+\_\+t \+\_\+vitality \{ 1 \}}
+
+\Hypertarget{_client_8hpp_afd5427b2b50b1b2fc7bf5173f14e5b45}\label{_client_8hpp_afd5427b2b50b1b2fc7bf5173f14e5b45} 
+\index{Client.hpp@{Client.hpp}!\_walk\_speed@{\_walk\_speed}}
+\index{\_walk\_speed@{\_walk\_speed}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_walk\_speed}{\_walk\_speed}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+walk\+\_\+speed \{ \mbox{\hyperlink{_horizon_8hpp_acc076df423de72f5f7eb79b3744c7c1e}{DEFAULT\+\_\+\+MOVEMENT\+\_\+\+SPEED}} \}}
+
+
+
+64 
+
+\Hypertarget{_client_8hpp_a3ef40143b4c1255227bc72729a817d58}\label{_client_8hpp_a3ef40143b4c1255227bc72729a817d58} 
+\index{Client.hpp@{Client.hpp}!\_weapon\_view\_id@{\_weapon\_view\_id}}
+\index{\_weapon\_view\_id@{\_weapon\_view\_id}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_weapon\_view\_id}{\_weapon\_view\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+weapon\+\_\+view\+\_\+id \{ 0 \}}
+
+
+
+72 OPTION\+\_\+\texorpdfstring{$\ast$}{*} in hercules. 
+
+\Hypertarget{_client_8hpp_a6f8ed24939c800d505bf36718a0de606}\label{_client_8hpp_a6f8ed24939c800d505bf36718a0de606} 
+\index{Client.hpp@{Client.hpp}!\_zeny@{\_zeny}}
+\index{\_zeny@{\_zeny}!Client.hpp@{Client.hpp}}
+\doxysubsubsection{\texorpdfstring{\_zeny}{\_zeny}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+zeny \{ 0 \}}
+
+
+
+16 
+

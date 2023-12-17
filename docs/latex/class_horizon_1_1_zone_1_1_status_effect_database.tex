@@ -1,0 +1,91 @@
+\doxysection{Horizon\+::Zone\+::Status\+Effect\+Database Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_status_effect_database}{}\label{class_horizon_1_1_zone_1_1_status_effect_database}\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+
+
+{\ttfamily \#include $<$Status\+Effect\+DB.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a0caeb3242de32599cf60db32e7e860d7}{Status\+Effect\+Database}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a4ee32814f2b2df1561cd371bed258e93}{\texorpdfstring{$\sim$}{\string~}\+Status\+Effect\+Database}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a41dbbff4def235e3f009f0547b762177}{load}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data}{status\+\_\+effect\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a3daea73614e18a38d7730c5b6a50ad2c}{get\+\_\+status\+\_\+effect\+\_\+by\+\_\+id}} (int32\+\_\+t id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database}{Status\+Effect\+Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a621c4fc670c2fbff6f52fd3b1fa3c52c}{get\+\_\+instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a9eac0bd07d6253b946e047124ae79058}{load\+\_\+internal}} (sol\+::object const \&key, sol\+::object const \&value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_status_effect_database_a0caeb3242de32599cf60db32e7e860d7}\label{class_horizon_1_1_zone_1_1_status_effect_database_a0caeb3242de32599cf60db32e7e860d7} 
+\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}!StatusEffectDatabase@{StatusEffectDatabase}}
+\index{StatusEffectDatabase@{StatusEffectDatabase}!Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+\doxysubsubsection{\texorpdfstring{StatusEffectDatabase()}{StatusEffectDatabase()}}
+{\footnotesize\ttfamily Status\+Effect\+Database\+::\+Status\+Effect\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_status_effect_database_a4ee32814f2b2df1561cd371bed258e93}\label{class_horizon_1_1_zone_1_1_status_effect_database_a4ee32814f2b2df1561cd371bed258e93} 
+\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}!````~StatusEffectDatabase@{\texorpdfstring{$\sim$}{\string~}StatusEffectDatabase}}
+\index{````~StatusEffectDatabase@{\texorpdfstring{$\sim$}{\string~}StatusEffectDatabase}!Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StatusEffectDatabase()}{\string~StatusEffectDatabase()}}
+{\footnotesize\ttfamily Status\+Effect\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Status\+Effect\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_status_effect_database_a621c4fc670c2fbff6f52fd3b1fa3c52c}\label{class_horizon_1_1_zone_1_1_status_effect_database_a621c4fc670c2fbff6f52fd3b1fa3c52c} 
+\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database}{Status\+Effect\+Database}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Status\+Effect\+Database\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_status_effect_database_a3daea73614e18a38d7730c5b6a50ad2c}\label{class_horizon_1_1_zone_1_1_status_effect_database_a3daea73614e18a38d7730c5b6a50ad2c} 
+\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}!get\_status\_effect\_by\_id@{get\_status\_effect\_by\_id}}
+\index{get\_status\_effect\_by\_id@{get\_status\_effect\_by\_id}!Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_status\_effect\_by\_id()}{get\_status\_effect\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data}{status\+\_\+effect\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Status\+Effect\+Database\+::get\+\_\+status\+\_\+effect\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_status_effect_database_a41dbbff4def235e3f009f0547b762177}\label{class_horizon_1_1_zone_1_1_status_effect_database_a41dbbff4def235e3f009f0547b762177} 
+\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}!load@{load}}
+\index{load@{load}!Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Status\+Effect\+Database\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Skill DBHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_status_effect_database_a41dbbff4def235e3f009f0547b762177_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_status_effect_database_a9eac0bd07d6253b946e047124ae79058}\label{class_horizon_1_1_zone_1_1_status_effect_database_a9eac0bd07d6253b946e047124ae79058} 
+\index{Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}!load\_internal@{load\_internal}}
+\index{load\_internal@{load\_internal}!Horizon::Zone::StatusEffectDatabase@{Horizon::Zone::StatusEffectDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_internal()}{load\_internal()}}
+{\footnotesize\ttfamily bool Status\+Effect\+Database\+::load\+\_\+internal (\begin{DoxyParamCaption}\item[{sol\+::object const \&}]{key,  }\item[{sol\+::object const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_status_effect_database_a9eac0bd07d6253b946e047124ae79058_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_status_effect_d_b_8hpp}{Status\+Effect\+DB.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_status_effect_d_b_8cpp}{Status\+Effect\+DB.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+\doxysection{Logger.\+hpp}
+\hypertarget{_logger_8hpp_source}{}\label{_logger_8hpp_source}\index{src/Core/Logging/Logger.hpp@{src/Core/Logging/Logger.hpp}}
+\mbox{\hyperlink{_logger_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_LOGGER\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_LOGGER\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BOOST\_LOG\_DYN\_LINK\ 1}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <boost/log/core.hpp>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <boost/log/trivial.hpp>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <boost/log/sources/severity\_logger.hpp>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <boost/log/expressions.hpp>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <boost/log/sinks/text\_file\_backend.hpp>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <boost/log/utility/setup/file.hpp>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <boost/log/utility/setup/common\_attributes.hpp>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_logger}{Logger}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typedef}\ boost::log::sources::severity\_logger<boost::log::trivial::severity\_level>\ logtype;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_logger_abc41bfb031d896170c7675fa96a6b30c}{Logger}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{\string~Logger}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_logger}{Logger}}\ *\mbox{\hyperlink{class_logger_ab34b3a7fd8a65cb2bbad722b4f6ec3d0}{getInstance}}()}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_logger}{Logger}}\ instance;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!instance.\mbox{\hyperlink{class_logger_af678ab01d739b630bd0f20e48fb15eea}{\_initialized}})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ instance.\mbox{\hyperlink{class_logger_ae784283f1de7827b7e7049641eaf0a53}{initialize}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_ae784283f1de7827b7e7049641eaf0a53}{initialize}}();}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ logtype\ \&\mbox{\hyperlink{class_logger_a0efbb7c958eb771b1e6940c106f86ba2}{get\_core\_log}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_logger_a83321075e4be884141548fcb6a6af20b}{\_core\_log}};\ \}}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_ad1fe4a2add3eaa366b3fa34a910d0f5a}{colored\_formatter}}(boost::log::record\_view\ \textcolor{keyword}{const}\&\ rec,\ boost::log::formatting\_ostream\&\ strm);}
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ \mbox{\hyperlink{class_logger_a2ff57fe8e0265f6be3157c9d1680949d}{color}}(uint16\_t\ \mbox{\hyperlink{class_logger_a2ff57fe8e0265f6be3157c9d1680949d}{color}});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00074\ \ \ \ \ logtype\ \mbox{\hyperlink{class_logger_a83321075e4be884141548fcb6a6af20b}{\_core\_log}};}
+\DoxyCodeLine{00075\ \ \ \ \ std::atomic<bool>\ \mbox{\hyperlink{class_logger_af678ab01d739b630bd0f20e48fb15eea}{\_initialized}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ HLog(type)\ BOOST\_LOG\_SEV(Logger().getInstance()-\/>get\_core\_log(),\ boost::log::trivial::type)}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_LOGGER\_H}}
+
+\end{DoxyCode}

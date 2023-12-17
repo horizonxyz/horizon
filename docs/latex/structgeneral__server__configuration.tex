@@ -1,0 +1,427 @@
+\doxysection{general\+\_\+server\+\_\+configuration Struct Reference}
+\hypertarget{structgeneral__server__configuration}{}\label{structgeneral__server__configuration}\index{general\_server\_configuration@{general\_server\_configuration}}
+
+
+{\ttfamily \#include $<$Server\+Configuration.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structgeneral__server__configuration_a1500171b548376437c17318ca90fd5f0}{is\+\_\+test\+\_\+run}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a1bc24ccd5722626e7d46ccbae21de33e}{set\+\_\+test\+\_\+run}} ()
+\item 
+const boost\+::filesystem\+::path \& \mbox{\hyperlink{structgeneral__server__configuration_a70f34afb5de16a9c62e46c2530e4b441}{get\+\_\+config\+\_\+file\+\_\+path}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a9b69777d1a41520ea737269da9b1f1b8}{set\+\_\+config\+\_\+file\+\_\+path}} (const boost\+::filesystem\+::path \&path)
+\item 
+int \mbox{\hyperlink{structgeneral__server__configuration_aed75af6f15b3c32c8c1bea8820fe23e4}{get\+\_\+shutdown\+\_\+signal}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a57741e05e00db28533d0a2f896e29448}{set\+\_\+shutdown\+\_\+signal}} (int \mbox{\hyperlink{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}{shutdown\+\_\+signal}})
+\item 
+const std\+::string \& \mbox{\hyperlink{structgeneral__server__configuration_adb725151a29c8ea2d858cbbb04bc3a10}{get\+\_\+listen\+\_\+ip}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a03feb418c1de48e991aff47bfb00d241}{set\+\_\+listen\+\_\+ip}} (const std\+::string \&listen\+\_\+ip)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structgeneral__server__configuration_a27f7ffb841e0d08aac18162d9419e1d3}{get\+\_\+listen\+\_\+port}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a7647148b0e56ca80e439fc00a5c00531}{set\+\_\+listen\+\_\+port}} (uint16\+\_\+t listen\+\_\+port)
+\item 
+const std\+::string \& \mbox{\hyperlink{structgeneral__server__configuration_a05f53d53eb82dabed024e6519d5a3d9f}{get\+\_\+db\+\_\+host}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_ace8ea23a75fe72159565e1b7abeabada}{set\+\_\+db\+\_\+host}} (std\+::string \&\&host)
+\item 
+const std\+::string \& \mbox{\hyperlink{structgeneral__server__configuration_a598880fafa5d889a75a4cbead7ea6b30}{get\+\_\+db\+\_\+user}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a1923b52cfbc6860e38001842e5779f57}{set\+\_\+db\+\_\+user}} (std\+::string \&\&user)
+\item 
+const std\+::string \& \mbox{\hyperlink{structgeneral__server__configuration_a1d085e6920e9f3f90985af025ca83381}{get\+\_\+db\+\_\+pass}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a7dd1f2901ee1fa51d68d150a1a0f4a56}{set\+\_\+db\+\_\+pass}} (std\+::string \&\&pass)
+\item 
+const std\+::string \& \mbox{\hyperlink{structgeneral__server__configuration_aa09fe1e68fca700df4eaf87bb0d38eb9}{get\+\_\+db\+\_\+database}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_abeb44fe08dbc57158f072d97cb049905}{set\+\_\+db\+\_\+database}} (std\+::string \&\&database)
+\item 
+const uint16\+\_\+t \& \mbox{\hyperlink{structgeneral__server__configuration_a5292491ce3a8f49eaf9776bafe868009}{get\+\_\+db\+\_\+port}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a3af083ed84790327351e9c1910a60b61}{set\+\_\+db\+\_\+port}} (uint16\+\_\+t port)
+\item 
+const uint8\+\_\+t \& \mbox{\hyperlink{structgeneral__server__configuration_acd771d793d4589b951d30017ea90f035}{get\+\_\+db\+\_\+threads}} () const
+\item 
+void \mbox{\hyperlink{structgeneral__server__configuration_a26d5ee4c4ff6bfeb7046f8f83fe4c630}{set\+\_\+db\+\_\+threads}} (uint8\+\_\+t threads)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structgeneral__server__configuration_a413184e9c9c81fb9639e60928bafb735}{minimal}} \{false\}
+\item 
+boost\+::filesystem\+::path \mbox{\hyperlink{structgeneral__server__configuration_a5b0dbb90fbd5279d5f86dca3c6d87d04}{\+\_\+config\+\_\+file\+\_\+path}} \{"{}"{}\}
+\item 
+int \mbox{\hyperlink{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}{shutdown\+\_\+signal}}
+\begin{DoxyCompactList}\small\item\em Shutdown signal. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structgeneral__server__configuration_a3d9dcb8f42d970103718f5807a18127c}{\+\_\+listen\+\_\+ip}}
+\begin{DoxyCompactList}\small\item\em Listen IP. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structgeneral__server__configuration_ae2084e63d17623bd13f5885e477be828}{\+\_\+listen\+\_\+port}}
+\begin{DoxyCompactList}\small\item\em Listen Port Number. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structgeneral__server__configuration_a1b42154a9154d28494ceaf24b9b9feea}{\+\_\+db\+\_\+host}}
+\item 
+std\+::string \mbox{\hyperlink{structgeneral__server__configuration_a482490745b436745b410c0334ee0da68}{\+\_\+db\+\_\+user}}
+\item 
+std\+::string \mbox{\hyperlink{structgeneral__server__configuration_acc9c8d96f23d5ea11c626b1b7abcfe34}{\+\_\+db\+\_\+pass}}
+\item 
+std\+::string \mbox{\hyperlink{structgeneral__server__configuration_a5a6623b33fc70a2288abdd259e4290d1}{\+\_\+db\+\_\+database}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structgeneral__server__configuration_a82fcf1816b248a4915cbf54a738401ae}{\+\_\+db\+\_\+port}} \{3306\}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structgeneral__server__configuration_ae0dc057756c6332a0c3470425833366b}{\+\_\+db\+\_\+threads}} \{5\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structgeneral__server__configuration_a70f34afb5de16a9c62e46c2530e4b441}\label{structgeneral__server__configuration_a70f34afb5de16a9c62e46c2530e4b441} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_config\_file\_path@{get\_config\_file\_path}}
+\index{get\_config\_file\_path@{get\_config\_file\_path}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_config\_file\_path()}{get\_config\_file\_path()}}
+{\footnotesize\ttfamily const boost\+::filesystem\+::path \& general\+\_\+server\+\_\+configuration\+::get\+\_\+config\+\_\+file\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a70f34afb5de16a9c62e46c2530e4b441_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_aa09fe1e68fca700df4eaf87bb0d38eb9}\label{structgeneral__server__configuration_aa09fe1e68fca700df4eaf87bb0d38eb9} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_db\_database@{get\_db\_database}}
+\index{get\_db\_database@{get\_db\_database}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_db\_database()}{get\_db\_database()}}
+{\footnotesize\ttfamily const std\+::string \& general\+\_\+server\+\_\+configuration\+::get\+\_\+db\+\_\+database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_aa09fe1e68fca700df4eaf87bb0d38eb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a05f53d53eb82dabed024e6519d5a3d9f}\label{structgeneral__server__configuration_a05f53d53eb82dabed024e6519d5a3d9f} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_db\_host@{get\_db\_host}}
+\index{get\_db\_host@{get\_db\_host}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_db\_host()}{get\_db\_host()}}
+{\footnotesize\ttfamily const std\+::string \& general\+\_\+server\+\_\+configuration\+::get\+\_\+db\+\_\+host (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a05f53d53eb82dabed024e6519d5a3d9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a1d085e6920e9f3f90985af025ca83381}\label{structgeneral__server__configuration_a1d085e6920e9f3f90985af025ca83381} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_db\_pass@{get\_db\_pass}}
+\index{get\_db\_pass@{get\_db\_pass}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_db\_pass()}{get\_db\_pass()}}
+{\footnotesize\ttfamily const std\+::string \& general\+\_\+server\+\_\+configuration\+::get\+\_\+db\+\_\+pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a1d085e6920e9f3f90985af025ca83381_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a5292491ce3a8f49eaf9776bafe868009}\label{structgeneral__server__configuration_a5292491ce3a8f49eaf9776bafe868009} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_db\_port@{get\_db\_port}}
+\index{get\_db\_port@{get\_db\_port}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_db\_port()}{get\_db\_port()}}
+{\footnotesize\ttfamily const uint16\+\_\+t \& general\+\_\+server\+\_\+configuration\+::get\+\_\+db\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a5292491ce3a8f49eaf9776bafe868009_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_acd771d793d4589b951d30017ea90f035}\label{structgeneral__server__configuration_acd771d793d4589b951d30017ea90f035} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_db\_threads@{get\_db\_threads}}
+\index{get\_db\_threads@{get\_db\_threads}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_db\_threads()}{get\_db\_threads()}}
+{\footnotesize\ttfamily const uint8\+\_\+t \& general\+\_\+server\+\_\+configuration\+::get\+\_\+db\+\_\+threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structgeneral__server__configuration_a598880fafa5d889a75a4cbead7ea6b30}\label{structgeneral__server__configuration_a598880fafa5d889a75a4cbead7ea6b30} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_db\_user@{get\_db\_user}}
+\index{get\_db\_user@{get\_db\_user}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_db\_user()}{get\_db\_user()}}
+{\footnotesize\ttfamily const std\+::string \& general\+\_\+server\+\_\+configuration\+::get\+\_\+db\+\_\+user (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a598880fafa5d889a75a4cbead7ea6b30_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_adb725151a29c8ea2d858cbbb04bc3a10}\label{structgeneral__server__configuration_adb725151a29c8ea2d858cbbb04bc3a10} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_listen\_ip@{get\_listen\_ip}}
+\index{get\_listen\_ip@{get\_listen\_ip}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_listen\_ip()}{get\_listen\_ip()}}
+{\footnotesize\ttfamily const std\+::string \& general\+\_\+server\+\_\+configuration\+::get\+\_\+listen\+\_\+ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structgeneral__server__configuration_a27f7ffb841e0d08aac18162d9419e1d3}\label{structgeneral__server__configuration_a27f7ffb841e0d08aac18162d9419e1d3} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_listen\_port@{get\_listen\_port}}
+\index{get\_listen\_port@{get\_listen\_port}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_listen\_port()}{get\_listen\_port()}}
+{\footnotesize\ttfamily uint16\+\_\+t general\+\_\+server\+\_\+configuration\+::get\+\_\+listen\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structgeneral__server__configuration_aed75af6f15b3c32c8c1bea8820fe23e4}\label{structgeneral__server__configuration_aed75af6f15b3c32c8c1bea8820fe23e4} 
+\index{general\_server\_configuration@{general\_server\_configuration}!get\_shutdown\_signal@{get\_shutdown\_signal}}
+\index{get\_shutdown\_signal@{get\_shutdown\_signal}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{get\_shutdown\_signal()}{get\_shutdown\_signal()}}
+{\footnotesize\ttfamily int general\+\_\+server\+\_\+configuration\+::get\+\_\+shutdown\+\_\+signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structgeneral__server__configuration_a1500171b548376437c17318ca90fd5f0}\label{structgeneral__server__configuration_a1500171b548376437c17318ca90fd5f0} 
+\index{general\_server\_configuration@{general\_server\_configuration}!is\_test\_run@{is\_test\_run}}
+\index{is\_test\_run@{is\_test\_run}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{is\_test\_run()}{is\_test\_run()}}
+{\footnotesize\ttfamily bool general\+\_\+server\+\_\+configuration\+::is\+\_\+test\+\_\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structgeneral__server__configuration_a9b69777d1a41520ea737269da9b1f1b8}\label{structgeneral__server__configuration_a9b69777d1a41520ea737269da9b1f1b8} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_config\_file\_path@{set\_config\_file\_path}}
+\index{set\_config\_file\_path@{set\_config\_file\_path}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_config\_file\_path()}{set\_config\_file\_path()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+config\+\_\+file\+\_\+path (\begin{DoxyParamCaption}\item[{const boost\+::filesystem\+::path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a9b69777d1a41520ea737269da9b1f1b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_abeb44fe08dbc57158f072d97cb049905}\label{structgeneral__server__configuration_abeb44fe08dbc57158f072d97cb049905} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_db\_database@{set\_db\_database}}
+\index{set\_db\_database@{set\_db\_database}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_db\_database()}{set\_db\_database()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+db\+\_\+database (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_abeb44fe08dbc57158f072d97cb049905_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_ace8ea23a75fe72159565e1b7abeabada}\label{structgeneral__server__configuration_ace8ea23a75fe72159565e1b7abeabada} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_db\_host@{set\_db\_host}}
+\index{set\_db\_host@{set\_db\_host}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_db\_host()}{set\_db\_host()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+db\+\_\+host (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{host }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_ace8ea23a75fe72159565e1b7abeabada_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a7dd1f2901ee1fa51d68d150a1a0f4a56}\label{structgeneral__server__configuration_a7dd1f2901ee1fa51d68d150a1a0f4a56} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_db\_pass@{set\_db\_pass}}
+\index{set\_db\_pass@{set\_db\_pass}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_db\_pass()}{set\_db\_pass()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+db\+\_\+pass (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{pass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a7dd1f2901ee1fa51d68d150a1a0f4a56_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a3af083ed84790327351e9c1910a60b61}\label{structgeneral__server__configuration_a3af083ed84790327351e9c1910a60b61} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_db\_port@{set\_db\_port}}
+\index{set\_db\_port@{set\_db\_port}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_db\_port()}{set\_db\_port()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+db\+\_\+port (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a3af083ed84790327351e9c1910a60b61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a26d5ee4c4ff6bfeb7046f8f83fe4c630}\label{structgeneral__server__configuration_a26d5ee4c4ff6bfeb7046f8f83fe4c630} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_db\_threads@{set\_db\_threads}}
+\index{set\_db\_threads@{set\_db\_threads}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_db\_threads()}{set\_db\_threads()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+db\+\_\+threads (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a26d5ee4c4ff6bfeb7046f8f83fe4c630_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a1923b52cfbc6860e38001842e5779f57}\label{structgeneral__server__configuration_a1923b52cfbc6860e38001842e5779f57} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_db\_user@{set\_db\_user}}
+\index{set\_db\_user@{set\_db\_user}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_db\_user()}{set\_db\_user()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+db\+\_\+user (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a1923b52cfbc6860e38001842e5779f57_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a03feb418c1de48e991aff47bfb00d241}\label{structgeneral__server__configuration_a03feb418c1de48e991aff47bfb00d241} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_listen\_ip@{set\_listen\_ip}}
+\index{set\_listen\_ip@{set\_listen\_ip}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_listen\_ip()}{set\_listen\_ip()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+listen\+\_\+ip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{listen\+\_\+ip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a03feb418c1de48e991aff47bfb00d241_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a7647148b0e56ca80e439fc00a5c00531}\label{structgeneral__server__configuration_a7647148b0e56ca80e439fc00a5c00531} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_listen\_port@{set\_listen\_port}}
+\index{set\_listen\_port@{set\_listen\_port}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_listen\_port()}{set\_listen\_port()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+listen\+\_\+port (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{listen\+\_\+port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a7647148b0e56ca80e439fc00a5c00531_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structgeneral__server__configuration_a57741e05e00db28533d0a2f896e29448}\label{structgeneral__server__configuration_a57741e05e00db28533d0a2f896e29448} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_shutdown\_signal@{set\_shutdown\_signal}}
+\index{set\_shutdown\_signal@{set\_shutdown\_signal}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_shutdown\_signal()}{set\_shutdown\_signal()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+shutdown\+\_\+signal (\begin{DoxyParamCaption}\item[{int}]{shutdown\+\_\+signal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structgeneral__server__configuration_a1bc24ccd5722626e7d46ccbae21de33e}\label{structgeneral__server__configuration_a1bc24ccd5722626e7d46ccbae21de33e} 
+\index{general\_server\_configuration@{general\_server\_configuration}!set\_test\_run@{set\_test\_run}}
+\index{set\_test\_run@{set\_test\_run}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{set\_test\_run()}{set\_test\_run()}}
+{\footnotesize\ttfamily void general\+\_\+server\+\_\+configuration\+::set\+\_\+test\+\_\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structgeneral__server__configuration_a1bc24ccd5722626e7d46ccbae21de33e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structgeneral__server__configuration_a5b0dbb90fbd5279d5f86dca3c6d87d04}\label{structgeneral__server__configuration_a5b0dbb90fbd5279d5f86dca3c6d87d04} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_config\_file\_path@{\_config\_file\_path}}
+\index{\_config\_file\_path@{\_config\_file\_path}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_config\_file\_path}{\_config\_file\_path}}
+{\footnotesize\ttfamily boost\+::filesystem\+::path general\+\_\+server\+\_\+configuration\+::\+\_\+config\+\_\+file\+\_\+path \{"{}"{}\}}
+
+\Hypertarget{structgeneral__server__configuration_a5a6623b33fc70a2288abdd259e4290d1}\label{structgeneral__server__configuration_a5a6623b33fc70a2288abdd259e4290d1} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_db\_database@{\_db\_database}}
+\index{\_db\_database@{\_db\_database}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_db\_database}{\_db\_database}}
+{\footnotesize\ttfamily std\+::string general\+\_\+server\+\_\+configuration\+::\+\_\+db\+\_\+database}
+
+\Hypertarget{structgeneral__server__configuration_a1b42154a9154d28494ceaf24b9b9feea}\label{structgeneral__server__configuration_a1b42154a9154d28494ceaf24b9b9feea} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_db\_host@{\_db\_host}}
+\index{\_db\_host@{\_db\_host}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_db\_host}{\_db\_host}}
+{\footnotesize\ttfamily std\+::string general\+\_\+server\+\_\+configuration\+::\+\_\+db\+\_\+host}
+
+\Hypertarget{structgeneral__server__configuration_acc9c8d96f23d5ea11c626b1b7abcfe34}\label{structgeneral__server__configuration_acc9c8d96f23d5ea11c626b1b7abcfe34} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_db\_pass@{\_db\_pass}}
+\index{\_db\_pass@{\_db\_pass}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_db\_pass}{\_db\_pass}}
+{\footnotesize\ttfamily std\+::string general\+\_\+server\+\_\+configuration\+::\+\_\+db\+\_\+pass}
+
+\Hypertarget{structgeneral__server__configuration_a82fcf1816b248a4915cbf54a738401ae}\label{structgeneral__server__configuration_a82fcf1816b248a4915cbf54a738401ae} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_db\_port@{\_db\_port}}
+\index{\_db\_port@{\_db\_port}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_db\_port}{\_db\_port}}
+{\footnotesize\ttfamily uint16\+\_\+t general\+\_\+server\+\_\+configuration\+::\+\_\+db\+\_\+port \{3306\}}
+
+\Hypertarget{structgeneral__server__configuration_ae0dc057756c6332a0c3470425833366b}\label{structgeneral__server__configuration_ae0dc057756c6332a0c3470425833366b} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_db\_threads@{\_db\_threads}}
+\index{\_db\_threads@{\_db\_threads}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_db\_threads}{\_db\_threads}}
+{\footnotesize\ttfamily uint8\+\_\+t general\+\_\+server\+\_\+configuration\+::\+\_\+db\+\_\+threads \{5\}}
+
+\Hypertarget{structgeneral__server__configuration_a482490745b436745b410c0334ee0da68}\label{structgeneral__server__configuration_a482490745b436745b410c0334ee0da68} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_db\_user@{\_db\_user}}
+\index{\_db\_user@{\_db\_user}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_db\_user}{\_db\_user}}
+{\footnotesize\ttfamily std\+::string general\+\_\+server\+\_\+configuration\+::\+\_\+db\+\_\+user}
+
+\Hypertarget{structgeneral__server__configuration_a3d9dcb8f42d970103718f5807a18127c}\label{structgeneral__server__configuration_a3d9dcb8f42d970103718f5807a18127c} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_listen\_ip@{\_listen\_ip}}
+\index{\_listen\_ip@{\_listen\_ip}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_listen\_ip}{\_listen\_ip}}
+{\footnotesize\ttfamily std\+::string general\+\_\+server\+\_\+configuration\+::\+\_\+listen\+\_\+ip}
+
+
+
+Listen IP. 
+
+\Hypertarget{structgeneral__server__configuration_ae2084e63d17623bd13f5885e477be828}\label{structgeneral__server__configuration_ae2084e63d17623bd13f5885e477be828} 
+\index{general\_server\_configuration@{general\_server\_configuration}!\_listen\_port@{\_listen\_port}}
+\index{\_listen\_port@{\_listen\_port}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{\_listen\_port}{\_listen\_port}}
+{\footnotesize\ttfamily uint16\+\_\+t general\+\_\+server\+\_\+configuration\+::\+\_\+listen\+\_\+port}
+
+
+
+Listen Port Number. 
+
+\Hypertarget{structgeneral__server__configuration_a413184e9c9c81fb9639e60928bafb735}\label{structgeneral__server__configuration_a413184e9c9c81fb9639e60928bafb735} 
+\index{general\_server\_configuration@{general\_server\_configuration}!minimal@{minimal}}
+\index{minimal@{minimal}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{minimal}{minimal}}
+{\footnotesize\ttfamily bool general\+\_\+server\+\_\+configuration\+::minimal \{false\}}
+
+\Hypertarget{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}\label{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331} 
+\index{general\_server\_configuration@{general\_server\_configuration}!shutdown\_signal@{shutdown\_signal}}
+\index{shutdown\_signal@{shutdown\_signal}!general\_server\_configuration@{general\_server\_configuration}}
+\doxysubsubsection{\texorpdfstring{shutdown\_signal}{shutdown\_signal}}
+{\footnotesize\ttfamily int general\+\_\+server\+\_\+configuration\+::shutdown\+\_\+signal}
+
+
+
+Shutdown signal. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Common/\+Configuration/\mbox{\hyperlink{_server_configuration_8hpp}{Server\+Configuration.\+hpp}}\end{DoxyCompactItemize}

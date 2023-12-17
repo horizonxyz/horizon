@@ -1,0 +1,185 @@
+\doxysection{Locked\+Lookup\+Table.\+hpp}
+\hypertarget{_locked_lookup_table_8hpp_source}{}\label{_locked_lookup_table_8hpp_source}\index{src/Core/Multithreading/LockedLookupTable.hpp@{src/Core/Multithreading/LockedLookupTable.hpp}}
+\mbox{\hyperlink{_locked_lookup_table_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_MULTITHREADING\_LOCKEDLOOKUPTABLE\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_MULTITHREADING\_LOCKEDLOOKUPTABLE\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <boost/thread/shared\_mutex.hpp>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <boost/thread.hpp>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Key,\ \textcolor{keyword}{typename}\ Value,\ \textcolor{keyword}{typename}\ Hash\ =\ std::hash<Key>>}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }bucket\_type;}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{typedef}\ Key\ \mbox{\hyperlink{class_locked_lookup_table_a6b7531d353442ffebe3e4ad716deb937}{key\_type}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{typedef}\ Value\ \mbox{\hyperlink{class_locked_lookup_table_a87dbffbc07bd15c9a3e308f1afefe05f}{mapped\_type}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typedef}\ Hash\ \mbox{\hyperlink{class_locked_lookup_table_a800082eab7342c5170989993db055282}{hash\_type}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table_a7fb6f3b5cb8b42eb3a7110a9c218bdd7}{LockedLookupTable}}(\textcolor{keywordtype}{unsigned}\ num\_buckets\ =\ 19,\ \textcolor{keyword}{const}\ Hash\ \&hasher\_\ =\ Hash())}
+\DoxyCodeLine{00052\ \ \ \ \ :\ \_buckets(num\_buckets),\ hasher(hasher\_)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ num\_buckets;\ ++i)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \_buckets[i].reset(\textcolor{keyword}{new}\ bucket\_type);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table_ac4841239030ee464d8f9eab3d51136e5}{LockedLookupTable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable}}\ \&other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable}}\ \&\mbox{\hyperlink{class_locked_lookup_table_a9c5582ceddf288062fa8ae2b63166b2b}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable}}\ \&other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ Value\ \textcolor{keyword}{const}\ \&\mbox{\hyperlink{class_locked_lookup_table_a331059001b9cb2ba56978ed27064bf48}{operator[]\ }}(Key\ \&k)\ \{\ \mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(k);\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ Value\ \mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(Key\ \textcolor{keyword}{const}\ \&key,\ Value\ \textcolor{keyword}{const}\ \&default\_value\ =\ Value())\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00064\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get\_bucket(key).at(key,\ default\_value);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_locked_lookup_table_a471083f2f190bbc602718de23bdc1b79}{insert}}(\textcolor{keyword}{const}\ Key\ \&key,\ \textcolor{keyword}{const}\ Value\ \&value)}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ get\_bucket(key).insert(key,\ value);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_locked_lookup_table_af6db19add60b8aeef4fec9b70b764957}{erase}}(\textcolor{keyword}{const}\ Key\ \&key)}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ get\_bucket(key).erase(key);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::map<Key,\ Value>\ \mbox{\hyperlink{class_locked_lookup_table_afd536eb5de8db4df48ade0910a05b454}{get\_map}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00079\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::map<Key,\ Value>\ res;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ \_buckets.size();\ ++i)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ boost::unique\_lock<boost::shared\_mutex>\ lock(\_buckets[i]-\/>\_mutex);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ bucket\_type::bucket\_iterator\ it\ =\ \_buckets[i]-\/>data.begin();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \_buckets[i]-\/>data.end();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.insert(*it);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_locked_lookup_table_a35bbfc4cb19fc7892e9247eaaa096cd4}{max\_collisions}}()\ \{\ \textcolor{keywordflow}{return}\ \_buckets[0]-\/>data.size()\ ?\ \_buckets[0]-\/>data.size()\ -\/\ 1\ :\ 0;\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_locked_lookup_table_ab063bb25057015d7d1cfb897ab6a2227}{size}}()}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::size\_t\ count\ =\ 0;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ \_buckets.size();\ ++i)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ boost::unique\_lock<boost::shared\_mutex>\ lock(\_buckets[i]-\/>\_mutex);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ bucket\_type::bucket\_iterator\ it\ =\ \_buckets[i]-\/>data.begin();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it\ !=\ \_buckets[i]-\/>data.end();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_locked_lookup_table_a1c7bfd07b67c4424e4393f421d6aa6b9}{clear}}()}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ \_buckets.size();\ ++i)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ boost::unique\_lock<boost::shared\_mutex>\ lock(\_buckets[i]-\/>\_mutex);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \_buckets[i]-\/>data.clear();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ std::vector<std::unique\_ptr<bucket\_type>>\ \_buckets;}
+\DoxyCodeLine{00122\ \ \ \ \ Hash\ hasher;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ bucket\_type\ \&get\_bucket(Key\ \textcolor{keyword}{const}\ \&key)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ bucket\_index\ =\ hasher(key)\ \%\ \_buckets.size();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\_buckets[bucket\_index];}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{class\ }bucket\_type}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<Key,\ Value>\ bucket\_value;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<bucket\_value>\ bucket\_data;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{typename}\ bucket\_data::iterator\ bucket\_iterator;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ Value\ at(Key\ \textcolor{keyword}{const}\ \&key,\ Value\ \textcolor{keyword}{const}\ \&default\_value)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ boost::shared\_lock<boost::shared\_mutex>\ lock(\_mutex);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ bucket\_iterator\ \textcolor{keyword}{const}\ found\_entry\ =\ find\_entry\_for(key);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (found\_entry\ ==\ data.end())\ ?\ default\_value\ :\ found\_entry-\/>second;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ insert(Key\ \textcolor{keyword}{const}\ \&key,\ Value\ \textcolor{keyword}{const}\ \&value)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ boost::unique\_lock<boost::shared\_mutex>\ lock(\_mutex);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ bucket\_iterator\ found\_entry\ =\ find\_entry\_for(key);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (found\_entry\ !=\ data.end())}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.erase(found\_entry);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ data.push\_back(bucket\_value(key,\ value));}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ erase(Key\ \textcolor{keyword}{const}\ \&key)}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ boost::unique\_lock<boost::shared\_mutex>\ lock(\_mutex);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ bucket\_iterator\ \textcolor{keyword}{const}\ found\_entry\ =\ find\_entry\_for(key);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (found\_entry\ !=\ data.end())}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.erase(found\_entry);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ bucket\_data\ data;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ boost::shared\_mutex\ \_mutex;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ bucket\_iterator\ find\_entry\_for(Key\ \textcolor{keyword}{const}\ \&key)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::find\_if(data.begin(),\ data.end(),}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](bucket\_value\ \textcolor{keyword}{const}\ \&item)}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ item.first\ ==\ key;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \};}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CORE\_MULTITHREADING\_LOCKEDLOOKUPTABLE\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\doxysection{Status\+Effect\+Definitions.\+hpp}
+\hypertarget{_status_effect_definitions_8hpp_source}{}\label{_status_effect_definitions_8hpp_source}\index{src/Server/Zone/Definitions/StatusEffectDefinitions.hpp@{src/Server/Zone/Definitions/StatusEffectDefinitions.hpp}}
+\mbox{\hyperlink{_status_effect_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_STATUS\_DEFINITIONS}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_STATUS\_DEFINITIONS}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfc}{status\_effect\_behavior\_type}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfcafe46478c204ad43b7d4e9763f9017606}{SEBHVR\_NO\_REM\_DEATH}}\ \ =\ 0x001,}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfcac3abefddec4c8a743c7f07230fc261e3}{SEBHVR\_NO\_SAVE}}\ \ \ \ \ \ \ =\ 0x002,}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca8a4e8fa405cc5310a448a4aaabe2ff45}{SEBHVR\_NO\_DISPELL}}\ \ \ \ =\ 0x004,}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca3557cb175886e855c80488673301e8ae}{SEBHVR\_NO\_CLEARANCE}}\ \ =\ 0x008,}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca5b34e1d0471b9c5c8c4b0253cb527e05}{SEBHVR\_BUFF}}\ \ \ \ \ \ \ \ \ \ =\ 0x010,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca7526dd698e5b8570322e36e3b118a045}{SEBHVR\_DEBUFF}}\ \ \ \ \ \ \ \ =\ 0x020,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca68275fdfb0780c1d90d7d4a25fee1855}{SEBHVR\_MADO\_NO\_RESET}}\ =\ 0x040,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca57a18725a904c0827deb4f5954fc4fa0}{SEBHVR\_NO\_CLEAR}}\ \ \ \ \ \ =\ 0x080,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca47882ea4f4f5644bafd01b3ef2f60acd}{SEBHVR\_VISIBLE}}\ \ \ \ \ \ \ =\ 0x100,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_status_effect_definitions_8hpp_af633d72d1a598a5c13d956f159384dfca95aea52978446653c0fc8bf9e562f57e}{SEBHVR\_NO\_BOSS}}\ \ \ \ \ \ \ =\ 0x200}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structstatus__change__entry}{status\_change\_entry}}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structstatus__change__entry_ad8412978b145b574fcc818f3862301c1}{type}}\{0\};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structstatus__change__entry_aff563d466d6a91cca27503aade854187}{current\_time}}\{0\};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structstatus__change__entry_a9c76405dec74e1809c4c7970b0c50a1d}{total\_time}}\{0\};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structstatus__change__entry_a0f70b1f1e42c7759a336f93fe32d4cd7}{val1}}\{0\},\ \mbox{\hyperlink{structstatus__change__entry_a90584a181455e1d2c25bcb8bbc4c120a}{val2}}\{0\},\ \mbox{\hyperlink{structstatus__change__entry_aa4a1f66bb1bd7c7bc4a7c57c7bf0184c}{val3}}\{0\},\ \mbox{\hyperlink{structstatus__change__entry_ae0cffd0290b329cd3a619f959d446aed}{val4}}\{0\};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structstatus__change__entry_a763e1b17a1737186ca38f86d117f5ae6}{infinite\_duration}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_STATUS\_DEFINITIONS\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

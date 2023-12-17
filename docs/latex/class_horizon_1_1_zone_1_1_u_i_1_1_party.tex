@@ -1,0 +1,133 @@
+\doxysection{Horizon\+::Zone\+::UI\+::Party Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party}{}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party}\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+
+
+{\ttfamily \#include $<$User\+Interface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93d728e53f512960d92f5546b6452e03}{Party}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5256d321d676ff8f7bd3618c437d4551}{\texorpdfstring{$\sim$}{\string~}\+Party}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad5377c77bdcb329c84e142371839627d}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad6c9368fc59b824d09b637d67ab23af6}{create}} (std\+::string name, int item\+\_\+pickup\+\_\+rule, int item\+\_\+share\+\_\+rule)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a442160afb1a49d08d1c2cbae24910699}{invite}} (int account\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae02ddb1584006e04caff2703767d1187}{invite}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5891145bdd8e4c58691cbafea3f3260b}{invite\+\_\+response}} (int party\+\_\+id, enum \mbox{\hyperlink{_client_definitions_8hpp_ac7d921cb36fe7cd64c9ec6e27808f264}{party\+\_\+invite\+\_\+response\+\_\+type}} response)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ace2aee1892bab770c6c6b4931c1032ac}{leave}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a9e66367faa29ec074aae411bf66e626d}{expel\+\_\+member}} (int account\+\_\+id, std\+::string name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a85beb2e41b6323d3e22fd572db4b7679}{change\+\_\+properties}} (int exp\+\_\+share\+\_\+rule, int item\+\_\+pickup\+\_\+rule, int item\+\_\+share\+\_\+rule)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a83cbd2e326d56e084b3b22924b0c2e83}{send\+\_\+message}} (int packet\+\_\+length, std\+::string message)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_adb140b8bf75e2943f7657bf8681dae77}{change\+\_\+leader}} (int account\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93ba3e461601fe7378a12449cbc27ed8}{refuse\+\_\+invite}} (bool refuse)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae80772a68369efd3c41d056e11216d0a}{notify\+\_\+created}} (\mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154b}{zcack\+\_\+makegroup\+\_\+result\+\_\+type}} result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93d728e53f512960d92f5546b6452e03}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93d728e53f512960d92f5546b6452e03} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!Party@{Party}}
+\index{Party@{Party}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{Party()}{Party()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Party\+::\+Party (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_u_i_1_1_party}{Party} \Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5256d321d676ff8f7bd3618c437d4551}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5256d321d676ff8f7bd3618c437d4551} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!````~Party@{\texorpdfstring{$\sim$}{\string~}Party}}
+\index{````~Party@{\texorpdfstring{$\sim$}{\string~}Party}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Party()}{\string~Party()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Party\+::\texorpdfstring{$\sim$}{\string~}\+Party (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_adb140b8bf75e2943f7657bf8681dae77}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_adb140b8bf75e2943f7657bf8681dae77} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!change\_leader@{change\_leader}}
+\index{change\_leader@{change\_leader}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{change\_leader()}{change\_leader()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::change\+\_\+leader (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a85beb2e41b6323d3e22fd572db4b7679}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a85beb2e41b6323d3e22fd572db4b7679} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!change\_properties@{change\_properties}}
+\index{change\_properties@{change\_properties}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{change\_properties()}{change\_properties()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::change\+\_\+properties (\begin{DoxyParamCaption}\item[{int}]{exp\+\_\+share\+\_\+rule,  }\item[{int}]{item\+\_\+pickup\+\_\+rule,  }\item[{int}]{item\+\_\+share\+\_\+rule }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad6c9368fc59b824d09b637d67ab23af6}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad6c9368fc59b824d09b637d67ab23af6} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!create@{create}}
+\index{create@{create}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::create (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{item\+\_\+pickup\+\_\+rule,  }\item[{int}]{item\+\_\+share\+\_\+rule }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a9e66367faa29ec074aae411bf66e626d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a9e66367faa29ec074aae411bf66e626d} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!expel\_member@{expel\_member}}
+\index{expel\_member@{expel\_member}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{expel\_member()}{expel\_member()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::expel\+\_\+member (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad5377c77bdcb329c84e142371839627d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad5377c77bdcb329c84e142371839627d} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Horizon\+::\+Zone\+::\+UI\+::\+Party\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a442160afb1a49d08d1c2cbae24910699}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a442160afb1a49d08d1c2cbae24910699} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!invite@{invite}}
+\index{invite@{invite}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{invite()}{invite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::invite (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae02ddb1584006e04caff2703767d1187}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae02ddb1584006e04caff2703767d1187} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!invite@{invite}}
+\index{invite@{invite}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{invite()}{invite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::invite (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5891145bdd8e4c58691cbafea3f3260b}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5891145bdd8e4c58691cbafea3f3260b} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!invite\_response@{invite\_response}}
+\index{invite\_response@{invite\_response}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{invite\_response()}{invite\_response()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::invite\+\_\+response (\begin{DoxyParamCaption}\item[{int}]{party\+\_\+id,  }\item[{enum \mbox{\hyperlink{_client_definitions_8hpp_ac7d921cb36fe7cd64c9ec6e27808f264}{party\+\_\+invite\+\_\+response\+\_\+type}}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_ace2aee1892bab770c6c6b4931c1032ac}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_ace2aee1892bab770c6c6b4931c1032ac} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!leave@{leave}}
+\index{leave@{leave}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{leave()}{leave()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::leave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae80772a68369efd3c41d056e11216d0a}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae80772a68369efd3c41d056e11216d0a} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!notify\_created@{notify\_created}}
+\index{notify\_created@{notify\_created}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{notify\_created()}{notify\_created()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::notify\+\_\+created (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154b}{zcack\+\_\+makegroup\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93ba3e461601fe7378a12449cbc27ed8}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93ba3e461601fe7378a12449cbc27ed8} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!refuse\_invite@{refuse\_invite}}
+\index{refuse\_invite@{refuse\_invite}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{refuse\_invite()}{refuse\_invite()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::refuse\+\_\+invite (\begin{DoxyParamCaption}\item[{bool}]{refuse }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_party_a83cbd2e326d56e084b3b22924b0c2e83}\label{class_horizon_1_1_zone_1_1_u_i_1_1_party_a83cbd2e326d56e084b3b22924b0c2e83} 
+\index{Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}!send\_message@{send\_message}}
+\index{send\_message@{send\_message}!Horizon::Zone::UI::Party@{Horizon::Zone::UI::Party}}
+\doxysubsubsection{\texorpdfstring{send\_message()}{send\_message()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Party\+::send\+\_\+message (\begin{DoxyParamCaption}\item[{int}]{packet\+\_\+length,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8hpp}{User\+Interface.\+hpp}}\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

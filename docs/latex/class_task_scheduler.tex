@@ -1,0 +1,454 @@
+\doxysection{Task\+Scheduler Class Reference}
+\hypertarget{class_task_scheduler}{}\label{class_task_scheduler}\index{TaskScheduler@{TaskScheduler}}
+
+
+{\ttfamily \#include $<$Task\+Scheduler.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_scheduler_aa77a78c146ba0fd71d33c44f7f2825f2}{Task\+Scheduler}} ()
+\item 
+{\footnotesize template$<$typename P $>$ }\\\mbox{\hyperlink{class_task_scheduler_a7a4238b1a25be51166721ab89ecae50d}{Task\+Scheduler}} (P \&\&predicate)
+\item 
+\mbox{\hyperlink{class_task_scheduler_abdd7c9c3694ee4784b511bd622c5d1c3}{Task\+Scheduler}} (\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} const \&)=delete
+\item 
+\mbox{\hyperlink{class_task_scheduler_a35107fe7973581813395a168025f4602}{Task\+Scheduler}} (\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a0d12cd444cf5319cc2a22fce53158cdc}{operator=}} (\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} const \&)=delete
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a9d138ac49b394ad151661465e4180de6}{operator=}} (\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \&\&)=delete
+\item 
+{\footnotesize template$<$typename P $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_af2bb90b6b81ab1cacd9ac56c3d7e11b2}{Set\+Validator}} (P \&\&predicate)
+\begin{DoxyCompactList}\small\item\em Sets a Validator which is asked if tasks are allowed to be executed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_abba53e9320119263b413086d3cf98b06}{Clear\+Validator}} ()
+\begin{DoxyCompactList}\small\item\em Clears the Validator which is asked if tasks are allowed to be executed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9}{Update}} (success\+\_\+t const \&callback=Empty\+Callback)
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a7eaa3cfd3b082d8d71df0f8c031d0bb5}{Update}} (size\+\_\+t const microseconds, success\+\_\+t const \&callback=Empty\+Callback)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a3b2df04710a7d6a4d15e0776eb077920}{Update}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&difftime, success\+\_\+t const \&callback=Empty\+Callback)
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}{Async}} (std\+::function$<$ void()$>$ const \&callable)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a0e0579d2a2397de5a79c756d5e59a830}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&time, task\+\_\+handler\+\_\+t const \&task)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_task_scheduler_a06f6d2a14cc7ed2ce4d9865e89c0c0bf}{Count}} (group\+\_\+t const \&group)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_aaed6d647d6b01913e9e1223d951cfeba}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&time, group\+\_\+t const group, task\+\_\+handler\+\_\+t const \&task)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_aa80bbdd8dc6723f5fb85ffdd327a3938}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max, task\+\_\+handler\+\_\+t const \&task)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_abd4d216bb9cc2ab3ae1441f079b7d7d3}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max, group\+\_\+t const group, task\+\_\+handler\+\_\+t const \&task)
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a05da7a474b80d725c991dde9d24df4a4}{Cancel\+All}} ()
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_aa4076cb693d644584f7475dd4f5f4b5d}{Cancel\+Group}} (group\+\_\+t const group)
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a16b63643c58023c8e22f75e5782af4bf}{Cancel\+Groups\+Of}} (std\+::vector$<$ group\+\_\+t $>$ const \&groups)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a0254703c6e20f5214682fbad8f96dcb2}{Delay\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Delays all tasks with the given duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a710aca9b74eabea0163fcb2b321a39e3}{Delay\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Delays all tasks with a random duration between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a91f6ef47e22b95b487999bbaaa303c82}{Delay\+Group}} (group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Delays all tasks of a group with the given duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_ae5d12183c090335b291217db5c670e6f}{Delay\+Group}} (group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Delays all tasks of a group with a random duration between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a05c6f74e1be5aa699988908b3151b901}{Reschedule\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks with a given duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_afd7ca0f744e8f492f18b42d186ec0723}{Reschedule\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks with a random duration between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_afabf8f475205d00eedb9c39d84af7aa3}{Reschedule\+Group}} (group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks of a group with the given duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_task_scheduler_a762836fbd5252c247acedbe4d740cf09}{Reschedule\+Group}} (group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks of a group with a random duration between min and max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_task_scheduler_ab75a9caf07880e5ba2bb9f75068bbe7e}{Task\+Context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_task_scheduler}{Task\+Scheduler} class provides the ability to schedule std\+::function\textquotesingle{}s in the near future. Use \doxylink{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9}{Task\+Scheduler\+::\+Update} to update the scheduler. Popular methods are\+:
+\begin{DoxyItemize}
+\item Schedule (Schedules a std\+::function which will be executed in the near future).
+\item Schedules an asynchronous function which will be executed at the next update tick.
+\item Cancel, Delay \& Reschedule (Methods to manipulate already scheduled tasks). Tasks are organized in groups (uint), multiple tasks can have the same group id, you can provide a group or not, but keep in mind that you can only manipulate specific tasks through its group id! Tasks callbacks use the function signature void(\+Task\+Context) where \doxylink{class_task_context}{Task\+Context} provides access to the function schedule plan which makes it possible to repeat the task with the same duration or a new one. It also provides access to the repeat counter which is useful for task that repeat itself often but behave different every time (spoken event HLogs for example). 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_scheduler_aa77a78c146ba0fd71d33c44f7f2825f2}\label{class_task_scheduler_aa77a78c146ba0fd71d33c44f7f2825f2} 
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{TaskScheduler()}{TaskScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Task\+Scheduler\+::\+Task\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_task_scheduler_a7a4238b1a25be51166721ab89ecae50d}\label{class_task_scheduler_a7a4238b1a25be51166721ab89ecae50d} 
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{TaskScheduler()}{TaskScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename P $>$ \\
+Task\+Scheduler\+::\+Task\+Scheduler (\begin{DoxyParamCaption}\item[{P \&\&}]{predicate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_task_scheduler_abdd7c9c3694ee4784b511bd622c5d1c3}\label{class_task_scheduler_abdd7c9c3694ee4784b511bd622c5d1c3} 
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{TaskScheduler()}{TaskScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Task\+Scheduler\+::\+Task\+Scheduler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_task_scheduler_a35107fe7973581813395a168025f4602}\label{class_task_scheduler_a35107fe7973581813395a168025f4602} 
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\index{TaskScheduler@{TaskScheduler}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{TaskScheduler()}{TaskScheduler()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Task\+Scheduler\+::\+Task\+Scheduler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}\label{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626} 
+\index{TaskScheduler@{TaskScheduler}!Async@{Async}}
+\index{Async@{Async}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Async()}{Async()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Async (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$ const \&}]{callable }\end{DoxyParamCaption})}
+
+Schedule an callable function that is executed at the next update tick. Its safe to modify the \doxylink{class_task_scheduler}{Task\+Scheduler} from within the callable. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a05da7a474b80d725c991dde9d24df4a4}\label{class_task_scheduler_a05da7a474b80d725c991dde9d24df4a4} 
+\index{TaskScheduler@{TaskScheduler}!CancelAll@{CancelAll}}
+\index{CancelAll@{CancelAll}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{CancelAll()}{CancelAll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Cancel\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Cancels all tasks. Never call this from within a task context! Use \doxylink{class_task_context_a6aa85817c2bf7c7f2f868d4a0a9fdf98}{Task\+Context\+::\+Cancel\+All} instead! Clear the task holderHere is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a05da7a474b80d725c991dde9d24df4a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_aa4076cb693d644584f7475dd4f5f4b5d}\label{class_task_scheduler_aa4076cb693d644584f7475dd4f5f4b5d} 
+\index{TaskScheduler@{TaskScheduler}!CancelGroup@{CancelGroup}}
+\index{CancelGroup@{CancelGroup}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{CancelGroup()}{CancelGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Cancel\+Group (\begin{DoxyParamCaption}\item[{group\+\_\+t const}]{group }\end{DoxyParamCaption})}
+
+Cancel all tasks of a single group. Never call this from within a task context! Use \doxylink{class_task_context_a95dca8900ebf6709d9c5535f39c7277f}{Task\+Context\+::\+Cancel\+Group} instead! Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_aa4076cb693d644584f7475dd4f5f4b5d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a16b63643c58023c8e22f75e5782af4bf}\label{class_task_scheduler_a16b63643c58023c8e22f75e5782af4bf} 
+\index{TaskScheduler@{TaskScheduler}!CancelGroupsOf@{CancelGroupsOf}}
+\index{CancelGroupsOf@{CancelGroupsOf}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{CancelGroupsOf()}{CancelGroupsOf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Cancel\+Groups\+Of (\begin{DoxyParamCaption}\item[{std\+::vector$<$ group\+\_\+t $>$ const \&}]{groups }\end{DoxyParamCaption})}
+
+Cancels all groups in the given std\+::vector. Hint\+: Use std\+::initializer\+\_\+list for this\+: "{}\{1, 2, 3, 4\}"{} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a16b63643c58023c8e22f75e5782af4bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a16b63643c58023c8e22f75e5782af4bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_abba53e9320119263b413086d3cf98b06}\label{class_task_scheduler_abba53e9320119263b413086d3cf98b06} 
+\index{TaskScheduler@{TaskScheduler}!ClearValidator@{ClearValidator}}
+\index{ClearValidator@{ClearValidator}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{ClearValidator()}{ClearValidator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Clear\+Validator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the Validator which is asked if tasks are allowed to be executed. 
+
+Copyright 2014-\/2015 Denis Blank \href{mailto:denis.blank@outlook.com}{\texttt{ denis.\+blank@outlook.\+com}}
+
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}http://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. \Hypertarget{class_task_scheduler_a06f6d2a14cc7ed2ce4d9865e89c0c0bf}\label{class_task_scheduler_a06f6d2a14cc7ed2ce4d9865e89c0c0bf} 
+\index{TaskScheduler@{TaskScheduler}!Count@{Count}}
+\index{Count@{Count}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Task\+Scheduler\+::\+Count (\begin{DoxyParamCaption}\item[{group\+\_\+t const \&}]{group }\end{DoxyParamCaption})}
+
+\Hypertarget{class_task_scheduler_a0254703c6e20f5214682fbad8f96dcb2}\label{class_task_scheduler_a0254703c6e20f5214682fbad8f96dcb2} 
+\index{TaskScheduler@{TaskScheduler}!DelayAll@{DelayAll}}
+\index{DelayAll@{DelayAll}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{DelayAll()}{DelayAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Delay\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks with the given duration. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a0254703c6e20f5214682fbad8f96dcb2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a710aca9b74eabea0163fcb2b321a39e3}\label{class_task_scheduler_a710aca9b74eabea0163fcb2b321a39e3} 
+\index{TaskScheduler@{TaskScheduler}!DelayAll@{DelayAll}}
+\index{DelayAll@{DelayAll}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{DelayAll()}{DelayAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Delay\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks with a random duration between min and max. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a710aca9b74eabea0163fcb2b321a39e3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a91f6ef47e22b95b487999bbaaa303c82}\label{class_task_scheduler_a91f6ef47e22b95b487999bbaaa303c82} 
+\index{TaskScheduler@{TaskScheduler}!DelayGroup@{DelayGroup}}
+\index{DelayGroup@{DelayGroup}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{DelayGroup()}{DelayGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Delay\+Group (\begin{DoxyParamCaption}\item[{group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks of a group with the given duration. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a91f6ef47e22b95b487999bbaaa303c82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_ae5d12183c090335b291217db5c670e6f}\label{class_task_scheduler_ae5d12183c090335b291217db5c670e6f} 
+\index{TaskScheduler@{TaskScheduler}!DelayGroup@{DelayGroup}}
+\index{DelayGroup@{DelayGroup}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{DelayGroup()}{DelayGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Delay\+Group (\begin{DoxyParamCaption}\item[{group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks of a group with a random duration between min and max. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_ae5d12183c090335b291217db5c670e6f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a9d138ac49b394ad151661465e4180de6}\label{class_task_scheduler_a9d138ac49b394ad151661465e4180de6} 
+\index{TaskScheduler@{TaskScheduler}!operator=@{operator=}}
+\index{operator=@{operator=}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_task_scheduler_a0d12cd444cf5319cc2a22fce53158cdc}\label{class_task_scheduler_a0d12cd444cf5319cc2a22fce53158cdc} 
+\index{TaskScheduler@{TaskScheduler}!operator=@{operator=}}
+\index{operator=@{operator=}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_task_scheduler_a05c6f74e1be5aa699988908b3151b901}\label{class_task_scheduler_a05c6f74e1be5aa699988908b3151b901} 
+\index{TaskScheduler@{TaskScheduler}!RescheduleAll@{RescheduleAll}}
+\index{RescheduleAll@{RescheduleAll}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{RescheduleAll()}{RescheduleAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Reschedule\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks with a given duration. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a05c6f74e1be5aa699988908b3151b901_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_afd7ca0f744e8f492f18b42d186ec0723}\label{class_task_scheduler_afd7ca0f744e8f492f18b42d186ec0723} 
+\index{TaskScheduler@{TaskScheduler}!RescheduleAll@{RescheduleAll}}
+\index{RescheduleAll@{RescheduleAll}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{RescheduleAll()}{RescheduleAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Reschedule\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks with a random duration between min and max. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_afd7ca0f744e8f492f18b42d186ec0723_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_afabf8f475205d00eedb9c39d84af7aa3}\label{class_task_scheduler_afabf8f475205d00eedb9c39d84af7aa3} 
+\index{TaskScheduler@{TaskScheduler}!RescheduleGroup@{RescheduleGroup}}
+\index{RescheduleGroup@{RescheduleGroup}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{RescheduleGroup()}{RescheduleGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Reschedule\+Group (\begin{DoxyParamCaption}\item[{group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks of a group with the given duration. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_afabf8f475205d00eedb9c39d84af7aa3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a762836fbd5252c247acedbe4d740cf09}\label{class_task_scheduler_a762836fbd5252c247acedbe4d740cf09} 
+\index{TaskScheduler@{TaskScheduler}!RescheduleGroup@{RescheduleGroup}}
+\index{RescheduleGroup@{RescheduleGroup}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{RescheduleGroup()}{RescheduleGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Reschedule\+Group (\begin{DoxyParamCaption}\item[{group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks of a group with a random duration between min and max. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a762836fbd5252c247acedbe4d740cf09_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_aaed6d647d6b01913e9e1223d951cfeba}\label{class_task_scheduler_aaed6d647d6b01913e9e1223d951cfeba} 
+\index{TaskScheduler@{TaskScheduler}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{time,  }\item[{group\+\_\+t const}]{group,  }\item[{task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a fixed rate. Never call this from within a task context! Use \doxylink{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}{Task\+Context\+::\+Schedule} instead! \Hypertarget{class_task_scheduler_a0e0579d2a2397de5a79c756d5e59a830}\label{class_task_scheduler_a0e0579d2a2397de5a79c756d5e59a830} 
+\index{TaskScheduler@{TaskScheduler}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{time,  }\item[{task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a fixed rate. Never call this from within a task context! Use \doxylink{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}{Task\+Context\+::\+Schedule} instead! Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a0e0579d2a2397de5a79c756d5e59a830_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_abd4d216bb9cc2ab3ae1441f079b7d7d3}\label{class_task_scheduler_abd4d216bb9cc2ab3ae1441f079b7d7d3} 
+\index{TaskScheduler@{TaskScheduler}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max,  }\item[{group\+\_\+t const}]{group,  }\item[{task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a fixed rate. Never call this from within a task context! Use \doxylink{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}{Task\+Context\+::\+Schedule} instead! \Hypertarget{class_task_scheduler_aa80bbdd8dc6723f5fb85ffdd327a3938}\label{class_task_scheduler_aa80bbdd8dc6723f5fb85ffdd327a3938} 
+\index{TaskScheduler@{TaskScheduler}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max,  }\item[{task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a randomized rate between min and max rate. Never call this from within a task context! Use \doxylink{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}{Task\+Context\+::\+Schedule} instead! \Hypertarget{class_task_scheduler_af2bb90b6b81ab1cacd9ac56c3d7e11b2}\label{class_task_scheduler_af2bb90b6b81ab1cacd9ac56c3d7e11b2} 
+\index{TaskScheduler@{TaskScheduler}!SetValidator@{SetValidator}}
+\index{SetValidator@{SetValidator}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{SetValidator()}{SetValidator()}}
+{\footnotesize\ttfamily template$<$typename P $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Set\+Validator (\begin{DoxyParamCaption}\item[{P \&\&}]{predicate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets a Validator which is asked if tasks are allowed to be executed. 
+
+\Hypertarget{class_task_scheduler_a7eaa3cfd3b082d8d71df0f8c031d0bb5}\label{class_task_scheduler_a7eaa3cfd3b082d8d71df0f8c031d0bb5} 
+\index{TaskScheduler@{TaskScheduler}!Update@{Update}}
+\index{Update@{Update}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Update (\begin{DoxyParamCaption}\item[{size\+\_\+t const}]{microseconds,  }\item[{success\+\_\+t const \&}]{callback = {\ttfamily EmptyCallback} }\end{DoxyParamCaption})}
+
+Update the scheduler with a difftime in ms. Calls the optional callback on successfully finish. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a7eaa3cfd3b082d8d71df0f8c031d0bb5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_scheduler_a3b2df04710a7d6a4d15e0776eb077920}\label{class_task_scheduler_a3b2df04710a7d6a4d15e0776eb077920} 
+\index{TaskScheduler@{TaskScheduler}!Update@{Update}}
+\index{Update@{Update}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Update (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{difftime,  }\item[{success\+\_\+t const \&}]{callback = {\ttfamily EmptyCallback} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Update the scheduler with a difftime. Calls the optional callback on successfully finish. \Hypertarget{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9}\label{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9} 
+\index{TaskScheduler@{TaskScheduler}!Update@{Update}}
+\index{Update@{Update}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Task\+Scheduler\+::\+Update (\begin{DoxyParamCaption}\item[{success\+\_\+t const \&}]{callback = {\ttfamily EmptyCallback} }\end{DoxyParamCaption})}
+
+Update the scheduler to the current time. Calls the optional callback on successfully finish. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_task_scheduler_ab75a9caf07880e5ba2bb9f75068bbe7e}\label{class_task_scheduler_ab75a9caf07880e5ba2bb9f75068bbe7e} 
+\index{TaskScheduler@{TaskScheduler}!TaskContext@{TaskContext}}
+\index{TaskContext@{TaskContext}!TaskScheduler@{TaskScheduler}}
+\doxysubsubsection{\texorpdfstring{TaskContext}{TaskContext}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_task_context}{Task\+Context}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utility/\mbox{\hyperlink{_task_scheduler_8hpp}{Task\+Scheduler.\+hpp}}\item 
+src/\+Utility/\mbox{\hyperlink{_task_scheduler_8cpp}{Task\+Scheduler.\+cpp}}\end{DoxyCompactItemize}

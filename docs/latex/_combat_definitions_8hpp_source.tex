@@ -1,0 +1,123 @@
+\doxysection{Combat\+Definitions.\+hpp}
+\hypertarget{_combat_definitions_8hpp_source}{}\label{_combat_definitions_8hpp_source}\index{src/Server/Zone/Definitions/CombatDefinitions.hpp@{src/Server/Zone/Definitions/CombatDefinitions.hpp}}
+\mbox{\hyperlink{_combat_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_COMBAT\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_COMBAT\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{EntityDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756f}{combat\_damage\_type\_mask}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Flag\ of\ the\ final\ calculation}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa33c46b8c89a72daa37f2eae9ee59c429}{CBT\_DMGMASK\_NONE}}\ \ \ \ \ \ \ =\ 0x0000,}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756faf044af0c10b68be61905177d7490654c}{CBT\_DMGMASK\_WEAPON}}\ \ \ \ \ =\ 0x0001,}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa14ecdf3f0d06ef97145b5b75e6f5d64d}{CBT\_DMGMASK\_MAGIC}}\ \ \ \ \ \ =\ 0x0002,}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fafa95fae5bfc7d3d89fcef533387dca68}{CBT\_DMGMASK\_MISC}}\ \ \ \ \ \ \ =\ 0x0004,}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa2b5cd19ee8d9ecc2dd1e5ae7465f1d0f}{CBT\_DMGMASK\_SHORT}}\ \ \ \ \ \ =\ 0x0010,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae43ab4f3183cceed6bc6b24883f4c6b5}{CBT\_DMGMASK\_LONG}}\ \ \ \ \ \ \ =\ 0x0040,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae166fcde5c181114a7c9e03377faaef6}{CBT\_DMGMASK\_SKILL}}\ \ \ \ \ \ =\ 0x0100,}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa83b3fb77790089937b92c54d718e0b2b}{CBT\_DMGMASK\_NORMAL}}\ \ \ \ \ =\ 0x0200,}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa10cb9d252c19f71644cd8119f8fe04ba}{CBT\_DMGMASK\_WEAPONMASK}}\ =\ 0x000f,}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa82c27b260fa3e4c415fd1315f09b0e48}{CBT\_DMGMASK\_RANGEMASK}}\ \ =\ 0x00f0,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fab085fc83245c203f8785cd6c524a17ec}{CBT\_DMGMASK\_SKILLMASK}}\ \ =\ 0x0f00,}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ state\ of\ a\ single\ attack\ attempt;\ used\ in\ flee/def\ penalty\ calculations\ when\ mobbed}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}{combat\_retaliate\_type}}\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a84b9f4ef1f00d0c66dc1e22148b23dcd}{CBT\_RET\_NONE}},\ \ \ \ \textcolor{comment}{//\ not\ an\ attack}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a81978c5f64e3fc38aff9a9537077ebe1}{CBT\_RET\_LUCKY}},\ \ \ \textcolor{comment}{//\ attack\ was\ lucky-\/dodged}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a6ce3d6ca212f172f2b410a06ed45083d}{CBT\_RET\_FLEE}},\ \ \ \ \textcolor{comment}{//\ attack\ was\ dodged}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7f77c32c1c32e75946f67259d2098150}{CBT\_RET\_MISS}},\ \ \ \ \textcolor{comment}{//\ attack\ missed\ because\ of\ element/race\ modifier.}}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7a13b0e259a553b78d51c51aabee4844}{CBT\_RET\_BLOCK}},\ \ \ \textcolor{comment}{//\ attack\ was\ blocked\ by\ some\ skills.}}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a76409ecd5c261f91ec25eb1410cbbfd6}{CBT\_RET\_DEF}}\ \ \ \ \ \ \textcolor{comment}{//\ attack\ connected}}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45e}{combat\_target\_mask}}\ \{\ \textcolor{comment}{//New\ definitions\ [Skotlex]}}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eab07173ca199a094af358b44c2b8a8c62}{CBT\_TMASK\_NOONE}}\ \ \ \ \ \ \ =\ \ \ 0x000000,}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea5fe77133311cb36c65c2608a177cd83b}{CBT\_TMASK\_SELF}}\ \ \ \ \ \ \ \ =\ \ \ 0x010000,}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eadfa10b0d7857e5bdaab17d71fdbc7d75}{CBT\_TMASK\_ENEMY}}\ \ \ \ \ \ \ =\ \ \ 0x020000,}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea8aee819400880ab668769d5d33ea44e7}{CBT\_TMASK\_PARTY}}\ \ \ \ \ \ \ =\ \ \ 0x040000,}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea773a78aa34e76a9844187bf770e4f6e5}{CBT\_TMASK\_GUILDALLY}}\ \ \ =\ \ \ 0x080000,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea0449399c8f75217b84a0fc623d16f3e5}{CBT\_TMASK\_NEUTRAL}}\ \ \ \ \ =\ \ \ 0x100000,}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea1a55a83a762ee961fa645e9a4876c5a9}{CBT\_TMASK\_SAMEGUILD}}\ \ \ =\ \ \ 0x200000,\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65b86ada21760c731d509a83b422122c}{CBT\_TMASK\_GUILD}}\ \ \ \ \ \ \ =\ \ \ 0x280000,\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea091de4773d4778dfd51215ad9daaef38}{CBT\_TMASK\_NOGUILD}}\ \ \ \ \ =\ \ \ 0x170000,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eac411712d6e4a27c66b941d85625d1b8e}{CBT\_TMASK\_NOPARTY}}\ \ \ \ \ =\ \ \ 0x3b0000,\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65c5ffe7893acde5e16004c528b559ca}{CBT\_TMASK\_NOENEMY}}\ \ \ \ \ =\ \ \ 0x3d0000,\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea518fa2d666bfeb06483c43f293180a33}{CBT\_TMASK\_ALL}}\ \ \ \ \ \ \ \ \ =\ \ \ 0x3f0000,\ }
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8}{combat\_damage\_hit\_type}}\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a63eadd386119fc016036b7a6828cdc54}{CBT\_DMG\_HIT\_NORMAL}}\ \ \ \ \ \ =\ 0,\ \ \textcolor{comment}{//\ Normal\ attack}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//CBT\_DMG\_HIT\_PICKUP\ \ \ \ =\ 1,\ \ //\ Pick\ up\ item}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//CBT\_DMG\_HIT\_SITDOWN\ \ \ =\ 2,\ \ //\ Sit\ down}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//CBT\_DMG\_HIT\_STANDUP\ \ \ =\ 3,\ \ //\ Stand\ up}}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8af26632cfa428df616fddac870ef75ada}{CBT\_DMG\_HIT\_ENDURE}}\ \ \ \ \ \ =\ 4,\ \ \textcolor{comment}{//\ Damage\ (endure)}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a88d2f7d44dde7eed302c6b0de7b6cbec}{CBT\_DMG\_HIT\_SPLASH}}\ \ \ \ \ \ =\ 5,\ \ \textcolor{comment}{//\ Splash}}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a25da131a35c86f5474a488a8a7072d28}{CBT\_DMG\_HIT\_SKILL}}\ \ \ \ \ \ \ =\ 6,\ \ \textcolor{comment}{//\ Skill}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//CBT\_DMG\_HIT\_REPEAT\ \ \ \ =\ 7,\ \ //\ (repeat\ damage?)}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ad8759224a57542fba14ff99df77eaf74}{CBT\_DMG\_HIT\_MULTIHIT}}\ \ \ \ =\ 8,\ \ \textcolor{comment}{//\ Multi-\/hit\ damage}}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a501cc13fd6de48a50a66b1ea744d8069}{CBT\_DMG\_HIT\_MULTIENDURE}}\ =\ 9,\ \ \textcolor{comment}{//\ Multi-\/hit\ damage\ (endure)}}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8add8412252050b2b3ac80e3ae8a9ae157}{CBT\_DMG\_HIT\_CRIT}}\ \ \ \ \ \ \ \ =\ 10,\ \textcolor{comment}{//\ Critical\ hit}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ae21ec0015077a2cd6b2d1d8c43b0808a}{CBT\_DMG\_HIT\_PDODGE}}\ \ \ \ \ \ =\ 11,\ \textcolor{comment}{//\ Lucky\ dodge}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//CBT\_DMG\_HIT\_TOUCH\ \ \ \ \ =\ 12,\ //\ (touch\ skill?)}}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcombat__structures}{combat\_structures}}}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structcombat__structures_af5a99fa918094cb8673ae9f4479fa6e2}{skill\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00101\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structcombat__structures_ad286ff64238ad3ff5ccfd989c15c807f}{skill\_lv}}\{\ 0\ \};}
+\DoxyCodeLine{00102\ \ \ \ \ sol::table\ \mbox{\hyperlink{structcombat__structures_a1a171f775c390333a743d4f501794981}{skill\_cast\_data}};}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcombat__damage}{combat\_damage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structcombat__structures}{combat\_structures}}\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ int64\_t\ \mbox{\hyperlink{structcombat__damage_a83b2892c33e453447d86b2a3a1d6c688}{right\_damage}}\{0\},\ \mbox{\hyperlink{structcombat__damage_afc8273bc509db085eb0f1c9004d9bd07}{left\_damage}}\{0\};}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8}{combat\_damage\_hit\_type}}\ \mbox{\hyperlink{structcombat__damage_a9e7547e60df959913b3c283ab4e6973a}{type}}\{\mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a63eadd386119fc016036b7a6828cdc54}{CBT\_DMG\_HIT\_NORMAL}}\};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcombat__damage_a1583868e44de19dd673dbafb96021554}{number\_of\_hits}}\{0\};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcombat__damage_aa435314d28e570d86191bd225b67dd51}{amotion}}\{0\},\ \mbox{\hyperlink{structcombat__damage_ac5084025f850e8808cfa10b75639b175}{dmotion}}\{0\};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcombat__damage_aa83da8bb2cd2df2a40a612166195de1a}{blewcount}}\{0\};}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756f}{combat\_damage\_type\_mask}}\ \mbox{\hyperlink{structcombat__damage_a762f05f7eaff333993290df4c1aedaad}{damage\_type}}\{\mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa33c46b8c89a72daa37f2eae9ee59c429}{CBT\_DMGMASK\_NONE}}\};}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}{combat\_retaliate\_type}}\ \mbox{\hyperlink{structcombat__damage_a3a74f70ab1afdb04e5f25db17a4e6345}{ret\_type}}\{\mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a84b9f4ef1f00d0c66dc1e22148b23dcd}{CBT\_RET\_NONE}}\};}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\_type}}\ \mbox{\hyperlink{structcombat__damage_a7a07ed4470f2d3174253db629c61860b}{ele\_type}}\{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9a075c68b83c36eb75798d0851302ec66b}{ELE\_NEUTRAL}}\};}
+\DoxyCodeLine{00114\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structcombat__damage_a1f441471b4f14359bfd3221d775337bf}{element\_level}}\{1\};}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcombat__healing}{combat\_healing}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structcombat__structures}{combat\_structures}}\ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ int64\_t\ \mbox{\hyperlink{structcombat__healing_ae04ebbf55fe0a4f8f5ae95c2aa7b2e9c}{heal\_amount}}\{\ 0\ \};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structcombat__healing_a55aed589b3a54e2d4efff6603a1c72d4}{success}}\{\ 0\ \};}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_COMBAT\_DEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

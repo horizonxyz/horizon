@@ -1,0 +1,250 @@
+\doxysection{src/\+Utility/\+Utility.cpp File Reference}
+\hypertarget{_utility_8cpp}{}\label{_utility_8cpp}\index{src/Utility/Utility.cpp@{src/Utility/Utility.cpp}}
+{\ttfamily \#include "{}Utility.\+hpp"{}}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+Include dependency graph for Utility.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{_utility_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_utility_8cpp_a261d19d0a613bbe5861e0cc77cb6a0d3}{get\+MSTime}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_utility_8cpp_a5da3cd5c04d2250e962d9defe9acef8c}{get\+MSTime\+Diff}} (uint32\+\_\+t old\+MSTime, uint32\+\_\+t new\+MSTime)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_utility_8cpp_a4cf4fc7c3072de497094c8153ccfe1d6}{rgb2bgr}} (uint32\+\_\+t rgb)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_utility_8cpp_a3bb2eb49efd6eaa9d69a106bcafb13c2}{Get\+MSTime\+Diff\+To\+Now}} (uint32\+\_\+t old\+MSTime)
+\item 
+int64\+\_\+t \mbox{\hyperlink{_utility_8cpp_a6cbcac7398b99ed5fb0ed7d65718fdeb}{get\+\_\+sys\+\_\+time}} ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_utility_8cpp_acdd66064ed9c775377fa1b4cd7af31ac}{Time\+Stamp2\+String}} (char \texorpdfstring{$\ast$}{*}str, size\+\_\+t size, time\+\_\+t timestamp, const char \texorpdfstring{$\ast$}{*}format)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_utility_8cpp_a436111f6cdf6a162ba4440d5511e4194}{ntows}} (uint16\+\_\+t netshort)
+\item 
+void \mbox{\hyperlink{_utility_8cpp_a71ca9c4a4988337929f496074754b20f}{Pack\+Position}} (int8\+\_\+t \texorpdfstring{$\ast$}{*}p, uint16\+\_\+t x, uint16\+\_\+t y, uint8\+\_\+t dir)
+\item 
+void \mbox{\hyperlink{_utility_8cpp_a23d1404b8325ca4a8cc2ecea9e25a82b}{Unpack\+Position}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}p, uint16\+\_\+t \texorpdfstring{$\ast$}{*}x, uint16\+\_\+t \texorpdfstring{$\ast$}{*}y, uint8\+\_\+t \texorpdfstring{$\ast$}{*}dir)
+\item 
+void \mbox{\hyperlink{_utility_8cpp_afc4d83434a6cb082cd1a1b1489203347}{Pack\+Position}} (int8\+\_\+t \texorpdfstring{$\ast$}{*}p, uint16\+\_\+t x0, uint16\+\_\+t y0, uint16\+\_\+t x1, uint16\+\_\+t y1, uint8\+\_\+t sx0, uint8\+\_\+t sy0)
+\item 
+unsigned int \mbox{\hyperlink{_utility_8cpp_a9251341aaed48c64961dc1534d9d84e9}{Get\+ULong}} (unsigned char \texorpdfstring{$\ast$}{*}p)
+\item 
+float \mbox{\hyperlink{_utility_8cpp_a30f2184a79db236f36d5e98f7e16e1e7}{Get\+Float}} (const unsigned char \texorpdfstring{$\ast$}{*}buf)
+\item 
+int16\+\_\+t \mbox{\hyperlink{_utility_8cpp_a602385b8c2a599a8e155f8068e0f52fa}{Make\+Short\+LE}} (int16\+\_\+t val)
+\item 
+int32\+\_\+t \mbox{\hyperlink{_utility_8cpp_abca52d3644218de524f0968acfe94266}{Make\+Long\+LE}} (int32\+\_\+t val)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_utility_8cpp_af544ebaac21c9bda34e7d1ff437026aa}{Get\+UShort}} (const unsigned char \texorpdfstring{$\ast$}{*}buf)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_utility_8cpp_ac5030e9e8bed94f717d10974796e6cda}{Get\+ULong}} (const unsigned char \texorpdfstring{$\ast$}{*}buf)
+\item 
+int32\+\_\+t \mbox{\hyperlink{_utility_8cpp_ae2d4b9de6360d37ac57655bccde7d611}{Get\+Long}} (const unsigned char \texorpdfstring{$\ast$}{*}buf)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_utility_8cpp_a3f33470b2032e333053859b45df3fbff}{Concatenate}} (uint32\+\_\+t a, uint32\+\_\+t b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_utility_8cpp_a3f33470b2032e333053859b45df3fbff}\label{_utility_8cpp_a3f33470b2032e333053859b45df3fbff} 
+\index{Utility.cpp@{Utility.cpp}!Concatenate@{Concatenate}}
+\index{Concatenate@{Concatenate}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{Concatenate()}{Concatenate()}}
+{\footnotesize\ttfamily uint32\+\_\+t Concatenate (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{a,  }\item[{uint32\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a6cbcac7398b99ed5fb0ed7d65718fdeb}\label{_utility_8cpp_a6cbcac7398b99ed5fb0ed7d65718fdeb} 
+\index{Utility.cpp@{Utility.cpp}!get\_sys\_time@{get\_sys\_time}}
+\index{get\_sys\_time@{get\_sys\_time}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_sys\_time()}{get\_sys\_time()}}
+{\footnotesize\ttfamily int64\+\_\+t get\+\_\+sys\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_utility_8cpp_a6cbcac7398b99ed5fb0ed7d65718fdeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_a30f2184a79db236f36d5e98f7e16e1e7}\label{_utility_8cpp_a30f2184a79db236f36d5e98f7e16e1e7} 
+\index{Utility.cpp@{Utility.cpp}!GetFloat@{GetFloat}}
+\index{GetFloat@{GetFloat}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{GetFloat()}{GetFloat()}}
+{\footnotesize\ttfamily float Get\+Float (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{_utility_8cpp_a30f2184a79db236f36d5e98f7e16e1e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{_utility_8cpp_a30f2184a79db236f36d5e98f7e16e1e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_ae2d4b9de6360d37ac57655bccde7d611}\label{_utility_8cpp_ae2d4b9de6360d37ac57655bccde7d611} 
+\index{Utility.cpp@{Utility.cpp}!GetLong@{GetLong}}
+\index{GetLong@{GetLong}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{GetLong()}{GetLong()}}
+{\footnotesize\ttfamily int32\+\_\+t Get\+Long (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{_utility_8cpp_ae2d4b9de6360d37ac57655bccde7d611_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{_utility_8cpp_ae2d4b9de6360d37ac57655bccde7d611_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_a261d19d0a613bbe5861e0cc77cb6a0d3}\label{_utility_8cpp_a261d19d0a613bbe5861e0cc77cb6a0d3} 
+\index{Utility.cpp@{Utility.cpp}!getMSTime@{getMSTime}}
+\index{getMSTime@{getMSTime}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{getMSTime()}{getMSTime()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+MSTime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{_utility_8cpp_a261d19d0a613bbe5861e0cc77cb6a0d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_a5da3cd5c04d2250e962d9defe9acef8c}\label{_utility_8cpp_a5da3cd5c04d2250e962d9defe9acef8c} 
+\index{Utility.cpp@{Utility.cpp}!getMSTimeDiff@{getMSTimeDiff}}
+\index{getMSTimeDiff@{getMSTimeDiff}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{getMSTimeDiff()}{getMSTimeDiff()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+MSTime\+Diff (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{old\+MSTime,  }\item[{uint32\+\_\+t}]{new\+MSTime }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{_utility_8cpp_a5da3cd5c04d2250e962d9defe9acef8c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_a3bb2eb49efd6eaa9d69a106bcafb13c2}\label{_utility_8cpp_a3bb2eb49efd6eaa9d69a106bcafb13c2} 
+\index{Utility.cpp@{Utility.cpp}!GetMSTimeDiffToNow@{GetMSTimeDiffToNow}}
+\index{GetMSTimeDiffToNow@{GetMSTimeDiffToNow}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{GetMSTimeDiffToNow()}{GetMSTimeDiffToNow()}}
+{\footnotesize\ttfamily uint32\+\_\+t Get\+MSTime\+Diff\+To\+Now (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{old\+MSTime }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{_utility_8cpp_a3bb2eb49efd6eaa9d69a106bcafb13c2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_ac5030e9e8bed94f717d10974796e6cda}\label{_utility_8cpp_ac5030e9e8bed94f717d10974796e6cda} 
+\index{Utility.cpp@{Utility.cpp}!GetULong@{GetULong}}
+\index{GetULong@{GetULong}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{GetULong()}{GetULong()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t Get\+ULong (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a9251341aaed48c64961dc1534d9d84e9}\label{_utility_8cpp_a9251341aaed48c64961dc1534d9d84e9} 
+\index{Utility.cpp@{Utility.cpp}!GetULong@{GetULong}}
+\index{GetULong@{GetULong}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{GetULong()}{GetULong()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Get\+ULong (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{p }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_utility_8cpp_a9251341aaed48c64961dc1534d9d84e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_af544ebaac21c9bda34e7d1ff437026aa}\label{_utility_8cpp_af544ebaac21c9bda34e7d1ff437026aa} 
+\index{Utility.cpp@{Utility.cpp}!GetUShort@{GetUShort}}
+\index{GetUShort@{GetUShort}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{GetUShort()}{GetUShort()}}
+{\footnotesize\ttfamily uint16\+\_\+t Get\+UShort (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_abca52d3644218de524f0968acfe94266}\label{_utility_8cpp_abca52d3644218de524f0968acfe94266} 
+\index{Utility.cpp@{Utility.cpp}!MakeLongLE@{MakeLongLE}}
+\index{MakeLongLE@{MakeLongLE}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{MakeLongLE()}{MakeLongLE()}}
+{\footnotesize\ttfamily int32\+\_\+t Make\+Long\+LE (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a602385b8c2a599a8e155f8068e0f52fa}\label{_utility_8cpp_a602385b8c2a599a8e155f8068e0f52fa} 
+\index{Utility.cpp@{Utility.cpp}!MakeShortLE@{MakeShortLE}}
+\index{MakeShortLE@{MakeShortLE}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{MakeShortLE()}{MakeShortLE()}}
+{\footnotesize\ttfamily int16\+\_\+t Make\+Short\+LE (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a436111f6cdf6a162ba4440d5511e4194}\label{_utility_8cpp_a436111f6cdf6a162ba4440d5511e4194} 
+\index{Utility.cpp@{Utility.cpp}!ntows@{ntows}}
+\index{ntows@{ntows}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{ntows()}{ntows()}}
+{\footnotesize\ttfamily uint16\+\_\+t ntows (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{netshort }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a71ca9c4a4988337929f496074754b20f}\label{_utility_8cpp_a71ca9c4a4988337929f496074754b20f} 
+\index{Utility.cpp@{Utility.cpp}!PackPosition@{PackPosition}}
+\index{PackPosition@{PackPosition}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{PackPosition()}{PackPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pack\+Position (\begin{DoxyParamCaption}\item[{int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint8\+\_\+t}]{dir }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_utility_8cpp_a71ca9c4a4988337929f496074754b20f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_utility_8cpp_afc4d83434a6cb082cd1a1b1489203347}\label{_utility_8cpp_afc4d83434a6cb082cd1a1b1489203347} 
+\index{Utility.cpp@{Utility.cpp}!PackPosition@{PackPosition}}
+\index{PackPosition@{PackPosition}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{PackPosition()}{PackPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pack\+Position (\begin{DoxyParamCaption}\item[{int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p,  }\item[{uint16\+\_\+t}]{x0,  }\item[{uint16\+\_\+t}]{y0,  }\item[{uint16\+\_\+t}]{x1,  }\item[{uint16\+\_\+t}]{y1,  }\item[{uint8\+\_\+t}]{sx0,  }\item[{uint8\+\_\+t}]{sy0 }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a4cf4fc7c3072de497094c8153ccfe1d6}\label{_utility_8cpp_a4cf4fc7c3072de497094c8153ccfe1d6} 
+\index{Utility.cpp@{Utility.cpp}!rgb2bgr@{rgb2bgr}}
+\index{rgb2bgr@{rgb2bgr}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{rgb2bgr()}{rgb2bgr()}}
+{\footnotesize\ttfamily uint32\+\_\+t rgb2bgr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{rgb }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_acdd66064ed9c775377fa1b4cd7af31ac}\label{_utility_8cpp_acdd66064ed9c775377fa1b4cd7af31ac} 
+\index{Utility.cpp@{Utility.cpp}!TimeStamp2String@{TimeStamp2String}}
+\index{TimeStamp2String@{TimeStamp2String}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{TimeStamp2String()}{TimeStamp2String()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Time\+Stamp2\+String (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{size\+\_\+t}]{size,  }\item[{time\+\_\+t}]{timestamp,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{format }\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8cpp_a23d1404b8325ca4a8cc2ecea9e25a82b}\label{_utility_8cpp_a23d1404b8325ca4a8cc2ecea9e25a82b} 
+\index{Utility.cpp@{Utility.cpp}!UnpackPosition@{UnpackPosition}}
+\index{UnpackPosition@{UnpackPosition}!Utility.cpp@{Utility.cpp}}
+\doxysubsubsection{\texorpdfstring{UnpackPosition()}{UnpackPosition()}}
+{\footnotesize\ttfamily void Unpack\+Position (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p,  }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{x,  }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{y,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{dir }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_utility_8cpp_a23d1404b8325ca4a8cc2ecea9e25a82b_icgraph}
+\end{center}
+\end{figure}

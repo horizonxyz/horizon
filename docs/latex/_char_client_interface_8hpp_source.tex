@@ -1,0 +1,78 @@
+\doxysection{Char\+Client\+Interface.\+hpp}
+\hypertarget{_char_client_interface_8hpp_source}{}\label{_char_client_interface_8hpp_source}\index{src/Server/Char/Interface/CharClientInterface.hpp@{src/Server/Char/Interface/CharClientInterface.hpp}}
+\mbox{\hyperlink{_char_client_interface_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2020-\/\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ Khosla.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CHARCLIENTINTERFACE\_HPP}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HORIZON\_CHARCLIENTINTERFACE\_HPP}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_client_interface_8hpp}{Server/Common/Interfaces/ClientInterface.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_network_packet_8hpp}{Server/Common/Base/NetworkPacket.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Char}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }CharSession;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface}{CharClientInterface}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_client_interface}{ClientInterface}}<CharSession>}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface}{CharClientInterface}}(std::shared\_ptr<CharSession>\ s);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a6860cda1bdde16c6bf3f4f08e6c0f9bf}{\string~CharClientInterface}}();}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ac108c2d173ae16f2b20906868d9da6a7}{authorize\_new\_connection}}(uint32\_t\ account\_id,\ uint32\_t\ auth\_code,\ uint32\_t\ account\_level,\ uint8\_t\ gender);}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc}{make\_new\_character}}(std::string\ name,\ uint8\_t\ slot,\ uint32\_t\ hair\_color,\ uint32\_t\ hair\_style,\ uint32\_t\ job\_class,\ uint8\_t\ gender);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc}{make\_new\_character}}(std::string\ name,\ uint8\_t\ slot,\ uint8\_t\ hair\_color,\ uint8\_t\ hair\_style);}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\_delete\_result}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aa5ec5c15f27e7c42adac1e78f71023d3}{character\_delete\_soft}}(uint32\_t\ character\_id);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a5bdf03890d830e3bd80ea1aea523bdac}{character\_delete\_reserve}}(uint32\_t\ character\_id);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_af9294349f35f48caf15e57f5cc24cd9f}{character\_delete\_email}}(uint32\_t\ character\_id,\ std::string\ email);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a4473872f787b9859c7d9d0ac9042d038}{character\_delete\_birthdate}}(uint32\_t\ character\_id,\ std::string\ birthdate);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ac4b765cd06e1362bbbed065dfa9627bb}{character\_delete\_cancel}}(uint32\_t\ character\_id);}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ab9d5972ed71bd4709ae92e170dc646e5}{pincode\_create}}(uint32\_t\ account\_id,\ \textcolor{keywordtype}{char}\ *new\_pin);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_acf8fd0fb14924dcced74d6fa5039a1b1}{pincode\_change}}(uint32\_t\ account\_id,\ \textcolor{keywordtype}{char}\ *old\_pin,\ \textcolor{keywordtype}{char}\ *new\_pin);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_acfd928650fe09f9c32241e61fc5a61b9}{pincode\_verify}}(uint32\_t\ account\_id,\ \textcolor{keywordtype}{char}\ *pincode);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a737fac73c1e328ec677a9d42451f7776}{pincode\_decrypt}}(uint32\_t\ seed,\ \textcolor{keywordtype}{char}\ *input,\ \textcolor{keywordtype}{char}\ *output);}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a833a2e9c93861bb75cf081dc97a1bcff}{select\_character}}(\textcolor{keywordtype}{int}\ slot);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ae8028b924aa174cc44cb9b6fa095e2ea}{update\_session}}(int32\_t\ account\_id);}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aec7dabe9f787da3c187cc2caf21b88f4}{\_pincode\_confirm}}[\mbox{\hyperlink{_client_8hpp_a71844e1b09e82f47bc287fdee4338608}{MAX\_PINCODE\_STRING\_LENGTH}}];}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CHARCLIENTINTERFACE\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

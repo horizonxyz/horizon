@@ -1,0 +1,84 @@
+\doxysection{Utility.\+hpp}
+\hypertarget{_utility_8hpp_source}{}\label{_utility_8hpp_source}\index{src/Utility/Utility.hpp@{src/Utility/Utility.hpp}}
+\mbox{\hyperlink{_utility_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_UTILITIES\_UTILITY\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_UTILITIES\_UTILITY\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ uint32\_t\ \mbox{\hyperlink{_utility_8hpp_a261d19d0a613bbe5861e0cc77cb6a0d3}{getMSTime}}();}
+\DoxyCodeLine{00039\ uint32\_t\ \mbox{\hyperlink{_utility_8hpp_a5da3cd5c04d2250e962d9defe9acef8c}{getMSTimeDiff}}(uint32\_t\ oldMSTime,\ uint32\_t\ newMSTime);}
+\DoxyCodeLine{00040\ uint32\_t\ \mbox{\hyperlink{_utility_8hpp_a3bb2eb49efd6eaa9d69a106bcafb13c2}{GetMSTimeDiffToNow}}(uint32\_t\ oldMSTime);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ int64\_t\ \mbox{\hyperlink{_utility_8hpp_a6cbcac7398b99ed5fb0ed7d65718fdeb}{get\_sys\_time}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ uint32\_t\ \mbox{\hyperlink{_utility_8hpp_a4cf4fc7c3072de497094c8153ccfe1d6}{rgb2bgr}}(uint32\_t\ rgb);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{_utility_8hpp_acdd66064ed9c775377fa1b4cd7af31ac}{TimeStamp2String}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{size\_t}\ size,\ time\_t\ timestamp,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format);}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ Reorders\ bytes\ from\ network\ to\ little\ endian\ (Windows).}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ Necessary\ for\ sending\ port\ numbers\ to\ the\ RO\ client\ until\ Gravity\ notices\ that\ they\ forgot\ ntohs()\ calls.}}
+\DoxyCodeLine{00049\ uint16\_t\ \mbox{\hyperlink{_utility_8hpp_a436111f6cdf6a162ba4440d5511e4194}{ntows}}(uint16\_t\ netshort);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ client-\/side:\ x0+=sx0*0.0625-\/0.5\ and\ y0+=sy0*0.0625-\/0.5}}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_utility_8hpp_afc4d83434a6cb082cd1a1b1489203347}{PackPosition}}(int8\_t\ *p,\ uint16\_t\ x0,\ uint16\_t\ y0,\ uint16\_t\ x1,\ uint16\_t\ y1,\ uint8\_t\ sx0,\ uint8\_t\ sy0);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_utility_8hpp_afc4d83434a6cb082cd1a1b1489203347}{PackPosition}}(int8\_t\ *p,\ uint16\_t\ x,\ uint16\_t\ y,\ uint8\_t\ dir);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_utility_8hpp_a23d1404b8325ca4a8cc2ecea9e25a82b}{UnpackPosition}}(\textcolor{keyword}{const}\ uint8\_t\ *p,\ uint16\_t\ *x,\ uint16\_t\ *y,\ uint8\_t\ *dir);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ little\ endian\ char\ array\ to\ uint\ conversion}}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_utility_8hpp_a9251341aaed48c64961dc1534d9d84e9}{GetULong}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ p);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Reads\ a\ float\ (32\ bits)\ from\ the\ buffer}}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_utility_8hpp_a30f2184a79db236f36d5e98f7e16e1e7}{GetFloat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ buf);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Converts\ an\ int16\ from\ current\ machine\ order\ to\ little-\/endian}}
+\DoxyCodeLine{00063\ int16\_t\ \mbox{\hyperlink{_utility_8hpp_a602385b8c2a599a8e155f8068e0f52fa}{MakeShortLE}}(int16\_t\ val);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ Converts\ an\ int32\ from\ current\ machine\ order\ to\ little-\/endian}}
+\DoxyCodeLine{00066\ int32\_t\ \mbox{\hyperlink{_utility_8hpp_abca52d3644218de524f0968acfe94266}{MakeLongLE}}(int32\_t\ val);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Reads\ an\ uint16\ in\ little-\/endian\ from\ the\ buffer}}
+\DoxyCodeLine{00069\ uint16\_t\ \mbox{\hyperlink{_utility_8hpp_af544ebaac21c9bda34e7d1ff437026aa}{GetUShort}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ buf);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ Reads\ an\ uint32\ in\ little-\/endian\ from\ the\ buffer}}
+\DoxyCodeLine{00072\ uint32\_t\ \mbox{\hyperlink{_utility_8hpp_a9251341aaed48c64961dc1534d9d84e9}{GetULong}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ buf);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ Reads\ an\ int32\ in\ little-\/endian\ from\ the\ buffer}}
+\DoxyCodeLine{00075\ int32\_t\ \mbox{\hyperlink{_utility_8hpp_ae2d4b9de6360d37ac57655bccde7d611}{GetLong}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *buf);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ uint32\_t\ \mbox{\hyperlink{_utility_8hpp_a3f33470b2032e333053859b45df3fbff}{Concatenate}}(uint32\_t\ a,\ uint32\_t\ b);}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HORIZON\_UTILITIES\_UTILITY\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,169 @@
+\doxysection{Horizon\+::Zone\+::ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n}{}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n}\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n}{ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN}.  
+
+
+
+
+{\ttfamily \#include $<$Transmitted\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_ae01648dd31ad40bd6aa85e5e0b6e6999}{ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a0c4b825481559550918e7abbd118a1ef}{\texorpdfstring{$\sim$}{\string~}\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a5e110fc84ace7cd3b42ddb53e5535fac}{deliver}} (int mail\+\_\+id, \mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922}{zc\+\_\+ack\+\_\+mail\+\_\+return\+\_\+result\+\_\+type}} result)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a918eae7ee8481de2845508f71592ba12}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Horizon\+::\+Base\+::\+Network\+Packet\+Transmitter$<$ Zone\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{Network\+Packet\+Transmitter}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Zone\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_acad36e1f8be629d774358381069a3d7e}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Transmitter}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a9e1b1c61d7a2fa7eb9e14c810055466c}{transmit}} ()
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a894983a07731b6ad07b306b795350262}{transmit}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a3ed62abb892eb53e766a6ef7acc2e40d}{\+\_\+mail\+\_\+id}} \{ 0 \}
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a60a0ce513e4c971da506dcd8b4d7b879}{\+\_\+result}} \{ 0 \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n}{ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_ae01648dd31ad40bd6aa85e5e0b6e6999}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_ae01648dd31ad40bd6aa85e5e0b6e6999} 
+\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}!ZC\_ACK\_MAIL\_RETURN@{ZC\_ACK\_MAIL\_RETURN}}
+\index{ZC\_ACK\_MAIL\_RETURN@{ZC\_ACK\_MAIL\_RETURN}!Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+\doxysubsubsection{\texorpdfstring{ZC\_ACK\_MAIL\_RETURN()}{ZC\_ACK\_MAIL\_RETURN()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+::\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a0c4b825481559550918e7abbd118a1ef}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a0c4b825481559550918e7abbd118a1ef} 
+\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}!````~ZC\_ACK\_MAIL\_RETURN@{\texorpdfstring{$\sim$}{\string~}ZC\_ACK\_MAIL\_RETURN}}
+\index{````~ZC\_ACK\_MAIL\_RETURN@{\texorpdfstring{$\sim$}{\string~}ZC\_ACK\_MAIL\_RETURN}!Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ZC\_ACK\_MAIL\_RETURN()}{\string~ZC\_ACK\_MAIL\_RETURN()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Zone\+::\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+::\texorpdfstring{$\sim$}{\string~}\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a5e110fc84ace7cd3b42ddb53e5535fac}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a5e110fc84ace7cd3b42ddb53e5535fac} 
+\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}!deliver@{deliver}}
+\index{deliver@{deliver}!Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+\doxysubsubsection{\texorpdfstring{deliver()}{deliver()}}
+{\footnotesize\ttfamily void ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+::deliver (\begin{DoxyParamCaption}\item[{int}]{mail\+\_\+id,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922}{zc\+\_\+ack\+\_\+mail\+\_\+return\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n}{ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a5e110fc84ace7cd3b42ddb53e5535fac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a5e110fc84ace7cd3b42ddb53e5535fac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a918eae7ee8481de2845508f71592ba12}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a918eae7ee8481de2845508f71592ba12} 
+\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}!serialize@{serialize}}
+\index{serialize@{serialize}!Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a918eae7ee8481de2845508f71592ba12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a918eae7ee8481de2845508f71592ba12_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a3ed62abb892eb53e766a6ef7acc2e40d}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a3ed62abb892eb53e766a6ef7acc2e40d} 
+\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}!\_mail\_id@{\_mail\_id}}
+\index{\_mail\_id@{\_mail\_id}!Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+\doxysubsubsection{\texorpdfstring{\_mail\_id}{\_mail\_id}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+::\+\_\+mail\+\_\+id \{ 0 \}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a60a0ce513e4c971da506dcd8b4d7b879}\label{class_horizon_1_1_zone_1_1_z_c___a_c_k___m_a_i_l___r_e_t_u_r_n_a60a0ce513e4c971da506dcd8b4d7b879} 
+\index{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}!\_result@{\_result}}
+\index{\_result@{\_result}!Horizon::Zone::ZC\_ACK\_MAIL\_RETURN@{Horizon::Zone::ZC\_ACK\_MAIL\_RETURN}}
+\doxysubsubsection{\texorpdfstring{\_result}{\_result}}
+{\footnotesize\ttfamily int16\+\_\+t Horizon\+::\+Zone\+::\+ZC\+\_\+\+ACK\+\_\+\+MAIL\+\_\+\+RETURN\+::\+\_\+result \{ 0 \}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Packets/\mbox{\hyperlink{_zone_2_packets_2_transmitted_packets_8hpp}{Transmitted\+Packets.\+hpp}}\item 
+src/\+Server/\+Zone/\+Packets/\mbox{\hyperlink{_zone_2_packets_2_transmitted_packets_8cpp}{Transmitted\+Packets.\+cpp}}\end{DoxyCompactItemize}

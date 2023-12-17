@@ -1,0 +1,107 @@
+\doxysection{Connection\+Pool.\+hpp}
+\hypertarget{_connection_pool_8hpp_source}{}\label{_connection_pool_8hpp_source}\index{src/Core/Database/ConnectionPool.hpp@{src/Core/Database/ConnectionPool.hpp}}
+\mbox{\hyperlink{_connection_pool_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ CONNECTION\_POOL\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ CONNECTION\_POOL\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <mysqlx/xdevapi.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8hpp}{Core/Logging/Logger.hpp}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_pool}{ConnectionPool}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_connection_pool_a056fac5a6f20a46e76db70c9f1f6298a}{ConnectionPool}}(\textcolor{keyword}{const}\ std::string\&\ host,\ \textcolor{keywordtype}{int}\ port,\ \textcolor{keyword}{const}\ std::string\&\ user,\ \textcolor{keyword}{const}\ std::string\&\ password,\ \textcolor{keyword}{const}\ std::string\&\ schema,\ \textcolor{keywordtype}{int}\ pool\_size)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ :\ \_host(host),\ \_port(port),\ \_user(user),\ \_password(password),\ \_schema(schema),\ \_pool\_size(pool\_size)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \_initialized\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ initialize\_pool();}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ mysqlx::Session\ \mbox{\hyperlink{class_connection_pool_a820b949dda16a1da7dbe387b5f5e9d73}{get\_connection}}()\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\_mutex);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ a\ connection\ to\ become\ available}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\_connections.empty())\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \_condition.wait(lock);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ next\ available\ connection}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ mysqlx::Session\ connection\ =\ std::move(\_connections.front());}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_connections.pop();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ connection;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_pool_a61ceaf7e02c749d7ef4fc1936194ac08}{release\_connection}}(mysqlx::Session\ connection)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\_mutex);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Release\ the\ connection\ back\ to\ the\ pool}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \_connections.push(std::move(connection));}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Notify\ a\ waiting\ thread\ that\ a\ connection\ is\ available}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_condition.notify\_one();}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ std::string\ \_host;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \_port;}
+\DoxyCodeLine{00074\ \ \ \ \ std::string\ \_user;}
+\DoxyCodeLine{00075\ \ \ \ \ std::string\ \_password;}
+\DoxyCodeLine{00076\ \ \ \ \ std::string\ \_schema;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \_pool\_size;}
+\DoxyCodeLine{00078\ \ \ \ \ std::queue<mysqlx::Session>\ \_connections;}
+\DoxyCodeLine{00079\ \ \ \ \ std::mutex\ \_mutex;}
+\DoxyCodeLine{00080\ \ \ \ \ std::condition\_variable\ \_condition;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_initialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ create\_connection()\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_initialized)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}create\_connection\ called\ before\ initialize\_pool"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ mysqlx::Session\ connection(\_host,\ \_port,\ \_user,\ \_password);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ connection.sql(\textcolor{stringliteral}{"{}USE\ "{}}\ +\ \_schema).execute();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \_connections.push(std::move(connection));}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_pool()\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_pool\_size;\ ++i)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ create\_connection();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Database\ thread\ pool\ of\ "{}}\ <<\ \_pool\_size\ <<\ \textcolor{stringliteral}{"{}\ threads\ initialized."{}};}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONNECTION\_POOL\_H}}
+
+\end{DoxyCode}

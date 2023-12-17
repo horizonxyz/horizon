@@ -1,0 +1,37 @@
+\doxysection{src/\+Libraries/\+Networking/\+Network\+Thread.hpp File Reference}
+\hypertarget{_network_thread_8hpp}{}\label{_network_thread_8hpp}\index{src/Libraries/Networking/NetworkThread.hpp@{src/Libraries/Networking/NetworkThread.hpp}}
+{\ttfamily \#include "{}Core/\+Logging/\+Logger.\+hpp"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$boost/asio/ip/tcp.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/deadline\+\_\+timer.\+hpp$>$}\newline
+Include dependency graph for Network\+Thread.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_network_thread_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_network_thread_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_network_thread}{Horizon\+::\+Networking\+::\+Network\+Thread$<$ Socket\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_a}{A} Network Thread object that handles a number of sockets. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_networking}{Horizon\+::\+Networking}}
+\end{DoxyCompactItemize}

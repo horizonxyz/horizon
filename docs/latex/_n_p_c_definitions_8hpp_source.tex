@@ -1,0 +1,82 @@
+\doxysection{NPCDefinitions.\+hpp}
+\hypertarget{_n_p_c_definitions_8hpp_source}{}\label{_n_p_c_definitions_8hpp_source}\index{src/Server/Zone/Definitions/NPCDefinitions.hpp@{src/Server/Zone/Definitions/NPCDefinitions.hpp}}
+\mbox{\hyperlink{_n_p_c_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_NPC\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_NPC\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{EntityDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_definitions_8hpp}{Server/Zone/Game/Map/Grid/GridDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ NPC\_START\_GUID\ 5000000}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333}{npc\_type}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333a1e4029cabfdbb846075b96fdcc730b14}{FAKE\_NPC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \ \ \ -\/1,}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333af54ba24ba0fbef61e2ca8fdaf87797c3}{NPC\_TYPE\_PORTAL}}\ \ \ \ \ \ \ \ =\ \ \ \ 45,}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333a654de8e0590729dd4b403d818c8ad18f}{NPC\_TYPE\_PORTAL\_HIDDEN}}\ =\ \ \ 139,}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333af8f1278533e229a3d20c1757a032c24b}{NPC\_TYPE\_MOB\_TOMB}}\ \ \ \ \ \ =\ \ \ 565,}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333aa50327f5ddf6761de092ca17e4fa61c7}{NPC\_TYPE\_PORTAL\_DBG}}\ \ \ \ =\ \ \ 722,}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333a83e7053f4ea8c58651a65644b4a9843c}{NPC\_TYPE\_FLAG}}\ \ \ \ \ \ \ \ \ \ =\ \ \ 722,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_n_p_c_definitions_8hpp_a9f0ba5c728597af2d1e173931d82c333aeeeeae3795724547707780f9281c203e}{NPC\_TYPE\_INVISIBLE}}\ \ \ \ \ =\ 32767}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }Game}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }NPC;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnpc__db__data}{npc\_db\_data}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ std::string\ \mbox{\hyperlink{structnpc__db__data_a39c5b9201f2cf731ea696d57b742857b}{npc\_name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00066\ \ \ \ \ std::string\ \mbox{\hyperlink{structnpc__db__data_aecfbedc410e9bfe9f824adae7aeb950d}{map\_name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ \mbox{\hyperlink{structnpc__db__data_a07323a5dd35ad8c048b1e06fba9a3627}{coords}};}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_aac3f4057b04538848ae8afac77495b5a}{directions}}\ \mbox{\hyperlink{structnpc__db__data_a03df6cee871f1afb3020e2de80d73239}{direction}}\{\mbox{\hyperlink{_entity_definitions_8hpp_aac3f4057b04538848ae8afac77495b5aac389b73c4b4c522960337089a197269e}{DIR\_SOUTH}}\};}
+\DoxyCodeLine{00069\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structnpc__db__data_a45b1a2ba7579dfc639559d996d33d68a}{sprite\_id}}\{0\};}
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ \mbox{\hyperlink{structnpc__db__data_a38d66cb8532ab56c14e9db83a0f42408}{script}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structnpc__db__data_a1557e684a99ec0c0e6aedae340cc71b7}{script\_is\_file}}\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00072\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structnpc__db__data_a52bd5db6e4aae2d577a517319536183a}{trigger\_range}}\{1\};}
+\DoxyCodeLine{00073\ \ \ \ \ std::shared\_ptr<Horizon::Zone::Entities::NPC>\ \mbox{\hyperlink{structnpc__db__data_a3fb5c24ca084eca5d2f5ac39432f46a6}{\_npc}};}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_NPC\_DEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

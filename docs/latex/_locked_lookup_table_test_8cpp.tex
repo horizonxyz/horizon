@@ -1,0 +1,144 @@
+\doxysection{src/\+Tests/\+Locked\+Lookup\+Table\+Test.cpp File Reference}
+\hypertarget{_locked_lookup_table_test_8cpp}{}\label{_locked_lookup_table_test_8cpp}\index{src/Tests/LockedLookupTableTest.cpp@{src/Tests/LockedLookupTableTest.cpp}}
+{\ttfamily \#include "{}Core/\+Multithreading/\+Locked\+Lookup\+Table.\+hpp"{}}\newline
+{\ttfamily \#include $<$boost/test/unit\+\_\+test.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Include dependency graph for Locked\+Lookup\+Table\+Test.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_locked_lookup_table_test_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1}{BOOST\+\_\+\+TEST\+\_\+\+DYN\+\_\+\+LINK}}
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a6b2a3852db8bb19ab6909bac01859985}{BOOST\+\_\+\+TEST\+\_\+\+MODULE}}~"{}Locked\+Lookup\+Table\+Test"{}
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a8b5173357adb02a86c027316e0acdfa0}{MAX\+\_\+\+THREADS}}~10
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a48d3ccc21ddc04633ef7cd7e80dbb987}{MAX\+\_\+\+TABLE\+\_\+\+SIZE}}~100000
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7}{STRING\+\_\+\+SIZE}}~32
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a8248b2163254d89a3b59892d9cd95750}{MAX\+\_\+\+BUCKETS}}~\mbox{\hyperlink{_locked_lookup_table_test_8cpp_a48d3ccc21ddc04633ef7cd7e80dbb987}{MAX\+\_\+\+TABLE\+\_\+\+SIZE}} / 10
+\item 
+\#define \mbox{\hyperlink{_locked_lookup_table_test_8cpp_abc3790c7eece736d601a83c7f33f042c}{SPLIT\+\_\+\+THREADS}}~true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_locked_lookup_table_test_8cpp_a68be5231e8df96f61a1942cb0e8f014c}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (Locked\+Lookup\+Table\+Test)
+\begin{DoxyCompactList}\small\item\em This test checks read/writing between multiple threads simultaneously for a table of int and string keys. It is normal for the string/string table to take longer than its int/int counterpart. The goal is to test for simlutaneous reading/writing only, not erasing. For erasing we would need to stop read/writing or pause before reloading. The table size is limited to 1000 only due to memory limits in docker containers for CI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{_locked_lookup_table_test_8cpp_ad3ff67131bb034bc7cb2085a8cef3f8e}{go}} \{false\}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{_locked_lookup_table_test_8cpp_ab4c70e0758193b1a29f26b8bf27dba9f}{done\+\_\+read}} \{false\}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a50ff92a759731aab195045f1dddb3a49}{done\+\_\+write}} \{false\}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{_locked_lookup_table_test_8cpp_a939214a590fc05fccc7600a7da3dd7e9}{fail}} \{false\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_locked_lookup_table_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1}\label{_locked_lookup_table_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!BOOST\_TEST\_DYN\_LINK@{BOOST\_TEST\_DYN\_LINK}}
+\index{BOOST\_TEST\_DYN\_LINK@{BOOST\_TEST\_DYN\_LINK}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_DYN\_LINK}{BOOST\_TEST\_DYN\_LINK}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+DYN\+\_\+\+LINK}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{_locked_lookup_table_test_8cpp_a6b2a3852db8bb19ab6909bac01859985} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}}
+\index{BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_MODULE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+MODULE~"{}Locked\+Lookup\+Table\+Test"{}}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_a8248b2163254d89a3b59892d9cd95750}\label{_locked_lookup_table_test_8cpp_a8248b2163254d89a3b59892d9cd95750} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!MAX\_BUCKETS@{MAX\_BUCKETS}}
+\index{MAX\_BUCKETS@{MAX\_BUCKETS}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUCKETS}{MAX\_BUCKETS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUCKETS~\mbox{\hyperlink{_locked_lookup_table_test_8cpp_a48d3ccc21ddc04633ef7cd7e80dbb987}{MAX\+\_\+\+TABLE\+\_\+\+SIZE}} / 10}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_a48d3ccc21ddc04633ef7cd7e80dbb987}\label{_locked_lookup_table_test_8cpp_a48d3ccc21ddc04633ef7cd7e80dbb987} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!MAX\_TABLE\_SIZE@{MAX\_TABLE\_SIZE}}
+\index{MAX\_TABLE\_SIZE@{MAX\_TABLE\_SIZE}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_TABLE\_SIZE}{MAX\_TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+TABLE\+\_\+\+SIZE~100000}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_a8b5173357adb02a86c027316e0acdfa0}\label{_locked_lookup_table_test_8cpp_a8b5173357adb02a86c027316e0acdfa0} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!MAX\_THREADS@{MAX\_THREADS}}
+\index{MAX\_THREADS@{MAX\_THREADS}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_THREADS}{MAX\_THREADS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+THREADS~10}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_abc3790c7eece736d601a83c7f33f042c}\label{_locked_lookup_table_test_8cpp_abc3790c7eece736d601a83c7f33f042c} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!SPLIT\_THREADS@{SPLIT\_THREADS}}
+\index{SPLIT\_THREADS@{SPLIT\_THREADS}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{SPLIT\_THREADS}{SPLIT\_THREADS}}
+{\footnotesize\ttfamily \#define SPLIT\+\_\+\+THREADS~true}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7}\label{_locked_lookup_table_test_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!STRING\_SIZE@{STRING\_SIZE}}
+\index{STRING\_SIZE@{STRING\_SIZE}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{STRING\_SIZE}{STRING\_SIZE}}
+{\footnotesize\ttfamily \#define STRING\+\_\+\+SIZE~32}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_locked_lookup_table_test_8cpp_a68be5231e8df96f61a1942cb0e8f014c}\label{_locked_lookup_table_test_8cpp_a68be5231e8df96f61a1942cb0e8f014c} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{Locked\+Lookup\+Table\+Test}]{ }\end{DoxyParamCaption})}
+
+
+
+This test checks read/writing between multiple threads simultaneously for a table of int and string keys. It is normal for the string/string table to take longer than its int/int counterpart. The goal is to test for simlutaneous reading/writing only, not erasing. For erasing we would need to stop read/writing or pause before reloading. The table size is limited to 1000 only due to memory limits in docker containers for CI. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_locked_lookup_table_test_8cpp_a68be5231e8df96f61a1942cb0e8f014c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_locked_lookup_table_test_8cpp_ab4c70e0758193b1a29f26b8bf27dba9f}\label{_locked_lookup_table_test_8cpp_ab4c70e0758193b1a29f26b8bf27dba9f} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!done\_read@{done\_read}}
+\index{done\_read@{done\_read}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{done\_read}{done\_read}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ done\+\_\+read \{false\}}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_a50ff92a759731aab195045f1dddb3a49}\label{_locked_lookup_table_test_8cpp_a50ff92a759731aab195045f1dddb3a49} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!done\_write@{done\_write}}
+\index{done\_write@{done\_write}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{done\_write}{done\_write}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ done\+\_\+write \{false\}}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_a939214a590fc05fccc7600a7da3dd7e9}\label{_locked_lookup_table_test_8cpp_a939214a590fc05fccc7600a7da3dd7e9} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!fail@{fail}}
+\index{fail@{fail}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{fail}{fail}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ fail \{false\}}
+
+\Hypertarget{_locked_lookup_table_test_8cpp_ad3ff67131bb034bc7cb2085a8cef3f8e}\label{_locked_lookup_table_test_8cpp_ad3ff67131bb034bc7cb2085a8cef3f8e} 
+\index{LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}!go@{go}}
+\index{go@{go}!LockedLookupTableTest.cpp@{LockedLookupTableTest.cpp}}
+\doxysubsubsection{\texorpdfstring{go}{go}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ go \{false\}}
+

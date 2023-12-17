@@ -1,0 +1,215 @@
+\doxysection{Horizon\+::Networking\+::Connect\+Socket\+Mgr\texorpdfstring{$<$}{<} Socket\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr}{}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr}\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+
+
+\doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} manager that handles sockets that were created by the connector.  
+
+
+
+
+{\ttfamily \#include $<$Connect\+Socket\+Mgr.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Networking\+::Connect\+Socket\+Mgr\texorpdfstring{$<$}{<} Socket\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{class_horizon_1_1_networking_1_1_connect_socket_mgr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Networking\+::Connect\+Socket\+Mgr\texorpdfstring{$<$}{<} Socket\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{class_horizon_1_1_networking_1_1_connect_socket_mgr__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_a65e827e5acb47b2db68f4e00a8cfdcbf}{Connect\+Socket\+Mgr}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_a39480947a62997f08ab7be52a9f29e08}{\texorpdfstring{$\sim$}{\string~}\+Connect\+Socket\+Mgr}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector}{Connector}} $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_a100a8f1e0f43421d8b390460c95d0b6d}{start}} (std\+::string const \&connection\+\_\+name, \mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}server, std\+::string const \&connect\+\_\+ip, uint16\+\_\+t port, uint32\+\_\+t connections=1)
+\begin{DoxyCompactList}\small\item\em Initialize and start connecting synchronously. This method also starts the networking threads for connected sockets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_a7c07b8bdca016b85fd1f2e9229327274}{stop\+\_\+network}} () override
+\begin{DoxyCompactList}\small\item\em Stop the \doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} network and clear the connection pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_a79f01f10e5cb48bcfc81f2b6111c8167}{on\+\_\+socket\+\_\+open}} (std\+::string const \&conn\+\_\+name, std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ const \&tcp\+\_\+socket, uint32\+\_\+t thread\+\_\+index)
+\begin{DoxyCompactList}\small\item\em On \doxylink{class_server}{Server} Type \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Open / Start Routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_ad71d3f8cdb0893be7f9b0b1661fac509}{add\+\_\+socket\+\_\+to\+\_\+connections}} (std\+::string const \&conn\+\_\+name, std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ sock)
+\item 
+std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_a8ba2eacd15ba605a13dcfc8811003357}{get\+\_\+socket\+\_\+from\+\_\+connections}} (std\+::string const \&conn\+\_\+name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr_afcc491f784b966ff66db75660272d7be}{remove\+\_\+socket\+\_\+from\+\_\+connections}} (std\+::string const \&conn\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{Horizon\+::\+Networking\+::\+Socket\+Mgr$<$ Socket\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ab8c95611a2804ced3b244dc7f44a0c61}{Socket\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a0cce6513bda7032cb0213f45a7c211d6}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Mgr}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a77af28e7a7be0e3108bb6558db9973b3}{Start\+Network\+Threads}} (uint32\+\_\+t threads=1)
+\begin{DoxyCompactList}\small\item\em Main function that deals with network thread initiation. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ace99794cfb19741ed28f34b6b301c3b4}{Get\+Network\+Thread\+Count}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a1aa5f0a67e7f1e7a0f7a9f18ca4b28a8}{Select\+Thread\+With\+Min\+Connections}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_af926bc3f7cd3b66a66c1912a5e61ceb3}{on\+\_\+socket\+\_\+open}} (std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ const \&socket, uint32\+\_\+t thread\+\_\+index)
+\begin{DoxyCompactList}\small\item\em On \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Open / Start Routine. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a02b5d07a1bd8370494db5f31cd1faa9a}{get\+\_\+new\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Get a socket from the thread for new server connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Socket\+Type$>$\newline
+class Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr$<$ Socket\+Type $>$}
+\doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} manager that handles sockets that were created by the connector. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_a65e827e5acb47b2db68f4e00a8cfdcbf}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_a65e827e5acb47b2db68f4e00a8cfdcbf} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!ConnectSocketMgr@{ConnectSocketMgr}}
+\index{ConnectSocketMgr@{ConnectSocketMgr}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{ConnectSocketMgr()}{ConnectSocketMgr()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::\+Connect\+Socket\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_a39480947a62997f08ab7be52a9f29e08}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_a39480947a62997f08ab7be52a9f29e08} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!````~ConnectSocketMgr@{\texorpdfstring{$\sim$}{\string~}ConnectSocketMgr}}
+\index{````~ConnectSocketMgr@{\texorpdfstring{$\sim$}{\string~}ConnectSocketMgr}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ConnectSocketMgr()}{\string~ConnectSocketMgr()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Connect\+Socket\+Mgr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_ad71d3f8cdb0893be7f9b0b1661fac509}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_ad71d3f8cdb0893be7f9b0b1661fac509} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!add\_socket\_to\_connections@{add\_socket\_to\_connections}}
+\index{add\_socket\_to\_connections@{add\_socket\_to\_connections}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{add\_socket\_to\_connections()}{add\_socket\_to\_connections()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::add\+\_\+socket\+\_\+to\+\_\+connections (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{conn\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ Socket\+Type $>$}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_connect_socket_mgr_ad71d3f8cdb0893be7f9b0b1661fac509_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_a8ba2eacd15ba605a13dcfc8811003357}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_a8ba2eacd15ba605a13dcfc8811003357} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!get\_socket\_from\_connections@{get\_socket\_from\_connections}}
+\index{get\_socket\_from\_connections@{get\_socket\_from\_connections}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_socket\_from\_connections()}{get\_socket\_from\_connections()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::get\+\_\+socket\+\_\+from\+\_\+connections (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{conn\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_a79f01f10e5cb48bcfc81f2b6111c8167}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_a79f01f10e5cb48bcfc81f2b6111c8167} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!on\_socket\_open@{on\_socket\_open}}
+\index{on\_socket\_open@{on\_socket\_open}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{on\_socket\_open()}{on\_socket\_open()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::on\+\_\+socket\+\_\+open (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{conn\+\_\+name,  }\item[{std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ const \&}]{tcp\+\_\+socket,  }\item[{uint32\+\_\+t}]{thread\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+On \doxylink{class_server}{Server} Type \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Open / Start Routine. 
+
+
+\begin{DoxyItemize}
+\item Move the socket ownership from the caller to a new socket and add it to a thread. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em conn\+\_\+name} & as the name of the connection. \\
+\hline
+\mbox{\texttt{ in}}  & {\em socket} & shared pointer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em thread\+\_\+index} & index of the thread that the socket is being moved from. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_connect_socket_mgr_a79f01f10e5cb48bcfc81f2b6111c8167_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_afcc491f784b966ff66db75660272d7be}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_afcc491f784b966ff66db75660272d7be} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!remove\_socket\_from\_connections@{remove\_socket\_from\_connections}}
+\index{remove\_socket\_from\_connections@{remove\_socket\_from\_connections}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{remove\_socket\_from\_connections()}{remove\_socket\_from\_connections()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::remove\+\_\+socket\+\_\+from\+\_\+connections (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{conn\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_a100a8f1e0f43421d8b390460c95d0b6d}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_a100a8f1e0f43421d8b390460c95d0b6d} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!start@{start}}
+\index{start@{start}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector}{Connector}} $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::start (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{connection\+\_\+name,  }\item[{\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}}]{server,  }\item[{std\+::string const \&}]{connect\+\_\+ip,  }\item[{uint16\+\_\+t}]{port,  }\item[{uint32\+\_\+t}]{connections = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialize and start connecting synchronously. This method also starts the networking threads for connected sockets. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & connection\+\_\+name const reference to the connection name string. \\
+\hline
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & server pointer to the server instance that issued the connection. \\
+\hline
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & connect\+\_\+ip const reference to the ip\+\_\+address string for the connection endpoint. \\
+\hline
+\mbox{\texttt{ in}}  & {\em port} & port number for the connection endpoint. \\
+\hline
+\mbox{\texttt{ in}}  & {\em connections} & number of connections to create and handle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_connect_socket_mgr_a100a8f1e0f43421d8b390460c95d0b6d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_connect_socket_mgr_a7c07b8bdca016b85fd1f2e9229327274}\label{class_horizon_1_1_networking_1_1_connect_socket_mgr_a7c07b8bdca016b85fd1f2e9229327274} 
+\index{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}!stop\_network@{stop\_network}}
+\index{stop\_network@{stop\_network}!Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$@{Horizon::Networking::ConnectSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{stop\_network()}{stop\_network()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Horizon\+::\+Networking\+::\+Connect\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::stop\+\_\+network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Stop the \doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} network and clear the connection pool. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ad4dc29dac960bda7710852716369d2bf}{Horizon\+::\+Networking\+::\+Socket\+Mgr$<$ Socket\+Type $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_connect_socket_mgr_a7c07b8bdca016b85fd1f2e9229327274_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Networking/\mbox{\hyperlink{_connect_socket_mgr_8hpp}{Connect\+Socket\+Mgr.\+hpp}}\end{DoxyCompactItemize}

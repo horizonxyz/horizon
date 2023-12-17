@@ -1,0 +1,162 @@
+\doxysection{Async\+Acceptor.\+hpp}
+\hypertarget{_async_acceptor_8hpp_source}{}\label{_async_acceptor_8hpp_source}\index{src/Libraries/Networking/AsyncAcceptor.hpp@{src/Libraries/Networking/AsyncAcceptor.hpp}}
+\mbox{\hyperlink{_async_acceptor_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_NETWORKING\_ASYNCACCEPTOR\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_NETWORKING\_ASYNCACCEPTOR\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{using\ }boost::asio::ip::tcp;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }Networking}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor}{AsyncAcceptor}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void(std::shared\_ptr<tcp::socket>,\ uint32\_t\ thread\_index)>\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{AcceptCallback}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a4227c41e6c8dfcf06849d70566d8ce6e}{AsyncAcceptor}}(boost::asio::io\_service\ \&io\_service,\ std::string\ \textcolor{keyword}{const}\ \&listen\_ip,\ uint16\_t\ port)}
+\DoxyCodeLine{00061\ \ \ \ \ :\ \_acceptor(io\_service,\ tcp::endpoint(boost::asio::ip::address::from\_string(listen\_ip),\ port)),}
+\DoxyCodeLine{00062\ \ \ \ \ \_endpoint(boost::asio::ip::address::from\_string(listen\_ip),\ port),}
+\DoxyCodeLine{00063\ \ \ \ \ \_socket(std::make\_shared<tcp::socket>(io\_service)),\ \_closed(false),\ \_socket\_factory(std::\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_acd7e95f0d5a366ba1120d82513fcc3c4}{bind}}(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor}{AsyncAcceptor}}::default\_socket\_factory,\ this))}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a5993330fc25a43d1d63fb3737b046ad4}{AsyncAccept}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8}{async\_accept\_with\_callback}}(\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{AcceptCallback}}\ callback)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ std::shared\_ptr<tcp::socket>\ socket;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ uint32\_t\ thread\_index;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::tie(socket,\ thread\_index)\ =\ \_socket\_factory();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_acceptor.async\_accept(*socket,\ [\textcolor{keyword}{this},\ socket,\ callback,\ thread\_index]\ (boost::system::error\_code\ error)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>non\_blocking(\textcolor{keyword}{true});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback(std::move(socket),\ thread\_index);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (boost::system::system\_error\ \textcolor{keyword}{const}\ \&err)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Networking:\ AsyncAcceptor\ failed\ to\ initialize\ client's\ socket\ :"{}}\ <<\ err.what();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_closed)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8}{async\_accept\_with\_callback}}(callback);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_acd7e95f0d5a366ba1120d82513fcc3c4}{bind}}()}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ boost::system::error\_code\ errorCode;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \_acceptor.open(\_endpoint.protocol(),\ errorCode);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorCode)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ open\ acceptor\ "{}}\ <<\ errorCode.message().c\_str();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \_acceptor.bind(\_endpoint,\ errorCode);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorCode)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Could\ not\ bind\ to\ "{}}\ <<\ \_endpoint.address().to\_string().c\_str()\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \_endpoint.port()\ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ errorCode.message().c\_str();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \_acceptor.listen(boost::asio::socket\_base::max\_connections,\ errorCode);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errorCode)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ start\ listening\ on\ "{}}\ <<\ \_endpoint.address().to\_string().c\_str()\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \_endpoint.port()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ errorCode.message().c\_str();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a7bc5ccf685bb9a7bd3ab01be0fafca4c}{close}}()}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_closed.exchange(\textcolor{keyword}{true}))}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ boost::system::error\_code\ error;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \_acceptor.close(error);}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_adb5aefac93e1930c47b5151c7427ae9a}{is\_open}}()\ \{\ \textcolor{keywordflow}{return}\ \_closed.load();\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a806cff4cf690897f1004af742101ceb4}{set\_socket\_factory}}(std::function<std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>()>\ \&\&func)\ \{\ \_socket\_factory\ =\ func;\ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00153\ \ \ \ \ std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>\ default\_socket\_factory()\ \{\ \textcolor{keywordflow}{return}\ std::make\_pair(\_socket,\ 0);\ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ tcp::acceptor\ \_acceptor;}
+\DoxyCodeLine{00156\ \ \ \ \ tcp::endpoint\ \_endpoint;}
+\DoxyCodeLine{00157\ \ \ \ \ std::shared\_ptr<tcp::socket>\ \_socket;}
+\DoxyCodeLine{00158\ \ \ \ \ std::atomic<bool>\ \_closed;}
+\DoxyCodeLine{00159\ \ \ \ \ std::function<std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>()>\ \_socket\_factory;}
+\DoxyCodeLine{00160\ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a5993330fc25a43d1d63fb3737b046ad4}{AsyncAcceptor::AsyncAccept}}()}
+\DoxyCodeLine{00164\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \_acceptor.async\_accept(\_socket,\ [\textcolor{keyword}{this}]\ (boost::system::error\_code\ error)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_shared<T>(std::move(this-\/>\_socket))-\/>start();}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (boost::system::system\_error\ \textcolor{keyword}{const}\ \&err)\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Network\ Error:\ failed\ to\ retrieve\ client's\ remote\ address\ "{}}\ <<\ err.what()\ <<\ std::endl;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_closed)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>AsyncAccept<T>();}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00178\ \}}
+\DoxyCodeLine{00179\ \}}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HORIZON\_NETWORKING\_ASYNCACCEPTOR\_HPP}}
+
+\end{DoxyCode}

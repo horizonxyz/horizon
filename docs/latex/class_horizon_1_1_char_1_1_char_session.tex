@@ -1,0 +1,222 @@
+\doxysection{Horizon\+::Char\+::Char\+Session Class Reference}
+\hypertarget{class_horizon_1_1_char_1_1_char_session}{}\label{class_horizon_1_1_char_1_1_char_session}\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+
+
+{\ttfamily \#include $<$Char\+Session.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Char\+::Char\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_horizon_1_1_char_1_1_char_session__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Char\+::Char\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_session__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_ad150a0db5a30d9dd7e3348de58f78e00}{Char\+Session}} (int64\+\_\+t uid, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket}{Char\+Socket}} $>$ socket)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a9e0e9dfdb0bac9d36c90a925af5d3324}{\texorpdfstring{$\sim$}{\string~}\+Char\+Session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a2742d5c8d19edd4ac03213ab76ba9787}{initialize}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_aede84f5488fc265bce120ad951fd6370}{update}} (uint32\+\_\+t diff)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a26dfef15cd22a5c3e268dbbbe81d202e}{perform\+\_\+cleanup}} ()
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface}{Char\+Client\+Interface}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a74eed68c0d20a98ee50c94a396c21410}{clif}} ()
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a036dd27660e96b9a2005ce53ce833671}{pkt\+\_\+tbl}} ()
+\item 
+\mbox{\hyperlink{struct_horizon_1_1_char_1_1s__session__data}{s\+\_\+session\+\_\+data}} \& \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a4b1b09efc4c212c3a891f7f9492441b8}{get\+\_\+session\+\_\+data}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a33879dfd614e2db5e8d953cbf8ce69ff}{set\+\_\+session\+\_\+data}} (\mbox{\hyperlink{struct_horizon_1_1_char_1_1s__session__data}{s\+\_\+session\+\_\+data}} \&data)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a89869282ae16fb8602c1e6a83f1f65ad}{transmit\+\_\+buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \+\_\+buffer, std\+::size\+\_\+t size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session$<$ Char\+Socket, Char\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a4bd1f95d79df62511ef13833a850177f}{Session}} (int64\+\_\+t uid, std\+::weak\+\_\+ptr$<$ Char\+Socket $>$ socket)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a2896280f57643ce058317c0a3281f333}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Char\+Socket $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a659211b432102904d71e943a6fb64f89}{get\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Get the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a8c0962c994001e135aaac3b4d8006b65}{set\+\_\+socket}} (std\+::weak\+\_\+ptr$<$ Char\+Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Set the socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a76dae24907a98fb3e4f4160e8d3aaa26}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Called to verify if the session is initialized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_abf7c01b5b5e7d010b3d296629ad87426}{set\+\_\+initialized}} (bool initialized)
+\begin{DoxyCompactList}\small\item\em Set whether the session is initialized or not. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a7627c9890ed35856be3bb4412e70e395}{get\+\_\+session\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the unique id of the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface}{Char\+Client\+Interface}} $>$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a394bc3401e9a26739af3dfab4883b8a3}{\+\_\+clif}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a3f6766d34fb9e6ce1650a7b865185755}{\+\_\+pkt\+\_\+tbl}}
+\item 
+\mbox{\hyperlink{struct_horizon_1_1_char_1_1s__session__data}{s\+\_\+session\+\_\+data}} \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a723f15b22db7a830cf5e9caa2cf094a4}{\+\_\+session\+\_\+data}}
+\item 
+std\+::mutex \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a3def7c48239c03277c99b1edc9894337}{\+\_\+sd\+\_\+mutex}}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_af7bae87ee1046806049d8a59d6352910}{\+\_\+first\+\_\+packet\+\_\+sent}} \{false\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_ad150a0db5a30d9dd7e3348de58f78e00}\label{class_horizon_1_1_char_1_1_char_session_ad150a0db5a30d9dd7e3348de58f78e00} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!CharSession@{CharSession}}
+\index{CharSession@{CharSession}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{CharSession()}{CharSession()}}
+{\footnotesize\ttfamily Char\+Session\+::\+Char\+Session (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{uid,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_socket}{Char\+Socket}} $>$}]{socket }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a9e0e9dfdb0bac9d36c90a925af5d3324}\label{class_horizon_1_1_char_1_1_char_session_a9e0e9dfdb0bac9d36c90a925af5d3324} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!````~CharSession@{\texorpdfstring{$\sim$}{\string~}CharSession}}
+\index{````~CharSession@{\texorpdfstring{$\sim$}{\string~}CharSession}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CharSession()}{\string~CharSession()}}
+{\footnotesize\ttfamily Char\+Session\+::\texorpdfstring{$\sim$}{\string~}\+Char\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a74eed68c0d20a98ee50c94a396c21410}\label{class_horizon_1_1_char_1_1_char_session_a74eed68c0d20a98ee50c94a396c21410} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!clif@{clif}}
+\index{clif@{clif}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{clif()}{clif()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface}{Char\+Client\+Interface}} $>$ \& Horizon\+::\+Char\+::\+Char\+Session\+::clif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a4b1b09efc4c212c3a891f7f9492441b8}\label{class_horizon_1_1_char_1_1_char_session_a4b1b09efc4c212c3a891f7f9492441b8} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!get\_session\_data@{get\_session\_data}}
+\index{get\_session\_data@{get\_session\_data}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{get\_session\_data()}{get\_session\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_horizon_1_1_char_1_1s__session__data}{s\+\_\+session\+\_\+data}} \& Horizon\+::\+Char\+::\+Char\+Session\+::get\+\_\+session\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a2742d5c8d19edd4ac03213ab76ba9787}\label{class_horizon_1_1_char_1_1_char_session_a2742d5c8d19edd4ac03213ab76ba9787} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Char\+Session\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the session is started. Virtual method that must be implmented by the derived class. Typically used to initialize the session. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a718a6229c5a8e917edc7cc1872b51690}{Horizon\+::\+Networking\+::\+Session$<$ Char\+Socket, Char\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_session_a2742d5c8d19edd4ac03213ab76ba9787_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a26dfef15cd22a5c3e268dbbbe81d202e}\label{class_horizon_1_1_char_1_1_char_session_a26dfef15cd22a5c3e268dbbbe81d202e} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!perform\_cleanup@{perform\_cleanup}}
+\index{perform\_cleanup@{perform\_cleanup}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{perform\_cleanup()}{perform\_cleanup()}}
+{\footnotesize\ttfamily void Horizon\+::\+Char\+::\+Char\+Session\+::perform\+\_\+cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a036dd27660e96b9a2005ce53ce833671}\label{class_horizon_1_1_char_1_1_char_session_a036dd27660e96b9a2005ce53ce833671} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!pkt\_tbl@{pkt\_tbl}}
+\index{pkt\_tbl@{pkt\_tbl}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{pkt\_tbl()}{pkt\_tbl()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \& Horizon\+::\+Char\+::\+Char\+Session\+::pkt\+\_\+tbl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a33879dfd614e2db5e8d953cbf8ce69ff}\label{class_horizon_1_1_char_1_1_char_session_a33879dfd614e2db5e8d953cbf8ce69ff} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!set\_session\_data@{set\_session\_data}}
+\index{set\_session\_data@{set\_session\_data}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{set\_session\_data()}{set\_session\_data()}}
+{\footnotesize\ttfamily void Horizon\+::\+Char\+::\+Char\+Session\+::set\+\_\+session\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_horizon_1_1_char_1_1s__session__data}{s\+\_\+session\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a89869282ae16fb8602c1e6a83f1f65ad}\label{class_horizon_1_1_char_1_1_char_session_a89869282ae16fb8602c1e6a83f1f65ad} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!transmit\_buffer@{transmit\_buffer}}
+\index{transmit\_buffer@{transmit\_buffer}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{transmit\_buffer()}{transmit\_buffer()}}
+{\footnotesize\ttfamily void Char\+Session\+::transmit\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}}}]{\+\_\+buffer,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_session_a89869282ae16fb8602c1e6a83f1f65ad_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_aede84f5488fc265bce120ad951fd6370}\label{class_horizon_1_1_char_1_1_char_session_aede84f5488fc265bce120ad951fd6370} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!update@{update}}
+\index{update@{update}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Char\+Session\+::update (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the session is started. Virtual method that must be implmented by the derived class. Typically used to update the session and process packets. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a08de1249359a3b2b8519bfc94afec177}{Horizon\+::\+Networking\+::\+Session$<$ Char\+Socket, Char\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_session_aede84f5488fc265bce120ad951fd6370_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a394bc3401e9a26739af3dfab4883b8a3}\label{class_horizon_1_1_char_1_1_char_session_a394bc3401e9a26739af3dfab4883b8a3} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!\_clif@{\_clif}}
+\index{\_clif@{\_clif}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{\_clif}{\_clif}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface}{Char\+Client\+Interface}}$>$ Horizon\+::\+Char\+::\+Char\+Session\+::\+\_\+clif\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_af7bae87ee1046806049d8a59d6352910}\label{class_horizon_1_1_char_1_1_char_session_af7bae87ee1046806049d8a59d6352910} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!\_first\_packet\_sent@{\_first\_packet\_sent}}
+\index{\_first\_packet\_sent@{\_first\_packet\_sent}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{\_first\_packet\_sent}{\_first\_packet\_sent}}
+{\footnotesize\ttfamily bool Horizon\+::\+Char\+::\+Char\+Session\+::\+\_\+first\+\_\+packet\+\_\+sent \{false\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a3f6766d34fb9e6ce1650a7b865185755}\label{class_horizon_1_1_char_1_1_char_session_a3f6766d34fb9e6ce1650a7b865185755} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!\_pkt\_tbl@{\_pkt\_tbl}}
+\index{\_pkt\_tbl@{\_pkt\_tbl}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{\_pkt\_tbl}{\_pkt\_tbl}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_char_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}}$>$ Horizon\+::\+Char\+::\+Char\+Session\+::\+\_\+pkt\+\_\+tbl\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a3def7c48239c03277c99b1edc9894337}\label{class_horizon_1_1_char_1_1_char_session_a3def7c48239c03277c99b1edc9894337} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!\_sd\_mutex@{\_sd\_mutex}}
+\index{\_sd\_mutex@{\_sd\_mutex}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{\_sd\_mutex}{\_sd\_mutex}}
+{\footnotesize\ttfamily std\+::mutex Horizon\+::\+Char\+::\+Char\+Session\+::\+\_\+sd\+\_\+mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_session_a723f15b22db7a830cf5e9caa2cf094a4}\label{class_horizon_1_1_char_1_1_char_session_a723f15b22db7a830cf5e9caa2cf094a4} 
+\index{Horizon::Char::CharSession@{Horizon::Char::CharSession}!\_session\_data@{\_session\_data}}
+\index{\_session\_data@{\_session\_data}!Horizon::Char::CharSession@{Horizon::Char::CharSession}}
+\doxysubsubsection{\texorpdfstring{\_session\_data}{\_session\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_horizon_1_1_char_1_1s__session__data}{s\+\_\+session\+\_\+data}} Horizon\+::\+Char\+::\+Char\+Session\+::\+\_\+session\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Char/\+Session/\mbox{\hyperlink{_char_session_8hpp}{Char\+Session.\+hpp}}\item 
+src/\+Server/\+Char/\+Session/\mbox{\hyperlink{_char_session_8cpp}{Char\+Session.\+cpp}}\end{DoxyCompactItemize}

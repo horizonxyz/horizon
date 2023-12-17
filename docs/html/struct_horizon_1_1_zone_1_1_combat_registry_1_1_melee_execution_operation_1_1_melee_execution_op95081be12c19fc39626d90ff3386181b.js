@@ -1,0 +1,4 @@
+var struct_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation_1_1_melee_execution_op95081be12c19fc39626d90ff3386181b =
+[
+    [ "continuous", "struct_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation_1_1_melee_execution_op95081be12c19fc39626d90ff3386181b.html#afef9f36ed6dcc0e53393c0f44f9ee85c", null ]
+];

@@ -1,0 +1,167 @@
+\doxysection{Grid\+Entity\+Searcher Struct Reference}
+\hypertarget{struct_grid_entity_searcher}{}\label{struct_grid_entity_searcher}\index{GridEntitySearcher@{GridEntitySearcher}}
+
+
+{\ttfamily \#include $<$Grid\+Notifiers.\+hpp$>$}
+
+
+
+Collaboration diagram for Grid\+Entity\+Searcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{struct_grid_entity_searcher__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid_entity_searcher_aeec638fdc8a5f4221ad041dcd5a0f605}{Grid\+Entity\+Searcher}} (uint32\+\_\+t guid)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \mbox{\hyperlink{struct_grid_entity_searcher_a57660476ad3a18fe164a06e464eed392}{get\+\_\+result}} () const
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{struct_grid_entity_searcher_ac1ed832e4b1dfaf7496ea36116d6f508}{search}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_a6bef6e96e4e70104759465a864b675bc}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_aad28f2b7d6211662924988f4e598e136}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(NPC)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_a354b5d62aaea8f23df288fc6651af89d}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Elemental)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_ab505f5bdc4cfb7dcd13efe021addb8c7}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Homunculus)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_adfbd71e63988bbe2182ba465f87cbd00}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Mercenary)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_a8a482e940fd7b229f73a6206dac5df45}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Pet)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_a35ffe13ddb8b33eb293189bcb03a5bd5}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Monster)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_a2b0099c2b1dded4e66641d2c7913faea}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Skill)$>$ \&m)
+\item 
+void \mbox{\hyperlink{struct_grid_entity_searcher_a32a16f6d15443c246f6eb05fd1de992d}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Item)$>$ \&m)
+\item 
+{\footnotesize template$<$class NOT\+\_\+\+INTERESTED $>$ }\\void \mbox{\hyperlink{struct_grid_entity_searcher_a2dfafb755f679e1ab9afe3ea279449d6}{Visit}} (\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ \mbox{\hyperlink{struct_grid_entity_searcher_ac8e395050a422c3a7e0a15c43321cc1d}{\+\_\+result}}
+\item 
+\mbox{\hyperlink{class_g_u_i_d_check_predicate}{GUIDCheck\+Predicate}} \mbox{\hyperlink{struct_grid_entity_searcher_a5a1f70c0dfb2a36bff3861a24a7a5d3c}{\+\_\+predicate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_grid_entity_searcher_aeec638fdc8a5f4221ad041dcd5a0f605}\label{struct_grid_entity_searcher_aeec638fdc8a5f4221ad041dcd5a0f605} 
+\index{GridEntitySearcher@{GridEntitySearcher}!GridEntitySearcher@{GridEntitySearcher}}
+\index{GridEntitySearcher@{GridEntitySearcher}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{GridEntitySearcher()}{GridEntitySearcher()}}
+{\footnotesize\ttfamily Grid\+Entity\+Searcher\+::\+Grid\+Entity\+Searcher (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_grid_entity_searcher_a57660476ad3a18fe164a06e464eed392}\label{struct_grid_entity_searcher_a57660476ad3a18fe164a06e464eed392} 
+\index{GridEntitySearcher@{GridEntitySearcher}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{get\_result()}{get\_result()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ Grid\+Entity\+Searcher\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{struct_grid_entity_searcher_ac1ed832e4b1dfaf7496ea36116d6f508}\label{struct_grid_entity_searcher_ac1ed832e4b1dfaf7496ea36116d6f508} 
+\index{GridEntitySearcher@{GridEntitySearcher}!search@{search}}
+\index{search@{search}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Grid\+Entity\+Searcher\+::search (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ T $>$ \&}]{m }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_entity_searcher_ac1ed832e4b1dfaf7496ea36116d6f508_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_grid_entity_searcher_a354b5d62aaea8f23df288fc6651af89d}\label{struct_grid_entity_searcher_a354b5d62aaea8f23df288fc6651af89d} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Elemental)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_ab505f5bdc4cfb7dcd13efe021addb8c7}\label{struct_grid_entity_searcher_ab505f5bdc4cfb7dcd13efe021addb8c7} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Homunculus)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_a32a16f6d15443c246f6eb05fd1de992d}\label{struct_grid_entity_searcher_a32a16f6d15443c246f6eb05fd1de992d} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Item)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_adfbd71e63988bbe2182ba465f87cbd00}\label{struct_grid_entity_searcher_adfbd71e63988bbe2182ba465f87cbd00} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Mercenary)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_a35ffe13ddb8b33eb293189bcb03a5bd5}\label{struct_grid_entity_searcher_a35ffe13ddb8b33eb293189bcb03a5bd5} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Monster)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_aad28f2b7d6211662924988f4e598e136}\label{struct_grid_entity_searcher_aad28f2b7d6211662924988f4e598e136} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(NPC)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_a8a482e940fd7b229f73a6206dac5df45}\label{struct_grid_entity_searcher_a8a482e940fd7b229f73a6206dac5df45} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Pet)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_a6bef6e96e4e70104759465a864b675bc}\label{struct_grid_entity_searcher_a6bef6e96e4e70104759465a864b675bc} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_a2b0099c2b1dded4e66641d2c7913faea}\label{struct_grid_entity_searcher_a2b0099c2b1dded4e66641d2c7913faea} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ \mbox{\hyperlink{_grid_notifiers_8hpp_a09dbaf83c0a6ca2e08125df25caf1639}{entity\+\_\+ns}}(Skill)$>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{struct_grid_entity_searcher_a2dfafb755f679e1ab9afe3ea279449d6}\label{struct_grid_entity_searcher_a2dfafb755f679e1ab9afe3ea279449d6} 
+\index{GridEntitySearcher@{GridEntitySearcher}!Visit@{Visit}}
+\index{Visit@{Visit}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$class NOT\+\_\+\+INTERESTED $>$ \\
+void Grid\+Entity\+Searcher\+::\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_ref_manager}{Grid\+Ref\+Manager}}$<$ NOT\+\_\+\+INTERESTED $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_grid_entity_searcher_a5a1f70c0dfb2a36bff3861a24a7a5d3c}\label{struct_grid_entity_searcher_a5a1f70c0dfb2a36bff3861a24a7a5d3c} 
+\index{GridEntitySearcher@{GridEntitySearcher}!\_predicate@{\_predicate}}
+\index{\_predicate@{\_predicate}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{\_predicate}{\_predicate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_u_i_d_check_predicate}{GUIDCheck\+Predicate}} Grid\+Entity\+Searcher\+::\+\_\+predicate}
+
+\Hypertarget{struct_grid_entity_searcher_ac8e395050a422c3a7e0a15c43321cc1d}\label{struct_grid_entity_searcher_ac8e395050a422c3a7e0a15c43321cc1d} 
+\index{GridEntitySearcher@{GridEntitySearcher}!\_result@{\_result}}
+\index{\_result@{\_result}!GridEntitySearcher@{GridEntitySearcher}}
+\doxysubsubsection{\texorpdfstring{\_result}{\_result}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}}$>$ Grid\+Entity\+Searcher\+::\+\_\+result}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8hpp}{Grid\+Notifiers.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Notifiers/\mbox{\hyperlink{_grid_notifiers_8cpp}{Grid\+Notifiers.\+cpp}}\end{DoxyCompactItemize}

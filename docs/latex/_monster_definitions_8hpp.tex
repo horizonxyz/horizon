@@ -1,0 +1,659 @@
+\doxysection{src/\+Server/\+Zone/\+Definitions/\+Monster\+Definitions.hpp File Reference}
+\hypertarget{_monster_definitions_8hpp}{}\label{_monster_definitions_8hpp}\index{src/Server/Zone/Definitions/MonsterDefinitions.hpp@{src/Server/Zone/Definitions/MonsterDefinitions.hpp}}
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Grid/\+Grid\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Entity\+Definitions.\+hpp"{}}\newline
+Include dependency graph for Monster\+Definitions.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_monster_definitions_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_monster_definitions_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmonster__spawn__data}{monster\+\_\+spawn\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache}{monster\+\_\+spawn\+\_\+data\+::s\+\_\+monster\+\_\+spawn\+\_\+time\+\_\+cache}}
+\item 
+struct \mbox{\hyperlink{structmonster__skill__config__data}{monster\+\_\+skill\+\_\+config\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structmonster__config__data_1_1monster__view__data}{monster\+\_\+config\+\_\+data\+::monster\+\_\+view\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structmonster__config__data_1_1rewards}{monster\+\_\+config\+\_\+data\+::rewards}}
+\item 
+struct \mbox{\hyperlink{structmonster__config__data_1_1rewards_1_1drops}{monster\+\_\+config\+\_\+data\+::rewards\+::drops}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_monster_definitions_8hpp_a9f5e2aaab78fce91070a5fd86f24550e}{MAX\+\_\+\+MOB\+\_\+\+DROP}}~10
+\item 
+\#define \mbox{\hyperlink{_monster_definitions_8hpp_a9473687a002ff7547d7dc1e246b927a3}{MAX\+\_\+\+MVP\+\_\+\+DROP}}~10
+\item 
+\#define \mbox{\hyperlink{_monster_definitions_8hpp_a2beb4579c5d492cf1a94e1f5a6d1ce0e}{MAX\+\_\+\+MOB\+\_\+\+DB}}~22000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514}{monster\+\_\+boss\+\_\+type}} \{ \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4ba1327d40100eff68f348eaa50b6987}{BOSS\+\_\+\+TYPE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a0ae2e333aafb7fe4981fb0fe800197bc}{BOSS\+\_\+\+TYPE\+\_\+\+MINI}} = 1
+, \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4651962316ea587323e5e10071560a03}{BOSS\+\_\+\+TYPE\+\_\+\+MVP}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94}{monster\+\_\+primary\+\_\+race\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a9c4bd75a4c913e51b2b7525d415adb6f}{MONSTER\+\_\+\+RACE\+\_\+\+FORMLESS}} = 0
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a69fcc1cbb4734b09808db9966da461cb}{MONSTER\+\_\+\+RACE\+\_\+\+UNDEAD}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94af8e7f8724195e519e30c3ba483c42146}{MONSTER\+\_\+\+RACE\+\_\+\+BRUTE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5cbf610c5d6d530751417e405ef2ca77}{MONSTER\+\_\+\+RACE\+\_\+\+PLANT}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a81fe8d486750deea0a123f38b256bd67}{MONSTER\+\_\+\+RACE\+\_\+\+INSECT}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aca420a600b9ce4e65179a78a75f1db8f}{MONSTER\+\_\+\+RACE\+\_\+\+FISH}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a64da626ad4fca27bbc5ab84bd9dcf499}{MONSTER\+\_\+\+RACE\+\_\+\+DEMON}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a80d16959a300b507e8faf5b1f5187110}{MONSTER\+\_\+\+RACE\+\_\+\+DEMIHUMAN}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a4cbc1fa865fecb6a0ef1189e3413907d}{MONSTER\+\_\+\+RACE\+\_\+\+ANGEL}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a3329b46077a9e9ee316c20d17b1d599f}{MONSTER\+\_\+\+RACE\+\_\+\+DRAGON}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5da8b6d4ba5db7385c48ad400c26f49b}{MONSTER\+\_\+\+RACE\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a515f8527b029a53d1893b67e3c2d7f02}{MONSTER\+\_\+\+RACE\+\_\+\+BOSS}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94ae05b0db951db07f168344db9421fc252}{MONSTER\+\_\+\+RACE\+\_\+\+NONBOSS}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a1c4e843ee120d7c8883a2887bbd34ea3}{MONSTER\+\_\+\+RACE\+\_\+\+MAX}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a079239d0630dfdbe3b75105a9e6f7c1d}{MONSTER\+\_\+\+RACE\+\_\+\+NONDEMIHUMAN}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aa83c1e922c33ee6f85a7dc4ae5fc0b1e}{MONSTER\+\_\+\+RACE\+\_\+\+NONPLAYER}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a88d9095bb6b5bf2c5f26030a7499a338}{MONSTER\+\_\+\+RACE\+\_\+\+DEMIPLAYER}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0fb33ed983102638d30118cdd4b3539c}{MONSTER\+\_\+\+RACE\+\_\+\+NONDEMIPLAYER}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0ff67ede8bcc7ac48b01275cfc1a73d2}{MONSTER\+\_\+\+RACE\+\_\+\+ALL}} = 0x\+FF
+ \}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65}{monster\+\_\+secondary\+\_\+race\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a239c631c6eb725195857631a3a0ee1cc}{MONSTER\+\_\+\+RACE2\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a3cf1cb2dd40fe9d47fdf9156e8b13206}{MONSTER\+\_\+\+RACE2\+\_\+\+GOBLIN}} = 1
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a1f89ad400cd946215868c62ac0b42212}{MONSTER\+\_\+\+RACE2\+\_\+\+KOBOLD}} = 2
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a2d82ec62b7444671f397a8ff437db232}{MONSTER\+\_\+\+RACE2\+\_\+\+ORC}} = 3
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af9ddb8358529b9f0bc1e208f5562e3cb}{MONSTER\+\_\+\+RACE2\+\_\+\+GOLEM}} = 4
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a120563f599dea3d033de383e096462aa}{MONSTER\+\_\+\+RACE2\+\_\+\+GUARDIAN}} = 5
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a695b275a7cea2947be37c2079ce45ad1}{MONSTER\+\_\+\+RACE2\+\_\+\+NINJA}} = 6
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a5b9a453c943651c0892b069694af38dd}{MONSTER\+\_\+\+RACE2\+\_\+\+SCARABA}} = 7
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af321acceb5cbeb2d662910df10ff58b9}{MONSTER\+\_\+\+RACE2\+\_\+\+TURTLE}} = 8
+, \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65ac347abd1b325b27a91276b4463e2bff5}{MONSTER\+\_\+\+RACE2\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5}{monster\+\_\+mode\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa71ef9594e7f50908e87ece6c854384f}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+NONE}} = 0x00000000
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a73a0397e2df363c103fb8560642a1152}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CANMOVE}} = 0x00000001
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0f4a723eff238b2782d3b2bc37d5c3f6}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+LOOTER}} = 0x00000002
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a69bc6aad25fa4f3d4e0a43984f85bbb6}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+AGGRESSIVE}} = 0x00000004
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad558d5ec7b8bcc7552d7dcf71932f986}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+ASSIST}} = 0x00000008
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a20b3c75bd8b6b3bf7187409e60540e1d}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CASTSENSOR\+\_\+\+IDLE}} = 0x00000010
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3e928d59b2e5e14ad1ed1d99b5bd3ba6}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+BOSS}} = 0x00000020
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a2c036ea19f0ca0caf403a1f6687d317f}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+PLANT}} = 0x00000040
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3ec32b879643b1bf968a82c08ec1239e}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CANATTACK}} = 0x00000080
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a8ec62cf799cfd0731ad240857e4df074}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+DETECTOR}} = 0x00000100
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a555d277cb5f238ab9cfefe5230dfb975}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CASTSENSOR\+\_\+\+CHASE}} = 0x00000200
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a16b4603edbae58ef3d13ec5dc69cfe9a}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CHANGECHASE}} = 0x00000400
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa389157684cf1517be61a1ae57b9eda9}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+ANGRY}} = 0x00000800
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad110f2c1aaeb7657e1e032b9107c4173}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CHANGETARGET\+\_\+\+MELEE}} = 0x00001000
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa1dfa6a324b601e39b2fd18b2a951c32}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CHANGETARGET\+\_\+\+CHASE}} = 0x00002000
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0146f518b3f4bf795132856d857ec1cd}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+TARGETWEAK}} = 0x00004000
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3c3182d27bd14a00a14c01bd05af01ab}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+NOKNOCKBACK}} = 0x00008000
+, \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad0adbbf709f8916a4d13c56f68effcc3}{MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+ALL}} = 0x7\+FFFFFFF
+ \}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77}{monster\+\_\+skill\+\_\+state\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77ad0843164375df64434eaf6dfe497bff2}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+ANY}} = -\/1
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a4c7c553a609fa0ba2a9933a15fb52c5e}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+IDLE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a91239dd6ec0db7e29361cd1631919ce8}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+WALK}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a9436f3f2025f0364520ad36e951cea7d}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+LOOT}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a61e2c4badc01f92aeb18ae552a029ccc}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+DEAD}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a2f4b35d72bfa022fe3ef629aac1e8bd3}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+BERSERK}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77aa7b75bdbb9183e6c2bdec32f1a42d9ed}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+ANGRY}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a24b274978035f5d728c237c9ccbc692b}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+RUSH}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a93ecf06e046d975a5bc5b300781c6e2f}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+FOLLOW}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a1d232fffbec69fd171092f77664e0095}{MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+ANYTARGET}}
+ \}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ec}{monster\+\_\+skill\+\_\+target\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab066323d6423c14fb34f11c4e7d08929}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+CURRENT}} = 0
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecad90f6db178f6061e475076b064b9e528}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+RANDOM}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab5153dce6a1d2d4cde1fb93f73372785}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+SELF}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4cbd61f004983b355905c99751b13b99}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+FRIEND}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca27a337384deebb55eaf4b51d6b145522}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+MASTER}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca95d77e735250ff5e9ada107bb08d4d45}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND5}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca6586e43f794a3ceef31ff43e8c18cd22}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND6}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecabd600a6a774046721726fb7f2af017df}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND7}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecaa6069640526fce10a1c0d482cf1d8aab}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND8}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecafe788390b23bf904fc00a3bb3a4c440f}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND1}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca8c0c25fb15412e652d15c224a5a3904c}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND2}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab189d1716bb6a024d40f510b57e7ce4d}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND3}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca5c599990fefca02d497db75f071d1be2}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND4}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4c16c3830a0c4986f030909418542280}{MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND}} = MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND4
+ \}
+\item 
+enum \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ce}{monster\+\_\+skill\+\_\+cast\+\_\+condition\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea641be3a9c4a65ba6844f9a589908be74}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ALWAYS}} = 0x0000
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9d8a37ee6f490006aa63f8e4708df7a6}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYHPLTMAXRATE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaef3bd627b184287b5c01f9835a5acc9c}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYHPINRATE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceab11fe2c3d6f8b26f39e85ebce5e4f4ca}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDHPLTMAXRATE}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0a74275e685ce5d9c3cf1725db37554e}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDHPINRATE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceadd95286cf7498de023cdced3a4410cc4}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYSTATUSON}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead07fee2cf38b8999337fe9a53df7c26d}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYSTATUSOFF}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea130c052bf3ee97d673fcec4ee317585b}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDSTATUSON}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0115a2f82c17a9e42df54a34b63e15ef}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDSTATUSOFF}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea66af633024ede1bfcb331c2e7979628b}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ATTACKPCGT}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9e690f126f451fbf254ed985899529bb}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ATTACKPCGE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead62fb3c66f29dabbb1dc905b4608e1bc}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SLAVELT}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaa6124849f82bbba2a4c377dc23354833}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SLAVELE}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea6db037d763f65d42d33c0e42a6861dfb}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+CLOSERANGEATTACKED}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7a61b1f5965ca709b35e41acb1612a0e}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+LONGRANGEATTACKED}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead448a356f3238dd81b08a5efcad764d3}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+AFTERSKILL}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea1a54650e9614188bbf354aba1865ef4e}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SKILLUSED}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea63cc8296ab9be43fe2d91415c1214ef9}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+CASTTARGETED}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf4a60cd124781021b5a6e47cf84c1b55}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+RUDEATTACKED}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4dedc6ce9f1a3194e097d6fd4f87c111}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MASTERHPLTMAXRATE}}
+, \newline
+\mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4ba92774754a97dbffb147de038957f3}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MASTERATTACKED}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7476ec4e1a913048738016adbf1b571e}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ALCHEMIST}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf0bc281f4d7af5af54e8c0064946f99f}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SPAWN}}
+, \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea21a61d37ce9453dcfa0b1390fb0f56d2}{MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MAGICATTACKED}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_monster_definitions_8hpp_a2beb4579c5d492cf1a94e1f5a6d1ce0e}\label{_monster_definitions_8hpp_a2beb4579c5d492cf1a94e1f5a6d1ce0e} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MAX\_MOB\_DB@{MAX\_MOB\_DB}}
+\index{MAX\_MOB\_DB@{MAX\_MOB\_DB}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_MOB\_DB}{MAX\_MOB\_DB}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+MOB\+\_\+\+DB~22000}
+
+\Hypertarget{_monster_definitions_8hpp_a9f5e2aaab78fce91070a5fd86f24550e}\label{_monster_definitions_8hpp_a9f5e2aaab78fce91070a5fd86f24550e} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MAX\_MOB\_DROP@{MAX\_MOB\_DROP}}
+\index{MAX\_MOB\_DROP@{MAX\_MOB\_DROP}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_MOB\_DROP}{MAX\_MOB\_DROP}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+MOB\+\_\+\+DROP~10}
+
+\Hypertarget{_monster_definitions_8hpp_a9473687a002ff7547d7dc1e246b927a3}\label{_monster_definitions_8hpp_a9473687a002ff7547d7dc1e246b927a3} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MAX\_MVP\_DROP@{MAX\_MVP\_DROP}}
+\index{MAX\_MVP\_DROP@{MAX\_MVP\_DROP}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_MVP\_DROP}{MAX\_MVP\_DROP}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+MVP\+\_\+\+DROP~10}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514}\label{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_boss\_type@{monster\_boss\_type}}
+\index{monster\_boss\_type@{monster\_boss\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_boss\_type}{monster\_boss\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514}{monster\+\_\+boss\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOSS\_TYPE\_NONE@{BOSS\_TYPE\_NONE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!BOSS\_TYPE\_NONE@{BOSS\_TYPE\_NONE}}}\Hypertarget{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4ba1327d40100eff68f348eaa50b6987}\label{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4ba1327d40100eff68f348eaa50b6987} 
+BOSS\+\_\+\+TYPE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOSS\_TYPE\_MINI@{BOSS\_TYPE\_MINI}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!BOSS\_TYPE\_MINI@{BOSS\_TYPE\_MINI}}}\Hypertarget{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a0ae2e333aafb7fe4981fb0fe800197bc}\label{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a0ae2e333aafb7fe4981fb0fe800197bc} 
+BOSS\+\_\+\+TYPE\+\_\+\+MINI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOSS\_TYPE\_MVP@{BOSS\_TYPE\_MVP}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!BOSS\_TYPE\_MVP@{BOSS\_TYPE\_MVP}}}\Hypertarget{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4651962316ea587323e5e10071560a03}\label{_monster_definitions_8hpp_a477a43c642cd4910e6721055e31f6514a4651962316ea587323e5e10071560a03} 
+BOSS\+\_\+\+TYPE\+\_\+\+MVP&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_mode\_type@{monster\_mode\_type}}
+\index{monster\_mode\_type@{monster\_mode\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_mode\_type}{monster\_mode\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5}{monster\+\_\+mode\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_NONE@{MONSTER\_MODE\_MASK\_NONE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_NONE@{MONSTER\_MODE\_MASK\_NONE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa71ef9594e7f50908e87ece6c854384f}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa71ef9594e7f50908e87ece6c854384f} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CANMOVE@{MONSTER\_MODE\_MASK\_CANMOVE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CANMOVE@{MONSTER\_MODE\_MASK\_CANMOVE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a73a0397e2df363c103fb8560642a1152}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a73a0397e2df363c103fb8560642a1152} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CANMOVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_LOOTER@{MONSTER\_MODE\_MASK\_LOOTER}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_LOOTER@{MONSTER\_MODE\_MASK\_LOOTER}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0f4a723eff238b2782d3b2bc37d5c3f6}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0f4a723eff238b2782d3b2bc37d5c3f6} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+LOOTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_AGGRESSIVE@{MONSTER\_MODE\_MASK\_AGGRESSIVE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_AGGRESSIVE@{MONSTER\_MODE\_MASK\_AGGRESSIVE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a69bc6aad25fa4f3d4e0a43984f85bbb6}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a69bc6aad25fa4f3d4e0a43984f85bbb6} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+AGGRESSIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_ASSIST@{MONSTER\_MODE\_MASK\_ASSIST}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_ASSIST@{MONSTER\_MODE\_MASK\_ASSIST}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad558d5ec7b8bcc7552d7dcf71932f986}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad558d5ec7b8bcc7552d7dcf71932f986} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+ASSIST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CASTSENSOR\_IDLE@{MONSTER\_MODE\_MASK\_CASTSENSOR\_IDLE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CASTSENSOR\_IDLE@{MONSTER\_MODE\_MASK\_CASTSENSOR\_IDLE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a20b3c75bd8b6b3bf7187409e60540e1d}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a20b3c75bd8b6b3bf7187409e60540e1d} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CASTSENSOR\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_BOSS@{MONSTER\_MODE\_MASK\_BOSS}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_BOSS@{MONSTER\_MODE\_MASK\_BOSS}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3e928d59b2e5e14ad1ed1d99b5bd3ba6}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3e928d59b2e5e14ad1ed1d99b5bd3ba6} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+BOSS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_PLANT@{MONSTER\_MODE\_MASK\_PLANT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_PLANT@{MONSTER\_MODE\_MASK\_PLANT}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a2c036ea19f0ca0caf403a1f6687d317f}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a2c036ea19f0ca0caf403a1f6687d317f} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+PLANT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CANATTACK@{MONSTER\_MODE\_MASK\_CANATTACK}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CANATTACK@{MONSTER\_MODE\_MASK\_CANATTACK}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3ec32b879643b1bf968a82c08ec1239e}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3ec32b879643b1bf968a82c08ec1239e} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CANATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_DETECTOR@{MONSTER\_MODE\_MASK\_DETECTOR}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_DETECTOR@{MONSTER\_MODE\_MASK\_DETECTOR}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a8ec62cf799cfd0731ad240857e4df074}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a8ec62cf799cfd0731ad240857e4df074} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+DETECTOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CASTSENSOR\_CHASE@{MONSTER\_MODE\_MASK\_CASTSENSOR\_CHASE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CASTSENSOR\_CHASE@{MONSTER\_MODE\_MASK\_CASTSENSOR\_CHASE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a555d277cb5f238ab9cfefe5230dfb975}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a555d277cb5f238ab9cfefe5230dfb975} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CASTSENSOR\+\_\+\+CHASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CHANGECHASE@{MONSTER\_MODE\_MASK\_CHANGECHASE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CHANGECHASE@{MONSTER\_MODE\_MASK\_CHANGECHASE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a16b4603edbae58ef3d13ec5dc69cfe9a}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a16b4603edbae58ef3d13ec5dc69cfe9a} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CHANGECHASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_ANGRY@{MONSTER\_MODE\_MASK\_ANGRY}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_ANGRY@{MONSTER\_MODE\_MASK\_ANGRY}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa389157684cf1517be61a1ae57b9eda9}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa389157684cf1517be61a1ae57b9eda9} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+ANGRY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CHANGETARGET\_MELEE@{MONSTER\_MODE\_MASK\_CHANGETARGET\_MELEE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CHANGETARGET\_MELEE@{MONSTER\_MODE\_MASK\_CHANGETARGET\_MELEE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad110f2c1aaeb7657e1e032b9107c4173}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad110f2c1aaeb7657e1e032b9107c4173} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CHANGETARGET\+\_\+\+MELEE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_CHANGETARGET\_CHASE@{MONSTER\_MODE\_MASK\_CHANGETARGET\_CHASE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_CHANGETARGET\_CHASE@{MONSTER\_MODE\_MASK\_CHANGETARGET\_CHASE}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa1dfa6a324b601e39b2fd18b2a951c32}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5aa1dfa6a324b601e39b2fd18b2a951c32} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+CHANGETARGET\+\_\+\+CHASE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_TARGETWEAK@{MONSTER\_MODE\_MASK\_TARGETWEAK}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_TARGETWEAK@{MONSTER\_MODE\_MASK\_TARGETWEAK}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0146f518b3f4bf795132856d857ec1cd}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a0146f518b3f4bf795132856d857ec1cd} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+TARGETWEAK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_NOKNOCKBACK@{MONSTER\_MODE\_MASK\_NOKNOCKBACK}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_NOKNOCKBACK@{MONSTER\_MODE\_MASK\_NOKNOCKBACK}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3c3182d27bd14a00a14c01bd05af01ab}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5a3c3182d27bd14a00a14c01bd05af01ab} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+NOKNOCKBACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_MODE\_MASK\_ALL@{MONSTER\_MODE\_MASK\_ALL}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_MODE\_MASK\_ALL@{MONSTER\_MODE\_MASK\_ALL}}}\Hypertarget{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad0adbbf709f8916a4d13c56f68effcc3}\label{_monster_definitions_8hpp_a3b738d090eaf889ec2fdd16bd523bed5ad0adbbf709f8916a4d13c56f68effcc3} 
+MONSTER\+\_\+\+MODE\+\_\+\+MASK\+\_\+\+ALL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_primary\_race\_type@{monster\_primary\_race\_type}}
+\index{monster\_primary\_race\_type@{monster\_primary\_race\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_primary\_race\_type}{monster\_primary\_race\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94}{monster\+\_\+primary\+\_\+race\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_FORMLESS@{MONSTER\_RACE\_FORMLESS}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_FORMLESS@{MONSTER\_RACE\_FORMLESS}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a9c4bd75a4c913e51b2b7525d415adb6f}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a9c4bd75a4c913e51b2b7525d415adb6f} 
+MONSTER\+\_\+\+RACE\+\_\+\+FORMLESS&Formless. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_UNDEAD@{MONSTER\_RACE\_UNDEAD}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_UNDEAD@{MONSTER\_RACE\_UNDEAD}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a69fcc1cbb4734b09808db9966da461cb}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a69fcc1cbb4734b09808db9966da461cb} 
+MONSTER\+\_\+\+RACE\+\_\+\+UNDEAD&Undead. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_BRUTE@{MONSTER\_RACE\_BRUTE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_BRUTE@{MONSTER\_RACE\_BRUTE}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94af8e7f8724195e519e30c3ba483c42146}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94af8e7f8724195e519e30c3ba483c42146} 
+MONSTER\+\_\+\+RACE\+\_\+\+BRUTE&Beast/\+Brute. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_PLANT@{MONSTER\_RACE\_PLANT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_PLANT@{MONSTER\_RACE\_PLANT}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5cbf610c5d6d530751417e405ef2ca77}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5cbf610c5d6d530751417e405ef2ca77} 
+MONSTER\+\_\+\+RACE\+\_\+\+PLANT&Plant. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_INSECT@{MONSTER\_RACE\_INSECT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_INSECT@{MONSTER\_RACE\_INSECT}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a81fe8d486750deea0a123f38b256bd67}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a81fe8d486750deea0a123f38b256bd67} 
+MONSTER\+\_\+\+RACE\+\_\+\+INSECT&Insect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_FISH@{MONSTER\_RACE\_FISH}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_FISH@{MONSTER\_RACE\_FISH}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aca420a600b9ce4e65179a78a75f1db8f}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aca420a600b9ce4e65179a78a75f1db8f} 
+MONSTER\+\_\+\+RACE\+\_\+\+FISH&Fish. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_DEMON@{MONSTER\_RACE\_DEMON}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_DEMON@{MONSTER\_RACE\_DEMON}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a64da626ad4fca27bbc5ab84bd9dcf499}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a64da626ad4fca27bbc5ab84bd9dcf499} 
+MONSTER\+\_\+\+RACE\+\_\+\+DEMON&Demon. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_DEMIHUMAN@{MONSTER\_RACE\_DEMIHUMAN}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_DEMIHUMAN@{MONSTER\_RACE\_DEMIHUMAN}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a80d16959a300b507e8faf5b1f5187110}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a80d16959a300b507e8faf5b1f5187110} 
+MONSTER\+\_\+\+RACE\+\_\+\+DEMIHUMAN&Demi-\/\+Human (not including \doxylink{class_player}{Player}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_ANGEL@{MONSTER\_RACE\_ANGEL}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_ANGEL@{MONSTER\_RACE\_ANGEL}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a4cbc1fa865fecb6a0ef1189e3413907d}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a4cbc1fa865fecb6a0ef1189e3413907d} 
+MONSTER\+\_\+\+RACE\+\_\+\+ANGEL&Angel. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_DRAGON@{MONSTER\_RACE\_DRAGON}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_DRAGON@{MONSTER\_RACE\_DRAGON}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a3329b46077a9e9ee316c20d17b1d599f}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a3329b46077a9e9ee316c20d17b1d599f} 
+MONSTER\+\_\+\+RACE\+\_\+\+DRAGON&Dragon. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_PLAYER@{MONSTER\_RACE\_PLAYER}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_PLAYER@{MONSTER\_RACE\_PLAYER}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5da8b6d4ba5db7385c48ad400c26f49b}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a5da8b6d4ba5db7385c48ad400c26f49b} 
+MONSTER\+\_\+\+RACE\+\_\+\+PLAYER&\doxylink{class_player}{Player}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_BOSS@{MONSTER\_RACE\_BOSS}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_BOSS@{MONSTER\_RACE\_BOSS}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a515f8527b029a53d1893b67e3c2d7f02}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a515f8527b029a53d1893b67e3c2d7f02} 
+MONSTER\+\_\+\+RACE\+\_\+\+BOSS&Boss. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_NONBOSS@{MONSTER\_RACE\_NONBOSS}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_NONBOSS@{MONSTER\_RACE\_NONBOSS}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94ae05b0db951db07f168344db9421fc252}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94ae05b0db951db07f168344db9421fc252} 
+MONSTER\+\_\+\+RACE\+\_\+\+NONBOSS&Non-\/boss. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_MAX@{MONSTER\_RACE\_MAX}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_MAX@{MONSTER\_RACE\_MAX}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a1c4e843ee120d7c8883a2887bbd34ea3}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a1c4e843ee120d7c8883a2887bbd34ea3} 
+MONSTER\+\_\+\+RACE\+\_\+\+MAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_NONDEMIHUMAN@{MONSTER\_RACE\_NONDEMIHUMAN}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_NONDEMIHUMAN@{MONSTER\_RACE\_NONDEMIHUMAN}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a079239d0630dfdbe3b75105a9e6f7c1d}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a079239d0630dfdbe3b75105a9e6f7c1d} 
+MONSTER\+\_\+\+RACE\+\_\+\+NONDEMIHUMAN&Every race except Demi-\/\+Human (including \doxylink{class_player}{Player}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_NONPLAYER@{MONSTER\_RACE\_NONPLAYER}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_NONPLAYER@{MONSTER\_RACE\_NONPLAYER}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aa83c1e922c33ee6f85a7dc4ae5fc0b1e}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94aa83c1e922c33ee6f85a7dc4ae5fc0b1e} 
+MONSTER\+\_\+\+RACE\+\_\+\+NONPLAYER&Every non-\/player race. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_DEMIPLAYER@{MONSTER\_RACE\_DEMIPLAYER}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_DEMIPLAYER@{MONSTER\_RACE\_DEMIPLAYER}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a88d9095bb6b5bf2c5f26030a7499a338}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a88d9095bb6b5bf2c5f26030a7499a338} 
+MONSTER\+\_\+\+RACE\+\_\+\+DEMIPLAYER&Demi-\/\+Human (including \doxylink{class_player}{Player}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_NONDEMIPLAYER@{MONSTER\_RACE\_NONDEMIPLAYER}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_NONDEMIPLAYER@{MONSTER\_RACE\_NONDEMIPLAYER}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0fb33ed983102638d30118cdd4b3539c}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0fb33ed983102638d30118cdd4b3539c} 
+MONSTER\+\_\+\+RACE\+\_\+\+NONDEMIPLAYER&Every race except Demi-\/\+Human (and except \doxylink{class_player}{Player}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE\_ALL@{MONSTER\_RACE\_ALL}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE\_ALL@{MONSTER\_RACE\_ALL}}}\Hypertarget{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0ff67ede8bcc7ac48b01275cfc1a73d2}\label{_monster_definitions_8hpp_a871f16ce7ac70e63366f1954e7290f94a0ff67ede8bcc7ac48b01275cfc1a73d2} 
+MONSTER\+\_\+\+RACE\+\_\+\+ALL&Every race (implemented as equivalent to RC\+\_\+\+BOSS and RC\+\_\+\+NONBOSS) \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_secondary\_race\_type@{monster\_secondary\_race\_type}}
+\index{monster\_secondary\_race\_type@{monster\_secondary\_race\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_secondary\_race\_type}{monster\_secondary\_race\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65}{monster\+\_\+secondary\+\_\+race\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_NONE@{MONSTER\_RACE2\_NONE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_NONE@{MONSTER\_RACE2\_NONE}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a239c631c6eb725195857631a3a0ee1cc}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a239c631c6eb725195857631a3a0ee1cc} 
+MONSTER\+\_\+\+RACE2\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_GOBLIN@{MONSTER\_RACE2\_GOBLIN}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_GOBLIN@{MONSTER\_RACE2\_GOBLIN}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a3cf1cb2dd40fe9d47fdf9156e8b13206}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a3cf1cb2dd40fe9d47fdf9156e8b13206} 
+MONSTER\+\_\+\+RACE2\+\_\+\+GOBLIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_KOBOLD@{MONSTER\_RACE2\_KOBOLD}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_KOBOLD@{MONSTER\_RACE2\_KOBOLD}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a1f89ad400cd946215868c62ac0b42212}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a1f89ad400cd946215868c62ac0b42212} 
+MONSTER\+\_\+\+RACE2\+\_\+\+KOBOLD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_ORC@{MONSTER\_RACE2\_ORC}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_ORC@{MONSTER\_RACE2\_ORC}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a2d82ec62b7444671f397a8ff437db232}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a2d82ec62b7444671f397a8ff437db232} 
+MONSTER\+\_\+\+RACE2\+\_\+\+ORC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_GOLEM@{MONSTER\_RACE2\_GOLEM}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_GOLEM@{MONSTER\_RACE2\_GOLEM}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af9ddb8358529b9f0bc1e208f5562e3cb}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af9ddb8358529b9f0bc1e208f5562e3cb} 
+MONSTER\+\_\+\+RACE2\+\_\+\+GOLEM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_GUARDIAN@{MONSTER\_RACE2\_GUARDIAN}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_GUARDIAN@{MONSTER\_RACE2\_GUARDIAN}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a120563f599dea3d033de383e096462aa}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a120563f599dea3d033de383e096462aa} 
+MONSTER\+\_\+\+RACE2\+\_\+\+GUARDIAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_NINJA@{MONSTER\_RACE2\_NINJA}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_NINJA@{MONSTER\_RACE2\_NINJA}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a695b275a7cea2947be37c2079ce45ad1}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a695b275a7cea2947be37c2079ce45ad1} 
+MONSTER\+\_\+\+RACE2\+\_\+\+NINJA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_SCARABA@{MONSTER\_RACE2\_SCARABA}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_SCARABA@{MONSTER\_RACE2\_SCARABA}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a5b9a453c943651c0892b069694af38dd}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65a5b9a453c943651c0892b069694af38dd} 
+MONSTER\+\_\+\+RACE2\+\_\+\+SCARABA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_TURTLE@{MONSTER\_RACE2\_TURTLE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_TURTLE@{MONSTER\_RACE2\_TURTLE}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af321acceb5cbeb2d662910df10ff58b9}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65af321acceb5cbeb2d662910df10ff58b9} 
+MONSTER\+\_\+\+RACE2\+\_\+\+TURTLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_RACE2\_MAX@{MONSTER\_RACE2\_MAX}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_RACE2\_MAX@{MONSTER\_RACE2\_MAX}}}\Hypertarget{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65ac347abd1b325b27a91276b4463e2bff5}\label{_monster_definitions_8hpp_a2ade75b019fc8475d4630d822ba97d65ac347abd1b325b27a91276b4463e2bff5} 
+MONSTER\+\_\+\+RACE2\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ce}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ce} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_skill\_cast\_condition\_type@{monster\_skill\_cast\_condition\_type}}
+\index{monster\_skill\_cast\_condition\_type@{monster\_skill\_cast\_condition\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_skill\_cast\_condition\_type}{monster\_skill\_cast\_condition\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ce}{monster\+\_\+skill\+\_\+cast\+\_\+condition\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_ALWAYS@{MONSTER\_SKILL\_CC\_ALWAYS}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_ALWAYS@{MONSTER\_SKILL\_CC\_ALWAYS}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea641be3a9c4a65ba6844f9a589908be74}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea641be3a9c4a65ba6844f9a589908be74} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ALWAYS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MYHPLTMAXRATE@{MONSTER\_SKILL\_CC\_MYHPLTMAXRATE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MYHPLTMAXRATE@{MONSTER\_SKILL\_CC\_MYHPLTMAXRATE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9d8a37ee6f490006aa63f8e4708df7a6}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9d8a37ee6f490006aa63f8e4708df7a6} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYHPLTMAXRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MYHPINRATE@{MONSTER\_SKILL\_CC\_MYHPINRATE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MYHPINRATE@{MONSTER\_SKILL\_CC\_MYHPINRATE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaef3bd627b184287b5c01f9835a5acc9c}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaef3bd627b184287b5c01f9835a5acc9c} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYHPINRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_FRIENDHPLTMAXRATE@{MONSTER\_SKILL\_CC\_FRIENDHPLTMAXRATE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_FRIENDHPLTMAXRATE@{MONSTER\_SKILL\_CC\_FRIENDHPLTMAXRATE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceab11fe2c3d6f8b26f39e85ebce5e4f4ca}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceab11fe2c3d6f8b26f39e85ebce5e4f4ca} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDHPLTMAXRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_FRIENDHPINRATE@{MONSTER\_SKILL\_CC\_FRIENDHPINRATE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_FRIENDHPINRATE@{MONSTER\_SKILL\_CC\_FRIENDHPINRATE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0a74275e685ce5d9c3cf1725db37554e}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0a74275e685ce5d9c3cf1725db37554e} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDHPINRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MYSTATUSON@{MONSTER\_SKILL\_CC\_MYSTATUSON}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MYSTATUSON@{MONSTER\_SKILL\_CC\_MYSTATUSON}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceadd95286cf7498de023cdced3a4410cc4}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceadd95286cf7498de023cdced3a4410cc4} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYSTATUSON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MYSTATUSOFF@{MONSTER\_SKILL\_CC\_MYSTATUSOFF}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MYSTATUSOFF@{MONSTER\_SKILL\_CC\_MYSTATUSOFF}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead07fee2cf38b8999337fe9a53df7c26d}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead07fee2cf38b8999337fe9a53df7c26d} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MYSTATUSOFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_FRIENDSTATUSON@{MONSTER\_SKILL\_CC\_FRIENDSTATUSON}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_FRIENDSTATUSON@{MONSTER\_SKILL\_CC\_FRIENDSTATUSON}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea130c052bf3ee97d673fcec4ee317585b}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea130c052bf3ee97d673fcec4ee317585b} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDSTATUSON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_FRIENDSTATUSOFF@{MONSTER\_SKILL\_CC\_FRIENDSTATUSOFF}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_FRIENDSTATUSOFF@{MONSTER\_SKILL\_CC\_FRIENDSTATUSOFF}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0115a2f82c17a9e42df54a34b63e15ef}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea0115a2f82c17a9e42df54a34b63e15ef} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+FRIENDSTATUSOFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_ATTACKPCGT@{MONSTER\_SKILL\_CC\_ATTACKPCGT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_ATTACKPCGT@{MONSTER\_SKILL\_CC\_ATTACKPCGT}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea66af633024ede1bfcb331c2e7979628b}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea66af633024ede1bfcb331c2e7979628b} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ATTACKPCGT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_ATTACKPCGE@{MONSTER\_SKILL\_CC\_ATTACKPCGE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_ATTACKPCGE@{MONSTER\_SKILL\_CC\_ATTACKPCGE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9e690f126f451fbf254ed985899529bb}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea9e690f126f451fbf254ed985899529bb} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ATTACKPCGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_SLAVELT@{MONSTER\_SKILL\_CC\_SLAVELT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_SLAVELT@{MONSTER\_SKILL\_CC\_SLAVELT}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead62fb3c66f29dabbb1dc905b4608e1bc}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead62fb3c66f29dabbb1dc905b4608e1bc} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SLAVELT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_SLAVELE@{MONSTER\_SKILL\_CC\_SLAVELE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_SLAVELE@{MONSTER\_SKILL\_CC\_SLAVELE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaa6124849f82bbba2a4c377dc23354833}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaa6124849f82bbba2a4c377dc23354833} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SLAVELE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_CLOSERANGEATTACKED@{MONSTER\_SKILL\_CC\_CLOSERANGEATTACKED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_CLOSERANGEATTACKED@{MONSTER\_SKILL\_CC\_CLOSERANGEATTACKED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea6db037d763f65d42d33c0e42a6861dfb}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea6db037d763f65d42d33c0e42a6861dfb} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+CLOSERANGEATTACKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_LONGRANGEATTACKED@{MONSTER\_SKILL\_CC\_LONGRANGEATTACKED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_LONGRANGEATTACKED@{MONSTER\_SKILL\_CC\_LONGRANGEATTACKED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7a61b1f5965ca709b35e41acb1612a0e}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7a61b1f5965ca709b35e41acb1612a0e} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+LONGRANGEATTACKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_AFTERSKILL@{MONSTER\_SKILL\_CC\_AFTERSKILL}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_AFTERSKILL@{MONSTER\_SKILL\_CC\_AFTERSKILL}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead448a356f3238dd81b08a5efcad764d3}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cead448a356f3238dd81b08a5efcad764d3} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+AFTERSKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_SKILLUSED@{MONSTER\_SKILL\_CC\_SKILLUSED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_SKILLUSED@{MONSTER\_SKILL\_CC\_SKILLUSED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea1a54650e9614188bbf354aba1865ef4e}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea1a54650e9614188bbf354aba1865ef4e} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SKILLUSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_CASTTARGETED@{MONSTER\_SKILL\_CC\_CASTTARGETED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_CASTTARGETED@{MONSTER\_SKILL\_CC\_CASTTARGETED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea63cc8296ab9be43fe2d91415c1214ef9}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea63cc8296ab9be43fe2d91415c1214ef9} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+CASTTARGETED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_RUDEATTACKED@{MONSTER\_SKILL\_CC\_RUDEATTACKED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_RUDEATTACKED@{MONSTER\_SKILL\_CC\_RUDEATTACKED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf4a60cd124781021b5a6e47cf84c1b55}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf4a60cd124781021b5a6e47cf84c1b55} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+RUDEATTACKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MASTERHPLTMAXRATE@{MONSTER\_SKILL\_CC\_MASTERHPLTMAXRATE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MASTERHPLTMAXRATE@{MONSTER\_SKILL\_CC\_MASTERHPLTMAXRATE}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4dedc6ce9f1a3194e097d6fd4f87c111}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4dedc6ce9f1a3194e097d6fd4f87c111} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MASTERHPLTMAXRATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MASTERATTACKED@{MONSTER\_SKILL\_CC\_MASTERATTACKED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MASTERATTACKED@{MONSTER\_SKILL\_CC\_MASTERATTACKED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4ba92774754a97dbffb147de038957f3}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea4ba92774754a97dbffb147de038957f3} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MASTERATTACKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_ALCHEMIST@{MONSTER\_SKILL\_CC\_ALCHEMIST}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_ALCHEMIST@{MONSTER\_SKILL\_CC\_ALCHEMIST}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7476ec4e1a913048738016adbf1b571e}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea7476ec4e1a913048738016adbf1b571e} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+ALCHEMIST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_SPAWN@{MONSTER\_SKILL\_CC\_SPAWN}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_SPAWN@{MONSTER\_SKILL\_CC\_SPAWN}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf0bc281f4d7af5af54e8c0064946f99f}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5ceaf0bc281f4d7af5af54e8c0064946f99f} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+SPAWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_CC\_MAGICATTACKED@{MONSTER\_SKILL\_CC\_MAGICATTACKED}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_CC\_MAGICATTACKED@{MONSTER\_SKILL\_CC\_MAGICATTACKED}}}\Hypertarget{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea21a61d37ce9453dcfa0b1390fb0f56d2}\label{_monster_definitions_8hpp_a6ad5492f107e49652cd124004801e5cea21a61d37ce9453dcfa0b1390fb0f56d2} 
+MONSTER\+\_\+\+SKILL\+\_\+\+CC\+\_\+\+MAGICATTACKED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_skill\_state\_type@{monster\_skill\_state\_type}}
+\index{monster\_skill\_state\_type@{monster\_skill\_state\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_skill\_state\_type}{monster\_skill\_state\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77}{monster\+\_\+skill\+\_\+state\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_ANY@{MONSTER\_SKILL\_STATE\_ANY}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_ANY@{MONSTER\_SKILL\_STATE\_ANY}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77ad0843164375df64434eaf6dfe497bff2}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77ad0843164375df64434eaf6dfe497bff2} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+ANY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_IDLE@{MONSTER\_SKILL\_STATE\_IDLE}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_IDLE@{MONSTER\_SKILL\_STATE\_IDLE}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a4c7c553a609fa0ba2a9933a15fb52c5e}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a4c7c553a609fa0ba2a9933a15fb52c5e} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_WALK@{MONSTER\_SKILL\_STATE\_WALK}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_WALK@{MONSTER\_SKILL\_STATE\_WALK}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a91239dd6ec0db7e29361cd1631919ce8}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a91239dd6ec0db7e29361cd1631919ce8} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+WALK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_LOOT@{MONSTER\_SKILL\_STATE\_LOOT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_LOOT@{MONSTER\_SKILL\_STATE\_LOOT}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a9436f3f2025f0364520ad36e951cea7d}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a9436f3f2025f0364520ad36e951cea7d} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+LOOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_DEAD@{MONSTER\_SKILL\_STATE\_DEAD}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_DEAD@{MONSTER\_SKILL\_STATE\_DEAD}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a61e2c4badc01f92aeb18ae552a029ccc}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a61e2c4badc01f92aeb18ae552a029ccc} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+DEAD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_BERSERK@{MONSTER\_SKILL\_STATE\_BERSERK}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_BERSERK@{MONSTER\_SKILL\_STATE\_BERSERK}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a2f4b35d72bfa022fe3ef629aac1e8bd3}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a2f4b35d72bfa022fe3ef629aac1e8bd3} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+BERSERK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_ANGRY@{MONSTER\_SKILL\_STATE\_ANGRY}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_ANGRY@{MONSTER\_SKILL\_STATE\_ANGRY}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77aa7b75bdbb9183e6c2bdec32f1a42d9ed}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77aa7b75bdbb9183e6c2bdec32f1a42d9ed} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+ANGRY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_RUSH@{MONSTER\_SKILL\_STATE\_RUSH}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_RUSH@{MONSTER\_SKILL\_STATE\_RUSH}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a24b274978035f5d728c237c9ccbc692b}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a24b274978035f5d728c237c9ccbc692b} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+RUSH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_FOLLOW@{MONSTER\_SKILL\_STATE\_FOLLOW}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_FOLLOW@{MONSTER\_SKILL\_STATE\_FOLLOW}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a93ecf06e046d975a5bc5b300781c6e2f}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a93ecf06e046d975a5bc5b300781c6e2f} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+FOLLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_STATE\_ANYTARGET@{MONSTER\_SKILL\_STATE\_ANYTARGET}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_STATE\_ANYTARGET@{MONSTER\_SKILL\_STATE\_ANYTARGET}}}\Hypertarget{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a1d232fffbec69fd171092f77664e0095}\label{_monster_definitions_8hpp_adcc2d1fed844a4d6641f3cf067e1bd77a1d232fffbec69fd171092f77664e0095} 
+MONSTER\+\_\+\+SKILL\+\_\+\+STATE\+\_\+\+ANYTARGET&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ec}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ec} 
+\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!monster\_skill\_target\_type@{monster\_skill\_target\_type}}
+\index{monster\_skill\_target\_type@{monster\_skill\_target\_type}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{monster\_skill\_target\_type}{monster\_skill\_target\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ec}{monster\+\_\+skill\+\_\+target\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_CURRENT@{MONSTER\_SKILL\_TARGET\_CURRENT}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_CURRENT@{MONSTER\_SKILL\_TARGET\_CURRENT}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab066323d6423c14fb34f11c4e7d08929}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab066323d6423c14fb34f11c4e7d08929} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+CURRENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_RANDOM@{MONSTER\_SKILL\_TARGET\_RANDOM}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_RANDOM@{MONSTER\_SKILL\_TARGET\_RANDOM}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecad90f6db178f6061e475076b064b9e528}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecad90f6db178f6061e475076b064b9e528} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+RANDOM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_SELF@{MONSTER\_SKILL\_TARGET\_SELF}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_SELF@{MONSTER\_SKILL\_TARGET\_SELF}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab5153dce6a1d2d4cde1fb93f73372785}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab5153dce6a1d2d4cde1fb93f73372785} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+SELF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_FRIEND@{MONSTER\_SKILL\_TARGET\_FRIEND}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_FRIEND@{MONSTER\_SKILL\_TARGET\_FRIEND}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4cbd61f004983b355905c99751b13b99}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4cbd61f004983b355905c99751b13b99} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+FRIEND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_MASTER@{MONSTER\_SKILL\_TARGET\_MASTER}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_MASTER@{MONSTER\_SKILL\_TARGET\_MASTER}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca27a337384deebb55eaf4b51d6b145522}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca27a337384deebb55eaf4b51d6b145522} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+MASTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND5@{MONSTER\_SKILL\_TARGET\_AROUND5}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND5@{MONSTER\_SKILL\_TARGET\_AROUND5}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca95d77e735250ff5e9ada107bb08d4d45}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca95d77e735250ff5e9ada107bb08d4d45} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND6@{MONSTER\_SKILL\_TARGET\_AROUND6}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND6@{MONSTER\_SKILL\_TARGET\_AROUND6}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca6586e43f794a3ceef31ff43e8c18cd22}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca6586e43f794a3ceef31ff43e8c18cd22} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND7@{MONSTER\_SKILL\_TARGET\_AROUND7}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND7@{MONSTER\_SKILL\_TARGET\_AROUND7}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecabd600a6a774046721726fb7f2af017df}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecabd600a6a774046721726fb7f2af017df} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND8@{MONSTER\_SKILL\_TARGET\_AROUND8}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND8@{MONSTER\_SKILL\_TARGET\_AROUND8}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecaa6069640526fce10a1c0d482cf1d8aab}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecaa6069640526fce10a1c0d482cf1d8aab} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND1@{MONSTER\_SKILL\_TARGET\_AROUND1}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND1@{MONSTER\_SKILL\_TARGET\_AROUND1}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecafe788390b23bf904fc00a3bb3a4c440f}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecafe788390b23bf904fc00a3bb3a4c440f} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND2@{MONSTER\_SKILL\_TARGET\_AROUND2}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND2@{MONSTER\_SKILL\_TARGET\_AROUND2}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca8c0c25fb15412e652d15c224a5a3904c}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca8c0c25fb15412e652d15c224a5a3904c} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND3@{MONSTER\_SKILL\_TARGET\_AROUND3}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND3@{MONSTER\_SKILL\_TARGET\_AROUND3}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab189d1716bb6a024d40f510b57e7ce4d}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056ecab189d1716bb6a024d40f510b57e7ce4d} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND4@{MONSTER\_SKILL\_TARGET\_AROUND4}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND4@{MONSTER\_SKILL\_TARGET\_AROUND4}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca5c599990fefca02d497db75f071d1be2}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca5c599990fefca02d497db75f071d1be2} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_SKILL\_TARGET\_AROUND@{MONSTER\_SKILL\_TARGET\_AROUND}!MonsterDefinitions.hpp@{MonsterDefinitions.hpp}}\index{MonsterDefinitions.hpp@{MonsterDefinitions.hpp}!MONSTER\_SKILL\_TARGET\_AROUND@{MONSTER\_SKILL\_TARGET\_AROUND}}}\Hypertarget{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4c16c3830a0c4986f030909418542280}\label{_monster_definitions_8hpp_a89b37b04cae98e1bfdfe494b43b056eca4c16c3830a0c4986f030909418542280} 
+MONSTER\+\_\+\+SKILL\+\_\+\+TARGET\+\_\+\+AROUND&\\
+\hline
+
+\end{DoxyEnumFields}

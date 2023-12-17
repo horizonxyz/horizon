@@ -1,0 +1,152 @@
+\doxysection{Horizon\+::Networking\+::Async\+Acceptor Class Reference}
+\hypertarget{class_horizon_1_1_networking_1_1_async_acceptor}{}\label{class_horizon_1_1_networking_1_1_async_acceptor}\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+
+
+Asynchronous acceptor for sockets.  
+
+
+
+
+{\ttfamily \#include $<$Async\+Acceptor.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t thread\+\_\+index)$>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{Accept\+Callback}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a4227c41e6c8dfcf06849d70566d8ce6e}{Async\+Acceptor}} (boost\+::asio\+::io\+\_\+service \&io\+\_\+service, std\+::string const \&listen\+\_\+ip, uint16\+\_\+t port)
+\begin{DoxyCompactList}\small\item\em Constructor of the \doxylink{class_horizon_1_1_networking_1_1_async_acceptor}{Async\+Acceptor} object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a5993330fc25a43d1d63fb3737b046ad4}{Async\+Accept}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8}{async\+\_\+accept\+\_\+with\+\_\+callback}} (\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{Accept\+Callback}} callback)
+\begin{DoxyCompactList}\small\item\em Asynchronously accepts sockets and executes a callback function. This function is responsible for -\/ 1) Listening for new connections on the main thread. 2) Executing the callback provided to this method whilst moving its ownership. 3) Execute recursively on successful acceptances until closed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_acd7e95f0d5a366ba1120d82513fcc3c4}{bind}} ()
+\begin{DoxyCompactList}\small\item\em Binds this instance to an endpoint, to listen for connections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a7bc5ccf685bb9a7bd3ab01be0fafca4c}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the acceptor across all threads. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_adb5aefac93e1930c47b5151c7427ae9a}{is\+\_\+open}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_a806cff4cf690897f1004af742101ceb4}{set\+\_\+socket\+\_\+factory}} (std\+::function$<$ std\+::pair$<$ std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t $>$()$>$ \&\&func)
+\begin{DoxyCompactList}\small\item\em Sets the socket factory for the acceptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Asynchronous acceptor for sockets. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}\label{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!AcceptCallback@{AcceptCallback}}
+\index{AcceptCallback@{AcceptCallback}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{AcceptCallback}{AcceptCallback}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(std\+::shared\+\_\+ptr$<$tcp\+::socket$>$, uint32\+\_\+t thread\+\_\+index)$>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{Horizon\+::\+Networking\+::\+Async\+Acceptor\+::\+Accept\+Callback}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_a4227c41e6c8dfcf06849d70566d8ce6e}\label{class_horizon_1_1_networking_1_1_async_acceptor_a4227c41e6c8dfcf06849d70566d8ce6e} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!AsyncAcceptor@{AsyncAcceptor}}
+\index{AsyncAcceptor@{AsyncAcceptor}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{AsyncAcceptor()}{AsyncAcceptor()}}
+{\footnotesize\ttfamily Horizon\+::\+Networking\+::\+Async\+Acceptor\+::\+Async\+Acceptor (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+service \&}]{io\+\_\+service,  }\item[{std\+::string const \&}]{listen\+\_\+ip,  }\item[{uint16\+\_\+t}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of the \doxylink{class_horizon_1_1_networking_1_1_async_acceptor}{Async\+Acceptor} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & io\+\_\+service reference to the io\+\_\+service object. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listen\+\_\+ip} & const reference to the ip address string for the acceptor to bind on. \\
+\hline
+\mbox{\texttt{ in}}  & {\em port} & port number for the acceptor to bind on. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8}\label{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!async\_accept\_with\_callback@{async\_accept\_with\_callback}}
+\index{async\_accept\_with\_callback@{async\_accept\_with\_callback}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{async\_accept\_with\_callback()}{async\_accept\_with\_callback()}}
+{\footnotesize\ttfamily void Horizon\+::\+Networking\+::\+Async\+Acceptor\+::async\+\_\+accept\+\_\+with\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{Accept\+Callback}}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asynchronously accepts sockets and executes a callback function. This function is responsible for -\/ 1) Listening for new connections on the main thread. 2) Executing the callback provided to this method whilst moving its ownership. 3) Execute recursively on successful acceptances until closed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & the callback function to execute (\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+type \doxylink{class_horizon_1_1_networking_1_1_async_acceptor_ab964e52bceb424a6063ae1f551721dd7}{Accept\+Callback}) 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{class_horizon_1_1_networking_1_1_async_acceptor_a7dbab11df38e5c6312ba8378e5c1e3f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_a5993330fc25a43d1d63fb3737b046ad4}\label{class_horizon_1_1_networking_1_1_async_acceptor_a5993330fc25a43d1d63fb3737b046ad4} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!AsyncAccept@{AsyncAccept}}
+\index{AsyncAccept@{AsyncAccept}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{AsyncAccept()}{AsyncAccept()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Horizon\+::\+Networking\+::\+Async\+Acceptor\+::\+Async\+Accept (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_acd7e95f0d5a366ba1120d82513fcc3c4}\label{class_horizon_1_1_networking_1_1_async_acceptor_acd7e95f0d5a366ba1120d82513fcc3c4} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!bind@{bind}}
+\index{bind@{bind}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Networking\+::\+Async\+Acceptor\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Binds this instance to an endpoint, to listen for connections. 
+
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_a7bc5ccf685bb9a7bd3ab01be0fafca4c}\label{class_horizon_1_1_networking_1_1_async_acceptor_a7bc5ccf685bb9a7bd3ab01be0fafca4c} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!close@{close}}
+\index{close@{close}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Horizon\+::\+Networking\+::\+Async\+Acceptor\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the acceptor across all threads. 
+
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_adb5aefac93e1930c47b5151c7427ae9a}\label{class_horizon_1_1_networking_1_1_async_acceptor_adb5aefac93e1930c47b5151c7427ae9a} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!is\_open@{is\_open}}
+\index{is\_open@{is\_open}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{is\_open()}{is\_open()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Networking\+::\+Async\+Acceptor\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_async_acceptor_a806cff4cf690897f1004af742101ceb4}\label{class_horizon_1_1_networking_1_1_async_acceptor_a806cff4cf690897f1004af742101ceb4} 
+\index{Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}!set\_socket\_factory@{set\_socket\_factory}}
+\index{set\_socket\_factory@{set\_socket\_factory}!Horizon::Networking::AsyncAcceptor@{Horizon::Networking::AsyncAcceptor}}
+\doxysubsubsection{\texorpdfstring{set\_socket\_factory()}{set\_socket\_factory()}}
+{\footnotesize\ttfamily void Horizon\+::\+Networking\+::\+Async\+Acceptor\+::set\+\_\+socket\+\_\+factory (\begin{DoxyParamCaption}\item[{std\+::function$<$ std\+::pair$<$ std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t $>$()$>$ \&\&}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the socket factory for the acceptor. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Networking/\mbox{\hyperlink{_async_acceptor_8hpp}{Async\+Acceptor.\+hpp}}\end{DoxyCompactItemize}

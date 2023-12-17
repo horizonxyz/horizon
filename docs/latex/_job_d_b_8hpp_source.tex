@@ -1,0 +1,91 @@
+\doxysection{Job\+DB.\+hpp}
+\hypertarget{_job_d_b_8hpp_source}{}\label{_job_d_b_8hpp_source}\index{src/Server/Zone/Game/StaticDB/JobDB.hpp@{src/Server/Zone/Game/StaticDB/JobDB.hpp}}
+\mbox{\hyperlink{_job_d_b_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_STATICDB\_JOBDB\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_STATICDB\_JOBDB\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_definitions_8hpp}{Server/Zone/Definitions/ItemDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{Server/Zone/Definitions/EntityDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\_config\_data}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\{0\};}
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_a69aa2938313a22fc2f3c0186f246c0ed}{name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_a25fa441ef9bdfd193595f37368fa9cf1}{max\_weight}}\{20000\};}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_a0f5ba29c21e864dcfc793b428e0abe18}{base\_exp\_group}}\{\textcolor{stringliteral}{"{}"{}}\},\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_ae7aa14b216581e31971726ebcf850a8e}{job\_exp\_group}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00046\ \ \ \ \ std::array<int,\ IT\_WT\_SINGLE\_MAX>\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_abcfabd4780fce6da7da5dce43a0b9b54}{weapon\_base\_aspd}}\ \{\ 0\ \};}
+\DoxyCodeLine{00047\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_aec5e69225a916a4d9a647104128710ef}{hp\_table}}\ \{\ 0\ \},\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data_a8db6ff455120c7a2b2f867411a3657b3}{sp\_table}}\ \{\ 0\ \};}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database}{JobDatabase}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_ab4943d6407186b90c1b856aff69981ba}{JobDatabase}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a81933bae93013b7db930d13becdfb56d}{\string~JobDatabase}}()\ \{\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database}{JobDatabase}}\ *\mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a6f235a04f1372609825bec6c7cec2150}{get\_instance}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database}{JobDatabase}}\ instance;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\_class\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a6518b7cd7e7f6b2a2719ffd797c71f9a}{get\_job\_class\_by\_name}}(std::string\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_a90f5e40781e0e2060f0d48e6be39b9d3}{job\_class\_mask}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_ac27d62629d268ae9dd19b24b58c3579b}{job\_id\_to\_mask}}(\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\_class\_type}}\ job\_id)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a892804e03d5e6ab9c41d1ea5a8aecbf2}{load}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_abb598d5fed9355d889593536a3070c03}{load\_job}}(sol::table\ \&job\_tbl,\ std::string\ name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a0838c660060f1aabdc0ada27618a0827}{load\_job\_internal}}(sol::table\ \&job\_tbl,\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\_config\_data}}\ \&data,\ std::string\ job\_name\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a65f4f6365ccbf6535c3b7c894f2fb8fb}{load\_hp\_sp\_table}}(sol::table\ \&job\_tbl,\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\_config\_data}}\ \&data,\ std::string\ \&job\_name,\ std::string\ table\_name);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::shared\_ptr<const\ job\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a38fdc110617a988feb3f93a73869c324}{get\_job\_by\_id}}(uint16\_t\ job\_id)\ \{\ \textcolor{keywordflow}{return}\ \_job\_db.at((\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\_class\_type}})\ job\_id);\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ std::string\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_af1cbb109ff7f583c81b5f926edbe968f}{get\_job\_name\_by\_id}}(int32\_t\ \textcolor{keywordtype}{id})\ \{\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ j\ =\ \_name2id\_list.begin();\ j\ !=\ \_name2id\_list.end();\ j++)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j-\/>second\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ j-\/>first;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint32\_t,\ std::shared\_ptr<const\ job\_config\_data>}}>\ \_job\_db;}
+\DoxyCodeLine{00078\ \ \ \ \ std::map<std::string,\ int>\ \_name2id\_list;}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ JobDB\ Horizon::Zone::JobDatabase::get\_instance()}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_STATICDB\_JOBDB\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

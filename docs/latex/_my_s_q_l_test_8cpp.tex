@@ -1,0 +1,108 @@
+\doxysection{src/\+Tests/\+My\+SQLTest.cpp File Reference}
+\hypertarget{_my_s_q_l_test_8cpp}{}\label{_my_s_q_l_test_8cpp}\index{src/Tests/MySQLTest.cpp@{src/Tests/MySQLTest.cpp}}
+{\ttfamily \#include "{}Core/\+Database/\+Connection\+Pool.\+hpp"{}}\newline
+{\ttfamily \#include $<$mysqlx/xdevapi.\+h$>$}\newline
+{\ttfamily \#include $<$boost/test/unit\+\_\+test.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+Include dependency graph for My\+SQLTest.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_my_s_q_l_test_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_my_s_q_l_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1}{BOOST\+\_\+\+TEST\+\_\+\+DYN\+\_\+\+LINK}}
+\item 
+\#define \mbox{\hyperlink{_my_s_q_l_test_8cpp_a6b2a3852db8bb19ab6909bac01859985}{BOOST\+\_\+\+TEST\+\_\+\+MODULE}}~"{}My\+SQLTest"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_my_s_q_l_test_8cpp_a1f33439986a5224f98890faaa71ed260}{test\+\_\+connection}} (mysqlx\+::\+Session \&session)
+\item 
+\mbox{\hyperlink{_my_s_q_l_test_8cpp_ab9f12f96b037067e7c4ecb9e96e527f4}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (My\+SQLTest)
+\item 
+\mbox{\hyperlink{_my_s_q_l_test_8cpp_a14cb1b15987cfff525058c0e07597f7d}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (Connection\+Pool\+Can\+Create\+And\+Release\+Connections)
+\item 
+\mbox{\hyperlink{_my_s_q_l_test_8cpp_a3307661f75f4c7e0aedb868a00e7b824}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (Connection\+Pool\+Can\+Handle\+Multiple\+Threads)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_my_s_q_l_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1}\label{_my_s_q_l_test_8cpp_a139f00d2466d591f60b8d6a73c8273f1} 
+\index{MySQLTest.cpp@{MySQLTest.cpp}!BOOST\_TEST\_DYN\_LINK@{BOOST\_TEST\_DYN\_LINK}}
+\index{BOOST\_TEST\_DYN\_LINK@{BOOST\_TEST\_DYN\_LINK}!MySQLTest.cpp@{MySQLTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_DYN\_LINK}{BOOST\_TEST\_DYN\_LINK}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+DYN\+\_\+\+LINK}
+
+\Hypertarget{_my_s_q_l_test_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{_my_s_q_l_test_8cpp_a6b2a3852db8bb19ab6909bac01859985} 
+\index{MySQLTest.cpp@{MySQLTest.cpp}!BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}}
+\index{BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}!MySQLTest.cpp@{MySQLTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_MODULE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+MODULE~"{}My\+SQLTest"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_my_s_q_l_test_8cpp_a14cb1b15987cfff525058c0e07597f7d}\label{_my_s_q_l_test_8cpp_a14cb1b15987cfff525058c0e07597f7d} 
+\index{MySQLTest.cpp@{MySQLTest.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!MySQLTest.cpp@{MySQLTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{Connection\+Pool\+Can\+Create\+And\+Release\+Connections}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_my_s_q_l_test_8cpp_a14cb1b15987cfff525058c0e07597f7d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_my_s_q_l_test_8cpp_a3307661f75f4c7e0aedb868a00e7b824}\label{_my_s_q_l_test_8cpp_a3307661f75f4c7e0aedb868a00e7b824} 
+\index{MySQLTest.cpp@{MySQLTest.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!MySQLTest.cpp@{MySQLTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{Connection\+Pool\+Can\+Handle\+Multiple\+Threads}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_my_s_q_l_test_8cpp_a3307661f75f4c7e0aedb868a00e7b824_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_my_s_q_l_test_8cpp_ab9f12f96b037067e7c4ecb9e96e527f4}\label{_my_s_q_l_test_8cpp_ab9f12f96b037067e7c4ecb9e96e527f4} 
+\index{MySQLTest.cpp@{MySQLTest.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!MySQLTest.cpp@{MySQLTest.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{My\+SQLTest}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{_my_s_q_l_test_8cpp_ab9f12f96b037067e7c4ecb9e96e527f4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_my_s_q_l_test_8cpp_a1f33439986a5224f98890faaa71ed260}\label{_my_s_q_l_test_8cpp_a1f33439986a5224f98890faaa71ed260} 
+\index{MySQLTest.cpp@{MySQLTest.cpp}!test\_connection@{test\_connection}}
+\index{test\_connection@{test\_connection}!MySQLTest.cpp@{MySQLTest.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_connection()}{test\_connection()}}
+{\footnotesize\ttfamily void test\+\_\+connection (\begin{DoxyParamCaption}\item[{mysqlx\+::\+Session \&}]{session }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{_my_s_q_l_test_8cpp_a1f33439986a5224f98890faaa71ed260_icgraph}
+\end{center}
+\end{figure}

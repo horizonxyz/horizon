@@ -1,0 +1,40 @@
+\doxysection{Type\+List.\+hpp}
+\hypertarget{_type_list_8hpp_source}{}\label{_type_list_8hpp_source}\index{src/Core/Structures/TypeList.hpp@{src/Core/Structures/TypeList.hpp}}
+\mbox{\hyperlink{_type_list_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_STRUCTURES\_TYPELIST\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_STRUCTURES\_TYPELIST\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }TypeNull;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ HEAD,\ \textcolor{keyword}{typename}\ TAIL>}
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_type_list}{TypeList}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{typedef}\ HEAD\ \mbox{\hyperlink{struct_type_list_ac5c6d38e71241055f58984e88368494a}{Head}};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{typedef}\ TAIL\ \mbox{\hyperlink{struct_type_list_a8b16ba737e930ebc023b8cea8231f678}{Tail}};}
+\DoxyCodeLine{00011\ \};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ TYPELIST\_1(T1)\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TypeNull>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ TYPELIST\_2(T1,\ T2)\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_1(T2)\ >}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ TYPELIST\_3(T1,\ T2,\ T3)\ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_2(T2,\ T3)\ >}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ TYPELIST\_4(T1,\ T2,\ T3,\ T4)\ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_3(T2,\ T3,\ T4)\ >}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ TYPELIST\_5(T1,\ T2,\ T3,\ T4,\ T5)\ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_4(T2,\ T3,\ T4,\ T5)\ >}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ TYPELIST\_6(T1,\ T2,\ T3,\ T4,\ T5,\ T6)\ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_5(T2,\ T3,\ T4,\ T5,\ T6)\ >}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ TYPELIST\_7(T1,\ T2,\ T3,\ T4,\ T5,\ T6,\ T7)\ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_6(T2,\ T3,\ T4,\ T5,\ T6,\ T7)\ >}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ TYPELIST\_8(T1,\ T2,\ T3,\ T4,\ T5,\ T6,\ T7,\ T8)\ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_7(T2,\ T3,\ T4,\ T5,\ T6,\ T7,\ T8)\ >}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ TYPELIST\_9(T1,\ T2,\ T3,\ T4,\ T5,\ T6,\ T7,\ T8,\ T9)\ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_8(T2,\ T3,\ T4,\ T5,\ T6,\ T7,\ T8,\ T9)\ >}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ TYPELIST\_10(T1,\ T2,\ T3,\ T4,\ T5,\ T6,\ T7,\ T8,\ T9,\ T10)\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ TypeList<T1,\ TYPELIST\_9(T2,\ T3,\ T4,\ T5,\ T6,\ T7,\ T8,\ T9,\ T10)\ >}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CORE\_STRUCTURES\_TYPELIST\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

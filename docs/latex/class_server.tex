@@ -1,0 +1,463 @@
+\doxysection{Server Class Reference}
+\hypertarget{class_server}{}\label{class_server}\index{Server@{Server}}
+
+
+{\ttfamily \#include $<$Server.\+hpp$>$}
+
+
+
+Inheritance diagram for Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_ad5ec9462b520e59f7ea831e157ee5e59}{Server}} ()
+\item 
+\mbox{\hyperlink{class_server_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\texorpdfstring{$\sim$}{\string~}\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_server_af34b875b35ae5de8bbb5863834c9f18f}{parse\+\_\+exec\+\_\+args}} (const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, int argc)
+\item 
+\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} \mbox{\hyperlink{class_server_aa65ab5685ff9de7bf3e7286a587903db}{get\+\_\+shutdown\+\_\+stage}} () const
+\item 
+void \mbox{\hyperlink{class_server_afef17fc28aeec43c2a2dae9bed39960e}{set\+\_\+shutdown\+\_\+stage}} (\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} new\+\_\+stage)
+\item 
+void \mbox{\hyperlink{class_server_a659ca94721145e4dcf1530d25bb4f1dc}{set\+\_\+shutdown\+\_\+signal}} (int signal)
+\item 
+boost\+::asio\+::io\+\_\+service \& \mbox{\hyperlink{class_server_a3a1dece79068f344c4b05b6ee101b064}{get\+\_\+io\+\_\+service}} ()
+\item 
+struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \& \mbox{\hyperlink{class_server_a7477e1279f847a67b880ef242a9ecd19}{general\+\_\+conf}} ()
+\item 
+bool \mbox{\hyperlink{class_server_a2236a63f5838c08e1ef6ece408366610}{parse\+\_\+common\+\_\+configs}} (sol\+::table \&cfg)
+\item 
+virtual void \mbox{\hyperlink{class_server_a6a048a910c82c444ddf49212397dcfd2}{initialize\+\_\+core}} ()
+\item 
+virtual void \mbox{\hyperlink{class_server_a5eb7d86ecf169a70125c6565606edb6a}{finalize\+\_\+core}} ()
+\item 
+void \mbox{\hyperlink{class_server_aafe7d7817651422df6e920f5c6c5cc0c}{initialize\+\_\+command\+\_\+line}} ()
+\item 
+virtual void \mbox{\hyperlink{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1}{initialize\+\_\+cli\+\_\+commands}} ()
+\item 
+void \mbox{\hyperlink{class_server_ad1a38231c5756b7ca358a5932b0d0068}{process\+\_\+cli\+\_\+commands}} ()
+\item 
+void \mbox{\hyperlink{class_server_aec08544917c23ffde4541f53b9b6faa7}{queue\+\_\+cli\+\_\+command}} (\mbox{\hyperlink{class_c_l_i_command}{CLICommand}} \&\&cmd\+Mgr)
+\item 
+void \mbox{\hyperlink{class_server_a27ef7f0def5fdbe478b63d48e88baff5}{add\+\_\+cli\+\_\+command\+\_\+func}} (std\+::string cmd, std\+::function$<$ bool(std\+::string)$>$ func)
+\item 
+std\+::function$<$ bool(std\+::string)$>$ \mbox{\hyperlink{class_server_a01dc32676d4969aeeb2c8d16d422d8f0}{get\+\_\+cli\+\_\+command\+\_\+func}} (std\+::string \&cmd)
+\item 
+bool \mbox{\hyperlink{class_server_a3aa345741e30a7cd7c85f21ed30bdd37}{clicmd\+\_\+shutdown}} (std\+::string)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ \mbox{\hyperlink{class_server_aa41237231ca30f52dbfd6861c257319c}{database\+\_\+pool}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \mbox{\hyperlink{class_server_a987f48464a606912ed949959ec723e3c}{general\+\_\+config}}
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$ \mbox{\hyperlink{class_server_af325b836d0faeb21436367748c44aef5}{\+\_\+cli\+\_\+cmd\+\_\+queue}}
+\item 
+std\+::thread \mbox{\hyperlink{class_server_a959436cbed4996372e1276757fcb12c8}{\+\_\+cli\+\_\+thread}}
+\item 
+std\+::atomic$<$ \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} $>$ \mbox{\hyperlink{class_server_a32f7ff471dd4d05673c422626437c6ac}{\+\_\+shutdown\+\_\+stage}}
+\item 
+std\+::atomic$<$ int $>$ \mbox{\hyperlink{class_server_ab98363c5fa107a98629438e2f21b3ad1}{\+\_\+shutdown\+\_\+signal}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::function$<$ bool(std\+::string)$>$ $>$ \mbox{\hyperlink{class_server_aa1512413691c1a491293e2f6f74ae4dd}{\+\_\+cli\+\_\+function\+\_\+map}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ \mbox{\hyperlink{class_server_a92a1e058847b15eff35c51a4defd3e46}{\+\_\+mysql\+\_\+connections}}
+\item 
+boost\+::asio\+::io\+\_\+service \mbox{\hyperlink{class_server_a2065a6943ad8f1981d6d8bf6f4c52a2b}{\+\_\+io\+\_\+service}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_server_ad5ec9462b520e59f7ea831e157ee5e59}\label{class_server_ad5ec9462b520e59f7ea831e157ee5e59} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_server_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{class_server_a4b3aa2579cb1c8cd1d069582c14d0fa6} 
+\index{Server@{Server}!````~Server@{\texorpdfstring{$\sim$}{\string~}Server}}
+\index{````~Server@{\texorpdfstring{$\sim$}{\string~}Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Server()}{\string~Server()}}
+{\footnotesize\ttfamily Server\+::\texorpdfstring{$\sim$}{\string~}\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_server_a27ef7f0def5fdbe478b63d48e88baff5}\label{class_server_a27ef7f0def5fdbe478b63d48e88baff5} 
+\index{Server@{Server}!add\_cli\_command\_func@{add\_cli\_command\_func}}
+\index{add\_cli\_command\_func@{add\_cli\_command\_func}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{add\_cli\_command\_func()}{add\_cli\_command\_func()}}
+{\footnotesize\ttfamily void Server\+::add\+\_\+cli\+\_\+command\+\_\+func (\begin{DoxyParamCaption}\item[{std\+::string}]{cmd,  }\item[{std\+::function$<$ bool(std\+::string)$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a27ef7f0def5fdbe478b63d48e88baff5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a3aa345741e30a7cd7c85f21ed30bdd37}\label{class_server_a3aa345741e30a7cd7c85f21ed30bdd37} 
+\index{Server@{Server}!clicmd\_shutdown@{clicmd\_shutdown}}
+\index{clicmd\_shutdown@{clicmd\_shutdown}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{clicmd\_shutdown()}{clicmd\_shutdown()}}
+{\footnotesize\ttfamily bool Server\+::clicmd\+\_\+shutdown (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+CLI Commands Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_server_a3aa345741e30a7cd7c85f21ed30bdd37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a3aa345741e30a7cd7c85f21ed30bdd37_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_aa41237231ca30f52dbfd6861c257319c}\label{class_server_aa41237231ca30f52dbfd6861c257319c} 
+\index{Server@{Server}!database\_pool@{database\_pool}}
+\index{database\_pool@{database\_pool}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{database\_pool()}{database\_pool()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ Server\+::database\+\_\+pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_aa41237231ca30f52dbfd6861c257319c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a5eb7d86ecf169a70125c6565606edb6a}\label{class_server_a5eb7d86ecf169a70125c6565606edb6a} 
+\index{Server@{Server}!finalize\_core@{finalize\_core}}
+\index{finalize\_core@{finalize\_core}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{finalize\_core()}{finalize\_core()}}
+{\footnotesize\ttfamily void Server\+::finalize\+\_\+core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_server_a5eb7d86ecf169a70125c6565606edb6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a7477e1279f847a67b880ef242a9ecd19}\label{class_server_a7477e1279f847a67b880ef242a9ecd19} 
+\index{Server@{Server}!general\_conf@{general\_conf}}
+\index{general\_conf@{general\_conf}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{general\_conf()}{general\_conf()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \& Server\+::general\+\_\+conf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a7477e1279f847a67b880ef242a9ecd19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a01dc32676d4969aeeb2c8d16d422d8f0}\label{class_server_a01dc32676d4969aeeb2c8d16d422d8f0} 
+\index{Server@{Server}!get\_cli\_command\_func@{get\_cli\_command\_func}}
+\index{get\_cli\_command\_func@{get\_cli\_command\_func}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{get\_cli\_command\_func()}{get\_cli\_command\_func()}}
+{\footnotesize\ttfamily std\+::function$<$ bool(std\+::string)$>$ Server\+::get\+\_\+cli\+\_\+command\+\_\+func (\begin{DoxyParamCaption}\item[{std\+::string \&}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a01dc32676d4969aeeb2c8d16d422d8f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a3a1dece79068f344c4b05b6ee101b064}\label{class_server_a3a1dece79068f344c4b05b6ee101b064} 
+\index{Server@{Server}!get\_io\_service@{get\_io\_service}}
+\index{get\_io\_service@{get\_io\_service}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{get\_io\_service()}{get\_io\_service()}}
+{\footnotesize\ttfamily boost\+::asio\+::io\+\_\+service \& Server\+::get\+\_\+io\+\_\+service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a3a1dece79068f344c4b05b6ee101b064_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_aa65ab5685ff9de7bf3e7286a587903db}\label{class_server_aa65ab5685ff9de7bf3e7286a587903db} 
+\index{Server@{Server}!get\_shutdown\_stage@{get\_shutdown\_stage}}
+\index{get\_shutdown\_stage@{get\_shutdown\_stage}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{get\_shutdown\_stage()}{get\_shutdown\_stage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} Server\+::get\+\_\+shutdown\+\_\+stage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_aa65ab5685ff9de7bf3e7286a587903db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1}\label{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1} 
+\index{Server@{Server}!initialize\_cli\_commands@{initialize\_cli\_commands}}
+\index{initialize\_cli\_commands@{initialize\_cli\_commands}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{initialize\_cli\_commands()}{initialize\_cli\_commands()}}
+{\footnotesize\ttfamily void Server\+::initialize\+\_\+cli\+\_\+commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3}{Horizon\+::\+Auth\+::\+Auth\+Server}}, \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_af13036ccd49b0a5ed4b9c7d5c4668a05}{Horizon\+::\+Char\+::\+Char\+Server}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ae45f26ef12d4107d0759ee57ed9f095a}{Horizon\+::\+Zone\+::\+Zone\+Server}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_aafe7d7817651422df6e920f5c6c5cc0c}\label{class_server_aafe7d7817651422df6e920f5c6c5cc0c} 
+\index{Server@{Server}!initialize\_command\_line@{initialize\_command\_line}}
+\index{initialize\_command\_line@{initialize\_command\_line}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{initialize\_command\_line()}{initialize\_command\_line()}}
+{\footnotesize\ttfamily void Server\+::initialize\+\_\+command\+\_\+line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_aafe7d7817651422df6e920f5c6c5cc0c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_aafe7d7817651422df6e920f5c6c5cc0c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a6a048a910c82c444ddf49212397dcfd2}\label{class_server_a6a048a910c82c444ddf49212397dcfd2} 
+\index{Server@{Server}!initialize\_core@{initialize\_core}}
+\index{initialize\_core@{initialize\_core}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{initialize\_core()}{initialize\_core()}}
+{\footnotesize\ttfamily void Server\+::initialize\+\_\+core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialize Commandline Interface
+
+Reimplemented in \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a863e41748ec1fee8cfbe3a5d18543fcf}{Horizon\+::\+Auth\+::\+Auth\+Server}}, \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a20bc12a28d7880def5dd6e663d438a73}{Horizon\+::\+Char\+::\+Char\+Server}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a01082f46455d8780d0b5a427070c4540}{Horizon\+::\+Zone\+::\+Zone\+Server}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a6a048a910c82c444ddf49212397dcfd2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a6a048a910c82c444ddf49212397dcfd2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a2236a63f5838c08e1ef6ece408366610}\label{class_server_a2236a63f5838c08e1ef6ece408366610} 
+\index{Server@{Server}!parse\_common\_configs@{parse\_common\_configs}}
+\index{parse\_common\_configs@{parse\_common\_configs}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{parse\_common\_configs()}{parse\_common\_configs()}}
+{\footnotesize\ttfamily bool Server\+::parse\+\_\+common\+\_\+configs (\begin{DoxyParamCaption}\item[{sol\+::table \&}]{cfg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_server_a2236a63f5838c08e1ef6ece408366610_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a2236a63f5838c08e1ef6ece408366610_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_af34b875b35ae5de8bbb5863834c9f18f}\label{class_server_af34b875b35ae5de8bbb5863834c9f18f} 
+\index{Server@{Server}!parse\_exec\_args@{parse\_exec\_args}}
+\index{parse\_exec\_args@{parse\_exec\_args}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{parse\_exec\_args()}{parse\_exec\_args()}}
+{\footnotesize\ttfamily void Server\+::parse\+\_\+exec\+\_\+args (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{int}]{argc }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_af34b875b35ae5de8bbb5863834c9f18f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_ad1a38231c5756b7ca358a5932b0d0068}\label{class_server_ad1a38231c5756b7ca358a5932b0d0068} 
+\index{Server@{Server}!process\_cli\_commands@{process\_cli\_commands}}
+\index{process\_cli\_commands@{process\_cli\_commands}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{process\_cli\_commands()}{process\_cli\_commands()}}
+{\footnotesize\ttfamily void Server\+::process\+\_\+cli\+\_\+commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_ad1a38231c5756b7ca358a5932b0d0068_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_ad1a38231c5756b7ca358a5932b0d0068_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_aec08544917c23ffde4541f53b9b6faa7}\label{class_server_aec08544917c23ffde4541f53b9b6faa7} 
+\index{Server@{Server}!queue\_cli\_command@{queue\_cli\_command}}
+\index{queue\_cli\_command@{queue\_cli\_command}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{queue\_cli\_command()}{queue\_cli\_command()}}
+{\footnotesize\ttfamily void Server\+::queue\+\_\+cli\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_l_i_command}{CLICommand}} \&\&}]{cmd\+Mgr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_aec08544917c23ffde4541f53b9b6faa7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_aec08544917c23ffde4541f53b9b6faa7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a659ca94721145e4dcf1530d25bb4f1dc}\label{class_server_a659ca94721145e4dcf1530d25bb4f1dc} 
+\index{Server@{Server}!set\_shutdown\_signal@{set\_shutdown\_signal}}
+\index{set\_shutdown\_signal@{set\_shutdown\_signal}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{set\_shutdown\_signal()}{set\_shutdown\_signal()}}
+{\footnotesize\ttfamily void Server\+::set\+\_\+shutdown\+\_\+signal (\begin{DoxyParamCaption}\item[{int}]{signal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_a659ca94721145e4dcf1530d25bb4f1dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_afef17fc28aeec43c2a2dae9bed39960e}\label{class_server_afef17fc28aeec43c2a2dae9bed39960e} 
+\index{Server@{Server}!set\_shutdown\_stage@{set\_shutdown\_stage}}
+\index{set\_shutdown\_stage@{set\_shutdown\_stage}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{set\_shutdown\_stage()}{set\_shutdown\_stage()}}
+{\footnotesize\ttfamily void Server\+::set\+\_\+shutdown\+\_\+stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}}}]{new\+\_\+stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_server_afef17fc28aeec43c2a2dae9bed39960e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_server_af325b836d0faeb21436367748c44aef5}\label{class_server_af325b836d0faeb21436367748c44aef5} 
+\index{Server@{Server}!\_cli\_cmd\_queue@{\_cli\_cmd\_queue}}
+\index{\_cli\_cmd\_queue@{\_cli\_cmd\_queue}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_cli\_cmd\_queue}{\_cli\_cmd\_queue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$\mbox{\hyperlink{class_c_l_i_command}{CLICommand}}$>$ Server\+::\+\_\+cli\+\_\+cmd\+\_\+queue\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_server_aa1512413691c1a491293e2f6f74ae4dd}\label{class_server_aa1512413691c1a491293e2f6f74ae4dd} 
+\index{Server@{Server}!\_cli\_function\_map@{\_cli\_function\_map}}
+\index{\_cli\_function\_map@{\_cli\_function\_map}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_cli\_function\_map}{\_cli\_function\_map}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::function$<$bool(std\+::string)$>$ $>$ Server\+::\+\_\+cli\+\_\+function\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_server_a959436cbed4996372e1276757fcb12c8}\label{class_server_a959436cbed4996372e1276757fcb12c8} 
+\index{Server@{Server}!\_cli\_thread@{\_cli\_thread}}
+\index{\_cli\_thread@{\_cli\_thread}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_cli\_thread}{\_cli\_thread}}
+{\footnotesize\ttfamily std\+::thread Server\+::\+\_\+cli\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_server_a2065a6943ad8f1981d6d8bf6f4c52a2b}\label{class_server_a2065a6943ad8f1981d6d8bf6f4c52a2b} 
+\index{Server@{Server}!\_io\_service@{\_io\_service}}
+\index{\_io\_service@{\_io\_service}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_io\_service}{\_io\_service}}
+{\footnotesize\ttfamily boost\+::asio\+::io\+\_\+service Server\+::\+\_\+io\+\_\+service\hspace{0.3cm}{\ttfamily [protected]}}
+
+Core IO Service \Hypertarget{class_server_a92a1e058847b15eff35c51a4defd3e46}\label{class_server_a92a1e058847b15eff35c51a4defd3e46} 
+\index{Server@{Server}!\_mysql\_connections@{\_mysql\_connections}}
+\index{\_mysql\_connections@{\_mysql\_connections}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_mysql\_connections}{\_mysql\_connections}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_connection_pool}{Connection\+Pool}}$>$ Server\+::\+\_\+mysql\+\_\+connections\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_server_ab98363c5fa107a98629438e2f21b3ad1}\label{class_server_ab98363c5fa107a98629438e2f21b3ad1} 
+\index{Server@{Server}!\_shutdown\_signal@{\_shutdown\_signal}}
+\index{\_shutdown\_signal@{\_shutdown\_signal}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_shutdown\_signal}{\_shutdown\_signal}}
+{\footnotesize\ttfamily std\+::atomic$<$int$>$ Server\+::\+\_\+shutdown\+\_\+signal\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_server_a32f7ff471dd4d05673c422626437c6ac}\label{class_server_a32f7ff471dd4d05673c422626437c6ac} 
+\index{Server@{Server}!\_shutdown\_stage@{\_shutdown\_stage}}
+\index{\_shutdown\_stage@{\_shutdown\_stage}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{\_shutdown\_stage}{\_shutdown\_stage}}
+{\footnotesize\ttfamily std\+::atomic$<$\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}}$>$ Server\+::\+\_\+shutdown\+\_\+stage\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_server_a987f48464a606912ed949959ec723e3c}\label{class_server_a987f48464a606912ed949959ec723e3c} 
+\index{Server@{Server}!general\_config@{general\_config}}
+\index{general\_config@{general\_config}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{general\_config}{general\_config}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} Server\+::general\+\_\+config\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Common/\mbox{\hyperlink{_server_8hpp}{Server.\+hpp}}\item 
+src/\+Server/\+Common/\mbox{\hyperlink{_server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+<map id="Horizon::Structures::LinkedList::Head::is_empty" name="Horizon::Structures::LinkedList::Head::is_empty">
+<area shape="rect" id="Node000001" title="Returns true if the list is empty." alt="" coords="889,371,1023,429"/>
+<area shape="rect" id="Node000002" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_head.html#af97ac6f6a53f70ada4d9bebed54ac19f" title="Returns the first Element in the list." alt="" coords="685,345,841,388"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="873,388,841,383,842,378,874,383"/>
+<area shape="rect" id="Node000017" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_head.html#af896a3546a0cb06ff98cde87458a9771" title=" " alt="" coords="685,412,841,455"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="874,417,842,422,841,417,873,412"/>
+<area shape="rect" id="Node000018" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_head.html#a1d60fa8f4e31afd57cceceb5e84f42a6" title="Returns the last Element in the list." alt="" coords="477,89,632,132"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="900,364,585,135,588,130,903,359"/>
+<area shape="rect" id="Node000019" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_head.html#a781b7364dfb3cd09ba66d3de208d2e88" title=" " alt="" coords="685,479,841,521"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="895,440,842,469,818,480,816,476,839,464,892,435"/>
+<area shape="rect" id="Node000003" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager.html#a6dfda269a4a91a590dc95f8ebfbbb037" title="Returns the first Reference in the list." alt="" coords="472,427,637,485"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="698,397,626,429,624,424,696,392"/>
+<area shape="rect" id="Node000007" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager.html#afd4d5429fdc3bb9cc7abb7588ee008b5" title=" " alt="" coords="472,509,637,568"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="690,399,687,402,670,426,664,449,657,473,639,499,625,511,622,507,635,496,652,471,658,448,665,423,683,398,687,395"/>
+<area shape="rect" id="Node000008" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_head.html#a2f26fec1c2e6f91d8652120e69bc7267" title="returns the number of Elements in the list (not including the head and tail Elements or the first and..." alt="" coords="488,248,622,307"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="696,341,621,309,624,304,698,336"/>
+<area shape="rect" id="Node000004" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager.html#a635c404e71ce17c37276ca9a7d3b1ee4" title="Returns the iterator at the beginning of the list." alt="" coords="239,605,404,664"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="476,497,474,499,458,523,451,547,444,571,426,595,406,610,403,606,422,591,439,568,446,545,453,521,470,496,472,494"/>
+<area shape="rect" id="Node000005" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager.html#ab4c230da4798a37c74b79dddc33d1def" title=" " alt="" coords="239,523,404,581"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="470,494,425,513,397,525,395,520,423,508,468,489"/>
+<area shape="rect" id="Node000006" href="$class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager.html#aa3f99cf0c92f74fc8a382acbfd1c7e53" title=" " alt="" coords="5,523,171,581"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="223,555,171,555,171,549,223,549"/>
+<area shape="rect" id="Node000009" href="$_reference_list_test_8cpp.html#ae168a016b23c98ede6b5d0395c1d9e05" title=" " alt="" coords="226,5,417,32"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="524,236,470,145,457,115,451,90,442,68,422,46,404,35,407,30,426,42,447,65,456,89,462,114,474,143,528,234"/>
+<area shape="rect" id="Node000010" href="$struct_grid_entity_existence_notifier.html#a4ea0c3249e2543bde0f7aeb238db4e3a" title=" " alt="" coords="233,389,410,432"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="512,319,471,351,425,380,400,391,397,386,423,375,468,346,509,315"/>
+<area shape="rect" id="Node000011" href="$struct_grid_entity_spawn_notifier.html#ada195234f1c2b51e5870eaad20a1099c" title=" " alt="" coords="242,456,401,499"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="532,322,488,386,459,418,426,446,402,459,399,455,422,442,455,414,484,382,528,319"/>
+<area shape="rect" id="Node000012" href="$struct_grid_entity_movement_notifier.html#a0d32ab44ae8ea6259581ea8396f6c7a0" title=" " alt="" coords="232,56,411,99"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="528,236,484,172,455,140,422,113,403,101,405,97,426,108,459,137,488,169,532,233"/>
+<area shape="rect" id="Node000013" href="$struct_grid_entity_skill_use_notifier.html#ad4ff4d11f7b4e32a350aeeb26284eaa6" title=" " alt="" coords="238,123,405,165"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="509,240,468,208,423,180,397,168,400,163,425,175,471,204,512,236"/>
+<area shape="rect" id="Node000014" href="$struct_grid_entity_basic_attack_notifier.html#ae8e3e60101e4f8238e92a7e5d7b00244" title=" " alt="" coords="226,189,417,232"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="472,257,398,235,399,230,473,251"/>
+<area shape="rect" id="Node000015" href="$struct_grid_entity_movement_stop_notifier.html#a68a3db268a54dc7b8f5fd58d11e33279" title=" " alt="" coords="219,256,424,299"/>
+<area shape="poly" id="edge14_Node000008_Node000015" title=" " alt="" coords="472,280,424,280,424,275,472,275"/>
+<area shape="rect" id="Node000016" href="$struct_grid_entity_item_drop_notifier.html#a97c5ce95ae2f1d1156337c312d920385" title=" " alt="" coords="236,323,407,365"/>
+<area shape="poly" id="edge15_Node000008_Node000016" title=" " alt="" coords="473,303,399,325,398,320,472,298"/>
+<area shape="poly" id="edge18_Node000018_Node000009" title=" " alt="" coords="502,84,423,46,387,35,388,30,425,42,504,79"/>
+</map>

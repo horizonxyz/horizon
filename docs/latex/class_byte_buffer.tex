@@ -1,0 +1,1015 @@
+\doxysection{Byte\+Buffer Class Reference}
+\hypertarget{class_byte_buffer}{}\label{class_byte_buffer}\index{ByteBuffer@{ByteBuffer}}
+
+
+{\ttfamily \#include $<$Byte\+Buffer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer_adc1d4da00319096a5eb0043f4a37e2be}{Byte\+Buffer}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer_a199c2d46cce671e56e00a451b8b20810}{Byte\+Buffer}} (size\+\_\+t \mbox{\hyperlink{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe}{reserve}})
+\item 
+\mbox{\hyperlink{class_byte_buffer_a6827e7416d80d4b5f5f5958fc3e4da0a}{Byte\+Buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\&buf)
+\item 
+\mbox{\hyperlink{class_byte_buffer_a62ddba92489627de368ae0025faedac3}{Byte\+Buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&buf, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{class_byte_buffer_a1d46ecb7e6e1e47667953b24e4b9e489}{Byte\+Buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} const \&right)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a2b3c467b38b384e3900c15b278480598}{operator=}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} const \&right)
+\item 
+virtual \mbox{\hyperlink{class_byte_buffer_a0ac2281f4602b920966462a832de4b75}{\texorpdfstring{$\sim$}{\string~}\+Byte\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{class_byte_buffer_ab9fbbcf0abe4049e2016c1262795c97e}{clear}} ()
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a177acd8d70f36ba5177901262f4d2c7d}{reset}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}} (T value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836}{put}} (size\+\_\+t pos, T value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_ab5618201f47745c8340a6c3d3d61e72c}{operator$<$$<$}} (uint8\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a64306b3b28d7417adfdbd0eefb8cbca9}{operator$<$$<$}} (uint16\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_aa29766137a78b7e4f2a61dbbdb230a37}{operator$<$$<$}} (uint32\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a1f79445b82615db69965ea0549fe325a}{operator$<$$<$}} (uint64\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a8a6984f53d62ce9ee863e768759c3b76}{operator$<$$<$}} (int8\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_afdd0be3bd27aa6fa4214789d464b40de}{operator$<$$<$}} (int16\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_af6f2dab05979d750999c0b90169b9e84}{operator$<$$<$}} (int32\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a8b29babf567963aac57ae7e2af35136c}{operator$<$$<$}} (int64\+\_\+t value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a5d2b326c6a5dee7c12d31812e521c632}{operator$<$$<$}} (float value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a177ac23fc6f11fbc89d9e93259f84e4b}{operator$<$$<$}} (double value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_ae7a3b48d7c68c8b96df10b149b3c6b00}{operator$>$$>$}} (bool \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a291a5ffb047079e4637daf7e3dc19118}{operator$>$$>$}} (uint8\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_ad05cdf92488c9a381280dbb64369f3c9}{operator$>$$>$}} (uint16\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a5fb619b55d6f02248e47bedd1f38f1ce}{operator$>$$>$}} (uint32\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a2c8cd94a61eb8cc0e5c1c030117787bc}{operator$>$$>$}} (uint64\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a4cef0619677eebc92e8b3adcfc6738ee}{operator$>$$>$}} (int8\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a174836a466d3e7e7ad8ce2608b05480a}{operator$>$$>$}} (int16\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a2147b0e749fcf5411e560d1243de94a8}{operator$>$$>$}} (int32\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_abccc1ad042328cb9703ad17f68bbb699}{operator$>$$>$}} (int64\+\_\+t \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_a29fb7124d40e89d17017e98c7f0c811f}{operator$>$$>$}} (float \&value)
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_byte_buffer_aef3df0cb7f7731f92857880d4c241e0c}{operator$>$$>$}} (double \&value)
+\item 
+uint8\+\_\+t \& \mbox{\hyperlink{class_byte_buffer_a759f6706460759380142aa9400a7f146}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t const pos)
+\item 
+uint8\+\_\+t const \& \mbox{\hyperlink{class_byte_buffer_a105928c758ea5497b0416f62bc9d1f04}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t const pos) const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_a1e1a47f362861d8cd61cdf27f7eb1812}{rpos}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_aa7831aa11854477a7f78464bc49b5db5}{rpos}} (size\+\_\+t rpos\+\_\+)
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8}{contents}} ()
+\item 
+uint8\+\_\+t const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_byte_buffer_a4c078f07a88ac04a8b7faf0aafd2ef42}{contents}} () const
+\item 
+void \mbox{\hyperlink{class_byte_buffer_afaebd6176663896131cde249f3ee6588}{finish\+\_\+reading}} ()
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a34029b6c4a31d64df175eaf8fa2f49b5}{read\+\_\+completed}} (size\+\_\+t bytes)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_abc2c0ea57bfbfb19a42714f23b65dea7}{write\+\_\+completed}} (size\+\_\+t bytes)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd}{wpos}} () const
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce}{get\+\_\+base\+\_\+pointer}} ()
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}{get\+\_\+read\+\_\+pointer}} ()
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793}{get\+\_\+write\+\_\+pointer}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_byte_buffer_aee31560603405310358cdfe28cf36aad}{to\+\_\+string}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\+\_\+length}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b}{active\+\_\+length}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a}{remaining\+\_\+space}} () const
+\item 
+bool \mbox{\hyperlink{class_byte_buffer_a327051b3a72c2e8a0dfefa6643213115}{is\+\_\+empty}} () const
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5}{flush}} ()
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376}{ensure\+\_\+free\+\_\+space}} ()
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a16ab545c983ff0605bc0a2ca1c40f0b8}{resize}} (size\+\_\+t new\+\_\+size)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe}{reserve}} (size\+\_\+t ressize)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955}{read\+\_\+skip}} ()
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a4baaaf49c2875496222f138338acee57}{read\+\_\+skip}} (size\+\_\+t skip)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{class_byte_buffer_afab3484e1af821859f16b7bdacf2af9c}{read}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{class_byte_buffer_a36e80bfabae00bd1c58e319a0d6e51b4}{read}} (size\+\_\+t pos) const
+\item 
+void \mbox{\hyperlink{class_byte_buffer_aa987eee32573fdd71abd3d6271d1954a}{read}} (char \texorpdfstring{$\ast$}{*}dest, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_af08930e1dd0f3dfb0203d2beb6fe7974}{read}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&buf, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a07ca875a7b4e2100dd6af7e7282b5629}{append}} (const char \texorpdfstring{$\ast$}{*}src, size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a2733da91857d60710c0caa968aa695fc}{append}} (std\+::string string)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_byte_buffer_a651cbdcda98377b6b274564b7fad8433}{append}} (const T \texorpdfstring{$\ast$}{*}src, size\+\_\+t size)
+\item 
+{\footnotesize template$<$class T , class SubT $>$ }\\void \mbox{\hyperlink{class_byte_buffer_aab1339b2a3ea90b7fda3525f5f480236}{append}} (const T \texorpdfstring{$\ast$}{*}t, size\+\_\+t t\+\_\+size, const SubT \texorpdfstring{$\ast$}{*}sub\+\_\+t, int count)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a6e56ce576c775f86999d57de2734b601}{append}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}src, size\+\_\+t cnt)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a56df62492376044474cc62fba51cd7c9}{append}} (const \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&buffer)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_ae4e2114b896c92ac0192c4005ce05c6d}{put}} (size\+\_\+t pos, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}src, size\+\_\+t cnt)
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a4b2ea80e6832431ad45758246f49a850}{print\+\_\+storage}} () const
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a9ce46ba3fcd156ea7119a91231339aa9}{textlike}} () const
+\item 
+void \mbox{\hyperlink{class_byte_buffer_a45e6b7d03df82a0be6eab9975193881e}{hexlike}} () const
+\item 
+{\footnotesize template$<$typename SizeT  = uint16\+\_\+t, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ SizeT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\void \mbox{\hyperlink{class_byte_buffer_aac31836432b7aa4902f1b39f931f3604}{emplace\+\_\+size}} (std\+::size\+\_\+t pos=2)
+\item 
+template$<$$>$ void \mbox{\hyperlink{class_byte_buffer_aae5d8ea772e7adcea4e7b533ae25fb94}{read\+\_\+skip}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\+\_\+t \mbox{\hyperlink{class_byte_buffer_a8dc72ab574b50098edfd09b928f47d47}{DEFAULT\+\_\+\+SIZE}} = 0x1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\+\_\+rpos}} \{0\}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\+\_\+wpos}} \{0\}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\+\_\+storage}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_byte_buffer_adc1d4da00319096a5eb0043f4a37e2be}\label{class_byte_buffer_adc1d4da00319096a5eb0043f4a37e2be} 
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Byte\+Buffer\+::\+Byte\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a199c2d46cce671e56e00a451b8b20810}\label{class_byte_buffer_a199c2d46cce671e56e00a451b8b20810} 
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Byte\+Buffer\+::\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{reserve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a199c2d46cce671e56e00a451b8b20810_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a6827e7416d80d4b5f5f5958fc3e4da0a}\label{class_byte_buffer_a6827e7416d80d4b5f5f5958fc3e4da0a} 
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Byte\+Buffer\+::\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\&}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a62ddba92489627de368ae0025faedac3}\label{class_byte_buffer_a62ddba92489627de368ae0025faedac3} 
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Byte\+Buffer\+::\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&}]{buf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_byte_buffer_a62ddba92489627de368ae0025faedac3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a1d46ecb7e6e1e47667953b24e4b9e489}\label{class_byte_buffer_a1d46ecb7e6e1e47667953b24e4b9e489} 
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\index{ByteBuffer@{ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ByteBuffer()}{ByteBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Byte\+Buffer\+::\+Byte\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a0ac2281f4602b920966462a832de4b75}\label{class_byte_buffer_a0ac2281f4602b920966462a832de4b75} 
+\index{ByteBuffer@{ByteBuffer}!````~ByteBuffer@{\texorpdfstring{$\sim$}{\string~}ByteBuffer}}
+\index{````~ByteBuffer@{\texorpdfstring{$\sim$}{\string~}ByteBuffer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ByteBuffer()}{\string~ByteBuffer()}}
+{\footnotesize\ttfamily virtual Byte\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Byte\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b}\label{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b} 
+\index{ByteBuffer@{ByteBuffer}!active\_length@{active\_length}}
+\index{active\_length@{active\_length}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{active\_length()}{active\_length()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::active\+\_\+length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a56df62492376044474cc62fba51cd7c9}\label{class_byte_buffer_a56df62492376044474cc62fba51cd7c9} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_byte_buffer_a56df62492376044474cc62fba51cd7c9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a07ca875a7b4e2100dd6af7e7282b5629}\label{class_byte_buffer_a07ca875a7b4e2100dd6af7e7282b5629} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_byte_buffer_a07ca875a7b4e2100dd6af7e7282b5629_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a651cbdcda98377b6b274564b7fad8433}\label{class_byte_buffer_a651cbdcda98377b6b274564b7fad8433} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_byte_buffer_a651cbdcda98377b6b274564b7fad8433_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_aab1339b2a3ea90b7fda3525f5f480236}\label{class_byte_buffer_aab1339b2a3ea90b7fda3525f5f480236} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily template$<$class T , class SubT $>$ \\
+void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{t,  }\item[{size\+\_\+t}]{t\+\_\+size,  }\item[{const SubT \texorpdfstring{$\ast$}{*}}]{sub\+\_\+t,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_byte_buffer_aab1339b2a3ea90b7fda3525f5f480236_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a6e56ce576c775f86999d57de2734b601}\label{class_byte_buffer_a6e56ce576c775f86999d57de2734b601} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{cnt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_byte_buffer_a6e56ce576c775f86999d57de2734b601_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a2733da91857d60710c0caa968aa695fc}\label{class_byte_buffer_a2733da91857d60710c0caa968aa695fc} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{std\+::string}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_byte_buffer_a2733da91857d60710c0caa968aa695fc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}\label{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b} 
+\index{ByteBuffer@{ByteBuffer}!append@{append}}
+\index{append@{append}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Byte\+Buffer\+::append (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_ab9fbbcf0abe4049e2016c1262795c97e}\label{class_byte_buffer_ab9fbbcf0abe4049e2016c1262795c97e} 
+\index{ByteBuffer@{ByteBuffer}!clear@{clear}}
+\index{clear@{clear}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_byte_buffer_ab9fbbcf0abe4049e2016c1262795c97e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8}\label{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8} 
+\index{ByteBuffer@{ByteBuffer}!contents@{contents}}
+\index{contents@{contents}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{contents()}{contents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} Byte\+Buffer\+::contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a4c078f07a88ac04a8b7faf0aafd2ef42}\label{class_byte_buffer_a4c078f07a88ac04a8b7faf0aafd2ef42} 
+\index{ByteBuffer@{ByteBuffer}!contents@{contents}}
+\index{contents@{contents}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{contents()}{contents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t const  \texorpdfstring{$\ast$}{*} Byte\+Buffer\+::contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_aac31836432b7aa4902f1b39f931f3604}\label{class_byte_buffer_aac31836432b7aa4902f1b39f931f3604} 
+\index{ByteBuffer@{ByteBuffer}!emplace\_size@{emplace\_size}}
+\index{emplace\_size@{emplace\_size}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{emplace\_size()}{emplace\_size()}}
+{\footnotesize\ttfamily template$<$typename SizeT  = uint16\+\_\+t, typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ SizeT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+void Byte\+Buffer\+::emplace\+\_\+size (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{pos = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_byte_buffer_aac31836432b7aa4902f1b39f931f3604_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376}\label{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376} 
+\index{ByteBuffer@{ByteBuffer}!ensure\_free\_space@{ensure\_free\_space}}
+\index{ensure\_free\_space@{ensure\_free\_space}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{ensure\_free\_space()}{ensure\_free\_space()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::ensure\+\_\+free\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_afaebd6176663896131cde249f3ee6588}\label{class_byte_buffer_afaebd6176663896131cde249f3ee6588} 
+\index{ByteBuffer@{ByteBuffer}!finish\_reading@{finish\_reading}}
+\index{finish\_reading@{finish\_reading}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{finish\_reading()}{finish\_reading()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::finish\+\_\+reading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_byte_buffer_afaebd6176663896131cde249f3ee6588_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5}\label{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5} 
+\index{ByteBuffer@{ByteBuffer}!flush@{flush}}
+\index{flush@{flush}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce}\label{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce} 
+\index{ByteBuffer@{ByteBuffer}!get\_base\_pointer@{get\_base\_pointer}}
+\index{get\_base\_pointer@{get\_base\_pointer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{get\_base\_pointer()}{get\_base\_pointer()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} Byte\+Buffer\+::get\+\_\+base\+\_\+pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}\label{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27} 
+\index{ByteBuffer@{ByteBuffer}!get\_read\_pointer@{get\_read\_pointer}}
+\index{get\_read\_pointer@{get\_read\_pointer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{get\_read\_pointer()}{get\_read\_pointer()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} Byte\+Buffer\+::get\+\_\+read\+\_\+pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793}\label{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793} 
+\index{ByteBuffer@{ByteBuffer}!get\_write\_pointer@{get\_write\_pointer}}
+\index{get\_write\_pointer@{get\_write\_pointer}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{get\_write\_pointer()}{get\_write\_pointer()}}
+{\footnotesize\ttfamily uint8\+\_\+t \texorpdfstring{$\ast$}{*} Byte\+Buffer\+::get\+\_\+write\+\_\+pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a45e6b7d03df82a0be6eab9975193881e}\label{class_byte_buffer_a45e6b7d03df82a0be6eab9975193881e} 
+\index{ByteBuffer@{ByteBuffer}!hexlike@{hexlike}}
+\index{hexlike@{hexlike}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{hexlike()}{hexlike()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::hexlike (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_byte_buffer_a45e6b7d03df82a0be6eab9975193881e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a327051b3a72c2e8a0dfefa6643213115}\label{class_byte_buffer_a327051b3a72c2e8a0dfefa6643213115} 
+\index{ByteBuffer@{ByteBuffer}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily bool Byte\+Buffer\+::is\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a327051b3a72c2e8a0dfefa6643213115_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}\label{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae} 
+\index{ByteBuffer@{ByteBuffer}!maximum\_length@{maximum\_length}}
+\index{maximum\_length@{maximum\_length}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{maximum\_length()}{maximum\_length()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::maximum\+\_\+length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a177ac23fc6f11fbc89d9e93259f84e4b}\label{class_byte_buffer_a177ac23fc6f11fbc89d9e93259f84e4b} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a5d2b326c6a5dee7c12d31812e521c632}\label{class_byte_buffer_a5d2b326c6a5dee7c12d31812e521c632} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_afdd0be3bd27aa6fa4214789d464b40de}\label{class_byte_buffer_afdd0be3bd27aa6fa4214789d464b40de} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_af6f2dab05979d750999c0b90169b9e84}\label{class_byte_buffer_af6f2dab05979d750999c0b90169b9e84} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a8b29babf567963aac57ae7e2af35136c}\label{class_byte_buffer_a8b29babf567963aac57ae7e2af35136c} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a8a6984f53d62ce9ee863e768759c3b76}\label{class_byte_buffer_a8a6984f53d62ce9ee863e768759c3b76} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a64306b3b28d7417adfdbd0eefb8cbca9}\label{class_byte_buffer_a64306b3b28d7417adfdbd0eefb8cbca9} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_aa29766137a78b7e4f2a61dbbdb230a37}\label{class_byte_buffer_aa29766137a78b7e4f2a61dbbdb230a37} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a1f79445b82615db69965ea0549fe325a}\label{class_byte_buffer_a1f79445b82615db69965ea0549fe325a} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_ab5618201f47745c8340a6c3d3d61e72c}\label{class_byte_buffer_ab5618201f47745c8340a6c3d3d61e72c} 
+\index{ByteBuffer@{ByteBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a2b3c467b38b384e3900c15b278480598}\label{class_byte_buffer_a2b3c467b38b384e3900c15b278480598} 
+\index{ByteBuffer@{ByteBuffer}!operator=@{operator=}}
+\index{operator=@{operator=}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_ae7a3b48d7c68c8b96df10b149b3c6b00}\label{class_byte_buffer_ae7a3b48d7c68c8b96df10b149b3c6b00} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{bool \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_aef3df0cb7f7731f92857880d4c241e0c}\label{class_byte_buffer_aef3df0cb7f7731f92857880d4c241e0c} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{double \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a29fb7124d40e89d17017e98c7f0c811f}\label{class_byte_buffer_a29fb7124d40e89d17017e98c7f0c811f} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{float \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a174836a466d3e7e7ad8ce2608b05480a}\label{class_byte_buffer_a174836a466d3e7e7ad8ce2608b05480a} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a2147b0e749fcf5411e560d1243de94a8}\label{class_byte_buffer_a2147b0e749fcf5411e560d1243de94a8} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{int32\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_abccc1ad042328cb9703ad17f68bbb699}\label{class_byte_buffer_abccc1ad042328cb9703ad17f68bbb699} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{int64\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a4cef0619677eebc92e8b3adcfc6738ee}\label{class_byte_buffer_a4cef0619677eebc92e8b3adcfc6738ee} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{int8\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_ad05cdf92488c9a381280dbb64369f3c9}\label{class_byte_buffer_ad05cdf92488c9a381280dbb64369f3c9} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a5fb619b55d6f02248e47bedd1f38f1ce}\label{class_byte_buffer_a5fb619b55d6f02248e47bedd1f38f1ce} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a2c8cd94a61eb8cc0e5c1c030117787bc}\label{class_byte_buffer_a2c8cd94a61eb8cc0e5c1c030117787bc} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{uint64\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a291a5ffb047079e4637daf7e3dc19118}\label{class_byte_buffer_a291a5ffb047079e4637daf7e3dc19118} 
+\index{ByteBuffer@{ByteBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& Byte\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a759f6706460759380142aa9400a7f146}\label{class_byte_buffer_a759f6706460759380142aa9400a7f146} 
+\index{ByteBuffer@{ByteBuffer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t \& Byte\+Buffer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t const}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_byte_buffer_a759f6706460759380142aa9400a7f146_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a105928c758ea5497b0416f62bc9d1f04}\label{class_byte_buffer_a105928c758ea5497b0416f62bc9d1f04} 
+\index{ByteBuffer@{ByteBuffer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t const  \& Byte\+Buffer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t const}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_byte_buffer_a105928c758ea5497b0416f62bc9d1f04_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a4b2ea80e6832431ad45758246f49a850}\label{class_byte_buffer_a4b2ea80e6832431ad45758246f49a850} 
+\index{ByteBuffer@{ByteBuffer}!print\_storage@{print\_storage}}
+\index{print\_storage@{print\_storage}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{print\_storage()}{print\_storage()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::print\+\_\+storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_byte_buffer_ae4e2114b896c92ac0192c4005ce05c6d}\label{class_byte_buffer_ae4e2114b896c92ac0192c4005ce05c6d} 
+\index{ByteBuffer@{ByteBuffer}!put@{put}}
+\index{put@{put}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::put (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos,  }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{src,  }\item[{size\+\_\+t}]{cnt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_byte_buffer_ae4e2114b896c92ac0192c4005ce05c6d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836}\label{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836} 
+\index{ByteBuffer@{ByteBuffer}!put@{put}}
+\index{put@{put}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Byte\+Buffer\+::put (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos,  }\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_afab3484e1af821859f16b7bdacf2af9c}\label{class_byte_buffer_afab3484e1af821859f16b7bdacf2af9c} 
+\index{ByteBuffer@{ByteBuffer}!read@{read}}
+\index{read@{read}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Byte\+Buffer\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_af08930e1dd0f3dfb0203d2beb6fe7974}\label{class_byte_buffer_af08930e1dd0f3dfb0203d2beb6fe7974} 
+\index{ByteBuffer@{ByteBuffer}!read@{read}}
+\index{read@{read}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&}]{buf,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_aa987eee32573fdd71abd3d6271d1954a}\label{class_byte_buffer_aa987eee32573fdd71abd3d6271d1954a} 
+\index{ByteBuffer@{ByteBuffer}!read@{read}}
+\index{read@{read}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::read (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_byte_buffer_aa987eee32573fdd71abd3d6271d1954a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a36e80bfabae00bd1c58e319a0d6e51b4}\label{class_byte_buffer_a36e80bfabae00bd1c58e319a0d6e51b4} 
+\index{ByteBuffer@{ByteBuffer}!read@{read}}
+\index{read@{read}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Byte\+Buffer\+::read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_byte_buffer_a36e80bfabae00bd1c58e319a0d6e51b4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a34029b6c4a31d64df175eaf8fa2f49b5}\label{class_byte_buffer_a34029b6c4a31d64df175eaf8fa2f49b5} 
+\index{ByteBuffer@{ByteBuffer}!read\_completed@{read\_completed}}
+\index{read\_completed@{read\_completed}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read\_completed()}{read\_completed()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::read\+\_\+completed (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a34029b6c4a31d64df175eaf8fa2f49b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955}\label{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955} 
+\index{ByteBuffer@{ByteBuffer}!read\_skip@{read\_skip}}
+\index{read\_skip@{read\_skip}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read\_skip()}{read\_skip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Byte\+Buffer\+::read\+\_\+skip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_aae5d8ea772e7adcea4e7b533ae25fb94}\label{class_byte_buffer_aae5d8ea772e7adcea4e7b533ae25fb94} 
+\index{ByteBuffer@{ByteBuffer}!read\_skip@{read\_skip}}
+\index{read\_skip@{read\_skip}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read\_skip()}{read\_skip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void Byte\+Buffer\+::read\+\_\+skip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a4baaaf49c2875496222f138338acee57}\label{class_byte_buffer_a4baaaf49c2875496222f138338acee57} 
+\index{ByteBuffer@{ByteBuffer}!read\_skip@{read\_skip}}
+\index{read\_skip@{read\_skip}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{read\_skip()}{read\_skip()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::read\+\_\+skip (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{skip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_byte_buffer_a4baaaf49c2875496222f138338acee57_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a}\label{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a} 
+\index{ByteBuffer@{ByteBuffer}!remaining\_space@{remaining\_space}}
+\index{remaining\_space@{remaining\_space}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{remaining\_space()}{remaining\_space()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::remaining\+\_\+space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe}\label{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe} 
+\index{ByteBuffer@{ByteBuffer}!reserve@{reserve}}
+\index{reserve@{reserve}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ressize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a177acd8d70f36ba5177901262f4d2c7d}\label{class_byte_buffer_a177acd8d70f36ba5177901262f4d2c7d} 
+\index{ByteBuffer@{ByteBuffer}!reset@{reset}}
+\index{reset@{reset}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_byte_buffer_a177acd8d70f36ba5177901262f4d2c7d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a16ab545c983ff0605bc0a2ca1c40f0b8}\label{class_byte_buffer_a16ab545c983ff0605bc0a2ca1c40f0b8} 
+\index{ByteBuffer@{ByteBuffer}!resize@{resize}}
+\index{resize@{resize}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{new\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_byte_buffer_a16ab545c983ff0605bc0a2ca1c40f0b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a1e1a47f362861d8cd61cdf27f7eb1812}\label{class_byte_buffer_a1e1a47f362861d8cd61cdf27f7eb1812} 
+\index{ByteBuffer@{ByteBuffer}!rpos@{rpos}}
+\index{rpos@{rpos}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{rpos()}{rpos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::rpos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_aa7831aa11854477a7f78464bc49b5db5}\label{class_byte_buffer_aa7831aa11854477a7f78464bc49b5db5} 
+\index{ByteBuffer@{ByteBuffer}!rpos@{rpos}}
+\index{rpos@{rpos}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{rpos()}{rpos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::rpos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rpos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_byte_buffer_a9ce46ba3fcd156ea7119a91231339aa9}\label{class_byte_buffer_a9ce46ba3fcd156ea7119a91231339aa9} 
+\index{ByteBuffer@{ByteBuffer}!textlike@{textlike}}
+\index{textlike@{textlike}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{textlike()}{textlike()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::textlike (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_byte_buffer_a9ce46ba3fcd156ea7119a91231339aa9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_aee31560603405310358cdfe28cf36aad}\label{class_byte_buffer_aee31560603405310358cdfe28cf36aad} 
+\index{ByteBuffer@{ByteBuffer}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string Byte\+Buffer\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_aee31560603405310358cdfe28cf36aad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_byte_buffer_aee31560603405310358cdfe28cf36aad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd}\label{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd} 
+\index{ByteBuffer@{ByteBuffer}!wpos@{wpos}}
+\index{wpos@{wpos}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{wpos()}{wpos()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::wpos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_byte_buffer_abc2c0ea57bfbfb19a42714f23b65dea7}\label{class_byte_buffer_abc2c0ea57bfbfb19a42714f23b65dea7} 
+\index{ByteBuffer@{ByteBuffer}!write\_completed@{write\_completed}}
+\index{write\_completed@{write\_completed}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{write\_completed()}{write\_completed()}}
+{\footnotesize\ttfamily void Byte\+Buffer\+::write\+\_\+completed (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}\label{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b} 
+\index{ByteBuffer@{ByteBuffer}!\_rpos@{\_rpos}}
+\index{\_rpos@{\_rpos}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_rpos}{\_rpos}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::\+\_\+rpos \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}\label{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370} 
+\index{ByteBuffer@{ByteBuffer}!\_storage@{\_storage}}
+\index{\_storage@{\_storage}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_storage}{\_storage}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ Byte\+Buffer\+::\+\_\+storage\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}\label{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad} 
+\index{ByteBuffer@{ByteBuffer}!\_wpos@{\_wpos}}
+\index{\_wpos@{\_wpos}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{\_wpos}{\_wpos}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Buffer\+::\+\_\+wpos \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_byte_buffer_a8dc72ab574b50098edfd09b928f47d47}\label{class_byte_buffer_a8dc72ab574b50098edfd09b928f47d47} 
+\index{ByteBuffer@{ByteBuffer}!DEFAULT\_SIZE@{DEFAULT\_SIZE}}
+\index{DEFAULT\_SIZE@{DEFAULT\_SIZE}!ByteBuffer@{ByteBuffer}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_SIZE}{DEFAULT\_SIZE}}
+{\footnotesize\ttfamily const size\+\_\+t Byte\+Buffer\+::\+DEFAULT\+\_\+\+SIZE = 0x1000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Networking/\+Buffer/\mbox{\hyperlink{_byte_buffer_8hpp}{Byte\+Buffer.\+hpp}}\item 
+src/\+Libraries/\+Networking/\+Buffer/\mbox{\hyperlink{_byte_buffer_8cpp}{Byte\+Buffer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,266 @@
+\doxysection{Horizon\+::Networking\+::Accept\+Socket\+Mgr\texorpdfstring{$<$}{<} Socket\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr}{}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr}\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+
+
+\doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Manager for Accepted Sockets. Deals with client sockets that were accepted by the server.  
+
+
+
+
+{\ttfamily \#include $<$Accept\+Socket\+Mgr.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Networking\+::Accept\+Socket\+Mgr\texorpdfstring{$<$}{<} Socket\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Networking\+::Accept\+Socket\+Mgr\texorpdfstring{$<$}{<} Socket\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a97d56555ad204a4d46aab39a892663a0}{Accept\+Socket\+Mgr}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_ae414346e419ca9bedb2efb168e7f9149}{\texorpdfstring{$\sim$}{\string~}\+Accept\+Socket\+Mgr}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a108c84774379aaabf01a1e56e3900dad}{start}} (boost\+::asio\+::io\+\_\+service \&io\+\_\+service, std\+::string const \&listen\+\_\+ip, uint16\+\_\+t port, uint32\+\_\+t threads=1)
+\begin{DoxyCompactList}\small\item\em Initialize and start accepting connections asynchronously. This method also starts the networking threads for accepted sockets. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_aff019133b97488e13363be0cb8a6e81d}{stop\+\_\+network}} () override
+\begin{DoxyCompactList}\small\item\em Stop the Acceptor network and clear the client socket map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a3ec2e951f4dc54e382ae426a9092a2f0}{on\+\_\+socket\+\_\+open}} (std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ const \&socket, uint32\+\_\+t thread\+\_\+index)
+\begin{DoxyCompactList}\small\item\em On \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Open / Start Event. Called as a callback from an Acceptor on successful socket acceptance. Moves the socket ownership from the caller to a network thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a1057117f3e847f8ce9d8f91c14131c13}{set\+\_\+socket\+\_\+for\+\_\+removal}} (std\+::weak\+\_\+ptr$<$ Socket\+Type $>$ sock)
+\begin{DoxyCompactList}\small\item\em Sets a socket for removal on the next session update call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca}{set\+\_\+socket\+\_\+for\+\_\+management}} (std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ sock)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a2fcbab62f1c12c08f1c9b9a709600fe5}{update\+\_\+socket\+\_\+sessions}} (uint32\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Updates every session in the socket map and removes ones in the removal queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{Horizon\+::\+Networking\+::\+Socket\+Mgr$<$ Socket\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ab8c95611a2804ced3b244dc7f44a0c61}{Socket\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a0cce6513bda7032cb0213f45a7c211d6}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Mgr}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a77af28e7a7be0e3108bb6558db9973b3}{Start\+Network\+Threads}} (uint32\+\_\+t threads=1)
+\begin{DoxyCompactList}\small\item\em Main function that deals with network thread initiation. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ace99794cfb19741ed28f34b6b301c3b4}{Get\+Network\+Thread\+Count}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a1aa5f0a67e7f1e7a0f7a9f18ca4b28a8}{Select\+Thread\+With\+Min\+Connections}} () const
+\item 
+std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_af926bc3f7cd3b66a66c1912a5e61ceb3}{on\+\_\+socket\+\_\+open}} (std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ const \&socket, uint32\+\_\+t thread\+\_\+index)
+\begin{DoxyCompactList}\small\item\em On \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Open / Start Routine. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a02b5d07a1bd8370494db5f31cd1faa9a}{get\+\_\+new\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Get a socket from the thread for new server connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Socket\+Type$>$\newline
+class Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr$<$ Socket\+Type $>$}
+\doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Manager for Accepted Sockets. Deals with client sockets that were accepted by the server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_a97d56555ad204a4d46aab39a892663a0}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_a97d56555ad204a4d46aab39a892663a0} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!AcceptSocketMgr@{AcceptSocketMgr}}
+\index{AcceptSocketMgr@{AcceptSocketMgr}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{AcceptSocketMgr()}{AcceptSocketMgr()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::\+Accept\+Socket\+Mgr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_ae414346e419ca9bedb2efb168e7f9149}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_ae414346e419ca9bedb2efb168e7f9149} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!````~AcceptSocketMgr@{\texorpdfstring{$\sim$}{\string~}AcceptSocketMgr}}
+\index{````~AcceptSocketMgr@{\texorpdfstring{$\sim$}{\string~}AcceptSocketMgr}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AcceptSocketMgr()}{\string~AcceptSocketMgr()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Accept\+Socket\+Mgr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_a3ec2e951f4dc54e382ae426a9092a2f0}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_a3ec2e951f4dc54e382ae426a9092a2f0} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!on\_socket\_open@{on\_socket\_open}}
+\index{on\_socket\_open@{on\_socket\_open}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{on\_socket\_open()}{on\_socket\_open()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::on\+\_\+socket\+\_\+open (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ const \&}]{socket,  }\item[{uint32\+\_\+t}]{thread\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+On \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Open / Start Event. Called as a callback from an Acceptor on successful socket acceptance. Moves the socket ownership from the caller to a network thread. 
+
+
+\begin{DoxyItemize}
+\item Called from global I/O thread. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em socket} & shared pointer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em thread\+\_\+index} & index of the thread that the socket is being moved from. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_a3ec2e951f4dc54e382ae426a9092a2f0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!set\_socket\_for\_management@{set\_socket\_for\_management}}
+\index{set\_socket\_for\_management@{set\_socket\_for\_management}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{set\_socket\_for\_management()}{set\_socket\_for\_management()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::set\+\_\+socket\+\_\+for\+\_\+management (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ Socket\+Type $>$}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_a1057117f3e847f8ce9d8f91c14131c13}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_a1057117f3e847f8ce9d8f91c14131c13} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!set\_socket\_for\_removal@{set\_socket\_for\_removal}}
+\index{set\_socket\_for\_removal@{set\_socket\_for\_removal}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{set\_socket\_for\_removal()}{set\_socket\_for\_removal()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::set\+\_\+socket\+\_\+for\+\_\+removal (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ Socket\+Type $>$}]{sock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets a socket for removal on the next session update call. 
+
+
+\begin{DoxyItemize}
+\item Thread safe. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sock} & socket to be removed. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_a1057117f3e847f8ce9d8f91c14131c13_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_a108c84774379aaabf01a1e56e3900dad}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_a108c84774379aaabf01a1e56e3900dad} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!start@{start}}
+\index{start@{start}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+virtual bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::start (\begin{DoxyParamCaption}\item[{boost\+::asio\+::io\+\_\+service \&}]{io\+\_\+service,  }\item[{std\+::string const \&}]{listen\+\_\+ip,  }\item[{uint16\+\_\+t}]{port,  }\item[{uint32\+\_\+t}]{threads = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize and start accepting connections asynchronously. This method also starts the networking threads for accepted sockets. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & \&io\+\_\+service const reference to the IO\+\_\+\+Service object. \\
+\hline
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & \&listen\+\_\+ip const reference to the ip\+\_\+address string for the acceptor to bind on. \\
+\hline
+\mbox{\texttt{ in}}  & {\em port} & port number for the acceptor to bind on. \\
+\hline
+\mbox{\texttt{ in}}  & {\em threads} & number of network acceptor threads to start and run. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_horizon_1_1_char_1_1_client_socket_mgr_a5d0633c18247c0efc933725e353ef01f}{Horizon\+::\+Char\+::\+Client\+Socket\+Mgr}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_client_socket_mgr_a574e40a8b0c970a3d4eeecd3e06e45f6}{Horizon\+::\+Zone\+::\+Client\+Socket\+Mgr}}, and \mbox{\hyperlink{class_horizon_1_1_auth_1_1_client_socket_mgr_a6a75e0a3c6eb362570ad01ebc2956ad2}{Horizon\+::\+Auth\+::\+Client\+Socket\+Mgr}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_a108c84774379aaabf01a1e56e3900dad_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_aff019133b97488e13363be0cb8a6e81d}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_aff019133b97488e13363be0cb8a6e81d} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!stop\_network@{stop\_network}}
+\index{stop\_network@{stop\_network}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{stop\_network()}{stop\_network()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+virtual void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::stop\+\_\+network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Stop the Acceptor network and clear the client socket map. 
+
+
+\begin{DoxyItemize}
+\item Called from the main thread only. 
+\end{DoxyItemize}
+
+Reimplemented from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ad4dc29dac960bda7710852716369d2bf}{Horizon\+::\+Networking\+::\+Socket\+Mgr$<$ Socket\+Type $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_aff019133b97488e13363be0cb8a6e81d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_accept_socket_mgr_a2fcbab62f1c12c08f1c9b9a709600fe5}\label{class_horizon_1_1_networking_1_1_accept_socket_mgr_a2fcbab62f1c12c08f1c9b9a709600fe5} 
+\index{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}!update\_socket\_sessions@{update\_socket\_sessions}}
+\index{update\_socket\_sessions@{update\_socket\_sessions}!Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$@{Horizon::Networking::AcceptSocketMgr$<$ SocketType $>$}}
+\doxysubsubsection{\texorpdfstring{update\_socket\_sessions()}{update\_socket\_sessions()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Horizon\+::\+Networking\+::\+Accept\+Socket\+Mgr}}$<$ Socket\+Type $>$\+::update\+\_\+socket\+\_\+sessions (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates every session in the socket map and removes ones in the removal queue. 
+
+
+\begin{DoxyItemize}
+\item Called from the main thread only. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em diff} & \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_networking_1_1_accept_socket_mgr_a2fcbab62f1c12c08f1c9b9a709600fe5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Networking/\mbox{\hyperlink{_accept_socket_mgr_8hpp}{Accept\+Socket\+Mgr.\+hpp}}\end{DoxyCompactItemize}

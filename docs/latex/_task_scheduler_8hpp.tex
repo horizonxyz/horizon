@@ -1,0 +1,99 @@
+\doxysection{src/\+Utility/\+Task\+Scheduler.hpp File Reference}
+\hypertarget{_task_scheduler_8hpp}{}\label{_task_scheduler_8hpp}\index{src/Utility/TaskScheduler.hpp@{src/Utility/TaskScheduler.hpp}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+Include dependency graph for Task\+Scheduler.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_task_scheduler_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_task_scheduler_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}}
+\item 
+class \mbox{\hyperlink{class_task_context}{Task\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::chrono\+::microseconds \mbox{\hyperlink{_task_scheduler_8hpp_ab82fac8cfa62a15220a6a8f8b534cefb}{Microseconds}}
+\begin{DoxyCompactList}\small\item\em Milliseconds shorthand typedef. \end{DoxyCompactList}\item 
+typedef std\+::chrono\+::milliseconds \mbox{\hyperlink{_task_scheduler_8hpp_a97e964e8eec5ef3902ff1168c66be9fe}{Milliseconds}}
+\item 
+typedef std\+::chrono\+::seconds \mbox{\hyperlink{_task_scheduler_8hpp_a8ca6484aacd248d2e1cdb347772ccd4d}{Seconds}}
+\begin{DoxyCompactList}\small\item\em Seconds shorthand typedef. \end{DoxyCompactList}\item 
+typedef std\+::chrono\+::minutes \mbox{\hyperlink{_task_scheduler_8hpp_ab08558444dc09b5e8091a73a6cf6faf2}{Minutes}}
+\begin{DoxyCompactList}\small\item\em Minutes shorthand typedef. \end{DoxyCompactList}\item 
+typedef std\+::chrono\+::hours \mbox{\hyperlink{_task_scheduler_8hpp_a467cadb986c0b9ac51392a48021cb37a}{Hours}}
+\begin{DoxyCompactList}\small\item\em Hours shorthand typedef. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_task_scheduler_8hpp_a467cadb986c0b9ac51392a48021cb37a}\label{_task_scheduler_8hpp_a467cadb986c0b9ac51392a48021cb37a} 
+\index{TaskScheduler.hpp@{TaskScheduler.hpp}!Hours@{Hours}}
+\index{Hours@{Hours}!TaskScheduler.hpp@{TaskScheduler.hpp}}
+\doxysubsubsection{\texorpdfstring{Hours}{Hours}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::hours \mbox{\hyperlink{_task_scheduler_8hpp_a467cadb986c0b9ac51392a48021cb37a}{Hours}}}
+
+
+
+Hours shorthand typedef. 
+
+\Hypertarget{_task_scheduler_8hpp_ab82fac8cfa62a15220a6a8f8b534cefb}\label{_task_scheduler_8hpp_ab82fac8cfa62a15220a6a8f8b534cefb} 
+\index{TaskScheduler.hpp@{TaskScheduler.hpp}!Microseconds@{Microseconds}}
+\index{Microseconds@{Microseconds}!TaskScheduler.hpp@{TaskScheduler.hpp}}
+\doxysubsubsection{\texorpdfstring{Microseconds}{Microseconds}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::microseconds \mbox{\hyperlink{_task_scheduler_8hpp_ab82fac8cfa62a15220a6a8f8b534cefb}{Microseconds}}}
+
+
+
+Milliseconds shorthand typedef. 
+
+Copyright 2014-\/2015 Denis Blank \href{mailto:denis.blank@outlook.com}{\texttt{ denis.\+blank@outlook.\+com}}
+
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}http://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. \Hypertarget{_task_scheduler_8hpp_a97e964e8eec5ef3902ff1168c66be9fe}\label{_task_scheduler_8hpp_a97e964e8eec5ef3902ff1168c66be9fe} 
+\index{TaskScheduler.hpp@{TaskScheduler.hpp}!Milliseconds@{Milliseconds}}
+\index{Milliseconds@{Milliseconds}!TaskScheduler.hpp@{TaskScheduler.hpp}}
+\doxysubsubsection{\texorpdfstring{Milliseconds}{Milliseconds}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::milliseconds \mbox{\hyperlink{_task_scheduler_8hpp_a97e964e8eec5ef3902ff1168c66be9fe}{Milliseconds}}}
+
+\Hypertarget{_task_scheduler_8hpp_ab08558444dc09b5e8091a73a6cf6faf2}\label{_task_scheduler_8hpp_ab08558444dc09b5e8091a73a6cf6faf2} 
+\index{TaskScheduler.hpp@{TaskScheduler.hpp}!Minutes@{Minutes}}
+\index{Minutes@{Minutes}!TaskScheduler.hpp@{TaskScheduler.hpp}}
+\doxysubsubsection{\texorpdfstring{Minutes}{Minutes}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::minutes \mbox{\hyperlink{_task_scheduler_8hpp_ab08558444dc09b5e8091a73a6cf6faf2}{Minutes}}}
+
+
+
+Minutes shorthand typedef. 
+
+\Hypertarget{_task_scheduler_8hpp_a8ca6484aacd248d2e1cdb347772ccd4d}\label{_task_scheduler_8hpp_a8ca6484aacd248d2e1cdb347772ccd4d} 
+\index{TaskScheduler.hpp@{TaskScheduler.hpp}!Seconds@{Seconds}}
+\index{Seconds@{Seconds}!TaskScheduler.hpp@{TaskScheduler.hpp}}
+\doxysubsubsection{\texorpdfstring{Seconds}{Seconds}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::seconds \mbox{\hyperlink{_task_scheduler_8hpp_a8ca6484aacd248d2e1cdb347772ccd4d}{Seconds}}}
+
+
+
+Seconds shorthand typedef. 
+

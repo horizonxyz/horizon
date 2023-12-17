@@ -1,0 +1,169 @@
+\doxysection{Horizon\+::Zone\+::CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d}{}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d}\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d}{CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD}.  
+
+
+
+
+{\ttfamily \#include $<$Handled\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a6ce5fb9d3258fe7ce07187a44fdd264f}{CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a202d4c1b8fd5353e69da96bd700fa71f}{\texorpdfstring{$\sim$}{\string~}\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a65f40db49017aab309eee86b5e77fb4d}{handle}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\&\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}})
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a012d07b84c24d632b7f553ff26570185}{deserialize}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_handler}{Horizon\+::\+Base\+::\+Network\+Packet\+Handler$<$ Zone\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_handler_a1571c0909b975ab28f1e62280d82bb17}{Network\+Packet\+Handler}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Zone\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_handler_ad3c2896d4b0a05fde61e8e65f2f4350f}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Handler}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a32035d78e9371e6d74223c61b10b1546}{\+\_\+type}} \{ 0 \}
+\item 
+char \mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a2deb66f61b3ad00e5dfda0332798244c}{\+\_\+storage\+\_\+password}} \mbox{[}\mbox{\hyperlink{_client_definitions_8hpp_a047db542cfabba6008e7850830990cb9}{MAX\+\_\+\+STORAGE\+\_\+\+PASSWORD\+\_\+\+LENGTH}}\mbox{]}
+\item 
+char \mbox{\hyperlink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a3fba4d1ae99a891bb5e6f82aa2878731}{\+\_\+new\+\_\+password}} \mbox{[}\mbox{\hyperlink{_client_definitions_8hpp_a047db542cfabba6008e7850830990cb9}{MAX\+\_\+\+STORAGE\+\_\+\+PASSWORD\+\_\+\+LENGTH}}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d}{CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a6ce5fb9d3258fe7ce07187a44fdd264f}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a6ce5fb9d3258fe7ce07187a44fdd264f} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!CZ\_ACK\_STORE\_PASSWORD@{CZ\_ACK\_STORE\_PASSWORD}}
+\index{CZ\_ACK\_STORE\_PASSWORD@{CZ\_ACK\_STORE\_PASSWORD}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{CZ\_ACK\_STORE\_PASSWORD()}{CZ\_ACK\_STORE\_PASSWORD()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a202d4c1b8fd5353e69da96bd700fa71f}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a202d4c1b8fd5353e69da96bd700fa71f} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!````~CZ\_ACK\_STORE\_PASSWORD@{\texorpdfstring{$\sim$}{\string~}CZ\_ACK\_STORE\_PASSWORD}}
+\index{````~CZ\_ACK\_STORE\_PASSWORD@{\texorpdfstring{$\sim$}{\string~}CZ\_ACK\_STORE\_PASSWORD}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CZ\_ACK\_STORE\_PASSWORD()}{\string~CZ\_ACK\_STORE\_PASSWORD()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Zone\+::\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::\texorpdfstring{$\sim$}{\string~}\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a012d07b84c24d632b7f553ff26570185}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a012d07b84c24d632b7f553ff26570185} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::deserialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&}]{buf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a012d07b84c24d632b7f553ff26570185_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a012d07b84c24d632b7f553ff26570185_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a65f40db49017aab309eee86b5e77fb4d}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a65f40db49017aab309eee86b5e77fb4d} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!handle@{handle}}
+\index{handle@{handle}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\&}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\doxylink{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d}{CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD} 
+
+Implements \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_handler_a5757fa47405e99e8de3ea5c4e64b03a1}{Horizon\+::\+Base\+::\+Network\+Packet\+Handler$<$ Zone\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a65f40db49017aab309eee86b5e77fb4d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a3fba4d1ae99a891bb5e6f82aa2878731}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a3fba4d1ae99a891bb5e6f82aa2878731} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!\_new\_password@{\_new\_password}}
+\index{\_new\_password@{\_new\_password}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{\_new\_password}{\_new\_password}}
+{\footnotesize\ttfamily char Horizon\+::\+Zone\+::\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::\+\_\+new\+\_\+password\mbox{[}\mbox{\hyperlink{_client_definitions_8hpp_a047db542cfabba6008e7850830990cb9}{MAX\+\_\+\+STORAGE\+\_\+\+PASSWORD\+\_\+\+LENGTH}}\mbox{]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a2deb66f61b3ad00e5dfda0332798244c}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a2deb66f61b3ad00e5dfda0332798244c} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!\_storage\_password@{\_storage\_password}}
+\index{\_storage\_password@{\_storage\_password}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{\_storage\_password}{\_storage\_password}}
+{\footnotesize\ttfamily char Horizon\+::\+Zone\+::\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::\+\_\+storage\+\_\+password\mbox{[}\mbox{\hyperlink{_client_definitions_8hpp_a047db542cfabba6008e7850830990cb9}{MAX\+\_\+\+STORAGE\+\_\+\+PASSWORD\+\_\+\+LENGTH}}\mbox{]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a32035d78e9371e6d74223c61b10b1546}\label{class_horizon_1_1_zone_1_1_c_z___a_c_k___s_t_o_r_e___p_a_s_s_w_o_r_d_a32035d78e9371e6d74223c61b10b1546} 
+\index{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}!\_type@{\_type}}
+\index{\_type@{\_type}!Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD@{Horizon::Zone::CZ\_ACK\_STORE\_PASSWORD}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily int16\+\_\+t Horizon\+::\+Zone\+::\+CZ\+\_\+\+ACK\+\_\+\+STORE\+\_\+\+PASSWORD\+::\+\_\+type \{ 0 \}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Packets/\mbox{\hyperlink{_zone_2_packets_2_handled_packets_8hpp}{Handled\+Packets.\+hpp}}\item 
+src/\+Server/\+Zone/\+Packets/\mbox{\hyperlink{_zone_2_packets_2_handled_packets_8cpp}{Handled\+Packets.\+cpp}}\end{DoxyCompactItemize}
