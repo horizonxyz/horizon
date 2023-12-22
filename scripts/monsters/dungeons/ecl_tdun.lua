@@ -26,3 +26,15 @@
  -- You should have received a copy of the GNU General Public License
  -- along with this library.  If not, see <http://www.gnu.org/licenses/>.
  ----------------------------------------------------
+Monster("ecl_tdun01", 0, 0, 0, 0, "Cenere", 2365, 15, 5000, 0)
+Monster("ecl_tdun01", 0, 0, 0, 0, "Antique Book", 2366, 10, 5000, 0)
+Monster("ecl_tdun01", 0, 0, 0, 0, "Blue Lichtern", 2367, 5, 5000, 0)
+Monster("ecl_tdun01", 0, 0, 0, 0, "Yellow Lichtern", 2368, 5, 5000, 0)
+Monster("ecl_tdun02", 0, 0, 0, 0, "Cenere", 2365, 15, 5000, 0)
+Monster("ecl_tdun02", 0, 0, 0, 0, "Antique Book", 2366, 15, 5000, 0)
+Monster("ecl_tdun02", 0, 0, 0, 0, "Yellow Lichtern", 2368, 5, 5000, 0)
+Monster("ecl_tdun02", 0, 0, 0, 0, "Red Lichtern", 2369, 5, 5000, 0)
+Monster("ecl_tdun03", 0, 0, 0, 0, "Antique Book", 2366, 15, 5000, 0)
+Monster("ecl_tdun03", 0, 0, 0, 0, "Yellow Lichtern", 2368, 5, 5000, 0)
+Monster("ecl_tdun03", 0, 0, 0, 0, "Green Lichtern", 2370, 5, 5000, 0)
+Monster("ecl_tdun03", 0, 0, 0, 0, "Faithful Manager", 2371, 3, 5000, 0)

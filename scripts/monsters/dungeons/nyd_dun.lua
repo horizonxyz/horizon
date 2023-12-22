@@ -26,3 +26,18 @@
  -- You should have received a copy of the GNU General Public License
  -- along with this library.  If not, see <http://www.gnu.org/licenses/>.
  ----------------------------------------------------
+Monster("nyd_dun01", 0, 0, 0, 0, "Draco", 2013, 40, 5000, 0)
+Monster("nyd_dun01", 0, 0, 0, 0, "Aqua Elemental", 2016, 20, 5000, 0)
+Monster("nyd_dun01", 0, 0, 0, 0, "Dark Pinguicula", 2015, 10, 5000, 0)
+Monster("nyd_dun01", 0, 0, 0, 0, "Rata", 2017, 2, 900000, 0)
+Monster("nyd_dun01", 0, 0, 0, 0, "Duneyrr", 2018, 2, 900000, 0)
+Monster("nyd_dun01", 47, 219, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 57, 220, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 57, 226, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 56, 226, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 64, 219, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 53, 221, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 58, 216, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 60, 226, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 53, 228, 0, 0, "Draco Egg", 2014, 1, 60000, 0)
+Monster("nyd_dun01", 47, 218, 0, 0, "Draco Egg", 2014, 1, 60000, 0)

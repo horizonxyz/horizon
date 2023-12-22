@@ -26,3 +26,18 @@
  -- You should have received a copy of the GNU General Public License
  -- along with this library.  If not, see <http://www.gnu.org/licenses/>.
  ----------------------------------------------------
+Monster("mosk_dun01", 0, 0, 0, 0, "Wood Goblin", 1880, 74, 5000, 0)
+Monster("mosk_dun01", 0, 0, 0, 0, "Les", 1881, 37, 5000, 0)
+Monster("mosk_dun01", 0, 0, 0, 0, "Poporing", 1031, 22, 5000, 0)
+Monster("mosk_dun01", 0, 0, 0, 0, "Mantis", 1139, 11, 5000, 0)
+Monster("mosk_dun02", 0, 0, 0, 0, "Les", 1881, 47, 5000, 0)
+Monster("mosk_dun02", 0, 0, 0, 0, "Wood Goblin", 1880, 35, 5000, 0)
+Monster("mosk_dun02", 0, 0, 0, 0, "Baba Yaga", 1882, 23, 5000, 0)
+Monster("mosk_dun02", 0, 0, 0, 0, "Uzhas", 1883, 5, 5000, 0)
+Monster("mosk_dun03", 0, 0, 0, 0, "Baba Yaga", 1882, 68, 5000, 0)
+Monster("mosk_dun03", 0, 0, 0, 0, "Uzhas", 1883, 39, 5000, 0)
+Monster("mosk_dun03", 0, 0, 0, 0, "Mavka", 1884, 17, 5000, 0)
+Monster("mosk_dun03", 207, 221, 5, 5, "Gopinich", 1885, 1, 7200000, 0)
+Monster("mosk_dun03", 0, 0, 0, 0, "Yellow Plant", 1081, 11, 5000, 0)
+Monster("mosk_dun03", 0, 0, 0, 0, "White Plant", 1082, 11, 5000, 0)
+Monster("mosk_dun03", 0, 0, 0, 0, "Shining Plant", 1083, 5, 10000, 0)

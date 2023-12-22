@@ -26,3 +26,26 @@
  -- You should have received a copy of the GNU General Public License
  -- along with this library.  If not, see <http://www.gnu.org/licenses/>.
  ----------------------------------------------------
+Monster("juperos_01", 0, 0, 0, 0, "Venatu", 1676, 70, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Venatu", 1677, 70, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Venatu", 1678, 70, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Venatu", 1679, 50, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Dimik", 1670, 10, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Dimik", 1671, 5, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Dimik", 1672, 5, 5000, 0)
+Monster("juperos_01", 0, 0, 0, 0, "Dimik", 1673, 5, 5000, 0)
+Monster("juperos_02", 0, 0, 0, 0, "Apocalypse", 1365, 70, 5000, 0)
+Monster("juperos_02", 0, 0, 0, 0, "Venatu", 1676, 65, 5000, 0)
+Monster("juperos_02", 0, 0, 0, 0, "Venatu", 1677, 65, 5000, 0)
+Monster("juperos_02", 0, 0, 0, 0, "Venatu", 1678, 65, 5000, 0)
+Monster("juperos_02", 0, 0, 0, 0, "Venatu", 1679, 50, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Dimik", 1670, 40, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Dimik", 1671, 40, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Dimik", 1672, 40, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Dimik", 1673, 40, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Archdam", 1668, 40, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Venatu", 1676, 25, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Venatu", 1677, 25, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Venatu", 1678, 25, 5000, 0)
+Monster("jupe_core", 0, 0, 0, 0, "Vesper", 1685, 1, 7200000, 0)
+ 
