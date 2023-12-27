@@ -1,0 +1,133 @@
+\doxysection{Horizon\+::Base\+::Network\+Packet\texorpdfstring{$<$}{<} Session\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_horizon_1_1_base_1_1_network_packet}{}\label{class_horizon_1_1_base_1_1_network_packet}\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+
+
+{\ttfamily \#include $<$Network\+Packet.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Base\+::Network\+Packet\texorpdfstring{$<$}{<} Session\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_base_1_1_network_packet__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Base\+::Network\+Packet\texorpdfstring{$<$}{<} Session\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_base_1_1_network_packet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}\label{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!NetworkPacket@{NetworkPacket}}
+\index{NetworkPacket@{NetworkPacket}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{NetworkPacket()}{NetworkPacket()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::\+Network\+Packet (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{packet\+\_\+id,  }\item[{std\+::shared\+\_\+ptr$<$ Session\+Type $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}\label{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!````~NetworkPacket@{\texorpdfstring{$\sim$}{\string~}NetworkPacket}}
+\index{````~NetworkPacket@{\texorpdfstring{$\sim$}{\string~}NetworkPacket}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NetworkPacket()}{\string~NetworkPacket()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Network\+Packet}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}\label{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!buf@{buf}}
+\index{buf@{buf}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{buf()}{buf()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::buf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}\label{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!get\_packet\_id@{get\_packet\_id}}
+\index{get\_packet\_id@{get\_packet\_id}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_packet\_id()}{get\_packet\_id()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::get\+\_\+packet\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}\label{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the session from this handler instance. 
+
+\begin{DoxyReturn}{Returns}
+shared\+\_\+ptr to an object of the session type. 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}\label{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!set\_packet\_id@{set\_packet\_id}}
+\index{set\_packet\_id@{set\_packet\_id}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{set\_packet\_id()}{set\_packet\_id()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::set\+\_\+packet\+\_\+id (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}\label{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!\_buffer@{\_buffer}}
+\index{\_buffer@{\_buffer}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{\_buffer}{\_buffer}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::\+\_\+buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Buffer storage facility for the packet stream. 
+
+\Hypertarget{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}\label{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3} 
+\index{Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}!\_packet\_id@{\_packet\_id}}
+\index{\_packet\_id@{\_packet\_id}!Horizon::Base::NetworkPacket$<$ SessionType $>$@{Horizon::Base::NetworkPacket$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{\_packet\_id}{\_packet\_id}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet}}$<$ Session\+Type $>$\+::\+\_\+packet\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ID of the network packet. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Common/\+Base/\mbox{\hyperlink{_network_packet_8hpp}{Network\+Packet.\+hpp}}\end{DoxyCompactItemize}

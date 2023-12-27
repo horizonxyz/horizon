@@ -1,0 +1,110 @@
+\doxysection{Connector.\+hpp}
+\hypertarget{_connector_8hpp_source}{}\label{_connector_8hpp_source}\index{src/Libraries/Networking/Connector.hpp@{src/Libraries/Networking/Connector.hpp}}
+\mbox{\hyperlink{_connector_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_NETWORKING\_CONNECTOR\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_NETWORKING\_CONNECTOR\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8hpp}{Core/Logging/Logger.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_server_8hpp}{Server/Common/Server.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <boost/bind.hpp>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{using\ namespace\ }boost::asio::ip;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }Networking}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector}{Connector}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void(std::string\ \&,\ std::shared\_ptr<tcp::socket>,\ uint32\_t)>\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}{ConnectorCallback}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a5a097a976bd99c4bf9d637383e402f3d}{Connector}}(std::string\ \textcolor{keyword}{const}\ \&connection\_name,\ \mbox{\hyperlink{class_server}{Server}}\ *server,\ std::string\ \textcolor{keyword}{const}\ \&connect\_ip,\ uint16\_t\ port)}
+\DoxyCodeLine{00065\ \ \ \ \ :\ server(server),\ \_connection\_name(connection\_name),\ \_endpoint(boost::asio::ip::address::from\_string(connect\_ip),\ port),}
+\DoxyCodeLine{00066\ \ \ \ \ \_socket\_factory(std::bind(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector}{Connector}}::default\_socket\_factory,\ this))}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a7cac708f9c6aefcb9ca1d59c88c7955c}{Connector}}()}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_ae70f3995ad9601215795ff788bbb94e5}{connect\_with\_callback}}(\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}{ConnectorCallback}}\ callback,\ \textcolor{keywordtype}{int}\ connections\ =\ 1)}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ connections\ \&\&\ server-\/>\mbox{\hyperlink{class_server_aa65ab5685ff9de7bf3e7286a587903db}{get\_shutdown\_stage}}()\ >=\ \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567baf9cc470777291615c0b41054277f8ba3}{SHUTDOWN\_INITIATED}};\ i++)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<tcp::socket>\ socket;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ network\_thread\_idx;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ boost::system::error\_code\ error;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ a\ new\ socket\ from\ a\ thread\ with\ the\ minimum\ connections.}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::tie(socket,\ network\_thread\_idx)\ =\ \_socket\_factory();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Trying\ to\ establish\ connection\ for\ '"{}}\ <<\ \_connection\_name\ <<\ \textcolor{stringliteral}{"{}'\ at\ tcp://"{}}\ <<\ \_endpoint.address().to\_string()\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \_endpoint.port();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ connecting\ to\ the\ endpoint.}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>connect(\_endpoint,\ error);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (error.value()\ !=\ 0)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Error\ connecting\ to\ '"{}}\ <<\ \_connection\_name\ <<\ \textcolor{stringliteral}{"{}'\ at\ tcp://"{}}\ <<\ \_endpoint.address().to\_string()\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \_endpoint.port();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::seconds(10));}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ socket-\/>close();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error.clear();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback(\_connection\_name,\ socket,\ network\_thread\_idx);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Successfully\ connected\ to\ '"{}}\ <<\ \_connection\_name\ <<\ \textcolor{stringliteral}{"{}'\ at\ tcp://"{}}\ <<\ \_endpoint.address().to\_string()\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \_endpoint.port();}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (!socket-\/>is\_open()\ \&\&\ server-\/>\mbox{\hyperlink{class_server_aa65ab5685ff9de7bf3e7286a587903db}{get\_shutdown\_stage}}()\ >=\ \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567baf9cc470777291615c0b41054277f8ba3}{SHUTDOWN\_INITIATED}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a4e55f9f393db2a0844581d7d413e2155}{set\_socket\_factory}}(std::function<std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>()>\ \&\&func)\ \{\ \_socket\_factory\ =\ func;\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>\ default\_socket\_factory()\ \{\ \textcolor{keywordflow}{return}\ std::make\_pair(\textcolor{keyword}{nullptr},\ 0);\ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_server}{Server}}\ *server;}
+\DoxyCodeLine{00124\ \ \ \ \ std::string\ \_connection\_name;}
+\DoxyCodeLine{00125\ \ \ \ \ tcp::endpoint\ \_endpoint;}
+\DoxyCodeLine{00126\ \ \ \ \ std::function<std::pair<std::shared\_ptr<tcp::socket>,\ uint32\_t>()>\ \_socket\_factory;}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_NETWORKCONNECTOR\_HPP}}
+
+\end{DoxyCode}

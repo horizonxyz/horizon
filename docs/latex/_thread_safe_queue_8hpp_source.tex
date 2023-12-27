@@ -1,0 +1,140 @@
+\doxysection{Thread\+Safe\+Queue.\+hpp}
+\hypertarget{_thread_safe_queue_8hpp_source}{}\label{_thread_safe_queue_8hpp_source}\index{src/Core/Multithreading/ThreadSafeQueue.hpp@{src/Core/Multithreading/ThreadSafeQueue.hpp}}
+\mbox{\hyperlink{_thread_safe_queue_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_MULTITHREADING\_THREADSAFEQUEUE\_HPP}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_MULTITHREADING\_THREADSAFEQUEUE\_HPP}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{struct\ }node}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ data;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::unique\_ptr<node>\ next;}
+\DoxyCodeLine{00043\ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ std::mutex\ head\_mutex;}
+\DoxyCodeLine{00046\ \ \ \ \ std::unique\_ptr<node>\ head;}
+\DoxyCodeLine{00047\ \ \ \ \ std::mutex\ tail\_mutex;}
+\DoxyCodeLine{00048\ \ \ \ \ node\ *tail;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ node\ *get\_tail()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ tail\_lock(tail\_mutex);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tail;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::unique\_ptr<node>\ pop\_head()}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ head\_lock(head\_mutex);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(head.get()\ ==\ get\_tail())}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::unique\_ptr<node>\ old\_head\ =\ std::move(head);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ head\ =\ std::move(old\_head-\/>next);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ old\_head;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue_a06e14823003cc9b5d9e9151380077f08}{ThreadSafeQueue}}():}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ head(new\ node),\ tail(head.get())}
+\DoxyCodeLine{00071\ \ \ \ \ \{\}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue_ac95d228574bdd715ef5b8e1b82607173}{\string~ThreadSafeQueue}}()}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ std::size\_t\ qsize\ =\ \mbox{\hyperlink{class_thread_safe_queue_a47c7aae14cd81274e1935709db8b3a8f}{size}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ qsize;\ i++)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a}{try\_pop}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue_a0f3f492104e38b019a5e1a74647cec39}{ThreadSafeQueue}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue}}\ \&other)=\textcolor{keyword}{delete};}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue}}\ \&\mbox{\hyperlink{class_thread_safe_queue_a8a98125a8d06536d27be9adc79b185e8}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue}}\ \&other)=\textcolor{keyword}{delete};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a}{try\_pop}}()}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::unique\_ptr<node>\ old\_head\ =\ pop\_head();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ old\_head\ ?\ old\_head-\/>data\ :\ std::shared\_ptr<T>();}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c}{push}}(T\ \&\&new\_value)}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ new\_data(}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_shared<T>(std::move(new\_value)));}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ std::unique\_ptr<node>\ p(\textcolor{keyword}{new}\ node);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ node\ *new\_tail\ =\ p.get();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ tail\_lock(tail\_mutex);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ tail-\/>data\ =\ new\_data;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ tail-\/>next\ =\ std::move(p);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ tail\ =\ new\_tail;}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_thread_safe_queue_a47c7aae14cd81274e1935709db8b3a8f}{size}}()}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ head\_lock(head\_mutex);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ tail\_lock(tail\_mutex);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ node\ \textcolor{keyword}{const}\ *n\ =\ head.get();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((n\ =\ n-\/>next.get()))\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}{empty}}()}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ head\_lock(head\_mutex);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(head.get()\ ==\ get\_tail())}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3}{front}}()}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ head\_lock(head\_mutex);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3}{front}}\ =\ head\ !=\ \textcolor{keyword}{nullptr}\ ?\ std::make\_shared<T>(*head-\/>data)\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(\mbox{\hyperlink{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3}{front}});}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HORIZON\_CORE\_MULTITHREADING\_THREADSAFEQUEUE\_HPP}}
+
+\end{DoxyCode}

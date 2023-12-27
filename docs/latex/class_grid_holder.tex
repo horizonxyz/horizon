@@ -1,0 +1,164 @@
+\doxysection{Grid\+Holder\texorpdfstring{$<$}{<} ZONE\+\_\+\+OBJECT\+\_\+\+TYPES \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_grid_holder}{}\label{class_grid_holder}\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+
+
+\doxylink{class_grid_holder}{Grid\+Holder} is a container for Grids, handles the visiting of grids.  
+
+
+
+
+{\ttfamily \#include $<$Grid\+Holder.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_grid}{Grid}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \mbox{\hyperlink{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807}{Grid\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grid_holder_ab25ade03474b818115f3820a8b0ba439}{Grid\+Holder}} (int \mbox{\hyperlink{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd}{width}}, int \mbox{\hyperlink{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27}{height}})
+\item 
+\mbox{\hyperlink{class_grid_holder_a471b7905b38181fb01153590acd3c37e}{\texorpdfstring{$\sim$}{\string~}\+Grid\+Holder}} ()
+\item 
+\mbox{\hyperlink{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807}{Grid\+Type}} \& \mbox{\hyperlink{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33}{get\+\_\+grid}} (int x, int y)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27}{height}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd}{width}} ()
+\item 
+{\footnotesize template$<$class VISITOR , class CONTAINER\+\_\+\+TYPE $>$ }\\void \mbox{\hyperlink{class_grid_holder_a7110477519d39ecdc1e376fedbb14abc}{visit\+\_\+all}} (\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ VISITOR, \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ CONTAINER\+\_\+\+TYPE $>$ $>$ \&visitor)
+\item 
+{\footnotesize template$<$class VISITOR , class CONTAINER\+\_\+\+TYPE $>$ }\\void \mbox{\hyperlink{class_grid_holder_a2413c2857158bdcfac7389554a993d39}{visit}} (int x, int y, \mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ VISITOR, \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ CONTAINER\+\_\+\+TYPE $>$ $>$ \&visitor)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_grid_holder_a1d4e7aa71a331a3564624fbabb97d1a7}{Horizon\+::\+Zone\+::\+Map\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES$>$\newline
+class Grid\+Holder$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$}
+\doxylink{class_grid_holder}{Grid\+Holder} is a container for Grids, handles the visiting of grids. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ZONE\+\_\+\+OBJECT\+\_\+\+TYPES} & \doxylink{struct_type_list}{Type\+List} of all the objects that can be stored in the grid. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+bounds} & The bounds of the \doxylink{class_grid_holder}{Grid\+Holder}. \\
+\hline
+{\em \+\_\+grids} & The Grids contained in the \doxylink{class_grid_holder}{Grid\+Holder}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807}\label{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!GridType@{GridType}}
+\index{GridType@{GridType}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{GridType}{GridType}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+typedef \mbox{\hyperlink{class_grid}{Grid}}$<$ZONE\+\_\+\+OBJECT\+\_\+\+TYPES$>$ \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::\+Grid\+Type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_grid_holder_ab25ade03474b818115f3820a8b0ba439}\label{class_grid_holder_ab25ade03474b818115f3820a8b0ba439} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!GridHolder@{GridHolder}}
+\index{GridHolder@{GridHolder}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{GridHolder()}{GridHolder()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+\mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\mbox{\hyperlink{class_grid_holder}{\+::\+Grid\+Holder}} (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_grid_holder_a471b7905b38181fb01153590acd3c37e}\label{class_grid_holder_a471b7905b38181fb01153590acd3c37e} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!````~GridHolder@{\texorpdfstring{$\sim$}{\string~}GridHolder}}
+\index{````~GridHolder@{\texorpdfstring{$\sim$}{\string~}GridHolder}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GridHolder()}{\string~GridHolder()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+\mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_grid_holder}{Grid\+Holder}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33}\label{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!get\_grid@{get\_grid}}
+\index{get\_grid@{get\_grid}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{get\_grid()}{get\_grid()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+\mbox{\hyperlink{class_grid_holder_a6ed05f2ea33d7dd649481e424d291807}{Grid\+Type}} \& \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::get\+\_\+grid (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_grid_holder_aeda8571d9a346bafa4267d86665a8e33_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27}\label{class_grid_holder_a7352a3eb062e15c6e4ab363d93c3df27} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!height@{height}}
+\index{height@{height}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+uint16\+\_\+t \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_grid_holder_a2413c2857158bdcfac7389554a993d39}\label{class_grid_holder_a2413c2857158bdcfac7389554a993d39} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!visit@{visit}}
+\index{visit@{visit}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+template$<$class VISITOR , class CONTAINER\+\_\+\+TYPE $>$ \\
+void \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::visit (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ VISITOR, \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ CONTAINER\+\_\+\+TYPE $>$ $>$ \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_grid_holder_a2413c2857158bdcfac7389554a993d39_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_grid_holder_a7110477519d39ecdc1e376fedbb14abc}\label{class_grid_holder_a7110477519d39ecdc1e376fedbb14abc} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!visit\_all@{visit\_all}}
+\index{visit\_all@{visit\_all}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{visit\_all()}{visit\_all()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+template$<$class VISITOR , class CONTAINER\+\_\+\+TYPE $>$ \\
+void \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::visit\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ VISITOR, \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ CONTAINER\+\_\+\+TYPE $>$ $>$ \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_grid_holder_a7110477519d39ecdc1e376fedbb14abc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd}\label{class_grid_holder_a6567bbf01ee83910ab23fd2f08975bbd} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!width@{width}}
+\index{width@{width}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+uint16\+\_\+t \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_grid_holder_a1d4e7aa71a331a3564624fbabb97d1a7}\label{class_grid_holder_a1d4e7aa71a331a3564624fbabb97d1a7} 
+\index{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!GridHolder$<$ ZONE\_OBJECT\_TYPES $>$@{GridHolder$<$ ZONE\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{Horizon::Zone::MapManager}{Horizon::Zone::MapManager}}
+{\footnotesize\ttfamily template$<$class ZONE\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+friend class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager}{Horizon\+::\+Zone\+::\+Map\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\mbox{\hyperlink{_grid_definitions_8hpp}{Grid\+Definitions.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\mbox{\hyperlink{_grid_holder_8hpp}{Grid\+Holder.\+hpp}}\end{DoxyCompactItemize}

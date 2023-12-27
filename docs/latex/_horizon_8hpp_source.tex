@@ -1,0 +1,97 @@
+\doxysection{Horizon.\+hpp}
+\hypertarget{_horizon_8hpp_source}{}\label{_horizon_8hpp_source}\index{src/Server/Common/Configuration/Horizon.hpp@{src/Server/Common/Configuration/Horizon.hpp}}
+\mbox{\hyperlink{_horizon_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_HORIZON\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_HORIZON\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_definitions_8hpp}{Server/Common/Definitions/Definitions.hpp}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ RENEWAL}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ Client\ Type}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ Renewal\ =\ 'R'}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ AD\ =\ 'A'}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ Ragexe\ =\ 'M'}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ Zero\ =\ 'Z'}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ Sakray\ =\ 'S'}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ CLIENT\_TYPE\ 'M'}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{/*\ Packet\ Version\ */}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ PACKET\_VERSION\ 20190530}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ MAX\_LEVEL\ 175}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MAX\_STATUS\_POINTS\ 130}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ Maximum\ Character\ Slots\ (in\ multiples\ of\ 3)\ */}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ MAX\_CHARACTER\_SLOTS\ 9}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DEFAULT\_MOVEMENT\_SPEED\ 150}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ MAX\_VIEW\_RANGE\ 14}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ MAX\_NPC\_TRIGGER\_RANGE\ 5}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ Network\ Threads}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ MAX\_NETWORK\_THREADS\ 1}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Time\ in\ Microseconds\ (µs)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ MAX\_CORE\_UPDATE\_INTERVAL\ 500}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ Map\ Thread\ Containers}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ MAX\_MAP\_CONTAINER\_THREADS\ 1}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ Mob\ searches\ active\ path\ when\ selecting\ target.}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ ACTIVE\_PATH\_SEARCH\ 1}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_a5bb4257ca9fa4bfcf9391b7895b97761}{MAX\_LEVEL}}\ >\ 0,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MAX\_LEVEL\ should\ be\ greater\ than\ 0."{}});}
+\DoxyCodeLine{00071\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_a2cbfce8d17d0cd1b47afb02633cf66c3}{MAX\_CHARACTER\_SLOTS}}\ \%\ 3\ ==\ 0,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MAX\_CHARACTER\_SLOTS\ must\ be\ in\ multiples\ of\ 3!"{}});}
+\DoxyCodeLine{00073\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_acc076df423de72f5f7eb79b3744c7c1e}{DEFAULT\_MOVEMENT\_SPEED}}\ >\ 0\ \&\&\ \mbox{\hyperlink{_horizon_8hpp_acc076df423de72f5f7eb79b3744c7c1e}{DEFAULT\_MOVEMENT\_SPEED}}\ <\ 1000,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DEFAULT\_MOVEMENT\_SPEED\ must\ be\ greater\ than\ 0\ and\ less\ than\ 1000."{}});}
+\DoxyCodeLine{00075\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_af494d096e3e50bdb6ec83ecddd05198b}{MAX\_VIEW\_RANGE}}\ >\ 0,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}View\ range\ affects\ visibility\ range\ for\ players\ and\ should\ not\ be\ 0."{}});}
+\DoxyCodeLine{00077\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_a801d9f4dd7f3806c2286d0b3cf1123eb}{MAX\_NPC\_TRIGGER\_RANGE}}\ >\ 0\ \&\&\ \mbox{\hyperlink{_horizon_8hpp_a801d9f4dd7f3806c2286d0b3cf1123eb}{MAX\_NPC\_TRIGGER\_RANGE}}\ <\ \mbox{\hyperlink{_horizon_8hpp_af494d096e3e50bdb6ec83ecddd05198b}{MAX\_VIEW\_RANGE}},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MAX\_NPC\_TRIGGER\_RANGE\ must\ be\ less\ than\ MAX\_VIEW\_RANGE\ and\ greater\ than\ 0."{}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_aca0b531786f6413d952842297a060b35}{MAX\_NETWORK\_THREADS}}\ >\ 0,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MAX\_NETWORK\_THREADS\ cannot\ be\ less\ than\ or\ equal\ to\ 0."{}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_ababc594bacfad6f4c33582837b259909}{MAX\_CORE\_UPDATE\_INTERVAL}}\ >=\ 1,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MAX\_CORE\_UPDATE\_INTERVAL\ should\ be\ greater\ than\ or\ equal\ to\ 500\ microseconds\ (µs)."{}});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{static\_assert}(\mbox{\hyperlink{_horizon_8hpp_a2b27027512d9e21c46519d03e1a7f36b}{MAX\_MAP\_CONTAINER\_THREADS}}\ >\ 0,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}MAX\_MAP\_CONTAINER\_THREADS\ cannot\ be\ less\ than\ or\ equal\ to\ 0."{}});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_client_8hpp}{Client.hpp}}"{}}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_HORIZON\_HPP}}
+
+\end{DoxyCode}

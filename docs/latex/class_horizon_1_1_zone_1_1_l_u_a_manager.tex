@@ -1,0 +1,278 @@
+\doxysection{Horizon\+::Zone\+::LUAManager Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager}{}\label{class_horizon_1_1_zone_1_1_l_u_a_manager}\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+
+
+{\ttfamily \#include $<$LUAManager.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a2a80e8fd26935e89809f524d3503bd82}{LUAManager}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a72c116ac859185560e3c66404de7d319}{\texorpdfstring{$\sim$}{\string~}\+LUAManager}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a12c37840c6098e9e03f82e40df7c476c}{get\+\_\+map\+\_\+container}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a41d9d5dfe388e0b9528be9dd6990fd68}{initialize\+\_\+basic\+\_\+state}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}})
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a5f9a41eb428bbd031bf7f82c1a074b6a}{initialize\+\_\+player\+\_\+state}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}})
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a37540ec336b0c73309cc445ea21c3fb5}{initialize\+\_\+npc\+\_\+state}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}})
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a5de66a23bfb64e81227ae197496918be}{initialize\+\_\+monster\+\_\+state}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{state}})
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_player_component}{Player\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_ad16ff2f04f630733dd1e1f620c1d57ba}{player}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component}{NPCComponent}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a9e8c4fbfcc8a8ac65ebbc7d205bd4fb9}{npc}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component}{Monster\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_aa6279efe6100060be197609d77a9a236}{monster}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_component}{Map\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{map}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_component}{Item\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a054f41b93d24b9e731b26c7386350037}{item}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_component}{Entity\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a9948ca55e1c0b51c30d212cf69c8c3e0}{entity}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_component}{Skill\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a9dacbf0e28adffe319af4fa52171e0fc}{skill}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_component}{Status\+Effect\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a159b546dd0be66f095e3d1f2ef6bc3ea}{status\+\_\+effect}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_component}{Combat\+Component}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a20130f923bccfc4b1f9135244b1cf402}{combat}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_ab5980477e069e94e9fec1a25e4d1c2e9}{lua\+\_\+state}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a939bf1aa58b950dd351f360b0f2a813e}{initialize\+\_\+for\+\_\+container}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_add5eb163d1c32dc3efd20df41e262eee}{finalize}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a4f81f6b91c332be8122bb52543966f6d}{prepare\+\_\+lua\+\_\+state}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{lua}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{class}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_ac37d27d06c892271edc1d7c3b9b72f34}{Map\+Container\+Thread}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a2a80e8fd26935e89809f524d3503bd82}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a2a80e8fd26935e89809f524d3503bd82} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!LUAManager@{LUAManager}}
+\index{LUAManager@{LUAManager}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{LUAManager()}{LUAManager()}}
+{\footnotesize\ttfamily LUAManager\+::\+LUAManager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a72c116ac859185560e3c66404de7d319}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a72c116ac859185560e3c66404de7d319} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!````~LUAManager@{\texorpdfstring{$\sim$}{\string~}LUAManager}}
+\index{````~LUAManager@{\texorpdfstring{$\sim$}{\string~}LUAManager}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LUAManager()}{\string~LUAManager()}}
+{\footnotesize\ttfamily LUAManager\+::\texorpdfstring{$\sim$}{\string~}\+LUAManager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a20130f923bccfc4b1f9135244b1cf402}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a20130f923bccfc4b1f9135244b1cf402} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!combat@{combat}}
+\index{combat@{combat}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{combat()}{combat()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_component}{Combat\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::combat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a9948ca55e1c0b51c30d212cf69c8c3e0}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a9948ca55e1c0b51c30d212cf69c8c3e0} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!entity@{entity}}
+\index{entity@{entity}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{entity()}{entity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_component}{Entity\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_add5eb163d1c32dc3efd20df41e262eee}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_add5eb163d1c32dc3efd20df41e262eee} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!finalize@{finalize}}
+\index{finalize@{finalize}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} LUAManager\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a12c37840c6098e9e03f82e40df7c476c}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a12c37840c6098e9e03f82e40df7c476c} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!get\_map\_container@{get\_map\_container}}
+\index{get\_map\_container@{get\_map\_container}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{get\_map\_container()}{get\_map\_container()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::get\+\_\+map\+\_\+container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a41d9d5dfe388e0b9528be9dd6990fd68}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a41d9d5dfe388e0b9528be9dd6990fd68} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!initialize\_basic\_state@{initialize\_basic\_state}}
+\index{initialize\_basic\_state@{initialize\_basic\_state}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{initialize\_basic\_state()}{initialize\_basic\_state()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} LUAManager\+::initialize\+\_\+basic\+\_\+state (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a41d9d5dfe388e0b9528be9dd6990fd68_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a41d9d5dfe388e0b9528be9dd6990fd68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a939bf1aa58b950dd351f360b0f2a813e}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a939bf1aa58b950dd351f360b0f2a813e} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!initialize\_for\_container@{initialize\_for\_container}}
+\index{initialize\_for\_container@{initialize\_for\_container}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{initialize\_for\_container()}{initialize\_for\_container()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} LUAManager\+::initialize\+\_\+for\+\_\+container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a939bf1aa58b950dd351f360b0f2a813e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a5de66a23bfb64e81227ae197496918be}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a5de66a23bfb64e81227ae197496918be} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!initialize\_monster\_state@{initialize\_monster\_state}}
+\index{initialize\_monster\_state@{initialize\_monster\_state}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{initialize\_monster\_state()}{initialize\_monster\_state()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} LUAManager\+::initialize\+\_\+monster\+\_\+state (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a5de66a23bfb64e81227ae197496918be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a5de66a23bfb64e81227ae197496918be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a37540ec336b0c73309cc445ea21c3fb5}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a37540ec336b0c73309cc445ea21c3fb5} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!initialize\_npc\_state@{initialize\_npc\_state}}
+\index{initialize\_npc\_state@{initialize\_npc\_state}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{initialize\_npc\_state()}{initialize\_npc\_state()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} LUAManager\+::initialize\+\_\+npc\+\_\+state (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a37540ec336b0c73309cc445ea21c3fb5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a37540ec336b0c73309cc445ea21c3fb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a5f9a41eb428bbd031bf7f82c1a074b6a}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a5f9a41eb428bbd031bf7f82c1a074b6a} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!initialize\_player\_state@{initialize\_player\_state}}
+\index{initialize\_player\_state@{initialize\_player\_state}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{initialize\_player\_state()}{initialize\_player\_state()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} LUAManager\+::initialize\+\_\+player\+\_\+state (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a5f9a41eb428bbd031bf7f82c1a074b6a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a5f9a41eb428bbd031bf7f82c1a074b6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a054f41b93d24b9e731b26c7386350037}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a054f41b93d24b9e731b26c7386350037} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!item@{item}}
+\index{item@{item}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{item()}{item()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_component}{Item\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_ab5980477e069e94e9fec1a25e4d1c2e9}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_ab5980477e069e94e9fec1a25e4d1c2e9} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!lua\_state@{lua\_state}}
+\index{lua\_state@{lua\_state}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{lua\_state()}{lua\_state()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ sol\+::state $>$ Horizon\+::\+Zone\+::\+LUAManager\+::lua\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!map@{map}}
+\index{map@{map}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_component}{Map\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_aa6279efe6100060be197609d77a9a236}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_aa6279efe6100060be197609d77a9a236} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!monster@{monster}}
+\index{monster@{monster}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{monster()}{monster()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_component}{Monster\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::monster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a9e8c4fbfcc8a8ac65ebbc7d205bd4fb9}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a9e8c4fbfcc8a8ac65ebbc7d205bd4fb9} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!npc@{npc}}
+\index{npc@{npc}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{npc()}{npc()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component}{NPCComponent}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::npc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_ad16ff2f04f630733dd1e1f620c1d57ba}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_ad16ff2f04f630733dd1e1f620c1d57ba} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!player@{player}}
+\index{player@{player}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{player()}{player()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_player_component}{Player\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a4f81f6b91c332be8122bb52543966f6d}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a4f81f6b91c332be8122bb52543966f6d} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!prepare\_lua\_state@{prepare\_lua\_state}}
+\index{prepare\_lua\_state@{prepare\_lua\_state}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{prepare\_lua\_state()}{prepare\_lua\_state()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{void}} Horizon\+::\+Zone\+::\+LUAManager\+::prepare\+\_\+lua\+\_\+state (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$ \&}]{lua }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a9dacbf0e28adffe319af4fa52171e0fc}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a9dacbf0e28adffe319af4fa52171e0fc} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!skill@{skill}}
+\index{skill@{skill}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{skill()}{skill()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_component}{Skill\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::skill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_a159b546dd0be66f095e3d1f2ef6bc3ea}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_a159b546dd0be66f095e3d1f2ef6bc3ea} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!status\_effect@{status\_effect}}
+\index{status\_effect@{status\_effect}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{status\_effect()}{status\_effect()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_component}{Status\+Effect\+Component}} $>$ Horizon\+::\+Zone\+::\+LUAManager\+::status\+\_\+effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_l_u_a_manager_ac37d27d06c892271edc1d7c3b9b72f34}\label{class_horizon_1_1_zone_1_1_l_u_a_manager_ac37d27d06c892271edc1d7c3b9b72f34} 
+\index{Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}!MapContainerThread@{MapContainerThread}}
+\index{MapContainerThread@{MapContainerThread}!Horizon::Zone::LUAManager@{Horizon::Zone::LUAManager}}
+\doxysubsubsection{\texorpdfstring{MapContainerThread}{MapContainerThread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{friend}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_manager_a1441f0573842dfea336a2ba818c4807c}{class}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+LUA/\mbox{\hyperlink{_l_u_a_manager_8hpp}{LUAManager.\+hpp}}\item 
+src/\+Server/\+Zone/\+LUA/\mbox{\hyperlink{_l_u_a_manager_8cpp}{LUAManager.\+cpp}}\end{DoxyCompactItemize}

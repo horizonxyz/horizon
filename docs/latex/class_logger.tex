@@ -1,0 +1,158 @@
+\doxysection{Logger Class Reference}
+\hypertarget{class_logger}{}\label{class_logger}\index{Logger@{Logger}}
+
+
+{\ttfamily \#include $<$Logger.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_logger_abc41bfb031d896170c7675fa96a6b30c}{Logger}} ()
+\item 
+\mbox{\hyperlink{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}{\texorpdfstring{$\sim$}{\string~}\+Logger}} ()
+\item 
+void \mbox{\hyperlink{class_logger_ae784283f1de7827b7e7049641eaf0a53}{initialize}} ()
+\item 
+logtype \& \mbox{\hyperlink{class_logger_a0efbb7c958eb771b1e6940c106f86ba2}{get\+\_\+core\+\_\+log}} ()
+\item 
+void \mbox{\hyperlink{class_logger_ad1fe4a2add3eaa366b3fa34a910d0f5a}{colored\+\_\+formatter}} (boost\+::log\+::record\+\_\+view const \&rec, boost\+::log\+::formatting\+\_\+ostream \&strm)
+\item 
+std\+::string \mbox{\hyperlink{class_logger_a2ff57fe8e0265f6be3157c9d1680949d}{color}} (uint16\+\_\+t color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_logger}{Logger}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_logger_ab34b3a7fd8a65cb2bbad722b4f6ec3d0}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+logtype \mbox{\hyperlink{class_logger_a83321075e4be884141548fcb6a6af20b}{\+\_\+core\+\_\+log}}
+\item 
+std\+::atomic$<$ bool $>$ \mbox{\hyperlink{class_logger_af678ab01d739b630bd0f20e48fb15eea}{\+\_\+initialized}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_logger_abc41bfb031d896170c7675fa96a6b30c}\label{class_logger_abc41bfb031d896170c7675fa96a6b30c} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily Logger\+::\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a}\label{class_logger_acb668a9e186a25fbaad2e4af6d1ed00a} 
+\index{Logger@{Logger}!````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}}
+\index{````~Logger@{\texorpdfstring{$\sim$}{\string~}Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Logger()}{\string~Logger()}}
+{\footnotesize\ttfamily Logger\+::\texorpdfstring{$\sim$}{\string~}\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_logger_a2ff57fe8e0265f6be3157c9d1680949d}\label{class_logger_a2ff57fe8e0265f6be3157c9d1680949d} 
+\index{Logger@{Logger}!color@{color}}
+\index{color@{color}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{color()}{color()}}
+{\footnotesize\ttfamily std\+::string Logger\+::color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_logger_a2ff57fe8e0265f6be3157c9d1680949d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_a2ff57fe8e0265f6be3157c9d1680949d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_ad1fe4a2add3eaa366b3fa34a910d0f5a}\label{class_logger_ad1fe4a2add3eaa366b3fa34a910d0f5a} 
+\index{Logger@{Logger}!colored\_formatter@{colored\_formatter}}
+\index{colored\_formatter@{colored\_formatter}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{colored\_formatter()}{colored\_formatter()}}
+{\footnotesize\ttfamily void Logger\+::colored\+\_\+formatter (\begin{DoxyParamCaption}\item[{boost\+::log\+::record\+\_\+view const \&}]{rec,  }\item[{boost\+::log\+::formatting\+\_\+ostream \&}]{strm }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_logger_ad1fe4a2add3eaa366b3fa34a910d0f5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_ad1fe4a2add3eaa366b3fa34a910d0f5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_a0efbb7c958eb771b1e6940c106f86ba2}\label{class_logger_a0efbb7c958eb771b1e6940c106f86ba2} 
+\index{Logger@{Logger}!get\_core\_log@{get\_core\_log}}
+\index{get\_core\_log@{get\_core\_log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{get\_core\_log()}{get\_core\_log()}}
+{\footnotesize\ttfamily logtype \& Logger\+::get\+\_\+core\+\_\+log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_logger_ab34b3a7fd8a65cb2bbad722b4f6ec3d0}\label{class_logger_ab34b3a7fd8a65cb2bbad722b4f6ec3d0} 
+\index{Logger@{Logger}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_logger}{Logger}} \texorpdfstring{$\ast$}{*} Logger\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_ab34b3a7fd8a65cb2bbad722b4f6ec3d0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_ae784283f1de7827b7e7049641eaf0a53}\label{class_logger_ae784283f1de7827b7e7049641eaf0a53} 
+\index{Logger@{Logger}!initialize@{initialize}}
+\index{initialize@{initialize}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Logger\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_ae784283f1de7827b7e7049641eaf0a53_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_logger_ae784283f1de7827b7e7049641eaf0a53_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_logger_a83321075e4be884141548fcb6a6af20b}\label{class_logger_a83321075e4be884141548fcb6a6af20b} 
+\index{Logger@{Logger}!\_core\_log@{\_core\_log}}
+\index{\_core\_log@{\_core\_log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{\_core\_log}{\_core\_log}}
+{\footnotesize\ttfamily logtype Logger\+::\+\_\+core\+\_\+log\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_logger_af678ab01d739b630bd0f20e48fb15eea}\label{class_logger_af678ab01d739b630bd0f20e48fb15eea} 
+\index{Logger@{Logger}!\_initialized@{\_initialized}}
+\index{\_initialized@{\_initialized}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{\_initialized}{\_initialized}}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ Logger\+::\+\_\+initialized\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Logging/\mbox{\hyperlink{_logger_8hpp}{Logger.\+hpp}}\item 
+src/\+Core/\+Logging/\mbox{\hyperlink{_logger_8cpp}{Logger.\+cpp}}\end{DoxyCompactItemize}

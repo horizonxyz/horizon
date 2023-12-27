@@ -1,0 +1,55 @@
+\doxysection{src/\+Core/\+Logging/\+Logger.hpp File Reference}
+\hypertarget{_logger_8hpp}{}\label{_logger_8hpp}\index{src/Core/Logging/Logger.hpp@{src/Core/Logging/Logger.hpp}}
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$boost/log/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/trivial.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/severity\+\_\+logger.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/expressions.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sinks/text\+\_\+file\+\_\+backend.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/utility/setup/file.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/utility/setup/common\+\_\+attributes.\+hpp$>$}\newline
+Include dependency graph for Logger.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_logger_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_logger_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_logger}{Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_logger_8hpp_aad6fe6f21d1c647548b1e2cb79197363}{BOOST\+\_\+\+LOG\+\_\+\+DYN\+\_\+\+LINK}}~1
+\item 
+\#define \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(type)~BOOST\+\_\+\+LOG\+\_\+\+SEV(\mbox{\hyperlink{class_logger}{Logger}}().get\+Instance()-\/$>$get\+\_\+core\+\_\+log(), boost\+::log\+::trivial\+::type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_logger_8hpp_aad6fe6f21d1c647548b1e2cb79197363}\label{_logger_8hpp_aad6fe6f21d1c647548b1e2cb79197363} 
+\index{Logger.hpp@{Logger.hpp}!BOOST\_LOG\_DYN\_LINK@{BOOST\_LOG\_DYN\_LINK}}
+\index{BOOST\_LOG\_DYN\_LINK@{BOOST\_LOG\_DYN\_LINK}!Logger.hpp@{Logger.hpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_LOG\_DYN\_LINK}{BOOST\_LOG\_DYN\_LINK}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+LOG\+\_\+\+DYN\+\_\+\+LINK~1}
+
+\Hypertarget{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}\label{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35} 
+\index{Logger.hpp@{Logger.hpp}!HLog@{HLog}}
+\index{HLog@{HLog}!Logger.hpp@{Logger.hpp}}
+\doxysubsubsection{\texorpdfstring{HLog}{HLog}}
+{\footnotesize\ttfamily \#define HLog(\begin{DoxyParamCaption}\item[{}]{type }\end{DoxyParamCaption})~BOOST\+\_\+\+LOG\+\_\+\+SEV(\mbox{\hyperlink{class_logger}{Logger}}().get\+Instance()-\/$>$get\+\_\+core\+\_\+log(), boost\+::log\+::trivial\+::type)}
+

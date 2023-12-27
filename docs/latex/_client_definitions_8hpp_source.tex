@@ -1,0 +1,897 @@
+\doxysection{Client\+Definitions.\+hpp}
+\hypertarget{_client_definitions_8hpp_source}{}\label{_client_definitions_8hpp_source}\index{src/Server/Zone/Definitions/ClientDefinitions.hpp@{src/Server/Zone/Definitions/ClientDefinitions.hpp}}
+\mbox{\hyperlink{_client_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_CLIENT\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_CLIENT\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_definitions_8hpp}{Server/Zone/Definitions/ItemDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_skill_definitions_8hpp}{Server/Zone/Definitions/SkillDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ All\ definitions\ pertaining\ to\ client\ UI\ are\ placed\ here.\ Most}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ configurations\ regarding\ client\ UI\ limitations\ and\ minimum\ or\ maximim\ values\ of}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ client\ UI\ features\ are\ defined\ here.}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MAX\_GUILD\_SUBJECT\_STR\_LENGTH\ 60}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ MAX\_GUILD\_NOTICE\_STR\_LENGTH\ 120}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MAX\_GUILD\_LEAVE\_REASON\_STR\_LENGTH\ 40}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MAX\_EMBLEM\_LENGTH\ 1800}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ CHATROOM\_TITLE\_SIZE\ 36\ +\ 1}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ CHATROOM\_PASS\_SIZE\ 8\ +\ 1}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ MAX\_STORAGE\_PASSWORD\_LENGTH\ 16}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MAX\_AUCTION\_SEARCH\_TEXT\_LENGTH\ 24}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ MAX\_INPUT\_STR\_LENGTH\ 70\ +\ 1}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ MAX\_CHAT\_STR\_LENGTH\ 255\ +\ 1}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ MAX\_ITEM\_CREATE\_CMD\_INPUT\_LENGTH\ 24}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ MAX\_TALKBOX\_CONTENT\_SIZE\ 80}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ MAX\_STORAGE\_PASSWORD\_LENGTH\ 16}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ MAX\_AUCTION\_SEARCH\_TEXT\_LENGTH\ 24}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ MAX\_INPUT\_STR\_LENGTH\ 70\ +\ 1}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ MAX\_ITEM\_CREATE\_CMD\_INPUT\_LENGTH\ 24}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ MAX\_MAIL\_INBOX\_SIZE\ 30}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ MAX\_MAIL\_TITLE\_LENGTH\ 40}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ MAX\_MAIL\_BODY\_LENGTH\ 200}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ MAX\_PARTY\_BOOKING\_JOBS\ 6}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ MAX\_VENDING\_SHOP\_NAME\_LENGTH\ 80}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ MAX\_RANKING\_LIST\ 10}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ MAX\_ACHIEVEMENT\_OBJECTIVES\ 10}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfe}{grid\_notifier\_type}}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfeac473e62e2f0953512f1b5cd13cd496c6}{GRID\_NOTIFY\_AREA}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ area}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea13b9b2ad6ac285203a8ec8fe9141f9aa}{GRID\_NOTIFY\_AREA\_WOS}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ area,\ without\ self}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea4390be2f9bbcbb913f664091394da4f9}{GRID\_NOTIFY\_AREA\_WOC}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ area,\ without\ chatrooms}}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea5a49c56b72fab7bb969a9277124834fe}{GRID\_NOTIFY\_AREA\_WOSC}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ area,\ without\ own\ chatrooms}}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea7a2c14744bf4bd3e9740610777145aed}{GRID\_NOTIFY\_AREA\_CHAT\_WOC}},\ \ \ \ \ \ \textcolor{comment}{//\ hearable\ area,\ without\ chatrooms}}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea54adc150f3b669ff3f8bce657128ba69}{GRID\_NOTIFY\_AREA\_DEAD}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ area,\ for\ clear\ unit\ (monster\ death)}}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfeaf9114c45f993c19f38c7a56372a3f4c2}{GRID\_NOTIFY\_CHAT}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ current\ chatroom}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea9853b96d87bd9e82e35b35ec78437d76}{GRID\_NOTIFY\_CHAT\_WOS}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ current\ chatroom,\ without\ self}}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea4267fc6052dcd0f3208461dadfa5c3db}{GRID\_NOTIFY\_PARTY}},}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea3c75aa6a1fce20a5bc3ee38a2afd4e0f}{GRID\_NOTIFY\_PARTY\_WOS}},}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea180097e035572e77236881ae84eb7ab4}{GRID\_NOTIFY\_PARTY\_AREA}},}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea1b8a9b3e34163851fb2996fd12be771c}{GRID\_NOTIFY\_PARTY\_AREA\_WOS}},}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfeaafb39b608d43a0a1b05baa4bd4750f06}{GRID\_NOTIFY\_GUILD}},}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea230d0a4b7aae7e2a2d8e5bd60bcd2ba5}{GRID\_NOTIFY\_GUILD\_WOS}},}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea539bf67d3e7677f80e36c0919ccce4c3}{GRID\_NOTIFY\_GUILD\_AREA}},}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfeaf62cc4a2cb66dfe402be89e7988ed10a}{GRID\_NOTIFY\_GUILD\_AREA\_WOS}},}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea802bb534658081be27d5fffef6e0d287}{GRID\_NOTIFY\_GUILD\_NOBG}},}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfeaff504e34ba5dbcad7aeaf6db5b091516}{GRID\_NOTIFY\_DUEL}},}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfeacb49bff6d231efde1eec3f9f0f2a9445}{GRID\_NOTIFY\_DUEL\_WOS}},}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1dbd5856644f754682445df4c18c5cfea63705b96c8f5b4d9c45e601048f96b22}{GRID\_NOTIFY\_SELF}}}
+\DoxyCodeLine{00101\ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684}{zc\_notify\_act\_3\_action\_types}}}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a16c49f7a79d723e33e19a365a56b078d}{ZCNA3\_DAMAGE}}\ =\ 0,}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a0253405fbf5a3edfe017b658d174cfba}{ZCNA3\_PICKUP\_ITEM}}\ =\ 1,}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684ab80671ce16f4e68db8fc98401ebcea71}{ZCNA3\_SIT}}\ \ \ \ =\ 2,}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a783448a44a377198405eab5a898cca05}{ZCNA3\_STAND}}\ \ =\ 3,}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a69e57f61a46178a6cae86d5953e8e8a5}{ZCNA3\_ENDURE\_DAMAGE}}\ =\ 4,}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a1ae041e0df383b91003aa15b8bc9b3a6}{ZCNA3\_SPLASH}}\ =\ 5,}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684ad1faa233f642cf9244f1c5061505e932}{ZCNA3\_SKILL}}\ \ =\ 6,}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a55ebeaf3080533502308ccf97348c6a8}{ZCNA3\_REPEAT\_DAMAGE}}\ =\ 7,}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a4b7038d531b467b2cc8109eeb51777a8}{ZCNA3\_MULTI\_HIT\_DAMAGE}}\ =\ 8,}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a00fa740e4bae869039809707ff9f0839}{ZCNA3\_MULTI\_HIT\_ENDURE\_DAMAGE}}\ =\ 9,}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a8ffc577c50441ba8e1643978397c331a}{ZCNA3\_CRITICAL\_HIT}}\ =\ 10,}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684aebae95c0a7e6da25bc68b98aaad31b06}{ZCNA3\_LUCKY\_DODGE}}\ =\ 11,}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a2e9d626158355e98fdc019c438dfcf1d}{ZCNA3\_TOUCH\_SKILL}}\ =\ 12,}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a022a2b7ca11fe6b10f6f30ae589d9684a18549df7f7561260eaa7100e046a1715}{ZCNA3\_MULTI\_HIT\_CRITICAL}}\ =\ 13}
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00138\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__membermgr__info__member}{s\_zc\_membermgr\_info\_member}}}
+\DoxyCodeLine{00139\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_a25c19b04a4527000579a5be0bdc47029}{account\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_a8adc97e69b849f51abf15d720bc84284}{character\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00142\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__membermgr__info__member_af5f429ccf706ce465d802aef88fbbcb6}{hair\_style\_id}}\{\ 0\ \},\ \mbox{\hyperlink{structs__zc__membermgr__info__member_ab35fbc9a105316c844a3d0346e9fa088}{hair\_color\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00143\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__membermgr__info__member_afce8312decc0b80803af8127f02fae8b}{gender}}\{\ 0\ \};}
+\DoxyCodeLine{00144\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__membermgr__info__member_a09478d63528e86fac8ff8edbbeab1790}{job}}\{\ 0\ \};}
+\DoxyCodeLine{00145\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__membermgr__info__member_a1ae0824b373c4f42a47c3873e32691a8}{level}}\{\ 0\ \};}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_a99a66cb9391e9c48175de2e365efaad1}{contribution\_exp}}\{\ 0\ \};}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_ace1f229b604c922a2a44a9135aa94163}{current\_state}}\{\ 0\ \};}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_af8f6836a7de434c8a730bc7a4ffbac81}{position\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_ad39b8407ef1a2ee5d53a5573109c2d07}{last\_login}}\{\ 0\ \};}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__membermgr__info__member_a685dbab72baf981c8869417e41401f62}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}]\{\ 0\ \};}
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__guild__info}{s\_zc\_guild\_info}}}
+\DoxyCodeLine{00156\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_a4a828244b34c4c02e99734e544ff2c8a}{guild\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_a50f7cf0d7afa451db18422d1fd64cfb1}{level}}\{\ 0\ \};}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_acc5c6798c8666be9a4f454c6ec049201}{member\_num}}\{\ 0\ \};}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_ad162c57d7e6ec672bfa710be7f19ad94}{member\_max}}\{\ 0\ \};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_a65de9b7cc460ba5db1d7be53157aa9d5}{exp}}\{\ 0\ \};}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_ac4c308882f22de053cd58842335bac93}{max\_exp}}\{\ 0\ \};}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_a5cc67fbf500375807a520902e031f1d0}{points}}\{\ 0\ \};}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_aefdfd61fae24a3fbe6e83dc049950492}{honor}}\{\ 0\ \};}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_aab98fbbd855e45dcf80fb106501fb55d}{virtue}}\{\ 0\ \};}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info_a9a2758c6913289cdfe4af822a3008e2a}{emblem\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__info_afddda501b4ec34b3ea27432087cf6307}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__info_aa1494335fcc09df5cac774e73282279e}{master\_name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__info_a7f95063d33bb1a29432a2666cda39318}{managed\_castle}}[\mbox{\hyperlink{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}{MAP\_NAME\_LENGTH\_EXT}}];}
+\DoxyCodeLine{00170\ \};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__members}{s\_members}}\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structs__members_acefd389be7e6ad120f4e60a2f41138c9}{account\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#if\ PACKET\_VERSION\ >=\ 20171207}}
+\DoxyCodeLine{00175\ \ \ \ \ int32\_t\ char\_id\{\ 0\ \};}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__members_a8fd62e304bd78987f445958186761af5}{player\_name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__members_a04b3467030d9c7aadf77f7035a16e925}{map\_name}}[\mbox{\hyperlink{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}{MAP\_NAME\_LENGTH\_EXT}}];}
+\DoxyCodeLine{00179\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__members_a57a3782f521e7583c6630c7a9bfa99de}{leader}};}
+\DoxyCodeLine{00180\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__members_aa4b99aba24103736b29c925ceb08eda6}{offline}};}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20170524)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20170502)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'Z')}}
+\DoxyCodeLine{00184\ \ \ \ \ int16\_t\ class\_;}
+\DoxyCodeLine{00185\ \ \ \ \ int16\_t\ base\_level;}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__add__exchange__item}{s\_zc\_add\_exchange\_item}}\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{comment}{/*\ Structure\ */}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20181121)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20180704)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20181114)}}
+\DoxyCodeLine{00194\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a019a96c47082c92aafe887664e2cd6e4}{item\_id}};}
+\DoxyCodeLine{00195\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a19298f8468f72bd6a7bb8aa1e8bd6b33}{item\_type}};}
+\DoxyCodeLine{00196\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a8c013ca0b70cfeae414c90f0fb009da8}{amount}};}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00198\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a019a96c47082c92aafe887664e2cd6e4}{item\_id}};}
+\DoxyCodeLine{00199\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a19298f8468f72bd6a7bb8aa1e8bd6b33}{item\_type}};}
+\DoxyCodeLine{00200\ \ \ \ \ int32\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a8c013ca0b70cfeae414c90f0fb009da8}{amount}};}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00202\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a16b5fa70b1a146a65d46591b34286507}{identified}};}
+\DoxyCodeLine{00203\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_a625c5a31ff1ece8e13b979a85b1de75a}{damaged}};}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#if\ !((CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20200916)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20200723)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20221024))}}
+\DoxyCodeLine{00207\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_add1bee4bef1b653aaabd8633f506a418}{refine}};}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !(PACKETVER\_MAIN\_NUM\ >=\ 20200916\ ||\ PACKETVER\_RE\_NUM\ >=\ 20200723\ ||\ PACKETVER\_ZERO\_NUM\ >=\ 20221024)}}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{structitem__slot}{item\_slot}}\ \mbox{\hyperlink{structs__zc__add__exchange__item_a83f223766713d7eeddf1fe74f89b5ae1}{cards}};}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#if\ PACKET\_VERSION\ >=\ 20150226}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ int16\_t\ index\{\ 0\ \};}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ int16\_t\ value\{\ 0\ \};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ int16\_t\ param\{\ 0\ \};}
+\DoxyCodeLine{00215\ \ \ \ \ \}\ option\_data[\mbox{\hyperlink{_item_definitions_8hpp_ae54c2a9d708638645204e80596084221}{MAX\_ITEM\_OPTIONS}}];}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20161102)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20161026)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ (CILENT\_TYPE\ ==\ 'Z')}}
+\DoxyCodeLine{00220\ \ \ \ \ uint32\_t\ location;}
+\DoxyCodeLine{00221\ \ \ \ \ uint16\_t\ look;}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PACKETVER\_MAIN\_NUM\ >=\ 20161102\ ||\ PACKETVER\_RE\_NUM\ >=\ 20161026\ ||\ defined(PACKETVER\_ZERO)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20200916)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20200723)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20221024)}}
+\DoxyCodeLine{00226\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__exchange__item_add1bee4bef1b653aaabd8633f506a418}{refine}};}
+\DoxyCodeLine{00227\ \ \ \ \ uint8\_t\ grade;}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ PACKETVER\_MAIN\_NUM\ >=\ 20200916\ ||\ PACKETVER\_RE\_NUM\ >=\ 20200723\ ||\ PACKETVER\_ZERO\_NUM\ >=\ 20221024}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00233\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__related__guild__info}{s\_related\_guild\_info}}}
+\DoxyCodeLine{00234\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__related__guild__info_a85b5626aeea09a5c7e541c6e6d0058a8}{relation}}\{\ 0\ \};}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__related__guild__info_a5b03426c55efd2e952bfb18909cf25ee}{guild\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__related__guild__info_a8db389a8fe84d662b239e86de1e2308a}{guild\_name}}[\mbox{\hyperlink{_client_8hpp_abae821b03e2a686ccc68b288b75fdd6e}{MAX\_GUILD\_NAME\_LENGTH}}]\{\ 0\ \};}
+\DoxyCodeLine{00238\ \};}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__add__member__to__group}{s\_zc\_add\_member\_to\_group}}}
+\DoxyCodeLine{00243\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_a1cbc7fb3aa129fa4379aca1758906662}{\_account\_id}};}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#if\ PACKET\_VERSION\ >=\ 20171207}}
+\DoxyCodeLine{00246\ \ \ \ \ uint32\_t\ \_char\_id;}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00248\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_ac5949ea39c89be02e0c03c3f50ed0718}{leader}};}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20170524)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20170502)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'Z')}}
+\DoxyCodeLine{00252\ \ \ \ \ int16\_t\ class\_;}
+\DoxyCodeLine{00253\ \ \ \ \ int16\_t\ base\_level;}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00255\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_a68d1c4a31549f819f3d7664c20c5da8e}{x}};}
+\DoxyCodeLine{00256\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_aada1d4bacbbe4a3270534f1136855ca3}{y}};}
+\DoxyCodeLine{00257\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_af68a59cd4d8d878a7d51e5b647260c0e}{offline}};}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__add__member__to__group_ad4f93c3229ca67fffd7c57fbb66a564e}{party\_name}}[\mbox{\hyperlink{_client_8hpp_ae95494d5036e5f33258bdcee4bfb3f6b}{MAX\_PARTY\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__add__member__to__group_af610ee99448baf1d745d1506b951c0ca}{player\_name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__add__member__to__group_a9e2c19a7c90f970cd5435606407f2b7a}{map\_name}}[\mbox{\hyperlink{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}{MAP\_NAME\_LENGTH\_EXT}}];}
+\DoxyCodeLine{00261\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_a989481147497c0f826283ddbf4ff3efa}{share\_pickup}};}
+\DoxyCodeLine{00262\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__add__member__to__group_a80d9060aaf60f3e05b9fa997d95ff48f}{share\_loot}};}
+\DoxyCodeLine{00263\ \};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__guild__info2}{s\_zc\_guild\_info2}}}
+\DoxyCodeLine{00266\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_a27bc679b04743d075b04447c670abc87}{guild\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_ab4ce2c03a035168e3d4ea265618462dc}{level}}\{\ 0\ \};}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_a966d3d14fd8a55f0357772ea43002472}{member\_num}}\{\ 0\ \};}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_aa6b8ec014ddcdba037a525f2d8582bb0}{member\_max}}\{\ 0\ \};}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_adc915d5d7b6f1e3291dad2f7db39c9ba}{exp}}\{\ 0\ \};}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_aff78e28cc95c571c5661e8b2d0c73d90}{max\_exp}}\{\ 0\ \};}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_afe0b4c77c19f7a1851836f3d1363b635}{points}}\{\ 0\ \};}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_a16c7e46a24a413c6cf7597ae1b9d13f8}{honor}}\{\ 0\ \};}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_a8e70aa54c38d3a89be152c4877506a81}{virtue}}\{\ 0\ \};}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_a4549a5ea24921793d0294a98f1787354}{emblem\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__info2_a7f8e5d26933aeb5f18aa89b9c7be9c46}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__info2_ae6ed4372142c96ac30ec93b275d9684e}{master\_name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__info2_a73e6cc77260d3a2ec3e4fe7ea1e67eb3}{managed\_castle}}[\mbox{\hyperlink{_client_8hpp_af79222fa7a96ba0a8b7584d48e754974}{MAP\_NAME\_LENGTH\_EXT}}];}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__info2_a1e4a461a038a656ef1180f58d95a6d31}{zeny}}\{\ 0\ \};}
+\DoxyCodeLine{00281\ \};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00285\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__position__id__name__info}{s\_zc\_position\_id\_name\_info}}}
+\DoxyCodeLine{00286\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__position__id__name__info_a89763a07e39de7e96bb6574a025f91de}{position\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__position__id__name__info_aa4c80f7c68bfd2ae7edb6252aef03424}{position\_name}}[\mbox{\hyperlink{_client_8hpp_adba64c0e0fd376ef011ec018c13f0ef2}{MAX\_GUILD\_POSITION\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00289\ \};}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structchatroom__user}{chatroom\_user}}\ \{\ int8\_t\ \mbox{\hyperlink{structchatroom__user_a311ff3965fc28f490cea3d2a266c4dab}{\_type}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structchatroom__user_ab8f139580c37fd0264ba4c0a3567bc4f}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];\ \};}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__map__properties}{zc\_map\_properties}}\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_ab9d006ba60b2066ec71bb644aabe0aaa}{pvp}}\ :\ 1;}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_a91d03914885cd60ec15f01a120c50630}{gvg}}\ :\ 1;}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_a3854c9e8da859c2b61761e93136adb02}{siege}}\ :\ 1;}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_a87a9b1cf9fc5d163b004c717b74ee3b1}{no\_effects}}\ :\ 1;}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_a2119d8b81ebba13d26288b4d7f7a6783}{party\_pvp}}\ :\ 1;}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_aa5488a984ffec855dfe9ea250fbd6fa7}{pvp\_kill\_counter}}\ :\ 1;}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_a81257c67c3dd148ae08ddf7967219919}{disallow\_party}}\ :\ 1;}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_a2652ec7bbca7bcb084df85d9617990e9}{battleground}}\ :\ 1;}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_ab73162614926843c8e7cf0006718aebd}{no\_costume}}\ :\ 1;}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_aebef92c75b848360a0d7b4b4bb1e0b61}{allow\_carts}}\ :\ 1;}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_ae692016065b4412345fec2f1beef3a9e}{stargladiator\_miracles}}\ :\ 1;}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{structzc__map__properties_abdedf580e6f4c9af1c3d786d49e19297}{spare\_bits}}\ :\ 21;}
+\DoxyCodeLine{00307\ \};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__position__info}{s\_zc\_position\_info}}}
+\DoxyCodeLine{00310\ \{}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__position__info_a37b881aa4d4ab771af0d2d2049749615}{position\_id}}\{\ 0\ \};}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__position__info_a30e8beec2464029bf004de1324acf378}{mode}}\{\ 0\ \};}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__position__info_abc1d04dc721c85495e7b83acea99bde4}{ranking}}\{\ 0\ \};}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__position__info_a7f50e662602f6e50e8cc1bfef8eed824}{pay\_rate}}\{\ 0\ \};}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00317\ \};}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__status__data}{zc\_status\_data}}\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a701b75a5a9158124bc22752c747eb1ed}{status\_points}}\{\ 0\ \};}
+\DoxyCodeLine{00321\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_adfc37e445c191fb448c9d2ae4c58670c}{strength}}\{\ 1\ \};}
+\DoxyCodeLine{00322\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_a0426bd8c0239813091beca95916a8da4}{strength\_req\_stats}}\{\ 1\ \};}
+\DoxyCodeLine{00323\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_a810038e55a214f61257deb9c3fe0ba02}{agility}}\{\ 1\ \};}
+\DoxyCodeLine{00324\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_a5edfad12f4d03c630c60382c9d684712}{agility\_req\_stats}}\{\ 1\ \};}
+\DoxyCodeLine{00325\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_ac2aa52e817a1e90da4e99b861ce9969e}{vitality}}\{\ 1\ \};}
+\DoxyCodeLine{00326\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_ad36f7927435a2875ad115195ad50d4a0}{vitality\_req\_stats}}\{\ 1\ \};}
+\DoxyCodeLine{00327\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_a70eed94f49298ad836a267e819d821e0}{intelligence}}\{\ 1\ \};}
+\DoxyCodeLine{00328\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_af4ac2612dd83ae2ff2e24d97c5352119}{intelligence\_req\_stats}}\{\ 1\ \};}
+\DoxyCodeLine{00329\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_a1ab92d22bdf7571383d08b11a9da6bd8}{dexterity}}\{\ 1\ \};}
+\DoxyCodeLine{00330\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_ac00e672b62e69e5ea177de8e3b421247}{dexterity\_req\_stats}}\{\ 1\ \};}
+\DoxyCodeLine{00331\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_ab6af7b0021d6c61fc73ad36c72628eb0}{luck}}\{\ 1\ \};}
+\DoxyCodeLine{00332\ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structzc__status__data_ac4c49910fcb3d0bfba36b28c77a60cdc}{luck\_req\_stats}}\{\ 1\ \};}
+\DoxyCodeLine{00333\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_aff8da5b0a70196dda5639c08eade316c}{status\_atk}}\{\ 1\ \};}
+\DoxyCodeLine{00334\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a256169971809790767d4076ec355111d}{equip\_atk}}\{\ 1\ \};}
+\DoxyCodeLine{00335\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a808e79d6eafc2479092211d3b82216ac}{status\_matk}}\{\ 1\ \};}
+\DoxyCodeLine{00336\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_af5a09596cd93202a076c08469d743c32}{equip\_matk}}\{\ 1\ \};}
+\DoxyCodeLine{00337\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a3613c687262558e51afba1c688990b12}{soft\_def}}\{\ 1\ \};}
+\DoxyCodeLine{00338\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a9aa2e7c2c46938d155f909c88e741ec7}{hard\_def}}\{\ 1\ \};}
+\DoxyCodeLine{00339\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a2dc9f3d0f1aae81698aab8073bdd3bba}{soft\_mdef}}\{\ 1\ \};}
+\DoxyCodeLine{00340\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_ad47336b06819652e1ba759458aefdf1f}{hard\_mdef}}\{\ 1\ \};}
+\DoxyCodeLine{00341\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a1fbfc129d1b0704d05e0a153bfa53ed3}{hit}}\{\ 1\ \};}
+\DoxyCodeLine{00342\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a336b04fa5bce0dd2b8a6b2aaa6e665e8}{flee}}\{\ 1\ \};}
+\DoxyCodeLine{00343\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_ada5ff07b641efcc10dc2d29b02057aa6}{perfect\_dodge}}\{\ 1\ \};}
+\DoxyCodeLine{00344\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a34768f196e9fd2df479429410f3eeed4}{critical}}\{\ 1\ \};}
+\DoxyCodeLine{00345\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a10542939c76b927e787d75b983c4d13f}{attack\_speed}}\{\ 0\ \};}
+\DoxyCodeLine{00346\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__status__data_a83867fe29ac817b7b34e490c06620d0e}{plus\_aspd}}\{\ 0\ \};\ \textcolor{comment}{//\ always\ 0\ apparently.}}
+\DoxyCodeLine{00347\ \};}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zcack__change__guild__positioninfo}{s\_zcack\_change\_guild\_positioninfo}}}
+\DoxyCodeLine{00350\ \{}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__change__guild__positioninfo_af8a49b9cd56d8e2eb3c13ef2bb3dc9d1}{position\_id}};}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__change__guild__positioninfo_af6770e9b0c498051214603f47604b571}{mode}};}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__change__guild__positioninfo_a565f0ebffa14d080c88abcdc884f60a2}{ranking}};}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__change__guild__positioninfo_a179e7a7aede1d2a1487a1a4dbbcaa337}{pay\_rate}};}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zcack__change__guild__positioninfo_ae98625665a83c934868b0f8cbd2c0ceb}{position\_name}}[\mbox{\hyperlink{_client_8hpp_adba64c0e0fd376ef011ec018c13f0ef2}{MAX\_GUILD\_POSITION\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00358\ \};}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ CHATROOM\_TITLE\_SIZE\ 36\ +\ 1}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ CHATROOM\_PASS\_SIZE\ 8\ +\ 1}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ac7d921cb36fe7cd64c9ec6e27808f264}{party\_invite\_response\_type}}}
+\DoxyCodeLine{00364\ \{}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ac7d921cb36fe7cd64c9ec6e27808f264a4ace23b94768b95d2e16be7abc2126e0}{PARTY\_INVITE\_RESPONSE\_REJECTED}}\ =\ 0,}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ac7d921cb36fe7cd64c9ec6e27808f264a6a435400966742272cdc17118a85fdd5}{PARTY\_INVITE\_RESPONSE\_ACCEPTED}}\ =\ 1}
+\DoxyCodeLine{00367\ \};}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45d}{zcparty\_joinreqack\_result\_type}}}
+\DoxyCodeLine{00370\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45da387f476c66332fa9a81645d8450f3cec}{ZCPARTY\_JOINREQACK\_CHAR\_IN\_PARTY}}\ =\ 0,}
+\DoxyCodeLine{00372\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45daa120274201e25501f16fca343c6e9a54}{ZCPARTY\_JOINREQACK\_INVITE\_REJECTED}}\ =\ 1,}
+\DoxyCodeLine{00373\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45dadb494e56b7c1a89ee38abbe6550a5870}{ZCPARTY\_JOINREQACK\_INVITE\_ACCEPTED}}\ =\ 2,}
+\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45dacd7991ac0cbdbe8f9b1b021b115e5201}{ZCPARTY\_JOINREQACK\_PARTY\_FULL}}\ =\ 3,}
+\DoxyCodeLine{00375\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45da931aa72eebe8d6133a1f33a166635280}{ZCPARTY\_JOINREQACK\_ALREADY\_IN\_SAME\_PARTY}}\ =\ 4,}
+\DoxyCodeLine{00376\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45da400ce867df3ddec21334f453364c9eae}{ZCPARTY\_JOINREQACK\_BLOCKED\_PARTY\_INVITE}}\ =\ 5,}
+\DoxyCodeLine{00377\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45da8748ed52f4c36a6e7e4abf3deac37c16}{ZCPARTY\_JOINREQACK\_NOT\_ONLINE\_DOESNT\_EXIST}}\ =\ 7,}
+\DoxyCodeLine{00378\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45dac33206dd01a0d7bac5bf6a1a85204a0f}{ZCPARTY\_JOINREQACK\_MAP\_RESTRICTS\_PARTY\_INVITE}}\ =\ 8,}
+\DoxyCodeLine{00379\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45da5718936c7d639c959f62d833cb2aca82}{ZCPARTY\_JOINREQACK\_MAP\_RESTRICTS\_PARTY\_INVITE2}}\ =\ 9,}
+\DoxyCodeLine{00380\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45dac284264214d4fc5210fd5449f32f7394}{ZCPARTY\_JOINREQACK\_RESTRICTED\_INSIDE\_MEMORIAL\_DUNGEON}}\ =\ 10,}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a20982a79b4e1349e6c0098860470c45da46eebf035b97f2baef9c8255ca5301fd}{ZCPARTY\_JOINREQACK\_LEVEL\_RESTRICTED}}\ =\ 11}
+\DoxyCodeLine{00382\ \};}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_aa65810c2e6e3d63b057019772ffd5bc1}{zc\_update\_charstat\_status\_type}}}
+\DoxyCodeLine{00385\ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa65810c2e6e3d63b057019772ffd5bc1af08eb420aa6fe85c0693a1dae7f4ea74}{ZC\_UPDATECHARSTAT\_STATUS\_OFFLINE}}\ =\ 0,}
+\DoxyCodeLine{00387\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa65810c2e6e3d63b057019772ffd5bc1a151dd3c8675752ab32f08c696ffab9f0}{ZC\_UPDATECHARSTAT\_STATUS\_ONLINE}}\ =\ 1}
+\DoxyCodeLine{00388\ \};}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154b}{zcack\_makegroup\_result\_type}}}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154ba5965ae6ffb35dcb41b4b34244bc11626}{ZCACK\_MAKEGROUP\_RESULT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00393\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154ba92838828fca9f30ef8e66dfd10356535}{ZCACK\_MAKEGROUP\_RESULT\_NAME\_ALREADY\_EXISTS}}\ =\ 1,}
+\DoxyCodeLine{00394\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154bad24d75eacd367a0991f860b3b3e5d91a}{ZCACK\_MAKEGROUP\_RESULT\_ALREADY\_IN\_PARTY}}\ =\ 2,}
+\DoxyCodeLine{00395\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154ba33f198897cab708222650e24fc766970}{ZCACK\_MAKEGROUP\_RESULT\_UNAUTHORIZED\_ON\_MAP}}\ =\ 3,}
+\DoxyCodeLine{00396\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154bade9b2b7671878f77e6b17abc3416455d}{ZCACK\_MAKEGROUP\_RESULT\_NOMSG}}\ =\ 4}
+\DoxyCodeLine{00397\ \};}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a37a7b5bfd93364e294d5e05c22eb1122}{zc\_change\_chatroom\_type}}}
+\DoxyCodeLine{00400\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a37a7b5bfd93364e294d5e05c22eb1122a682c066198dacf95bc960bae9235f39d}{ZC\_CHANGECHATROOM\_PRIVATE}}\ =\ 0,\ \textcolor{comment}{//\ password\ protected}}
+\DoxyCodeLine{00402\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a37a7b5bfd93364e294d5e05c22eb1122a27f78d5f856d074f7ee6027be760e926}{ZC\_CHANGECHATROOM\_PUBLIC}}\ =\ 1,}
+\DoxyCodeLine{00403\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a37a7b5bfd93364e294d5e05c22eb1122ace9c3ef42518655a8030c9a6e10d25c8}{ZC\_CHANGECHATROOM\_ARENA}}\ =\ 2,\ \textcolor{comment}{//\ npc\ waiting\ room}}
+\DoxyCodeLine{00404\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a37a7b5bfd93364e294d5e05c22eb1122a146ef9e720a07ea10a366147daf85729}{ZC\_CHANGECHATROOM\_PKZONE}}\ =\ 3\ \textcolor{comment}{//\ non-\/clickable}}
+\DoxyCodeLine{00405\ \};}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_acd78ad739ed15f1f57407708dbe23d9e}{zc\_exec\_exchange\_item\_result\_type}}}
+\DoxyCodeLine{00408\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_acd78ad739ed15f1f57407708dbe23d9eaea4f81dd3b18ca007c053f942bd2ca83}{ZCEXEC\_EXCHANGEITEM\_RESULT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00410\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_acd78ad739ed15f1f57407708dbe23d9ead7b6223ac9b0df0b17197c562edff7d1}{ZCEXEC\_EXCHANGEITEM\_RESULT\_FAILURE}}\ =\ 1,}
+\DoxyCodeLine{00411\ \};}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a0ab82e7b1f10822246a956555344f11f}{zc\_result\_make\_guild\_type}}}
+\DoxyCodeLine{00414\ \{}
+\DoxyCodeLine{00415\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ab82e7b1f10822246a956555344f11fa0e659fdb080e8fdf6f081d8409e5cb01}{ZC\_RESULTMAKEGUILD\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00416\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ab82e7b1f10822246a956555344f11fad0e2d5fdde865a2e7870126afeb344b4}{ZC\_RESULTMAKEGUILD\_ALREADY\_IN\_GUILD}}\ =\ 1,}
+\DoxyCodeLine{00417\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ab82e7b1f10822246a956555344f11fa4074b65e0bd17171d90975bdc8ea96fb}{ZC\_RESULTMAKEGUILD\_NAME\_ALREADY\_EXISTS}}\ =\ 2,}
+\DoxyCodeLine{00418\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ab82e7b1f10822246a956555344f11fa5711e5e5a41bf204fae5ccd58bb31390}{ZC\_RESULTMAKEGUILD\_NEED\_REQUIRED\_ITEM}}\ =\ 3,}
+\DoxyCodeLine{00419\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ab82e7b1f10822246a956555344f11fa06ef6a201fa02bfebc0de5b6dc8a7912}{ZC\_RESULTMAKEGUILD\_MAP\_RESTRICTED}}\ =\ 4}
+\DoxyCodeLine{00420\ \};}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ab3a14561843506b3ecaa459adc536f7a}{zcack\_create\_chatroom\_result\_type}}}
+\DoxyCodeLine{00423\ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab3a14561843506b3ecaa459adc536f7aa26684db66d0532a9efaba742b5b95356}{ZCACK\_CREATE\_CHATROOM\_RESULT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab3a14561843506b3ecaa459adc536f7aa8ce67b0647ac6037752d622c0ffd4f08}{ZCACK\_CREATE\_CHATROOM\_RESULT\_LIMIT\_EXCEEDED}}\ =\ 1,}
+\DoxyCodeLine{00426\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab3a14561843506b3ecaa459adc536f7aada4a88f68afca8e7e97c18bf52c4debf}{ZCACK\_CREATE\_CHATROOM\_RESULT\_DUPLICATE\_ROOM}}\ =\ 2}
+\DoxyCodeLine{00427\ \};}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6}{zc\_ackguild\_menuinterface\_mask}}}
+\DoxyCodeLine{00430\ \{}
+\DoxyCodeLine{00431\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6a149324ceb570d6bd2b284f2b1745e1a5}{ZC\_ACKGUILD\_MENUINTERFACE\_BASICINFO}}\ =\ 0x00,}
+\DoxyCodeLine{00432\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6abb7aba46b7124d8db3675a308b05e1c2}{ZC\_ACKGUILD\_MENUINTERFACE\_MEMBERMANAGER}}\ =\ 0x01,}
+\DoxyCodeLine{00433\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6a22acdbc788d75d918c0f896b1ef9733a}{ZC\_ACKGUILD\_MENUINTERFACE\_POSITIONS}}\ =\ 0x02,}
+\DoxyCodeLine{00434\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6a67be40d4782bdc785f7d764aaabd6568}{ZC\_ACKGUILD\_MENUINTERFACE\_SKILLS}}\ =\ 0x04,}
+\DoxyCodeLine{00435\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6a3aea6a0e5977a2608c592f3377f46e67}{ZC\_ACKGUILD\_MENUINTERFACE\_EXPULSION\_LIST}}\ =\ 0x10,}
+\DoxyCodeLine{00436\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6ad048f84029e5d9785dc21c3097b4a6a0}{ZC\_ACKGUILD\_MENUINTERFACE\_ALLGUILDLIST}}\ =\ 0x40,}
+\DoxyCodeLine{00437\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9b98955d823141b58c01aed0835a4bd6a0248670d669f85666fdbc6875dc484b2}{ZC\_ACKGUILD\_MENUINTERFACE\_NOTICE}}\ =\ 0x80}
+\DoxyCodeLine{00438\ \};}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_af0a53e657f28108a742f5a7a3980237d}{zcack\_addexchangeitem\_result\_type}}}
+\DoxyCodeLine{00441\ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af0a53e657f28108a742f5a7a3980237da88206e1321a0fd16ea0d7628efb22c32}{ZCACK\_ADDEXCHANGEITEM\_RESULT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00443\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af0a53e657f28108a742f5a7a3980237da83611991e34e908b9c859db1fb06bfc7}{ZCACK\_ADDEXCHANGEITEM\_RESULT\_OVERWEIGHT}}\ =\ 1,}
+\DoxyCodeLine{00444\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af0a53e657f28108a742f5a7a3980237dadd6f7d98eaf075ed05d8f2cc07ad58ba}{ZCACK\_ADDEXCHANGEITEM\_RESULT\_TRADE\_CANCELLED}}\ =\ 2,}
+\DoxyCodeLine{00445\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af0a53e657f28108a742f5a7a3980237da2e5b58fd763d7885261cecfdfc8a3f99}{ZCACK\_ADDEXCHANGEITEM\_RESULT\_AMOUNT\_EXCEEDED}}\ =\ 3,}
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af0a53e657f28108a742f5a7a3980237daa8448a46f00850940b4d65ff9952dd2b}{ZCACK\_ADDEXCHANGEITEM\_RESULT\_AMOUNT\_EXCEEDED2}}\ =\ 4}
+\DoxyCodeLine{00447\ \};}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a5b5207e12dd4dcd6a34d0bfff4b34027}{zc\_delete\_member\_from\_group\_result\_type}}}
+\DoxyCodeLine{00450\ \{}
+\DoxyCodeLine{00451\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b5207e12dd4dcd6a34d0bfff4b34027a1b5c34d33f728cb760415970ecd2220c}{ZC\_DELETEMEMBER\_FROMGROUP\_LEAVE}}\ =\ 0,}
+\DoxyCodeLine{00452\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b5207e12dd4dcd6a34d0bfff4b34027a323cc921d7bdb8a7cf20ce9ac6a005b4}{ZC\_DELETEMEMBER\_FROMGROUP\_EXPEL}}\ =\ 1,}
+\DoxyCodeLine{00453\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b5207e12dd4dcd6a34d0bfff4b34027a1fd427765c35319609849125f1718a53}{ZC\_DELETEMEMBER\_FROMGROUP\_LEAVE\_UNAUTHORIZED\_MAP}}\ =\ 2,}
+\DoxyCodeLine{00454\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b5207e12dd4dcd6a34d0bfff4b34027a4d8f8126c1c4060b252fbf3a31982bb9}{ZC\_DELETEMEMBER\_FROMGROUP\_EXPEL\_UNAUTHORIZED\_MAP}}\ =\ 3}
+\DoxyCodeLine{00455\ \};}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_aa6ffc8acab19a79658182d5036466a9c}{zc\_conclude\_exchange\_item\_type}}}
+\DoxyCodeLine{00458\ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa6ffc8acab19a79658182d5036466a9ca8588fdf8043888d88ba8b56e5291544e}{ZC\_CONCLUDEEXCHANGE\_ITEM\_FOR\_SELF}}\ =\ 0,}
+\DoxyCodeLine{00460\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa6ffc8acab19a79658182d5036466a9ca1f0ccef2ed800e78e11636f5c6b32d76}{ZC\_CONCLUDEEXCHANGE\_ITEM\_FOR\_OTHER\_PLAYER}}\ =\ 1}
+\DoxyCodeLine{00461\ \};}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a64b1e62fc34033d481331a7cb3761b2c}{zc\_party\_config\_type}}}
+\DoxyCodeLine{00464\ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a64b1e62fc34033d481331a7cb3761b2ca11aca34b3985d876565c6451bfd4d760}{ZC\_PARTYCONFIG\_TYPE\_ALLOW\_INVITES}}\ =\ 0,}
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a64b1e62fc34033d481331a7cb3761b2ca643292812e5c57c300ad1b84fa22f1fd}{ZC\_PARTYCONFIG\_TYPE\_DENY\_INVITES}}\ =\ 1}
+\DoxyCodeLine{00467\ \};}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a7e69d8a76753896a1e77557581b2598e}{zc\_server\_reject\_type}}\ :\ int8\_t}
+\DoxyCodeLine{00470\ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7e69d8a76753896a1e77557581b2598eafc1cc91bb52b3ed024ccff517aefc7d1}{ZONE\_SERV\_ERROR\_REJECT}}\ =\ 3,}
+\DoxyCodeLine{00472\ \};}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\_ack\_exchange\_item\_result\_type}}}
+\DoxyCodeLine{00475\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36ca5edc5ee969353e2025a6466903917365}{ZCACK\_EXCHANGEITEM\_CHAR\_TOO\_FAR}}\ =\ 0,}
+\DoxyCodeLine{00477\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36caef13014c4c09a55143583a82061f7f30}{ZCACK\_EXCHANGEITEM\_CHAR\_DOES\_NOT\_EXIST}}\ =\ 1,}
+\DoxyCodeLine{00478\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36caa855f79e00ef6237e12164510728bcae}{ZCACK\_EXCHANGEITEM\_TRADE\_FAILED}}\ =\ 2,}
+\DoxyCodeLine{00479\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36ca422252317435cb897fc2d85a05d6f1d5}{ZCACK\_EXCHANGEITEM\_ACCEPT}}\ =\ 3,}
+\DoxyCodeLine{00480\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36ca46901f3ce67818b9e3b9fdd70cca5a80}{ZCACK\_EXCHANGEITEM\_CANCEL}}\ =\ 4,}
+\DoxyCodeLine{00481\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36ca24c3ecfd8722ea0d5cbea57cb1c8bf58}{ZCACK\_EXCHANGEITEM\_BUSY}}\ =\ 5}
+\DoxyCodeLine{00482\ \};}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_adaca2a344e8ba55f98a8a2fe0d59028a}{zc\_whisper\_result\_type}}\ \{}
+\DoxyCodeLine{00485\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_adaca2a344e8ba55f98a8a2fe0d59028aa7fec73a8222e75940fdf8c9a29eae428}{WRT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00486\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_adaca2a344e8ba55f98a8a2fe0d59028aaf742819b53a1329df2750ee9f8df297f}{WRT\_RECIPIENT\_OFFLINE}}\ =\ 1,}
+\DoxyCodeLine{00487\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_adaca2a344e8ba55f98a8a2fe0d59028aaf98f49692606ce7727a4c955e5387c6d}{WRT\_RECIPIENT\_IGNORE}}\ =\ 2,}
+\DoxyCodeLine{00488\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_adaca2a344e8ba55f98a8a2fe0d59028aaf4709525e2887f4a2bc3802c1f3e640c}{WRT\_RECIPIENT\_IGNORE\_ALL}}\ =\ 3}
+\DoxyCodeLine{00489\ \};}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__guild__skillinfo}{s\_zc\_guild\_skillinfo}}}
+\DoxyCodeLine{00492\ \{}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00494\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__guild__skillinfo_a92d2cbd9269ffee72fd7ac5ff302e683}{skill\_id}};}
+\DoxyCodeLine{00495\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zc__guild__skillinfo_a0b34334bab2faa504b62ab104d702470}{type}};}
+\DoxyCodeLine{00496\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__guild__skillinfo_aa452eb68c8be40aa547b5f60d83a86cc}{level}};}
+\DoxyCodeLine{00497\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__guild__skillinfo_a6332dadbd66b51b0b60a54c1c3ba6b7c}{sp\_cost}};}
+\DoxyCodeLine{00498\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__guild__skillinfo_a22aaead263c2e053c9f0145c47e013b4}{attack\_range}};}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__guild__skillinfo_a2b46c85801e6c18c7c9ca518a1a02fe5}{skill\_name}}[\mbox{\hyperlink{_skill_definitions_8hpp_a36b1b99e37013978ef14c1e594335808}{MAX\_SKILL\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00500\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__guild__skillinfo_a79c383f0f85e719b7bca40eae7d5e18d}{upgradeable}};}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00502\ \};}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__ban__list}{s\_zc\_ban\_list}}}
+\DoxyCodeLine{00505\ \{}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__ban__list_abb26da1266617d562965edce954d4c04}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__zc__ban__list_a28f1c04c9d5be21509174be79637ab2e}{reason}}[\mbox{\hyperlink{_client_definitions_8hpp_af5c6a5c38d67150da717237ee34001cd}{MAX\_GUILD\_LEAVE\_REASON\_STR\_LENGTH}}];}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00510\ \};}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zcack__reqchange__members}{s\_zcack\_reqchange\_members}}}
+\DoxyCodeLine{00513\ \{}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__reqchange__members_ab84362d32808c52f382be669fc29ebd5}{account\_id}};}
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__reqchange__members_a94c76aa43b06f3da05a3287adf5ff356}{char\_id}};}
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__zcack__reqchange__members_a2e4e2619bfc47d0275e707d78f8e35c1}{position\_id}};}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00519\ \};}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00521\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a85c5b2cec7043c91505c35fc2f9aa186}{zc\_ack\_req\_join\_guild\_type}}}
+\DoxyCodeLine{00522\ \{}
+\DoxyCodeLine{00523\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a85c5b2cec7043c91505c35fc2f9aa186a7175631b367de918d19254de60339343}{ZC\_ACK\_REQJOINGUILD\_ALREADY\_IN\_GUILD}}\ =\ 0,}
+\DoxyCodeLine{00524\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a85c5b2cec7043c91505c35fc2f9aa186a8d2badacb1e86c38836cc7659939f94b}{ZC\_ACK\_REQJOINGUILD\_OFFER\_REJECTED}}\ =\ 1,}
+\DoxyCodeLine{00525\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a85c5b2cec7043c91505c35fc2f9aa186a09463b5afedbfdf074e2f58862372dbf}{ZC\_ACK\_REQJOINGUILD\_OFFER\_ACCEPTED}}\ =\ 2,}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a85c5b2cec7043c91505c35fc2f9aa186afffb3e918ea61379e8a718432a7cf282}{ZC\_ACK\_REQJOINGUILD\_GUILD\_FULL}}\ =\ 3,}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a85c5b2cec7043c91505c35fc2f9aa186ab6f89bd47558488233dbff02de210d56}{ZC\_ACK\_REQJOINGUILD\_OFFLINE\_OR\_NOTEXISTS}}\ =\ 4}
+\DoxyCodeLine{00528\ \};}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a946799bc28b9f013df5e825a4eff0168}{zc\_ack\_disorganizeguild\_result}}}
+\DoxyCodeLine{00531\ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a946799bc28b9f013df5e825a4eff0168a8036a35ac12527a558aff91ffee5faf0}{ZCACK\_DISORGANIZEGUILD\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00533\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a946799bc28b9f013df5e825a4eff0168a5b6beaa20a020827c71d5d043988af11}{ZCACK\_DISORGANIZEGUILD\_INVALID\_KEY}}\ =\ 1,}
+\DoxyCodeLine{00534\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a946799bc28b9f013df5e825a4eff0168ab5bce22ffe4f694fa1e051b79e10c146}{ZCACK\_DISORGANIZEGUILD\_STILL\_HAS\_MEMBERS}}\ =\ 2}
+\DoxyCodeLine{00535\ \};}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a7d06ce81ffd79f81846d3467c80c6229}{zc\_ack\_req\_hostile\_guild\_response\_type}}}
+\DoxyCodeLine{00538\ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7d06ce81ffd79f81846d3467c80c6229a6f8be9f3895361d06d492aad02eec727}{ZCACK\_REQHOSTILEGUILD\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00540\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7d06ce81ffd79f81846d3467c80c6229aabb47a3b6f525cc65190eb8cbff14fac}{ZCACK\_REQHOSTILEGUILD\_LIMIT\_REACHED}}\ =\ 1,}
+\DoxyCodeLine{00541\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7d06ce81ffd79f81846d3467c80c6229a53e8bd141b90c78ea0a54a5d61817d3a}{ZCACK\_REQHOSTILEGUILD\_ALREADY\_SET}}\ =\ 2,}
+\DoxyCodeLine{00542\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7d06ce81ffd79f81846d3467c80c6229a2278ba4c953afe27e84daf3248981164}{ZCACK\_REQHOSTILEGUILD\_GLOBALLY\_DISABLED}}\ =\ 3}
+\DoxyCodeLine{00543\ \};}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99}{zc\_ack\_req\_ally\_guild\_response\_type}}}
+\DoxyCodeLine{00546\ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99a8e2ec7b981823c5eb92bc2cd0b111dff}{ZCACK\_REQALLYGUILD\_ALREADY\_ALLIED}}\ =\ 0,}
+\DoxyCodeLine{00548\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99a8d0a95a8eb429fead1e92981cd786aad}{ZCACK\_REQALLYGUILD\_REJECTED\_OFFER}}\ =\ 1,}
+\DoxyCodeLine{00549\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99aad1d98e9bb1c29c874ddc88d82bc14f0}{ZCACK\_REQALLYGUILD\_ACCEPTED\_OFFER}}\ =\ 2,}
+\DoxyCodeLine{00550\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99a9eb1bb5cce0c56651780bcc631fcf1da}{ZCACK\_REQALLYGUILD\_INVITEE\_ALLIANCE\_LIMIT\_REACHED}}\ =\ 3,}
+\DoxyCodeLine{00551\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99a0c4095a3a74f62ecb0c07d67fe68c127}{ZCACK\_REQALLYGUILD\_ALLIANCE\_LIMIT\_REACHED}}\ =\ 4,}
+\DoxyCodeLine{00552\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5965aa1d2a2f0e45d3c6abd6df559c99a4582400231cac2897f3ad39043512357}{ZCACK\_REQALLYGUILD\_GLOBALLY\_DISABLED}}\ =\ 5}
+\DoxyCodeLine{00553\ \};}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6}{chat\_join\_fail\_type}}}
+\DoxyCodeLine{00556\ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6abbf1a70f0b7b7cbed45821a2939acaf8}{CHAT\_JOINFAIL\_ROOMFULL}}\ =\ 0,}
+\DoxyCodeLine{00558\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6a4fcf86b9a1cbe4c76c2b9921d2876596}{CHAT\_JOINFAIL\_WRONGPASSWORD}}\ =\ 1,}
+\DoxyCodeLine{00559\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6ab92d55a8afed33c3f3ddd8c8e92eae61}{CHAT\_JOINFAIL\_KICKED}}\ =\ 2,}
+\DoxyCodeLine{00560\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6a9ca54b8c4d4f905f1a8f6f340c116eff}{CHAT\_JOINFAIL\_SUCCESS}}\ =\ 3,}
+\DoxyCodeLine{00561\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6ad515e0afcc3ccde392304a6fd8afe0c8}{CHAT\_JOINFAIL\_NOZENY}}\ =\ 4,}
+\DoxyCodeLine{00562\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6a2e0796aa5a796974c87c8a17595e7cff}{CHAT\_JOINFAIL\_LOWLEVEL}}\ =\ 5,}
+\DoxyCodeLine{00563\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6a971b090c876669116f04e90e83ef0b11}{CHAT\_JOINFAIL\_HIGHLEVEL}}\ =\ 6,}
+\DoxyCodeLine{00564\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9d352b134c690e0ad29f56a0ab6f7bc6a78e66850e284ed235a48fb56016cd72c}{CHAT\_JOINFAIL\_UNSUITABLE\_JOB}}\ =\ 7}
+\DoxyCodeLine{00565\ \};}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00567\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo}{s\_cz\_reg\_change\_guild\_positioninfo}}}
+\DoxyCodeLine{00568\ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo_ac42b83d2397c5fb84be44c7af4ba6aa9}{position\_id}};}
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo_aae15a3a55a8a3d464315f902585dcb6f}{mode}};}
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo_a35cc7e15b077012a6c0b088ac74ef498}{ranking}};}
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo_a04c5f05260052bea3545e66ecc98182f}{pay\_rate}};}
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo_ae649c982b2526ff97d7a6247ab48bc65}{name}}[\mbox{\hyperlink{_client_8hpp_adba64c0e0fd376ef011ec018c13f0ef2}{MAX\_GUILD\_POSITION\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00574\ \};}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__cz__req__change__memberpos}{s\_cz\_req\_change\_memberpos}}}
+\DoxyCodeLine{00577\ \{}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__req__change__memberpos_af3f2fdc80f514c11d0e29f0c63b5b0a9}{account\_id}};}
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__req__change__memberpos_a18e005d3e2159efe431b468f75142c1b}{char\_id}};}
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__cz__req__change__memberpos_ab3d934f5d8f3a871c2866f8b3bf8b0f7}{position\_id}};}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00583\ \};}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a32ff1e79998d006e035a3ec9fe91181f}{cz\_join\_guild\_response\_type}}}
+\DoxyCodeLine{00586\ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a32ff1e79998d006e035a3ec9fe91181fafd283cc45e1e552f319f56e0833ce319}{CZ\_JOIN\_GUILD\_RESPONSE\_REFUSE}}\ =\ 0,}
+\DoxyCodeLine{00588\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a32ff1e79998d006e035a3ec9fe91181fa5e538bba03ed7f361f042f403d23377f}{CZ\_JOIN\_GUILD\_RESPONSE\_ACCEPT}}\ =\ 1}
+\DoxyCodeLine{00589\ \};}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00591\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a804aaf9e848100ab25219476f2677673}{cz\_ally\_guild\_response\_type}}}
+\DoxyCodeLine{00592\ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a804aaf9e848100ab25219476f2677673aafadf4fdef59201ead928873e9960331}{CZ\_ALLY\_GUILD\_RESPONSE\_REFUSE}}\ =\ 0,}
+\DoxyCodeLine{00594\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a804aaf9e848100ab25219476f2677673a76ecac8feebece3aa7b11de436e4816a}{CZ\_ALLY\_GUILD\_RESPONSE\_ACCEPT}}\ =\ 1}
+\DoxyCodeLine{00595\ \};}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_af19b7b89f7817a1810da6a2a612a0d18}{cz\_req\_delete\_related\_guild\_relation\_type}}}
+\DoxyCodeLine{00598\ \{}
+\DoxyCodeLine{00599\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af19b7b89f7817a1810da6a2a612a0d18a745cd756a40145d8c6d4eb189e6f6006}{CZ\_REQDELETE\_RELATEDGUILD\_RELATION\_ALLY}}\ =\ 0,}
+\DoxyCodeLine{00600\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af19b7b89f7817a1810da6a2a612a0d18a079836f8849a16269ab6f9e8be2e9705}{CZ\_REQDELETE\_RELATEDGUILD\_RELATION\_ENEMY}}\ =\ 1}
+\DoxyCodeLine{00601\ \};}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_aa1dcf430bc867520a2c95f0939599f9b}{cz\_ack\_req\_add\_friends\_result\_type}}}
+\DoxyCodeLine{00604\ \{}
+\DoxyCodeLine{00605\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa1dcf430bc867520a2c95f0939599f9ba64819e4a8d26f19f7e0051f44b091796}{CZ\_ACKREQ\_ADDFRIENDS\_REJECTED}}\ =\ 0,}
+\DoxyCodeLine{00606\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa1dcf430bc867520a2c95f0939599f9ba45318f0080edf884ebfa0ec3b41d4e8d}{CZ\_ACKREQ\_ADDFRIENDS\_ACCEPTED}}\ =\ 1}
+\DoxyCodeLine{00607\ \};}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00609\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ab74c8c5e06888ae9550c404063ac398f}{cz\_ack\_select\_dealtype}}}
+\DoxyCodeLine{00610\ \{}
+\DoxyCodeLine{00611\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab74c8c5e06888ae9550c404063ac398fac958f1dd4a2a1d170db275934f5f22d8}{CZ\_ACKSELECT\_DEALTYPE\_BUY}}\ =\ 0,}
+\DoxyCodeLine{00612\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab74c8c5e06888ae9550c404063ac398fac3f7e2e05958e51ae7c2dc7bb5349861}{CZ\_ACKSELECT\_DEALTYPE\_SELL}}\ =\ 1}
+\DoxyCodeLine{00613\ \};}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00615\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a240a7ca3bd8f7cc7a7ebdd8a5604ce0f}{cz\_active\_quest\_type}}}
+\DoxyCodeLine{00616\ \{}
+\DoxyCodeLine{00617\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a240a7ca3bd8f7cc7a7ebdd8a5604ce0fada39281442e9d73b8a2a749d3b0184a1}{CZ\_ACTIVE\_QUEST\_INACTIVE}}\ =\ 0,}
+\DoxyCodeLine{00618\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a240a7ca3bd8f7cc7a7ebdd8a5604ce0faa3f1e1ecaa60f69acd627892babe3c3f}{CZ\_ACTIVE\_QUEST\_ACTIVE}}\ =\ 1}
+\DoxyCodeLine{00619\ \};}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00621\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a0ba8c668c75ecc6eed84c469de46c3b9}{cz\_agree\_starplace\_type}}}
+\DoxyCodeLine{00622\ \{}
+\DoxyCodeLine{00623\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ba8c668c75ecc6eed84c469de46c3b9a2f54bea730200611927c6cd5cd0b077f}{CZ\_AGREESTARPLACE\_SUN}}\ =\ 0,}
+\DoxyCodeLine{00624\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ba8c668c75ecc6eed84c469de46c3b9a9634d32b2a685935df18e94826c57afa}{CZ\_AGREESTARPLACE\_MOON}}\ =\ 1,}
+\DoxyCodeLine{00625\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a0ba8c668c75ecc6eed84c469de46c3b9a6a39b98d5e1d0f39a5762192803fae32}{CZ\_AGREESTARPLACE\_STAR}}\ =\ 2}
+\DoxyCodeLine{00626\ \};}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a6bca213bf3b6aef17c7628f7f86be6e5}{cz\_auction\_create\_type}}}
+\DoxyCodeLine{00629\ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a6bca213bf3b6aef17c7628f7f86be6e5a032b78169ad093ad117c2baa5cb26703}{CZ\_AUCTIONCREATE\_CREATE}}\ =\ 0,}
+\DoxyCodeLine{00631\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a6bca213bf3b6aef17c7628f7f86be6e5afa72d744699c50c29c4d125440396690}{CZ\_AUCTIONCREATE\_CANCEL}}\ =\ 1}
+\DoxyCodeLine{00632\ \};}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14d}{cz\_auction\_search\_type}}}
+\DoxyCodeLine{00635\ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14dab188720e6156feb1081d55908bcdb676}{CZ\_AUCTIONSEARCH\_ARMOR}}\ =\ 0,}
+\DoxyCodeLine{00637\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14dabe25fbd702295254250dae320a60ed88}{CZ\_AUCTIONSEARCH\_WEAPON}}\ =\ 1,}
+\DoxyCodeLine{00638\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14dacf0da02ea33502c8455bb68d51f0ef8b}{CZ\_AUCTIONSEARCH\_CARD}}\ =\ 2,}
+\DoxyCodeLine{00639\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14da76d5363f1185b1b5da3ff2887979e891}{CZ\_AUCTIONSEARCH\_MISC}}\ =\ 3,}
+\DoxyCodeLine{00640\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14dac68ecb8e9b39aeb8171947f7e7af1609}{CZ\_AUCTIONSEARCH\_NAME}}\ =\ 4,}
+\DoxyCodeLine{00641\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14da7f28a4f8af64a72bdf7f87d6ba0422d0}{CZ\_AUCTIONSEARCH\_AUCTIONID}}\ =\ 5}
+\DoxyCodeLine{00642\ \};}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00644\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a81e2833c5675c199d0b08177d3e7557c}{cz\_auction\_reqmyinfo\_type}}}
+\DoxyCodeLine{00645\ \{}
+\DoxyCodeLine{00646\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a81e2833c5675c199d0b08177d3e7557caf4cefaecb56460c78e3c7f8d807d9daf}{CZ\_AUCTION\_REQMYINFO\_SELL}}\ =\ 0,}
+\DoxyCodeLine{00647\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a81e2833c5675c199d0b08177d3e7557ca5e1915e6e92fa3dc8c8efe016e727936}{CZ\_AUCTION\_REQMYINFO\_BUY}}\ =\ 1}
+\DoxyCodeLine{00648\ \};}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00650\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a5b3dd2dfda8a5cc189b8cfdf04086198}{cz\_command\_mercenary\_command\_type}}}
+\DoxyCodeLine{00651\ \{}
+\DoxyCodeLine{00652\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b3dd2dfda8a5cc189b8cfdf04086198a16669e138a1d00560a06fa9e52c3333c}{CZ\_COMMANDMER\_COMMAND\_HOMINFO}}\ =\ 0,}
+\DoxyCodeLine{00653\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b3dd2dfda8a5cc189b8cfdf04086198af8806010b17c6cd94989fe2358c81d73}{CZ\_COMMANDMER\_COMMAND\_FEED}}\ =\ 1,}
+\DoxyCodeLine{00654\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5b3dd2dfda8a5cc189b8cfdf04086198ac93718b668d77b5e45a241c2b45ccb03}{CZ\_COMMANDMER\_COMMAND\_DELETE}}\ =\ 2}
+\DoxyCodeLine{00655\ \};}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a58b4624698a82da4d36a8e9d2640ab9d}{cz\_command\_pet\_type}}}
+\DoxyCodeLine{00658\ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a58b4624698a82da4d36a8e9d2640ab9dae9d4e65f37546c4acce1f4ed56b08080}{CZ\_COMMAND\_PET\_INFO}}\ =\ 0,}
+\DoxyCodeLine{00660\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a58b4624698a82da4d36a8e9d2640ab9da9e38c12908828a8be75ad9acd17769c5}{CZ\_COMMAND\_PET\_FEED}}\ =\ 1,}
+\DoxyCodeLine{00661\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a58b4624698a82da4d36a8e9d2640ab9da58d722aad05f3f1d82b2e08c910fd518}{CZ\_COMMAND\_PET\_PERFORMANCE}}\ =\ 2,}
+\DoxyCodeLine{00662\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a58b4624698a82da4d36a8e9d2640ab9da70a455bcb946e15c779bb162224ec0b6}{CZ\_COMMAND\_PET\_RETURNTOEGG}}\ =\ 3,}
+\DoxyCodeLine{00663\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a58b4624698a82da4d36a8e9d2640ab9da1c31a13cf249cfa24fb648f85aec10e7}{CZ\_COMMAND\_PET\_UNEQUIPACCESSORY}}\ =\ 4}
+\DoxyCodeLine{00664\ \};}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_abe95575bc6b427a8c5936cbc7d177616}{cz\_config\_type}}}
+\DoxyCodeLine{00667\ \{}
+\DoxyCodeLine{00668\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abe95575bc6b427a8c5936cbc7d177616a195420e967799b7694d165e2d7f4ce95}{CZ\_CONFIG\_OPEN\_EQUIPMENT\_WINDOW}}\ =\ 0,}
+\DoxyCodeLine{00669\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abe95575bc6b427a8c5936cbc7d177616a2ab0941ff00d8dbc5f620d09ec50dd57}{CZ\_CONFIG\_CALL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00670\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abe95575bc6b427a8c5936cbc7d177616a06390e0a2dea36b25a122ec8e77b13ad}{CZ\_CONFIG\_PET\_AUTOFEED}}\ \ \ \ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00671\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_abe95575bc6b427a8c5936cbc7d177616a4e763bb574ed3921addfc12fe99670dd}{CZ\_CONFIG\_HOMUNCULUS\_AUTOFEED}}\ \ \ =\ 3}
+\DoxyCodeLine{00672\ \};}
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ad6afecc99f06064d16c0a121fc5373eb}{cz\_join\_baby\_reply\_type}}}
+\DoxyCodeLine{00675\ \{}
+\DoxyCodeLine{00676\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ad6afecc99f06064d16c0a121fc5373eba00094011a36c89e7611df5a9f3b5668f}{CZ\_JOINBABY\_REJECTED}}\ =\ 0,}
+\DoxyCodeLine{00677\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ad6afecc99f06064d16c0a121fc5373eba18818abbaf7e2f3c70bacd5e40778b02}{CZ\_JOINBABY\_ACCEPTED}}\ =\ 1}
+\DoxyCodeLine{00678\ \};}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500}{cz\_mail\_reset\_item\_type}}}
+\DoxyCodeLine{00681\ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500aec7fbcf5a664642e5aca686e20b3abfa}{CZ\_MAILRESETITEM\_ALL}}\ =\ 0,}
+\DoxyCodeLine{00683\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500a323eae352a30135060975cb9462e668e}{CZ\_MAILRESETITEM\_ITEM}}\ =\ 1,}
+\DoxyCodeLine{00684\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500adfad8117404f8ea944522c19469053d2}{CZ\_MAILRESETITEM\_ZENY}}\ =\ 2}
+\DoxyCodeLine{00685\ \};}
+\DoxyCodeLine{00686\ }
+\DoxyCodeLine{00687\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a1068e2c8d1e9668a21a000640db8df27}{cz\_memorial\_dungeon\_command\_type}}}
+\DoxyCodeLine{00688\ \{}
+\DoxyCodeLine{00689\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1068e2c8d1e9668a21a000640db8df27ac7ba05ba8a5980671b01b30314309acd}{CZ\_MEMORIALDUNGEONCOMMAND\_FORCEDESTROY}}\ =\ 0}
+\DoxyCodeLine{00690\ \};}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00693\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__pc__buy__cash__point__item}{cz\_pc\_buy\_cash\_point\_item}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__pc__buy__cash__point__item_a1cf94887507dbbee35babc7ed42d32ad}{amount}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structcz__pc__buy__cash__point__item_a5ed99a88fa7f7b05322ea35ae5857c3a}{item\_id}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00694\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__pc__purchase__itemlist}{cz\_pc\_purchase\_itemlist}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__pc__purchase__itemlist_a8f0852cf80e33733199ea8b9c6ba5730}{amount}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structcz__pc__purchase__itemlist_a136aa6c9f41822c94e719225bd04fd28}{item\_id}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00695\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__pc__sell__itemlist}{cz\_pc\_sell\_itemlist}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__pc__sell__itemlist_a21fc1f99c5d5a14a08a5c0cee6923547}{inventory\_index}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structcz__pc__sell__itemlist_a31ff4c25181d6c0203170dea66dc8600}{amount}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00696\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__pet__evolution__itemlist}{cz\_pet\_evolution\_itemlist}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__pet__evolution__itemlist_a1b91c45271ab70a7326d87e27a4e7c39}{inventory\_index}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structcz__pet__evolution__itemlist_ad43d67008272238856934824d1294122}{amount}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00697\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__req__openstore__itemlist}{cz\_req\_openstore\_itemlist}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__req__openstore__itemlist_ab29c03cce46e608e5110f4806d3f31db}{inventory\_index}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structcz__req__openstore__itemlist_a49ddcdbea159b1323dd6627777a9683f}{amount}}\{\ 0\ \};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcz__req__openstore__itemlist_a080bd1f10ca7bf7d02602b26d011030f}{price}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00698\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__req__open__buying__store__itemlist}{cz\_req\_open\_buying\_store\_itemlist}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__req__open__buying__store__itemlist_a162a927b31c23dfda752c6422eb51c7c}{item\_id}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structcz__req__open__buying__store__itemlist_a1735c2968b869ebb7fe3fa0613aa7712}{amount}}\{\ 0\ \};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcz__req__open__buying__store__itemlist_a9148d5faf7557c31adf237682e244e60}{price}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00699\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcz__req__trade__buying__store__itemlist}{cz\_req\_trade\_buying\_store\_itemlist}}\ \{\ int16\_t\ \mbox{\hyperlink{structcz__req__trade__buying__store__itemlist_aea5cb2e663b4387f05cea18dc727cfea}{inventory\_index}}\{\ 0\ \};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcz__req__trade__buying__store__itemlist_a5ce9acb2658a9399584d8d0e0644f7a3}{item\_id}}\{\ 0\ \};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcz__req__trade__buying__store__itemlist_a843c8c5e2791e35c57fe31e66a986aa1}{amount}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95ca}{cz\_pet\_act\_emotion\_type}}}
+\DoxyCodeLine{00703\ \{}
+\DoxyCodeLine{00704\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caa43801ebbd019d7faabe0431306d61818}{CZ\_PET\_ACT\_FEEDING}}\ =\ 0,}
+\DoxyCodeLine{00705\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caae013f6d099089cb263e589a74bddd201}{CZ\_PET\_ACT\_HUNTING}}\ =\ 1,}
+\DoxyCodeLine{00706\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caac867f04290c2bf13316134dd39d9b600}{CZ\_PET\_ACT\_DANGER}}\ =\ 2,}
+\DoxyCodeLine{00707\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caad8cd32daecbe9422079fbf543d0d81f8}{CZ\_PET\_ACT\_DEAD}}\ =\ 3,}
+\DoxyCodeLine{00708\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caa6f925dbb6d5abe6a6e4387290310ffa7}{CZ\_PET\_ACT\_NORMAL}}\ =\ 4,}
+\DoxyCodeLine{00709\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caaff582a1e143a23a189983161c15d2003}{CZ\_PET\_ACT\_SPECIAL\_PERFORMANCE}}\ =\ 5,}
+\DoxyCodeLine{00710\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caa28a24c829b1d389795a3d03491301c3a}{CZ\_PET\_ACT\_LEVEL\_UP}}\ =\ 6,}
+\DoxyCodeLine{00711\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caab3bb5d3d0954de2371f93c816d84a80e}{CZ\_PET\_ACT\_PERFORMANCE\_1}}\ =\ 7,}
+\DoxyCodeLine{00712\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caa981ce7e6bd802058bf53a7b03a5f463b}{CZ\_PET\_ACT\_PERFORMANCE\_2}}\ =\ 8,\ }
+\DoxyCodeLine{00713\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caa06424c7d6b1cdcbb5f36eb4a903fb540}{CZ\_PET\_ACT\_PERFORMANCE\_3}}\ =\ 9,}
+\DoxyCodeLine{00714\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7c85078b0092cca6cc548cf17f8e95caa74f91a27a30569b12b399727c0b3dce6}{CZ\_PET\_ACT\_LOGIN\_GREETING}}\ =\ 10}
+\DoxyCodeLine{00715\ \};}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ab56075eadad888a0548d727abf42717f}{cz\_req\_give\_manner\_point\_type}}}
+\DoxyCodeLine{00718\ \{}
+\DoxyCodeLine{00719\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab56075eadad888a0548d727abf42717fa630e961d11748ef6ae0a96822d605414}{CZ\_REQGIVEMANNERPOINT\_POSITIVE}}\ =\ 0,}
+\DoxyCodeLine{00720\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab56075eadad888a0548d727abf42717fa51b7f3c4a1b207bbea4a138bba89699b}{CZ\_REQGIVEMANNERPOINT\_NEGATIVE}}\ =\ 1,}
+\DoxyCodeLine{00721\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab56075eadad888a0548d727abf42717fa640adc0bb840c50d80395c2f1ef4eb80}{CZ\_REQGIVEMANNERPOINT\_SELFMUTE}}\ =\ 2}
+\DoxyCodeLine{00722\ \};}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00724\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526}{cz\_req\_makingitem\_type}}}
+\DoxyCodeLine{00725\ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526a6614325e167676a580e4797b1a214aec}{CZ\_REQMAKINGITEM\_COOKING}}\ =\ 1,}
+\DoxyCodeLine{00727\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526a7bb5e99881aa5b852df55bb96d01d77c}{CZ\_REQMAKINGITEM\_ARROW}}\ =\ 2,}
+\DoxyCodeLine{00728\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526a1dd19d981aba2217db8d7fd28f1831e2}{CZ\_REQMAKINGITEM\_ELEMENTAL}}\ =\ 3,}
+\DoxyCodeLine{00729\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526ac3dab90ed6f2a90756ce30bbe597fb1b}{CZ\_REQMAKINGITEM\_GN\_MIX\_COOKING}}\ =\ 4,}
+\DoxyCodeLine{00730\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526a6bcc8d5d0eb604f4ccb2bc4ee42eb267}{CZ\_REQMAKINGITEM\_GN\_MAKEBOMB}}\ =\ 5,}
+\DoxyCodeLine{00731\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_afd903551a8ec49586132923c0b48d526a6e27d35fcda0dc92b9c2b4b6bb470d36}{CZ\_REQMAKINGITEM\_GN\_S\_PHARMACY}}\ =\ 6}
+\DoxyCodeLine{00732\ \};}
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00734\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a7de90b0e3b5b470711bb89126d38cd8a}{cz\_req\_ranking\_type}}}
+\DoxyCodeLine{00735\ \{}
+\DoxyCodeLine{00736\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7de90b0e3b5b470711bb89126d38cd8aa2bbd43451ab714b0447344c185ead7d3}{CZ\_REQRANKING\_UNKNOWN}}\ \ \ \ =\ -\/1,}
+\DoxyCodeLine{00737\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7de90b0e3b5b470711bb89126d38cd8aae9892b6e70846527cbd85869174c3185}{CZ\_REQRANKING\_BLACKSMITH}}\ =\ 0,}
+\DoxyCodeLine{00738\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7de90b0e3b5b470711bb89126d38cd8aa0ce117704b84d61e9bfe049e5ff5be68}{CZ\_REQRANKING\_ALCHEMIST}}\ \ =\ 1,}
+\DoxyCodeLine{00739\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7de90b0e3b5b470711bb89126d38cd8aac5521a3b21407c8d31265b923a3789fc}{CZ\_REQRANKING\_TAEKWON}}\ \ \ \ =\ 2,}
+\DoxyCodeLine{00740\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a7de90b0e3b5b470711bb89126d38cd8aadb9ba05d4251da71d48c5de7fc0f53cf}{CZ\_REQRANKING\_PK}}\ \ \ \ \ \ \ \ \ =\ 3}
+\DoxyCodeLine{00741\ \};}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00744\ \textcolor{comment}{\ *\ ZC\ Packets}}
+\DoxyCodeLine{00745\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00747\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__ach__update__list__info}{zc\_ach\_update\_list\_info}}\ \{}
+\DoxyCodeLine{00748\ \ \ \ \ \mbox{\hyperlink{_definitions_8hpp_acbd4acd0d29e2d6c43104827f77d9cd2}{uint32}}\ \mbox{\hyperlink{structzc__ach__update__list__info_a43fc72f061ea1eea081b0c9897e7e720}{ach\_id}};}
+\DoxyCodeLine{00749\ \ \ \ \ \mbox{\hyperlink{_definitions_8hpp_a33a5e996e7a90acefb8b1c0bea47e365}{uint8}}\ \mbox{\hyperlink{structzc__ach__update__list__info_aed2597e5eaf71c1bf827d5e97f1f8efc}{completed}};}
+\DoxyCodeLine{00750\ \ \ \ \ \mbox{\hyperlink{_definitions_8hpp_acbd4acd0d29e2d6c43104827f77d9cd2}{uint32}}\ \mbox{\hyperlink{structzc__ach__update__list__info_afe7c21f73d8d5a53fe49e446391ecd09}{objective}}[\mbox{\hyperlink{_client_definitions_8hpp_a0b79c6ac3ad17170c6daf3bbf77c134d}{MAX\_ACHIEVEMENT\_OBJECTIVES}}];}
+\DoxyCodeLine{00751\ \ \ \ \ \mbox{\hyperlink{_definitions_8hpp_acbd4acd0d29e2d6c43104827f77d9cd2}{uint32}}\ \mbox{\hyperlink{structzc__ach__update__list__info_a83b4d7e9cecf8ec68a7edfe47180a868}{completed\_at}};}
+\DoxyCodeLine{00752\ \ \ \ \ \mbox{\hyperlink{_definitions_8hpp_a33a5e996e7a90acefb8b1c0bea47e365}{uint8}}\ \mbox{\hyperlink{structzc__ach__update__list__info_a9816a6bfdbf00a62b6ed67a50ea3515f}{reward}};}
+\DoxyCodeLine{00753\ \};}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__zc__ack__add__item__rodex}{s\_zc\_ack\_add\_item\_rodex}}\ \{\ }
+\DoxyCodeLine{00757\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_ae3a864b04b83fbc0e03b756e787d5334}{result}};}
+\DoxyCodeLine{00758\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a2b90fdc9aaacb60179cf8cb34bcf6a79}{index}};}
+\DoxyCodeLine{00759\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a7023a36bd4e8c2f4c34f8ea1569cd512}{count}};}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#if\ (CLIENT\_TYPE\ ==\ 'M'\ \&\&\ PACKET\_VERSION\ >=\ 20181121)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00761\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'R'\ \&\&\ PACKET\_VERSION\ >=\ 20180704)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\ \ \ \ (CLIENT\_TYPE\ ==\ 'Z'\ \&\&\ PACKET\_VERSION\ >=\ 20181114)}}
+\DoxyCodeLine{00763\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a9f8c08d8bd7793e30012d35edb2e7492}{item\_id}};}
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00765\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a9f8c08d8bd7793e30012d35edb2e7492}{item\_id}};}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00767\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_ad30fd8b9c3bca3b164a4a7aeefd589d5}{type}};}
+\DoxyCodeLine{00768\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a0c5e1036ad0f007f1a95606acd6658a3}{is\_identified}};}
+\DoxyCodeLine{00769\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a8e5b95a21a16371374fd4a89132f41a3}{is\_damaged}};}
+\DoxyCodeLine{00770\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a71cf317c17463febb054be4654b7ebe1}{refining\_level}};}
+\DoxyCodeLine{00771\ \ \ \ \ \mbox{\hyperlink{structitem__slot}{item\_slot}}\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a49a7b82fa8a247d9a987a516045ddf52}{slot}};}
+\DoxyCodeLine{00772\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a2b90fdc9aaacb60179cf8cb34bcf6a79}{index}}\{\ 0\ \};}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a7e945799fcc92ee99c15e3c858ab7cf0}{value}}\{\ 0\ \};}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a1ea28e54c69b5de3b03eb00841245042}{param}}\{\ 0\ \};}
+\DoxyCodeLine{00776\ \ \ \ \ \}\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a111e217cac5638731afdaf797b21b0d8}{option\_data}}[\mbox{\hyperlink{_item_definitions_8hpp_ae54c2a9d708638645204e80596084221}{MAX\_ITEM\_OPTIONS}}];}
+\DoxyCodeLine{00777\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a18ee4b22bae62aa5ac20964c8aea4e0b}{weight}};}
+\DoxyCodeLine{00778\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_af07552e054eb246c1013819831dd41d9}{is\_favorite}};}
+\DoxyCodeLine{00779\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structs__zc__ack__add__item__rodex_a89c0e6b3d2bb11bfab5554ef18819673}{location}};}
+\DoxyCodeLine{00780\ \};}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a1bfec5a1c2370be3f0fce4cf0a2fbb5c}{zc\_ack\_auction\_add\_item\_result\_type}}}
+\DoxyCodeLine{00783\ \{}
+\DoxyCodeLine{00784\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1bfec5a1c2370be3f0fce4cf0a2fbb5ca10c1efd5fe7c09e19e8145f528c1a861}{ZC\_ACKAUCTION\_ADDITEM\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00785\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1bfec5a1c2370be3f0fce4cf0a2fbb5ca4669fa742c9d0a79d2e7f6efc69ecabe}{ZC\_ACKAUCTION\_ADDITEM\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00786\ \};}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_aa1ba335b36093483ff125a9de1246322}{zc\_ack\_disconnect\_character\_type}}}
+\DoxyCodeLine{00789\ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa1ba335b36093483ff125a9de1246322a18df2cd9c21300d3b86849f7671e504f}{ZC\_ACKDISCONNECTCHARACTER\_FAILURE}}\ =\ 0,}
+\DoxyCodeLine{00791\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aa1ba335b36093483ff125a9de1246322a00be8b7b7a11f80f023fc5cd5c03ae2c}{ZC\_ACKDISCONNECTCHARACTER\_SUCCESS}}\ =\ 1}
+\DoxyCodeLine{00792\ \};}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4f}{zc\_ack\_give\_manner\_point\_result\_type}}}
+\DoxyCodeLine{00795\ \{}
+\DoxyCodeLine{00796\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4fa1ec466d9c631a611727a8b7c81a387bd}{ZC\_ACKGIVEMANNERPOINT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00797\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4fa13977b0f8200800b590759307dd831d5}{ZC\_ACKGIVEMANNERPOINT\_FAILURE\_EXHAUST}}\ =\ 1,}
+\DoxyCodeLine{00798\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4fae902cb4169dc7b0b69544fd865619377}{ZC\_ACKGIVEMANNERPOINT\_FAILURE\_ALREADY\_GIVEN}}\ =\ 2,}
+\DoxyCodeLine{00799\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4fa1eeab8602a1c11751685877819227896}{ZC\_ACKGIVEMANNERPOINT\_CHAT\_BLOCK}}\ =\ 3,}
+\DoxyCodeLine{00800\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4fa1d3c70ebc0bfb3dd789eb4c4bcc56635}{ZC\_ACKGIVEMANNERPOINT\_AUTOMATED\_CHAT\_BLOCK}}\ =\ 4,}
+\DoxyCodeLine{00801\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_af44bc2111cacc22ab52c0b45640c9b4fa4383600643004cf69c867801efdcf847}{ZC\_ACKGIVEMANNERPOINT\_POSITIVE}}\ =\ 5}
+\DoxyCodeLine{00802\ \};}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a1678b34ea4ff41378dda3c925a1c4f0f}{zc\_ack\_item\_composition\_result\_type}}}
+\DoxyCodeLine{00805\ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1678b34ea4ff41378dda3c925a1c4f0fa01f1877f384ef27b68ff6d8d472efbda}{ZC\_ACKITEMCOMPOSITION\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00807\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a1678b34ea4ff41378dda3c925a1c4f0fafd66ee51f0dbf44a40411dbfe3e76ca6}{ZC\_ACKITEMCOMPOSITION\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00808\ \};}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a2bf65602aa2261dfb510cca9b5d8e681}{zc\_ack\_item\_identify\_result\_type}}}
+\DoxyCodeLine{00811\ \{}
+\DoxyCodeLine{00812\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a2bf65602aa2261dfb510cca9b5d8e681a34355de0d74713bc494060000df9a885}{ZC\_ACKITEMIDENTIFY\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00813\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a2bf65602aa2261dfb510cca9b5d8e681a7f973eaa6b76224f1c2ba4ca22c8dceb}{ZC\_ACKITEMIDENTIFY\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00814\ \};}
+\DoxyCodeLine{00815\ }
+\DoxyCodeLine{00816\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00817\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__ack__itemlist__buying__store}{zc\_ack\_itemlist\_buying\_store}}\ \{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structzc__ack__itemlist__buying__store_a8f06069c97c26060d1337246b2e17bb9}{price}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structzc__ack__itemlist__buying__store_acbbc8cad85dd4802911216919bbf46c8}{amount}}\{\ 0\ \};\ int8\_t\ \mbox{\hyperlink{_item_definitions_8hpp_a67272bbbc2ad09f19b25c078128f059a}{item\_type}}\{\ 0\ \};\ int16\_t\ \mbox{\hyperlink{structzc__ack__itemlist__buying__store_adb6c935aebf5f30228afed95ec38e83f}{item\_id}}\{\ 0\ \};\ \};}
+\DoxyCodeLine{00818\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a44151769215d50a1b05a311da3591a9f}{zc\_ack\_itemrefining\_result\_type}}}
+\DoxyCodeLine{00821\ \{}
+\DoxyCodeLine{00822\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a44151769215d50a1b05a311da3591a9fa7016701d445d3aca4f494df73ea93c38}{ZC\_ACKITEMREFINING\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00823\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a44151769215d50a1b05a311da3591a9fa1ee7e6c58a664b1a1285afc5576bf283}{ZC\_ACKITEMREFINING\_FAILURE}}\ =\ 1,}
+\DoxyCodeLine{00824\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a44151769215d50a1b05a311da3591a9fa329120b19ee656e4ca803d0d4143ad67}{ZC\_ACKITEMREFINING\_DOWNGRADE}}\ =\ 2\ \ \ \ }
+\DoxyCodeLine{00825\ \};}
+\DoxyCodeLine{00826\ }
+\DoxyCodeLine{00827\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ace7392500d5288bcf39d64929a41f4b7}{zc\_ack\_itemrepair\_result\_type}}}
+\DoxyCodeLine{00828\ \{}
+\DoxyCodeLine{00829\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ace7392500d5288bcf39d64929a41f4b7a92c1dfb57e60d0027b9e868f4ed06d93}{ZC\_ACKITEMREPAIR\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00830\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ace7392500d5288bcf39d64929a41f4b7ad755bf3839adfa37b40ce46c7d5d6780}{ZC\_ACKITEMREPAIR\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00831\ \};}
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00833\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ab75ad40ae73ef73382f095c7738c7882}{zc\_ack\_mail\_add\_item\_result\_type}}}
+\DoxyCodeLine{00834\ \{}
+\DoxyCodeLine{00835\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab75ad40ae73ef73382f095c7738c7882a91f5318877636c07164ab22ff70a8912}{ZC\_ACKMAIL\_ADDITEM\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00836\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ab75ad40ae73ef73382f095c7738c7882aceccc28e46bb302e266710bffa48de7e}{ZC\_ACKMAIL\_ADDITEM\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00837\ \};}
+\DoxyCodeLine{00838\ }
+\DoxyCodeLine{00839\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_aaf4469cbbc166701f6ff0c55d87ff342}{zc\_ack\_mail\_delete\_result\_type}}}
+\DoxyCodeLine{00840\ \{}
+\DoxyCodeLine{00841\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aaf4469cbbc166701f6ff0c55d87ff342a069f9f2931ac24cfed5d892228505012}{ZC\_ACKMAIL\_DELETE\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00842\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_aaf4469cbbc166701f6ff0c55d87ff342aa065c2d85f69034cfa379d511ffbe244}{ZC\_ACKMAIL\_DELETE\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00843\ \};}
+\DoxyCodeLine{00844\ }
+\DoxyCodeLine{00845\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922}{zc\_ack\_mail\_return\_result\_type}}}
+\DoxyCodeLine{00846\ \{}
+\DoxyCodeLine{00847\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922ad91e9e8e8e6d028c2897335c4001a23f}{ZC\_ACKMAIL\_RETURNRESULT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00848\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922ac7c354f118f715f51d518d133dc128b9}{ZC\_ACKMAIL\_RETURNRESULT\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00849\ \};}
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00851\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a185ef1c73032baf1db9662a6220209f7}{zc\_ack\_merge\_item\_reason\_type}}}
+\DoxyCodeLine{00852\ \{}
+\DoxyCodeLine{00853\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a185ef1c73032baf1db9662a6220209f7a1af9c9b796634509d6955408d3615150}{ZC\_ACKMERGE\_ITEMREASON\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00854\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a185ef1c73032baf1db9662a6220209f7a1746ef0369299e9d58014057f4465dac}{ZC\_ACKMERGE\_ITEMREASON\_FAILED}}\ =\ 1,}
+\DoxyCodeLine{00855\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a185ef1c73032baf1db9662a6220209f7aeae60d5ea82fb0938d08bb7c35528671}{ZC\_ACKMERGE\_ITEMREASON\_MAXCOUNT\_FAILED}}\ =\ 2}
+\DoxyCodeLine{00856\ \};}
+\DoxyCodeLine{00857\ }
+\DoxyCodeLine{00858\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a5125b32e7fc17602577af472bdb02f95}{zc\_ack\_openstore2\_result\_type}}}
+\DoxyCodeLine{00859\ \{}
+\DoxyCodeLine{00860\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5125b32e7fc17602577af472bdb02f95a00773986f77eab5448447fbe8a2ee4d1}{ZC\_ACK\_OPENSTORE2\_RESULT\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00861\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5125b32e7fc17602577af472bdb02f95ab19ea0b63164ce61dadbbc99e704ad51}{ZC\_ACK\_OPENSTORE2\_RESULT\_FAILED}}\ \ =\ 1,}
+\DoxyCodeLine{00862\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5125b32e7fc17602577af472bdb02f95afee3a7c57babba8ab4ddabb9c8417ac5}{ZC\_ACK\_OPENSTORE2\_RESULT\_SILENT\_FAILURE}}\ =\ 2,}
+\DoxyCodeLine{00863\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a5125b32e7fc17602577af472bdb02f95acd91edac260432ffaffdd07ab1731e76}{ZC\_ACK\_OPENSTORE2\_RESULT\_LOCATION\_FAILURE}}\ =\ 3}
+\DoxyCodeLine{00864\ \};}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__ack__ranking__info}{zc\_ack\_ranking\_info}}}
+\DoxyCodeLine{00867\ \{}
+\DoxyCodeLine{00868\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structzc__ack__ranking__info_af51843aff73ca855fb2cb394c7d8b818}{name}}[\mbox{\hyperlink{_client_8hpp_a46f7bdd65a8fb28513fc13feacfe2dbb}{MAX\_UNIT\_NAME\_LENGTH}}]\{\ 0\ \};}
+\DoxyCodeLine{00869\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structzc__ack__ranking__info_a974d27ee599bfa32ec698aea3e9fcedc}{points}}\{\ 0\ \};}
+\DoxyCodeLine{00870\ \};}
+\DoxyCodeLine{00871\ }
+\DoxyCodeLine{00872\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzc__ack__read__rodex__item}{zc\_ack\_read\_rodex\_item}}}
+\DoxyCodeLine{00873\ \{}
+\DoxyCodeLine{00874\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a9955a4e982d60cf360fe749022d52f64}{amount}};}
+\DoxyCodeLine{00875\ \textcolor{preprocessor}{\#if\ PACKETVER\_MAIN\_NUM\ >=\ 20181121\ ||\ PACKETVER\_RE\_NUM\ >=\ 20180704\ ||\ PACKETVER\_ZERO\_NUM\ >=\ 20181114}}
+\DoxyCodeLine{00876\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a417bf594fef866e936e949525e68a1ce}{item\_id}};}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00878\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a417bf594fef866e936e949525e68a1ce}{item\_id}};}
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00880\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a04a60b3b2f5909ecfae7ee56388e3d76}{is\_identified}};}
+\DoxyCodeLine{00881\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a3637157c916996b490c058d1546cecef}{is\_damaged}};}
+\DoxyCodeLine{00882\ \ \ \ \ int8\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a9a930b87ab1175755a0f567fef96ca68}{refining\_level}};}
+\DoxyCodeLine{00883\ \ \ \ \ \mbox{\hyperlink{structitem__slot}{item\_slot}}\ \mbox{\hyperlink{structzc__ack__read__rodex__item_aac4da5c465cc9d0ed629d44efff05fed}{slot}};}
+\DoxyCodeLine{00884\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a719c17af73f661f9f1bddf7b819dc376}{location}};}
+\DoxyCodeLine{00885\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a754a0929125d4edb9cfa081ee924707b}{type}};}
+\DoxyCodeLine{00886\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_ab8aa1023bd8a8b572f9340ca3cfd03e2}{view\_sprite}};}
+\DoxyCodeLine{00887\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a54cb312be7acabe3504eee4f6b1bdacb}{bind\_on\_equip}};}
+\DoxyCodeLine{00888\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_aced59f9fb7118ae83e93736a0b07df88}{index}}\{\ 0\ \};}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_ae17b58da0a83eda440a1e2f870670fc5}{value}}\{\ 0\ \};}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ int16\_t\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a304c336b0cd8c510d363ff1e9a4fd2a8}{param}}\{\ 0\ \};}
+\DoxyCodeLine{00892\ \ \ \ \ \}\ \mbox{\hyperlink{structzc__ack__read__rodex__item_a6ef498547c37c994d64a1b661040c0f9}{option\_data}}[\mbox{\hyperlink{_item_definitions_8hpp_ae54c2a9d708638645204e80596084221}{MAX\_ITEM\_OPTIONS}}];}
+\DoxyCodeLine{00893\ \};}
+\DoxyCodeLine{00894\ }
+\DoxyCodeLine{00895\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a55b3ed75e27decf2d40884e91fb67b1c}{zc\_use\_skill2\_result\_type}}}
+\DoxyCodeLine{00896\ \{}
+\DoxyCodeLine{00897\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a55b3ed75e27decf2d40884e91fb67b1cafbd886e79e7f653e45381db4102a6fd7}{ZC\_USESKILL2\_SUCCESS}}\ =\ 0,}
+\DoxyCodeLine{00898\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a55b3ed75e27decf2d40884e91fb67b1cad880dad4626b2ab4b234f81016fcbf20}{ZC\_USESKILL2\_FAILURE}}\ =\ 1}
+\DoxyCodeLine{00899\ \};}
+\DoxyCodeLine{00900\ }
+\DoxyCodeLine{00904\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_a9740564b2fbfecad5d9e1d10c0c0b531}{inventory\_type}}}
+\DoxyCodeLine{00905\ \{}
+\DoxyCodeLine{00906\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9740564b2fbfecad5d9e1d10c0c0b531a0a51aba60801e2c192af4659a1d10531}{INVTYPE\_INVENTORY}}\ =\ 0,}
+\DoxyCodeLine{00907\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9740564b2fbfecad5d9e1d10c0c0b531afb4ff0e9490ba31ff1c7cdaf9ee272e4}{INVTYPE\_CART}}\ =\ 1,}
+\DoxyCodeLine{00908\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9740564b2fbfecad5d9e1d10c0c0b531a764f6a6cfde5956b1c3386c5e7552b6f}{INVTYPE\_STORAGE}}\ =\ 2,}
+\DoxyCodeLine{00909\ \ \ \ \ \mbox{\hyperlink{_client_definitions_8hpp_a9740564b2fbfecad5d9e1d10c0c0b531ab798124b560f5dfc3f50592501e3d66c}{INVTYPE\_GUILD\_STORAGE}}\ =\ 3,}
+\DoxyCodeLine{00910\ \};}
+\DoxyCodeLine{00911\ }
+\DoxyCodeLine{00912\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_CLIENT\_DEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

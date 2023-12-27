@@ -1,0 +1,58 @@
+\doxysection{src/\+Libraries/\+Networking/\+Socket.hpp File Reference}
+\hypertarget{_socket_8hpp}{}\label{_socket_8hpp}\index{src/Libraries/Networking/Socket.hpp@{src/Libraries/Networking/Socket.hpp}}
+{\ttfamily \#include "{}Core/\+Logging/\+Logger.\+hpp"{}}\newline
+{\ttfamily \#include "{}Buffer/\+Byte\+Buffer.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Multithreading/\+Thread\+Safe\+Queue.\+hpp"{}}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$future$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$boost/asio/ip/tcp.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/bind.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/write.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/asio/use\+\_\+future.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Socket.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_socket_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_socket_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Socket\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_a}{A} \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} object that handles a single connection. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_networking}{Horizon\+::\+Networking}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_socket_8hpp_a16ba013af02b9d4400b5e47d8daa022b}{READ\+\_\+\+BLOCK\+\_\+\+SIZE}}~0x1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_socket_8hpp_a16ba013af02b9d4400b5e47d8daa022b}\label{_socket_8hpp_a16ba013af02b9d4400b5e47d8daa022b} 
+\index{Socket.hpp@{Socket.hpp}!READ\_BLOCK\_SIZE@{READ\_BLOCK\_SIZE}}
+\index{READ\_BLOCK\_SIZE@{READ\_BLOCK\_SIZE}!Socket.hpp@{Socket.hpp}}
+\doxysubsubsection{\texorpdfstring{READ\_BLOCK\_SIZE}{READ\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define READ\+\_\+\+BLOCK\+\_\+\+SIZE~0x1000}
+

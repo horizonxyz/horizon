@@ -1,0 +1,39 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\+Status.cpp File Reference}
+\hypertarget{_status_8cpp}{}\label{_status_8cpp}\index{src/Server/Zone/Game/Entities/Traits/Status.cpp@{src/Server/Zone/Game/Entities/Traits/Status.cpp}}
+{\ttfamily \#include "{}Status.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Item\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Monster\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Common/\+Configuration/\+Horizon.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Job\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Exp\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Traits/\+Appearance.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Traits/\+Observable\+Status.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Creature/\+Creature.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+NPC/\+NPC.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Player/\+Player.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Entity.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Packets/\+Transmitted\+Packets.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Session/\+Zone\+Session.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Zone.\+hpp"{}}\newline
+Include dependency graph for Status.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_status_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_status_8cpp_aebd0786faf56b4ce1c3782cbc7079467}{notify\+\_\+status}}(t,  amount,  result)~  entity()-\/$>$template downcast$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}}$>$()-\/$>$get\+\_\+session()-\/$>$clif()-\/$>$notify\+\_\+status\+\_\+attribute\+\_\+update(t, amount, result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_status_8cpp_aebd0786faf56b4ce1c3782cbc7079467}\label{_status_8cpp_aebd0786faf56b4ce1c3782cbc7079467} 
+\index{Status.cpp@{Status.cpp}!notify\_status@{notify\_status}}
+\index{notify\_status@{notify\_status}!Status.cpp@{Status.cpp}}
+\doxysubsubsection{\texorpdfstring{notify\_status}{notify\_status}}
+{\footnotesize\ttfamily \#define notify\+\_\+status(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{amount,  }\item[{}]{result }\end{DoxyParamCaption})~  entity()-\/$>$template downcast$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Horizon\+::\+Zone\+::\+Entities\+::\+Player}}$>$()-\/$>$get\+\_\+session()-\/$>$clif()-\/$>$notify\+\_\+status\+\_\+attribute\+\_\+update(t, amount, result)}
+

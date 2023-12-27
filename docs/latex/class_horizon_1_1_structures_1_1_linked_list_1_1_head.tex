@@ -1,0 +1,300 @@
+\doxysection{Horizon\+::Structures\+::Linked\+List\+::Head Class Reference}
+\hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head}\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+
+
+\doxylink{namespace_horizon_1_1_structures_1_1_linked_list}{Linked\+List} \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class. This class is used to manage a linked list of Elements. It is used as a base class for other classes that need to manage a linked list. It is not intended to be used directly.  
+
+
+
+
+{\ttfamily \#include $<$Head.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Structures\+::Linked\+List\+::Head\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Iterator}}$<$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} $>$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a44ba921c75e4591ee02bfdc8a2ffa20d}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a67c1e86881c3a6d9c1a73ebdbd6f6f00}{Head}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a91be4f46544b7630ca137eccab92124c}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the list is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f}{first}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af896a3546a0cb06ff98cde87458a9771}{first}} () const
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a1d60fa8f4e31afd57cceceb5e84f42a6}{last}} ()
+\begin{DoxyCompactList}\small\item\em Returns the last \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a781b7364dfb3cd09ba66d3de208d2e88}{last}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a}{push\+\_\+front}} (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}p\+Elem)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af1a007cfb115dc9617a549cc1de0edbc}{push\+\_\+back}} (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}p\+Elem)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a2f26fec1c2e6f91d8652120e69bc7267}{get\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of Elements in the list (not including the head and tail Elements or the first and last Elements) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af68088bc37bda52f57f3303d8571c27b}{inc\+\_\+size}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_abf35ba50d18ea692ba1f25952c41855f}{dec\+\_\+size}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_ae1a6779d638b159dad9b361a7f082987}{\texorpdfstring{$\sim$}{\string~}\+Head}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_horizon_1_1_structures_1_1_linked_list}{Linked\+List} \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class. This class is used to manage a linked list of Elements. It is used as a base class for other classes that need to manage a linked list. It is not intended to be used directly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} type that will be managed by this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head}. \\
+\hline
+{\em \+\_\+first} & The first \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \\
+\hline
+{\em \+\_\+last} & The last \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \\
+\hline
+{\em \+\_\+size} & The size of the list. Thread safety\+: This class is not thread safe and is not intended to be used in a multi-\/threaded environment. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a44ba921c75e4591ee02bfdc8a2ffa20d}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a44ba921c75e4591ee02bfdc8a2ffa20d} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!iterator@{iterator}}
+\index{iterator@{iterator}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Iterator}}$<$\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}}$>$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a44ba921c75e4591ee02bfdc8a2ffa20d}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::iterator}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a67c1e86881c3a6d9c1a73ebdbd6f6f00}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a67c1e86881c3a6d9c1a73ebdbd6f6f00} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!Head@{Head}}
+\index{Head@{Head}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{Head()}{Head()}}
+{\footnotesize\ttfamily Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_ae1a6779d638b159dad9b361a7f082987}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_ae1a6779d638b159dad9b361a7f082987} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!````~Head@{\texorpdfstring{$\sim$}{\string~}Head}}
+\index{````~Head@{\texorpdfstring{$\sim$}{\string~}Head}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Head()}{\string~Head()}}
+{\footnotesize\ttfamily Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::\texorpdfstring{$\sim$}{\string~}\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_abf35ba50d18ea692ba1f25952c41855f}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_abf35ba50d18ea692ba1f25952c41855f} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!dec\_size@{dec\_size}}
+\index{dec\_size@{dec\_size}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{dec\_size()}{dec\_size()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::dec\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!first@{first}}
+\index{first@{first}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the first \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af896a3546a0cb06ff98cde87458a9771}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af896a3546a0cb06ff98cde87458a9771} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!first@{first}}
+\index{first@{first}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const  \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af896a3546a0cb06ff98cde87458a9771_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a2f26fec1c2e6f91d8652120e69bc7267}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a2f26fec1c2e6f91d8652120e69bc7267} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily uint32\+\_\+t Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::get\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the number of Elements in the list (not including the head and tail Elements or the first and last Elements) 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a2f26fec1c2e6f91d8652120e69bc7267_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a2f26fec1c2e6f91d8652120e69bc7267_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af68088bc37bda52f57f3303d8571c27b}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af68088bc37bda52f57f3303d8571c27b} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!inc\_size@{inc\_size}}
+\index{inc\_size@{inc\_size}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{inc\_size()}{inc\_size()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::inc\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a91be4f46544b7630ca137eccab92124c}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a91be4f46544b7630ca137eccab92124c} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::is\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if the list is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the list is empty. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a91be4f46544b7630ca137eccab92124c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a1d60fa8f4e31afd57cceceb5e84f42a6}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a1d60fa8f4e31afd57cceceb5e84f42a6} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!last@{last}}
+\index{last@{last}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{last()}{last()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the last \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a1d60fa8f4e31afd57cceceb5e84f42a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a1d60fa8f4e31afd57cceceb5e84f42a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a781b7364dfb3cd09ba66d3de208d2e88}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a781b7364dfb3cd09ba66d3de208d2e88} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!last@{last}}
+\index{last@{last}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{last()}{last()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const  \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a781b7364dfb3cd09ba66d3de208d2e88_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af1a007cfb115dc9617a549cc1de0edbc}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af1a007cfb115dc9617a549cc1de0edbc} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}}]{p\+Elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Elem} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} to add to the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} must not already be in a list. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af1a007cfb115dc9617a549cc1de0edbc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a} 
+\index{Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!Horizon::Structures::LinkedList::Head@{Horizon::Structures::LinkedList::Head}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}}]{p\+Elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a}{push\+\_\+front()} and \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af1a007cfb115dc9617a549cc1de0edbc}{push\+\_\+back()} are used to add an \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} to the list. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Elem} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} to add to the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} must not already be in a list. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Structures/\+Linked\+List/\mbox{\hyperlink{_head_8hpp}{Head.\+hpp}}\end{DoxyCompactItemize}

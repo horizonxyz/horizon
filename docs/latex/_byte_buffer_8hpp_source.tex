@@ -1,0 +1,516 @@
+\doxysection{Byte\+Buffer.\+hpp}
+\hypertarget{_byte_buffer_8hpp_source}{}\label{_byte_buffer_8hpp_source}\index{src/Libraries/Networking/Buffer/ByteBuffer.hpp@{src/Libraries/Networking/Buffer/ByteBuffer.hpp}}
+\mbox{\hyperlink{_byte_buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_NETWORKING\_BYTEBUFFER\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_NETWORKING\_BYTEBUFFER\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_byte_converter_8hpp}{ByteConverter.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ Root\ of\ ByteBuffer\ exception\ hierarchy}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}\ :\ \textcolor{keyword}{public}\ std::exception}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_exception_a8627c54b00fede3e939d4862cd20b249}{\string~ByteBufferException}}()\ throw()\ \{\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}*\ \mbox{\hyperlink{class_byte_buffer_exception_a74de290ea65d975bc4aa3dd35a31e911}{what}}()\ \textcolor{keyword}{const}\ throw()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ msg\_.c\_str();\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \&\ \mbox{\hyperlink{class_byte_buffer_exception_a18c57b815e2f88cd748dc7e72326bfaf}{message}}()\ throw()\ \{\ \textcolor{keywordflow}{return}\ msg\_;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ msg\_;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keywordtype}{bool}\ add,\ \textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ valueSize);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_position_exception_a2766d9e3922895d819af8fb523115c49}{\string~ByteBufferPositionException}}()\ throw()\ \{\ \}}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_byte_buffer_source_exception}{ByteBufferSourceException}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_source_exception}{ByteBufferSourceException}}(\textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keywordtype}{size\_t}\ valueSize);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_source_exception_a37e191e16795b247aa537f9d02e62a37}{\string~ByteBufferSourceException}}()\ throw()\ \{\ \}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_a8dc72ab574b50098edfd09b928f47d47}{DEFAULT\_SIZE}}\ =\ 0x1000;\ \textcolor{comment}{//\ Reserve\ 4096\ bytes.}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ constructor}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_adc1d4da00319096a5eb0043f4a37e2be}{ByteBuffer}}()}
+\DoxyCodeLine{00084\ \ \ \ \ :\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}(0),\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}(0)}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(\mbox{\hyperlink{class_byte_buffer_a8dc72ab574b50098edfd09b928f47d47}{DEFAULT\_SIZE}});}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a199c2d46cce671e56e00a451b8b20810}{ByteBuffer}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe}{reserve}})}
+\DoxyCodeLine{00090\ \ \ \ \ :\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}(0),\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}(0)}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(\mbox{\hyperlink{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe}{reserve}});}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a6827e7416d80d4b5f5f5958fc3e4da0a}{ByteBuffer}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\&\&\ buf)}
+\DoxyCodeLine{00096\ \ \ \ \ :\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}(buf.\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}),\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}(buf.\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}),\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}(std::move(buf.\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}))}
+\DoxyCodeLine{00097\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a62ddba92489627de368ae0025faedac3}{ByteBuffer}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\&\ buf,\ \textcolor{keywordtype}{size\_t}\ len)}
+\DoxyCodeLine{00100\ \ \ \ \ :\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}(0)}
+\DoxyCodeLine{00101\ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.resize(len);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ copy\ len\ bytes\ from\ buf}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ std::memcpy(\&\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}],\ buf.\mbox{\hyperlink{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8}{contents}}(),\ len);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ =\ len;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ buf.\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +=\ len;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a1d46ecb7e6e1e47667953b24e4b9e489}{ByteBuffer}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00110\ \ \ \ \ :\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}(right.\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}),\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}(right.\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}),\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}(right.\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}})}
+\DoxyCodeLine{00111\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\&\ \mbox{\hyperlink{class_byte_buffer_a2b3c467b38b384e3900c15b278480598}{operator=}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&right)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ =\ right.\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ =\ right.\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}\ =\ right.\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_byte_buffer_a0ac2281f4602b920966462a832de4b75}{\string~ByteBuffer}}()}
+\DoxyCodeLine{00126\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_ab9fbbcf0abe4049e2016c1262795c97e}{clear}}()}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.clear();}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a177acd8d70f36ba5177901262f4d2c7d}{reset}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a177acd8d70f36ba5177901262f4d2c7d}{reset}}()}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ =\ 0;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}(T\ value)}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}((uint8\_t\ *)\&value,\ \textcolor{keyword}{sizeof}(value));}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836}{put}}(\textcolor{keywordtype}{size\_t}\ pos,\ T\ value)}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_fundamental<T>::value,\ \textcolor{stringliteral}{"{}append(compound)"{}});}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836}{put}}(pos,\ (uint8\_t\ *)\&value,\ \textcolor{keyword}{sizeof}(value));}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_ab5618201f47745c8340a6c3d3d61e72c}{operator<<}}(uint8\_t\ value)}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ append<uint8\_t>(value);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a64306b3b28d7417adfdbd0eefb8cbca9}{operator<<}}(uint16\_t\ value)}
+\DoxyCodeLine{00158\ \ \ \ \ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ append<uint16\_t>(value);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_aa29766137a78b7e4f2a61dbbdb230a37}{operator<<}}(uint32\_t\ value)}
+\DoxyCodeLine{00164\ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ append<uint32\_t>(value);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a1f79445b82615db69965ea0549fe325a}{operator<<}}(uint64\_t\ value)}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ append<uint64\_t>(value);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//\ signed\ as\ in\ 2e\ complement}}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a8a6984f53d62ce9ee863e768759c3b76}{operator<<}}(int8\_t\ value)}
+\DoxyCodeLine{00177\ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ append<int8\_t>(value);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_afdd0be3bd27aa6fa4214789d464b40de}{operator<<}}(int16\_t\ value)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ append<int16\_t>(value);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_af6f2dab05979d750999c0b90169b9e84}{operator<<}}(int32\_t\ value)}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ append<int32\_t>(value);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a8b29babf567963aac57ae7e2af35136c}{operator<<}}(int64\_t\ value)}
+\DoxyCodeLine{00195\ \ \ \ \ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ append<int64\_t>(value);}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ floating\ points}}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a5d2b326c6a5dee7c12d31812e521c632}{operator<<}}(\textcolor{keywordtype}{float}\ value)}
+\DoxyCodeLine{00202\ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ append<float>(value);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a177ac23fc6f11fbc89d9e93259f84e4b}{operator<<}}(\textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ append<double>(value);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_ae7a3b48d7c68c8b96df10b149b3c6b00}{operator>>}}(\textcolor{keywordtype}{bool}\ \&value)}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ value\ =\ read<char>()\ >\ 0\ ?\ true\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a291a5ffb047079e4637daf7e3dc19118}{operator>>}}(uint8\_t\ \&value)}
+\DoxyCodeLine{00220\ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ value\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(read<unsigned\ char>());}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_ad05cdf92488c9a381280dbb64369f3c9}{operator>>}}(uint16\_t\ \&value)}
+\DoxyCodeLine{00226\ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ value\ =\ read<unsigned\ short>();}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a5fb619b55d6f02248e47bedd1f38f1ce}{operator>>}}(uint32\_t\ \&value)}
+\DoxyCodeLine{00232\ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ value\ =\ read<unsigned\ int>();}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a2c8cd94a61eb8cc0e5c1c030117787bc}{operator>>}}(uint64\_t\ \&value)}
+\DoxyCodeLine{00238\ \ \ \ \ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ value\ =\ read<unsigned\ long>();}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{comment}{//signed\ as\ in\ 2e\ complement}}
+\DoxyCodeLine{00244\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a4cef0619677eebc92e8b3adcfc6738ee}{operator>>}}(int8\_t\ \&value)}
+\DoxyCodeLine{00245\ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ value\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(read<signed\ char>());}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a174836a466d3e7e7ad8ce2608b05480a}{operator>>}}(int16\_t\ \&value)}
+\DoxyCodeLine{00251\ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ value\ =\ read<short>();}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00254\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a2147b0e749fcf5411e560d1243de94a8}{operator>>}}(int32\_t\ \&value)}
+\DoxyCodeLine{00257\ \ \ \ \ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ value\ =\ read<int>();}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_abccc1ad042328cb9703ad17f68bbb699}{operator>>}}(int64\_t\ \&value)}
+\DoxyCodeLine{00263\ \ \ \ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ value\ =\ read<long>();}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_a29fb7124d40e89d17017e98c7f0c811f}{operator>>}}(\textcolor{keywordtype}{float}\ \&value)}
+\DoxyCodeLine{00269\ \ \ \ \ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ value\ =\ read<float>();}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::isfinite(value))}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}();}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&\mbox{\hyperlink{class_byte_buffer_aef3df0cb7f7731f92857880d4c241e0c}{operator>>}}(\textcolor{keywordtype}{double}\ \&value)}
+\DoxyCodeLine{00277\ \ \ \ \ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ value\ =\ read<double>();}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::isfinite(value))}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}();}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ uint8\_t\&\ \mbox{\hyperlink{class_byte_buffer_a759f6706460759380142aa9400a7f146}{operator[]}}(\textcolor{keywordtype}{size\_t}\ \textcolor{keyword}{const}\ pos)}
+\DoxyCodeLine{00285\ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ >=\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keyword}{false},\ pos,\ 1,\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}());}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[pos];}
+\DoxyCodeLine{00289\ \ \ \ \ \}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ uint8\_t\ \textcolor{keyword}{const}\&\ \mbox{\hyperlink{class_byte_buffer_a105928c758ea5497b0416f62bc9d1f04}{operator[]}}(\textcolor{keywordtype}{size\_t}\ \textcolor{keyword}{const}\ pos)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00292\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ >=\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keyword}{false},\ pos,\ 1,\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}());}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[pos];}
+\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_a1e1a47f362861d8cd61cdf27f7eb1812}{rpos}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}};\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_aa7831aa11854477a7f78464bc49b5db5}{rpos}}(\textcolor{keywordtype}{size\_t}\ rpos\_)}
+\DoxyCodeLine{00301\ \ \ \ \ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ =\ rpos\_;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}};}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ uint8\_t*\ \mbox{\hyperlink{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8}{contents}}()}
+\DoxyCodeLine{00307\ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.empty())}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}();}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.data();}
+\DoxyCodeLine{00311\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ uint8\_t\ \textcolor{keyword}{const}*\ \mbox{\hyperlink{class_byte_buffer_a4c078f07a88ac04a8b7faf0aafd2ef42}{contents}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00314\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.empty())}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_exception}{ByteBufferException}}();}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.data();}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_afaebd6176663896131cde249f3ee6588}{finish\_reading}}()\ \{\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ =\ \mbox{\hyperlink{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd}{wpos}}();\ \}}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a34029b6c4a31d64df175eaf8fa2f49b5}{read\_completed}}(\textcolor{keywordtype}{size\_t}\ bytes)\ \{\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +=\ bytes;\ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_abc2c0ea57bfbfb19a42714f23b65dea7}{write\_completed}}(\textcolor{keywordtype}{size\_t}\ bytes)\ \{\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ +=\ bytes;\ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd}{wpos}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}};\ \}}
+\DoxyCodeLine{00325\ \ \ \ \ }
+\DoxyCodeLine{00326\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce}{get\_base\_pointer}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.data();\ \}}
+\DoxyCodeLine{00327\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}{get\_read\_pointer}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce}{get\_base\_pointer}}()\ +\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}};\ \}}
+\DoxyCodeLine{00328\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793}{get\_write\_pointer}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce}{get\_base\_pointer}}()\ +\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}};\ \}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ std::string\ \mbox{\hyperlink{class_byte_buffer_aee31560603405310358cdfe28cf36aad}{to\_string}}()\ \{\ \textcolor{keywordflow}{return}\ std::string(\mbox{\hyperlink{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}{get\_read\_pointer}}(),\ \mbox{\hyperlink{class_byte_buffer_a39e0e6412aefb9312dd68415074c1793}{get\_write\_pointer}}());\ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.size();\ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b}{active\_length}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ -\/\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}};\ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a}{remaining\_space}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.size()\ -\/\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}};\ \}}
+\DoxyCodeLine{00335\ \ \ \ \ }
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_byte_buffer_a327051b3a72c2e8a0dfefa6643213115}{is\_empty}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.empty();\ \}}
+\DoxyCodeLine{00337\ \ \ \ \ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{comment}{//\ Discards\ inactive\ data}}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a6621d9c4b2d2c8625740c7e71974ead5}{flush}}()}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}})\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ !=\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}})}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memmove(\mbox{\hyperlink{class_byte_buffer_a1533635d3de54cebc0bc01666560ecce}{get\_base\_pointer}}(),\ \mbox{\hyperlink{class_byte_buffer_a5389a4739c6e198345225a52bc7d3a27}{get\_read\_pointer}}(),\ \mbox{\hyperlink{class_byte_buffer_aeb2da59be032218d8d2d0c63ddb2e40b}{active\_length}}());}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ -\/=\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}};}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ =\ 0;}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \ \ }
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{comment}{//\ Ensures\ there's\ "{}some"{}\ free\ space,\ make\ sure\ to\ call\ normalize()\ before\ this}}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a0b164155464a8d3b34e852ff3797d376}{ensure\_free\_space}}()}
+\DoxyCodeLine{00351\ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ resize\ buffer\ if\ it's\ already\ full}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_a0bfd8172da948e152b72d0b17fb9149a}{remaining\_space}}()\ ==\ 0)}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.resize(\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.size()\ *\ 3\ /\ 2);}
+\DoxyCodeLine{00355\ \ \ \ \ \}}
+\DoxyCodeLine{00356\ \ \ \ \ }
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a16ab545c983ff0605bc0a2ca1c40f0b8}{resize}}(\textcolor{keywordtype}{size\_t}\ new\_size)}
+\DoxyCodeLine{00358\ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.resize(new\_size);}
+\DoxyCodeLine{00360\ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a2561da6a9423880162eaf47c60284dbe}{reserve}}(\textcolor{keywordtype}{size\_t}\ ressize)}
+\DoxyCodeLine{00363\ \ \ \ \ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ressize\ >\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(ressize);}
+\DoxyCodeLine{00366\ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955}{read\_skip}}()\ \{\ \mbox{\hyperlink{class_byte_buffer_a13c94e2d389aa4c7427d1ba0c79fc955}{read\_skip}}(\textcolor{keyword}{sizeof}(T));\ \}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a4baaaf49c2875496222f138338acee57}{read\_skip}}(\textcolor{keywordtype}{size\_t}\ skip)}
+\DoxyCodeLine{00372\ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +\ skip\ >\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keyword}{false},\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}},\ skip,\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}());}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +=\ skip;}
+\DoxyCodeLine{00376\ \ \ \ \ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ }
+\DoxyCodeLine{00379\ \ \ \ \ T\ \mbox{\hyperlink{class_byte_buffer_afab3484e1af821859f16b7bdacf2af9c}{read}}()}
+\DoxyCodeLine{00380\ \ \ \ \ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ T\ r\ =\ read<T>(\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}});}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +=\ \textcolor{keyword}{sizeof}(T);}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00384\ \ \ \ \ \}}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ T\ \mbox{\hyperlink{class_byte_buffer_a36e80bfabae00bd1c58e319a0d6e51b4}{read}}(\textcolor{keywordtype}{size\_t}\ pos)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00387\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ +\ \textcolor{keyword}{sizeof}(T)\ >\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keyword}{false},\ pos,\ \textcolor{keyword}{sizeof}(T),\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}());}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ T\ val\ =\ *(\textcolor{keyword}{reinterpret\_cast<}T\ const*\textcolor{keyword}{>}(\&\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[pos]));}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_aa987eee32573fdd71abd3d6271d1954a}{read}}(\textcolor{keywordtype}{char}\ *dest,\ \textcolor{keywordtype}{size\_t}\ len)}
+\DoxyCodeLine{00395\ \ \ \ \ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ \ +\ len\ >\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keyword}{false},\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}},\ len,\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}());}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ std::memcpy((\textcolor{keywordtype}{void}\ *)\ dest,\ \&\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}],\ len);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +=\ len;}
+\DoxyCodeLine{00400\ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_af08930e1dd0f3dfb0203d2beb6fe7974}{read}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \&buf,\ \textcolor{keywordtype}{size\_t}\ len)}
+\DoxyCodeLine{00403\ \ \ \ \ \{}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ std::memcpy(\&buf.\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[buf.\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}],\ \&\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[\mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}],\ len);}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ buf.\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ +=\ len;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\ +=\ len;}
+\DoxyCodeLine{00407\ \ \ \ \ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a07ca875a7b4e2100dd6af7e7282b5629}{append}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src,\ \textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{00410\ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}((\textcolor{keyword}{const}\ uint8\_t\ *)src,\ size);}
+\DoxyCodeLine{00412\ \ \ \ \ \}}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a2733da91857d60710c0caa968aa695fc}{append}}(std::string\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{00415\ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}(\textcolor{keywordtype}{string}.c\_str(),\ \textcolor{keywordtype}{string}.size());}
+\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a651cbdcda98377b6b274564b7fad8433}{append}}(\textcolor{keyword}{const}\ T\ *src,\ \textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{00421\ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}((\textcolor{keyword}{const}\ uint8\_t\ *)\ src,\ size);}
+\DoxyCodeLine{00423\ \ \ \ \ \}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ SubT>}
+\DoxyCodeLine{00426\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_aab1339b2a3ea90b7fda3525f5f480236}{append}}(\textcolor{keyword}{const}\ T\ *t,\ \textcolor{keywordtype}{size\_t}\ t\_size,\ \textcolor{keyword}{const}\ SubT\ *sub\_t,\ \textcolor{keywordtype}{int}\ count)}
+\DoxyCodeLine{00427\ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}((\textcolor{keyword}{const}\ uint8\_t\ *)\ t,\ t\_size);}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}((\textcolor{keyword}{const}\ uint8\_t\ *)\ sub\_t,\ \textcolor{keyword}{sizeof}(SubT)\ *\ count);}
+\DoxyCodeLine{00430\ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a6e56ce576c775f86999d57de2734b601}{append}}(\textcolor{keyword}{const}\ uint8\_t\ *src,\ \textcolor{keywordtype}{size\_t}\ cnt)}
+\DoxyCodeLine{00433\ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cnt)}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_source_exception}{ByteBufferSourceException}}(\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}},\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}(),\ cnt);}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!src)}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_source_exception}{ByteBufferSourceException}}(\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}},\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}(),\ cnt);}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}()\ <\ 10000000);}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \textcolor{keyword}{const}\ newSize\ =\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ +\ cnt;}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.capacity()\ <\ newSize)\ \textcolor{comment}{//\ custom\ memory\ allocation\ rules}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newSize\ <\ 100)}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(300);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (newSize\ <\ 750)}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(2500);}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (newSize\ <\ 6000)}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(10000);}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.reserve(400000);}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.size()\ <\ newSize)}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.resize(newSize);}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ std::memcpy(\&\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}],\ src,\ cnt);}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ =\ newSize;}
+\DoxyCodeLine{00459\ \ \ \ \ \}}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a56df62492376044474cc62fba51cd7c9}{append}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\&\ buffer)}
+\DoxyCodeLine{00462\ \ \ \ \ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer.\mbox{\hyperlink{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd}{wpos}}())}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a5811e6da355e8c3d0f45997a557a666b}{append}}(buffer.\mbox{\hyperlink{class_byte_buffer_a8d712af2767c7ca45de60bd9d85738d8}{contents}}(),\ buffer.\mbox{\hyperlink{class_byte_buffer_a822527905d8efa5938e6a9f1adde97fd}{wpos}}());}
+\DoxyCodeLine{00465\ \ \ \ \ \}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_ae4e2114b896c92ac0192c4005ce05c6d}{put}}(\textcolor{keywordtype}{size\_t}\ pos,\ \textcolor{keyword}{const}\ uint8\_t\ *src,\ \textcolor{keywordtype}{size\_t}\ cnt)}
+\DoxyCodeLine{00468\ \ \ \ \ \{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ +\ cnt\ >\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}())}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_position_exception}{ByteBufferPositionException}}(\textcolor{keyword}{true},\ pos,\ cnt,\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}());}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!src)}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_byte_buffer_source_exception}{ByteBufferSourceException}}(\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}},\ \mbox{\hyperlink{class_byte_buffer_af5ef67bebb846e6312fe7c46bb4b9aae}{maximum\_length}}(),\ cnt);}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ std::memcpy(\&\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}[pos],\ src,\ cnt);}
+\DoxyCodeLine{00476\ \ \ \ \ \}}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a4b2ea80e6832431ad45758246f49a850}{print\_storage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a9ce46ba3fcd156ea7119a91231339aa9}{textlike}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_a45e6b7d03df82a0be6eab9975193881e}{hexlike}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ template<typename\ SizeT\ =\ uint16\_t,\ typename\ std::enable\_if<std::is\_integral<SizeT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_byte_buffer_aac31836432b7aa4902f1b39f931f3604}{emplace\_size}}(std::size\_t\ pos\ =\ 2)}
+\DoxyCodeLine{00486\ \ \ \ \ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.emplace(\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.begin()\ +\ pos,\ 0);}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.emplace(\mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}}.begin()\ +\ pos\ +\ 1,\ 0);}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\ +=\ 2;}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_buffer_a1c6679ea7a9b1eb27762460f87b25836}{put}}(pos,\ (uint8\_t\ *)\ \&\mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}},\ \textcolor{keyword}{sizeof}(SizeT));}
+\DoxyCodeLine{00491\ \ \ \ \ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00494\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_byte_buffer_acd1ed42ba76c596232eb7e0e5b92079b}{\_rpos}}\{0\},\ \mbox{\hyperlink{class_byte_buffer_a077e4ef0b12a178983d1beb1e1efccad}{\_wpos}}\{0\};}
+\DoxyCodeLine{00495\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{class_byte_buffer_aa819be4c4c5bfcf0de35ea2b847f5370}{\_storage}};}
+\DoxyCodeLine{00496\ \};}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00499\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ ByteBuffer::read\_skip<char\ const*>()}
+\DoxyCodeLine{00500\ \{}
+\DoxyCodeLine{00501\ \ \ \ \ read\_skip<char*>();}
+\DoxyCodeLine{00502\ \}}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00505\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ ByteBuffer::read\_skip<std::string>()}
+\DoxyCodeLine{00506\ \{}
+\DoxyCodeLine{00507\ \ \ \ \ read\_skip<char*>();}
+\DoxyCodeLine{00508\ \}}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_NETWORKING\_BYTEBUFFER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

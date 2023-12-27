@@ -1,0 +1,111 @@
+\doxysection{CLICommand Class Reference}
+\hypertarget{class_c_l_i_command}{}\label{class_c_l_i_command}\index{CLICommand@{CLICommand}}
+
+
+{\ttfamily \#include $<$CLICommand.\+hpp$>$}
+
+
+
+Collaboration diagram for CLICommand\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_l_i_command__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e}{Finish\+Func}}) (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$ cmd, bool success)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_l_i_command_abfae18ff753cf2897c9dfd0ad3033bfa}{CLICommand}} (\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}server, char \texorpdfstring{$\ast$}{*}command, \mbox{\hyperlink{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e}{Finish\+Func}} finish\+\_\+func)
+\item 
+\mbox{\hyperlink{class_c_l_i_command_a40b289e70b849fad92da25e366556ac8}{\texorpdfstring{$\sim$}{\string~}\+CLICommand}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_l_i_command_a7256eb2ca969883f27525708d1b4baa5}{m\+\_\+\+Server}}
+\begin{DoxyCompactList}\small\item\em Instance to the server. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_c_l_i_command_a598f54d24e71e8947e2b4304a5a88da4}{m\+\_\+command}}
+\begin{DoxyCompactList}\small\item\em Command string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e}{Finish\+Func}} \mbox{\hyperlink{class_c_l_i_command_a30a3518f67c7f0672cca332e5dc303f9}{m\+\_\+finish\+\_\+func}}
+\begin{DoxyCompactList}\small\item\em Completion handler function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_l_i_command_a90b03232586d34c3c30c23e199084ad8}{terminal\+\_\+shutdown\+\_\+signal}}
+\begin{DoxyCompactList}\small\item\em Terminal shutdown signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e}\label{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e} 
+\index{CLICommand@{CLICommand}!FinishFunc@{FinishFunc}}
+\index{FinishFunc@{FinishFunc}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{FinishFunc}{FinishFunc}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} CLICommand\+::\+Finish\+Func) (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$ cmd, bool success)}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_l_i_command_abfae18ff753cf2897c9dfd0ad3033bfa}\label{class_c_l_i_command_abfae18ff753cf2897c9dfd0ad3033bfa} 
+\index{CLICommand@{CLICommand}!CLICommand@{CLICommand}}
+\index{CLICommand@{CLICommand}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{CLICommand()}{CLICommand()}}
+{\footnotesize\ttfamily CLICommand\+::\+CLICommand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}}]{server,  }\item[{char \texorpdfstring{$\ast$}{*}}]{command,  }\item[{\mbox{\hyperlink{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e}{Finish\+Func}}}]{finish\+\_\+func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_c_l_i_command_a40b289e70b849fad92da25e366556ac8}\label{class_c_l_i_command_a40b289e70b849fad92da25e366556ac8} 
+\index{CLICommand@{CLICommand}!````~CLICommand@{\texorpdfstring{$\sim$}{\string~}CLICommand}}
+\index{````~CLICommand@{\texorpdfstring{$\sim$}{\string~}CLICommand}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CLICommand()}{\string~CLICommand()}}
+{\footnotesize\ttfamily CLICommand\+::\texorpdfstring{$\sim$}{\string~}\+CLICommand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_l_i_command_a598f54d24e71e8947e2b4304a5a88da4}\label{class_c_l_i_command_a598f54d24e71e8947e2b4304a5a88da4} 
+\index{CLICommand@{CLICommand}!m\_command@{m\_command}}
+\index{m\_command@{m\_command}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{m\_command}{m\_command}}
+{\footnotesize\ttfamily std\+::string CLICommand\+::m\+\_\+command}
+
+
+
+Command string. 
+
+\Hypertarget{class_c_l_i_command_a30a3518f67c7f0672cca332e5dc303f9}\label{class_c_l_i_command_a30a3518f67c7f0672cca332e5dc303f9} 
+\index{CLICommand@{CLICommand}!m\_finish\_func@{m\_finish\_func}}
+\index{m\_finish\_func@{m\_finish\_func}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{m\_finish\_func}{m\_finish\_func}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_l_i_command_a0c1a32f3255a3df138334579fd3ca24e}{Finish\+Func}} CLICommand\+::m\+\_\+finish\+\_\+func}
+
+
+
+Completion handler function. 
+
+\Hypertarget{class_c_l_i_command_a7256eb2ca969883f27525708d1b4baa5}\label{class_c_l_i_command_a7256eb2ca969883f27525708d1b4baa5} 
+\index{CLICommand@{CLICommand}!m\_Server@{m\_Server}}
+\index{m\_Server@{m\_Server}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{m\_Server}{m\_Server}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_server}{Server}}\texorpdfstring{$\ast$}{*} CLICommand\+::m\+\_\+\+Server}
+
+
+
+Instance to the server. 
+
+\Hypertarget{class_c_l_i_command_a90b03232586d34c3c30c23e199084ad8}\label{class_c_l_i_command_a90b03232586d34c3c30c23e199084ad8} 
+\index{CLICommand@{CLICommand}!terminal\_shutdown\_signal@{terminal\_shutdown\_signal}}
+\index{terminal\_shutdown\_signal@{terminal\_shutdown\_signal}!CLICommand@{CLICommand}}
+\doxysubsubsection{\texorpdfstring{terminal\_shutdown\_signal}{terminal\_shutdown\_signal}}
+{\footnotesize\ttfamily bool CLICommand\+::terminal\+\_\+shutdown\+\_\+signal}
+
+
+
+Terminal shutdown signal. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Common/\+CLI/\mbox{\hyperlink{_c_l_i_command_8hpp}{CLICommand.\+hpp}}\end{DoxyCompactItemize}

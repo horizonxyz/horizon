@@ -1,0 +1,294 @@
+\doxysection{Horizon\+::Zone\+::Zone\+Socket Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_zone_socket}{}\label{class_horizon_1_1_zone_1_1_zone_socket}\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+
+
+declared to avoid recursive inclusion of header files.  
+
+
+
+
+{\ttfamily \#include $<$Zone\+Socket.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Zone\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_horizon_1_1_zone_1_1_zone_socket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Zone\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_ac16695f8c39b2dc4d822a3044c9bbd64}{Zone\+Socket}} (uint64\+\_\+t uid, std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ socket)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_a6d89799fb74593c44adbb0f8d60e6474}{\texorpdfstring{$\sim$}{\string~}\+Zone\+Socket}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_a57a65e2ac254e231f124d98226c31a24}{start}} () override
+\begin{DoxyCompactList}\small\item\em Initial method invoked once from the network thread that handles the \doxylink{class_horizon_1_1_zone_1_1_zone_socket}{Zone\+Socket}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_ab958a8507a105231f0bb736415824ae2}{update}} () override
+\begin{DoxyCompactList}\small\item\em Asynchronous update method periodically called from network threads. @thread Network\+Thread. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_a39363b0c4a5e7e001d88ab574a70cfef}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_ac230587701b9b2748944d334ec812c9b}{set\+\_\+session}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_a6ec2f30ca2d9957efd1dc2899b44f6dd}{update\+\_\+session}} (uint32\+\_\+t diff)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a516682034ec65a1554cd2fbc6d700c71}{Socket}} (uint64\+\_\+t socket\+\_\+id, std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$ socket)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a0d3bcf6cb3e7aaba096a6ce5c54f3f49}{\texorpdfstring{$\sim$}{\string~}\+Socket}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5dc5b5c012e1878cd77a55f5a669ad61}{get\+\_\+socket\+\_\+id}} ()
+\item 
+std\+::string \& \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aafee17dfecd4126e12e68711a4659b63}{remote\+\_\+ip\+\_\+address}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a789aa1fe451b6f4a4a06f85a98546a4f}{remote\+\_\+port}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a9a3ec6ce1aa190ef14d2894380082a59}{async\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em Asynchronous read operation @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a6910185c7a1ad235adc2a6326a708097}{async\+\_\+read\+\_\+with\+\_\+callback}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&buf, void(\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket}}$<$ Zone\+Socket $>$\+::\texorpdfstring{$\ast$}{*})(boost\+::system\+::error\+\_\+code, std\+::size\+\_\+t))
+\begin{DoxyCompactList}\small\item\em Asynchronous read operation with callback handler @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a76ebf8e33b4af739924a689e50e01f50}{queue\+\_\+buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&\&buffer)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac819c2aa5b0f4debc6d9cb0b1b3058f9}{is\+\_\+open}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a417e2da9c6f3ea52852fc10418fc8d4b}{close\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} close operation that performs cleanups before shutting down the connection. @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a6aeebaa8bc9d7af19a9df0e4366b66bf}{delayed\+\_\+close\+\_\+socket}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a051e2e0113e7f53c8bc34f59bc300e2b}{get\+\_\+read\+\_\+buffer}} ()
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a4048fe23cc95fe493a4417f652c678fa}{get\+\_\+recv\+\_\+queue}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_af9598e20ede858fc82884a91082e2daa}{read\+\_\+handler}} () override
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_af1a1ebee89fdfa073d16666a4eb4a1ef}{on\+\_\+close}} () override
+\begin{DoxyCompactList}\small\item\em Socket cleanup method on connection closure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_a5c13aecee8a171cbfb56b12fccfe0f1d}{on\+\_\+error}} () override
+\begin{DoxyCompactList}\small\item\em Socket error handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a487a76ef4e4568fbf57eaa6bdabe0279}{async\+\_\+process\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} write operation. @thread \doxylink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_ac274c8f50298674dc526e8c87856fe3b}{set\+\_\+no\+\_\+delay}} (bool enable)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_aa5b1d93d376372cb26ed87094dfa7f0f}{write\+\_\+buffer\+\_\+and\+\_\+send}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \&to\+\_\+send, boost\+::system\+::error\+\_\+code \&error)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_socket_a588b0137fba8a9cb9a8f58950fdd7f21}{\+\_\+session}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a5421847b448e162fd9f9e53df7fdbea1}{\+\_\+buffer\+\_\+recv\+\_\+queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+declared to avoid recursive inclusion of header files. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_ac16695f8c39b2dc4d822a3044c9bbd64}\label{class_horizon_1_1_zone_1_1_zone_socket_ac16695f8c39b2dc4d822a3044c9bbd64} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!ZoneSocket@{ZoneSocket}}
+\index{ZoneSocket@{ZoneSocket}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{ZoneSocket()}{ZoneSocket()}}
+{\footnotesize\ttfamily Zone\+Socket\+::\+Zone\+Socket (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{uid,  }\item[{std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$}]{socket }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_a6d89799fb74593c44adbb0f8d60e6474}\label{class_horizon_1_1_zone_1_1_zone_socket_a6d89799fb74593c44adbb0f8d60e6474} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!````~ZoneSocket@{\texorpdfstring{$\sim$}{\string~}ZoneSocket}}
+\index{````~ZoneSocket@{\texorpdfstring{$\sim$}{\string~}ZoneSocket}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ZoneSocket()}{\string~ZoneSocket()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Zone\+Socket\+::\texorpdfstring{$\sim$}{\string~}\+Zone\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_a39363b0c4a5e7e001d88ab574a70cfef}\label{class_horizon_1_1_zone_1_1_zone_socket_a39363b0c4a5e7e001d88ab574a70cfef} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Zone\+Socket\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Session dependency. \begin{DoxyNote}{Note}
+required atomic setting/loading. @thread set by network thread, retrieved by main thread. 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_a39363b0c4a5e7e001d88ab574a70cfef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_af1a1ebee89fdfa073d16666a4eb4a1ef}\label{class_horizon_1_1_zone_1_1_zone_socket_af1a1ebee89fdfa073d16666a4eb4a1ef} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!on\_close@{on\_close}}
+\index{on\_close@{on\_close}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{on\_close()}{on\_close()}}
+{\footnotesize\ttfamily void Zone\+Socket\+::on\+\_\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Socket cleanup method on connection closure. 
+
+\begin{DoxyNote}{Note}
+This method is invoked from the network thread. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a49a8b4278571322b502c38c719b6e9b9}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_af1a1ebee89fdfa073d16666a4eb4a1ef_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_a5c13aecee8a171cbfb56b12fccfe0f1d}\label{class_horizon_1_1_zone_1_1_zone_socket_a5c13aecee8a171cbfb56b12fccfe0f1d} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
+{\footnotesize\ttfamily void Zone\+Socket\+::on\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Socket error handler. 
+
+\begin{DoxyNote}{Note}
+This method is invoked from the network thread. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a8b8ba5afa9b7386077518a5dd6b95d4d}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_a5c13aecee8a171cbfb56b12fccfe0f1d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_af9598e20ede858fc82884a91082e2daa}\label{class_horizon_1_1_zone_1_1_zone_socket_af9598e20ede858fc82884a91082e2daa} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!read\_handler@{read\_handler}}
+\index{read\_handler@{read\_handler}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{read\_handler()}{read\_handler()}}
+{\footnotesize\ttfamily void Zone\+Socket\+::read\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Incoming buffer read handler. 
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a81ffe90fe0e8be907894733bb8762f30}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_af9598e20ede858fc82884a91082e2daa_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_ac230587701b9b2748944d334ec812c9b}\label{class_horizon_1_1_zone_1_1_zone_socket_ac230587701b9b2748944d334ec812c9b} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!set\_session@{set\_session}}
+\index{set\_session@{set\_session}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{set\_session()}{set\_session()}}
+{\footnotesize\ttfamily void Zone\+Socket\+::set\+\_\+session (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_ac230587701b9b2748944d334ec812c9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_a57a65e2ac254e231f124d98226c31a24}\label{class_horizon_1_1_zone_1_1_zone_socket_a57a65e2ac254e231f124d98226c31a24} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!start@{start}}
+\index{start@{start}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Zone\+Socket\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initial method invoked once from the network thread that handles the \doxylink{class_horizon_1_1_zone_1_1_zone_socket}{Zone\+Socket}. 
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_a0771eb7f7860874879f379cf383f561e}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_a57a65e2ac254e231f124d98226c31a24_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_ab958a8507a105231f0bb736415824ae2}\label{class_horizon_1_1_zone_1_1_zone_socket_ab958a8507a105231f0bb736415824ae2} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!update@{update}}
+\index{update@{update}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Zone\+Socket\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Asynchronous update method periodically called from network threads. @thread Network\+Thread. 
+
+\begin{DoxyReturn}{Returns}
+true on successful update, false on failure. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_afb9cddbb3529c0f90977aa394a0fe6e9}{Horizon\+::\+Networking\+::\+Socket$<$ Zone\+Socket $>$}}.
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_a6ec2f30ca2d9957efd1dc2899b44f6dd}\label{class_horizon_1_1_zone_1_1_zone_socket_a6ec2f30ca2d9957efd1dc2899b44f6dd} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!update\_session@{update\_session}}
+\index{update\_session@{update\_session}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{update\_session()}{update\_session()}}
+{\footnotesize\ttfamily void Zone\+Socket\+::update\+\_\+session (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{diff }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_socket_a6ec2f30ca2d9957efd1dc2899b44f6dd_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_socket_a588b0137fba8a9cb9a8f58950fdd7f21}\label{class_horizon_1_1_zone_1_1_zone_socket_a588b0137fba8a9cb9a8f58950fdd7f21} 
+\index{Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}!\_session@{\_session}}
+\index{\_session@{\_session}!Horizon::Zone::ZoneSocket@{Horizon::Zone::ZoneSocket}}
+\doxysubsubsection{\texorpdfstring{\_session}{\_session}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}}$>$ Horizon\+::\+Zone\+::\+Zone\+Socket\+::\+\_\+session\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Socket/\mbox{\hyperlink{_zone_socket_8hpp}{Zone\+Socket.\+hpp}}\item 
+src/\+Server/\+Zone/\+Socket/\mbox{\hyperlink{_zone_socket_8cpp}{Zone\+Socket.\+cpp}}\end{DoxyCompactItemize}

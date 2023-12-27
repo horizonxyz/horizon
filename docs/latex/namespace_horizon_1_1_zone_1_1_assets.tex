@@ -1,0 +1,129 @@
+\doxysection{Horizon\+::Zone\+::Assets Namespace Reference}
+\hypertarget{namespace_horizon_1_1_zone_1_1_assets}{}\label{namespace_horizon_1_1_zone_1_1_assets}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_inventory}{Inventory}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_assets_1_1_storage}{Storage}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{inventory\+\_\+addition\+\_\+result\+\_\+type}} \{ \newline
+\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa4308b17a255aef56d30a06db4963829}{INVENTORY\+\_\+\+ADD\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa7e846e08fc6c2ea20044161251870a9}{INVENTORY\+\_\+\+ADD\+\_\+\+INVALID}} = 1
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaabbb79a5fe91a0c3a5c1caa7827fdab8}{INVENTORY\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+WEIGHT}} = 2
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfacc3853be1fd506c632d4b8296e783ab8}{INVENTORY\+\_\+\+ADD\+\_\+\+NO\+\_\+\+INV\+\_\+\+SPACE}} = 3
+, \newline
+\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfab77c790c172c32fc60fa30912385a651}{INVENTORY\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+QUANTITY}} = 4
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfa38d5a06e553a06c19c95feb82e7571da}{INVENTORY\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+STACK\+\_\+\+LIMIT}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1}{inventory\+\_\+removal\+\_\+result\+\_\+type}} \{ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1a3c9817bf5051fc83c6aae0647ae3734f}{INVENTORY\+\_\+\+REMOVE\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1ad244fb213a0fa27fbbee5b0a207fb263}{INVENTORY\+\_\+\+REMOVE\+\_\+\+INVALID}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaee}{inventory\+\_\+deletion\+\_\+reason\+\_\+type}} \{ \newline
+\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeab5454832fbd21005749268f88c8dc43b}{INVENTORY\+\_\+\+DEL\+\_\+\+NORMAL}} = 0
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea51ff8d9973b074f802e39e45a152271a}{INVENTORY\+\_\+\+DEL\+\_\+\+SKILLUSE}} = 1
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea0c8462d45afc3b535c7457d9fa12b605}{INVENTORY\+\_\+\+DEL\+\_\+\+FAILREFINE}} = 2
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaad56761685f9eb0fbad15a7040be36fc}{INVENTORY\+\_\+\+DEL\+\_\+\+MATERIALCHANGE}} = 3
+, \newline
+\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeead63e6d10a824969398be96a05a0b76b5}{INVENTORY\+\_\+\+DEL\+\_\+\+TOSTORAGE}} = 4
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf6c8955a06e02bb49628f9978cfaf26b}{INVENTORY\+\_\+\+DEL\+\_\+\+TOCART}} = 5
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf9b16b01cd977717833defa025ad9762}{INVENTORY\+\_\+\+DEL\+\_\+\+SOLD}} = 6
+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeabfb02e245cae6cb7276c4def3eada427}{INVENTORY\+\_\+\+DEL\+\_\+\+ANALYSIS}} = 7
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf} 
+\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!inventory\_addition\_result\_type@{inventory\_addition\_result\_type}}
+\index{inventory\_addition\_result\_type@{inventory\_addition\_result\_type}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}
+\doxysubsubsection{\texorpdfstring{inventory\_addition\_result\_type}{inventory\_addition\_result\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbf}{Horizon\+::\+Zone\+::\+Assets\+::inventory\+\_\+addition\+\_\+result\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_ADD\_SUCCESS@{INVENTORY\_ADD\_SUCCESS}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_ADD\_SUCCESS@{INVENTORY\_ADD\_SUCCESS}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa4308b17a255aef56d30a06db4963829}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa4308b17a255aef56d30a06db4963829} 
+INVENTORY\+\_\+\+ADD\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_ADD\_INVALID@{INVENTORY\_ADD\_INVALID}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_ADD\_INVALID@{INVENTORY\_ADD\_INVALID}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa7e846e08fc6c2ea20044161251870a9}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaa7e846e08fc6c2ea20044161251870a9} 
+INVENTORY\+\_\+\+ADD\+\_\+\+INVALID&Success. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_ADD\_OVER\_WEIGHT@{INVENTORY\_ADD\_OVER\_WEIGHT}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_ADD\_OVER\_WEIGHT@{INVENTORY\_ADD\_OVER\_WEIGHT}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaabbb79a5fe91a0c3a5c1caa7827fdab8}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfaabbb79a5fe91a0c3a5c1caa7827fdab8} 
+INVENTORY\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+WEIGHT&Invalid itemid not found or negative amount. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_ADD\_NO\_INV\_SPACE@{INVENTORY\_ADD\_NO\_INV\_SPACE}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_ADD\_NO\_INV\_SPACE@{INVENTORY\_ADD\_NO\_INV\_SPACE}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfacc3853be1fd506c632d4b8296e783ab8}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfacc3853be1fd506c632d4b8296e783ab8} 
+INVENTORY\+\_\+\+ADD\+\_\+\+NO\+\_\+\+INV\+\_\+\+SPACE&Overweight. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_ADD\_OVER\_QUANTITY@{INVENTORY\_ADD\_OVER\_QUANTITY}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_ADD\_OVER\_QUANTITY@{INVENTORY\_ADD\_OVER\_QUANTITY}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfab77c790c172c32fc60fa30912385a651}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfab77c790c172c32fc60fa30912385a651} 
+INVENTORY\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+QUANTITY&No free place found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_ADD\_OVER\_STACK\_LIMIT@{INVENTORY\_ADD\_OVER\_STACK\_LIMIT}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_ADD\_OVER\_STACK\_LIMIT@{INVENTORY\_ADD\_OVER\_STACK\_LIMIT}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfa38d5a06e553a06c19c95feb82e7571da}\label{namespace_horizon_1_1_zone_1_1_assets_a98ede96d36b72ae3baa0f1a5439c0bbfa38d5a06e553a06c19c95feb82e7571da} 
+INVENTORY\+\_\+\+ADD\+\_\+\+OVER\+\_\+\+STACK\+\_\+\+LIMIT&Max amount reached. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaee}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaee} 
+\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!inventory\_deletion\_reason\_type@{inventory\_deletion\_reason\_type}}
+\index{inventory\_deletion\_reason\_type@{inventory\_deletion\_reason\_type}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}
+\doxysubsubsection{\texorpdfstring{inventory\_deletion\_reason\_type}{inventory\_deletion\_reason\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaee}{Horizon\+::\+Zone\+::\+Assets\+::inventory\+\_\+deletion\+\_\+reason\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_NORMAL@{INVENTORY\_DEL\_NORMAL}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_NORMAL@{INVENTORY\_DEL\_NORMAL}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeab5454832fbd21005749268f88c8dc43b}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeab5454832fbd21005749268f88c8dc43b} 
+INVENTORY\+\_\+\+DEL\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_SKILLUSE@{INVENTORY\_DEL\_SKILLUSE}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_SKILLUSE@{INVENTORY\_DEL\_SKILLUSE}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea51ff8d9973b074f802e39e45a152271a}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea51ff8d9973b074f802e39e45a152271a} 
+INVENTORY\+\_\+\+DEL\+\_\+\+SKILLUSE&Normal. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_FAILREFINE@{INVENTORY\_DEL\_FAILREFINE}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_FAILREFINE@{INVENTORY\_DEL\_FAILREFINE}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea0c8462d45afc3b535c7457d9fa12b605}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeea0c8462d45afc3b535c7457d9fa12b605} 
+INVENTORY\+\_\+\+DEL\+\_\+\+FAILREFINE&Item used for a skill. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_MATERIALCHANGE@{INVENTORY\_DEL\_MATERIALCHANGE}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_MATERIALCHANGE@{INVENTORY\_DEL\_MATERIALCHANGE}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaad56761685f9eb0fbad15a7040be36fc}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaad56761685f9eb0fbad15a7040be36fc} 
+INVENTORY\+\_\+\+DEL\+\_\+\+MATERIALCHANGE&Refine failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_TOSTORAGE@{INVENTORY\_DEL\_TOSTORAGE}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_TOSTORAGE@{INVENTORY\_DEL\_TOSTORAGE}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeead63e6d10a824969398be96a05a0b76b5}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeead63e6d10a824969398be96a05a0b76b5} 
+INVENTORY\+\_\+\+DEL\+\_\+\+TOSTORAGE&Material changed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_TOCART@{INVENTORY\_DEL\_TOCART}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_TOCART@{INVENTORY\_DEL\_TOCART}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf6c8955a06e02bb49628f9978cfaf26b}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf6c8955a06e02bb49628f9978cfaf26b} 
+INVENTORY\+\_\+\+DEL\+\_\+\+TOCART&Moved to storage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_SOLD@{INVENTORY\_DEL\_SOLD}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_SOLD@{INVENTORY\_DEL\_SOLD}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf9b16b01cd977717833defa025ad9762}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeaf9b16b01cd977717833defa025ad9762} 
+INVENTORY\+\_\+\+DEL\+\_\+\+SOLD&Moved to cart. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_DEL\_ANALYSIS@{INVENTORY\_DEL\_ANALYSIS}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_DEL\_ANALYSIS@{INVENTORY\_DEL\_ANALYSIS}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeabfb02e245cae6cb7276c4def3eada427}\label{namespace_horizon_1_1_zone_1_1_assets_a53580b310a0ba44bbff66604e7f7eaeeabfb02e245cae6cb7276c4def3eada427} 
+INVENTORY\+\_\+\+DEL\+\_\+\+ANALYSIS&Item sold. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1}\label{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1} 
+\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!inventory\_removal\_result\_type@{inventory\_removal\_result\_type}}
+\index{inventory\_removal\_result\_type@{inventory\_removal\_result\_type}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}
+\doxysubsubsection{\texorpdfstring{inventory\_removal\_result\_type}{inventory\_removal\_result\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1}{Horizon\+::\+Zone\+::\+Assets\+::inventory\+\_\+removal\+\_\+result\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_REMOVE\_SUCCESS@{INVENTORY\_REMOVE\_SUCCESS}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_REMOVE\_SUCCESS@{INVENTORY\_REMOVE\_SUCCESS}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1a3c9817bf5051fc83c6aae0647ae3734f}\label{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1a3c9817bf5051fc83c6aae0647ae3734f} 
+INVENTORY\+\_\+\+REMOVE\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVENTORY\_REMOVE\_INVALID@{INVENTORY\_REMOVE\_INVALID}!Horizon::Zone::Assets@{Horizon::Zone::Assets}}\index{Horizon::Zone::Assets@{Horizon::Zone::Assets}!INVENTORY\_REMOVE\_INVALID@{INVENTORY\_REMOVE\_INVALID}}}\Hypertarget{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1ad244fb213a0fa27fbbee5b0a207fb263}\label{namespace_horizon_1_1_zone_1_1_assets_a6eddbcb8a220961503bc2e4ba6b79bd1ad244fb213a0fa27fbbee5b0a207fb263} 
+INVENTORY\+\_\+\+REMOVE\+\_\+\+INVALID&Success. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,79 @@
+\doxysection{map\+\_\+cache Struct Reference}
+\hypertarget{structmap__cache}{}\label{structmap__cache}\index{map\_cache@{map\_cache}}
+
+
+{\ttfamily \#include $<$Map\+Cache.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmapcache__header}{mapcache\+\_\+header}} \& \mbox{\hyperlink{structmap__cache_a3f06df5217932251bf5a45c1fb689fe4}{get\+Header}} ()
+\item 
+void \mbox{\hyperlink{structmap__cache_afed0dbcdce958303a004aa1e3b26ab05}{set\+Header}} (\mbox{\hyperlink{structmapcache__header}{mapcache\+\_\+header}} \&header)
+\item 
+void \mbox{\hyperlink{structmap__cache_a632cf91840eed3c37d7161a3d60617a3}{add\+Map}} (\mbox{\hyperlink{structmap__data}{map\+\_\+data}} \&data)
+\item 
+void \mbox{\hyperlink{structmap__cache_a2926145879d7ee1cd63186542cff5e52}{remove\+Map}} (std\+::string \&name)
+\item 
+boost\+::optional$<$ \mbox{\hyperlink{structmap__data}{map\+\_\+data}} $>$ \mbox{\hyperlink{structmap__cache_a487d389a066239875c6a8487e58eda11}{get\+Map}} (std\+::string name)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{structmap__cache_a3a3b8f28f998a7ebca1518d6c800df60}{get\+Map\+Count}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{structmap__data}{map\+\_\+data}} $>$ \mbox{\hyperlink{structmap__cache_a34df4405a7d6289e2a1a0ddfbd016a02}{maps}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structmap__cache_a632cf91840eed3c37d7161a3d60617a3}\label{structmap__cache_a632cf91840eed3c37d7161a3d60617a3} 
+\index{map\_cache@{map\_cache}!addMap@{addMap}}
+\index{addMap@{addMap}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{addMap()}{addMap()}}
+{\footnotesize\ttfamily void map\+\_\+cache\+::add\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmap__data}{map\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structmap__cache_a3f06df5217932251bf5a45c1fb689fe4}\label{structmap__cache_a3f06df5217932251bf5a45c1fb689fe4} 
+\index{map\_cache@{map\_cache}!getHeader@{getHeader}}
+\index{getHeader@{getHeader}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{getHeader()}{getHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmapcache__header}{mapcache\+\_\+header}} \& map\+\_\+cache\+::get\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structmap__cache_a487d389a066239875c6a8487e58eda11}\label{structmap__cache_a487d389a066239875c6a8487e58eda11} 
+\index{map\_cache@{map\_cache}!getMap@{getMap}}
+\index{getMap@{getMap}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily boost\+::optional$<$ \mbox{\hyperlink{structmap__data}{map\+\_\+data}} $>$ map\+\_\+cache\+::get\+Map (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structmap__cache_a3a3b8f28f998a7ebca1518d6c800df60}\label{structmap__cache_a3a3b8f28f998a7ebca1518d6c800df60} 
+\index{map\_cache@{map\_cache}!getMapCount@{getMapCount}}
+\index{getMapCount@{getMapCount}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{getMapCount()}{getMapCount()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t map\+\_\+cache\+::get\+Map\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structmap__cache_a2926145879d7ee1cd63186542cff5e52}\label{structmap__cache_a2926145879d7ee1cd63186542cff5e52} 
+\index{map\_cache@{map\_cache}!removeMap@{removeMap}}
+\index{removeMap@{removeMap}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{removeMap()}{removeMap()}}
+{\footnotesize\ttfamily void map\+\_\+cache\+::remove\+Map (\begin{DoxyParamCaption}\item[{std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structmap__cache_afed0dbcdce958303a004aa1e3b26ab05}\label{structmap__cache_afed0dbcdce958303a004aa1e3b26ab05} 
+\index{map\_cache@{map\_cache}!setHeader@{setHeader}}
+\index{setHeader@{setHeader}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{setHeader()}{setHeader()}}
+{\footnotesize\ttfamily void map\+\_\+cache\+::set\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmapcache__header}{mapcache\+\_\+header}} \&}]{header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structmap__cache_a34df4405a7d6289e2a1a0ddfbd016a02}\label{structmap__cache_a34df4405a7d6289e2a1a0ddfbd016a02} 
+\index{map\_cache@{map\_cache}!maps@{maps}}
+\index{maps@{maps}!map\_cache@{map\_cache}}
+\doxysubsubsection{\texorpdfstring{maps}{maps}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{structmap__data}{map\+\_\+data}}$>$ map\+\_\+cache\+::maps}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Map\+Cache/\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp}{Map\+Cache.\+hpp}}\end{DoxyCompactItemize}

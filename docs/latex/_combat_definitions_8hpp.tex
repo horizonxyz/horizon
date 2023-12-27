@@ -1,0 +1,271 @@
+\doxysection{src/\+Server/\+Zone/\+Definitions/\+Combat\+Definitions.hpp File Reference}
+\hypertarget{_combat_definitions_8hpp}{}\label{_combat_definitions_8hpp}\index{src/Server/Zone/Definitions/CombatDefinitions.hpp@{src/Server/Zone/Definitions/CombatDefinitions.hpp}}
+{\ttfamily \#include "{}Entity\+Definitions.\+hpp"{}}\newline
+Include dependency graph for Combat\+Definitions.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{_combat_definitions_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_combat_definitions_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcombat__structures}{combat\+\_\+structures}}
+\item 
+struct \mbox{\hyperlink{structcombat__damage}{combat\+\_\+damage}}
+\item 
+struct \mbox{\hyperlink{structcombat__healing}{combat\+\_\+healing}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756f}{combat\+\_\+damage\+\_\+type\+\_\+mask}} \{ \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa33c46b8c89a72daa37f2eae9ee59c429}{CBT\+\_\+\+DMGMASK\+\_\+\+NONE}} = 0x0000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756faf044af0c10b68be61905177d7490654c}{CBT\+\_\+\+DMGMASK\+\_\+\+WEAPON}} = 0x0001
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa14ecdf3f0d06ef97145b5b75e6f5d64d}{CBT\+\_\+\+DMGMASK\+\_\+\+MAGIC}} = 0x0002
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fafa95fae5bfc7d3d89fcef533387dca68}{CBT\+\_\+\+DMGMASK\+\_\+\+MISC}} = 0x0004
+, \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa2b5cd19ee8d9ecc2dd1e5ae7465f1d0f}{CBT\+\_\+\+DMGMASK\+\_\+\+SHORT}} = 0x0010
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae43ab4f3183cceed6bc6b24883f4c6b5}{CBT\+\_\+\+DMGMASK\+\_\+\+LONG}} = 0x0040
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae166fcde5c181114a7c9e03377faaef6}{CBT\+\_\+\+DMGMASK\+\_\+\+SKILL}} = 0x0100
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa83b3fb77790089937b92c54d718e0b2b}{CBT\+\_\+\+DMGMASK\+\_\+\+NORMAL}} = 0x0200
+, \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa10cb9d252c19f71644cd8119f8fe04ba}{CBT\+\_\+\+DMGMASK\+\_\+\+WEAPONMASK}} = 0x000f
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa82c27b260fa3e4c415fd1315f09b0e48}{CBT\+\_\+\+DMGMASK\+\_\+\+RANGEMASK}} = 0x00f0
+, \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fab085fc83245c203f8785cd6c524a17ec}{CBT\+\_\+\+DMGMASK\+\_\+\+SKILLMASK}} = 0x0f00
+ \}
+\item 
+enum \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}{combat\+\_\+retaliate\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a84b9f4ef1f00d0c66dc1e22148b23dcd}{CBT\+\_\+\+RET\+\_\+\+NONE}}
+, \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a81978c5f64e3fc38aff9a9537077ebe1}{CBT\+\_\+\+RET\+\_\+\+LUCKY}}
+, \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a6ce3d6ca212f172f2b410a06ed45083d}{CBT\+\_\+\+RET\+\_\+\+FLEE}}
+, \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7f77c32c1c32e75946f67259d2098150}{CBT\+\_\+\+RET\+\_\+\+MISS}}
+, \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7a13b0e259a553b78d51c51aabee4844}{CBT\+\_\+\+RET\+\_\+\+BLOCK}}
+, \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a76409ecd5c261f91ec25eb1410cbbfd6}{CBT\+\_\+\+RET\+\_\+\+DEF}}
+ \}
+\item 
+enum \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45e}{combat\+\_\+target\+\_\+mask}} \{ \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eab07173ca199a094af358b44c2b8a8c62}{CBT\+\_\+\+TMASK\+\_\+\+NOONE}} = 0x000000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea5fe77133311cb36c65c2608a177cd83b}{CBT\+\_\+\+TMASK\+\_\+\+SELF}} = 0x010000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eadfa10b0d7857e5bdaab17d71fdbc7d75}{CBT\+\_\+\+TMASK\+\_\+\+ENEMY}} = 0x020000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea8aee819400880ab668769d5d33ea44e7}{CBT\+\_\+\+TMASK\+\_\+\+PARTY}} = 0x040000
+, \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea773a78aa34e76a9844187bf770e4f6e5}{CBT\+\_\+\+TMASK\+\_\+\+GUILDALLY}} = 0x080000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea0449399c8f75217b84a0fc623d16f3e5}{CBT\+\_\+\+TMASK\+\_\+\+NEUTRAL}} = 0x100000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea1a55a83a762ee961fa645e9a4876c5a9}{CBT\+\_\+\+TMASK\+\_\+\+SAMEGUILD}} = 0x200000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65b86ada21760c731d509a83b422122c}{CBT\+\_\+\+TMASK\+\_\+\+GUILD}} = 0x280000
+, \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea091de4773d4778dfd51215ad9daaef38}{CBT\+\_\+\+TMASK\+\_\+\+NOGUILD}} = 0x170000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eac411712d6e4a27c66b941d85625d1b8e}{CBT\+\_\+\+TMASK\+\_\+\+NOPARTY}} = 0x3b0000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65c5ffe7893acde5e16004c528b559ca}{CBT\+\_\+\+TMASK\+\_\+\+NOENEMY}} = 0x3d0000
+, \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea518fa2d666bfeb06483c43f293180a33}{CBT\+\_\+\+TMASK\+\_\+\+ALL}} = 0x3f0000
+ \}
+\item 
+enum \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8}{combat\+\_\+damage\+\_\+hit\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a63eadd386119fc016036b7a6828cdc54}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+NORMAL}} = 0
+, \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8af26632cfa428df616fddac870ef75ada}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+ENDURE}} = 4
+, \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a88d2f7d44dde7eed302c6b0de7b6cbec}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+SPLASH}} = 5
+, \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a25da131a35c86f5474a488a8a7072d28}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+SKILL}} = 6
+, \newline
+\mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ad8759224a57542fba14ff99df77eaf74}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+MULTIHIT}} = 8
+, \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a501cc13fd6de48a50a66b1ea744d8069}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+MULTIENDURE}} = 9
+, \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8add8412252050b2b3ac80e3ae8a9ae157}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+CRIT}} = 10
+, \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ae21ec0015077a2cd6b2d1d8c43b0808a}{CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+PDODGE}} = 11
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8} 
+\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!combat\_damage\_hit\_type@{combat\_damage\_hit\_type}}
+\index{combat\_damage\_hit\_type@{combat\_damage\_hit\_type}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{combat\_damage\_hit\_type}{combat\_damage\_hit\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8}{combat\+\_\+damage\+\_\+hit\+\_\+type}}}
+
+Values used by (struct Damage).type, as well as clif-\/\texorpdfstring{$>$}{>}damage(type) and clif-\/\texorpdfstring{$>$}{>}skill\+\_\+damage(type)
+
+Note\+: some values may not apply in some contexts. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_NORMAL@{CBT\_DMG\_HIT\_NORMAL}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_NORMAL@{CBT\_DMG\_HIT\_NORMAL}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a63eadd386119fc016036b7a6828cdc54}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a63eadd386119fc016036b7a6828cdc54} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_ENDURE@{CBT\_DMG\_HIT\_ENDURE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_ENDURE@{CBT\_DMG\_HIT\_ENDURE}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8af26632cfa428df616fddac870ef75ada}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8af26632cfa428df616fddac870ef75ada} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+ENDURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_SPLASH@{CBT\_DMG\_HIT\_SPLASH}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_SPLASH@{CBT\_DMG\_HIT\_SPLASH}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a88d2f7d44dde7eed302c6b0de7b6cbec}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a88d2f7d44dde7eed302c6b0de7b6cbec} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+SPLASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_SKILL@{CBT\_DMG\_HIT\_SKILL}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_SKILL@{CBT\_DMG\_HIT\_SKILL}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a25da131a35c86f5474a488a8a7072d28}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a25da131a35c86f5474a488a8a7072d28} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_MULTIHIT@{CBT\_DMG\_HIT\_MULTIHIT}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_MULTIHIT@{CBT\_DMG\_HIT\_MULTIHIT}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ad8759224a57542fba14ff99df77eaf74}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ad8759224a57542fba14ff99df77eaf74} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+MULTIHIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_MULTIENDURE@{CBT\_DMG\_HIT\_MULTIENDURE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_MULTIENDURE@{CBT\_DMG\_HIT\_MULTIENDURE}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a501cc13fd6de48a50a66b1ea744d8069}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8a501cc13fd6de48a50a66b1ea744d8069} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+MULTIENDURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_CRIT@{CBT\_DMG\_HIT\_CRIT}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_CRIT@{CBT\_DMG\_HIT\_CRIT}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8add8412252050b2b3ac80e3ae8a9ae157}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8add8412252050b2b3ac80e3ae8a9ae157} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+CRIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMG\_HIT\_PDODGE@{CBT\_DMG\_HIT\_PDODGE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMG\_HIT\_PDODGE@{CBT\_DMG\_HIT\_PDODGE}}}\Hypertarget{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ae21ec0015077a2cd6b2d1d8c43b0808a}\label{_combat_definitions_8hpp_a7a5ff9c23c2a35a7d0497e795b47ace8ae21ec0015077a2cd6b2d1d8c43b0808a} 
+CBT\+\_\+\+DMG\+\_\+\+HIT\+\_\+\+PDODGE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756f}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756f} 
+\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!combat\_damage\_type\_mask@{combat\_damage\_type\_mask}}
+\index{combat\_damage\_type\_mask@{combat\_damage\_type\_mask}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{combat\_damage\_type\_mask}{combat\_damage\_type\_mask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756f}{combat\+\_\+damage\+\_\+type\+\_\+mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_NONE@{CBT\_DMGMASK\_NONE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_NONE@{CBT\_DMGMASK\_NONE}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa33c46b8c89a72daa37f2eae9ee59c429}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa33c46b8c89a72daa37f2eae9ee59c429} 
+CBT\+\_\+\+DMGMASK\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_WEAPON@{CBT\_DMGMASK\_WEAPON}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_WEAPON@{CBT\_DMGMASK\_WEAPON}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756faf044af0c10b68be61905177d7490654c}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756faf044af0c10b68be61905177d7490654c} 
+CBT\+\_\+\+DMGMASK\+\_\+\+WEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_MAGIC@{CBT\_DMGMASK\_MAGIC}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_MAGIC@{CBT\_DMGMASK\_MAGIC}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa14ecdf3f0d06ef97145b5b75e6f5d64d}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa14ecdf3f0d06ef97145b5b75e6f5d64d} 
+CBT\+\_\+\+DMGMASK\+\_\+\+MAGIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_MISC@{CBT\_DMGMASK\_MISC}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_MISC@{CBT\_DMGMASK\_MISC}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fafa95fae5bfc7d3d89fcef533387dca68}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fafa95fae5bfc7d3d89fcef533387dca68} 
+CBT\+\_\+\+DMGMASK\+\_\+\+MISC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_SHORT@{CBT\_DMGMASK\_SHORT}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_SHORT@{CBT\_DMGMASK\_SHORT}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa2b5cd19ee8d9ecc2dd1e5ae7465f1d0f}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa2b5cd19ee8d9ecc2dd1e5ae7465f1d0f} 
+CBT\+\_\+\+DMGMASK\+\_\+\+SHORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_LONG@{CBT\_DMGMASK\_LONG}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_LONG@{CBT\_DMGMASK\_LONG}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae43ab4f3183cceed6bc6b24883f4c6b5}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae43ab4f3183cceed6bc6b24883f4c6b5} 
+CBT\+\_\+\+DMGMASK\+\_\+\+LONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_SKILL@{CBT\_DMGMASK\_SKILL}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_SKILL@{CBT\_DMGMASK\_SKILL}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae166fcde5c181114a7c9e03377faaef6}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fae166fcde5c181114a7c9e03377faaef6} 
+CBT\+\_\+\+DMGMASK\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_NORMAL@{CBT\_DMGMASK\_NORMAL}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_NORMAL@{CBT\_DMGMASK\_NORMAL}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa83b3fb77790089937b92c54d718e0b2b}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa83b3fb77790089937b92c54d718e0b2b} 
+CBT\+\_\+\+DMGMASK\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_WEAPONMASK@{CBT\_DMGMASK\_WEAPONMASK}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_WEAPONMASK@{CBT\_DMGMASK\_WEAPONMASK}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa10cb9d252c19f71644cd8119f8fe04ba}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa10cb9d252c19f71644cd8119f8fe04ba} 
+CBT\+\_\+\+DMGMASK\+\_\+\+WEAPONMASK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_RANGEMASK@{CBT\_DMGMASK\_RANGEMASK}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_RANGEMASK@{CBT\_DMGMASK\_RANGEMASK}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa82c27b260fa3e4c415fd1315f09b0e48}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fa82c27b260fa3e4c415fd1315f09b0e48} 
+CBT\+\_\+\+DMGMASK\+\_\+\+RANGEMASK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_DMGMASK\_SKILLMASK@{CBT\_DMGMASK\_SKILLMASK}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_DMGMASK\_SKILLMASK@{CBT\_DMGMASK\_SKILLMASK}}}\Hypertarget{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fab085fc83245c203f8785cd6c524a17ec}\label{_combat_definitions_8hpp_a845925787ea0e1688a3737f81cab756fab085fc83245c203f8785cd6c524a17ec} 
+CBT\+\_\+\+DMGMASK\+\_\+\+SKILLMASK&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7} 
+\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!combat\_retaliate\_type@{combat\_retaliate\_type}}
+\index{combat\_retaliate\_type@{combat\_retaliate\_type}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{combat\_retaliate\_type}{combat\_retaliate\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7}{combat\+\_\+retaliate\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_RET\_NONE@{CBT\_RET\_NONE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_RET\_NONE@{CBT\_RET\_NONE}}}\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a84b9f4ef1f00d0c66dc1e22148b23dcd}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a84b9f4ef1f00d0c66dc1e22148b23dcd} 
+CBT\+\_\+\+RET\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_RET\_LUCKY@{CBT\_RET\_LUCKY}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_RET\_LUCKY@{CBT\_RET\_LUCKY}}}\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a81978c5f64e3fc38aff9a9537077ebe1}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a81978c5f64e3fc38aff9a9537077ebe1} 
+CBT\+\_\+\+RET\+\_\+\+LUCKY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_RET\_FLEE@{CBT\_RET\_FLEE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_RET\_FLEE@{CBT\_RET\_FLEE}}}\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a6ce3d6ca212f172f2b410a06ed45083d}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a6ce3d6ca212f172f2b410a06ed45083d} 
+CBT\+\_\+\+RET\+\_\+\+FLEE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_RET\_MISS@{CBT\_RET\_MISS}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_RET\_MISS@{CBT\_RET\_MISS}}}\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7f77c32c1c32e75946f67259d2098150}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7f77c32c1c32e75946f67259d2098150} 
+CBT\+\_\+\+RET\+\_\+\+MISS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_RET\_BLOCK@{CBT\_RET\_BLOCK}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_RET\_BLOCK@{CBT\_RET\_BLOCK}}}\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7a13b0e259a553b78d51c51aabee4844}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a7a13b0e259a553b78d51c51aabee4844} 
+CBT\+\_\+\+RET\+\_\+\+BLOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_RET\_DEF@{CBT\_RET\_DEF}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_RET\_DEF@{CBT\_RET\_DEF}}}\Hypertarget{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a76409ecd5c261f91ec25eb1410cbbfd6}\label{_combat_definitions_8hpp_a95147ebff59b0aeeec8a956661f82eb7a76409ecd5c261f91ec25eb1410cbbfd6} 
+CBT\+\_\+\+RET\+\_\+\+DEF&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45e}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45e} 
+\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!combat\_target\_mask@{combat\_target\_mask}}
+\index{combat\_target\_mask@{combat\_target\_mask}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{combat\_target\_mask}{combat\_target\_mask}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45e}{combat\+\_\+target\+\_\+mask}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_NOONE@{CBT\_TMASK\_NOONE}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_NOONE@{CBT\_TMASK\_NOONE}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eab07173ca199a094af358b44c2b8a8c62}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eab07173ca199a094af358b44c2b8a8c62} 
+CBT\+\_\+\+TMASK\+\_\+\+NOONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_SELF@{CBT\_TMASK\_SELF}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_SELF@{CBT\_TMASK\_SELF}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea5fe77133311cb36c65c2608a177cd83b}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea5fe77133311cb36c65c2608a177cd83b} 
+CBT\+\_\+\+TMASK\+\_\+\+SELF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_ENEMY@{CBT\_TMASK\_ENEMY}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_ENEMY@{CBT\_TMASK\_ENEMY}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eadfa10b0d7857e5bdaab17d71fdbc7d75}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eadfa10b0d7857e5bdaab17d71fdbc7d75} 
+CBT\+\_\+\+TMASK\+\_\+\+ENEMY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_PARTY@{CBT\_TMASK\_PARTY}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_PARTY@{CBT\_TMASK\_PARTY}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea8aee819400880ab668769d5d33ea44e7}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea8aee819400880ab668769d5d33ea44e7} 
+CBT\+\_\+\+TMASK\+\_\+\+PARTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_GUILDALLY@{CBT\_TMASK\_GUILDALLY}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_GUILDALLY@{CBT\_TMASK\_GUILDALLY}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea773a78aa34e76a9844187bf770e4f6e5}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea773a78aa34e76a9844187bf770e4f6e5} 
+CBT\+\_\+\+TMASK\+\_\+\+GUILDALLY&Only allies, NOT guildmates. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_NEUTRAL@{CBT\_TMASK\_NEUTRAL}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_NEUTRAL@{CBT\_TMASK\_NEUTRAL}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea0449399c8f75217b84a0fc623d16f3e5}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea0449399c8f75217b84a0fc623d16f3e5} 
+CBT\+\_\+\+TMASK\+\_\+\+NEUTRAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_SAMEGUILD@{CBT\_TMASK\_SAMEGUILD}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_SAMEGUILD@{CBT\_TMASK\_SAMEGUILD}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea1a55a83a762ee961fa645e9a4876c5a9}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea1a55a83a762ee961fa645e9a4876c5a9} 
+CBT\+\_\+\+TMASK\+\_\+\+SAMEGUILD&No Guild Allies. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_GUILD@{CBT\_TMASK\_GUILD}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_GUILD@{CBT\_TMASK\_GUILD}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65b86ada21760c731d509a83b422122c}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65b86ada21760c731d509a83b422122c} 
+CBT\+\_\+\+TMASK\+\_\+\+GUILD&Guild AND allies (BCT\+\_\+\+SAMEGUILD\texorpdfstring{$\vert$}{|}\+BCT\+\_\+\+GUILDALLY) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_NOGUILD@{CBT\_TMASK\_NOGUILD}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_NOGUILD@{CBT\_TMASK\_NOGUILD}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea091de4773d4778dfd51215ad9daaef38}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea091de4773d4778dfd51215ad9daaef38} 
+CBT\+\_\+\+TMASK\+\_\+\+NOGUILD&This must be (\texorpdfstring{$\sim$}{\string~}\+BCT\+\_\+\+GUILD\&BCT\+\_\+\+ALL) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_NOPARTY@{CBT\_TMASK\_NOPARTY}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_NOPARTY@{CBT\_TMASK\_NOPARTY}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eac411712d6e4a27c66b941d85625d1b8e}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45eac411712d6e4a27c66b941d85625d1b8e} 
+CBT\+\_\+\+TMASK\+\_\+\+NOPARTY&This must be (\texorpdfstring{$\sim$}{\string~}\+BCT\+\_\+\+PARTY\&BCT\+\_\+\+ALL) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_NOENEMY@{CBT\_TMASK\_NOENEMY}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_NOENEMY@{CBT\_TMASK\_NOENEMY}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65c5ffe7893acde5e16004c528b559ca}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea65c5ffe7893acde5e16004c528b559ca} 
+CBT\+\_\+\+TMASK\+\_\+\+NOENEMY&This must be (\texorpdfstring{$\sim$}{\string~}\+BCT\+\_\+\+ENEMY\&BCT\+\_\+\+ALL) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CBT\_TMASK\_ALL@{CBT\_TMASK\_ALL}!CombatDefinitions.hpp@{CombatDefinitions.hpp}}\index{CombatDefinitions.hpp@{CombatDefinitions.hpp}!CBT\_TMASK\_ALL@{CBT\_TMASK\_ALL}}}\Hypertarget{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea518fa2d666bfeb06483c43f293180a33}\label{_combat_definitions_8hpp_a69e8e5460c1d4dcae3cbf34f4884a45ea518fa2d666bfeb06483c43f293180a33} 
+CBT\+\_\+\+TMASK\+\_\+\+ALL&Sum of BCT\+\_\+\+NOONE to BCT\+\_\+\+SAMEGUILD. \\
+\hline
+
+\end{DoxyEnumFields}

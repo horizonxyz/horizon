@@ -1,0 +1,282 @@
+\doxysection{Coordinates\texorpdfstring{$<$}{<} MAX\+\_\+\+COORDINATES \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_coordinates}{}\label{class_coordinates}\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+
+
+{\ttfamily \#include $<$Coordinates.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_coordinates_a304fd01bccbf93ee4818363cc836d71d}{Coordinates}} (int16\+\_\+t \mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}=0, int16\+\_\+t \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}=0)
+\item 
+\mbox{\hyperlink{class_coordinates_a34dbf6d60a60e72798a26e6fa1180d6d}{Coordinates}} (const \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \&obj)
+\item 
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \mbox{\hyperlink{class_coordinates_ae0afde8c447f73c54264db3812a87196}{operator=}} (const \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \&right)
+\item 
+bool \mbox{\hyperlink{class_coordinates_a1d86abdea0d249f32f81f25b46f1a244}{operator==}} (\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&right) const
+\item 
+bool \mbox{\hyperlink{class_coordinates_a6578363594ffcf7b7385f77a0b33176b}{operator!=}} (\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&right) const
+\item 
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \mbox{\hyperlink{class_coordinates_abc6cd67f710d6e95acd9a75308e72b8c}{operator+}} (\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&right) const
+\item 
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \mbox{\hyperlink{class_coordinates_a02ca32aa5e33694cdf37362fbc257438}{operator-\/}} (\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&right) const
+\item 
+{\footnotesize template$<$int16\+\_\+t BOUNDS$>$ }\\bool \mbox{\hyperlink{class_coordinates_a2ae0019a7707fc98814620107c4d0749}{is\+\_\+within\+\_\+range}} (\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ BOUNDS $>$ const \&bounds, int range) const
+\item 
+{\footnotesize template$<$int16\+\_\+t BOUNDS$>$ }\\\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ BOUNDS $>$ \mbox{\hyperlink{class_coordinates_a6ae6a2fd1d12e251b3e06c9f3a27eca3}{at\+\_\+range}} (int range) const
+\item 
+{\footnotesize template$<$int16\+\_\+t BLOCK\+\_\+\+SIZE, int16\+\_\+t BLOCK\+\_\+\+COUNT$>$ }\\\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ BLOCK\+\_\+\+COUNT $>$ \mbox{\hyperlink{class_coordinates_a1dddac88d6e458c4746203ba82086278}{scale}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}{move\+\_\+cost}} () const
+\item 
+void \mbox{\hyperlink{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed}{set\+\_\+move\+\_\+cost}} (int16\+\_\+t \mbox{\hyperlink{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}{move\+\_\+cost}})
+\item 
+void \mbox{\hyperlink{class_coordinates_adfcc161e45c4247dc2026aaa50fe8a26}{inc\+\_\+x}} (int16\+\_\+t val)
+\item 
+void \mbox{\hyperlink{class_coordinates_a1f7510f826e0c28deb28c99f854fac96}{dec\+\_\+x}} (int16\+\_\+t val)
+\item 
+void \mbox{\hyperlink{class_coordinates_ac22cfee5dc63bfde60b8266dc8724e0f}{inc\+\_\+y}} (int16\+\_\+t val)
+\item 
+void \mbox{\hyperlink{class_coordinates_a4733999fbddbd0b816e28c79364f4931}{dec\+\_\+y}} (int16\+\_\+t val)
+\item 
+bool \mbox{\hyperlink{class_coordinates_a77f4de4cd4ba39b28de33db2ddd71d42}{valid}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_coordinates_a304fd01bccbf93ee4818363cc836d71d}\label{class_coordinates_a304fd01bccbf93ee4818363cc836d71d} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!Coordinates@{Coordinates}}
+\index{Coordinates@{Coordinates}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{Coordinates()}{Coordinates()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\mbox{\hyperlink{class_coordinates}{\+::\+Coordinates}} (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x = {\ttfamily 0},  }\item[{int16\+\_\+t}]{y = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_a34dbf6d60a60e72798a26e6fa1180d6d}\label{class_coordinates_a34dbf6d60a60e72798a26e6fa1180d6d} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!Coordinates@{Coordinates}}
+\index{Coordinates@{Coordinates}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{Coordinates()}{Coordinates()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\mbox{\hyperlink{class_coordinates}{\+::\+Coordinates}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_coordinates_a6ae6a2fd1d12e251b3e06c9f3a27eca3}\label{class_coordinates_a6ae6a2fd1d12e251b3e06c9f3a27eca3} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!at\_range@{at\_range}}
+\index{at\_range@{at\_range}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{at\_range()}{at\_range()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+template$<$int16\+\_\+t BOUNDS$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ BOUNDS $>$ \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::at\+\_\+range (\begin{DoxyParamCaption}\item[{int}]{range }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_coordinates_a6ae6a2fd1d12e251b3e06c9f3a27eca3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_coordinates_a6ae6a2fd1d12e251b3e06c9f3a27eca3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_coordinates_a1f7510f826e0c28deb28c99f854fac96}\label{class_coordinates_a1f7510f826e0c28deb28c99f854fac96} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!dec\_x@{dec\_x}}
+\index{dec\_x@{dec\_x}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{dec\_x()}{dec\_x()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+void \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::dec\+\_\+x (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_a4733999fbddbd0b816e28c79364f4931}\label{class_coordinates_a4733999fbddbd0b816e28c79364f4931} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!dec\_y@{dec\_y}}
+\index{dec\_y@{dec\_y}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{dec\_y()}{dec\_y()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+void \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::dec\+\_\+y (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_adfcc161e45c4247dc2026aaa50fe8a26}\label{class_coordinates_adfcc161e45c4247dc2026aaa50fe8a26} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!inc\_x@{inc\_x}}
+\index{inc\_x@{inc\_x}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{inc\_x()}{inc\_x()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+void \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::inc\+\_\+x (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_ac22cfee5dc63bfde60b8266dc8724e0f}\label{class_coordinates_ac22cfee5dc63bfde60b8266dc8724e0f} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!inc\_y@{inc\_y}}
+\index{inc\_y@{inc\_y}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{inc\_y()}{inc\_y()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+void \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::inc\+\_\+y (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_a2ae0019a7707fc98814620107c4d0749}\label{class_coordinates_a2ae0019a7707fc98814620107c4d0749} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!is\_within\_range@{is\_within\_range}}
+\index{is\_within\_range@{is\_within\_range}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{is\_within\_range()}{is\_within\_range()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+template$<$int16\+\_\+t BOUNDS$>$ \\
+bool \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::is\+\_\+within\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ BOUNDS $>$ const \&}]{bounds,  }\item[{int}]{range }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_coordinates_a2ae0019a7707fc98814620107c4d0749_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coordinates_a2ae0019a7707fc98814620107c4d0749_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}\label{class_coordinates_ae2a5ac323bb267433bfaef488130a29e} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!move\_cost@{move\_cost}}
+\index{move\_cost@{move\_cost}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{move\_cost()}{move\_cost()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+int16\+\_\+t \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::move\+\_\+cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coordinates_ae2a5ac323bb267433bfaef488130a29e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_coordinates_a6578363594ffcf7b7385f77a0b33176b}\label{class_coordinates_a6578363594ffcf7b7385f77a0b33176b} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+bool \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_abc6cd67f710d6e95acd9a75308e72b8c}\label{class_coordinates_abc6cd67f710d6e95acd9a75308e72b8c} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_a02ca32aa5e33694cdf37362fbc257438}\label{class_coordinates_a02ca32aa5e33694cdf37362fbc257438} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_ae0afde8c447f73c54264db3812a87196}\label{class_coordinates_ae0afde8c447f73c54264db3812a87196} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_a1d86abdea0d249f32f81f25b46f1a244}\label{class_coordinates_a1d86abdea0d249f32f81f25b46f1a244} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+bool \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$ const \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_a1dddac88d6e458c4746203ba82086278}\label{class_coordinates_a1dddac88d6e458c4746203ba82086278} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!scale@{scale}}
+\index{scale@{scale}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+template$<$int16\+\_\+t BLOCK\+\_\+\+SIZE, int16\+\_\+t BLOCK\+\_\+\+COUNT$>$ \\
+\mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ BLOCK\+\_\+\+COUNT $>$ \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_coordinates_a1dddac88d6e458c4746203ba82086278_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_coordinates_a1dddac88d6e458c4746203ba82086278_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed}\label{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!set\_move\_cost@{set\_move\_cost}}
+\index{set\_move\_cost@{set\_move\_cost}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{set\_move\_cost()}{set\_move\_cost()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+void \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::set\+\_\+move\+\_\+cost (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{move\+\_\+cost }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_coordinates_a77f4de4cd4ba39b28de33db2ddd71d42}\label{class_coordinates_a77f4de4cd4ba39b28de33db2ddd71d42} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!valid@{valid}}
+\index{valid@{valid}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{valid()}{valid()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+bool \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}\label{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!x@{x}}
+\index{x@{x}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+int16\+\_\+t \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}\label{class_coordinates_a13e275b7df55f51beb61bb20ead8699e} 
+\index{Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}!y@{y}}
+\index{y@{y}!Coordinates$<$ MAX\_COORDINATES $>$@{Coordinates$<$ MAX\_COORDINATES $>$}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily template$<$int16\+\_\+t MAX\+\_\+\+COORDINATES$>$ \\
+int16\+\_\+t \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ MAX\+\_\+\+COORDINATES $>$\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_coordinates_a13e275b7df55f51beb61bb20ead8699e_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_coordinates_8hpp}{Coordinates.\+hpp}}\end{DoxyCompactItemize}

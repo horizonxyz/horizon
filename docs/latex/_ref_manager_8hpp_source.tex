@@ -1,0 +1,49 @@
+\doxysection{Ref\+Manager.\+hpp}
+\hypertarget{_ref_manager_8hpp_source}{}\label{_ref_manager_8hpp_source}\index{src/Core/Structures/LinkedList/ReferenceList/RefManager.hpp@{src/Core/Structures/LinkedList/ReferenceList/RefManager.hpp}}
+\mbox{\hyperlink{_ref_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_STRUCTURES\_REFMANAGER\_HPP}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_STRUCTURES\_REFMANAGER\_HPP}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_head_8hpp}{Core/Structures/LinkedList/Head.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_reference_8hpp}{Core/Structures/LinkedList/ReferenceList/Reference.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }Structures}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }LinkedList}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ TO,\ \textcolor{keyword}{class}\ FROM>}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{RefManager}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Head::Iterator<Reference<TO,\ FROM>}}>\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a9f8ad25b36c44a06e11ce7817c1505cf}{RefManager}}()\ \{\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037}{first}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *\textcolor{keyword}{>}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f}{Head::first}}());\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const}\ *\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afd4d5429fdc3bb9cc7abb7588ee008b5}{first}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ \textcolor{keyword}{const\ }*\textcolor{keyword}{>}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f}{Head::first}}());\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{iterator}}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a635c404e71ce17c37276ca9a7d3b1ee4}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}}(\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037}{first}}());\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{iterator}}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afe71b983a890a59d439c4f9ee2d40008}{end}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}}(\textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_aa3f99cf0c92f74fc8a382acbfd1c7e53}{\string~RefManager}}()}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def}{clear\_all}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def}{clear\_all}}()}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference<TO,\ FROM>}}\ *ref\ =\ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037}{first}}())}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ ref-\/>invalidate();}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

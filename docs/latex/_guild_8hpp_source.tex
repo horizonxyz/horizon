@@ -1,0 +1,119 @@
+\doxysection{Guild.\+hpp}
+\hypertarget{_guild_8hpp_source}{}\label{_guild_8hpp_source}\index{src/Server/Zone/Game/Guild/Guild.hpp@{src/Server/Zone/Game/Guild/Guild.hpp}}
+\mbox{\hyperlink{_guild_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_MODELS\_GUILD\_GUILD\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_MODELS\_GUILD\_GUILD\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}Core/Multithreading/LockedUnorderedMap.hpp"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Models}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Guild}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild}{Guild}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_aeb4d52b3e4045b310e1fea1df84040d9}{Guild}}()\ \{\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_afb538781aabf80e152f60a1889c7fb59}{\string~Guild}}()\ \{\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{/*\ ID\ */}}
+\DoxyCodeLine{00048\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_adc3d1b0045b5d21fb3009b893d91c398}{get\_id}}()\ \{\ \textcolor{keywordflow}{return}\ \_id;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a234d28f34f839ff752446c06c1f81a63}{set\_id}}(uint32\_t\ \textcolor{keywordtype}{id})\ \{\ \_id\ =\ id;\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{/*\ Name\ */}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_aeb5e93899b3bd715f99666ea25842859}{getGuildName}}()\ \{\ \textcolor{keywordflow}{return}\ \_name;\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a18bc40e00de8acd4c3aad5e18e081a65}{setGuildName}}(std::string\ \textcolor{keyword}{const}\ \&name)\ \{\ \_name\ =\ name;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{/*\ Leader\ ID\ */}}
+\DoxyCodeLine{00054\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_af8862d5c977c3c920922a33a881fbd00}{getLeaderID}}()\ \{\ \textcolor{keywordflow}{return}\ \_leader\_id;\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_ae03550af0c445e613b16d3e2a8bdfc6f}{setLeaderID}}(uint32\_t\ \textcolor{keywordtype}{id})\ \{\ \_leader\_id\ =\ id;\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*\ Guild\ Level\ */}}
+\DoxyCodeLine{00057\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a89bc2a6c9c13473d4d6ecc7f5bea0a42}{getGuildLevel}}()\ \{\ \textcolor{keywordflow}{return}\ \_guild\_lv;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_ad6d2a02391b904750881adbc32cf9bf0}{setGuildLevel}}(uint8\_t\ level)\ \{\ \_guild\_level\ =\ level;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{/*\ Member\ Limit\ */}}
+\DoxyCodeLine{00060\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a48939b2c57943b5f16c34316dfbbce0e}{getMemberLimit}}()\ \{\ \textcolor{keywordflow}{return}\ \_member\_limit;\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_aaf0a7cd0849a4dbe5b526620f7e684e2}{setMemberLimit}}(uint8\_t\ limit)\ \{\ \_member\_limit\ =\ limit;\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{/*\ Member\ Level\ Average\ */}}
+\DoxyCodeLine{00063\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_ad42353576b673334edcdbcb8c19c2ed9}{getMemberLevelAverage}}()\ \{\ \textcolor{keywordflow}{return}\ \_member\_level\_average;\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_ad1d461dcaf2e94b5172d859f951b14fc}{setMemberLevelAverage}}(uint16\_t\ average)\ \{\ \_member\_level\_average\ =\ average;\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*\ Total\ Experience\ */}}
+\DoxyCodeLine{00066\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a74a3ef44cea2f0cabef4cf4b5b2429e4}{getTotalExperience}}()\ \{\ \textcolor{keywordflow}{return}\ \_total\_experience;\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a33d1028b4e532cee5c1fb9797eec968b}{setTotalExperience}}(uint64\_t\ exp)\ \{\ \_total\_experience\ =\ exp;\ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ Required\ Experience\ to\ the\ next\ level\ */}}
+\DoxyCodeLine{00069\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_ac79e3414f5f76d4eb09e56c86d4b648f}{getNextRequiredExperience}}()\ \{\ \textcolor{keywordflow}{return}\ \_required\_experience;\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a5509d06424cbecf2a5ccfb893e40fb7e}{setNextRequiredExperience}}(uint64\_t\ exp)\ \{\ \_required\_experience\ =\ exp;\ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{/*\ Skill\ Points\ */}}
+\DoxyCodeLine{00072\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a63d82d758a8091eeeb5ecdda002f35d8}{get\_skill\_points}}()\ \{\ \textcolor{keywordflow}{return}\ \_skill\_points;\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_aad41f09209176c32335d6db0e67dea22}{set\_skill\_points}}(uint16\_t\ skill\_points)\ \{\ \_skill\_points\ =\ skill\_points;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{/*\ Notice\ Title\ */}}
+\DoxyCodeLine{00075\ \ \ \ \ std::string\ \&\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a4eda851d39fb343d416ca5cbfd440666}{getNoticeTitle}}()\ \{\ \textcolor{keywordflow}{return}\ \_notice\_title;\ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a66c8976671cb54298f51e68609b94f3f}{setNoticeTitle}}(std::string\ \textcolor{keyword}{const}\ \&title)\ \{\ \_notice\_title\ =\ title;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{/*\ Notice\ Content\ */}}
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ \&\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a5b5dfdab8b720186e5a712f3427c6706}{getNoticeContent}}()\ \{\ \textcolor{keywordflow}{return}\ \_notice\_content;\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_acf7e00722b758a80fa1a95e1ea659e06}{setNoticeContent}}(std::string\ \textcolor{keyword}{const}\ \&content)\ \{\ \_notice\_content\ =\ content;\ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{/*\ Emblem\ Data\ Size\ */}}
+\DoxyCodeLine{00081\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_af53b3343609b653676d44038f11bf98e}{getEmblemDataSize}}()\ \{\ \textcolor{keywordflow}{return}\ \_emblem\_data\_size;\ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_ac454b6a0677aceebde53f7ccfc1bff1c}{setEmblemDataSize}}(uint32\_t\ size)\ \{\ \textcolor{keywordflow}{return}\ \_emblem\_data\_size;\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{/*\ Emblem\ Version\ */}}
+\DoxyCodeLine{00084\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_af71dbec28346dba2bfc6f37bb300da1d}{getEmblemVersion}}()\ \{\ \textcolor{keywordflow}{return}\ \_emblem\_version;\ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild_a1c510dd1f45187092fceddb7fc0fb9cb}{setEmblemVersion}}(uint32\_t\ version)\ \{\ \_emblem\_version\ =\ version;\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ uint32\_t\ \_id;}
+\DoxyCodeLine{00089\ \ \ \ \ std::string\ \_name;}
+\DoxyCodeLine{00090\ \ \ \ \ uint32\_t\ \_leader\_id;}
+\DoxyCodeLine{00091\ \ \ \ \ uint8\_t\ \_guild\_level;}
+\DoxyCodeLine{00092\ \ \ \ \ uint8\_t\ \_member\_limit;}
+\DoxyCodeLine{00093\ \ \ \ \ uint16\_t\ \_member\_level\_average;}
+\DoxyCodeLine{00094\ \ \ \ \ uint64\_t\ \_total\_experience;}
+\DoxyCodeLine{00095\ \ \ \ \ uint64\_t\ \_required\_experience;}
+\DoxyCodeLine{00096\ \ \ \ \ uint16\_t\ \_skill\_points;}
+\DoxyCodeLine{00097\ \ \ \ \ std::string\ \_notice\_title;}
+\DoxyCodeLine{00098\ \ \ \ \ std::string\ \_notice\_content;}
+\DoxyCodeLine{00099\ \ \ \ \ uint32\_t\ \_emblem\_data\_size;}
+\DoxyCodeLine{00100\ \ \ \ \ uint32\_t\ \_emblem\_version;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{/*\ Relations\ */}}
+\DoxyCodeLine{00103\ \ \ \ \ std::unordered\_map<uint32\_t,\ Affiliation>\ \_affiliations;}
+\DoxyCodeLine{00104\ \ \ \ \ std::unordered\_map<std::string,\ HLog>\ \_expulsion\_log;}
+\DoxyCodeLine{00105\ \ \ \ \ std::unordered\_map<uint32\_t,\ Member>\ \_members;}
+\DoxyCodeLine{00106\ \ \ \ \ std::unordered\_map<uint8\_t,\ Position>\ \_positions;}
+\DoxyCodeLine{00107\ \ \ \ \ std::unordered\_map<uint32\_t,\ Skill>\ \_skills;}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_MODELS\_GUILD\_GUILD\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

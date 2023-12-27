@@ -1,0 +1,286 @@
+\doxysection{Horizon\+::Zone\+::Zone\+Server Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_zone_server}{}\label{class_horizon_1_1_zone_1_1_zone_server}\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+
+
+{\ttfamily \#include $<$Zone.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Zone\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_horizon_1_1_zone_1_1_zone_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Zone\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_af8588b658a190c62df800eaa8b9c967a}{Zone\+Server}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ad903cf38cbaa27e5391bf2c0326fdcca}{\texorpdfstring{$\sim$}{\string~}\+Zone\+Server}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_af2834c3b892dd747d9297d923573c595}{read\+\_\+config}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a01082f46455d8780d0b5a427070c4540}{initialize\+\_\+core}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ae45f26ef12d4107d0759ee57ed9f095a}{initialize\+\_\+cli\+\_\+commands}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_aebaf1c0448b95aef86495447f6050c02}{verify\+\_\+connected\+\_\+sessions}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ac56d0f55cf766a18a0b1ba73fec0d051}{update}} (uint64\+\_\+t diff)
+\item 
+\mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration}{s\+\_\+zone\+\_\+server\+\_\+configuration}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a552a0916ba77dd891b220e1247e8d37b}{config}} ()
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a8b3575d0f08871e6852963b5f45d6fdf}{get\+Scheduler}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_afce6206e1e8b1669fb1950ce1e18855d}{to\+\_\+uuid}} (uint8\+\_\+t type, uint32\+\_\+t uid, uint16\+\_\+t uid2, uint8\+\_\+t uid3)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a4c065257f149f3b6f424daea3dcc1e1d}{from\+\_\+uuid}} (uint64\+\_\+t \mbox{\hyperlink{structentity__uuid}{entity\+\_\+uuid}}, uint8\+\_\+t \&type, uint32\+\_\+t \&uid, uint16\+\_\+t \&uid2, uint8\+\_\+t \&uid3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_server}{Server}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_ad5ec9462b520e59f7ea831e157ee5e59}{Server}} ()
+\item 
+\mbox{\hyperlink{class_server_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\texorpdfstring{$\sim$}{\string~}\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_server_af34b875b35ae5de8bbb5863834c9f18f}{parse\+\_\+exec\+\_\+args}} (const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, int argc)
+\item 
+\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} \mbox{\hyperlink{class_server_aa65ab5685ff9de7bf3e7286a587903db}{get\+\_\+shutdown\+\_\+stage}} () const
+\item 
+void \mbox{\hyperlink{class_server_afef17fc28aeec43c2a2dae9bed39960e}{set\+\_\+shutdown\+\_\+stage}} (\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} new\+\_\+stage)
+\item 
+void \mbox{\hyperlink{class_server_a659ca94721145e4dcf1530d25bb4f1dc}{set\+\_\+shutdown\+\_\+signal}} (int signal)
+\item 
+boost\+::asio\+::io\+\_\+service \& \mbox{\hyperlink{class_server_a3a1dece79068f344c4b05b6ee101b064}{get\+\_\+io\+\_\+service}} ()
+\item 
+struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \& \mbox{\hyperlink{class_server_a7477e1279f847a67b880ef242a9ecd19}{general\+\_\+conf}} ()
+\item 
+bool \mbox{\hyperlink{class_server_a2236a63f5838c08e1ef6ece408366610}{parse\+\_\+common\+\_\+configs}} (sol\+::table \&cfg)
+\item 
+virtual void \mbox{\hyperlink{class_server_a5eb7d86ecf169a70125c6565606edb6a}{finalize\+\_\+core}} ()
+\item 
+void \mbox{\hyperlink{class_server_aafe7d7817651422df6e920f5c6c5cc0c}{initialize\+\_\+command\+\_\+line}} ()
+\item 
+void \mbox{\hyperlink{class_server_ad1a38231c5756b7ca358a5932b0d0068}{process\+\_\+cli\+\_\+commands}} ()
+\item 
+void \mbox{\hyperlink{class_server_aec08544917c23ffde4541f53b9b6faa7}{queue\+\_\+cli\+\_\+command}} (\mbox{\hyperlink{class_c_l_i_command}{CLICommand}} \&\&cmd\+Mgr)
+\item 
+void \mbox{\hyperlink{class_server_a27ef7f0def5fdbe478b63d48e88baff5}{add\+\_\+cli\+\_\+command\+\_\+func}} (std\+::string cmd, std\+::function$<$ bool(std\+::string)$>$ func)
+\item 
+std\+::function$<$ bool(std\+::string)$>$ \mbox{\hyperlink{class_server_a01dc32676d4969aeeb2c8d16d422d8f0}{get\+\_\+cli\+\_\+command\+\_\+func}} (std\+::string \&cmd)
+\item 
+bool \mbox{\hyperlink{class_server_a3aa345741e30a7cd7c85f21ed30bdd37}{clicmd\+\_\+shutdown}} (std\+::string)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ \mbox{\hyperlink{class_server_aa41237231ca30f52dbfd6861c257319c}{database\+\_\+pool}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server}{Zone\+Server}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a3d7a22a42162d1671becb8028165a23a}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_server}{Server}}}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \mbox{\hyperlink{class_server_a987f48464a606912ed949959ec723e3c}{general\+\_\+config}}
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$ \mbox{\hyperlink{class_server_af325b836d0faeb21436367748c44aef5}{\+\_\+cli\+\_\+cmd\+\_\+queue}}
+\item 
+std\+::thread \mbox{\hyperlink{class_server_a959436cbed4996372e1276757fcb12c8}{\+\_\+cli\+\_\+thread}}
+\item 
+std\+::atomic$<$ \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} $>$ \mbox{\hyperlink{class_server_a32f7ff471dd4d05673c422626437c6ac}{\+\_\+shutdown\+\_\+stage}}
+\item 
+std\+::atomic$<$ int $>$ \mbox{\hyperlink{class_server_ab98363c5fa107a98629438e2f21b3ad1}{\+\_\+shutdown\+\_\+signal}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::function$<$ bool(std\+::string)$>$ $>$ \mbox{\hyperlink{class_server_aa1512413691c1a491293e2f6f74ae4dd}{\+\_\+cli\+\_\+function\+\_\+map}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ \mbox{\hyperlink{class_server_a92a1e058847b15eff35c51a4defd3e46}{\+\_\+mysql\+\_\+connections}}
+\item 
+boost\+::asio\+::io\+\_\+service \mbox{\hyperlink{class_server_a2065a6943ad8f1981d6d8bf6f4c52a2b}{\+\_\+io\+\_\+service}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_af8588b658a190c62df800eaa8b9c967a}\label{class_horizon_1_1_zone_1_1_zone_server_af8588b658a190c62df800eaa8b9c967a} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!ZoneServer@{ZoneServer}}
+\index{ZoneServer@{ZoneServer}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{ZoneServer()}{ZoneServer()}}
+{\footnotesize\ttfamily Zone\+Server\+::\+Zone\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{namespace_horizon_1_1_zone}{Zone} Main server constructor. \Hypertarget{class_horizon_1_1_zone_1_1_zone_server_ad903cf38cbaa27e5391bf2c0326fdcca}\label{class_horizon_1_1_zone_1_1_zone_server_ad903cf38cbaa27e5391bf2c0326fdcca} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!````~ZoneServer@{\texorpdfstring{$\sim$}{\string~}ZoneServer}}
+\index{````~ZoneServer@{\texorpdfstring{$\sim$}{\string~}ZoneServer}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ZoneServer()}{\string~ZoneServer()}}
+{\footnotesize\ttfamily Zone\+Server\+::\texorpdfstring{$\sim$}{\string~}\+Zone\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{namespace_horizon_1_1_zone}{Zone} Main server destructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_a552a0916ba77dd891b220e1247e8d37b}\label{class_horizon_1_1_zone_1_1_zone_server_a552a0916ba77dd891b220e1247e8d37b} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!config@{config}}
+\index{config@{config}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{config()}{config()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration}{s\+\_\+zone\+\_\+server\+\_\+configuration}} \& Horizon\+::\+Zone\+::\+Zone\+Server\+::config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_a552a0916ba77dd891b220e1247e8d37b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_a4c065257f149f3b6f424daea3dcc1e1d}\label{class_horizon_1_1_zone_1_1_zone_server_a4c065257f149f3b6f424daea3dcc1e1d} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!from\_uuid@{from\_uuid}}
+\index{from\_uuid@{from\_uuid}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{from\_uuid()}{from\_uuid()}}
+{\footnotesize\ttfamily void Zone\+Server\+::from\+\_\+uuid (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{entity\+\_\+uuid,  }\item[{uint8\+\_\+t \&}]{type,  }\item[{uint32\+\_\+t \&}]{uid,  }\item[{uint16\+\_\+t \&}]{uid2,  }\item[{uint8\+\_\+t \&}]{uid3 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_a3d7a22a42162d1671becb8028165a23a}\label{class_horizon_1_1_zone_1_1_zone_server_a3d7a22a42162d1671becb8028165a23a} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server}{Zone\+Server}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Zone\+Server\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_a8b3575d0f08871e6852963b5f45d6fdf}\label{class_horizon_1_1_zone_1_1_zone_server_a8b3575d0f08871e6852963b5f45d6fdf} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!getScheduler@{getScheduler}}
+\index{getScheduler@{getScheduler}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{getScheduler()}{getScheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Horizon\+::\+Zone\+::\+Zone\+Server\+::get\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_a8b3575d0f08871e6852963b5f45d6fdf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_ae45f26ef12d4107d0759ee57ed9f095a}\label{class_horizon_1_1_zone_1_1_zone_server_ae45f26ef12d4107d0759ee57ed9f095a} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!initialize\_cli\_commands@{initialize\_cli\_commands}}
+\index{initialize\_cli\_commands@{initialize\_cli\_commands}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{initialize\_cli\_commands()}{initialize\_cli\_commands()}}
+{\footnotesize\ttfamily void Zone\+Server\+::initialize\+\_\+cli\+\_\+commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialize Zone-\/\+Server CLI Commands. 
+
+Reimplemented from \mbox{\hyperlink{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1}{Server}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_ae45f26ef12d4107d0759ee57ed9f095a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_a01082f46455d8780d0b5a427070c4540}\label{class_horizon_1_1_zone_1_1_zone_server_a01082f46455d8780d0b5a427070c4540} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!initialize\_core@{initialize\_core}}
+\index{initialize\_core@{initialize\_core}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{initialize\_core()}{initialize\_core()}}
+{\footnotesize\ttfamily void Zone\+Server\+::initialize\+\_\+core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Static Databases
+
+\doxylink{class_horizon_1_1_zone_1_1_map}{Map} Manager.
+
+\doxylink{class_server}{Server} shutdown routine begins here...
+
+Reimplemented from \mbox{\hyperlink{class_server_a6a048a910c82c444ddf49212397dcfd2}{Server}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_a01082f46455d8780d0b5a427070c4540_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_af2834c3b892dd747d9297d923573c595}\label{class_horizon_1_1_zone_1_1_zone_server_af2834c3b892dd747d9297d923573c595} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!read\_config@{read\_config}}
+\index{read\_config@{read\_config}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{read\_config()}{read\_config()}}
+{\footnotesize\ttfamily bool Zone\+Server\+::read\+\_\+config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Read /config/zone-\/server.yaml \begin{DoxyReturn}{Returns}
+false on failure, true on success. 
+\end{DoxyReturn}
+Process Configuration that is common between servers.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_af2834c3b892dd747d9297d923573c595_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_afce6206e1e8b1669fb1950ce1e18855d}\label{class_horizon_1_1_zone_1_1_zone_server_afce6206e1e8b1669fb1950ce1e18855d} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!to\_uuid@{to\_uuid}}
+\index{to\_uuid@{to\_uuid}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{to\_uuid()}{to\_uuid()}}
+{\footnotesize\ttfamily uint64\+\_\+t Zone\+Server\+::to\+\_\+uuid (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{type,  }\item[{uint32\+\_\+t}]{uid,  }\item[{uint16\+\_\+t}]{uid2,  }\item[{uint8\+\_\+t}]{uid3 }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_ac56d0f55cf766a18a0b1ba73fec0d051}\label{class_horizon_1_1_zone_1_1_zone_server_ac56d0f55cf766a18a0b1ba73fec0d051} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!update@{update}}
+\index{update@{update}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Zone\+Server\+::update (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{diff }\end{DoxyParamCaption})}
+
+Task Scheduler Update.
+
+Process Packets.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_ac56d0f55cf766a18a0b1ba73fec0d051_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_ac56d0f55cf766a18a0b1ba73fec0d051_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_zone_server_aebaf1c0448b95aef86495447f6050c02}\label{class_horizon_1_1_zone_1_1_zone_server_aebaf1c0448b95aef86495447f6050c02} 
+\index{Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}!verify\_connected\_sessions@{verify\_connected\_sessions}}
+\index{verify\_connected\_sessions@{verify\_connected\_sessions}!Horizon::Zone::ZoneServer@{Horizon::Zone::ZoneServer}}
+\doxysubsubsection{\texorpdfstring{verify\_connected\_sessions()}{verify\_connected\_sessions()}}
+{\footnotesize\ttfamily void Zone\+Server\+::verify\+\_\+connected\+\_\+sessions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_aebaf1c0448b95aef86495447f6050c02_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_zone_server_aebaf1c0448b95aef86495447f6050c02_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\mbox{\hyperlink{_zone_8hpp}{Zone.\+hpp}}\item 
+src/\+Server/\+Zone/\mbox{\hyperlink{_zone_8cpp}{Zone.\+cpp}}\end{DoxyCompactItemize}

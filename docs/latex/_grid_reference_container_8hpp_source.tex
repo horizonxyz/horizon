@@ -1,0 +1,183 @@
+\doxysection{Grid\+Reference\+Container.\+hpp}
+\hypertarget{_grid_reference_container_8hpp_source}{}\label{_grid_reference_container_8hpp_source}\index{src/Server/Zone/Game/Map/Grid/Container/GridReferenceContainer.hpp@{src/Server/Zone/Game/Map/Grid/Container/GridReferenceContainer.hpp}}
+\mbox{\hyperlink{_grid_reference_container_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_STRUCTURES\_GRIDREFERENCECONTAINER\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_STRUCTURES\_GRIDREFERENCECONTAINER\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_type_list_8hpp}{Core/Structures/TypeList.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_ref_manager_8hpp}{Server/Zone/Game/Map/Grid/GridRefManager.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*============================*}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ Container\ Data\ Type}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *============================*/}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ OBJECT>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_grid_ref_manager}{GridRefManager<OBJECT>}}\ \mbox{\hyperlink{struct_grid_type_list_container_aeead6cf7d55a6f345bc5c429f1db2e58}{\_element}};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<TypeNull>}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ HEAD,\ \textcolor{keyword}{class}\ TAIL>}
+\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<\mbox{\hyperlink{struct_type_list}{TypeList}}<HEAD,\ TAIL>>}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<HEAD>}}\ \mbox{\hyperlink{struct_grid_type_list_container_3_01_type_list_3_01_h_e_a_d_00_01_t_a_i_l_01_4_01_4_a0807a58a1c57e1efc34b90d3c97ba1db}{\_elements}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<TAIL>}}\ \mbox{\hyperlink{struct_grid_type_list_container_3_01_type_list_3_01_h_e_a_d_00_01_t_a_i_l_01_4_01_4_a3b9104c59407e8e9eba45c047a44661b}{\_tail\_elements}};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*============================*}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *\ TypeListIterator\ Insert\ Functions}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *============================*/}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ non-\/const\ insert\ functions}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_grid_type_list_iterator}{GridTypeListIterator}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Invoked\ in\ the\ condition\ that\ the\ SPECIFIC\_TYPE\ has\ been\ visited.}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ SPECIFIC\_TYPE>}
+\DoxyCodeLine{00065\ \ \ \ \ SPECIFIC\_TYPE\ *\mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{Insert}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<SPECIFIC\_TYPE>}}\ \&elements,\ SPECIFIC\_TYPE\ *obj)}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ obj-\/>add\_grid\_reference(elements.\mbox{\hyperlink{struct_grid_type_list_container_aeead6cf7d55a6f345bc5c429f1db2e58}{\_element}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ obj;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Invoked\ in\ the\ condition\ that\ a\ TypeNull\ has\ been\ visited.}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ SPECIFIC\_TYPE>}
+\DoxyCodeLine{00072\ \ \ \ \ SPECIFIC\_TYPE\ *\mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{Insert}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<TypeNull>}}\ \&\textcolor{comment}{/*elements*/},\ SPECIFIC\_TYPE\ *\textcolor{comment}{/*obj*/})}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ In\ a\ case\ such\ as\ the\ following,\ where\ the\ GridTypeListContainer\ is\ not\ one\ of\ the\ specific\ type}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ that\ we\ are\ in\ search\ of,\ the\ resulting\ return\ of\ the\ function\ is\ a\ nullptr.\ }}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ SPECIFIC\_TYPE,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00079\ \ \ \ \ SPECIFIC\_TYPE\ *\mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{Insert}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<T>}}\ \&\textcolor{comment}{/*elements*/},\ SPECIFIC\_TYPE\ *\textcolor{comment}{/*obj*/})}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ In\ a\ condition\ such\ as\ the\ following\ where\ a\ GridTypeListContainer\ of\ a\ TypeList<HEAD,\ TAIL>\ is\ invoked,}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ and\ the\ specific\ object\ that\ is\ to\ be\ inserted\ is\ also\ a\ valid\ argument.\ The\ function\ definition\ matches\ the\ }}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ search\ criteria\ of\ the\ template\ function\ that\ is\ to\ be\ invoked.\ We\ try\ recursing\ to\ iterate\ through\ the\ TypeLists}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ contained\ in\ the\ GridTypeListContainer\ until\ a\ reference\ has\ been\ added\ or\ the\ end\ of\ the\ TypeList\ (TypeNull)\ is\ met\ and\ the\ }}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ appropriate\ function\ has\ been\ invoked\ to\ return\ a\ nullptr\ or\ a\ valid\ pointer\ to\ the\ object.}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ SPECIFIC\_TYPE,\ \textcolor{keyword}{class}\ HEAD,\ \textcolor{keyword}{class}\ TAIL>}
+\DoxyCodeLine{00089\ \ \ \ \ SPECIFIC\_TYPE*\ \mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{Insert}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<\mbox{\hyperlink{struct_type_list}{TypeList<HEAD,\ TAIL>}}>\ \&elements,\ SPECIFIC\_TYPE*\ obj)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ SPECIFIC\_TYPE\ *t\ =\ \mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{Insert}}(elements.\_elements,\ obj);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (t\ !=\ \textcolor{keyword}{nullptr}\ ?\ t\ :\ \mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{Insert}}(elements.\_tail\_elements,\ obj));}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \textcolor{comment}{/*============================*}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ *\ TypeListIterator\ Count\ Functions}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ *============================*/}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ Function\ for\ when\ the\ specific\ type\ has\ been\ invoked\ and\ the\ requirement\ of\ meeting\ the\ function}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ definition\ has\ been\ successful.}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE>}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<SPECIFIC\_TYPE>}}\ \textcolor{keyword}{const}\ \&elements,\ SPECIFIC\_TYPE\ *\textcolor{comment}{/*fake*/})}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ elements.\mbox{\hyperlink{struct_grid_type_list_container_aeead6cf7d55a6f345bc5c429f1db2e58}{\_element}}.get\_size();}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Function\ for\ when\ a\ TypeNull\ has\ been\ visited.}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE>}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<TypeNull>}}\ \textcolor{keyword}{const}\ \&\textcolor{comment}{/*elements*/},\ SPECIFIC\_TYPE\ *\textcolor{comment}{/*fake*/})}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ Function\ containing\ any\ other\ type\ than\ the\ one\ we\ are\ in\ search\ of,\ will\ be\ invoked.}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<T>}}\ \textcolor{keyword}{const}\ \&\textcolor{comment}{/*elements*/},\ SPECIFIC\_TYPE\ *\textcolor{comment}{/*fake*/})}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Invoked\ in\ the\ condition\ that\ the\ a\ TypeList\ of\ type\ <SPECIFIC\_TYPE,\ T>\ has\ been\ met.\ }}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<\mbox{\hyperlink{struct_type_list}{TypeList<SPECIFIC\_TYPE,\ T>}}>\ \textcolor{keyword}{const}\ \&elements,\ SPECIFIC\_TYPE\ *fake)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(elements.\_elements,\ fake);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ Invoked\ in\ the\ condition\ that\ any\ other\ TypeList,\ the\ ones\ that\ are\ not\ of\ the\ SPECIFIC\_TYPE\ we\ }}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ are\ in\ search\ of,\ has\ been\ met.\ All\ of\ the\ element\ types\ will\ be\ visited,\ invoking\ the\ count()\ function\ }}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ for\ the\ specific\ type\ we\ are\ in\ search\ of.}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE,\ \textcolor{keyword}{class}\ H,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<\mbox{\hyperlink{struct_type_list}{TypeList<H,\ T>}}>\ \textcolor{keyword}{const}\ \&elements,\ SPECIFIC\_TYPE\ *fake)}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(elements.\_tail\_elements,\ fake);}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ TypeNull>}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ae0feaa0f81389c208e7f1130c22b0e2c}{count\_all}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<TypeNull>}}\ \textcolor{keyword}{const}\ \&elements)}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ Counts\ all\ of\ the\ objects\ in\ a\ GridTypeListContainer.}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ H,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ae0feaa0f81389c208e7f1130c22b0e2c}{count\_all}}(\mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<\mbox{\hyperlink{struct_type_list}{TypeList<H,\ T>}}>\ \textcolor{keyword}{const}\ \&elements)}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{count}}(elements.\_elements,\ (H\ *)\ \textcolor{keyword}{nullptr})\ +\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ae0feaa0f81389c208e7f1130c22b0e2c}{count\_all}}(elements.\_tail\_elements);}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \}}
+\DoxyCodeLine{00144\ \textcolor{comment}{/*============================*}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ *\ GridReferenceContainer}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ *============================*/}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ OBJECT\_TYPES>}
+\DoxyCodeLine{00148\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grid_reference_container}{GridReferenceContainer}}}
+\DoxyCodeLine{00149\ \{}
+\DoxyCodeLine{00150\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE>}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_grid_reference_container_a4b438c857899d9585ee403788978f874}{count}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00153\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ad1bd309bacf73a67262026ebd5f3d7c6}{GridTypeListIterator::count}}(\_elements,\ (SPECIFIC\_TYPE\ *)\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_grid_reference_container_aae73e65017df489e8d0ee2e07c57489a}{count\_all}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_grid_type_list_iterator_ae0feaa0f81389c208e7f1130c22b0e2c}{GridTypeListIterator::count\_all}}(\_elements);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SPECIFIC\_TYPE>}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_grid_reference_container_a38ff3504503cd18f5c0e4d2e88c60073}{insert}}(SPECIFIC\_TYPE\ *obj)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ assert(obj\ \&\&\ !obj-\/>has\_valid\_grid\_reference());}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ SPECIFIC\_TYPE*\ t\ =\ \mbox{\hyperlink{namespace_grid_type_list_iterator_a139a648fb2db6d7c9578fe53867f1e22}{GridTypeListIterator::Insert}}(\_elements,\ obj);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (t\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<OBJECT\_TYPES>}}\ \&\mbox{\hyperlink{class_grid_reference_container_a5349dc988383d1ddcbc37bd6d9247e7b}{getElements}}(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ \_elements;\ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<OBJECT\_TYPES>}}\ \&\mbox{\hyperlink{class_grid_reference_container_ae702c3d32217737a863dea9b87bb8f2d}{getElements}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_elements;\}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<OBJECT\_TYPES>}}\ \_elements;}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CORE\_STRUCTURES\_GRIDREFERENCECONTAINER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

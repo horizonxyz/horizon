@@ -1,0 +1,53 @@
+\doxysection{Horizon\+::Zone\+::AStar Namespace Reference}
+\hypertarget{namespace_horizon_1_1_zone_1_1_a_star}{}\label{namespace_horizon_1_1_zone_1_1_a_star}\index{Horizon::Zone::AStar@{Horizon::Zone::AStar}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator}{Generator}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic}{Heuristic}}
+\item 
+struct \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node}{Node}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ uint32\+\_\+t(\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}})$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Heuristic\+Function}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} $>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{Coordinate\+List}}
+\begin{DoxyCompactList}\small\item\em We use a vector because the \doxylink{namespace_horizon_1_1_zone_1_1_a_star}{AStar} algorithm is only searching on small datasets. Other data structures such as a priority queue can be used for larger datasets. \end{DoxyCompactList}\item 
+typedef std\+::function$<$ bool(uint16\+\_\+t x, uint16\+\_\+t y)$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Collision\+Detection\+Function}}
+\item 
+using \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{Node\+Set}} = std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node}{Node}} $>$ $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}\label{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e} 
+\index{Horizon::Zone::AStar@{Horizon::Zone::AStar}!CollisionDetectionFunction@{CollisionDetectionFunction}}
+\index{CollisionDetectionFunction@{CollisionDetectionFunction}!Horizon::Zone::AStar@{Horizon::Zone::AStar}}
+\doxysubsubsection{\texorpdfstring{CollisionDetectionFunction}{CollisionDetectionFunction}}
+{\footnotesize\ttfamily typedef std\+::function$<$bool(uint16\+\_\+t x, uint16\+\_\+t y)$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Horizon\+::\+Zone\+::\+AStar\+::\+Collision\+Detection\+Function}}}
+
+\Hypertarget{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}\label{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c} 
+\index{Horizon::Zone::AStar@{Horizon::Zone::AStar}!CoordinateList@{CoordinateList}}
+\index{CoordinateList@{CoordinateList}!Horizon::Zone::AStar@{Horizon::Zone::AStar}}
+\doxysubsubsection{\texorpdfstring{CoordinateList}{CoordinateList}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{Horizon\+::\+Zone\+::\+AStar\+::\+Coordinate\+List}}}
+
+
+
+We use a vector because the \doxylink{namespace_horizon_1_1_zone_1_1_a_star}{AStar} algorithm is only searching on small datasets. Other data structures such as a priority queue can be used for larger datasets. 
+
+\Hypertarget{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}\label{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d} 
+\index{Horizon::Zone::AStar@{Horizon::Zone::AStar}!HeuristicFunction@{HeuristicFunction}}
+\index{HeuristicFunction@{HeuristicFunction}!Horizon::Zone::AStar@{Horizon::Zone::AStar}}
+\doxysubsubsection{\texorpdfstring{HeuristicFunction}{HeuristicFunction}}
+{\footnotesize\ttfamily typedef std\+::function$<$uint32\+\_\+t(\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}})$>$ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Horizon\+::\+Zone\+::\+AStar\+::\+Heuristic\+Function}}}
+
+\Hypertarget{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}\label{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0} 
+\index{Horizon::Zone::AStar@{Horizon::Zone::AStar}!NodeSet@{NodeSet}}
+\index{NodeSet@{NodeSet}!Horizon::Zone::AStar@{Horizon::Zone::AStar}}
+\doxysubsubsection{\texorpdfstring{NodeSet}{NodeSet}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{Horizon\+::\+Zone\+::\+AStar\+::\+Node\+Set}} = typedef std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node}{Node}}$>$ $>$}
+

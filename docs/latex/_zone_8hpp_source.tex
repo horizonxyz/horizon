@@ -1,0 +1,119 @@
+\doxysection{Zone.\+hpp}
+\hypertarget{_zone_8hpp_source}{}\label{_zone_8hpp_source}\index{src/Server/Zone/Zone.hpp@{src/Server/Zone/Zone.hpp}}
+\mbox{\hyperlink{_zone_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_ZONEMAIN\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_ZONEMAIN\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8hpp}{Server/pch.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logger_8hpp}{Core/Logging/Logger.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_server_8hpp}{Server/Common/Server.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_socket_8hpp}{Server/Zone/Socket/ZoneSocket.hpp}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }Game}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration}{s\_zone\_server\_configuration}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ boost::filesystem::path\ \&\mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ac3fdf933a47875aab425f575b2fabb49}{get\_mapcache\_path}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ad083bb73ded24bf80e8d1c1f6b5a0b83}{\_mapcache\_path}};\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ad1d466b5b86af8a5532ffb629595ac54}{set\_mapcache\_path}}(boost::filesystem::path\ p)\ \{\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ad083bb73ded24bf80e8d1c1f6b5a0b83}{\_mapcache\_path}}\ =\ p;\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ boost::filesystem::path\ \&\mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ab34e10cee03bd3adf7ca8f8aef7977a4}{get\_static\_db\_path}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_af97043c0b00173c7f6855c653858ccc5}{\_static\_db\_path}};\ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ae56bc85a9ae24c6656d5d296d21715ca}{set\_static\_db\_path}}(boost::filesystem::path\ p)\ \{\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_af97043c0b00173c7f6855c653858ccc5}{\_static\_db\_path}}\ =\ p;\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ boost::filesystem::path\ \&\mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_a979294097dd80610b868548c5e2ec8b8}{get\_script\_root\_path}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_afb89f0f3eb52899831a6ad768f2261c6}{\_script\_root\_path}};\ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_aa5aa191941244e317138b8a482c11fec}{set\_script\_root\_path}}(boost::filesystem::path\ p)\ \{\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_afb89f0f3eb52899831a6ad768f2261c6}{\_script\_root\_path}}\ =\ p;\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ std::time\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_a981480b84c50a06e81f8b5b9a88d16c1}{session\_max\_timeout}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_a85da95e57ddd95761b4df7a9751449c2}{\_session\_max\_timeout}};\ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_a480fb878e52bb1b9f61bb8ee171d0e0b}{set\_session\_max\_timeout}}(std::time\_t\ timeout)\ \{\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_a85da95e57ddd95761b4df7a9751449c2}{\_session\_max\_timeout}}\ =\ timeout;\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ boost::filesystem::path\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_af97043c0b00173c7f6855c653858ccc5}{\_static\_db\_path}};}
+\DoxyCodeLine{00072\ \ \ \ \ boost::filesystem::path\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_ad083bb73ded24bf80e8d1c1f6b5a0b83}{\_mapcache\_path}};}
+\DoxyCodeLine{00073\ \ \ \ \ std::time\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_a85da95e57ddd95761b4df7a9751449c2}{\_session\_max\_timeout}};}
+\DoxyCodeLine{00074\ \ \ \ \ boost::filesystem::path\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration_afb89f0f3eb52899831a6ad768f2261c6}{\_script\_root\_path}};}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server}{ZoneServer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_server}{Server}}}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_af8588b658a190c62df800eaa8b9c967a}{ZoneServer}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ad903cf38cbaa27e5391bf2c0326fdcca}{\string~ZoneServer}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server}{ZoneServer}}\ *\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a3d7a22a42162d1671becb8028165a23a}{getInstance}}()}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server}{ZoneServer}}\ instance;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_af2834c3b892dd747d9297d923573c595}{read\_config}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a01082f46455d8780d0b5a427070c4540}{initialize\_core}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ae45f26ef12d4107d0759ee57ed9f095a}{initialize\_cli\_commands}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_aebaf1c0448b95aef86495447f6050c02}{verify\_connected\_sessions}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_ac56d0f55cf766a18a0b1ba73fec0d051}{update}}(uint64\_t\ diff);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration}{s\_zone\_server\_configuration}}\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a552a0916ba77dd891b220e1247e8d37b}{config}}()\ \{\ \textcolor{keywordflow}{return}\ \_zone\_server\_config;\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a8b3575d0f08871e6852963b5f45d6fdf}{getScheduler}}()\ \{\ \textcolor{keywordflow}{return}\ \_task\_scheduler;\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_afce6206e1e8b1669fb1950ce1e18855d}{to\_uuid}}(uint8\_t\ type,\ uint32\_t\ uid,\ uint16\_t\ uid2,\ uint8\_t\ uid3);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_server_a4c065257f149f3b6f424daea3dcc1e1d}{from\_uuid}}(uint64\_t\ \mbox{\hyperlink{structentity__uuid}{entity\_uuid}},\ uint8\_t\&\ type,\ uint32\_t\&\ uid,\ uint16\_t\&\ uid2,\ uint8\_t\&\ uid3);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1s__zone__server__configuration}{s\_zone\_server\_configuration}}\ \_zone\_server\_config;}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \_task\_scheduler;}
+\DoxyCodeLine{00106\ \ \ \ \ boost::asio::deadline\_timer\ \_update\_timer;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ sZone\ Horizon::Zone::ZoneServer::getInstance()}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HORIZON\_ZONE\_ZONEMAIN\_HPP}}
+
+\end{DoxyCode}

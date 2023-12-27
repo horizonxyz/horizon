@@ -1,0 +1,1092 @@
+\doxysection{Attributes\+Impl.\+hpp}
+\hypertarget{_attributes_impl_8hpp_source}{}\label{_attributes_impl_8hpp_source}\index{src/Server/Zone/Game/Entities/Traits/AttributesImpl.hpp@{src/Server/Zone/Game/Entities/Traits/AttributesImpl.hpp}}
+\mbox{\hyperlink{_attributes_impl_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_TRAITS\_ATTRIBUTESIMPL\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_TRAITS\_ATTRIBUTESIMPL\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_attribute_8hpp}{Attribute.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{Server/Zone/Definitions/EntityDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_definitions_8hpp}{Server/Zone/Definitions/ItemDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_definitions_8hpp}{Server/Zone/Definitions/MonsterDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observable_status_8hpp}{Server/Zone/Game/Entities/Traits/ObservableStatus.hpp}}"{}}}
+\DoxyCodeLine{00038\ \ \textcolor{comment}{//\ Linux}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }Entity;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{namespace\ }Traits}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{class\ }StatusATK;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{class\ }EquipATK;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{class\ }StatusMATK;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }SoftDEF;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{class\ }SoftMDEF;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{class\ }HIT;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{class\ }CRIT;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{class\ }FLEE;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{class\ }StrengthPointCost;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{class\ }AgilityPointCost;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{class\ }VitalityPointCost;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{class\ }IntelligencePointCost;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{class\ }DexterityPointCost;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{class\ }LuckPointCost;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }BaseExperience;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{class\ }JobExperience;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{class\ }Zeny;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{class\ }Honor;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }Manner;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{class\ }Virtue;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{class\ }StatusPoint;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{class\ }SkillPoint;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{class\ }NextBaseExperience;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{class\ }NextJobExperience;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{class\ }MaxWeight;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{class\ }AttackSpeed;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{class\ }MovementSpeed;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{class\ }AttackMotion;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{class\ }AttackDelay;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{class\ }DamageMotion;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}}
+\DoxyCodeLine{00080\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<BaseLevel\ *,\ StatusPoint\ *,\ NextBaseExperience\ *,\ StatusATK\ *,\ StatusMATK\ *,\ SoftMDEF\ *,\ HIT\ *,\ FLEE\ *,\ AttackSpeed\ *>}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_a30a3073966c1e3dde9d8bbcef641ae90}{BaseLevel}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a8329b306bd1310053caaf21c35ee3797}{STATUS\_BASELEVEL}},\ base,\ 0,\ 0),}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_a607acf98292b6c57cc7b2a590e82074d}{\string~BaseLevel}}()\ \{\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_acc568e4937e7483b0529cd4bed37dbe7}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{BaseExperience}}\ *wbexp);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_aeff5a8cf353257707e089a8196c343bc}{notify}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_a1b62c1389c04650baadbc7cc7b30d21e}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00094\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_a0ab417bd2f83d5255ce6eb0ae01e252d}{set\_equip}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00100\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{Attribute::set\_equip}}(val);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_acf39e3dd930a2fc63f15685da824e6b6}{set\_status}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00106\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{Attribute::set\_status}}(val);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{JobLevel}}}
+\DoxyCodeLine{00113\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<JobLevel\ *,\ SkillPoint\ *,\ NextJobExperience\ *>}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_a759f61826cff8bc72ae8fc6c0cce7944}{JobLevel}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701af83c3af8ec4554b84dad6cc408d3a040}{STATUS\_JOBLEVEL}},\ base,\ 0,\ 0),}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_ac4967f53e416e2eb04bac0d0905583ae}{\string~JobLevel}}()\ \{\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_a403f346dbb040d32905f278fa24bbeeb}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{JobExperience}}\ *wjexp);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_a3f719cf98611f59c19d381fcc000d58d}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00126\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_a62a23e0764f52ca78c05e4ec7d6c9b77}{set\_equip}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{Attribute::set\_equip}}(val);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_aec4417513e13dc0a9ef20411fc001de0}{set\_status}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00138\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{Attribute::set\_status}}(val);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p}{MaxHP}}}
+\DoxyCodeLine{00145\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p_a64e70953cd1225fc826f4157f4fc803b}{MaxHP}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a63078e59fcf27eb8c006df8323e5e259}{STATUS\_MAXHP}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p_a8fa68cda80c5b0f0198e3e0fd85a290c}{\string~MaxHP}}()\ \{\ \};}
+\DoxyCodeLine{00152\ \ \ \ \ \};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p}{MaxSP}}}
+\DoxyCodeLine{00155\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p_a06a4a52517e811196b173ba20d9ac8a5}{MaxSP}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a1d37f90f4ca432f2c6ca67eb718c9e1e}{STATUS\_MAXSP}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p_af589c7413cd00d8999619dbb73df392c}{\string~MaxSP}}()\ \{\ \};}
+\DoxyCodeLine{00162\ \ \ \ \ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p}{CurrentHP}}}
+\DoxyCodeLine{00165\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p_aefdc40aa7b17956f6702bbf3bc07afa8}{CurrentHP}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a841614cd6b687148d1edace224f77889}{STATUS\_CURRENTHP}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p_a27ccb2c0211cab7408e46e49a780ff07}{\string~CurrentHP}}()\ \{\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p_a3fb7aa38b41bf87715d12a13fef163cb}{damage}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p_a3fb7aa38b41bf87715d12a13fef163cb}{damage}});}
+\DoxyCodeLine{00174\ \ \ \ \ \};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p}{CurrentSP}}}
+\DoxyCodeLine{00177\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p_a7d20e96e2636d154a1480afd2161a47d}{CurrentSP}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a26a0cd9487a0fa42beb03f41a46fc6ae}{STATUS\_CURRENTSP}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p_a36ba067bd0050a99c8c88d2ecb03a9a5}{\string~CurrentSP}}()\ \{\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p_a242f9d31f91c0638ae22fad5ce7a20a9}{reduce}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00186\ \ \ \ \ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point}{StatusPoint}}}
+\DoxyCodeLine{00189\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point_adc81a32fbeaee43c60e78e9e2a328411}{StatusPoint}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a70168636091361d0f3bb82d8bb511df6}{STATUS\_STATUSPOINT}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point_a825fbea63f19054c16c6d2e361fa7a8c}{\string~StatusPoint}}()\ \{\ \};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point_abbd518fe74baa88978a374f229445b3c}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *wblvl);}
+\DoxyCodeLine{00198\ \ \ \ \ \};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point}{SkillPoint}}}
+\DoxyCodeLine{00201\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00202\ \ \ \ \ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point_ac0b74291cc7cccfaf660b0f803c89f22}{SkillPoint}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a255f89bd55dc91d3fac4458ed957cda6}{STATUS\_SKILLPOINT}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point_a1868093e363dc26484194e7ef23ca22e}{\string~SkillPoint}}()\ \{\ \};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point_afc7b8a5e4287fc2175ce79deffe877fb}{set\_base}}(int32\_t\ val)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point_a86856250f72bb5cc4846c463621e619a}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{JobLevel}}\ *wjlvl);}
+\DoxyCodeLine{00212\ \ \ \ \ \};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}}
+\DoxyCodeLine{00215\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<Strength\ *,\ StrengthPointCost\ *,\ MaxWeight\ *,\ StatusATK\ *,\ EquipATK\ *>}
+\DoxyCodeLine{00217\ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_a6608c86938f8ca781138a3977fa0148f}{Strength}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a8f38af278062d3cb88b4cc4ac05dd0d1}{STATUS\_STRENGTH}},\ base,\ equip,\ status),}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_af471e221769ec8b8f8aa309d139502ab}{\string~Strength}}()\ \{\ \};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_a92052973723707becabe3efbf3ae694e}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00226\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}}
+\DoxyCodeLine{00233\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<Agility\ *,\ AgilityPointCost\ *,\ FLEE\ *,\ AttackSpeed\ *>}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_a46748392439971352f8b26b5659594f2}{Agility}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a7485aa4b4226a5db1e88fe59be01784e}{STATUS\_AGILITY}},\ base,\ equip,\ status),}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_af839fa58b8e41641a4c64d50f7c026b4}{\string~Agility}}()\ \{\ \};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_a06325664b87f56c41b87786b21559251}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00244\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ \ \ \ \ \};}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}}
+\DoxyCodeLine{00251\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<Vitality\ *,\ VitalityPointCost\ *,\ SoftDEF\ *,\ SoftMDEF\ *>}
+\DoxyCodeLine{00253\ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_ad3cb69459d8ff2495487f975a7cb907d}{Vitality}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701aa4626aae35de107966cac45254c6cf3a}{STATUS\_VITALITY}},\ base,\ equip,\ status),}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_aca5f57580a79761c2ec6d18d3846e415}{\string~Vitality}}()\ \{\ \};}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_a361ba7a6e568cd19901dec60198405df}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00262\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00266\ \ \ \ \ \};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}}
+\DoxyCodeLine{00269\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<Intelligence\ *,\ IntelligencePointCost\ *,\ StatusMATK\ *,\ SoftMDEF\ *>}
+\DoxyCodeLine{00271\ \ \ \ \ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_a9adddfdbecc1356b5688bdf20d27cce4}{Intelligence}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701afe212d3049b4f84eb9baba6293f9d26b}{STATUS\_INTELLIGENCE}},\ base,\ equip,\ status),}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_a40b068abf1d8a8b1a83178e5c2f4fa06}{\string~Intelligence}}()\ \{\ \};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_a384e2243c90714868c6c1b1c5aee9183}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00280\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}}
+\DoxyCodeLine{00287\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<Dexterity\ *,\ DexterityPointCost\ *,\ StatusATK\ *,\ EquipATK\ *,\ StatusMATK\ *,\ SoftMDEF\ *,\ HIT\ *,\ AttackSpeed\ *>}
+\DoxyCodeLine{00289\ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_ac21e4c0fb492ea52fac0f8e60c30a4b7}{Dexterity}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a02825a876874b872ee64134129e40b44}{STATUS\_DEXTERITY}},\ base,\ equip,\ status),}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_a08734cb69ba4f0f8e9413766816d349e}{\string~Dexterity}}()\ \{\ \};}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_a6d4ec2c4e5e4fd49ef53b3ef5743bffa}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00298\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00302\ \ \ \ \ \};}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}}
+\DoxyCodeLine{00305\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<Luck\ *,\ LuckPointCost\ *,\ StatusATK\ *,\ StatusMATK\ *,\ HIT\ *,\ CRIT\ *,\ FLEE\ *>}
+\DoxyCodeLine{00307\ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_a969404c59edbb5110828d01d5a7dd994}{Luck}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ac09b6ad537b11b70510f2cc6922f3537}{STATUS\_LUCK}},\ base,\ equip,\ status),}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_adf74602a2fad88f283b59814c21a1ab0}{\string~Luck}}()\ \{\ \};}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_a3ffcb35514cc50130c22f0b9a3eee5d0}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00316\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost}{StrengthPointCost}}}
+\DoxyCodeLine{00323\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00324\ \ \ \ \ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost_abde328ce75e2210130b5d63a32b7306c}{StrengthPointCost}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a3131bd6c324b25b92cadb035963f1167}{STATUS\_STRENGTH\_COST}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost_a3d6c8e69f0b8b96f68b091ea99fe2b98}{\string~StrengthPointCost}}()\ \{\ \};}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost_aabfb28631568a67ce2814d7442e29a3d}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *);}
+\DoxyCodeLine{00332\ \ \ \ \ \};}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost}{AgilityPointCost}}}
+\DoxyCodeLine{00335\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost_a3394878816e6a4b05716f801c06475eb}{AgilityPointCost}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a050938c978e80b4dfe2c1579f4f07652}{STATUS\_AGILITY\_COST}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost_a2e1da39ccb8d0628c42f5c8ee965298a}{\string~AgilityPointCost}}()\ \{\ \};}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost_af8ebedbdf116bbc274977123471161fa}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *);}
+\DoxyCodeLine{00344\ \ \ \ \ \};}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost}{VitalityPointCost}}}
+\DoxyCodeLine{00347\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00348\ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost_ad7cfb41ace95c325b2beea2ed7c2a465}{VitalityPointCost}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a2263e265680633f8a2673b19940f1d6d}{STATUS\_VITALITY\_COST}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost_ab62f8220ce92781c2f4b91104b8875fc}{\string~VitalityPointCost}}()\ \{\ \};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost_a3e04ed655ebb1d90a1e5ce0834b80603}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}\ *);}
+\DoxyCodeLine{00356\ \ \ \ \ \};}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost}{IntelligencePointCost}}}
+\DoxyCodeLine{00359\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00360\ \ \ \ \ \{}
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost_a77d33fe45be4f7bfb5a8caa88deef84e}{IntelligencePointCost}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a5a257283efc5b572e2b2eb85324286b1}{STATUS\_INTELLIGENCE\_COST}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost_ac4226a512a5fd33a484d243216dd8eef}{\string~IntelligencePointCost}}()\ \{\ \};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost_a0a4a8ec305480c26ba8bbc838f602d27}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}\ *);}
+\DoxyCodeLine{00368\ \ \ \ \ \};}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost}{DexterityPointCost}}}
+\DoxyCodeLine{00371\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00372\ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost_a43167c33e7a0249e12a0adc440d62cd2}{DexterityPointCost}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a8014ea41870bf4acd32b71d18cea5ac1}{STATUS\_DEXTERITY\_COST}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost_a573186e3aefbf05d7aab8581a93b7961}{\string~DexterityPointCost}}()\ \{\ \};}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost_a7d1046498e9b731807c607473aba79b4}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *);}
+\DoxyCodeLine{00380\ \ \ \ \ \};}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost}{LuckPointCost}}}
+\DoxyCodeLine{00383\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00384\ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost_aa83be5497fa60a077f762d24ae9e8f81}{LuckPointCost}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a510f2bd9201da4f1e3ba584788ad51fc}{STATUS\_LUCK\_COST}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost_a8271b962d4a6b1a109ceed88a4a5351e}{\string~LuckPointCost}}()\ \{\ \};}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost_a5f3742bddb01028c43ec25afc9d87931}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *);}
+\DoxyCodeLine{00392\ \ \ \ \ \};}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{BaseExperience}}}
+\DoxyCodeLine{00395\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<BaseExperience\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00397\ \ \ \ \ \{}
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_a98020e1b3700d21fb5a77f6aacbea1f5}{BaseExperience}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a13d2ee3f51d47eb4d03bc63b3e94e293}{STATUS\_BASEEXP}},\ base,\ 0,\ 0),}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr)}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_af53c6cc669cf90bd83447021a19f28f2}{\string~BaseExperience}}()\ \{\ \};}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_af834f3ea652559e04432a705838b5c80}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00406\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_a708f6751603f529cea6ae504fdd136cc}{set\_equip}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00412\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{Attribute::set\_equip}}(val);}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_a57595ba74ec04c68d3ae04c0576ee9ac}{set\_status}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00418\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{Attribute::set\_status}}(val);}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \ \ \};}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{JobExperience}}}
+\DoxyCodeLine{00425\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<JobExperience\ *,\ JobLevel\ *>}
+\DoxyCodeLine{00427\ \ \ \ \ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_acc20a1ed4ed564072a1ce9d77ccf104d}{JobExperience}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a06faa0001cfa82eeb943165f4f51c4b9}{STATUS\_JOBEXP}},\ base,\ 0,\ 0),}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr)}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_a9103fe27a7f1db7ca3e8f56ffaebb479}{\string~JobExperience}}()\ \{\ \};}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_a5b6f2e0990847bb6d0af64b6a7923880}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00436\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_aa0e1f6281002d6b228a5b68296d3e62d}{set\_equip}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00442\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{Attribute::set\_equip}}(val);}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_a55db3ccc6f2585c918c747622c1a7abe}{set\_status}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00448\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{Attribute::set\_status}}(val);}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\_observers}}();}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ \ \ \ \ \};}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny}{Zeny}}}
+\DoxyCodeLine{00455\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00456\ \ \ \ \ \{}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny_a78fec5cbaf974b0713551a6b787aa5cb}{Zeny}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ae9413a8cc03a84af3c5a5d2b4e348ab3}{STATUS\_ZENY}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny_a84dfa6de105753449893c1725776a080}{\string~Zeny}}()\ \{\ \};}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny_a3f04ea144b4d2e8934498d88889bf684}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00464\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00467\ \ \ \ \ \};}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor}{Honor}}}
+\DoxyCodeLine{00470\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00471\ \ \ \ \ \{}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor_ade1fc38f30357a0ff94b717ba2ef76c3}{Honor}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ac274c6092f2d376dde3b707ccf050af8}{STATUS\_KARMA}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor_aa708cd4e9c2bfabae84330345d54b593}{\string~Honor}}()\ \{\ \};}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor_aafa2784edd5f27c1728e3b9a6a854429}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00479\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00482\ \ \ \ \ \};}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner}{Manner}}}
+\DoxyCodeLine{00485\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00486\ \ \ \ \ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner_a421aca3483e98cf90b8dda2cc3a26e3b}{Manner}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701af4c1be2ea22ea0ae157cbd66950c139d}{STATUS\_MANNER}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner_a5da72d7930372ea93e0e6f51e2cf6b83}{\string~Manner}}()\ \{\ \};}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner_a6f00303d82f151fafcbc6ec75482e73a}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00494\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00497\ \ \ \ \ \};}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue}{Virtue}}}
+\DoxyCodeLine{00500\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00501\ \ \ \ \ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue_a9e26dfe5c47a47b5723d01f0306ace81}{Virtue}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a0d5dda00184b79f028a54640fe000561}{STATUS\_VIRTUE}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue_a296c49deac82786ae3ed6ef535a5ce03}{\string~Virtue}}()\ \{\ \};}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue_af28a9b29252e143ee16f9d5d135dc4a3}{set\_base}}(int32\_t\ val)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00509\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{Attribute::set\_base}}(val);}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00512\ \ \ \ \ \};}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience}{NextBaseExperience}}}
+\DoxyCodeLine{00515\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00516\ \ \ \ \ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience_ab2d5cc5c361895156400c2dad4296a99}{NextBaseExperience}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a80e2d4c48a18a3729eebb7cc69441aa9}{STATUS\_NEXTBASEEXP}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience_a0ff54ae2ec397ed907cb8480bc717096}{\string~NextBaseExperience}}()\ \{\ \};}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience_aa830e85dd2c7f0f66c412c4b46b62ca3}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl);}
+\DoxyCodeLine{00524\ \ \ \ \ \};}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience}{NextJobExperience}}}
+\DoxyCodeLine{00527\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00528\ \ \ \ \ \{}
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience_a3e436a24745eb134a8b0e73d7a190315}{NextJobExperience}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \ int32\_t\ base\ =\ 0)}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a065f3946fa7ad9c15268a67ac433d838}{STATUS\_NEXTJOBEXP}},\ base,\ 0,\ 0)}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience_a36860eeb056cf896e1be9c3ff505f52e}{\string~NextJobExperience}}()\ \{\ \};}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience_a9c30ae84d449a201e0da1748ad134d84}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{JobLevel}}\ *jlvl);}
+\DoxyCodeLine{00536\ \ \ \ \ \};}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight}{MaxWeight}}}
+\DoxyCodeLine{00539\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00540\ \ \ \ \ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight_ae7d98c9037dda5255911effa6024a4d5}{MaxWeight}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701af2b47a98638acf1a05b7741bc9111065}{STATUS\_MAX\_WEIGHT}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight_a98d8c2c290b2481bd1fa01cbe897f43e}{\string~MaxWeight}}()\ \{\ \};}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight_afa48a659f9aaf82bf287af1ce2deb6af}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *wstr)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight_a1ccf75144c193f950178729b01f398ef}{compute}}();\ \}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight_a1ccf75144c193f950178729b01f398ef}{compute}}();}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight_ac4dd48fb78c6bcc6c4c8d79f78a4a75b}{set\_strength}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *str)\ \{\ \_str\ =\ str;\ \}}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *\_str\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00555\ \ \ \ \ \};}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed}{MovementSpeed}}}
+\DoxyCodeLine{00558\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00559\ \ \ \ \ \{}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed_a0d387ea13b9f219ea634d6fdfa66d943}{MovementSpeed}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a3f120bc5de3643281b807f8b9a33e862}{STATUS\_MOVEMENT\_SPEED}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed_a7920ba1cc36f05217e7265ab2b6bb708}{\string~MovementSpeed}}()\ \{\ \}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed_a01cd8d31b5a3ffc63964ab57d58d8a37}{set\_base}}(int32\_t\ val)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed_a163723c34aa364698d96c75b48577307}{get\_with\_cost}}(\textcolor{keywordtype}{int}\ cost)\ \{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ *\ cost)\ /\ 10;\ \};}
+\DoxyCodeLine{00569\ \ \ \ \ \};}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight}{CurrentWeight}}}
+\DoxyCodeLine{00572\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00573\ \ \ \ \ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight_a21de633284279370cbfe5f963cae121f}{CurrentWeight}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ab97cfe65269886feacb4ca1e9c5ff881}{STATUS\_CURRENT\_WEIGHT}},\ base,\ equip,\ status)}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight_aa7de20b950aa0e9dbc11d48e2dcbcf3e}{\string~CurrentWeight}}()\ \{\ \};}
+\DoxyCodeLine{00579\ \ \ \ \ \};}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k}{StatusATK}}}
+\DoxyCodeLine{00582\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<StatusATK\ *,\ Strength\ *,\ Dexterity\ *,\ Luck\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00584\ \ \ \ \ \{}
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_aa6e4488986dc36c37bf0133de813d764}{StatusATK}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a2f40f93085f16606524bc91003900fc3}{STATUS\_STATUS\_ATK}}),}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_a6756e0dd75092b308858340e12a8c0f3}{\string~StatusATK}}()\ \{\ \}}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_a3404283ffd2e23f3eb8db2b8e2dd412c}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_af029a4ebd11718e3fa44a1b203bd3878}{compute}}();\ \}}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_aa9f25698c61f3068507adf60c94012df}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_af029a4ebd11718e3fa44a1b203bd3878}{compute}}();\ \}}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_ac71c42624ab0a2594cc3bd2fe4cf3762}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_af029a4ebd11718e3fa44a1b203bd3878}{compute}}();\ \}}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_a152dc6b170ec51efa906deeb8ddcf4e4}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_af029a4ebd11718e3fa44a1b203bd3878}{compute}}();\ \}}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_af029a4ebd11718e3fa44a1b203bd3878}{compute}}();}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_a11778071589575fd61f3cc793532766e}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_ac7a436a5ce7fdc46f0902ea85b17bf37}{set\_strength}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *str)\ \{\ \_str\ =\ str;\ \}}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_a4d3a780426ecc9695b7e65bc1d1410c2}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_afd60f53043d1bebb6c16487f3e316f50}{set\_luck}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *luk)\ \{\ \_luk\ =\ luk;\ \}}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_a06fc773d368bb512937a5520574454d3}{set\_weapon\_type}}(\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\_weapon\_type}}\ type)\ \{\ \_weapon\_type\ =\ type;\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k_af029a4ebd11718e3fa44a1b203bd3878}{compute}}();\ \}}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ Strength\ *\_str\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ Luck\ *\_luk\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\_weapon\_type}}\ \_weapon\_type;}
+\DoxyCodeLine{00611\ \ \ \ \ \};}
+\DoxyCodeLine{00612\ }
+\DoxyCodeLine{00613\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k}{EquipATK}}}
+\DoxyCodeLine{00614\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<EquipATK\ *,\ Strength\ *,\ Dexterity\ *>}
+\DoxyCodeLine{00616\ \ \ \ \ \{}
+\DoxyCodeLine{00617\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_af30844c3919790226166d1c1383c3b21}{EquipATK}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a2d551ffe758202bae278313c5dfbda2d}{STATUS\_EQUIP\_ATK}}),}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr)}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a87cd0b1d38d05d90cc63d3a98868bcc8}{\string~EquipATK}}()\ \{\ \}}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_af6ea162e144959b55943d09824b78832}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a82d2b0d8fa5f3fe8888f67eb6ff9d027}{compute}}();\ \}}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a0a691a6e613879384c93bee3fcc8344a}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a82d2b0d8fa5f3fe8888f67eb6ff9d027}{compute}}();\ \}}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a40734afa7ec908a18a459062b9353ff8}{on\_weapon\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a82d2b0d8fa5f3fe8888f67eb6ff9d027}{compute}}();\ \}}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a3d9b88da0e33a97bac5600f1f204eb2c}{set\_strength}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *str)\ \{\ \_str\ =\ str;\ \}}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_aedb905e9d52ce26aeadd3b54178294fa}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a82d2b0d8fa5f3fe8888f67eb6ff9d027}{compute}}();}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a8e63576f1618108bf77b5e75b5f715ea}{compute\_variance}}(int8\_t\ weapon\_lvl,\ int32\_t\ base\_weapon\_dmg);}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ notify\_update()\ override\ \{\ \_notifier.notify\_sum();\ \}}}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_a064fb647b6cd4bb9750a42ed10e3ba1a}{get\_lhw\_overupgrade}}()\ \{\ \textcolor{keywordflow}{return}\ \_lhw\_overupgrade;\ \}}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k_ae7cad47e5985edfe998c1fa3d5bc2635}{get\_rhw\_overupgrade}}()\ \{\ \textcolor{keywordflow}{return}\ \_rhw\_overupgrade;\ \}}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *\_str\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ int32\_t\ \_left\_hand\_val\{0\};}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ int32\_t\ \_right\_hand\_val\{0\};}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ int32\_t\ \_lhw\_overupgrade\{0\};}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ int32\_t\ \_rhw\_overupgrade\{0\};}
+\DoxyCodeLine{00646\ \ \ \ \ \};}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k}{StatusMATK}}}
+\DoxyCodeLine{00649\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<StatusMATK\ *,\ Intelligence\ *,\ Dexterity\ *,\ Luck\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00651\ \ \ \ \ \{}
+\DoxyCodeLine{00652\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_aa9fb5f31a990a2dcc39c4be653548e57}{StatusMATK}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a816678001bf1eeef6a2525c114b2c4ff}{STATUS\_STATUS\_MATK}}),}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a6b313d828413934d90c401ec7362e04b}{\string~StatusMATK}}()\ \{\ \}}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a900ffb90f6d940a60ef9b6c1189abd96}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a490c43d983a12f3ea62c8290f4ae27c3}{compute}}();\ \}}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a59af55694be92c118a5503679d6681b1}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a490c43d983a12f3ea62c8290f4ae27c3}{compute}}();\ \}}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_ad8e0ac5adb9802dd783c723a152ccdb8}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a490c43d983a12f3ea62c8290f4ae27c3}{compute}}();\ \}}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a822aef4eca3c2bc4dd13b8cb0d598ae0}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a490c43d983a12f3ea62c8290f4ae27c3}{compute}}();\ \}}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a490c43d983a12f3ea62c8290f4ae27c3}{compute}}();}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_abb0cbba4da4ec523c4adc98d9fe9cb1c}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a0275b28fac865223b6f14cb9e0ce9ad8}{set\_intelligence}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}\ *int\_)\ \{\ \_int\ =\ int\_;\ \}}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a5b3cea588ddb043dad5887865ff59194}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k_a5600b1b17e1c52ee9bc591c15f9fe261}{set\_luck}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *luk)\ \{\ \_luk\ =\ luk;\ \}}
+\DoxyCodeLine{00670\ }
+\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ Intelligence\ *\_int\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ Luck\ *\_luk\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00676\ \ \ \ \ \};}
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00678\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f}{SoftDEF}}}
+\DoxyCodeLine{00679\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<SoftDEF\ *,\ Vitality\ *>}
+\DoxyCodeLine{00681\ \ \ \ \ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f_a8fef4550d556760d7edb6778d34ff9c8}{SoftDEF}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a47ac07008381e283123d712e167e96c3}{STATUS\_SOFT\_DEF}}),}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr)}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f_afb81e2c75235e8f79db911d2f11ae5b9}{\string~SoftDEF}}()\ \{\ \}}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f_a121f803b439604a44cb5a41a169581d7}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f_aaaa1553fec4ba10b925e468cf2041bf6}{compute}}();\ \}}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f_aaaa1553fec4ba10b925e468cf2041bf6}{compute}}();}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f_ad5bbc11b5294a3cbc5df267833a46568}{set\_vitality}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}\ *vit)\ \{\ \_vit\ =\ vit;\ \}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}\ *\_vit\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00697\ \ \ \ \ \};}
+\DoxyCodeLine{00698\ }
+\DoxyCodeLine{00699\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f}{SoftMDEF}}}
+\DoxyCodeLine{00700\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<SoftMDEF\ *,\ Intelligence\ *,\ Dexterity\ *,\ Vitality\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00702\ \ \ \ \ \{}
+\DoxyCodeLine{00703\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a05450f77390147a96698120de7e61579}{SoftMDEF}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701aca7dab206cf30973d888460f5a1dbd83}{STATUS\_SOFT\_MDEF}}),}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a87d94b0faed42a803363a8a3d8255141}{\string~SoftMDEF}}()\ \{\ \}}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a1f18b49eec94989b05b6de338a719cc2}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a02a803f6f93e4ff04520e637391d791d}{compute}}();\ \}}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a021f1d8c5a9cd9325805a69c07299946}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a02a803f6f93e4ff04520e637391d791d}{compute}}();\ \}}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a4e85f6b0d9d4c2cb85a279b7b8a29f57}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a02a803f6f93e4ff04520e637391d791d}{compute}}();\ \}}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a76d6db802f1bffda22475f2712565f45}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a02a803f6f93e4ff04520e637391d791d}{compute}}();\ \}}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a02a803f6f93e4ff04520e637391d791d}{compute}}();}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a10bd879df7b1ec0ac441985523cf4787}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_a8a87cddac20b75c07dfc70c68e33952b}{set\_intelligence}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}\ *int\_)\ \{\ \_int\ =\ int\_;\ \}}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_ace3fab12226d383a83970a536c0bc3c1}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f_aa8c18cdb7d36b60f226c2d1e9ed64d53}{set\_vitality}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Vitality}}\ *vit)\ \{\ \_vit\ =\ vit;\ \}}
+\DoxyCodeLine{00721\ }
+\DoxyCodeLine{00722\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ Intelligence\ *\_int\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ Vitality\ *\_vit\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00727\ \ \ \ \ \};}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t}{HIT}}}
+\DoxyCodeLine{00730\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<HIT\ *,\ Dexterity\ *,\ Luck\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00732\ \ \ \ \ \{}
+\DoxyCodeLine{00733\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_aa8b6817045a8947eaed154dca0cef400}{HIT}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701af530993f0f584327e6f70486da92d34e}{STATUS\_HIT}}),}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_af5bf69d065638e8943b9a572f1d11ceb}{\string~HIT}}()\ \{\ \}}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_aeb188579f5d94faa1a24137f43df1655}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a47b9d961d29239e5ef1f8c93f2567585}{compute}}();\ \}}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a25636893901ce23a0be91786de038c7a}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a47b9d961d29239e5ef1f8c93f2567585}{compute}}();\ \}}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_aa098cde8e7134b0149f804e29bd5f443}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a47b9d961d29239e5ef1f8c93f2567585}{compute}}();\ \}}
+\DoxyCodeLine{00743\ }
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a47b9d961d29239e5ef1f8c93f2567585}{compute}}();}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a7b214a42cbe4b8fca30ef4daca3aa9a8}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_ad429145bbfbf47213a77b6a3de64de3e}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t_a3f2edee2aaaa2d23e4c2bc8f3e61a97d}{set\_luck}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *luk)\ \{\ \_luk\ =\ luk;\ \}}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ Luck\ *\_luk\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00754\ \ \ \ \ \};}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t}{CRIT}}}
+\DoxyCodeLine{00757\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<CRIT\ *,\ Luck\ *>}
+\DoxyCodeLine{00759\ \ \ \ \ \{}
+\DoxyCodeLine{00760\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t_a903eae5deebf1d2000cbf3eab138ad38}{CRIT}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a5dc99a8c776227c891d1e3351c498738}{STATUS\_CRITICAL}}),}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr)}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t_a7ca175e11a4037b98d05e56ee5ab0a54}{\string~CRIT}}()\ \{\ \}}
+\DoxyCodeLine{00766\ }
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t_afc6d6331ef8f3cbce09a31011f39af4f}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t_a397fe1e69355ffbe1c65402a082d3022}{compute}}();\ \}}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t_a397fe1e69355ffbe1c65402a082d3022}{compute}}();}
+\DoxyCodeLine{00770\ }
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t_aa5fa0c48892f9d32182e375ab4549f61}{set\_luck}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *luk)\ \{\ \_luk\ =\ luk;\ \}}
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00773\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *\_luk\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00775\ \ \ \ \ \};}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e}{FLEE}}}
+\DoxyCodeLine{00778\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<FLEE\ *,\ Agility\ *,\ BaseLevel\ *,\ Luck\ *>}
+\DoxyCodeLine{00780\ \ \ \ \ \{}
+\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a869c55edc15a7580c57c14cb24658cf5}{FLEE}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ab11e859ef7c4d388095a1cc6ab647439}{STATUS\_FLEE}}),}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a99acafc62f862621c08e914617c56f87}{\string~FLEE}}()\ \{\ \}}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a5472182da93ad8892fab726f4b8e1f23}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_af6525d54185f82a42750817699a11555}{compute}}();\ \}}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a80151aa4489df2cb21922c17e8a244da}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_af6525d54185f82a42750817699a11555}{compute}}();\ \}}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a670b41d7e893c6b8d95dcdde2763236b}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_af6525d54185f82a42750817699a11555}{compute}}();\ \}}
+\DoxyCodeLine{00791\ }
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_af6525d54185f82a42750817699a11555}{compute}}();}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_adefab326c4f8520a9630cf3c26ff6692}{set\_agility}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *agi)\ \{\ \_agi\ =\ agi;\ \}}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a008ead3d3818ef9344e67761aa134859}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e_a3bb32165a5a6dc400288506c869b72c5}{set\_luck}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *luk)\ \{\ \_luk\ =\ luk;\ \}}
+\DoxyCodeLine{00797\ }
+\DoxyCodeLine{00798\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *\_agi\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ BaseLevel\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ Luck\ *\_luk\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00802\ \ \ \ \ \};}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{AttackSpeed}}}
+\DoxyCodeLine{00805\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<AttackSpeed\ *,\ Agility\ *,\ Dexterity\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00807\ \ \ \ \ \{}
+\DoxyCodeLine{00808\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_ad27eefdbddb70f6702e54313b7151017}{AttackSpeed}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a57b698cc80ca1257dce4f66c29704658}{STATUS\_ASPD}}),}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_ad1e9d8e3185a24c1cedd630bf8fe9c53}{\string~AttackSpeed}}()\ \{\ \}}
+\DoxyCodeLine{00814\ }
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a0f1f8c520f885f9bf784f12d8c118b82}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a3d1e776f0319adec822717829c346bc8}{compute}}();\ \}}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_ab2e0ae17902ba441b36ff8699a1e23bc}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a3d1e776f0319adec822717829c346bc8}{compute}}();\ \}}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a0c384ea6feae4952f65c5c08ac734685}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a3d1e776f0319adec822717829c346bc8}{compute}}();\ \}}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a1967142a45caf2ae0b9e6980dfd6c192}{on\_equipment\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a3d1e776f0319adec822717829c346bc8}{compute}}();\ \}}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a3d1e776f0319adec822717829c346bc8}{compute}}();}
+\DoxyCodeLine{00821\ }
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a2e78cacd1caa94bfb4d311a8f8d234a7}{set\_agility}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *agi)\ \{\ \_agi\ =\ agi;\ \}}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_a64e34776f02149386725ce76b883062c}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed_aea115fffae0b7c777cc5ad9c26c602a0}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *\_agi\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ BaseLevel\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00830\ \ \ \ \ \};}
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00832\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range}{AttackRange}}}
+\DoxyCodeLine{00833\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00834\ \ \ \ \ \{}
+\DoxyCodeLine{00835\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range_ad6e8d570ee845e1a2e512183aa8a3f68}{AttackRange}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701acb9217e88c841b508e1659e8798dfabd}{STATUS\_ATTACKRANGE}})}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range_aa67c7109872e8643b4192bb38a85bbba}{\string~AttackRange}}()\ \{\ \}}
+\DoxyCodeLine{00840\ }
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range_aa4996bff6ffb375efdbf7f76e161a2bc}{on\_equipment\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range_a61287137fe5b75a5bbd608f0551445a0}{compute}}();\ \}}
+\DoxyCodeLine{00842\ }
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range_a61287137fe5b75a5bbd608f0551445a0}{compute}}();}
+\DoxyCodeLine{00844\ \ \ \ \ \};}
+\DoxyCodeLine{00845\ }
+\DoxyCodeLine{00846\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{AttackMotion}}}
+\DoxyCodeLine{00847\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<AttackMotion\ *,\ AttackSpeed\ *,\ Agility\ *>}
+\DoxyCodeLine{00849\ \ \ \ \ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_a649c38622310711d17edf2f6a4d34b23}{AttackMotion}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a4bde5bf754f9b8211e30555424d8904f}{STATUS\_AMOTION}}),}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr)}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_a6c2ab48d50261baec479ef0bcbabe5ce}{\string~AttackMotion}}()\ \{\ \}}
+\DoxyCodeLine{00856\ }
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_abf1be91c7f9ceac6e3acc27bae464bdb}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{AttackSpeed}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_aea6ea433c5c972c1f8b45070ab0a96b7}{compute}}();\ \}}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_acff49cd4fdf26a606c8c8945498656ab}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_aea6ea433c5c972c1f8b45070ab0a96b7}{compute}}();\ \}}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_aea6ea433c5c972c1f8b45070ab0a96b7}{compute}}();}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_afefb7b79437fbb27c1e330e960b9ad9f}{on\_equipment\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_aea6ea433c5c972c1f8b45070ab0a96b7}{compute}}();\ \}}
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_a92adc04dfb0a11e13411b6deac3a6e07}{set\_attack\_speed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{AttackSpeed}}\ *aspd)\ \{\ \_attack\_speed\ =\ aspd;\ \}}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion_a32dbcc7aba5a6d33e635039ae3207b7d}{set\_agility}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *agi)\ \{\ \_agi\ =\ agi;\ \}}
+\DoxyCodeLine{00866\ }
+\DoxyCodeLine{00867\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *\_agi\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ AttackSpeed\ *\_attack\_speed\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00870\ \ \ \ \ \};}
+\DoxyCodeLine{00871\ }
+\DoxyCodeLine{00872\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay}{AttackDelay}}}
+\DoxyCodeLine{00873\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<AttackDelay\ *,\ AttackMotion\ *>}
+\DoxyCodeLine{00875\ \ \ \ \ \{}
+\DoxyCodeLine{00876\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_ae0d8a9d1052b871437612f68fabd1cba}{AttackDelay}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a4245841ff6de67b92f53ba165a1acd0a}{STATUS\_ADELAY}}),}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr)}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_a66a1052f9c52031993bddf5e7378721f}{\string~AttackDelay}}()\ \{\ \}}
+\DoxyCodeLine{00882\ }
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_af3e13bda51c25896b1a33cbf4b5f3fcf}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{AttackMotion}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_a70bda22e7d5fc09799922849a040c47c}{compute}}();\ \}}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_ac29ac06528714584ddd1bf78ac72c443}{on\_equipment\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_a70bda22e7d5fc09799922849a040c47c}{compute}}();\ \}}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_a70bda22e7d5fc09799922849a040c47c}{compute}}();}
+\DoxyCodeLine{00887\ }
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay_ad6e872481bae6d72a6c4da391f5bed3f}{set\_attack\_motion}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{AttackMotion}}\ *amotion)\ \{\ \_attack\_motion\ =\ amotion;\ \}}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00890\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{AttackMotion}}\ *\_attack\_motion\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00892\ \ \ \ \ \};}
+\DoxyCodeLine{00893\ }
+\DoxyCodeLine{00894\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion}{DamageMotion}}}
+\DoxyCodeLine{00895\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<DamageMotion\ *,\ Agility\ *>}
+\DoxyCodeLine{00897\ \ \ \ \ \{}
+\DoxyCodeLine{00898\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_a7c4c6df8b471af003e0221d514eac9e6}{DamageMotion}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ac0d696fcb3070e5da4059bd362139fb0}{STATUS\_DMOTION}}),}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr)}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_acb4f75f039b738aa2b24c3d1ecd8ea3f}{\string~DamageMotion}}()\ \{\ \}}
+\DoxyCodeLine{00904\ }
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_a99681d11195aee82fa45599f386576d5}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_adede569ea86a2f0fd12668d293b7c907}{compute}}();\ \}}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_a32d179efdbcddb58e6a1173a7b5d1eb4}{on\_equipment\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_adede569ea86a2f0fd12668d293b7c907}{compute}}();\ \}}
+\DoxyCodeLine{00907\ }
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_adede569ea86a2f0fd12668d293b7c907}{compute}}();}
+\DoxyCodeLine{00909\ }
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion_a01dd9f938c52cb4616f9d76b40039fa3}{set\_agility}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *agi)\ \{\ \_agi\ =\ agi;\ \}}
+\DoxyCodeLine{00911\ }
+\DoxyCodeLine{00912\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Agility}}\ *\_agi\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00914\ \ \ \ \ \};}
+\DoxyCodeLine{00915\ }
+\DoxyCodeLine{00916\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack}{BaseAttack}}}
+\DoxyCodeLine{00917\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<BaseAttack\ *,\ Strength\ *,\ Dexterity\ *,\ Luck\ *,\ BaseLevel\ *>}
+\DoxyCodeLine{00919\ \ \ \ \ \{}
+\DoxyCodeLine{00920\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a3bb252dbe60034b3d1a54664a52b9951}{BaseAttack}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a94a8d4e88cc5aaedbe9dc8f0df474641}{STATUS\_BASE\_ATK}}),}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr,\ nullptr)}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_af08d3537a81f62ab5975286890dcad26}{\string~BaseAttack}}()\ \{\ \}}
+\DoxyCodeLine{00926\ }
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a1e664eac995edc85878596126fa3ce53}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a65a1ff2321540a9fb1ffcca3d31e58e2}{compute}}();\ \}}
+\DoxyCodeLine{00928\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a86651b5561d8ea8856610100b82d0dde}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a65a1ff2321540a9fb1ffcca3d31e58e2}{compute}}();\ \}}
+\DoxyCodeLine{00929\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a2662f59de6db1d3a13fc7532e7c2d18f}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a65a1ff2321540a9fb1ffcca3d31e58e2}{compute}}();\ \}}
+\DoxyCodeLine{00930\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a8ceb2c6189dca7f200da8c9e7f0ea4c0}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a65a1ff2321540a9fb1ffcca3d31e58e2}{compute}}();\ \}}
+\DoxyCodeLine{00931\ }
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a3aa20ce1d1f65b29591e4e04b411868e}{on\_equipment\_changed}}()\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a65a1ff2321540a9fb1ffcca3d31e58e2}{compute}}();\ \}}
+\DoxyCodeLine{00933\ }
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a65a1ff2321540a9fb1ffcca3d31e58e2}{compute}}();}
+\DoxyCodeLine{00935\ }
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a7e5b59b53125eba3c821120d8d612ae1}{set\_strength}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *str)\ \{\ \_str\ =\ str;\ \}}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_aa0e4f0474cbd621d3091018387d5589c}{set\_dexterity}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Dexterity}}\ *dex)\ \{\ \_dex\ =\ dex;\ \}}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_ad1819ecbb5ef56c36db8ce5ec94f277d}{set\_luck}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Luck}}\ *luk)\ \{\ \_luk\ =\ luk;\ \}}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack_a129ca3dfd0d034d71a8fd03125a29b90}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}\ *blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00940\ }
+\DoxyCodeLine{00941\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}\ *\_str\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ Dexterity\ *\_dex\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ Luck\ *\_luk\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ BaseLevel\ *\_blvl\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00946\ \ \ \ \ \};}
+\DoxyCodeLine{00947\ }
+\DoxyCodeLine{00948\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size}{EntitySize}}}
+\DoxyCodeLine{00949\ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00950\ \ \ \ \ \{}
+\DoxyCodeLine{00951\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size_a8f3c189e33469c030c12b2d3967e4eaf}{EntitySize}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ size)}
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a54e1cf24e1947e230ff78f24202a1116}{STATUS\_SIZE}},\ size)}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size_a553b22fa8279c594b7d60f5659b2ef0d}{\string~EntitySize}}()\ \{\ \}}
+\DoxyCodeLine{00956\ \ \ \ \ \};}
+\DoxyCodeLine{00957\ }
+\DoxyCodeLine{00958\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{CreatureWeaponAttack}}}
+\DoxyCodeLine{00959\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00960\ \ \ \ \ \{}
+\DoxyCodeLine{00961\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack_a49f866ded6613b09368414d54900655e}{CreatureWeaponAttack}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701aecad919909757bfca95eeb7ffb6d76cf}{STATUS\_CREATURE\_WEAPON\_ATK}},\ val)}
+\DoxyCodeLine{00964\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00965\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack_ad7bc9ead14a5f568b6217985b55b8f4f}{\string~CreatureWeaponAttack}}()\ \{\ \}}
+\DoxyCodeLine{00966\ \ \ \ \ \};}
+\DoxyCodeLine{00967\ }
+\DoxyCodeLine{00968\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage}{CreatureAttackDamage}}}
+\DoxyCodeLine{00969\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<CreatureAttackDamage*,\ Strength*,\ BaseLevel*,\ CreatureWeaponAttack*>,}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance}{AttributeVariance}}}
+\DoxyCodeLine{00972\ \ \ \ \ \{}
+\DoxyCodeLine{00973\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a43749492c2dc12b96ccc3f82bd548b53}{CreatureAttackDamage}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a2f5a220e29aded4e41c95880a4e750b6}{STATUS\_CREATE\_ATTACK\_DAMAGE}}),}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr),}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance}{AttributeVariance}}()}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a782fad347b33839c09a43b37970f0e3f}{\string~CreatureAttackDamage}}()\ \{\ \}}
+\DoxyCodeLine{00980\ }
+\DoxyCodeLine{00981\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a23e54dbeccdb67c5927be0329aa25ebc}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}*)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_ae91db57d6255aa49fd77aa9e195a8db0}{compute}}();\ \}}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a25f53bff4b59c603b6d0d45c152d69a8}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}*)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_ae91db57d6255aa49fd77aa9e195a8db0}{compute}}();\ \}}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_aef194615a8bd33b34c0f31b85bac0194}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{CreatureWeaponAttack}}*)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_ae91db57d6255aa49fd77aa9e195a8db0}{compute}}();\ \}}
+\DoxyCodeLine{00984\ }
+\DoxyCodeLine{00985\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a655266a301ef662cece5fcd918168c99}{set\_strength}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}*\ str)\ \{\ \_str\ =\ str;\ \}}
+\DoxyCodeLine{00986\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a5d9c30f5ee959a1e29e42bb9ae5b9391}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}*\ blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_a609aa4dacb9927de0183ba49e5f06242}{set\_creature\_weapon\_attack}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{CreatureWeaponAttack}}*\ cw\_atk)\ \{\ \_cw\_atk\ =\ cw\_atk;\ \}}
+\DoxyCodeLine{00988\ }
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage_ae91db57d6255aa49fd77aa9e195a8db0}{compute}}();}
+\DoxyCodeLine{00990\ }
+\DoxyCodeLine{00991\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Strength}}*\ \_str\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ BaseLevel*\ \_blvl\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ CreatureWeaponAttack*\ \_cw\_atk\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00995\ \ \ \ \ \};}
+\DoxyCodeLine{00996\ }
+\DoxyCodeLine{00997\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage}{CreatureMagicAttackDamage}}}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}},}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}<CreatureMagicAttackDamage*,\ Intelligence*,\ BaseLevel*,\ CreatureWeaponAttack*>,}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance}{AttributeVariance}}}
+\DoxyCodeLine{01001\ \ \ \ \ \{}
+\DoxyCodeLine{01002\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_a2ba55cb1598dd32b977ab2d37ac25b87}{CreatureMagicAttackDamage}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701aed6c82afbe8e724d498c456c69e81d8c}{STATUS\_CREATURE\_MAGIC\_ATTACK\_DAMAGE}}),}
+\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_observable_status}{ObservableStatus}}(nullptr,\ nullptr,\ nullptr),}
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance}{AttributeVariance}}()}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_afac01ae83aee1af6de5782b18ddb1096}{\string~CreatureMagicAttackDamage}}()\ \{\ \}}
+\DoxyCodeLine{01009\ }
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_ae396b971d906ea7d3280631020f8291f}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}*)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_af7eb1940ae09ec47b9c0079ca7ce6178}{compute}}();\ \}}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_ac3d0aca8fe00c194d9b3af4513cb879c}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}*)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_af7eb1940ae09ec47b9c0079ca7ce6178}{compute}}();\ \}}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_afc5d231ffe63b28ba7e0378aee255794}{on\_observable\_changed}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{CreatureWeaponAttack}}*)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_af7eb1940ae09ec47b9c0079ca7ce6178}{compute}}();\ \}}
+\DoxyCodeLine{01013\ }
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_a6af962e6a55618b673c89c449be2d477}{set\_intelligence}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}*\ \mbox{\hyperlink{_client_8hpp_afa1b790fb40a9f43df2246f32a349e17}{\_intelligence}})\ \{\ \_int\ =\ \mbox{\hyperlink{_client_8hpp_afa1b790fb40a9f43df2246f32a349e17}{\_intelligence}};\ \}}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_ae579393a0fa4d88093ffa1121f44a3f9}{set\_base\_level}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{BaseLevel}}*\ blvl)\ \{\ \_blvl\ =\ blvl;\ \}}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_a4accd24d3aa6b8ad6b229df27927b664}{set\_creature\_weapon\_attack}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{CreatureWeaponAttack}}*\ cw\_atk)\ \{\ \_cw\_atk\ =\ cw\_atk;\ \}}
+\DoxyCodeLine{01017\ }
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage_af7eb1940ae09ec47b9c0079ca7ce6178}{compute}}();}
+\DoxyCodeLine{01019\ }
+\DoxyCodeLine{01020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Intelligence}}*\ \_int\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{01022\ \ \ \ \ \ \ \ \ BaseLevel*\ \_blvl\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{01023\ \ \ \ \ \ \ \ \ CreatureWeaponAttack*\ \_cw\_atk\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{01024\ \ \ \ \ \};}
+\DoxyCodeLine{01025\ }
+\DoxyCodeLine{01026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range}{CreatureViewRange}}}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01028\ \ \ \ \ \{}
+\DoxyCodeLine{01029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range_ac88d656d96443c6c92438eae98b6d2af}{CreatureViewRange}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ }
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a5342fca466dd6c749dc64a3bbc138150}{STATUS\_CREATURE\_VIEW\_RANGE}},\ val)\ \{\ \}}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range_a24454155a0d5e60b824b9510251b7aae}{\string~CreatureViewRange}}()\ \{\ \}}
+\DoxyCodeLine{01033\ \ \ \ \ \};}
+\DoxyCodeLine{01034\ }
+\DoxyCodeLine{01035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range}{CreatureChaseRange}}}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01037\ \ \ \ \ \{}
+\DoxyCodeLine{01038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range_a72cce91940b136be4a25a4df7f8d350e}{CreatureChaseRange}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a02ce85f307dc50c6d2c09c961e685e84}{STATUS\_CREATURE\_CHASE\_RANGE}},\ val)\ \{\ \}}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range_a7f61a509e5d447dae5330e1235ae5e16}{\string~CreatureChaseRange}}()\ \{\ \}}
+\DoxyCodeLine{01041\ \ \ \ \ \};}
+\DoxyCodeLine{01042\ }
+\DoxyCodeLine{01043\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race}{CreaturePrimaryRace}}}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01045\ \ \ \ \ \{}
+\DoxyCodeLine{01046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race_a82ebc10387bc25560969deb0e4b71172}{CreaturePrimaryRace}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a28afa5e0ae4110742864207e8aa1fbec}{STATUS\_CREATURE\_PRIMARY\_RACE}},\ val)\ \{\ \}}
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race_a68e9e8752e95dee0f8117b5256d0ff54}{\string~CreaturePrimaryRace}}()\ \{\ \}}
+\DoxyCodeLine{01049\ \ \ \ \ \};}
+\DoxyCodeLine{01050\ }
+\DoxyCodeLine{01051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race}{CreatureSecondaryRace}}}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01053\ \ \ \ \ \{}
+\DoxyCodeLine{01054\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race_ab36a7c1579d41fb13f9a3bd023059980}{CreatureSecondaryRace}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a7153106ce2c467fcfd72a7cf7209ee84}{STATUS\_CREATURE\_SECONDARY\_RACE}},\ val)\ \{\ \}}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race_ab8ff899ed4f52cf612e86de530117fcf}{\string~CreatureSecondaryRace}}()\ \{\ \}}
+\DoxyCodeLine{01057\ \ \ \ \ \};}
+\DoxyCodeLine{01058\ }
+\DoxyCodeLine{01059\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element}{CreatureElement}}}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01061\ \ \ \ \ \{}
+\DoxyCodeLine{01062\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_adb91cbbbf0d4fba5685a2676337f9abf}{CreatureElement}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ae3685c5b9f02f49076497ac73a9701af}{STATUS\_CREATURE\_ELEMENT}},\ val)\ \{\ \}}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_af9d1188c82e902c9e989def766a6ca6c}{\string~CreatureElement}}()\ \{\ \}}
+\DoxyCodeLine{01065\ \ \ \ \ \};}
+\DoxyCodeLine{01066\ }
+\DoxyCodeLine{01067\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level}{CreatureElementLevel}}}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01069\ \ \ \ \ \{}
+\DoxyCodeLine{01070\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level_a6c38344d0f169283651c7b8c0935f81b}{CreatureElementLevel}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a9ba5a3c07c71533edb174f5a2fcb0227}{STATUS\_CREATURE\_ELEMENT\_LEVEL}},\ val)\ \{\ \}}
+\DoxyCodeLine{01072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level_a49fac7e78f0bbf844e6035c5d3df7997}{\string~CreatureElementLevel}}()\ \{\ \}}
+\DoxyCodeLine{01073\ \ \ \ \ \};}
+\DoxyCodeLine{01074\ }
+\DoxyCodeLine{01075\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode}{CreatureMode}}}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{01077\ \ \ \ \ \{}
+\DoxyCodeLine{01078\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode_a2c535418ec0e0ddc4a87bbd321b7fbfd}{CreatureMode}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ int32\_t\ val)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701a9656c7c3f85ad06397bc2d5b69722328}{STATUS\_CREATURE\_MODE}},\ val)\ \{\ \}}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode_a65e8494a7b75a36f9033e8e64e520766}{\string~CreatureMode}}()\ \{\ \}}
+\DoxyCodeLine{01081\ \ \ \ \ \};}
+\DoxyCodeLine{01082\ \}}
+\DoxyCodeLine{01083\ \}}
+\DoxyCodeLine{01084\ \}}
+\DoxyCodeLine{01085\ }
+\DoxyCodeLine{01086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_TRAITS\_ATTRIBUTESIMPL\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

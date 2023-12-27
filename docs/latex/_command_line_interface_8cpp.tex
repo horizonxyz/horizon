@@ -1,0 +1,75 @@
+\doxysection{src/\+Server/\+Common/\+CLI/\+Command\+Line\+Interface.cpp File Reference}
+\hypertarget{_command_line_interface_8cpp}{}\label{_command_line_interface_8cpp}\index{src/Server/Common/CLI/CommandLineInterface.cpp@{src/Server/Common/CLI/CommandLineInterface.cpp}}
+{\ttfamily \#include "{}Command\+Line\+Interface.\+hpp"{}}\newline
+{\ttfamily \#include $<$readline/readline.\+h$>$}\newline
+{\ttfamily \#include $<$readline/history.\+h$>$}\newline
+{\ttfamily \#include $<$Server/\+Common/\+Server.\+hpp$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+Include dependency graph for Command\+Line\+Interface.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_command_line_interface_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_command_line_interface_8cpp_a31a5d5312fe181444f97ab8d40fd4fde}{TERMINAL\+\_\+\+STR}}~"{}Horizon \$$>$ "{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_command_line_interface_8cpp_a9e28eca7f3fd560a1f95564947df2ab9}{command\+\_\+complete}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$, bool)
+\item 
+void \mbox{\hyperlink{_command_line_interface_8cpp_a4b81ec639767516580c4a1f9116c2937}{cli\+\_\+thread\+\_\+start}} (\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}serv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_command_line_interface_8cpp_a31a5d5312fe181444f97ab8d40fd4fde}\label{_command_line_interface_8cpp_a31a5d5312fe181444f97ab8d40fd4fde} 
+\index{CommandLineInterface.cpp@{CommandLineInterface.cpp}!TERMINAL\_STR@{TERMINAL\_STR}}
+\index{TERMINAL\_STR@{TERMINAL\_STR}!CommandLineInterface.cpp@{CommandLineInterface.cpp}}
+\doxysubsubsection{\texorpdfstring{TERMINAL\_STR}{TERMINAL\_STR}}
+{\footnotesize\ttfamily \#define TERMINAL\+\_\+\+STR~"{}Horizon \$$>$ "{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_command_line_interface_8cpp_a4b81ec639767516580c4a1f9116c2937}\label{_command_line_interface_8cpp_a4b81ec639767516580c4a1f9116c2937} 
+\index{CommandLineInterface.cpp@{CommandLineInterface.cpp}!cli\_thread\_start@{cli\_thread\_start}}
+\index{cli\_thread\_start@{cli\_thread\_start}!CommandLineInterface.cpp@{CommandLineInterface.cpp}}
+\doxysubsubsection{\texorpdfstring{cli\_thread\_start()}{cli\_thread\_start()}}
+{\footnotesize\ttfamily void cli\+\_\+thread\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}}]{serv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_command_line_interface_8cpp_a4b81ec639767516580c4a1f9116c2937_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_command_line_interface_8cpp_a4b81ec639767516580c4a1f9116c2937_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_command_line_interface_8cpp_a9e28eca7f3fd560a1f95564947df2ab9}\label{_command_line_interface_8cpp_a9e28eca7f3fd560a1f95564947df2ab9} 
+\index{CommandLineInterface.cpp@{CommandLineInterface.cpp}!command\_complete@{command\_complete}}
+\index{command\_complete@{command\_complete}!CommandLineInterface.cpp@{CommandLineInterface.cpp}}
+\doxysubsubsection{\texorpdfstring{command\_complete()}{command\_complete()}}
+{\footnotesize\ttfamily void command\+\_\+complete (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$}]{,  }\item[{bool}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_command_line_interface_8cpp_a9e28eca7f3fd560a1f95564947df2ab9_icgraph}
+\end{center}
+\end{figure}

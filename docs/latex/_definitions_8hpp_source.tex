@@ -1,0 +1,91 @@
+\doxysection{Definitions.\+hpp}
+\hypertarget{_definitions_8hpp_source}{}\label{_definitions_8hpp_source}\index{src/Server/Common/Definitions/Definitions.hpp@{src/Server/Common/Definitions/Definitions.hpp}}
+\mbox{\hyperlink{_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_DEFINITIONS\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_DEFINITIONS\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ int64\_t\ \mbox{\hyperlink{_definitions_8hpp_a7cde0074dfd288f2d70c0e035dacb28a}{int64}};}
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ int32\_t\ \mbox{\hyperlink{_definitions_8hpp_ab7903878916593daecbeb95b98115ab0}{int32}};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ int16\_t\ \mbox{\hyperlink{_definitions_8hpp_aa0d0fdc87fd135ef2bedb030901cdb9c}{int16}};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ int8\_t\ \mbox{\hyperlink{_definitions_8hpp_aa79c2d3de4fcd200458c406f40b2ae64}{int8}};}
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ uint64\_t\ \mbox{\hyperlink{_definitions_8hpp_abc0f5bc07737e498f287334775dff2b6}{uint64}};}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ uint32\_t\ \mbox{\hyperlink{_definitions_8hpp_acbd4acd0d29e2d6c43104827f77d9cd2}{uint32}};}
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ uint16\_t\ \mbox{\hyperlink{_definitions_8hpp_ac2a9e79eb120216f855626495b7bd18a}{uint16}};}
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ uint8\_t\ \mbox{\hyperlink{_definitions_8hpp_a33a5e996e7a90acefb8b1c0bea47e365}{uint8}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ ILP64\ isn't\ supported,\ so\ always\ 32\ bits?}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ UINT\_MAX}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ UINT\_MAX\ 0xffffffff}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#undef\ UINT8\_MIN}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#undef\ UINT16\_MIN}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#undef\ UINT32\_MIN}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#undef\ UINT64\_MIN}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ UINT8\_MIN\ \ ((uint8)\ UINT8\_C(0x00))}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ UINT16\_MIN\ ((uint16)\ UINT16\_C(0x0000))}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ UINT32\_MIN\ ((uint32)\ UINT32\_C(0x00000000))}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ UINT64\_MIN\ ((uint64)\ UINT64\_C(0x0000000000000000))}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#undef\ UINT8\_MAX}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#undef\ UINT16\_MAX}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#undef\ UINT32\_MAX}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#undef\ UINT64\_MAX}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ UINT8\_MAX\ \ ((uint8)\ UINT8\_C(0xFF))}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ UINT16\_MAX\ ((uint16)\ UINT16\_C(0xFFFF))}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ UINT32\_MAX\ ((uint32)\ UINT32\_C(0xFFFFFFFF))}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ UINT64\_MAX\ ((uint64)\ UINT64\_C(0xFFFFFFFFFFFFFFFF))}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#undef\ SINT8\_MIN}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#undef\ SINT16\_MIN}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#undef\ SINT32\_MIN}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#undef\ SINT64\_MIN}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ SINT8\_MIN\ \ ((sint8)\ INT8\_C(0x80))}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ SINT16\_MIN\ ((sint16)\ INT16\_C(0x8000))}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ SINT32\_MIN\ ((sint32)\ INT32\_C(0x80000000))}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ SINT64\_MIN\ ((sint32)\ INT64\_C(0x8000000000000000))}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#undef\ SINT8\_MAX}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#undef\ SINT16\_MAX}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#undef\ SINT32\_MAX}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#undef\ SINT64\_MAX}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ SINT8\_MAX\ \ ((sint8)\ INT8\_C(0x7F))}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ SINT16\_MAX\ ((sint16)\ INT16\_C(0x7FFF))}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ SINT32\_MAX\ ((sint32)\ INT32\_C(0x7FFFFFFF))}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ SINT64\_MAX\ ((sint64)\ INT64\_C(0x7FFFFFFFFFFFFFFF))}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_DEFINITIONS\_H}}
+
+\end{DoxyCode}

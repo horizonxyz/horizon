@@ -1,0 +1,28 @@
+var _definitions_8hpp =
+[
+    [ "SINT16_MAX", "_definitions_8hpp.html#a4938999152d022128abdb99c51af3660", null ],
+    [ "SINT16_MIN", "_definitions_8hpp.html#ab94f8c9514c0d6d7baac7872ba9c755d", null ],
+    [ "SINT32_MAX", "_definitions_8hpp.html#ad674d924e67d92b01997db9190ab0ba5", null ],
+    [ "SINT32_MIN", "_definitions_8hpp.html#a7d61442f92b6dd09eb46bc5e604c69fc", null ],
+    [ "SINT64_MAX", "_definitions_8hpp.html#a2765898ab1cf65460f607fba901fa74e", null ],
+    [ "SINT64_MIN", "_definitions_8hpp.html#acd49afdb323c35170112d664ea15436e", null ],
+    [ "SINT8_MAX", "_definitions_8hpp.html#a9cff05a50daa72b2fdfb9a8a7ccd195c", null ],
+    [ "SINT8_MIN", "_definitions_8hpp.html#add53435e1400bcd1ce7db31400d70d0a", null ],
+    [ "UINT16_MAX", "_definitions_8hpp.html#a3ea490c9b3617d4479bd80ef93cd5602", null ],
+    [ "UINT16_MIN", "_definitions_8hpp.html#a4037c1ce09065675d4ac6928f9992412", null ],
+    [ "UINT32_MAX", "_definitions_8hpp.html#ab5eb23180f7cc12b7d6c04a8ec067fdd", null ],
+    [ "UINT32_MIN", "_definitions_8hpp.html#af2a8408fbb6decd71eb49bd3e4a1649f", null ],
+    [ "UINT64_MAX", "_definitions_8hpp.html#a30654b4b67d97c42ca3f9b6052dda916", null ],
+    [ "UINT64_MIN", "_definitions_8hpp.html#a49201bdfc59cccf6f337a171f8ab4e91", null ],
+    [ "UINT8_MAX", "_definitions_8hpp.html#aeb4e270a084ee26fe73e799861bd0252", null ],
+    [ "UINT8_MIN", "_definitions_8hpp.html#a9e34d054333a86f8c7f4d6ea4b0105ed", null ],
+    [ "UINT_MAX", "_definitions_8hpp.html#ac998ea02fbd821fc123d60445ce76f38", null ],
+    [ "int16", "_definitions_8hpp.html#aa0d0fdc87fd135ef2bedb030901cdb9c", null ],
+    [ "int32", "_definitions_8hpp.html#ab7903878916593daecbeb95b98115ab0", null ],
+    [ "int64", "_definitions_8hpp.html#a7cde0074dfd288f2d70c0e035dacb28a", null ],
+    [ "int8", "_definitions_8hpp.html#aa79c2d3de4fcd200458c406f40b2ae64", null ],
+    [ "uint16", "_definitions_8hpp.html#ac2a9e79eb120216f855626495b7bd18a", null ],
+    [ "uint32", "_definitions_8hpp.html#acbd4acd0d29e2d6c43104827f77d9cd2", null ],
+    [ "uint64", "_definitions_8hpp.html#abc0f5bc07737e498f287334775dff2b6", null ],
+    [ "uint8", "_definitions_8hpp.html#a33a5e996e7a90acefb8b1c0bea47e365", null ]
+];

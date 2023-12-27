@@ -1,0 +1,152 @@
+\doxysection{Horizon\+::Auth\+::Auth\+Session Class Reference}
+\hypertarget{class_horizon_1_1_auth_1_1_auth_session}{}\label{class_horizon_1_1_auth_1_1_auth_session}\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+
+
+{\ttfamily \#include $<$Auth\+Session.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Auth\+::Auth\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_horizon_1_1_auth_1_1_auth_session__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Auth\+::Auth\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_horizon_1_1_auth_1_1_auth_session__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a034be394ebd369d3a22573c344269c65}{Auth\+Session}} (int64\+\_\+t uid, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_socket}{Auth\+Socket}} $>$ socket)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a06ddc2628c4eace2ffbedcd23f2789f3}{\texorpdfstring{$\sim$}{\string~}\+Auth\+Session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a69e47e11613357cb4cd19d27c659856b}{initialize}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_ab9a1c7b99c8500463e38e794f7cb98e9}{update}} (uint32\+\_\+t diff)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_client_interface}{Auth\+Client\+Interface}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a6c3df7550ef43582e34f1b0753b9bf76}{clif}} ()
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a674a374762192b71b538662bb0a23c04}{pkt\+\_\+tbl}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a39088a14a2a9ab1902dea8999e211798}{transmit\+\_\+buffer}} (\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \+\_\+buffer, std\+::size\+\_\+t size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session$<$ Auth\+Socket, Auth\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a4bd1f95d79df62511ef13833a850177f}{Session}} (int64\+\_\+t uid, std\+::weak\+\_\+ptr$<$ Auth\+Socket $>$ socket)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a2896280f57643ce058317c0a3281f333}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Auth\+Socket $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a659211b432102904d71e943a6fb64f89}{get\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Get the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a8c0962c994001e135aaac3b4d8006b65}{set\+\_\+socket}} (std\+::weak\+\_\+ptr$<$ Auth\+Socket $>$ socket)
+\begin{DoxyCompactList}\small\item\em Set the socket. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a76dae24907a98fb3e4f4160e8d3aaa26}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Called to verify if the session is initialized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_abf7c01b5b5e7d010b3d296629ad87426}{set\+\_\+initialized}} (bool initialized)
+\begin{DoxyCompactList}\small\item\em Set whether the session is initialized or not. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a7627c9890ed35856be3bb4412e70e395}{get\+\_\+session\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the unique id of the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_a034be394ebd369d3a22573c344269c65}\label{class_horizon_1_1_auth_1_1_auth_session_a034be394ebd369d3a22573c344269c65} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!AuthSession@{AuthSession}}
+\index{AuthSession@{AuthSession}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{AuthSession()}{AuthSession()}}
+{\footnotesize\ttfamily Auth\+Session\+::\+Auth\+Session (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{uid,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_socket}{Auth\+Socket}} $>$}]{socket }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_a06ddc2628c4eace2ffbedcd23f2789f3}\label{class_horizon_1_1_auth_1_1_auth_session_a06ddc2628c4eace2ffbedcd23f2789f3} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!````~AuthSession@{\texorpdfstring{$\sim$}{\string~}AuthSession}}
+\index{````~AuthSession@{\texorpdfstring{$\sim$}{\string~}AuthSession}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AuthSession()}{\string~AuthSession()}}
+{\footnotesize\ttfamily Auth\+Session\+::\texorpdfstring{$\sim$}{\string~}\+Auth\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_a6c3df7550ef43582e34f1b0753b9bf76}\label{class_horizon_1_1_auth_1_1_auth_session_a6c3df7550ef43582e34f1b0753b9bf76} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!clif@{clif}}
+\index{clif@{clif}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{clif()}{clif()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_client_interface}{Auth\+Client\+Interface}} $>$ \& Horizon\+::\+Auth\+::\+Auth\+Session\+::clif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_a69e47e11613357cb4cd19d27c659856b}\label{class_horizon_1_1_auth_1_1_auth_session_a69e47e11613357cb4cd19d27c659856b} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Auth\+Session\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the session is started. Virtual method that must be implmented by the derived class. Typically used to initialize the session. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a718a6229c5a8e917edc7cc1872b51690}{Horizon\+::\+Networking\+::\+Session$<$ Auth\+Socket, Auth\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_session_a69e47e11613357cb4cd19d27c659856b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_a674a374762192b71b538662bb0a23c04}\label{class_horizon_1_1_auth_1_1_auth_session_a674a374762192b71b538662bb0a23c04} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!pkt\_tbl@{pkt\_tbl}}
+\index{pkt\_tbl@{pkt\_tbl}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{pkt\_tbl()}{pkt\_tbl()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_client_packet_length_table}{Client\+Packet\+Length\+Table}} $>$ \& Horizon\+::\+Auth\+::\+Auth\+Session\+::pkt\+\_\+tbl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_a39088a14a2a9ab1902dea8999e211798}\label{class_horizon_1_1_auth_1_1_auth_session_a39088a14a2a9ab1902dea8999e211798} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!transmit\_buffer@{transmit\_buffer}}
+\index{transmit\_buffer@{transmit\_buffer}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{transmit\_buffer()}{transmit\_buffer()}}
+{\footnotesize\ttfamily void Auth\+Session\+::transmit\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}}}]{\+\_\+buffer,  }\item[{std\+::size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_session_a39088a14a2a9ab1902dea8999e211798_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_session_ab9a1c7b99c8500463e38e794f7cb98e9}\label{class_horizon_1_1_auth_1_1_auth_session_ab9a1c7b99c8500463e38e794f7cb98e9} 
+\index{Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}!update@{update}}
+\index{update@{update}!Horizon::Auth::AuthSession@{Horizon::Auth::AuthSession}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Auth\+Session\+::update (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when the session is started. Virtual method that must be implmented by the derived class. Typically used to update the session and process packets. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a08de1249359a3b2b8519bfc94afec177}{Horizon\+::\+Networking\+::\+Session$<$ Auth\+Socket, Auth\+Session $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_session_ab9a1c7b99c8500463e38e794f7cb98e9_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Auth/\+Session/\mbox{\hyperlink{_auth_session_8hpp}{Auth\+Session.\+hpp}}\item 
+src/\+Server/\+Auth/\+Session/\mbox{\hyperlink{_auth_session_8cpp}{Auth\+Session.\+cpp}}\end{DoxyCompactItemize}

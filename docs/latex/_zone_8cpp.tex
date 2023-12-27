@@ -1,0 +1,71 @@
+\doxysection{src/\+Server/\+Zone/\+Zone.cpp File Reference}
+\hypertarget{_zone_8cpp}{}\label{_zone_8cpp}\index{src/Server/Zone/Zone.cpp@{src/Server/Zone/Zone.cpp}}
+{\ttfamily \#include "{}Zone.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Socket\+Mgr/\+Client\+Socket\+Mgr.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Map\+Manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Exp\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Job\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Item\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Monster\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Skill\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Status\+Effect\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Storage\+DB.\+hpp"{}}\newline
+Include dependency graph for Zone.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_zone_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_zone_8cpp_aa37cc2456992659bf4f7035e9ffb55dd}{config\+\_\+error}}(setting\+\_\+name,  default)~ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error) $<$$<$ "{}No setting for \textquotesingle{}"{} $<$$<$ setting\+\_\+name $<$$<$ "{}\textquotesingle{} in configuration file, defaulting to \textquotesingle{}"{} $<$$<$ default $<$$<$ "{}\textquotesingle{}."{};
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_zone_8cpp_a01af5df9d4270d594f2a4391b5a775ec}{Signal\+Handler}} (int signal)
+\item 
+int \mbox{\hyperlink{_zone_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_zone_8cpp_aa37cc2456992659bf4f7035e9ffb55dd}\label{_zone_8cpp_aa37cc2456992659bf4f7035e9ffb55dd} 
+\index{Zone.cpp@{Zone.cpp}!config\_error@{config\_error}}
+\index{config\_error@{config\_error}!Zone.cpp@{Zone.cpp}}
+\doxysubsubsection{\texorpdfstring{config\_error}{config\_error}}
+{\footnotesize\ttfamily \#define config\+\_\+error(\begin{DoxyParamCaption}\item[{}]{setting\+\_\+name,  }\item[{}]{default }\end{DoxyParamCaption})~ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error) $<$$<$ "{}No setting for \textquotesingle{}"{} $<$$<$ setting\+\_\+name $<$$<$ "{}\textquotesingle{} in configuration file, defaulting to \textquotesingle{}"{} $<$$<$ default $<$$<$ "{}\textquotesingle{}."{};}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_zone_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{_zone_8cpp_ac0f2228420376f4db7e1274f2b41667c} 
+\index{Zone.cpp@{Zone.cpp}!main@{main}}
+\index{main@{main}!Zone.cpp@{Zone.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Zone \doxylink{class_server}{Server} Main runtime entrypoint. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Initialize the Common Core\Hypertarget{_zone_8cpp_a01af5df9d4270d594f2a4391b5a775ec}\label{_zone_8cpp_a01af5df9d4270d594f2a4391b5a775ec} 
+\index{Zone.cpp@{Zone.cpp}!SignalHandler@{SignalHandler}}
+\index{SignalHandler@{SignalHandler}!Zone.cpp@{Zone.cpp}}
+\doxysubsubsection{\texorpdfstring{SignalHandler()}{SignalHandler()}}
+{\footnotesize\ttfamily void Signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{signal }\end{DoxyParamCaption})}
+
+Signal Handler for the Zone-\/\+Server main thread. 
+\begin{DoxyParams}{Parameters}
+{\em error} & \\
+\hline
+\end{DoxyParams}

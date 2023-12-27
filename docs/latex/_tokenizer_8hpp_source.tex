@@ -1,0 +1,67 @@
+\doxysection{Tokenizer.\+hpp}
+\hypertarget{_tokenizer_8hpp_source}{}\label{_tokenizer_8hpp_source}\index{src/Utility/Tokenizer.hpp@{src/Utility/Tokenizer.hpp}}
+\mbox{\hyperlink{_tokenizer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_TOKENIZER\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_TOKENIZER\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tokenizer}{Tokenizer}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<char\ const\ *>\ \mbox{\hyperlink{class_tokenizer_aeddb5963d2b8948c59b141591f1646c6}{StorageType}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{typedef}\ StorageType::size\_type\ \mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\_type}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typedef}\ StorageType::const\_iterator\ \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\_iterator}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typedef}\ StorageType::reference\ \mbox{\hyperlink{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}{reference}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typedef}\ StorageType::const\_reference\ \mbox{\hyperlink{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}{const\_reference}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_tokenizer}{Tokenizer}}(\textcolor{keyword}{const}\ std::string\ \&src,\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ sep,\ uint32\_t\ vectorReserve\ =\ 0,\ \textcolor{keywordtype}{bool}\ keepEmptyStrings\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017}{\string~Tokenizer}}()\ \{\ \textcolor{keyword}{delete}[]\ m\_str;\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\_iterator}}\ \mbox{\hyperlink{class_tokenizer_ae4e615a375607c4742e9ccf771e4d0d2}{begin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_storage.begin();\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\_iterator}}\ \mbox{\hyperlink{class_tokenizer_adc4a84fd03558063e3b84e04894bb6de}{end}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_storage.end();\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\_type}}\ \mbox{\hyperlink{class_tokenizer_a84fec1cbb0c61932c2121b60947fbbe9}{size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_storage.size();\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}{reference}}\ \mbox{\hyperlink{class_tokenizer_ab53ae97539431235d979efd76ba9644b}{operator\ []\ }}(\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\_type}}\ i)\ \{\ \textcolor{keywordflow}{return}\ m\_storage[i];\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}{const\_reference}}\ \mbox{\hyperlink{class_tokenizer_ab53ae97539431235d979efd76ba9644b}{operator\ []\ }}(\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\_type}}\ i)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_storage[i];\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{char}*\ m\_str;}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_tokenizer_aeddb5963d2b8948c59b141591f1646c6}{StorageType}}\ m\_storage;}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_TOKENIZER\_H}}
+
+\end{DoxyCode}

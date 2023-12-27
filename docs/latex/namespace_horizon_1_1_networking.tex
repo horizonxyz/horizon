@@ -1,0 +1,21 @@
+\doxysection{Horizon\+::Networking Namespace Reference}
+\hypertarget{namespace_horizon_1_1_networking}{}\label{namespace_horizon_1_1_networking}\index{Horizon::Networking@{Horizon::Networking}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{Accept\+Socket\+Mgr}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} Manager for Accepted Sockets. Deals with client sockets that were accepted by the server. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor}{Async\+Acceptor}}
+\begin{DoxyCompactList}\small\item\em Asynchronous acceptor for sockets. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector}{Connector}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} object that allows connecting to remote endpoints. Connections are passed to network connected threads that handle them separately from accepted threads. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connect_socket_mgr}{Connect\+Socket\+Mgr}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} manager that handles sockets that were created by the connector. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_network_thread}{Network\+Thread}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_a}{A} Network Thread object that handles a number of sockets. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Session}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_a}{A} \doxylink{class_horizon_1_1_networking_1_1_session}{Session} object that handles a single socket. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket}{Socket}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_a}{A} \doxylink{class_horizon_1_1_networking_1_1_socket}{Socket} object that handles a single connection. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}}
+\end{DoxyCompactItemize}

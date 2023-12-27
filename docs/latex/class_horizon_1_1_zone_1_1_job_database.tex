@@ -1,0 +1,176 @@
+\doxysection{Horizon\+::Zone\+::Job\+Database Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_job_database}{}\label{class_horizon_1_1_zone_1_1_job_database}\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+
+
+{\ttfamily \#include $<$Job\+DB.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_ab4943d6407186b90c1b856aff69981ba}{Job\+Database}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a81933bae93013b7db930d13becdfb56d}{\texorpdfstring{$\sim$}{\string~}\+Job\+Database}} ()
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a6518b7cd7e7f6b2a2719ffd797c71f9a}{get\+\_\+job\+\_\+class\+\_\+by\+\_\+name}} (std\+::string name) const
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_a90f5e40781e0e2060f0d48e6be39b9d3}{job\+\_\+class\+\_\+mask}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_ac27d62629d268ae9dd19b24b58c3579b}{job\+\_\+id\+\_\+to\+\_\+mask}} (\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}} job\+\_\+id) const
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a892804e03d5e6ab9c41d1ea5a8aecbf2}{load}} ()
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_abb598d5fed9355d889593536a3070c03}{load\+\_\+job}} (sol\+::table \&job\+\_\+tbl, std\+::string name="{}"{})
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a0838c660060f1aabdc0ada27618a0827}{load\+\_\+job\+\_\+internal}} (sol\+::table \&job\+\_\+tbl, \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\+\_\+config\+\_\+data}} \&data, std\+::string job\+\_\+name="{}"{})
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a65f4f6365ccbf6535c3b7c894f2fb8fb}{load\+\_\+hp\+\_\+sp\+\_\+table}} (sol\+::table \&job\+\_\+tbl, \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\+\_\+config\+\_\+data}} \&data, std\+::string \&job\+\_\+name, std\+::string table\+\_\+name)
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a38fdc110617a988feb3f93a73869c324}{get\+\_\+job\+\_\+by\+\_\+id}} (uint16\+\_\+t job\+\_\+id)
+\item 
+std\+::string \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_af1cbb109ff7f583c81b5f926edbe968f}{get\+\_\+job\+\_\+name\+\_\+by\+\_\+id}} (int32\+\_\+t id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database}{Job\+Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database_a6f235a04f1372609825bec6c7cec2150}{get\+\_\+instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_ab4943d6407186b90c1b856aff69981ba}\label{class_horizon_1_1_zone_1_1_job_database_ab4943d6407186b90c1b856aff69981ba} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!JobDatabase@{JobDatabase}}
+\index{JobDatabase@{JobDatabase}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{JobDatabase()}{JobDatabase()}}
+{\footnotesize\ttfamily Job\+Database\+::\+Job\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a81933bae93013b7db930d13becdfb56d}\label{class_horizon_1_1_zone_1_1_job_database_a81933bae93013b7db930d13becdfb56d} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!````~JobDatabase@{\texorpdfstring{$\sim$}{\string~}JobDatabase}}
+\index{````~JobDatabase@{\texorpdfstring{$\sim$}{\string~}JobDatabase}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}JobDatabase()}{\string~JobDatabase()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Job\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Job\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a6f235a04f1372609825bec6c7cec2150}\label{class_horizon_1_1_zone_1_1_job_database_a6f235a04f1372609825bec6c7cec2150} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_job_database}{Job\+Database}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Job\+Database\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a38fdc110617a988feb3f93a73869c324}\label{class_horizon_1_1_zone_1_1_job_database_a38fdc110617a988feb3f93a73869c324} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!get\_job\_by\_id@{get\_job\_by\_id}}
+\index{get\_job\_by\_id@{get\_job\_by\_id}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_job\_by\_id()}{get\_job\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Job\+Database\+::get\+\_\+job\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{job\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a6518b7cd7e7f6b2a2719ffd797c71f9a}\label{class_horizon_1_1_zone_1_1_job_database_a6518b7cd7e7f6b2a2719ffd797c71f9a} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!get\_job\_class\_by\_name@{get\_job\_class\_by\_name}}
+\index{get\_job\_class\_by\_name@{get\_job\_class\_by\_name}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_job\_class\_by\_name()}{get\_job\_class\_by\_name()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}} Job\+Database\+::get\+\_\+job\+\_\+class\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_a6518b7cd7e7f6b2a2719ffd797c71f9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_af1cbb109ff7f583c81b5f926edbe968f}\label{class_horizon_1_1_zone_1_1_job_database_af1cbb109ff7f583c81b5f926edbe968f} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!get\_job\_name\_by\_id@{get\_job\_name\_by\_id}}
+\index{get\_job\_name\_by\_id@{get\_job\_name\_by\_id}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_job\_name\_by\_id()}{get\_job\_name\_by\_id()}}
+{\footnotesize\ttfamily std\+::string Horizon\+::\+Zone\+::\+Job\+Database\+::get\+\_\+job\+\_\+name\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_ac27d62629d268ae9dd19b24b58c3579b}\label{class_horizon_1_1_zone_1_1_job_database_ac27d62629d268ae9dd19b24b58c3579b} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!job\_id\_to\_mask@{job\_id\_to\_mask}}
+\index{job\_id\_to\_mask@{job\_id\_to\_mask}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{job\_id\_to\_mask()}{job\_id\_to\_mask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_a90f5e40781e0e2060f0d48e6be39b9d3}{job\+\_\+class\+\_\+mask}} Job\+Database\+::job\+\_\+id\+\_\+to\+\_\+mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\+\_\+class\+\_\+type}}}]{job\+\_\+id }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a892804e03d5e6ab9c41d1ea5a8aecbf2}\label{class_horizon_1_1_zone_1_1_job_database_a892804e03d5e6ab9c41d1ea5a8aecbf2} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!load@{load}}
+\index{load@{load}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Job\+Database\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_a892804e03d5e6ab9c41d1ea5a8aecbf2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a65f4f6365ccbf6535c3b7c894f2fb8fb}\label{class_horizon_1_1_zone_1_1_job_database_a65f4f6365ccbf6535c3b7c894f2fb8fb} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!load\_hp\_sp\_table@{load\_hp\_sp\_table}}
+\index{load\_hp\_sp\_table@{load\_hp\_sp\_table}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_hp\_sp\_table()}{load\_hp\_sp\_table()}}
+{\footnotesize\ttfamily bool Job\+Database\+::load\+\_\+hp\+\_\+sp\+\_\+table (\begin{DoxyParamCaption}\item[{sol\+::table \&}]{job\+\_\+tbl,  }\item[{\mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\+\_\+config\+\_\+data}} \&}]{data,  }\item[{std\+::string \&}]{job\+\_\+name,  }\item[{std\+::string}]{table\+\_\+name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_a65f4f6365ccbf6535c3b7c894f2fb8fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_a65f4f6365ccbf6535c3b7c894f2fb8fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_abb598d5fed9355d889593536a3070c03}\label{class_horizon_1_1_zone_1_1_job_database_abb598d5fed9355d889593536a3070c03} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!load\_job@{load\_job}}
+\index{load\_job@{load\_job}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_job()}{load\_job()}}
+{\footnotesize\ttfamily int Job\+Database\+::load\+\_\+job (\begin{DoxyParamCaption}\item[{sol\+::table \&}]{job\+\_\+tbl,  }\item[{std\+::string}]{name = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_abb598d5fed9355d889593536a3070c03_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_abb598d5fed9355d889593536a3070c03_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_job_database_a0838c660060f1aabdc0ada27618a0827}\label{class_horizon_1_1_zone_1_1_job_database_a0838c660060f1aabdc0ada27618a0827} 
+\index{Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}!load\_job\_internal@{load\_job\_internal}}
+\index{load\_job\_internal@{load\_job\_internal}!Horizon::Zone::JobDatabase@{Horizon::Zone::JobDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_job\_internal()}{load\_job\_internal()}}
+{\footnotesize\ttfamily bool Job\+Database\+::load\+\_\+job\+\_\+internal (\begin{DoxyParamCaption}\item[{sol\+::table \&}]{job\+\_\+tbl,  }\item[{\mbox{\hyperlink{struct_horizon_1_1_zone_1_1job__config__data}{job\+\_\+config\+\_\+data}} \&}]{data,  }\item[{std\+::string}]{job\+\_\+name = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_a0838c660060f1aabdc0ada27618a0827_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_job_database_a0838c660060f1aabdc0ada27618a0827_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_job_d_b_8hpp}{Job\+DB.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_job_d_b_8cpp}{Job\+DB.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,976 @@
+\doxysection{src/\+Server/\+Zone/\+Definitions/\+Skill\+Definitions.hpp File Reference}
+\hypertarget{_skill_definitions_8hpp}{}\label{_skill_definitions_8hpp}\index{src/Server/Zone/Definitions/SkillDefinitions.hpp@{src/Server/Zone/Definitions/SkillDefinitions.hpp}}
+{\ttfamily \#include "{}Battle\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Item\+Definitions.\+hpp"{}}\newline
+Include dependency graph for Skill\+Definitions.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{_skill_definitions_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_skill_definitions_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structskill__learnt__info}{skill\+\_\+learnt\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{structzc__skill__info__data}{zc\+\_\+skill\+\_\+info\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structskill__required__item__data}{skill\+\_\+required\+\_\+item\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structskill__config__data}{skill\+\_\+config\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structskill__tree__config}{skill\+\_\+tree\+\_\+config}}
+\item 
+struct \mbox{\hyperlink{structskill__tree__config_1_1requirement}{skill\+\_\+tree\+\_\+config\+::requirement}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone}{Horizon\+::\+Zone}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_a36b1b99e37013978ef14c1e594335808}{MAX\+\_\+\+SKILL\+\_\+\+NAME\+\_\+\+LENGTH}}~24
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}~10
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_a7840be72be22db9a4236b83eff5d410c}{MAX\+\_\+\+SKILL\+\_\+\+UNIT\+\_\+\+LAYOUT}}~45
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577}{MAX\+\_\+\+SQUARE\+\_\+\+LAYOUT}}~5
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_ab2ee85896acb99b066d5b312d88bf4a7}{MAX\+\_\+\+SKILL\+\_\+\+UNIT\+\_\+\+COUNT}}~((\mbox{\hyperlink{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577}{MAX\+\_\+\+SQUARE\+\_\+\+LAYOUT}}\texorpdfstring{$\ast$}{*}2+1)\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577}{MAX\+\_\+\+SQUARE\+\_\+\+LAYOUT}}\texorpdfstring{$\ast$}{*}2+1))
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_a2b1b735eb71a9afca05bf87d3f6df78b}{MAX\+\_\+\+SKILL\+\_\+\+ITEM\+\_\+\+REQUIRE}}~10
+\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_a024af1cc6b9414552b8f50265679cc43}{MAX\+\_\+\+SKILL\+\_\+\+ID}}~10015
+\begin{DoxyCompactList}\small\item\em Max used Skill ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_skill_definitions_8hpp_ac5f1d3e5959d0a1cc0af449200e84ddc}{MAX\+\_\+\+SKILL\+\_\+\+TREE}}~86
+\begin{DoxyCompactList}\small\item\em Update this max as necessary. 86 is the value needed for Expanded Super Novice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314d}{skill\+\_\+placement\+\_\+behavior\+\_\+types}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da1e69bceb5ac963ee36d57834bce7adb7}{SPB\+\_\+\+NONE}} = 0x0000
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa94df797f8d4546c5e24652410a1cac0}{SPB\+\_\+\+DEFNOTENEMY}} = 0x0001
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da4e7390248579d63548e3af333b984ea8}{SPB\+\_\+\+NOREITERATION}} = 0x0002
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3d29cccb1553b801b1be7a4bf86ef0d3}{SPB\+\_\+\+NOFOOTSET}} = 0x0004
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab85a2366c3a8ccec757518244d58a75c}{SPB\+\_\+\+NOOVERLAP}} = 0x0008
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da90929bf0f278c05633754599739dae29}{SPB\+\_\+\+PATHCHECK}} = 0x0010
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da8ad18ae3d6a238d1417f196699759869}{SPB\+\_\+\+NOPC}} = 0x0020
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3da860317b139f7d5c369d1e71ed4084}{SPB\+\_\+\+NOMOB}} = 0x0040
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da04dcbd51c1de3d207b17882d4941f0fb}{SPB\+\_\+\+SKILL}} = 0x0080
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab24da7916d23b69ae3125316636cb1f2}{SPB\+\_\+\+DANCE}} = 0x0100
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa598ef238dd6eb5131f1b5238215e23b}{SPB\+\_\+\+ENSEMBLE}} = 0x0200
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da2b12128e080be481e7a6031158546873}{SPB\+\_\+\+SONG}} = 0x0400
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da16c96647af3dd9db6af9fcf0b61535b5}{SPB\+\_\+\+DUALMODE}} = 0x0800
+, \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da91a8f6268409e7592a0258441fba437b}{SPB\+\_\+\+RANGEDSINGLEUNIT}} = 0x2000
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164}{skill\+\_\+required\+\_\+state\+\_\+types}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a224bccb0ab5d8bec94d8acfa66af0eb9}{SRS\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae657122fcbdaeacd5cb7505933ede2a3}{SRS\+\_\+\+HIDING}} = 0x01
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a7ad73b75a1ca998cef561dede3f19a33}{SRS\+\_\+\+CLOAKING}} = 0x02
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae73afec78a4f38688bec433e5d47828c}{SRS\+\_\+\+HIDDEN}} = 0x03
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad16c23893091d9e0e8a5389cf70fd1a0}{SRS\+\_\+\+RIDING}} = 0x04
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a397c9c27898f7f8aecdd510d83716c95}{SRS\+\_\+\+FALCON}} = 0x05
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a053f042656fdfbeaca6ffa94094d2574}{SRS\+\_\+\+CART}} = 0x06
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a71f2f0d2cc0175dbc9b49262645c82f7}{SRS\+\_\+\+SHIELD}} = 0x07
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a11d48ba7ba8e9f8321c31806f0fcf6d2}{SRS\+\_\+\+SIGHT}} = 0x08
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164afb7985bcc7df1d2afc2526b2c909948f}{SRS\+\_\+\+EXPLOSIONSPIRITS}} = 0x09
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aebd3b40a21c6ab1cd8b2d96cc636a31b}{SRS\+\_\+\+CARTBOOST}} = 0x0A
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a87629ddfc2a3e555da1d77069d08e359}{SRS\+\_\+\+RECOV\+\_\+\+WEIGHT\+\_\+\+RATE}} = 0x0B
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad5b152563dcf5b08cbed9c19b899aa0f}{SRS\+\_\+\+MOVE\+\_\+\+ENABLE}} = 0x0C
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a84395fd982a7b289f055b06fe95dae13}{SRS\+\_\+\+WATER}} = 0x0D
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aa399f0190ae47645d1311bf3bf39ddfb}{SRS\+\_\+\+RIDINGDRAGON}} = 0x0E
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a172dfc8601e290bd3a4484fdd29345e4}{SRS\+\_\+\+WUG}} = 0x0F
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abe7553bbb078477796640a9b94cb83cf}{SRS\+\_\+\+RIDINGWUG}} = 0x10
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a46bcef9cdd7830b9851690b1f2da9d09}{SRS\+\_\+\+MADO}} = 0x11
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ac304c7494380664660e1fbba731167f0}{SRS\+\_\+\+ELEMENTALSPIRIT}} = 0x12
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abdbc7dc40ad8bf1031d04db5483dd941}{SRS\+\_\+\+POISONINGWEAPON}} = 0x13
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a88da2d7d56f3c9720dbdafb33135c0cf}{SRS\+\_\+\+ROLLINGCUTTER}} = 0x14
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ab337fe36fd66dc5f3684d07bafea68d2}{SRS\+\_\+\+MH\+\_\+\+FIGHTING}} = 0x15
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a5f8dad19faa1dd087c20eb2993df3834}{SRS\+\_\+\+MH\+\_\+\+GRAPPLING}} = 0x16
+, \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a216b7fc38fdfe8833e57661a013ccbcd}{SRS\+\_\+\+PECO}} = 0x17
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164af8d3b77edd0d0812c24b98f0fd629b76}{SRS\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891}{skill\+\_\+primary\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8}{SK\+\_\+\+TYPE\+\_\+\+PASSIVE}} = 0x00
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a96f7804e526092d83c3485ae2d3f1ae7}{SK\+\_\+\+TYPE\+\_\+\+ATTACK}} = 0x01
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891aa646921a019a4874d4353f9f0b072c9f}{SK\+\_\+\+TYPE\+\_\+\+PLACEMENT}} = 0x02
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a0c4cf62202eac81b4a084b9c027cbe56}{SK\+\_\+\+TYPE\+\_\+\+SELF}} = 0x04
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a1602cfb5af33dea0e293c3bc9c53d305}{SK\+\_\+\+TYPE\+\_\+\+FRIENDLY}} = 0x10
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a80b99f006a6981e60eb98274e8d78ec9}{SK\+\_\+\+TYPE\+\_\+\+TRAP}} = 0x20
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575}{skill\+\_\+secondary\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011}{SK\+\_\+\+SUBTYPE\+\_\+\+NONE}} = 0x00000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a0223a78812027e36cdceaf742317389d}{SK\+\_\+\+SUBTYPE\+\_\+\+QUEST\+\_\+\+SKILL}} = 0x00001
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a9e88700e0187c2690377999b2cd376a2}{SK\+\_\+\+SUBTYPE\+\_\+\+NPC\+\_\+\+SKILL}} = 0x00002
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a21e24a6834ee519270e667ece4fa899c}{SK\+\_\+\+SUBTYPE\+\_\+\+WEDDING\+\_\+\+SKILL}} = 0x00004
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5ada9de755dbd715f3e17d3a34fded87}{SK\+\_\+\+SUBTYPE\+\_\+\+SPIRIT\+\_\+\+SKILL}} = 0x00008
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a1592d2689328dc487897ef9c7c6b26ff}{SK\+\_\+\+SUBTYPE\+\_\+\+GUILD\+\_\+\+SKILL}} = 0x00010
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a124b0604440320a403a3644a5007ef16}{SK\+\_\+\+SUBTYPE\+\_\+\+SONG\+\_\+\+DANCE}} = 0x00020
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aeb9bdc7de99cdbe172ac7b025dd768f3}{SK\+\_\+\+SUBTYPE\+\_\+\+ENSEMBLE\+\_\+\+SKILL}} = 0x00040
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5106f60b1a187106051899c7127e11c5}{SK\+\_\+\+SUBTYPE\+\_\+\+TRAP\+\_\+\+SKILL}} = 0x00080
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a59460986bcaac872d88a6f05b6ed9652}{SK\+\_\+\+SUBTYPE\+\_\+\+TARGET\+\_\+\+SELF}} = 0x00100
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a2eebcd37a483c8d5e38d36d60997efcf}{SK\+\_\+\+SUBTYPE\+\_\+\+NO\+\_\+\+TARGET\+\_\+\+SELF}} = 0x00200
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7d4004f9566c318431de1ad6a3327fba}{SK\+\_\+\+SUBTYPE\+\_\+\+PARTY\+\_\+\+ONLY}} = 0x00400
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a8937f11be97435c1272226aeac307ba7}{SK\+\_\+\+SUBTYPE\+\_\+\+GUILD\+\_\+\+ONLY}} = 0x00800
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a026938d2120f2979a136f5f613c5ec28}{SK\+\_\+\+SUBTYPE\+\_\+\+NO\+\_\+\+ENEMY}} = 0x01000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acb6ae3755cbca4485cadc8e52757cebe}{SK\+\_\+\+SUBTYPE\+\_\+\+NO\+\_\+\+LAND\+\_\+\+PROTECTOR}} = 0x02000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a478635eb91ed2af1ff13e90e60e7ef04}{SK\+\_\+\+SUBTYPE\+\_\+\+CHORUS\+\_\+\+SKILL}} = 0x04000
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7a42044240e5a3ffa5a7c29ee3431640}{SK\+\_\+\+SUBTYPE\+\_\+\+FREE\+\_\+\+CAST\+\_\+\+NORMAL}} = 0x08000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3f7667a6e66791d40911d9a80c0e10e8}{SK\+\_\+\+SUBTYPE\+\_\+\+FREE\+\_\+\+CAST\+\_\+\+REDUCED}} = 0x10000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aa96356799a596e9c5b034c7463c4673e}{SK\+\_\+\+SUBTYPE\+\_\+\+SHOW\+\_\+\+SKILL\+\_\+\+SCALE}} = 0x20000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acf042f42b0a00045d223677a00973142}{SK\+\_\+\+SUBTYPE\+\_\+\+ALLOW\+\_\+\+REPRODUCE}} = 0x40000
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a196b9806c04c7120826ea07a3e3aea2b}{SK\+\_\+\+SUBTYPE\+\_\+\+HIDDEN\+\_\+\+TRAP}} = 0x80000
+, \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a990545c07f9247ffb402a4ce0ab8af00}{SK\+\_\+\+SUBTYPE\+\_\+\+IS\+\_\+\+COMBO\+\_\+\+SKILL}} = 0x100000
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1}{skill\+\_\+damage\+\_\+property\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NONE}} = 0x00
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a79afc7760d4d5e94bc6c09ee34446360}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+DAMAGE}} = 0x01
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a56562c731b18e06f7e8c660ee7efcbd7}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+SPLASH}} = 0x02 \texorpdfstring{$\vert$}{|} 0x04
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a61f3e985124025c44142cf27d5454d49}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+SPLASH\+\_\+\+ONLY}} = 0x02
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a43b4a99f2bf0d473839b161339f4292d}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+SPLASHSPLIT}} = 0x04
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a22170dcfc59a1da4325ca633e8a0a338}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+CARDFIX\+\_\+\+ATK}} = 0x08
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a577f5ee42a21cecf31638b22e2376062}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+ELEFIX}} = 0x10
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a7324bed363a068e2c994b4deb12d1ba4}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+IGNORE\+\_\+\+DEF}} = 0x20
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1af4fd84dfc896c1a25cb1cd06cc26d367}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+IGNORE\+\_\+\+FLEE}} = 0x40
+, \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1aa1c6609d9dd50b0e3018d1564bcca35e}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+CARDFIX\+\_\+\+DEF}} = 0x80
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86f}{skill\+\_\+learn\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fae862efe13c93cded6d55e9d77fcc6151}{SKILL\+\_\+\+LEARN\+\_\+\+PERMANENT}} = 0
+, \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6d9545fcc10b4aa9f4aa1ff85068b14d}{SKILL\+\_\+\+LEARN\+\_\+\+TEMPORARY}} = 1
+, \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6b2b9a47bfae1df97879c181e8a2613c}{SKILL\+\_\+\+LEARN\+\_\+\+PLAGIARIZED}} = 2
+, \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa84720457f426cb236623ccca287f8437}{SKILL\+\_\+\+LEARN\+\_\+\+UNUSED}} = 3
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86faa1beed090d45e0c7c6b2d2e2dabcc669}{SKILL\+\_\+\+LEARN\+\_\+\+PERM\+\_\+\+GRANTED}} = 4
+, \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fab7157df8fd7131a96337aefd62c36b78}{SKILL\+\_\+\+LEARN\+\_\+\+REPLACED\+\_\+\+LV\+\_\+0}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7b}{skill\+\_\+use\+\_\+fail\+\_\+cause\+\_\+type}} \{ \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac4f7ed91012c4fc8ec6e0ff7faeb8c5c}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+LEVEL}} = 0
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babf7cbb7bd39b751b083ad097d82c39b9}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SP\+\_\+\+INSUFFICIENT}} = 1
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba293971a37d47764055f58c2a89443730}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HP\+\_\+\+INSUFFICIENT}} = 2
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba82075340295bc5039dac496bcf666e50}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+STUFF\+\_\+\+INSUFFICIENT}} = 3
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babc4eebde71c00566314c3cce04d8327c}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SKILLINTERVAL}} = 4
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6dd3de74af61f2949792d784d274afdb}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MONEY}} = 5
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5ef9aabce0b63e6e03193b009435ad5b}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+THIS\+\_\+\+WEAPON}} = 6
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba136285ea30075c8867fd3a03c9f3f5e8}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+REDJAMSTONE}} = 7
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bafa38c5894b5a32d8f275f4745354b761}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+BLUEJAMSTONE}} = 8
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba1b2a63e8ab4439bec3def5146b59307f}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+WEIGHTOVER}} = 9
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba0c5b94aaeff1fdfd4b98ebb71c8e62a2}{SKILL\+\_\+\+USE\+\_\+\+FAIL}} = 10
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6cb9ffe498660bc15d3fdd2767de5065}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+TOTARGET}} = 11
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bacb9cdc2940ad4c860db0f1adc1eff0e3}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+ANCILLA\+\_\+\+NUMOVER}} = 12
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3b7e08d453918137ecaf5f78e169a8e0}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HOLYWATER}} = 13
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba392ba3be422c1602f47aa18ccce20cc1}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+ANCILLA}} = 14
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3940c9a9e11e92331259d535cf4131f3}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+DUPLICATE\+\_\+\+RANGEIN}} = 15
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac23edec0195ff83df06a825b1cfce194}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+OTHER\+\_\+\+SKILL}} = 16
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2b9f24c7a27e0d4ac08907abc5d89da3}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+HELPER}} = 17
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6a0bbc2c2fc4f26b586675a804128b6}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+INVALID\+\_\+\+DIR}} = 18
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad98194b0f42e99104e3cc5af853d75b9}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SUMMON}} = 19
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba9ace83a27151ac0ff1855b6b82df93e3}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SUMMON\+\_\+\+NONE}} = 20
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba13c5b02fc08f30eace0cfbcee1b85bee}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+IMITATION\+\_\+\+SKILL\+\_\+\+NONE}} = 21
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5f2ee42d5f06d38ada69888d9157a276}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+DUPLICATE}} = 22
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba03de7f8df97aed2872a4d673783675e7}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CONDITION}} = 23
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae5eba21ff24530635b7cfba6fc9c481f}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+PAINTBRUSH}} = 24
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba4edf3b1c3b955a0d823b94b9fedacf1d}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+DRAGON}} = 25
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3e68396a89beee185f6188364325f9b7}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+POS}} = 26
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5d69dac9284acd04b2b9025e3b3b5902}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HELPER\+\_\+\+SP\+\_\+\+INSUFFICIENT}} = 27
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba530ad0233bbc8616bc9c81769e1c55b5}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEER\+\_\+\+WALL}} = 28
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa73c93f44665c3f5eaab68555fd0571b}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EXP\+\_\+1\+PERCENT}} = 29
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba51b31983e3e8427d90c6ada59587a27a}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CHORUS\+\_\+\+SP\+\_\+\+INSUFFICIENT}} = 30
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba00b5405ead2c053a7c28f59393750acd}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+GC\+\_\+\+WEAPONBLOCKING}} = 31
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac42a10222fcac674eac988b8fe6e307f}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+GC\+\_\+\+POISONINGWEAPON}} = 32
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad32bccae3aad74b465871e50b9731300}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MADOGEAR}} = 33
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf6bf9882b65f5331fe2e479020dd28a5}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EQUIPMENT\+\_\+\+KUNAI}} = 34
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba484db6053d5c7f8dd296676807d92403}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+TOTARGET\+\_\+\+PLAYER}} = 35
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae11d641f5cee484cbefb504dec35c014}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SIZE}} = 36
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae722fd400e747bbbdd500693c236d866}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CANONBALL}} = 37
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba671c7e1069a16c6c578ebc0cf5da8e0c}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+GUILLONTINE\+\_\+\+POISON}} = 43
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba8f87d6ac4d19ec0f1efae9bb4800fd86}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MADOGEAR\+\_\+\+RIDE}} = 50
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2ff346a8dcbf241291cc66cc775dd2ac}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK}} = 51
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa18d95483b90ac9eaac3c5696399ee81}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK\+\_\+\+DIFFICULT\+\_\+\+SLEEP}} = 52
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba01ba7f2a613807000bf558a14afbc58b}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK\+\_\+\+PRESERVATION\+\_\+\+POINT}} = 53
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac0fc9a48f61e2c5f76f3f84f4ab8b155}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK\+\_\+\+READING}} = 54
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba152737ef35b06e3bfc930648f59f6fd9}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CART}} = 57
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba55cf7b6f923dcc69c206953a156a894e}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NO\+\_\+\+MORE\+\_\+\+SPELL}} = 60
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac3ee8e629f7a0cbe3f8ec44c6abe465d}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MANUAL\+\_\+\+NOTIFY}} = 70
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba785313b1f4de72235b0c831867c0c6f7}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+ITEM}} = 71
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba38976c2b48575031ad492d827516cd30}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EQUIPMENT}} = 72
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baea78e41b3ecf736006d2bf5ed20d05e6}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+COMBOSKILL}} = 73
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba745b58e6f5b3276512e1ed4802c7dcce}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPIRITS}} = 74
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba974f5284970554f044436b5e0fb9361c}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+EXPLOSIONSPIRITS}} = 75
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bab2d06573d84e6fb5f347e74e9fd4b189}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HP\+\_\+\+TOOMANY}} = 76
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae36199364c4671b011abc769f787581c}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+ROYAL\+\_\+\+GUARD\+\_\+\+BANDING}} = 77
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babdfa1ef86cb55ec3ec6d01b5e9db37b0}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EQUIPPED\+\_\+\+WEAPON\+\_\+\+CLASS}} = 78
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba04170eb5c869823d1860ebad25b360d7}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+EL\+\_\+\+SUMMON}} = 79
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf47e1841a677abad66ffa55e711f648f}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+RELATIONGRADE}} = 80
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6232e2de2ed7cc0c3b44ea9f6bc44b8}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+STYLE\+\_\+\+CHANGE\+\_\+\+FIGHTER}} = 81
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae3fda9add7a14711dc927aa8b6b215e4}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+STYLE\+\_\+\+CHANGE\+\_\+\+GRAPPLER}} = 82
+, \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babbd1de6fb7091a066a267027ff43a6bd}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+THERE\+\_\+\+ARE\+\_\+\+NPC\+\_\+\+AROUND}} = 83
+, \newline
+\mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba922647103c5e49812b9814e87b06e1ef}{SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+MORE\+\_\+\+BULLET}} = 84
+ \}
+\item 
+enum \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098}{skill\+\_\+target\+\_\+type}} \{ \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098a9c4b2e417e3d416d1ba126396f03f58e}{SKTT\+\_\+\+SINGLE\+\_\+\+TARGETED}} = 1
+, \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098ab618f17a95ccba238f02d9744fcadec6}{SKTT\+\_\+\+GROUND\+\_\+\+TARGETED}} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_skill_definitions_8hpp_a024af1cc6b9414552b8f50265679cc43}\label{_skill_definitions_8hpp_a024af1cc6b9414552b8f50265679cc43} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_ID@{MAX\_SKILL\_ID}}
+\index{MAX\_SKILL\_ID@{MAX\_SKILL\_ID}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_ID}{MAX\_SKILL\_ID}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+ID~10015}
+
+
+
+Max used Skill ID. 
+
+\Hypertarget{_skill_definitions_8hpp_a2b1b735eb71a9afca05bf87d3f6df78b}\label{_skill_definitions_8hpp_a2b1b735eb71a9afca05bf87d3f6df78b} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_ITEM\_REQUIRE@{MAX\_SKILL\_ITEM\_REQUIRE}}
+\index{MAX\_SKILL\_ITEM\_REQUIRE@{MAX\_SKILL\_ITEM\_REQUIRE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_ITEM\_REQUIRE}{MAX\_SKILL\_ITEM\_REQUIRE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+ITEM\+\_\+\+REQUIRE~10}
+
+\Hypertarget{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}\label{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_LEVEL@{MAX\_SKILL\_LEVEL}}
+\index{MAX\_SKILL\_LEVEL@{MAX\_SKILL\_LEVEL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_LEVEL}{MAX\_SKILL\_LEVEL}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+LEVEL~10}
+
+\Hypertarget{_skill_definitions_8hpp_a36b1b99e37013978ef14c1e594335808}\label{_skill_definitions_8hpp_a36b1b99e37013978ef14c1e594335808} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_NAME\_LENGTH@{MAX\_SKILL\_NAME\_LENGTH}}
+\index{MAX\_SKILL\_NAME\_LENGTH@{MAX\_SKILL\_NAME\_LENGTH}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_NAME\_LENGTH}{MAX\_SKILL\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+NAME\+\_\+\+LENGTH~24}
+
+\Hypertarget{_skill_definitions_8hpp_ac5f1d3e5959d0a1cc0af449200e84ddc}\label{_skill_definitions_8hpp_ac5f1d3e5959d0a1cc0af449200e84ddc} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_TREE@{MAX\_SKILL\_TREE}}
+\index{MAX\_SKILL\_TREE@{MAX\_SKILL\_TREE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_TREE}{MAX\_SKILL\_TREE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+TREE~86}
+
+
+
+Update this max as necessary. 86 is the value needed for Expanded Super Novice. 
+
+\Hypertarget{_skill_definitions_8hpp_ab2ee85896acb99b066d5b312d88bf4a7}\label{_skill_definitions_8hpp_ab2ee85896acb99b066d5b312d88bf4a7} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_UNIT\_COUNT@{MAX\_SKILL\_UNIT\_COUNT}}
+\index{MAX\_SKILL\_UNIT\_COUNT@{MAX\_SKILL\_UNIT\_COUNT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_UNIT\_COUNT}{MAX\_SKILL\_UNIT\_COUNT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+UNIT\+\_\+\+COUNT~((\mbox{\hyperlink{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577}{MAX\+\_\+\+SQUARE\+\_\+\+LAYOUT}}\texorpdfstring{$\ast$}{*}2+1)\texorpdfstring{$\ast$}{*}(\mbox{\hyperlink{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577}{MAX\+\_\+\+SQUARE\+\_\+\+LAYOUT}}\texorpdfstring{$\ast$}{*}2+1))}
+
+\Hypertarget{_skill_definitions_8hpp_a7840be72be22db9a4236b83eff5d410c}\label{_skill_definitions_8hpp_a7840be72be22db9a4236b83eff5d410c} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SKILL\_UNIT\_LAYOUT@{MAX\_SKILL\_UNIT\_LAYOUT}}
+\index{MAX\_SKILL\_UNIT\_LAYOUT@{MAX\_SKILL\_UNIT\_LAYOUT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SKILL\_UNIT\_LAYOUT}{MAX\_SKILL\_UNIT\_LAYOUT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SKILL\+\_\+\+UNIT\+\_\+\+LAYOUT~45}
+
+\Hypertarget{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577}\label{_skill_definitions_8hpp_aa762f7230fad5130d2c30ff14609a577} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!MAX\_SQUARE\_LAYOUT@{MAX\_SQUARE\_LAYOUT}}
+\index{MAX\_SQUARE\_LAYOUT@{MAX\_SQUARE\_LAYOUT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SQUARE\_LAYOUT}{MAX\_SQUARE\_LAYOUT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SQUARE\+\_\+\+LAYOUT~5}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_damage\_property\_type@{skill\_damage\_property\_type}}
+\index{skill\_damage\_property\_type@{skill\_damage\_property\_type}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_damage\_property\_type}{skill\_damage\_property\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1}{skill\+\_\+damage\+\_\+property\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_NONE@{SK\_DMG\_PROP\_NONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_NONE@{SK\_DMG\_PROP\_NONE}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_NO\_DAMAGE@{SK\_DMG\_PROP\_NO\_DAMAGE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_NO\_DAMAGE@{SK\_DMG\_PROP\_NO\_DAMAGE}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a79afc7760d4d5e94bc6c09ee34446360}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a79afc7760d4d5e94bc6c09ee34446360} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+DAMAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_SPLASH@{SK\_DMG\_PROP\_SPLASH}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_SPLASH@{SK\_DMG\_PROP\_SPLASH}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a56562c731b18e06f7e8c660ee7efcbd7}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a56562c731b18e06f7e8c660ee7efcbd7} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+SPLASH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_SPLASH\_ONLY@{SK\_DMG\_PROP\_SPLASH\_ONLY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_SPLASH\_ONLY@{SK\_DMG\_PROP\_SPLASH\_ONLY}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a61f3e985124025c44142cf27d5454d49}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a61f3e985124025c44142cf27d5454d49} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+SPLASH\+\_\+\+ONLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_SPLASHSPLIT@{SK\_DMG\_PROP\_SPLASHSPLIT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_SPLASHSPLIT@{SK\_DMG\_PROP\_SPLASHSPLIT}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a43b4a99f2bf0d473839b161339f4292d}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a43b4a99f2bf0d473839b161339f4292d} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+SPLASHSPLIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_NO\_CARDFIX\_ATK@{SK\_DMG\_PROP\_NO\_CARDFIX\_ATK}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_NO\_CARDFIX\_ATK@{SK\_DMG\_PROP\_NO\_CARDFIX\_ATK}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a22170dcfc59a1da4325ca633e8a0a338}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a22170dcfc59a1da4325ca633e8a0a338} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+CARDFIX\+\_\+\+ATK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_NO\_ELEFIX@{SK\_DMG\_PROP\_NO\_ELEFIX}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_NO\_ELEFIX@{SK\_DMG\_PROP\_NO\_ELEFIX}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a577f5ee42a21cecf31638b22e2376062}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a577f5ee42a21cecf31638b22e2376062} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+ELEFIX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_IGNORE\_DEF@{SK\_DMG\_PROP\_IGNORE\_DEF}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_IGNORE\_DEF@{SK\_DMG\_PROP\_IGNORE\_DEF}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a7324bed363a068e2c994b4deb12d1ba4}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a7324bed363a068e2c994b4deb12d1ba4} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+IGNORE\+\_\+\+DEF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_IGNORE\_FLEE@{SK\_DMG\_PROP\_IGNORE\_FLEE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_IGNORE\_FLEE@{SK\_DMG\_PROP\_IGNORE\_FLEE}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1af4fd84dfc896c1a25cb1cd06cc26d367}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1af4fd84dfc896c1a25cb1cd06cc26d367} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+IGNORE\+\_\+\+FLEE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_DMG\_PROP\_NO\_CARDFIX\_DEF@{SK\_DMG\_PROP\_NO\_CARDFIX\_DEF}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_DMG\_PROP\_NO\_CARDFIX\_DEF@{SK\_DMG\_PROP\_NO\_CARDFIX\_DEF}}}\Hypertarget{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1aa1c6609d9dd50b0e3018d1564bcca35e}\label{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1aa1c6609d9dd50b0e3018d1564bcca35e} 
+SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NO\+\_\+\+CARDFIX\+\_\+\+DEF&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86f}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86f} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_learn\_type@{skill\_learn\_type}}
+\index{skill\_learn\_type@{skill\_learn\_type}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_learn\_type}{skill\_learn\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86f}{skill\+\_\+learn\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_LEARN\_PERMANENT@{SKILL\_LEARN\_PERMANENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_LEARN\_PERMANENT@{SKILL\_LEARN\_PERMANENT}}}\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fae862efe13c93cded6d55e9d77fcc6151}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fae862efe13c93cded6d55e9d77fcc6151} 
+SKILL\+\_\+\+LEARN\+\_\+\+PERMANENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_LEARN\_TEMPORARY@{SKILL\_LEARN\_TEMPORARY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_LEARN\_TEMPORARY@{SKILL\_LEARN\_TEMPORARY}}}\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6d9545fcc10b4aa9f4aa1ff85068b14d}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6d9545fcc10b4aa9f4aa1ff85068b14d} 
+SKILL\+\_\+\+LEARN\+\_\+\+TEMPORARY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_LEARN\_PLAGIARIZED@{SKILL\_LEARN\_PLAGIARIZED}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_LEARN\_PLAGIARIZED@{SKILL\_LEARN\_PLAGIARIZED}}}\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6b2b9a47bfae1df97879c181e8a2613c}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa6b2b9a47bfae1df97879c181e8a2613c} 
+SKILL\+\_\+\+LEARN\+\_\+\+PLAGIARIZED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_LEARN\_UNUSED@{SKILL\_LEARN\_UNUSED}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_LEARN\_UNUSED@{SKILL\_LEARN\_UNUSED}}}\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa84720457f426cb236623ccca287f8437}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fa84720457f426cb236623ccca287f8437} 
+SKILL\+\_\+\+LEARN\+\_\+\+UNUSED&needed to maintain the order since the values are saved, can be renamed and used if a new flag is necessary \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_LEARN\_PERM\_GRANTED@{SKILL\_LEARN\_PERM\_GRANTED}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_LEARN\_PERM\_GRANTED@{SKILL\_LEARN\_PERM\_GRANTED}}}\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86faa1beed090d45e0c7c6b2d2e2dabcc669}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86faa1beed090d45e0c7c6b2d2e2dabcc669} 
+SKILL\+\_\+\+LEARN\+\_\+\+PERM\+\_\+\+GRANTED&Permanent, granted through someway (e.\+g. script). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_LEARN\_REPLACED\_LV\_0@{SKILL\_LEARN\_REPLACED\_LV\_0}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_LEARN\_REPLACED\_LV\_0@{SKILL\_LEARN\_REPLACED\_LV\_0}}}\Hypertarget{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fab7157df8fd7131a96337aefd62c36b78}\label{_skill_definitions_8hpp_ab855c14bcdb927d0dbc0f4562b36e86fab7157df8fd7131a96337aefd62c36b78} 
+SKILL\+\_\+\+LEARN\+\_\+\+REPLACED\+\_\+\+LV\+\_\+0&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314d}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314d} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_placement\_behavior\_types@{skill\_placement\_behavior\_types}}
+\index{skill\_placement\_behavior\_types@{skill\_placement\_behavior\_types}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_placement\_behavior\_types}{skill\_placement\_behavior\_types}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314d}{skill\+\_\+placement\+\_\+behavior\+\_\+types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_NONE@{SPB\_NONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_NONE@{SPB\_NONE}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da1e69bceb5ac963ee36d57834bce7adb7}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da1e69bceb5ac963ee36d57834bce7adb7} 
+SPB\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_DEFNOTENEMY@{SPB\_DEFNOTENEMY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_DEFNOTENEMY@{SPB\_DEFNOTENEMY}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa94df797f8d4546c5e24652410a1cac0}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa94df797f8d4546c5e24652410a1cac0} 
+SPB\+\_\+\+DEFNOTENEMY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_NOREITERATION@{SPB\_NOREITERATION}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_NOREITERATION@{SPB\_NOREITERATION}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da4e7390248579d63548e3af333b984ea8}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da4e7390248579d63548e3af333b984ea8} 
+SPB\+\_\+\+NOREITERATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_NOFOOTSET@{SPB\_NOFOOTSET}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_NOFOOTSET@{SPB\_NOFOOTSET}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3d29cccb1553b801b1be7a4bf86ef0d3}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3d29cccb1553b801b1be7a4bf86ef0d3} 
+SPB\+\_\+\+NOFOOTSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_NOOVERLAP@{SPB\_NOOVERLAP}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_NOOVERLAP@{SPB\_NOOVERLAP}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab85a2366c3a8ccec757518244d58a75c}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab85a2366c3a8ccec757518244d58a75c} 
+SPB\+\_\+\+NOOVERLAP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_PATHCHECK@{SPB\_PATHCHECK}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_PATHCHECK@{SPB\_PATHCHECK}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da90929bf0f278c05633754599739dae29}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da90929bf0f278c05633754599739dae29} 
+SPB\+\_\+\+PATHCHECK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_NOPC@{SPB\_NOPC}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_NOPC@{SPB\_NOPC}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da8ad18ae3d6a238d1417f196699759869}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da8ad18ae3d6a238d1417f196699759869} 
+SPB\+\_\+\+NOPC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_NOMOB@{SPB\_NOMOB}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_NOMOB@{SPB\_NOMOB}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3da860317b139f7d5c369d1e71ed4084}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da3da860317b139f7d5c369d1e71ed4084} 
+SPB\+\_\+\+NOMOB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_SKILL@{SPB\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_SKILL@{SPB\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da04dcbd51c1de3d207b17882d4941f0fb}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da04dcbd51c1de3d207b17882d4941f0fb} 
+SPB\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_DANCE@{SPB\_DANCE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_DANCE@{SPB\_DANCE}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab24da7916d23b69ae3125316636cb1f2}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314dab24da7916d23b69ae3125316636cb1f2} 
+SPB\+\_\+\+DANCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_ENSEMBLE@{SPB\_ENSEMBLE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_ENSEMBLE@{SPB\_ENSEMBLE}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa598ef238dd6eb5131f1b5238215e23b}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314daa598ef238dd6eb5131f1b5238215e23b} 
+SPB\+\_\+\+ENSEMBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_SONG@{SPB\_SONG}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_SONG@{SPB\_SONG}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da2b12128e080be481e7a6031158546873}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da2b12128e080be481e7a6031158546873} 
+SPB\+\_\+\+SONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_DUALMODE@{SPB\_DUALMODE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_DUALMODE@{SPB\_DUALMODE}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da16c96647af3dd9db6af9fcf0b61535b5}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da16c96647af3dd9db6af9fcf0b61535b5} 
+SPB\+\_\+\+DUALMODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_RANGEDSINGLEUNIT@{SPB\_RANGEDSINGLEUNIT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SPB\_RANGEDSINGLEUNIT@{SPB\_RANGEDSINGLEUNIT}}}\Hypertarget{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da91a8f6268409e7592a0258441fba437b}\label{_skill_definitions_8hpp_aa060792f98df8e80c53af2a5d41d314da91a8f6268409e7592a0258441fba437b} 
+SPB\+\_\+\+RANGEDSINGLEUNIT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_primary\_type@{skill\_primary\_type}}
+\index{skill\_primary\_type@{skill\_primary\_type}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_primary\_type}{skill\_primary\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891}{skill\+\_\+primary\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_TYPE\_PASSIVE@{SK\_TYPE\_PASSIVE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_TYPE\_PASSIVE@{SK\_TYPE\_PASSIVE}}}\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8} 
+SK\+\_\+\+TYPE\+\_\+\+PASSIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_TYPE\_ATTACK@{SK\_TYPE\_ATTACK}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_TYPE\_ATTACK@{SK\_TYPE\_ATTACK}}}\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a96f7804e526092d83c3485ae2d3f1ae7}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a96f7804e526092d83c3485ae2d3f1ae7} 
+SK\+\_\+\+TYPE\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_TYPE\_PLACEMENT@{SK\_TYPE\_PLACEMENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_TYPE\_PLACEMENT@{SK\_TYPE\_PLACEMENT}}}\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891aa646921a019a4874d4353f9f0b072c9f}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891aa646921a019a4874d4353f9f0b072c9f} 
+SK\+\_\+\+TYPE\+\_\+\+PLACEMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_TYPE\_SELF@{SK\_TYPE\_SELF}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_TYPE\_SELF@{SK\_TYPE\_SELF}}}\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a0c4cf62202eac81b4a084b9c027cbe56}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a0c4cf62202eac81b4a084b9c027cbe56} 
+SK\+\_\+\+TYPE\+\_\+\+SELF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_TYPE\_FRIENDLY@{SK\_TYPE\_FRIENDLY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_TYPE\_FRIENDLY@{SK\_TYPE\_FRIENDLY}}}\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a1602cfb5af33dea0e293c3bc9c53d305}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a1602cfb5af33dea0e293c3bc9c53d305} 
+SK\+\_\+\+TYPE\+\_\+\+FRIENDLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_TYPE\_TRAP@{SK\_TYPE\_TRAP}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_TYPE\_TRAP@{SK\_TYPE\_TRAP}}}\Hypertarget{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a80b99f006a6981e60eb98274e8d78ec9}\label{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a80b99f006a6981e60eb98274e8d78ec9} 
+SK\+\_\+\+TYPE\+\_\+\+TRAP&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_required\_state\_types@{skill\_required\_state\_types}}
+\index{skill\_required\_state\_types@{skill\_required\_state\_types}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_required\_state\_types}{skill\_required\_state\_types}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164}{skill\+\_\+required\+\_\+state\+\_\+types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_NONE@{SRS\_NONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_NONE@{SRS\_NONE}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a224bccb0ab5d8bec94d8acfa66af0eb9}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a224bccb0ab5d8bec94d8acfa66af0eb9} 
+SRS\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_HIDING@{SRS\_HIDING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_HIDING@{SRS\_HIDING}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae657122fcbdaeacd5cb7505933ede2a3}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae657122fcbdaeacd5cb7505933ede2a3} 
+SRS\+\_\+\+HIDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_CLOAKING@{SRS\_CLOAKING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_CLOAKING@{SRS\_CLOAKING}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a7ad73b75a1ca998cef561dede3f19a33}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a7ad73b75a1ca998cef561dede3f19a33} 
+SRS\+\_\+\+CLOAKING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_HIDDEN@{SRS\_HIDDEN}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_HIDDEN@{SRS\_HIDDEN}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae73afec78a4f38688bec433e5d47828c}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ae73afec78a4f38688bec433e5d47828c} 
+SRS\+\_\+\+HIDDEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_RIDING@{SRS\_RIDING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_RIDING@{SRS\_RIDING}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad16c23893091d9e0e8a5389cf70fd1a0}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad16c23893091d9e0e8a5389cf70fd1a0} 
+SRS\+\_\+\+RIDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_FALCON@{SRS\_FALCON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_FALCON@{SRS\_FALCON}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a397c9c27898f7f8aecdd510d83716c95}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a397c9c27898f7f8aecdd510d83716c95} 
+SRS\+\_\+\+FALCON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_CART@{SRS\_CART}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_CART@{SRS\_CART}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a053f042656fdfbeaca6ffa94094d2574}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a053f042656fdfbeaca6ffa94094d2574} 
+SRS\+\_\+\+CART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_SHIELD@{SRS\_SHIELD}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_SHIELD@{SRS\_SHIELD}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a71f2f0d2cc0175dbc9b49262645c82f7}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a71f2f0d2cc0175dbc9b49262645c82f7} 
+SRS\+\_\+\+SHIELD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_SIGHT@{SRS\_SIGHT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_SIGHT@{SRS\_SIGHT}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a11d48ba7ba8e9f8321c31806f0fcf6d2}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a11d48ba7ba8e9f8321c31806f0fcf6d2} 
+SRS\+\_\+\+SIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_EXPLOSIONSPIRITS@{SRS\_EXPLOSIONSPIRITS}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_EXPLOSIONSPIRITS@{SRS\_EXPLOSIONSPIRITS}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164afb7985bcc7df1d2afc2526b2c909948f}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164afb7985bcc7df1d2afc2526b2c909948f} 
+SRS\+\_\+\+EXPLOSIONSPIRITS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_CARTBOOST@{SRS\_CARTBOOST}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_CARTBOOST@{SRS\_CARTBOOST}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aebd3b40a21c6ab1cd8b2d96cc636a31b}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aebd3b40a21c6ab1cd8b2d96cc636a31b} 
+SRS\+\_\+\+CARTBOOST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_RECOV\_WEIGHT\_RATE@{SRS\_RECOV\_WEIGHT\_RATE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_RECOV\_WEIGHT\_RATE@{SRS\_RECOV\_WEIGHT\_RATE}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a87629ddfc2a3e555da1d77069d08e359}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a87629ddfc2a3e555da1d77069d08e359} 
+SRS\+\_\+\+RECOV\+\_\+\+WEIGHT\+\_\+\+RATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_MOVE\_ENABLE@{SRS\_MOVE\_ENABLE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_MOVE\_ENABLE@{SRS\_MOVE\_ENABLE}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad5b152563dcf5b08cbed9c19b899aa0f}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ad5b152563dcf5b08cbed9c19b899aa0f} 
+SRS\+\_\+\+MOVE\+\_\+\+ENABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_WATER@{SRS\_WATER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_WATER@{SRS\_WATER}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a84395fd982a7b289f055b06fe95dae13}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a84395fd982a7b289f055b06fe95dae13} 
+SRS\+\_\+\+WATER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_RIDINGDRAGON@{SRS\_RIDINGDRAGON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_RIDINGDRAGON@{SRS\_RIDINGDRAGON}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aa399f0190ae47645d1311bf3bf39ddfb}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164aa399f0190ae47645d1311bf3bf39ddfb} 
+SRS\+\_\+\+RIDINGDRAGON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_WUG@{SRS\_WUG}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_WUG@{SRS\_WUG}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a172dfc8601e290bd3a4484fdd29345e4}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a172dfc8601e290bd3a4484fdd29345e4} 
+SRS\+\_\+\+WUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_RIDINGWUG@{SRS\_RIDINGWUG}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_RIDINGWUG@{SRS\_RIDINGWUG}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abe7553bbb078477796640a9b94cb83cf}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abe7553bbb078477796640a9b94cb83cf} 
+SRS\+\_\+\+RIDINGWUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_MADO@{SRS\_MADO}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_MADO@{SRS\_MADO}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a46bcef9cdd7830b9851690b1f2da9d09}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a46bcef9cdd7830b9851690b1f2da9d09} 
+SRS\+\_\+\+MADO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_ELEMENTALSPIRIT@{SRS\_ELEMENTALSPIRIT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_ELEMENTALSPIRIT@{SRS\_ELEMENTALSPIRIT}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ac304c7494380664660e1fbba731167f0}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ac304c7494380664660e1fbba731167f0} 
+SRS\+\_\+\+ELEMENTALSPIRIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_POISONINGWEAPON@{SRS\_POISONINGWEAPON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_POISONINGWEAPON@{SRS\_POISONINGWEAPON}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abdbc7dc40ad8bf1031d04db5483dd941}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164abdbc7dc40ad8bf1031d04db5483dd941} 
+SRS\+\_\+\+POISONINGWEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_ROLLINGCUTTER@{SRS\_ROLLINGCUTTER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_ROLLINGCUTTER@{SRS\_ROLLINGCUTTER}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a88da2d7d56f3c9720dbdafb33135c0cf}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a88da2d7d56f3c9720dbdafb33135c0cf} 
+SRS\+\_\+\+ROLLINGCUTTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_MH\_FIGHTING@{SRS\_MH\_FIGHTING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_MH\_FIGHTING@{SRS\_MH\_FIGHTING}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ab337fe36fd66dc5f3684d07bafea68d2}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164ab337fe36fd66dc5f3684d07bafea68d2} 
+SRS\+\_\+\+MH\+\_\+\+FIGHTING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_MH\_GRAPPLING@{SRS\_MH\_GRAPPLING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_MH\_GRAPPLING@{SRS\_MH\_GRAPPLING}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a5f8dad19faa1dd087c20eb2993df3834}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a5f8dad19faa1dd087c20eb2993df3834} 
+SRS\+\_\+\+MH\+\_\+\+GRAPPLING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_PECO@{SRS\_PECO}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_PECO@{SRS\_PECO}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a216b7fc38fdfe8833e57661a013ccbcd}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164a216b7fc38fdfe8833e57661a013ccbcd} 
+SRS\+\_\+\+PECO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SRS\_MAX@{SRS\_MAX}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SRS\_MAX@{SRS\_MAX}}}\Hypertarget{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164af8d3b77edd0d0812c24b98f0fd629b76}\label{_skill_definitions_8hpp_a09b472c0592721ff2ec8fc1de0deb164af8d3b77edd0d0812c24b98f0fd629b76} 
+SRS\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_secondary\_type@{skill\_secondary\_type}}
+\index{skill\_secondary\_type@{skill\_secondary\_type}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_secondary\_type}{skill\_secondary\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575}{skill\+\_\+secondary\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_NONE@{SK\_SUBTYPE\_NONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_NONE@{SK\_SUBTYPE\_NONE}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011} 
+SK\+\_\+\+SUBTYPE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_QUEST\_SKILL@{SK\_SUBTYPE\_QUEST\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_QUEST\_SKILL@{SK\_SUBTYPE\_QUEST\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a0223a78812027e36cdceaf742317389d}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a0223a78812027e36cdceaf742317389d} 
+SK\+\_\+\+SUBTYPE\+\_\+\+QUEST\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_NPC\_SKILL@{SK\_SUBTYPE\_NPC\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_NPC\_SKILL@{SK\_SUBTYPE\_NPC\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a9e88700e0187c2690377999b2cd376a2}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a9e88700e0187c2690377999b2cd376a2} 
+SK\+\_\+\+SUBTYPE\+\_\+\+NPC\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_WEDDING\_SKILL@{SK\_SUBTYPE\_WEDDING\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_WEDDING\_SKILL@{SK\_SUBTYPE\_WEDDING\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a21e24a6834ee519270e667ece4fa899c}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a21e24a6834ee519270e667ece4fa899c} 
+SK\+\_\+\+SUBTYPE\+\_\+\+WEDDING\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_SPIRIT\_SKILL@{SK\_SUBTYPE\_SPIRIT\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_SPIRIT\_SKILL@{SK\_SUBTYPE\_SPIRIT\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5ada9de755dbd715f3e17d3a34fded87}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5ada9de755dbd715f3e17d3a34fded87} 
+SK\+\_\+\+SUBTYPE\+\_\+\+SPIRIT\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_GUILD\_SKILL@{SK\_SUBTYPE\_GUILD\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_GUILD\_SKILL@{SK\_SUBTYPE\_GUILD\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a1592d2689328dc487897ef9c7c6b26ff}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a1592d2689328dc487897ef9c7c6b26ff} 
+SK\+\_\+\+SUBTYPE\+\_\+\+GUILD\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_SONG\_DANCE@{SK\_SUBTYPE\_SONG\_DANCE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_SONG\_DANCE@{SK\_SUBTYPE\_SONG\_DANCE}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a124b0604440320a403a3644a5007ef16}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a124b0604440320a403a3644a5007ef16} 
+SK\+\_\+\+SUBTYPE\+\_\+\+SONG\+\_\+\+DANCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_ENSEMBLE\_SKILL@{SK\_SUBTYPE\_ENSEMBLE\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_ENSEMBLE\_SKILL@{SK\_SUBTYPE\_ENSEMBLE\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aeb9bdc7de99cdbe172ac7b025dd768f3}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aeb9bdc7de99cdbe172ac7b025dd768f3} 
+SK\+\_\+\+SUBTYPE\+\_\+\+ENSEMBLE\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_TRAP\_SKILL@{SK\_SUBTYPE\_TRAP\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_TRAP\_SKILL@{SK\_SUBTYPE\_TRAP\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5106f60b1a187106051899c7127e11c5}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a5106f60b1a187106051899c7127e11c5} 
+SK\+\_\+\+SUBTYPE\+\_\+\+TRAP\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_TARGET\_SELF@{SK\_SUBTYPE\_TARGET\_SELF}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_TARGET\_SELF@{SK\_SUBTYPE\_TARGET\_SELF}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a59460986bcaac872d88a6f05b6ed9652}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a59460986bcaac872d88a6f05b6ed9652} 
+SK\+\_\+\+SUBTYPE\+\_\+\+TARGET\+\_\+\+SELF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_NO\_TARGET\_SELF@{SK\_SUBTYPE\_NO\_TARGET\_SELF}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_NO\_TARGET\_SELF@{SK\_SUBTYPE\_NO\_TARGET\_SELF}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a2eebcd37a483c8d5e38d36d60997efcf}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a2eebcd37a483c8d5e38d36d60997efcf} 
+SK\+\_\+\+SUBTYPE\+\_\+\+NO\+\_\+\+TARGET\+\_\+\+SELF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_PARTY\_ONLY@{SK\_SUBTYPE\_PARTY\_ONLY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_PARTY\_ONLY@{SK\_SUBTYPE\_PARTY\_ONLY}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7d4004f9566c318431de1ad6a3327fba}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7d4004f9566c318431de1ad6a3327fba} 
+SK\+\_\+\+SUBTYPE\+\_\+\+PARTY\+\_\+\+ONLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_GUILD\_ONLY@{SK\_SUBTYPE\_GUILD\_ONLY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_GUILD\_ONLY@{SK\_SUBTYPE\_GUILD\_ONLY}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a8937f11be97435c1272226aeac307ba7}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a8937f11be97435c1272226aeac307ba7} 
+SK\+\_\+\+SUBTYPE\+\_\+\+GUILD\+\_\+\+ONLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_NO\_ENEMY@{SK\_SUBTYPE\_NO\_ENEMY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_NO\_ENEMY@{SK\_SUBTYPE\_NO\_ENEMY}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a026938d2120f2979a136f5f613c5ec28}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a026938d2120f2979a136f5f613c5ec28} 
+SK\+\_\+\+SUBTYPE\+\_\+\+NO\+\_\+\+ENEMY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_NO\_LAND\_PROTECTOR@{SK\_SUBTYPE\_NO\_LAND\_PROTECTOR}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_NO\_LAND\_PROTECTOR@{SK\_SUBTYPE\_NO\_LAND\_PROTECTOR}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acb6ae3755cbca4485cadc8e52757cebe}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acb6ae3755cbca4485cadc8e52757cebe} 
+SK\+\_\+\+SUBTYPE\+\_\+\+NO\+\_\+\+LAND\+\_\+\+PROTECTOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_CHORUS\_SKILL@{SK\_SUBTYPE\_CHORUS\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_CHORUS\_SKILL@{SK\_SUBTYPE\_CHORUS\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a478635eb91ed2af1ff13e90e60e7ef04}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a478635eb91ed2af1ff13e90e60e7ef04} 
+SK\+\_\+\+SUBTYPE\+\_\+\+CHORUS\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_FREE\_CAST\_NORMAL@{SK\_SUBTYPE\_FREE\_CAST\_NORMAL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_FREE\_CAST\_NORMAL@{SK\_SUBTYPE\_FREE\_CAST\_NORMAL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7a42044240e5a3ffa5a7c29ee3431640}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a7a42044240e5a3ffa5a7c29ee3431640} 
+SK\+\_\+\+SUBTYPE\+\_\+\+FREE\+\_\+\+CAST\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_FREE\_CAST\_REDUCED@{SK\_SUBTYPE\_FREE\_CAST\_REDUCED}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_FREE\_CAST\_REDUCED@{SK\_SUBTYPE\_FREE\_CAST\_REDUCED}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3f7667a6e66791d40911d9a80c0e10e8}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3f7667a6e66791d40911d9a80c0e10e8} 
+SK\+\_\+\+SUBTYPE\+\_\+\+FREE\+\_\+\+CAST\+\_\+\+REDUCED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_SHOW\_SKILL\_SCALE@{SK\_SUBTYPE\_SHOW\_SKILL\_SCALE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_SHOW\_SKILL\_SCALE@{SK\_SUBTYPE\_SHOW\_SKILL\_SCALE}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aa96356799a596e9c5b034c7463c4673e}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575aa96356799a596e9c5b034c7463c4673e} 
+SK\+\_\+\+SUBTYPE\+\_\+\+SHOW\+\_\+\+SKILL\+\_\+\+SCALE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_ALLOW\_REPRODUCE@{SK\_SUBTYPE\_ALLOW\_REPRODUCE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_ALLOW\_REPRODUCE@{SK\_SUBTYPE\_ALLOW\_REPRODUCE}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acf042f42b0a00045d223677a00973142}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575acf042f42b0a00045d223677a00973142} 
+SK\+\_\+\+SUBTYPE\+\_\+\+ALLOW\+\_\+\+REPRODUCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_HIDDEN\_TRAP@{SK\_SUBTYPE\_HIDDEN\_TRAP}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_HIDDEN\_TRAP@{SK\_SUBTYPE\_HIDDEN\_TRAP}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a196b9806c04c7120826ea07a3e3aea2b}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a196b9806c04c7120826ea07a3e3aea2b} 
+SK\+\_\+\+SUBTYPE\+\_\+\+HIDDEN\+\_\+\+TRAP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SK\_SUBTYPE\_IS\_COMBO\_SKILL@{SK\_SUBTYPE\_IS\_COMBO\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SK\_SUBTYPE\_IS\_COMBO\_SKILL@{SK\_SUBTYPE\_IS\_COMBO\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a990545c07f9247ffb402a4ce0ab8af00}\label{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a990545c07f9247ffb402a4ce0ab8af00} 
+SK\+\_\+\+SUBTYPE\+\_\+\+IS\+\_\+\+COMBO\+\_\+\+SKILL&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098}\label{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_target\_type@{skill\_target\_type}}
+\index{skill\_target\_type@{skill\_target\_type}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_target\_type}{skill\_target\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098}{skill\+\_\+target\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTT\_SINGLE\_TARGETED@{SKTT\_SINGLE\_TARGETED}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKTT\_SINGLE\_TARGETED@{SKTT\_SINGLE\_TARGETED}}}\Hypertarget{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098a9c4b2e417e3d416d1ba126396f03f58e}\label{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098a9c4b2e417e3d416d1ba126396f03f58e} 
+SKTT\+\_\+\+SINGLE\+\_\+\+TARGETED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKTT\_GROUND\_TARGETED@{SKTT\_GROUND\_TARGETED}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKTT\_GROUND\_TARGETED@{SKTT\_GROUND\_TARGETED}}}\Hypertarget{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098ab618f17a95ccba238f02d9744fcadec6}\label{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098ab618f17a95ccba238f02d9744fcadec6} 
+SKTT\+\_\+\+GROUND\+\_\+\+TARGETED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7b}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7b} 
+\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!skill\_use\_fail\_cause\_type@{skill\_use\_fail\_cause\_type}}
+\index{skill\_use\_fail\_cause\_type@{skill\_use\_fail\_cause\_type}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{skill\_use\_fail\_cause\_type}{skill\_use\_fail\_cause\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7b}{skill\+\_\+use\+\_\+fail\+\_\+cause\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_LEVEL@{SKILL\_USE\_FAIL\_LEVEL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_LEVEL@{SKILL\_USE\_FAIL\_LEVEL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac4f7ed91012c4fc8ec6e0ff7faeb8c5c}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac4f7ed91012c4fc8ec6e0ff7faeb8c5c} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+LEVEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_SP\_INSUFFICIENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_SP\_INSUFFICIENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babf7cbb7bd39b751b083ad097d82c39b9}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babf7cbb7bd39b751b083ad097d82c39b9} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SP\+\_\+\+INSUFFICIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_HP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_HP\_INSUFFICIENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_HP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_HP\_INSUFFICIENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba293971a37d47764055f58c2a89443730}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba293971a37d47764055f58c2a89443730} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HP\+\_\+\+INSUFFICIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_STUFF\_INSUFFICIENT@{SKILL\_USE\_FAIL\_STUFF\_INSUFFICIENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_STUFF\_INSUFFICIENT@{SKILL\_USE\_FAIL\_STUFF\_INSUFFICIENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba82075340295bc5039dac496bcf666e50}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba82075340295bc5039dac496bcf666e50} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+STUFF\+\_\+\+INSUFFICIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SKILLINTERVAL@{SKILL\_USE\_FAIL\_SKILLINTERVAL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SKILLINTERVAL@{SKILL\_USE\_FAIL\_SKILLINTERVAL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babc4eebde71c00566314c3cce04d8327c}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babc4eebde71c00566314c3cce04d8327c} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SKILLINTERVAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_MONEY@{SKILL\_USE\_FAIL\_MONEY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_MONEY@{SKILL\_USE\_FAIL\_MONEY}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6dd3de74af61f2949792d784d274afdb}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6dd3de74af61f2949792d784d274afdb} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MONEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_THIS\_WEAPON@{SKILL\_USE\_FAIL\_THIS\_WEAPON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_THIS\_WEAPON@{SKILL\_USE\_FAIL\_THIS\_WEAPON}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5ef9aabce0b63e6e03193b009435ad5b}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5ef9aabce0b63e6e03193b009435ad5b} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+THIS\+\_\+\+WEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_REDJAMSTONE@{SKILL\_USE\_FAIL\_REDJAMSTONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_REDJAMSTONE@{SKILL\_USE\_FAIL\_REDJAMSTONE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba136285ea30075c8867fd3a03c9f3f5e8}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba136285ea30075c8867fd3a03c9f3f5e8} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+REDJAMSTONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_BLUEJAMSTONE@{SKILL\_USE\_FAIL\_BLUEJAMSTONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_BLUEJAMSTONE@{SKILL\_USE\_FAIL\_BLUEJAMSTONE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bafa38c5894b5a32d8f275f4745354b761}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bafa38c5894b5a32d8f275f4745354b761} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+BLUEJAMSTONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_WEIGHTOVER@{SKILL\_USE\_FAIL\_WEIGHTOVER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_WEIGHTOVER@{SKILL\_USE\_FAIL\_WEIGHTOVER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba1b2a63e8ab4439bec3def5146b59307f}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba1b2a63e8ab4439bec3def5146b59307f} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+WEIGHTOVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL@{SKILL\_USE\_FAIL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL@{SKILL\_USE\_FAIL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba0c5b94aaeff1fdfd4b98ebb71c8e62a2}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba0c5b94aaeff1fdfd4b98ebb71c8e62a2} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_TOTARGET@{SKILL\_USE\_FAIL\_TOTARGET}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_TOTARGET@{SKILL\_USE\_FAIL\_TOTARGET}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6cb9ffe498660bc15d3fdd2767de5065}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba6cb9ffe498660bc15d3fdd2767de5065} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+TOTARGET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_ANCILLA\_NUMOVER@{SKILL\_USE\_FAIL\_ANCILLA\_NUMOVER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_ANCILLA\_NUMOVER@{SKILL\_USE\_FAIL\_ANCILLA\_NUMOVER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bacb9cdc2940ad4c860db0f1adc1eff0e3}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bacb9cdc2940ad4c860db0f1adc1eff0e3} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+ANCILLA\+\_\+\+NUMOVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_HOLYWATER@{SKILL\_USE\_FAIL\_HOLYWATER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_HOLYWATER@{SKILL\_USE\_FAIL\_HOLYWATER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3b7e08d453918137ecaf5f78e169a8e0}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3b7e08d453918137ecaf5f78e169a8e0} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HOLYWATER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_ANCILLA@{SKILL\_USE\_FAIL\_ANCILLA}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_ANCILLA@{SKILL\_USE\_FAIL\_ANCILLA}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba392ba3be422c1602f47aa18ccce20cc1}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba392ba3be422c1602f47aa18ccce20cc1} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+ANCILLA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_DUPLICATE\_RANGEIN@{SKILL\_USE\_FAIL\_DUPLICATE\_RANGEIN}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_DUPLICATE\_RANGEIN@{SKILL\_USE\_FAIL\_DUPLICATE\_RANGEIN}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3940c9a9e11e92331259d535cf4131f3}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3940c9a9e11e92331259d535cf4131f3} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+DUPLICATE\+\_\+\+RANGEIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_OTHER\_SKILL@{SKILL\_USE\_FAIL\_NEED\_OTHER\_SKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_OTHER\_SKILL@{SKILL\_USE\_FAIL\_NEED\_OTHER\_SKILL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac23edec0195ff83df06a825b1cfce194}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac23edec0195ff83df06a825b1cfce194} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+OTHER\+\_\+\+SKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_HELPER@{SKILL\_USE\_FAIL\_NEED\_HELPER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_HELPER@{SKILL\_USE\_FAIL\_NEED\_HELPER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2b9f24c7a27e0d4ac08907abc5d89da3}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2b9f24c7a27e0d4ac08907abc5d89da3} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+HELPER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_INVALID\_DIR@{SKILL\_USE\_FAIL\_INVALID\_DIR}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_INVALID\_DIR@{SKILL\_USE\_FAIL\_INVALID\_DIR}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6a0bbc2c2fc4f26b586675a804128b6}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6a0bbc2c2fc4f26b586675a804128b6} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+INVALID\+\_\+\+DIR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SUMMON@{SKILL\_USE\_FAIL\_SUMMON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SUMMON@{SKILL\_USE\_FAIL\_SUMMON}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad98194b0f42e99104e3cc5af853d75b9}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad98194b0f42e99104e3cc5af853d75b9} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SUMMON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SUMMON\_NONE@{SKILL\_USE\_FAIL\_SUMMON\_NONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SUMMON\_NONE@{SKILL\_USE\_FAIL\_SUMMON\_NONE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba9ace83a27151ac0ff1855b6b82df93e3}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba9ace83a27151ac0ff1855b6b82df93e3} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SUMMON\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_IMITATION\_SKILL\_NONE@{SKILL\_USE\_FAIL\_IMITATION\_SKILL\_NONE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_IMITATION\_SKILL\_NONE@{SKILL\_USE\_FAIL\_IMITATION\_SKILL\_NONE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba13c5b02fc08f30eace0cfbcee1b85bee}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba13c5b02fc08f30eace0cfbcee1b85bee} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+IMITATION\+\_\+\+SKILL\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_DUPLICATE@{SKILL\_USE\_FAIL\_DUPLICATE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_DUPLICATE@{SKILL\_USE\_FAIL\_DUPLICATE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5f2ee42d5f06d38ada69888d9157a276}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5f2ee42d5f06d38ada69888d9157a276} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+DUPLICATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_CONDITION@{SKILL\_USE\_FAIL\_CONDITION}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_CONDITION@{SKILL\_USE\_FAIL\_CONDITION}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba03de7f8df97aed2872a4d673783675e7}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba03de7f8df97aed2872a4d673783675e7} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CONDITION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_PAINTBRUSH@{SKILL\_USE\_FAIL\_PAINTBRUSH}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_PAINTBRUSH@{SKILL\_USE\_FAIL\_PAINTBRUSH}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae5eba21ff24530635b7cfba6fc9c481f}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae5eba21ff24530635b7cfba6fc9c481f} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+PAINTBRUSH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_DRAGON@{SKILL\_USE\_FAIL\_DRAGON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_DRAGON@{SKILL\_USE\_FAIL\_DRAGON}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba4edf3b1c3b955a0d823b94b9fedacf1d}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba4edf3b1c3b955a0d823b94b9fedacf1d} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+DRAGON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_POS@{SKILL\_USE\_FAIL\_POS}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_POS@{SKILL\_USE\_FAIL\_POS}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3e68396a89beee185f6188364325f9b7}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba3e68396a89beee185f6188364325f9b7} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+POS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_HELPER\_SP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_HELPER\_SP\_INSUFFICIENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_HELPER\_SP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_HELPER\_SP\_INSUFFICIENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5d69dac9284acd04b2b9025e3b3b5902}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba5d69dac9284acd04b2b9025e3b3b5902} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HELPER\+\_\+\+SP\+\_\+\+INSUFFICIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEER\_WALL@{SKILL\_USE\_FAIL\_NEER\_WALL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEER\_WALL@{SKILL\_USE\_FAIL\_NEER\_WALL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba530ad0233bbc8616bc9c81769e1c55b5}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba530ad0233bbc8616bc9c81769e1c55b5} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEER\+\_\+\+WALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_EXP\_1PERCENT@{SKILL\_USE\_FAIL\_NEED\_EXP\_1PERCENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_EXP\_1PERCENT@{SKILL\_USE\_FAIL\_NEED\_EXP\_1PERCENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa73c93f44665c3f5eaab68555fd0571b}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa73c93f44665c3f5eaab68555fd0571b} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EXP\+\_\+1\+PERCENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_CHORUS\_SP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_CHORUS\_SP\_INSUFFICIENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_CHORUS\_SP\_INSUFFICIENT@{SKILL\_USE\_FAIL\_CHORUS\_SP\_INSUFFICIENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba51b31983e3e8427d90c6ada59587a27a}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba51b31983e3e8427d90c6ada59587a27a} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CHORUS\+\_\+\+SP\+\_\+\+INSUFFICIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_GC\_WEAPONBLOCKING@{SKILL\_USE\_FAIL\_GC\_WEAPONBLOCKING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_GC\_WEAPONBLOCKING@{SKILL\_USE\_FAIL\_GC\_WEAPONBLOCKING}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba00b5405ead2c053a7c28f59393750acd}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba00b5405ead2c053a7c28f59393750acd} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+GC\+\_\+\+WEAPONBLOCKING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_GC\_POISONINGWEAPON@{SKILL\_USE\_FAIL\_GC\_POISONINGWEAPON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_GC\_POISONINGWEAPON@{SKILL\_USE\_FAIL\_GC\_POISONINGWEAPON}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac42a10222fcac674eac988b8fe6e307f}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac42a10222fcac674eac988b8fe6e307f} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+GC\+\_\+\+POISONINGWEAPON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_MADOGEAR@{SKILL\_USE\_FAIL\_MADOGEAR}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_MADOGEAR@{SKILL\_USE\_FAIL\_MADOGEAR}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad32bccae3aad74b465871e50b9731300}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bad32bccae3aad74b465871e50b9731300} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MADOGEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT\_KUNAI@{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT\_KUNAI}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_EQUIPMENT\_KUNAI@{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT\_KUNAI}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf6bf9882b65f5331fe2e479020dd28a5}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf6bf9882b65f5331fe2e479020dd28a5} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EQUIPMENT\+\_\+\+KUNAI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_TOTARGET\_PLAYER@{SKILL\_USE\_FAIL\_TOTARGET\_PLAYER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_TOTARGET\_PLAYER@{SKILL\_USE\_FAIL\_TOTARGET\_PLAYER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba484db6053d5c7f8dd296676807d92403}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba484db6053d5c7f8dd296676807d92403} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+TOTARGET\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SIZE@{SKILL\_USE\_FAIL\_SIZE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SIZE@{SKILL\_USE\_FAIL\_SIZE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae11d641f5cee484cbefb504dec35c014}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae11d641f5cee484cbefb504dec35c014} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_CANONBALL@{SKILL\_USE\_FAIL\_CANONBALL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_CANONBALL@{SKILL\_USE\_FAIL\_CANONBALL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae722fd400e747bbbdd500693c236d866}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae722fd400e747bbbdd500693c236d866} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CANONBALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_GUILLONTINE\_POISON@{SKILL\_USE\_FAIL\_GUILLONTINE\_POISON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_GUILLONTINE\_POISON@{SKILL\_USE\_FAIL\_GUILLONTINE\_POISON}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba671c7e1069a16c6c578ebc0cf5da8e0c}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba671c7e1069a16c6c578ebc0cf5da8e0c} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+GUILLONTINE\+\_\+\+POISON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_MADOGEAR\_RIDE@{SKILL\_USE\_FAIL\_MADOGEAR\_RIDE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_MADOGEAR\_RIDE@{SKILL\_USE\_FAIL\_MADOGEAR\_RIDE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba8f87d6ac4d19ec0f1efae9bb4800fd86}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba8f87d6ac4d19ec0f1efae9bb4800fd86} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MADOGEAR\+\_\+\+RIDE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SPELLBOOK@{SKILL\_USE\_FAIL\_SPELLBOOK}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SPELLBOOK@{SKILL\_USE\_FAIL\_SPELLBOOK}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2ff346a8dcbf241291cc66cc775dd2ac}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba2ff346a8dcbf241291cc66cc775dd2ac} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SPELLBOOK\_DIFFICULT\_SLEEP@{SKILL\_USE\_FAIL\_SPELLBOOK\_DIFFICULT\_SLEEP}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SPELLBOOK\_DIFFICULT\_SLEEP@{SKILL\_USE\_FAIL\_SPELLBOOK\_DIFFICULT\_SLEEP}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa18d95483b90ac9eaac3c5696399ee81}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baa18d95483b90ac9eaac3c5696399ee81} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK\+\_\+\+DIFFICULT\+\_\+\+SLEEP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SPELLBOOK\_PRESERVATION\_POINT@{SKILL\_USE\_FAIL\_SPELLBOOK\_PRESERVATION\_POINT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SPELLBOOK\_PRESERVATION\_POINT@{SKILL\_USE\_FAIL\_SPELLBOOK\_PRESERVATION\_POINT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba01ba7f2a613807000bf558a14afbc58b}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba01ba7f2a613807000bf558a14afbc58b} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK\+\_\+\+PRESERVATION\+\_\+\+POINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SPELLBOOK\_READING@{SKILL\_USE\_FAIL\_SPELLBOOK\_READING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SPELLBOOK\_READING@{SKILL\_USE\_FAIL\_SPELLBOOK\_READING}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac0fc9a48f61e2c5f76f3f84f4ab8b155}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac0fc9a48f61e2c5f76f3f84f4ab8b155} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPELLBOOK\+\_\+\+READING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_CART@{SKILL\_USE\_FAIL\_CART}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_CART@{SKILL\_USE\_FAIL\_CART}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba152737ef35b06e3bfc930648f59f6fd9}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba152737ef35b06e3bfc930648f59f6fd9} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+CART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NO\_MORE\_SPELL@{SKILL\_USE\_FAIL\_NO\_MORE\_SPELL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NO\_MORE\_SPELL@{SKILL\_USE\_FAIL\_NO\_MORE\_SPELL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba55cf7b6f923dcc69c206953a156a894e}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba55cf7b6f923dcc69c206953a156a894e} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NO\+\_\+\+MORE\+\_\+\+SPELL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_MANUAL\_NOTIFY@{SKILL\_USE\_FAIL\_MANUAL\_NOTIFY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_MANUAL\_NOTIFY@{SKILL\_USE\_FAIL\_MANUAL\_NOTIFY}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac3ee8e629f7a0cbe3f8ec44c6abe465d}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bac3ee8e629f7a0cbe3f8ec44c6abe465d} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+MANUAL\+\_\+\+NOTIFY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_ITEM@{SKILL\_USE\_FAIL\_NEED\_ITEM}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_ITEM@{SKILL\_USE\_FAIL\_NEED\_ITEM}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba785313b1f4de72235b0c831867c0c6f7}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba785313b1f4de72235b0c831867c0c6f7} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+ITEM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT@{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_EQUIPMENT@{SKILL\_USE\_FAIL\_NEED\_EQUIPMENT}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba38976c2b48575031ad492d827516cd30}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba38976c2b48575031ad492d827516cd30} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EQUIPMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_COMBOSKILL@{SKILL\_USE\_FAIL\_COMBOSKILL}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_COMBOSKILL@{SKILL\_USE\_FAIL\_COMBOSKILL}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baea78e41b3ecf736006d2bf5ed20d05e6}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baea78e41b3ecf736006d2bf5ed20d05e6} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+COMBOSKILL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_SPIRITS@{SKILL\_USE\_FAIL\_SPIRITS}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_SPIRITS@{SKILL\_USE\_FAIL\_SPIRITS}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba745b58e6f5b3276512e1ed4802c7dcce}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba745b58e6f5b3276512e1ed4802c7dcce} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+SPIRITS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_EXPLOSIONSPIRITS@{SKILL\_USE\_FAIL\_EXPLOSIONSPIRITS}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_EXPLOSIONSPIRITS@{SKILL\_USE\_FAIL\_EXPLOSIONSPIRITS}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba974f5284970554f044436b5e0fb9361c}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba974f5284970554f044436b5e0fb9361c} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+EXPLOSIONSPIRITS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_HP\_TOOMANY@{SKILL\_USE\_FAIL\_HP\_TOOMANY}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_HP\_TOOMANY@{SKILL\_USE\_FAIL\_HP\_TOOMANY}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bab2d06573d84e6fb5f347e74e9fd4b189}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bab2d06573d84e6fb5f347e74e9fd4b189} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+HP\+\_\+\+TOOMANY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_ROYAL\_GUARD\_BANDING@{SKILL\_USE\_FAIL\_NEED\_ROYAL\_GUARD\_BANDING}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_ROYAL\_GUARD\_BANDING@{SKILL\_USE\_FAIL\_NEED\_ROYAL\_GUARD\_BANDING}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae36199364c4671b011abc769f787581c}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae36199364c4671b011abc769f787581c} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+ROYAL\+\_\+\+GUARD\+\_\+\+BANDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_EQUIPPED\_WEAPON\_CLASS@{SKILL\_USE\_FAIL\_NEED\_EQUIPPED\_WEAPON\_CLASS}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_EQUIPPED\_WEAPON\_CLASS@{SKILL\_USE\_FAIL\_NEED\_EQUIPPED\_WEAPON\_CLASS}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babdfa1ef86cb55ec3ec6d01b5e9db37b0}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babdfa1ef86cb55ec3ec6d01b5e9db37b0} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+EQUIPPED\+\_\+\+WEAPON\+\_\+\+CLASS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_EL\_SUMMON@{SKILL\_USE\_FAIL\_EL\_SUMMON}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_EL\_SUMMON@{SKILL\_USE\_FAIL\_EL\_SUMMON}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba04170eb5c869823d1860ebad25b360d7}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba04170eb5c869823d1860ebad25b360d7} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+EL\+\_\+\+SUMMON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_RELATIONGRADE@{SKILL\_USE\_FAIL\_RELATIONGRADE}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_RELATIONGRADE@{SKILL\_USE\_FAIL\_RELATIONGRADE}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf47e1841a677abad66ffa55e711f648f}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7baf47e1841a677abad66ffa55e711f648f} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+RELATIONGRADE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_FIGHTER@{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_FIGHTER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_STYLE\_CHANGE\_FIGHTER@{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_FIGHTER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6232e2de2ed7cc0c3b44ea9f6bc44b8}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae6232e2de2ed7cc0c3b44ea9f6bc44b8} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+STYLE\+\_\+\+CHANGE\+\_\+\+FIGHTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_GRAPPLER@{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_GRAPPLER}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_STYLE\_CHANGE\_GRAPPLER@{SKILL\_USE\_FAIL\_STYLE\_CHANGE\_GRAPPLER}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae3fda9add7a14711dc927aa8b6b215e4}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7bae3fda9add7a14711dc927aa8b6b215e4} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+STYLE\+\_\+\+CHANGE\+\_\+\+GRAPPLER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_THERE\_ARE\_NPC\_AROUND@{SKILL\_USE\_FAIL\_THERE\_ARE\_NPC\_AROUND}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_THERE\_ARE\_NPC\_AROUND@{SKILL\_USE\_FAIL\_THERE\_ARE\_NPC\_AROUND}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babbd1de6fb7091a066a267027ff43a6bd}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7babbd1de6fb7091a066a267027ff43a6bd} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+THERE\+\_\+\+ARE\+\_\+\+NPC\+\_\+\+AROUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SKILL\_USE\_FAIL\_NEED\_MORE\_BULLET@{SKILL\_USE\_FAIL\_NEED\_MORE\_BULLET}!SkillDefinitions.hpp@{SkillDefinitions.hpp}}\index{SkillDefinitions.hpp@{SkillDefinitions.hpp}!SKILL\_USE\_FAIL\_NEED\_MORE\_BULLET@{SKILL\_USE\_FAIL\_NEED\_MORE\_BULLET}}}\Hypertarget{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba922647103c5e49812b9814e87b06e1ef}\label{_skill_definitions_8hpp_ac5ad9d4468065177decf5280fca3bf7ba922647103c5e49812b9814e87b06e1ef} 
+SKILL\+\_\+\+USE\+\_\+\+FAIL\+\_\+\+NEED\+\_\+\+MORE\+\_\+\+BULLET&\\
+\hline
+
+\end{DoxyEnumFields}

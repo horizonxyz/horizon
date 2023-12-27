@@ -1,0 +1,247 @@
+\doxysection{Horizon\+::Structures\+::Linked\+List\+::Ref\+Manager\texorpdfstring{$<$}{<} TO, FROM \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+
+
+This class is used to manage a linked list of References. It is not intended to be used directly. It is used as a base class for other classes that need to manage a linked list. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class is a friend of this class to allow it to access the private members of this class. The functionality of this class is identical to the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} class except that it is used to manage a linked list of References. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Ref\+Manager} can be used to manage a linked list of References to any type of object. The object type is specified by the TO template parameter. And the type of object that the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing is specified by the FROM template parameter. By default the TO and FROM template parameters are the same type. But they can be different types if the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing a base class of the object. The reference list is a doubly linked list. The list is circular so the first element\textquotesingle{}s previous element is the last element and the last element\textquotesingle{}s next element is the first element. The reason we link the TO and FROM objects together is so that we can easily invalidate all the References in the list when the FROM object is destroyed. By creating a dynamic responsibility chain between the Reference\+Manager and the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}, we can provide a simple and efficient way to manage a linked list of References and visit objects of a specific type by using the Reference\+Manager.  
+
+
+
+
+{\ttfamily \#include $<$Ref\+Manager.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Structures\+::Linked\+List\+::Ref\+Manager\texorpdfstring{$<$}{<} TO, FROM \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Structures\+::Linked\+List\+::Ref\+Manager\texorpdfstring{$<$}{<} TO, FROM \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Head\+::\+Iterator}}$<$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}$<$ TO, FROM $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Iterator}}$<$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} $>$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a44ba921c75e4591ee02bfdc8a2ffa20d}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a9f8ad25b36c44a06e11ce7817c1505cf}{Ref\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}$<$ TO, FROM $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037}{first}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}$<$ TO, FROM $>$ const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afd4d5429fdc3bb9cc7abb7588ee008b5}{first}} () const
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a635c404e71ce17c37276ca9a7d3b1ee4}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Returns the iterator at the beginning of the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afe71b983a890a59d439c4f9ee2d40008}{end}} ()
+\begin{DoxyCompactList}\small\item\em Returns the iterator at the end of the list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_aa3f99cf0c92f74fc8a382acbfd1c7e53}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def}{clear\+\_\+all}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a67c1e86881c3a6d9c1a73ebdbd6f6f00}{Head}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a91be4f46544b7630ca137eccab92124c}{is\+\_\+empty}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the list is empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af97ac6f6a53f70ada4d9bebed54ac19f}{first}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af896a3546a0cb06ff98cde87458a9771}{first}} () const
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a1d60fa8f4e31afd57cceceb5e84f42a6}{last}} ()
+\begin{DoxyCompactList}\small\item\em Returns the last \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a781b7364dfb3cd09ba66d3de208d2e88}{last}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a941169a27abec9f919754463dc58d42a}{push\+\_\+front}} (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}p\+Elem)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af1a007cfb115dc9617a549cc1de0edbc}{push\+\_\+back}} (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}p\+Elem)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_a2f26fec1c2e6f91d8652120e69bc7267}{get\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of Elements in the list (not including the head and tail Elements or the first and last Elements) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_af68088bc37bda52f57f3303d8571c27b}{inc\+\_\+size}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_abf35ba50d18ea692ba1f25952c41855f}{dec\+\_\+size}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Head}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_ae1a6779d638b159dad9b361a7f082987}{\texorpdfstring{$\sim$}{\string~}\+Head}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class TO, class FROM$>$\newline
+class Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager$<$ TO, FROM $>$}
+This class is used to manage a linked list of References. It is not intended to be used directly. It is used as a base class for other classes that need to manage a linked list. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class is a friend of this class to allow it to access the private members of this class. The functionality of this class is identical to the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} class except that it is used to manage a linked list of References. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Ref\+Manager} can be used to manage a linked list of References to any type of object. The object type is specified by the TO template parameter. And the type of object that the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing is specified by the FROM template parameter. By default the TO and FROM template parameters are the same type. But they can be different types if the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing a base class of the object. The reference list is a doubly linked list. The list is circular so the first element\textquotesingle{}s previous element is the last element and the last element\textquotesingle{}s next element is the first element. The reason we link the TO and FROM objects together is so that we can easily invalidate all the References in the list when the FROM object is destroyed. By creating a dynamic responsibility chain between the Reference\+Manager and the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}, we can provide a simple and efficient way to manage a linked list of References and visit objects of a specific type by using the Reference\+Manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+next} & The next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} in the list. \\
+\hline
+{\em \+\_\+prev} & The previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} in the list. \\
+\hline
+{\em \+\_\+ref} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} that this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing. \\
+\hline
+{\em \+\_\+head} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} that this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is in. \\
+\hline
+{\em \+\_\+valid} & True if the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is valid. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+typedef \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head_1_1_iterator}{Head\+::\+Iterator}}$<$\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}$<$TO, FROM$>$ $>$ \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::iterator}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a9f8ad25b36c44a06e11ce7817c1505cf}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a9f8ad25b36c44a06e11ce7817c1505cf} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!RefManager@{RefManager}}
+\index{RefManager@{RefManager}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{RefManager()}{RefManager()}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::\+Ref\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_aa3f99cf0c92f74fc8a382acbfd1c7e53}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_aa3f99cf0c92f74fc8a382acbfd1c7e53} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!````~RefManager@{\texorpdfstring{$\sim$}{\string~}RefManager}}
+\index{````~RefManager@{\texorpdfstring{$\sim$}{\string~}RefManager}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RefManager()}{\string~RefManager()}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+virtual \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Ref\+Manager}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_aa3f99cf0c92f74fc8a382acbfd1c7e53_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a635c404e71ce17c37276ca9a7d3b1ee4}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a635c404e71ce17c37276ca9a7d3b1ee4} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!begin@{begin}}
+\index{begin@{begin}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the iterator at the beginning of the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a635c404e71ce17c37276ca9a7d3b1ee4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!clear\_all@{clear\_all}}
+\index{clear\_all@{clear\_all}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{clear\_all()}{clear\_all()}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::clear\+\_\+all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_ab4c230da4798a37c74b79dddc33d1def_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afe71b983a890a59d439c4f9ee2d40008}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afe71b983a890a59d439c4f9ee2d40008} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!end@{end}}
+\index{end@{end}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afc97f451c36a2d80ec2d196d71388635}{iterator}} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the iterator at the end of the list. 
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!first@{first}}
+\index{first@{first}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}$<$ TO, FROM $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the first \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} in the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_a6dfda269a4a91a590dc95f8ebfbbb037_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afd4d5429fdc3bb9cc7abb7588ee008b5}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afd4d5429fdc3bb9cc7abb7588ee008b5} 
+\index{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}!first@{first}}
+\index{first@{first}!Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$@{Horizon::Structures::LinkedList::RefManager$<$ TO, FROM $>$}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class TO , class FROM $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}}$<$ TO, FROM $>$ const  \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager}}$<$ TO, FROM $>$\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager_afd4d5429fdc3bb9cc7abb7588ee008b5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Structures/\+Linked\+List/\+Reference\+List/\mbox{\hyperlink{_ref_manager_8hpp}{Ref\+Manager.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,376 @@
+\doxysection{Horizon\+::Structures\+::Linked\+List\+::Element Class Reference}
+\hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element}\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+
+
+This class is used to manage a linked list of Elements. It is not intended to be used directly. It is used as a base class for other classes that need to manage a linked list. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class is a friend of this class to allow it to access the private members of this class.  
+
+
+
+
+{\ttfamily \#include $<$Element.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Structures\+::Linked\+List\+::Element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afc3aac8e24b5f6a85606aefe80692142}{Element}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773}{has\+\_\+next}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} has a next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38}{has\+\_\+prev}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} has a previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a8dd1bb6298a17ebe8a76594f4366adc8}{is\+\_\+in\+\_\+list}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} is in a list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d}{next}} ()
+\begin{DoxyCompactList}\small\item\em Returns the next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a21334a8d43291d411d9be9f336dc9ad3}{next}} () const
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11}{prev}} ()
+\begin{DoxyCompactList}\small\item\em Returns the previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a3c3c7e91a7d127fda22f3c4125c03762}{prev}} () const
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4}{nocheck\+\_\+next}} ()
+\begin{DoxyCompactList}\small\item\em Returns the next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list without checking if it exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5e55b79033f62453ff341e11474f7b2b}{nocheck\+\_\+next}} () const
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013}{nocheck\+\_\+prev}} ()
+\begin{DoxyCompactList}\small\item\em Returns the previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list without checking if it exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a68a4eaf4f37bd5a2cbe09982cb25e74d}{nocheck\+\_\+prev}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34}{delink}} ()
+\begin{DoxyCompactList}\small\item\em Removes this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a73cdfe20ac1ca1e5816b3b875d66b36a}{push\+\_\+before}} (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}p\+Elem)
+\begin{DoxyCompactList}\small\item\em Pushes this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} before the given \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a1ef6d7c52020cb0020819fba1c57c53e}{push\+\_\+after}} (\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}p\+Elem)
+\begin{DoxyCompactList}\small\item\em Pushes this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} after the given \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5b4f943e6e52edd1b3efecfaf8bb585b}{\texorpdfstring{$\sim$}{\string~}\+Element}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a0a1479d53f85bd8a841c1103e059a7ff}{Head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to manage a linked list of Elements. It is not intended to be used directly. It is used as a base class for other classes that need to manage a linked list. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class is a friend of this class to allow it to access the private members of this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+next} & The next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \\
+\hline
+{\em \+\_\+prev} & The previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afc3aac8e24b5f6a85606aefe80692142}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afc3aac8e24b5f6a85606aefe80692142} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!Element@{Element}}
+\index{Element@{Element}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{Element()}{Element()}}
+{\footnotesize\ttfamily Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5b4f943e6e52edd1b3efecfaf8bb585b}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5b4f943e6e52edd1b3efecfaf8bb585b} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!````~Element@{\texorpdfstring{$\sim$}{\string~}Element}}
+\index{````~Element@{\texorpdfstring{$\sim$}{\string~}Element}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Element()}{\string~Element()}}
+{\footnotesize\ttfamily Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::\texorpdfstring{$\sim$}{\string~}\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5b4f943e6e52edd1b3efecfaf8bb585b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!delink@{delink}}
+\index{delink@{delink}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{delink()}{delink()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::delink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} from the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a682d9d5139d48ae17f5af3ffdd71ae34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!has\_next@{has\_next}}
+\index{has\_next@{has\_next}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{has\_next()}{has\_next()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::has\+\_\+next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} has a next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad8f0817ab3be634ea060f620c29a5773_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!has\_prev@{has\_prev}}
+\index{has\_prev@{has\_prev}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{has\_prev()}{has\_prev()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::has\+\_\+prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} has a previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ae90c38370250aab91b050b6371562b38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a8dd1bb6298a17ebe8a76594f4366adc8}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a8dd1bb6298a17ebe8a76594f4366adc8} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!is\_in\_list@{is\_in\_list}}
+\index{is\_in\_list@{is\_in\_list}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{is\_in\_list()}{is\_in\_list()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::is\+\_\+in\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} is in a list. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a8dd1bb6298a17ebe8a76594f4366adc8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!next@{next}}
+\index{next@{next}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a4d6593446ab3d3fcbd49580fdc46546d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a21334a8d43291d411d9be9f336dc9ad3}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a21334a8d43291d411d9be9f336dc9ad3} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!next@{next}}
+\index{next@{next}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const  \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a21334a8d43291d411d9be9f336dc9ad3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!nocheck\_next@{nocheck\_next}}
+\index{nocheck\_next@{nocheck\_next}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{nocheck\_next()}{nocheck\_next()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::nocheck\+\_\+next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the next \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list without checking if it exists. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_afbf507e7ad2cb36b6802ff4b9a6534b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5e55b79033f62453ff341e11474f7b2b}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a5e55b79033f62453ff341e11474f7b2b} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!nocheck\_next@{nocheck\_next}}
+\index{nocheck\_next@{nocheck\_next}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{nocheck\_next()}{nocheck\_next()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const  \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::nocheck\+\_\+next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!nocheck\_prev@{nocheck\_prev}}
+\index{nocheck\_prev@{nocheck\_prev}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{nocheck\_prev()}{nocheck\_prev()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::nocheck\+\_\+prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list without checking if it exists. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ab3193c4a834d36a80855916247188013_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a68a4eaf4f37bd5a2cbe09982cb25e74d}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a68a4eaf4f37bd5a2cbe09982cb25e74d} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!nocheck\_prev@{nocheck\_prev}}
+\index{nocheck\_prev@{nocheck\_prev}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{nocheck\_prev()}{nocheck\_prev()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const  \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::nocheck\+\_\+prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!prev@{prev}}
+\index{prev@{prev}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{prev()}{prev()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the previous \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} in the list. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_ad6188643a45a44bf6c7bb2b36243ad11_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a3c3c7e91a7d127fda22f3c4125c03762}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a3c3c7e91a7d127fda22f3c4125c03762} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!prev@{prev}}
+\index{prev@{prev}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{prev()}{prev()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} const  \texorpdfstring{$\ast$}{*} Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a3c3c7e91a7d127fda22f3c4125c03762_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a1ef6d7c52020cb0020819fba1c57c53e}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a1ef6d7c52020cb0020819fba1c57c53e} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!push\_after@{push\_after}}
+\index{push\_after@{push\_after}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{push\_after()}{push\_after()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::push\+\_\+after (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}}]{p\+Elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} after the given \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Elem} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} to push this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} after. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} must not be in a list. 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a1ef6d7c52020cb0020819fba1c57c53e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a73cdfe20ac1ca1e5816b3b875d66b36a}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a73cdfe20ac1ca1e5816b3b875d66b36a} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!push\_before@{push\_before}}
+\index{push\_before@{push\_before}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{push\_before()}{push\_before()}}
+{\footnotesize\ttfamily void Horizon\+::\+Structures\+::\+Linked\+List\+::\+Element\+::push\+\_\+before (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}} \texorpdfstring{$\ast$}{*}}]{p\+Elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pushes this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} before the given \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Elem} & The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} to push this \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} before. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} must not be in a list. 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a73cdfe20ac1ca1e5816b3b875d66b36a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a0a1479d53f85bd8a841c1103e059a7ff}\label{class_horizon_1_1_structures_1_1_linked_list_1_1_element_a0a1479d53f85bd8a841c1103e059a7ff} 
+\index{Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}!Head@{Head}}
+\index{Head@{Head}!Horizon::Structures::LinkedList::Element@{Horizon::Structures::LinkedList::Element}}
+\doxysubsubsection{\texorpdfstring{Head}{Head}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Structures/\+Linked\+List/\mbox{\hyperlink{_element_8hpp}{Element.\+hpp}}\end{DoxyCompactItemize}

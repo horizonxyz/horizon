@@ -1,0 +1,225 @@
+\doxysection{AStar.\+hpp}
+\hypertarget{_a_star_8hpp_source}{}\label{_a_star_8hpp_source}\index{src/Server/Zone/Game/Map/Path/AStar.hpp@{src/Server/Zone/Game/Map/Path/AStar.hpp}}
+\mbox{\hyperlink{_a_star_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2015\ Damian\ Barczynski\ <daan.net@wp.eu>}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ Following\ tool\ is\ licensed\ under\ the\ terms\ and\ conditions\ of\ the\ ISC\ license.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ License\ terms\ -\/\ https://github.com/daancode/a-\/star/blob/master/LICENSE}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_MAP\_PATH\_ASTAR\_HPP}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_MAP\_PATH\_ASTAR\_HPP}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_coordinates_8hpp}{Server/Zone/Game/Map/Coordinates.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_definitions_8hpp}{Server/Zone/Game/Map/Grid/GridDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }AStar}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic}{Heuristic}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ getDelta(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ source\_,\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ target\_)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{MapCoords}}(abs(target\_.\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}()\ -\/\ source\_.\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}()),\ abs(target\_.\mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}()\ -\/\ source\_.\mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}()));\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_a0814519d949a96cc8d8539e08e3218c9}{manhattan}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ source\_,\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ target\_)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ delta\ =\ getDelta(source\_,\ target\_);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(10\ *\ (delta.x()\ +\ delta.y()));}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_ac64428ca3bd2d54f62bf0e9295b619ae}{euclidean}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ source\_,\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ target\_)}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ delta\ =\ getDelta(source\_,\ target\_);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(10\ *\ std::sqrt(std::pow(delta.x(),\ 2)\ +\ std::pow(delta.y(),\ 2)));}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_a23122aa781af67841d5d6ffbc0936314}{octagonal}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ source\_,\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ target\_)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ delta\ =\ getDelta(source\_,\ target\_);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 10\ *\ (delta.x()\ +\ delta.y())\ +\ (-\/6)\ *\ std::min(delta.x(),\ delta.y());}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ std::function<uint32\_t(\mbox{\hyperlink{class_coordinates}{MapCoords}},\ \mbox{\hyperlink{class_coordinates}{MapCoords}})>\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{HeuristicFunction}};}
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ std::vector<MapCoords>\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{CoordinateList}};}
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ std::function<bool(uint16\_t\ x,\ uint16\_t\ y)>\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{CollisionDetectionFunction}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node}{Node}}}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a300a3e8ba0b05af9d6ae73bf396f7749}{G}},\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a776a87ef4921f34a996a8a820eca49c1}{H}};}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a47ebe9632bca24b04f5dc48a6806775b}{coordinates}};}
+\DoxyCodeLine{00081\ \ \ \ \ std::shared\_ptr<Node>\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_af5d891ac8aa67f6144b111eb1706ee74}{parent}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a50073f3e5ddd2a6358b617767a34df31}{Node}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ coord\_,\ std::shared\_ptr<Node>\ parent\_\ =\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_af5d891ac8aa67f6144b111eb1706ee74}{parent}}\ =\ parent\_;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a47ebe9632bca24b04f5dc48a6806775b}{coordinates}}\ =\ coord\_;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a300a3e8ba0b05af9d6ae73bf396f7749}{G}}\ =\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a776a87ef4921f34a996a8a820eca49c1}{H}}\ =\ 0;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a229e30729fe3d0cf41495f076d7b3470}{getScore}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a300a3e8ba0b05af9d6ae73bf396f7749}{G}}\ +\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1_a_star_1_1_node_a776a87ef4921f34a996a8a820eca49c1}{H}};\ \}}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{NodeSet}}\ =\ std::vector<std::shared\_ptr<Node>>;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator}{Generator}}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Node>\ findNodeOnList(\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{NodeSet}}\&\ nodes\_,\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ coordinates\_)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ node\ :\ nodes\_)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>coordinates\ ==\ coordinates\_)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ releaseNodes(\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{NodeSet}}\ nodes\_)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ nodes\_.begin();\ it\ !=\ nodes\_.end();)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ nodes\_.erase(it);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a3ebc772ead8649f440e0b9343cfb79d4}{Generator}}()}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7}{setDiagonalMovement}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76}{setHeuristic}}(\&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_a0814519d949a96cc8d8539e08e3218c9}{Heuristic::manhattan}});}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a78f6a3f4bb43abb8cf202bb610e4ff7a}{Generator}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ worldSize\_,\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{CollisionDetectionFunction}}\ c,\ \textcolor{keywordtype}{bool}\ diagonal\_movement\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{HeuristicFunction}}\ h\ =\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_a0814519d949a96cc8d8539e08e3218c9}{Heuristic::manhattan}})}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_adfeae05a713a0f3607bce96a63478c3c}{setWorldSize}}(worldSize\_);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a62232df0e67b600d9b13b7790294dfc7}{setCollisionDetectionFunction}}(std::move(c));}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7}{setDiagonalMovement}}(diagonal\_movement);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76}{setHeuristic}}(h);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_adfeae05a713a0f3607bce96a63478c3c}{setWorldSize}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ worldSize\_)\ \{\ worldSize\ =\ worldSize\_;\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a62232df0e67b600d9b13b7790294dfc7}{setCollisionDetectionFunction}}(\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{CollisionDetectionFunction}}\ c)\ \{\ check\_collision\ =\ c;\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7}{setDiagonalMovement}}(\textcolor{keywordtype}{bool}\ enable\_)\ \{\ \mbox{\hyperlink{_entity_definitions_8hpp_aac3f4057b04538848ae8afac77495b5a}{directions}}\ =\ (enable\_\ ?\ 8\ :\ 4);\ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76}{setHeuristic}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{HeuristicFunction}}\&\ heuristic\_)\ \{\ heuristic\ =\ [heuristic\_](\textcolor{keyword}{auto}\ \&\&\ PH1,\ \textcolor{keyword}{auto}\ \&\&\ PH2)\ \{\ \textcolor{keywordflow}{return}\ heuristic\_(std::forward<\textcolor{keyword}{decltype}(PH1)>(PH1),\ std::forward<\textcolor{keyword}{decltype}(PH2)>(PH2));\ \};\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{CoordinateList}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_ac5db6d98c21b24531343a0a5a101b2b2}{findPath}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ source\_,\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ target\_)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{CoordinateList}}\ path;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ std::shared\_ptr<Node>\ current\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a58f90e018cb92f8b6af4d0303204b1d0}{NodeSet}}\ openSet,\ closedSet;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ searchStep\ =\ 0;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ openSet.reserve(20);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ closedSet.reserve(20);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ openSet.push\_back(std::make\_shared<Node>(source\_));}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (check\_collision(target\_.\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}(),\ target\_.\mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}()))}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!openSet.empty()\ \&\&\ searchStep\ <\ \mbox{\hyperlink{_horizon_8hpp_af494d096e3e50bdb6ec83ecddd05198b}{MAX\_VIEW\_RANGE}})\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ current\_it\ =\ openSet.begin();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ *current\_it;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ openSet.begin();\ it\ !=\ openSet.end();\ it++)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ *it;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node-\/>getScore()\ <=\ current-\/>getScore())\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ node;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ current\_it\ =\ it;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>coordinates\ ==\ target\_)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ closedSet.push\_back(current);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ openSet.erase(current\_it);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{_entity_definitions_8hpp_aac3f4057b04538848ae8afac77495b5a}{directions}};\ ++i)\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ newCoordinates(current-\/>coordinates\ +\ direction[i]);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (check\_collision(newCoordinates.\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}(),\ newCoordinates.\mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}())\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ findNodeOnList(closedSet,\ newCoordinates))\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newCoordinates.\mbox{\hyperlink{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed}{set\_move\_cost}}((i\ <\ 4)\ ?\ 10\ :\ 14);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ totalCost\ =\ current-\/>G\ +\ newCoordinates.\mbox{\hyperlink{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}{move\_cost}}();}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Node>\ successor\ =\ findNodeOnList(openSet,\ newCoordinates);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (successor\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successor\ =\ std::make\_shared<Node>(newCoordinates,\ current);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successor-\/>G\ =\ totalCost;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successor-\/>H\ =\ heuristic(successor-\/>coordinates,\ target\_);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ openSet.push\_back(successor);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (totalCost\ <\ successor-\/>G)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successor-\/>parent\ =\ current;}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successor-\/>G\ =\ totalCost;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ searchStep++;}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ path.push\_back(current-\/>coordinates);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>parent;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ releaseNodes(openSet);}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ releaseNodes(closedSet);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{HeuristicFunction}}\ heuristic;}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{CollisionDetectionFunction}}\ check\_collision;}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{CoordinateList}}\ direction\ =\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \{\ 0,\ 1\ \},\ \{\ 1,\ 0\ \},\ \{\ 0,\ -\/1\ \},\ \{\ -\/1,\ 0\ \},}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \{\ -\/1,\ -\/1\ \},\ \{\ 1,\ 1\ \},\ \{\ -\/1,\ 1\ \},\ \{\ 1,\ -\/1\ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \};}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ worldSize;}
+\DoxyCodeLine{00215\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{_entity_definitions_8hpp_aac3f4057b04538848ae8afac77495b5a}{directions}}\{0\};}
+\DoxyCodeLine{00216\ \};}
+\DoxyCodeLine{00217\ \}}
+\DoxyCodeLine{00218\ \}}
+\DoxyCodeLine{00219\ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_MAP\_PATH\_ASTAR\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

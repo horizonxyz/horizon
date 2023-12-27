@@ -1,0 +1,214 @@
+\doxysection{Horizon\+::Zone\+::NPCComponent Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component}{}\label{class_horizon_1_1_zone_1_1_n_p_c_component}\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+
+
+{\ttfamily \#include $<$NPCComponent.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::NPCComponent\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_horizon_1_1_zone_1_1_n_p_c_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::NPCComponent\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_ad1d20aa897aa5d255bc962814a64b51d}{NPCComponent}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_aa391a6395f853e9be3e5916b5ea5492b}{NPCComponent}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a7ba180e84cfc24d15fb51791ca63b4b5}{\texorpdfstring{$\sim$}{\string~}\+NPCComponent}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a599c2b55360b83feb038a6d0711833fa}{sync\+\_\+definitions}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a2d001b8da22116a0301dd8566c6d8c50}{sync\+\_\+data\+\_\+types}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a8a17542c21dd20275137a0b09b96b574}{sync\+\_\+functions}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a40ff61989f502c9505816476e2d69f22}{sync\+\_\+functions}} (std\+::shared\+\_\+ptr$<$ sol\+::state $>$ state, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a2295aa43a653bd1c317918cf8924fd87}{add\+\_\+npc\+\_\+to\+\_\+db}} (uint32\+\_\+t guid, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnpc__db__data}{npc\+\_\+db\+\_\+data}} $>$ const \&data)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnpc__db__data}{npc\+\_\+db\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a1e77a86df4ec6e04608b049a82134a97}{get\+\_\+npc\+\_\+from\+\_\+db}} (uint32\+\_\+t guid)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a881c909e082534e1221af2324ee2558b}{contact\+\_\+npc\+\_\+for\+\_\+player}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ player, uint32\+\_\+t npc\+\_\+guid)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_a72ab82934367b0b1e0ba64ac808d8bf3}{continue\+\_\+npc\+\_\+script\+\_\+for\+\_\+player}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$ player, uint32\+\_\+t npc\+\_\+guid, uint32\+\_\+t select\+\_\+idx=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component}{Horizon\+::\+Zone\+::\+LUAComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a569dc4b8d0950c250a69c7e7d481e4ac}{LUAComponent}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a75bf0587364912cc77b3bc1d7eaa1e2d}{LUAComponent}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ container)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_aa1aea394f967cc874612ddd55d1c0cd3}{\texorpdfstring{$\sim$}{\string~}\+LUAComponent}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a887f33147aa510533aceb9203d921eb3}{get\+\_\+container}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ uint32\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnpc__db__data}{npc\+\_\+db\+\_\+data}} $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_n_p_c_component_ac9497bc1bc8e1547a1ef0d98bb9fdef0}{\+\_\+npc\+\_\+db}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_ad1d20aa897aa5d255bc962814a64b51d}\label{class_horizon_1_1_zone_1_1_n_p_c_component_ad1d20aa897aa5d255bc962814a64b51d} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!NPCComponent@{NPCComponent}}
+\index{NPCComponent@{NPCComponent}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{NPCComponent()}{NPCComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+NPCComponent\+::\+NPCComponent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_aa391a6395f853e9be3e5916b5ea5492b}\label{class_horizon_1_1_zone_1_1_n_p_c_component_aa391a6395f853e9be3e5916b5ea5492b} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!NPCComponent@{NPCComponent}}
+\index{NPCComponent@{NPCComponent}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{NPCComponent()}{NPCComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+NPCComponent\+::\+NPCComponent (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a7ba180e84cfc24d15fb51791ca63b4b5}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a7ba180e84cfc24d15fb51791ca63b4b5} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!````~NPCComponent@{\texorpdfstring{$\sim$}{\string~}NPCComponent}}
+\index{````~NPCComponent@{\texorpdfstring{$\sim$}{\string~}NPCComponent}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NPCComponent()}{\string~NPCComponent()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+NPCComponent\+::\texorpdfstring{$\sim$}{\string~}\+NPCComponent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a2295aa43a653bd1c317918cf8924fd87}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a2295aa43a653bd1c317918cf8924fd87} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!add\_npc\_to\_db@{add\_npc\_to\_db}}
+\index{add\_npc\_to\_db@{add\_npc\_to\_db}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{add\_npc\_to\_db()}{add\_npc\_to\_db()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+NPCComponent\+::add\+\_\+npc\+\_\+to\+\_\+db (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{guid,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnpc__db__data}{npc\+\_\+db\+\_\+data}} $>$ const \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component_a2295aa43a653bd1c317918cf8924fd87_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component_a2295aa43a653bd1c317918cf8924fd87_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a881c909e082534e1221af2324ee2558b}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a881c909e082534e1221af2324ee2558b} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!contact\_npc\_for\_player@{contact\_npc\_for\_player}}
+\index{contact\_npc\_for\_player@{contact\_npc\_for\_player}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{contact\_npc\_for\_player()}{contact\_npc\_for\_player()}}
+{\footnotesize\ttfamily void NPCComponent\+::contact\+\_\+npc\+\_\+for\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$}]{player,  }\item[{uint32\+\_\+t}]{npc\+\_\+guid }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component_a881c909e082534e1221af2324ee2558b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a72ab82934367b0b1e0ba64ac808d8bf3}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a72ab82934367b0b1e0ba64ac808d8bf3} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!continue\_npc\_script\_for\_player@{continue\_npc\_script\_for\_player}}
+\index{continue\_npc\_script\_for\_player@{continue\_npc\_script\_for\_player}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{continue\_npc\_script\_for\_player()}{continue\_npc\_script\_for\_player()}}
+{\footnotesize\ttfamily void NPCComponent\+::continue\+\_\+npc\+\_\+script\+\_\+for\+\_\+player (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_player}{Entities\+::\+Player}} $>$}]{player,  }\item[{uint32\+\_\+t}]{npc\+\_\+guid,  }\item[{uint32\+\_\+t}]{select\+\_\+idx = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a1e77a86df4ec6e04608b049a82134a97}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a1e77a86df4ec6e04608b049a82134a97} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!get\_npc\_from\_db@{get\_npc\_from\_db}}
+\index{get\_npc\_from\_db@{get\_npc\_from\_db}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{get\_npc\_from\_db()}{get\_npc\_from\_db()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structnpc__db__data}{npc\+\_\+db\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+NPCComponent\+::get\+\_\+npc\+\_\+from\+\_\+db (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component_a1e77a86df4ec6e04608b049a82134a97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a2d001b8da22116a0301dd8566c6d8c50}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a2d001b8da22116a0301dd8566c6d8c50} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!sync\_data\_types@{sync\_data\_types}}
+\index{sync\_data\_types@{sync\_data\_types}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_data\_types()}{sync\_data\_types()}}
+{\footnotesize\ttfamily void NPCComponent\+::sync\+\_\+data\+\_\+types (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_af4d64fa3fe0b6573f1fb5f57162e6491}{Horizon\+::\+Zone\+::\+LUAComponent}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component_a2d001b8da22116a0301dd8566c6d8c50_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a599c2b55360b83feb038a6d0711833fa}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a599c2b55360b83feb038a6d0711833fa} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!sync\_definitions@{sync\_definitions}}
+\index{sync\_definitions@{sync\_definitions}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_definitions()}{sync\_definitions()}}
+{\footnotesize\ttfamily void NPCComponent\+::sync\+\_\+definitions (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_aa0141caecc5a96e299b7f47025f0c0fe}{Horizon\+::\+Zone\+::\+LUAComponent}}.
+
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a8a17542c21dd20275137a0b09b96b574}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a8a17542c21dd20275137a0b09b96b574} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!sync\_functions@{sync\_functions}}
+\index{sync\_functions@{sync\_functions}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_functions()}{sync\_functions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+NPCComponent\+::sync\+\_\+functions (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_horizon_1_1_zone_1_1_l_u_a_component_a2ae24287a1e6f10c3d775b65c6df98db}{Horizon\+::\+Zone\+::\+LUAComponent}}.
+
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_a40ff61989f502c9505816476e2d69f22}\label{class_horizon_1_1_zone_1_1_n_p_c_component_a40ff61989f502c9505816476e2d69f22} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!sync\_functions@{sync\_functions}}
+\index{sync\_functions@{sync\_functions}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{sync\_functions()}{sync\_functions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void NPCComponent\+::sync\+\_\+functions (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sol\+::state $>$}]{state,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_n_p_c_component_a40ff61989f502c9505816476e2d69f22_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_n_p_c_component_ac9497bc1bc8e1547a1ef0d98bb9fdef0}\label{class_horizon_1_1_zone_1_1_n_p_c_component_ac9497bc1bc8e1547a1ef0d98bb9fdef0} 
+\index{Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}!\_npc\_db@{\_npc\_db}}
+\index{\_npc\_db@{\_npc\_db}!Horizon::Zone::NPCComponent@{Horizon::Zone::NPCComponent}}
+\doxysubsubsection{\texorpdfstring{\_npc\_db}{\_npc\_db}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$uint32\+\_\+t, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{structnpc__db__data}{npc\+\_\+db\+\_\+data}}$>$ $>$ Horizon\+::\+Zone\+::\+NPCComponent\+::\+\_\+npc\+\_\+db}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+LUA/\+Components/\mbox{\hyperlink{_n_p_c_component_8hpp}{NPCComponent.\+hpp}}\item 
+src/\+Server/\+Zone/\+LUA/\+Components/\mbox{\hyperlink{_n_p_c_component_8cpp}{NPCComponent.\+cpp}}\end{DoxyCompactItemize}

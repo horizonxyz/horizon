@@ -1,0 +1,94 @@
+\doxysection{Server\+Configuration.\+hpp}
+\hypertarget{_server_configuration_8hpp_source}{}\label{_server_configuration_8hpp_source}\index{src/Server/Common/Configuration/ServerConfiguration.hpp@{src/Server/Common/Configuration/ServerConfiguration.hpp}}
+\mbox{\hyperlink{_server_configuration_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_SERVERCONFIGURATION\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_SERVERCONFIGURATION\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <boost/filesystem.hpp>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgeneral__server__configuration}{general\_server\_configuration}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{/*\ Minimal\ Load\ for\ Test\ Run\ */}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structgeneral__server__configuration_a1500171b548376437c17318ca90fd5f0}{is\_test\_run}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a413184e9c9c81fb9639e60928bafb735}{minimal}};\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a1bc24ccd5722626e7d46ccbae21de33e}{set\_test\_run}}()\ \{\ this-\/>\mbox{\hyperlink{structgeneral__server__configuration_a413184e9c9c81fb9639e60928bafb735}{minimal}}\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{/*\ Configuration\ File\ Path\ */}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ boost::filesystem::path\ \&\mbox{\hyperlink{structgeneral__server__configuration_a70f34afb5de16a9c62e46c2530e4b441}{get\_config\_file\_path}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a5b0dbb90fbd5279d5f86dca3c6d87d04}{\_config\_file\_path}};\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a9b69777d1a41520ea737269da9b1f1b8}{set\_config\_file\_path}}(\textcolor{keyword}{const}\ boost::filesystem::path\ \&path)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_a5b0dbb90fbd5279d5f86dca3c6d87d04}{\_config\_file\_path}}\ =\ path;\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{/*\ Shut\ Down\ Signal\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structgeneral__server__configuration_aed75af6f15b3c32c8c1bea8820fe23e4}{get\_shutdown\_signal}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}{shutdown\_signal}};\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a57741e05e00db28533d0a2f896e29448}{set\_shutdown\_signal}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}{shutdown\_signal}})\ \{\ this-\/>shutdown\_signal\ =\ \mbox{\hyperlink{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}{shutdown\_signal}};\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ Listen\ IP\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{structgeneral__server__configuration_adb725151a29c8ea2d858cbbb04bc3a10}{get\_listen\_ip}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a3d9dcb8f42d970103718f5807a18127c}{\_listen\_ip}};\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a03feb418c1de48e991aff47bfb00d241}{set\_listen\_ip}}(\textcolor{keyword}{const}\ std::string\ \&listen\_ip)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_a3d9dcb8f42d970103718f5807a18127c}{\_listen\_ip}}\ =\ listen\_ip;\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*\ Listen\ Port\ */}}
+\DoxyCodeLine{00052\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structgeneral__server__configuration_a27f7ffb841e0d08aac18162d9419e1d3}{get\_listen\_port}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_ae2084e63d17623bd13f5885e477be828}{\_listen\_port}};\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a7647148b0e56ca80e439fc00a5c00531}{set\_listen\_port}}(uint16\_t\ listen\_port)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_ae2084e63d17623bd13f5885e477be828}{\_listen\_port}}\ =\ listen\_port;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structgeneral__server__configuration_a413184e9c9c81fb9639e60928bafb735}{minimal}}\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{structgeneral__server__configuration_a05f53d53eb82dabed024e6519d5a3d9f}{get\_db\_host}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a1b42154a9154d28494ceaf24b9b9feea}{\_db\_host}};\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_ace8ea23a75fe72159565e1b7abeabada}{set\_db\_host}}(std::string\ \&\&host)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_a1b42154a9154d28494ceaf24b9b9feea}{\_db\_host}}\ =\ host;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{structgeneral__server__configuration_a598880fafa5d889a75a4cbead7ea6b30}{get\_db\_user}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a482490745b436745b410c0334ee0da68}{\_db\_user}};\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a1923b52cfbc6860e38001842e5779f57}{set\_db\_user}}(std::string\ \&\&user)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_a482490745b436745b410c0334ee0da68}{\_db\_user}}\ =\ user;\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{structgeneral__server__configuration_a1d085e6920e9f3f90985af025ca83381}{get\_db\_pass}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_acc9c8d96f23d5ea11c626b1b7abcfe34}{\_db\_pass}};\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a7dd1f2901ee1fa51d68d150a1a0f4a56}{set\_db\_pass}}(std::string\ \&\&pass)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_acc9c8d96f23d5ea11c626b1b7abcfe34}{\_db\_pass}}\ =\ pass;\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{structgeneral__server__configuration_aa09fe1e68fca700df4eaf87bb0d38eb9}{get\_db\_database}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a5a6623b33fc70a2288abdd259e4290d1}{\_db\_database}};\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_abeb44fe08dbc57158f072d97cb049905}{set\_db\_database}}(std::string\ \&\&database)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_a5a6623b33fc70a2288abdd259e4290d1}{\_db\_database}}\ =\ database;\ \}}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ \&\mbox{\hyperlink{structgeneral__server__configuration_a5292491ce3a8f49eaf9776bafe868009}{get\_db\_port}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_a82fcf1816b248a4915cbf54a738401ae}{\_db\_port}};\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a3af083ed84790327351e9c1910a60b61}{set\_db\_port}}(uint16\_t\ port)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_a82fcf1816b248a4915cbf54a738401ae}{\_db\_port}}\ =\ port;\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \&\mbox{\hyperlink{structgeneral__server__configuration_acd771d793d4589b951d30017ea90f035}{get\_db\_threads}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structgeneral__server__configuration_ae0dc057756c6332a0c3470425833366b}{\_db\_threads}};\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structgeneral__server__configuration_a26d5ee4c4ff6bfeb7046f8f83fe4c630}{set\_db\_threads}}(uint8\_t\ threads)\ \{\ \mbox{\hyperlink{structgeneral__server__configuration_ae0dc057756c6332a0c3470425833366b}{\_db\_threads}}\ =\ threads;\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ boost::filesystem::path\ \mbox{\hyperlink{structgeneral__server__configuration_a5b0dbb90fbd5279d5f86dca3c6d87d04}{\_config\_file\_path}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structgeneral__server__configuration_a89717ad31a2e476235d2f9fd4153d331}{shutdown\_signal}};\ \ \ \ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::string\ \mbox{\hyperlink{structgeneral__server__configuration_a3d9dcb8f42d970103718f5807a18127c}{\_listen\_ip}};\ }
+\DoxyCodeLine{00080\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structgeneral__server__configuration_ae2084e63d17623bd13f5885e477be828}{\_listen\_port}};\ \ }
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ \mbox{\hyperlink{structgeneral__server__configuration_a1b42154a9154d28494ceaf24b9b9feea}{\_db\_host}},\ \mbox{\hyperlink{structgeneral__server__configuration_a482490745b436745b410c0334ee0da68}{\_db\_user}},\ \mbox{\hyperlink{structgeneral__server__configuration_acc9c8d96f23d5ea11c626b1b7abcfe34}{\_db\_pass}},\ \mbox{\hyperlink{structgeneral__server__configuration_a5a6623b33fc70a2288abdd259e4290d1}{\_db\_database}};}
+\DoxyCodeLine{00083\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structgeneral__server__configuration_a82fcf1816b248a4915cbf54a738401ae}{\_db\_port}}\{3306\};}
+\DoxyCodeLine{00084\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structgeneral__server__configuration_ae0dc057756c6332a0c3470425833366b}{\_db\_threads}}\{5\};}
+\DoxyCodeLine{00085\ \ \ \ \ }
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_SERVERCONFIGURATION\_H}}
+
+\end{DoxyCode}

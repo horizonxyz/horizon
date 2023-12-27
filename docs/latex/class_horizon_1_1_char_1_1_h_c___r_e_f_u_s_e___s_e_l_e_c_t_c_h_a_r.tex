@@ -1,0 +1,123 @@
+\doxysection{Horizon\+::Char\+::HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR Class Reference}
+\hypertarget{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}{}\label{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}\index{Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}}
+
+
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}{HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR}.  
+
+
+
+
+{\ttfamily \#include $<$Transmitted\+Packets.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Char\+::HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Char\+::HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_ac1e8effeb729f161a6fec24099d39e3c}{HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_adafcf6de9da9cda5447395fd290c33d2}{\texorpdfstring{$\sim$}{\string~}\+HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_acd195111d788cc11a5730a9b53ca7ca1}{deliver}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_abfededc12ceb02fbeed6391612c0dbb2}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter}{Horizon\+::\+Base\+::\+Network\+Packet\+Transmitter$<$ Char\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a113d7ac414c9bb413417384009525ddc}{Network\+Packet\+Transmitter}} (uint32\+\_\+t pid, std\+::shared\+\_\+ptr$<$ Char\+Session $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_acad36e1f8be629d774358381069a3d7e}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet\+Transmitter}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a9e1b1c61d7a2fa7eb9e14c810055466c}{transmit}} ()
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_transmitter_a894983a07731b6ad07b306b795350262}{transmit}} (std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Send an Asynchronous packet by queueing a buffer of a particular size to the connected session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a993f1b7595e2e18432fa88e7e8d483c8}{Network\+Packet}} (uint16\+\_\+t packet\+\_\+id, std\+::shared\+\_\+ptr$<$ Session\+Type $>$ s)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_ab8e88e7411894955b941929bf0bb2497}{\texorpdfstring{$\sim$}{\string~}\+Network\+Packet}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aab01c2bba220072e822860517ec880e5}{set\+\_\+packet\+\_\+id}} (uint16\+\_\+t id)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_aa921cde801443803a2bb09ae4685d676}{get\+\_\+packet\+\_\+id}} ()
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_af89c4f7090fd3f9b84c9c74022cfc90a}{buf}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a9852fc086cad616eb56e2134dc0ce79a}{get\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the session from this handler instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet}{Horizon\+::\+Base\+::\+Network\+Packet$<$ Session\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a0cedbde3c2dc86d28b717a87b0506132}{\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer storage facility for the packet stream. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_base_1_1_network_packet_a543108bff193483573cc56e1d7c2d6d3}{\+\_\+packet\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em ID of the network packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main object for the aegis packet\+: \doxylink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}{HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_ac1e8effeb729f161a6fec24099d39e3c}\label{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_ac1e8effeb729f161a6fec24099d39e3c} 
+\index{Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}!HC\_REFUSE\_SELECTCHAR@{HC\_REFUSE\_SELECTCHAR}}
+\index{HC\_REFUSE\_SELECTCHAR@{HC\_REFUSE\_SELECTCHAR}!Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}}
+\doxysubsubsection{\texorpdfstring{HC\_REFUSE\_SELECTCHAR()}{HC\_REFUSE\_SELECTCHAR()}}
+{\footnotesize\ttfamily Horizon\+::\+Char\+::\+HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR\+::\+HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_adafcf6de9da9cda5447395fd290c33d2}\label{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_adafcf6de9da9cda5447395fd290c33d2} 
+\index{Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}!````~HC\_REFUSE\_SELECTCHAR@{\texorpdfstring{$\sim$}{\string~}HC\_REFUSE\_SELECTCHAR}}
+\index{````~HC\_REFUSE\_SELECTCHAR@{\texorpdfstring{$\sim$}{\string~}HC\_REFUSE\_SELECTCHAR}!Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}HC\_REFUSE\_SELECTCHAR()}{\string~HC\_REFUSE\_SELECTCHAR()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Char\+::\+HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR\+::\texorpdfstring{$\sim$}{\string~}\+HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_acd195111d788cc11a5730a9b53ca7ca1}\label{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_acd195111d788cc11a5730a9b53ca7ca1} 
+\index{Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}!deliver@{deliver}}
+\index{deliver@{deliver}!Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}}
+\doxysubsubsection{\texorpdfstring{deliver()}{deliver()}}
+{\footnotesize\ttfamily void HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR\+::deliver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}{HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR} \Hypertarget{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_abfededc12ceb02fbeed6391612c0dbb2}\label{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_abfededc12ceb02fbeed6391612c0dbb2} 
+\index{Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}!serialize@{serialize}}
+\index{serialize@{serialize}!Horizon::Char::HC\_REFUSE\_SELECTCHAR@{Horizon::Char::HC\_REFUSE\_SELECTCHAR}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_byte_buffer}{Byte\+Buffer}} \& HC\+\_\+\+REFUSE\+\_\+\+SELECTCHAR\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r_abfededc12ceb02fbeed6391612c0dbb2_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Char/\+Packets/\mbox{\hyperlink{_char_2_packets_2_transmitted_packets_8hpp}{Transmitted\+Packets.\+hpp}}\item 
+src/\+Server/\+Char/\+Packets/\mbox{\hyperlink{_char_2_packets_2_transmitted_packets_8cpp}{Transmitted\+Packets.\+cpp}}\end{DoxyCompactItemize}

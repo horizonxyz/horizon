@@ -1,0 +1,93 @@
+\doxysection{Horizon\+::Zone\+::UI\+::Chatroom Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom}{}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom}\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+
+
+{\ttfamily \#include $<$User\+Interface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a66194e507c4b930cad9d2e031acb3549}{Chatroom}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a5cce69774b3a62c3a455388415b9d385}{\texorpdfstring{$\sim$}{\string~}\+Chatroom}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a17ed67f41a942f4ce83d52afcf81a9cf}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a23714c4423ac4da2cf7c47d9f125a573}{create\+\_\+chatroom}} (int limit, int \+\_\+public, std\+::string password, std\+::string title)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a01a827dd6d5b2f3678c3384751864506}{role\+\_\+change}} (int role, std\+::string name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a61ec4e49da6547785a7f637383b5ff15}{add\+\_\+member}} (int chat\+\_\+id, std\+::string password)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1200a6a740347298a6663d953ddbe863}{expel\+\_\+member}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a606714253b6864897c0b92634088e11a}{leave}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1f3b680d2420dc5cf435e8621693b79d}{change\+\_\+properties}} (int limit, int type, std\+::string password, std\+::string title)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a66194e507c4b930cad9d2e031acb3549}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a66194e507c4b930cad9d2e031acb3549} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!Chatroom@{Chatroom}}
+\index{Chatroom@{Chatroom}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{Chatroom()}{Chatroom()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::\+Chatroom (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom}{Chatroom} \Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a5cce69774b3a62c3a455388415b9d385}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a5cce69774b3a62c3a455388415b9d385} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!````~Chatroom@{\texorpdfstring{$\sim$}{\string~}Chatroom}}
+\index{````~Chatroom@{\texorpdfstring{$\sim$}{\string~}Chatroom}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Chatroom()}{\string~Chatroom()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::\texorpdfstring{$\sim$}{\string~}\+Chatroom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a61ec4e49da6547785a7f637383b5ff15}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a61ec4e49da6547785a7f637383b5ff15} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!add\_member@{add\_member}}
+\index{add\_member@{add\_member}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{add\_member()}{add\_member()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::add\+\_\+member (\begin{DoxyParamCaption}\item[{int}]{chat\+\_\+id,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1f3b680d2420dc5cf435e8621693b79d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1f3b680d2420dc5cf435e8621693b79d} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!change\_properties@{change\_properties}}
+\index{change\_properties@{change\_properties}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{change\_properties()}{change\_properties()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::change\+\_\+properties (\begin{DoxyParamCaption}\item[{int}]{limit,  }\item[{int}]{type,  }\item[{std\+::string}]{password,  }\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a23714c4423ac4da2cf7c47d9f125a573}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a23714c4423ac4da2cf7c47d9f125a573} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!create\_chatroom@{create\_chatroom}}
+\index{create\_chatroom@{create\_chatroom}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{create\_chatroom()}{create\_chatroom()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::create\+\_\+chatroom (\begin{DoxyParamCaption}\item[{int}]{limit,  }\item[{int}]{\+\_\+public,  }\item[{std\+::string}]{password,  }\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1200a6a740347298a6663d953ddbe863}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1200a6a740347298a6663d953ddbe863} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!expel\_member@{expel\_member}}
+\index{expel\_member@{expel\_member}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{expel\_member()}{expel\_member()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::expel\+\_\+member (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a17ed67f41a942f4ce83d52afcf81a9cf}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a17ed67f41a942f4ce83d52afcf81a9cf} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a606714253b6864897c0b92634088e11a}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a606714253b6864897c0b92634088e11a} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!leave@{leave}}
+\index{leave@{leave}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{leave()}{leave()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::leave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a01a827dd6d5b2f3678c3384751864506}\label{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a01a827dd6d5b2f3678c3384751864506} 
+\index{Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}!role\_change@{role\_change}}
+\index{role\_change@{role\_change}!Horizon::Zone::UI::Chatroom@{Horizon::Zone::UI::Chatroom}}
+\doxysubsubsection{\texorpdfstring{role\_change()}{role\_change()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Chatroom\+::role\+\_\+change (\begin{DoxyParamCaption}\item[{int}]{role,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8hpp}{User\+Interface.\+hpp}}\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

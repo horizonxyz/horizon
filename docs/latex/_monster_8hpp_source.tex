@@ -1,0 +1,105 @@
+\doxysection{Monster.\+hpp}
+\hypertarget{_monster_8hpp_source}{}\label{_monster_8hpp_source}\index{src/Server/Zone/Game/Entities/Creature/Hostile/Monster.hpp@{src/Server/Zone/Game/Entities/Creature/Hostile/Monster.hpp}}
+\mbox{\hyperlink{_monster_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_ENTITIES\_MONSTER\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_ENTITIES\_MONSTER\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_object_8hpp}{Server/Zone/Game/GridObject.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_creature_8hpp}{Server/Zone/Game/Entities/Creature/Creature.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_d_b_8hpp}{Server/Zone/Game/StaticDB/MonsterDB.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }Map;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_creature}{Creature}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_grid_object}{GridObject}}<Monster>}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster}{Monster}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{int16\_t}}\ spawn\_dataset\_id,\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{int8\_t}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{spawn\_id}},\ std::shared\_ptr<Map>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{map}},\ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{mcoords}},}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::shared\_ptr<const\ monster\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{md}},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::shared\_ptr<std::vector<std::shared\_ptr<const\ monster\_skill\_config\_data>>>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{mskd}});}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a94642a9408573eef16f40f911f20b368}{\string~Monster}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_ad7d3dc21d9728ca5de2d83ab9601f22d}{initialize}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a6612c33575eee70228f862c1a0f5c1a6}{finalize}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_aaa676e684fa74a1038e03d4643e19682}{stop\_movement}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a4294ab301b19c9d623e48c3d674bf1d8}{on\_pathfinding\_failure}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a348c2084a19c261a60445fb7f9309c4b}{on\_movement\_begin}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a46d141d036d0bdb7d3383d6e84e25eb8}{on\_movement\_step}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a73101568b1b3fb63db69d0c82fcd656f}{on\_movement\_end}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_af93e7afd29cc9f47822b2eb54598c0bb}{on\_damage\_received}}(std::shared\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{damage\_dealer}},\ \textcolor{keywordtype}{int}\ damage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_ae60aafeac8c0773c992d783a2bfef7c2}{on\_killed}}(std::shared\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{killer}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{with\_drops}}\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{with\_exp}}\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a73c1a65b56c8629e821f874c171e8544}{set\_spotted}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{spotted}})\ \{\ \_was\_spotted\_once\ =\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{spotted}};\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_ae7271c2f98548ac50faecd7503c47f94}{was\_spotted\_once}}()\ \{\ \textcolor{keywordflow}{return}\ \_was\_spotted\_once;\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::shared\_ptr<const\ monster\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a862cf060893cc1cbaae35ecb2420c183}{monster\_config}}()\ \{\ \textcolor{keywordflow}{return}\ \_wmd\_data.lock();\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a93c9e9ac0c176b64320868378c90b6b5}{set\_monster\_config}}(std::shared\_ptr<const\ monster\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{md}})\ \{\ \_wmd\_data\ =\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{md}};\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a4d64911ce569ba094cef88d1007fa78f}{on\_status\_effect\_start}}(std::shared\_ptr<status\_change\_entry>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{sce}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a0fdd207573946c4bbf77475f64417dea}{on\_status\_effect\_end}}(std::shared\_ptr<status\_change\_entry>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{sce}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a887cc7fed4dfed802c0002758eee4c63}{on\_status\_effect\_change}}(std::shared\_ptr<status\_change\_entry>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{sce}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a60cf7921efb09a80f704653bcbdd7405}{behavior\_passive}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a0a7c5e2081b41404e1c97d5c7377f92f}{behavior\_active}}(std::shared\_ptr<Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{pl}});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a72598649be801a78cdb3e08ecf214785}{set\_next\_walk\_time}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{walk\_time}})\ \{\ \_next\_walk\_time\ =\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity_a9d0a860528c439118923e5d4f691ff35}{walk\_time}};\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_aa5f53e8db5d6971a9d9bc922ea6c686e}{next\_walk\_time}}()\ \{\ \textcolor{keywordflow}{return}\ \_next\_walk\_time;\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a8905a7314aade709dc720a835c277025}{set\_target}}(std::shared\_ptr<Entity>\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_ac7e7e3dabe0d993c91a6607608dfd1d3}{target}})\ \{\ \_target\ =\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_ac7e7e3dabe0d993c91a6607608dfd1d3}{target}};\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ std::shared\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_ac7e7e3dabe0d993c91a6607608dfd1d3}{target}}()\ \{\ \textcolor{keywordflow}{return}\ \_target;\ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entities_1_1_monster_a16806913832227a4481a08d4f97c1ae6}{unlock\_target}}()\ \{\ \_target\ =\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_was\_spotted\_once\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ \_next\_walk\_time\{0\},\ \_last\_spotted\_time\{0\},\ \_last\_think\_time\{0\};}
+\DoxyCodeLine{00092\ \ \ \ \ std::weak\_ptr<const\ monster\_config\_data>\ \_wmd\_data;}
+\DoxyCodeLine{00093\ \ \ \ \ std::weak\_ptr<std::vector<std::shared\_ptr<const\ monster\_skill\_config\_data>>>\ \_wms\_data;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::shared\_ptr<Entity>\ \_target\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_ENTITIES\_MONSTER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

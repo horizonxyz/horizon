@@ -1,0 +1,111 @@
+\doxysection{A Class Reference}
+\hypertarget{class_a}{}\label{class_a}\index{A@{A}}
+
+
+Inheritance diagram for A\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_a3b3832838bf4dc18ff37999089ad432e}{A}} (int a=100)
+\item 
+\mbox{\hyperlink{class_a_a55c5f4cdb5f64647e56299f44ecef1d7}{A}} (int id=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d}{D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_aec383a64ced13595f37ad9053880c29e}{D}} (int a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable_status}{Observable\+Status$<$ A \texorpdfstring{$\ast$}{*}, B \texorpdfstring{$\ast$}{*}, C \texorpdfstring{$\ast$}{*} $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_observable_status_a83d902e8566880c9217aa1cf656a862b}{Observable\+Status}} (HAS\+\_\+\+OBSERVERS ... args)
+\item 
+\mbox{\hyperlink{class_observable_status_af9df4a9c777ac360ee628cd771c592bf}{\texorpdfstring{$\sim$}{\string~}\+Observable\+Status}} ()
+\item 
+std\+::enable\+\_\+if$<$ I==sizeof...(Tp), void $>$\+::type \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}} (std\+::tuple$<$ Tp... $>$ \&)
+\item 
+\mbox{\hyperlink{class_observable_status_a626fb7d9dc6f5649e8970f296f800364}{notify}} (t)
+\item 
+std\+::enable\+\_\+if$<$ I$<$ sizeof...(Tp), void $>$\+::type \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}(std\+::tuple$<$ Tp... $>$ \&t) \{ std\+::get$<$ I $>$(\mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\+\_\+observers}}) -\/$>$ \mbox{\hyperlink{class_observable_status_aac65caa16a7c3179d0f5ba5c1ad543b5}{on\+\_\+observable\+\_\+changed}} (\mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\+\_\+observable}})
+\item 
+void \mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\+\_\+observers}} ()
+\item 
+void \mbox{\hyperlink{class_observable_status_a360b782379f9fd42e52287d97bd181c8}{register\+\_\+observable}} (\mbox{\hyperlink{class_a}{A}} \texorpdfstring{$\ast$}{*} obs)
+\item 
+void \mbox{\hyperlink{class_observable_status_a9c286b577e997b6835f58adcca6c61da}{register\+\_\+observers}} (HAS\+\_\+\+OBSERVERS... obs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_reference_object}{Reference\+Object$<$ A $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_reference_object_a4998e44b641070425460ccc7936bf9cd}{\texorpdfstring{$\sim$}{\string~}\+Reference\+Object}} ()
+\item 
+bool \mbox{\hyperlink{class_reference_object_a3fb4b7f4ec20e47c67d0fee9d9c352d7}{is\+\_\+valid}} () const
+\item 
+void \mbox{\hyperlink{class_reference_object_a920c7e873905d782af5968a862118c68}{add\+\_\+reference}} (\mbox{\hyperlink{class_test_ref_manager}{Test\+Ref\+Manager}}$<$ \mbox{\hyperlink{class_a}{A}} $>$ \&m)
+\item 
+void \mbox{\hyperlink{class_reference_object_ab01bb3fdf09403f2968d3847596b5e44}{remove\+\_\+reference}} ()
+\item 
+\mbox{\hyperlink{class_test_reference}{Test\+Reference}}$<$ \mbox{\hyperlink{class_a}{A}} $>$ \& \mbox{\hyperlink{class_reference_object_a372159db7b77e8e56357880599ffbfd9}{get\+\_\+reference}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generic_test_object}{Generic\+Test\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generic_test_object_ac9a653eeaaaabd3c247bbf323ce529d6}{Generic\+Test\+Object}} (int id, char type)
+\item 
+virtual int \mbox{\hyperlink{class_generic_test_object_a200003bbd3cf830eb716d833ac519137}{get\+\_\+id}} ()
+\item 
+virtual void \mbox{\hyperlink{class_generic_test_object_a245e10769e1d729fc76f87cc38de652c}{set\+\_\+id}} (int id)
+\item 
+char \mbox{\hyperlink{class_generic_test_object_a53f5f3f1609d8d1d49d9366760a47f7b}{get\+\_\+type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d}{D}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_d_a8956859946f6d598bc34641fb3d2b051}{\+\_\+a}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_observable_status}{Observable\+Status$<$ A \texorpdfstring{$\ast$}{*}, B \texorpdfstring{$\ast$}{*}, C \texorpdfstring{$\ast$}{*} $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a}{A}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\+\_\+observable}}
+\item 
+std\+::tuple$<$ HAS\+\_\+\+OBSERVERS... $>$ \mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\+\_\+observers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_a_a3b3832838bf4dc18ff37999089ad432e}\label{class_a_a3b3832838bf4dc18ff37999089ad432e} 
+\index{A@{A}!A@{A}}
+\index{A@{A}!A@{A}}
+\doxysubsubsection{\texorpdfstring{A()}{A()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily A\+::A (\begin{DoxyParamCaption}\item[{int}]{a = {\ttfamily 100} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_a_a55c5f4cdb5f64647e56299f44ecef1d7}\label{class_a_a55c5f4cdb5f64647e56299f44ecef1d7} 
+\index{A@{A}!A@{A}}
+\index{A@{A}!A@{A}}
+\doxysubsubsection{\texorpdfstring{A()}{A()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily A\+::A (\begin{DoxyParamCaption}\item[{int}]{id = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Tests/\mbox{\hyperlink{_observable_status_test_8cpp}{Observable\+Status\+Test.\+cpp}}\item 
+src/\+Tests/\mbox{\hyperlink{_reference_type_list_test_8cpp}{Reference\+Type\+List\+Test.\+cpp}}\end{DoxyCompactItemize}

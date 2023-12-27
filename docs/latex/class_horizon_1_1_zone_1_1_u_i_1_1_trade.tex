@@ -1,0 +1,133 @@
+\doxysection{Horizon\+::Zone\+::UI\+::Trade Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade}{}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade}\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+
+
+{\ttfamily \#include $<$User\+Interface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a295f24927ca17f86362253b5c32440ce}{Trade}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_ae49425face025d080f21d77a3ec22978}{\texorpdfstring{$\sim$}{\string~}\+Trade}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_acbc1cbb64dca706538533d965f79b019}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a60f153ab26d83e374d7e7bf06c72c88d}{request}} (int account\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a1d8cb9705c6aaf61f96b8caa9764938a}{response}} (int result)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a07657a6834864db669454c8bb1f69e5d}{add\+\_\+zeny}} (int zeny)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a19c60fd70617c5210153adbb7e8d4c53}{add\+\_\+item}} (int inventory\+\_\+index, int amount)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a80391aeeaca5a23c181ed934a8a9870f}{lock}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a0bfbb95218d429267061f3297b82ee52}{cancel}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af35a694246c794902a7779208bcd37bb}{commit}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af766b3f0d6b99480e73741b508525eb5}{notify\+\_\+response}} (\mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\+\_\+ack\+\_\+exchange\+\_\+item\+\_\+result\+\_\+type}} result)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a168b537057c34facb38705c2e36427eb}{notify\+\_\+response}} (\mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\+\_\+ack\+\_\+exchange\+\_\+item\+\_\+result\+\_\+type}} result, int char\+\_\+id, int base\+\_\+level)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a295f24927ca17f86362253b5c32440ce}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a295f24927ca17f86362253b5c32440ce} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!Trade@{Trade}}
+\index{Trade@{Trade}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{Trade()}{Trade()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::\+Trade (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{s }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_u_i_1_1_trade}{Trade} \Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_ae49425face025d080f21d77a3ec22978}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_ae49425face025d080f21d77a3ec22978} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!````~Trade@{\texorpdfstring{$\sim$}{\string~}Trade}}
+\index{````~Trade@{\texorpdfstring{$\sim$}{\string~}Trade}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Trade()}{\string~Trade()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::\texorpdfstring{$\sim$}{\string~}\+Trade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a19c60fd70617c5210153adbb7e8d4c53}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a19c60fd70617c5210153adbb7e8d4c53} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!add\_item@{add\_item}}
+\index{add\_item@{add\_item}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{add\_item()}{add\_item()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::add\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{inventory\+\_\+index,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a07657a6834864db669454c8bb1f69e5d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a07657a6834864db669454c8bb1f69e5d} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!add\_zeny@{add\_zeny}}
+\index{add\_zeny@{add\_zeny}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{add\_zeny()}{add\_zeny()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::add\+\_\+zeny (\begin{DoxyParamCaption}\item[{int}]{zeny }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a0bfbb95218d429267061f3297b82ee52}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a0bfbb95218d429267061f3297b82ee52} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!cancel@{cancel}}
+\index{cancel@{cancel}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af35a694246c794902a7779208bcd37bb}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af35a694246c794902a7779208bcd37bb} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!commit@{commit}}
+\index{commit@{commit}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::commit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_acbc1cbb64dca706538533d965f79b019}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_acbc1cbb64dca706538533d965f79b019} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a80391aeeaca5a23c181ed934a8a9870f}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a80391aeeaca5a23c181ed934a8a9870f} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!lock@{lock}}
+\index{lock@{lock}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af766b3f0d6b99480e73741b508525eb5}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af766b3f0d6b99480e73741b508525eb5} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!notify\_response@{notify\_response}}
+\index{notify\_response@{notify\_response}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{notify\_response()}{notify\_response()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::notify\+\_\+response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\+\_\+ack\+\_\+exchange\+\_\+item\+\_\+result\+\_\+type}}}]{result }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af766b3f0d6b99480e73741b508525eb5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a168b537057c34facb38705c2e36427eb}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a168b537057c34facb38705c2e36427eb} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!notify\_response@{notify\_response}}
+\index{notify\_response@{notify\_response}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{notify\_response()}{notify\_response()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::notify\+\_\+response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\+\_\+ack\+\_\+exchange\+\_\+item\+\_\+result\+\_\+type}}}]{result,  }\item[{int}]{char\+\_\+id,  }\item[{int}]{base\+\_\+level }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a168b537057c34facb38705c2e36427eb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a60f153ab26d83e374d7e7bf06c72c88d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a60f153ab26d83e374d7e7bf06c72c88d} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!request@{request}}
+\index{request@{request}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::request (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a1d8cb9705c6aaf61f96b8caa9764938a}\label{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a1d8cb9705c6aaf61f96b8caa9764938a} 
+\index{Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}!response@{response}}
+\index{response@{response}!Horizon::Zone::UI::Trade@{Horizon::Zone::UI::Trade}}
+\doxysubsubsection{\texorpdfstring{response()}{response()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Trade\+::response (\begin{DoxyParamCaption}\item[{int}]{result }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8hpp}{User\+Interface.\+hpp}}\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

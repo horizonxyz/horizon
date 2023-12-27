@@ -1,0 +1,308 @@
+\doxysection{Horizon\+::Zone\+::Combat\+Registry\+::Combat\+Operation Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+
+
+{\ttfamily \#include $<$Combat.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Combat\+Registry\+::Combat\+Operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Combat\+Registry\+::Combat\+Operation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46e}{combat\+\_\+operation\+\_\+type}} \{ \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea79abc3bed103479e19aea606031d4055}{COMBAT\+\_\+\+OPERATION\+\_\+\+ATTRIBUTE}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea55d1f35717f846f6a7420506536b362a}{COMBAT\+\_\+\+OPERATION\+\_\+\+APPEARANCE}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea9855009c171dc20867e6781831b2a88c}{COMBAT\+\_\+\+OPERATION\+\_\+\+STATUS}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46eae0589b4a7b2ad99da5e23f72fe9e292b}{COMBAT\+\_\+\+OPERATION\+\_\+\+SKILL\+\_\+\+EXECUTION}}
+, \newline
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea3f67f60b65330b9cd71177c557e77530}{COMBAT\+\_\+\+OPERATION\+\_\+\+MELEE\+\_\+\+EXECUTION}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea5c531a1b7b281c9acc21d4062a903e69}{COMBAT\+\_\+\+OPERATION\+\_\+\+SKILL\+\_\+\+RESULT}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea939a75818eeebd35311365f5146a6ad0}{COMBAT\+\_\+\+OPERATION\+\_\+\+MELEE\+\_\+\+RESULT}}
+, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea3f164939d1f086cc545ef8dada657a86}{COMBAT\+\_\+\+OPERATION\+\_\+\+MAX}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a589ce0cdb9a8b955dd2a2418c44af781}{Combat\+Operation}} ()=delete
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ae96dd24605301f645968043a7ee67286}{Combat\+Operation}} (const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}} \&right)=delete
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_af781138f8bddc6c11a56be5b6833acfc}{Combat\+Operation}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}} \&\&right)=delete
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a6cbc0074a788374e3d3dce2ff37284ce}{Combat\+Operation}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*}operand, int operation\+\_\+type, int operation\+\_\+sub\+\_\+type, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}} \texorpdfstring{$\ast$}{*}value)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aebfea0078f927951116bb295f7180cca}{Combat\+Operation}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*}operand, int operation\+\_\+type, int operation\+\_\+sub\+\_\+type)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a1635d38d1e6bbd9c93e600feee167685}{\texorpdfstring{$\sim$}{\string~}\+Combat\+Operation}} ()
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ab5db15fd372546680b0ffa25f1fa5522}{get\+\_\+operand}} () const
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aff789783f2084b9d151bc20dafe1f5cb}{get\+\_\+operation\+\_\+type}} () const
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a17bd7f1ac8cdd15cb39ab139f7b7c5af}{get\+\_\+operation\+\_\+sub\+\_\+type}} () const
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aa41508a60ee4b51f75be235b80b54d03}{get\+\_\+operation\+\_\+value}} () const
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_affdb07421951df9f7d4d8422bd91e459}{get\+\_\+priority}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aee45e8dd9278915cf867e7702d5087c1}{set\+\_\+priority}} (int priority)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a678893ee343ea5ce825d501410055f63}{execute}} () const =0
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ac29ac37c9e19fe7046af87ae5f66c35c}{operator=}} (const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}} \&operation)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a0420fea1225728f8e42ab2c75dfeb43b}{\+\_\+operand}} \{nullptr\}
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a008de905d6b66e06d3cc2890607c2f81}{\+\_\+operation\+\_\+type}} \{ 0 \}
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a607a8bfcb6a6cbbd55f878cf916a03ee}{\+\_\+operation\+\_\+sub\+\_\+type}} \{ 0 \}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a1681c3325a601c056db085e74b585344}{\+\_\+operation\+\_\+value}} \{nullptr\}
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_afb5fda90ba39a8e62ec7b2ee8c644c1c}{\+\_\+priority}} \{ 0 \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46e}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46e} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!combat\_operation\_type@{combat\_operation\_type}}
+\index{combat\_operation\_type@{combat\_operation\_type}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{combat\_operation\_type}{combat\_operation\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46e}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::combat\+\_\+operation\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_ATTRIBUTE@{COMBAT\_OPERATION\_ATTRIBUTE}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_ATTRIBUTE@{COMBAT\_OPERATION\_ATTRIBUTE}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea79abc3bed103479e19aea606031d4055}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea79abc3bed103479e19aea606031d4055} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+ATTRIBUTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_APPEARANCE@{COMBAT\_OPERATION\_APPEARANCE}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_APPEARANCE@{COMBAT\_OPERATION\_APPEARANCE}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea55d1f35717f846f6a7420506536b362a}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea55d1f35717f846f6a7420506536b362a} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+APPEARANCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_STATUS@{COMBAT\_OPERATION\_STATUS}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_STATUS@{COMBAT\_OPERATION\_STATUS}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea9855009c171dc20867e6781831b2a88c}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea9855009c171dc20867e6781831b2a88c} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_SKILL\_EXECUTION@{COMBAT\_OPERATION\_SKILL\_EXECUTION}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_SKILL\_EXECUTION@{COMBAT\_OPERATION\_SKILL\_EXECUTION}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46eae0589b4a7b2ad99da5e23f72fe9e292b}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46eae0589b4a7b2ad99da5e23f72fe9e292b} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+SKILL\+\_\+\+EXECUTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_MELEE\_EXECUTION@{COMBAT\_OPERATION\_MELEE\_EXECUTION}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_MELEE\_EXECUTION@{COMBAT\_OPERATION\_MELEE\_EXECUTION}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea3f67f60b65330b9cd71177c557e77530}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea3f67f60b65330b9cd71177c557e77530} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+MELEE\+\_\+\+EXECUTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_SKILL\_RESULT@{COMBAT\_OPERATION\_SKILL\_RESULT}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_SKILL\_RESULT@{COMBAT\_OPERATION\_SKILL\_RESULT}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea5c531a1b7b281c9acc21d4062a903e69}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea5c531a1b7b281c9acc21d4062a903e69} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+SKILL\+\_\+\+RESULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_MELEE\_RESULT@{COMBAT\_OPERATION\_MELEE\_RESULT}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_MELEE\_RESULT@{COMBAT\_OPERATION\_MELEE\_RESULT}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea939a75818eeebd35311365f5146a6ad0}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea939a75818eeebd35311365f5146a6ad0} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+MELEE\+\_\+\+RESULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBAT\_OPERATION\_MAX@{COMBAT\_OPERATION\_MAX}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!COMBAT\_OPERATION\_MAX@{COMBAT\_OPERATION\_MAX}}}\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea3f164939d1f086cc545ef8dada657a86}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aaa7e345098cf58cd59380af3aa7da46ea3f164939d1f086cc545ef8dada657a86} 
+COMBAT\+\_\+\+OPERATION\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a589ce0cdb9a8b955dd2a2418c44af781}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a589ce0cdb9a8b955dd2a2418c44af781} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!CombatOperation@{CombatOperation}}
+\index{CombatOperation@{CombatOperation}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{CombatOperation()}{CombatOperation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+Combat\+Operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ae96dd24605301f645968043a7ee67286}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ae96dd24605301f645968043a7ee67286} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!CombatOperation@{CombatOperation}}
+\index{CombatOperation@{CombatOperation}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{CombatOperation()}{CombatOperation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+Combat\+Operation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_af781138f8bddc6c11a56be5b6833acfc}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_af781138f8bddc6c11a56be5b6833acfc} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!CombatOperation@{CombatOperation}}
+\index{CombatOperation@{CombatOperation}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{CombatOperation()}{CombatOperation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+Combat\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}} \&\&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a6cbc0074a788374e3d3dce2ff37284ce}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a6cbc0074a788374e3d3dce2ff37284ce} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!CombatOperation@{CombatOperation}}
+\index{CombatOperation@{CombatOperation}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{CombatOperation()}{CombatOperation()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+Combat\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*}}]{operand,  }\item[{int}]{operation\+\_\+type,  }\item[{int}]{operation\+\_\+sub\+\_\+type,  }\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}} \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aebfea0078f927951116bb295f7180cca}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aebfea0078f927951116bb295f7180cca} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!CombatOperation@{CombatOperation}}
+\index{CombatOperation@{CombatOperation}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{CombatOperation()}{CombatOperation()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+Combat\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*}}]{operand,  }\item[{int}]{operation\+\_\+type,  }\item[{int}]{operation\+\_\+sub\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a1635d38d1e6bbd9c93e600feee167685}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a1635d38d1e6bbd9c93e600feee167685} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!````~CombatOperation@{\texorpdfstring{$\sim$}{\string~}CombatOperation}}
+\index{````~CombatOperation@{\texorpdfstring{$\sim$}{\string~}CombatOperation}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CombatOperation()}{\string~CombatOperation()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\texorpdfstring{$\sim$}{\string~}\+Combat\+Operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a678893ee343ea5ce825d501410055f63}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a678893ee343ea5ce825d501410055f63} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!execute@{execute}}
+\index{execute@{execute}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_attribute_operation_a831df65aa2253f0900a876fc08dd750f}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Attribute\+Operation}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_status_operation_a8cfb15f51468658126d641332e5386e9}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Status\+Operation}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_execution_operation_aa40f3e4ae7c1cf9447f7604836e5a46e}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Execution\+Operation}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_skill_result_operation_aa4b2d923a010149750fcfb8e00639684}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Skill\+Result\+Operation}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_execution_operation_ad15c73b711510cf4f6a2c1a41b8beb8e}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Execution\+Operation}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_melee_result_operation_ab1d7f82ee9d507036125ba27ef2edcd6}{Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Melee\+Result\+Operation}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a678893ee343ea5ce825d501410055f63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ab5db15fd372546680b0ffa25f1fa5522}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ab5db15fd372546680b0ffa25f1fa5522} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!get\_operand@{get\_operand}}
+\index{get\_operand@{get\_operand}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{get\_operand()}{get\_operand()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::get\+\_\+operand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ab5db15fd372546680b0ffa25f1fa5522_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a17bd7f1ac8cdd15cb39ab139f7b7c5af}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a17bd7f1ac8cdd15cb39ab139f7b7c5af} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!get\_operation\_sub\_type@{get\_operation\_sub\_type}}
+\index{get\_operation\_sub\_type@{get\_operation\_sub\_type}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{get\_operation\_sub\_type()}{get\_operation\_sub\_type()}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::get\+\_\+operation\+\_\+sub\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a17bd7f1ac8cdd15cb39ab139f7b7c5af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aff789783f2084b9d151bc20dafe1f5cb}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aff789783f2084b9d151bc20dafe1f5cb} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!get\_operation\_type@{get\_operation\_type}}
+\index{get\_operation\_type@{get\_operation\_type}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{get\_operation\_type()}{get\_operation\_type()}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::get\+\_\+operation\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aff789783f2084b9d151bc20dafe1f5cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aa41508a60ee4b51f75be235b80b54d03}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aa41508a60ee4b51f75be235b80b54d03} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!get\_operation\_value@{get\_operation\_value}}
+\index{get\_operation\_value@{get\_operation\_value}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{get\_operation\_value()}{get\_operation\_value()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::get\+\_\+operation\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aa41508a60ee4b51f75be235b80b54d03_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_affdb07421951df9f7d4d8422bd91e459}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_affdb07421951df9f7d4d8422bd91e459} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!get\_priority@{get\_priority}}
+\index{get\_priority@{get\_priority}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{get\_priority()}{get\_priority()}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::get\+\_\+priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_affdb07421951df9f7d4d8422bd91e459_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ac29ac37c9e19fe7046af87ae5f66c35c}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_ac29ac37c9e19fe7046af87ae5f66c35c} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!operator=@{operator=}}
+\index{operator=@{operator=}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation}{Combat\+Operation}} \&}]{operation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aee45e8dd9278915cf867e7702d5087c1}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_aee45e8dd9278915cf867e7702d5087c1} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!set\_priority@{set\_priority}}
+\index{set\_priority@{set\_priority}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{set\_priority()}{set\_priority()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::set\+\_\+priority (\begin{DoxyParamCaption}\item[{int}]{priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a0420fea1225728f8e42ab2c75dfeb43b}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a0420fea1225728f8e42ab2c75dfeb43b} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!\_operand@{\_operand}}
+\index{\_operand@{\_operand}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{\_operand}{\_operand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operand}{Combat\+Operand}}\texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+\_\+operand \{nullptr\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a607a8bfcb6a6cbbd55f878cf916a03ee}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a607a8bfcb6a6cbbd55f878cf916a03ee} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!\_operation\_sub\_type@{\_operation\_sub\_type}}
+\index{\_operation\_sub\_type@{\_operation\_sub\_type}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{\_operation\_sub\_type}{\_operation\_sub\_type}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+\_\+operation\+\_\+sub\+\_\+type \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a008de905d6b66e06d3cc2890607c2f81}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a008de905d6b66e06d3cc2890607c2f81} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!\_operation\_type@{\_operation\_type}}
+\index{\_operation\_type@{\_operation\_type}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{\_operation\_type}{\_operation\_type}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+\_\+operation\+\_\+type \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a1681c3325a601c056db085e74b585344}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_a1681c3325a601c056db085e74b585344} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!\_operation\_value@{\_operation\_value}}
+\index{\_operation\_value@{\_operation\_value}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{\_operation\_value}{\_operation\_value}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_value}{Combat\+Operation\+Value}}\texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+\_\+operation\+\_\+value \{nullptr\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_afb5fda90ba39a8e62ec7b2ee8c644c1c}\label{class_horizon_1_1_zone_1_1_combat_registry_1_1_combat_operation_afb5fda90ba39a8e62ec7b2ee8c644c1c} 
+\index{Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}!\_priority@{\_priority}}
+\index{\_priority@{\_priority}!Horizon::Zone::CombatRegistry::CombatOperation@{Horizon::Zone::CombatRegistry::CombatOperation}}
+\doxysubsubsection{\texorpdfstring{\_priority}{\_priority}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Combat\+Registry\+::\+Combat\+Operation\+::\+\_\+priority \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Battle/\mbox{\hyperlink{_combat_8hpp}{Combat.\+hpp}}\end{DoxyCompactItemize}

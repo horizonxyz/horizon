@@ -1,0 +1,314 @@
+\doxysection{Horizon\+::Char\+::Char\+Client\+Interface Class Reference}
+\hypertarget{class_horizon_1_1_char_1_1_char_client_interface}{}\label{class_horizon_1_1_char_1_1_char_client_interface}\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+
+
+{\ttfamily \#include $<$Char\+Client\+Interface.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Char\+::Char\+Client\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_horizon_1_1_char_1_1_char_client_interface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Char\+::Char\+Client\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_horizon_1_1_char_1_1_char_client_interface__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ac606bc46ae42ea12b62521dd0a1aa3a1}{Char\+Client\+Interface}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$ s)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a6860cda1bdde16c6bf3f4f08e6c0f9bf}{\texorpdfstring{$\sim$}{\string~}\+Char\+Client\+Interface}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ac108c2d173ae16f2b20906868d9da6a7}{authorize\+\_\+new\+\_\+connection}} (uint32\+\_\+t account\+\_\+id, uint32\+\_\+t auth\+\_\+code, uint32\+\_\+t account\+\_\+level, uint8\+\_\+t gender)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc}{make\+\_\+new\+\_\+character}} (std\+::string name, uint8\+\_\+t slot, uint32\+\_\+t hair\+\_\+color, uint32\+\_\+t hair\+\_\+style, uint32\+\_\+t job\+\_\+class, uint8\+\_\+t gender)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_afeb65a5184999c154b583bf885df4edd}{make\+\_\+new\+\_\+character}} (std\+::string name, uint8\+\_\+t slot, uint8\+\_\+t hair\+\_\+color, uint8\+\_\+t hair\+\_\+style)
+\item 
+\mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\+\_\+delete\+\_\+result}} \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aa5ec5c15f27e7c42adac1e78f71023d3}{character\+\_\+delete\+\_\+soft}} (uint32\+\_\+t character\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a5bdf03890d830e3bd80ea1aea523bdac}{character\+\_\+delete\+\_\+reserve}} (uint32\+\_\+t character\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_af9294349f35f48caf15e57f5cc24cd9f}{character\+\_\+delete\+\_\+email}} (uint32\+\_\+t character\+\_\+id, std\+::string email)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a4473872f787b9859c7d9d0ac9042d038}{character\+\_\+delete\+\_\+birthdate}} (uint32\+\_\+t character\+\_\+id, std\+::string birthdate)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ac4b765cd06e1362bbbed065dfa9627bb}{character\+\_\+delete\+\_\+cancel}} (uint32\+\_\+t character\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ab9d5972ed71bd4709ae92e170dc646e5}{pincode\+\_\+create}} (uint32\+\_\+t account\+\_\+id, char \texorpdfstring{$\ast$}{*}new\+\_\+pin)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_acf8fd0fb14924dcced74d6fa5039a1b1}{pincode\+\_\+change}} (uint32\+\_\+t account\+\_\+id, char \texorpdfstring{$\ast$}{*}old\+\_\+pin, char \texorpdfstring{$\ast$}{*}new\+\_\+pin)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_acfd928650fe09f9c32241e61fc5a61b9}{pincode\+\_\+verify}} (uint32\+\_\+t account\+\_\+id, char \texorpdfstring{$\ast$}{*}pincode)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a737fac73c1e328ec677a9d42451f7776}{pincode\+\_\+decrypt}} (uint32\+\_\+t seed, char \texorpdfstring{$\ast$}{*}input, char \texorpdfstring{$\ast$}{*}output)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_a833a2e9c93861bb75cf081dc97a1bcff}{select\+\_\+character}} (int slot)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_ae8028b924aa174cc44cb9b6fa095e2ea}{update\+\_\+session}} (int32\+\_\+t account\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_client_interface}{Horizon\+::\+Client\+Interface$<$ Char\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_client_interface_a1e6935e9a77ed92cfeab2e80901cfc3e}{Client\+Interface}} (std\+::shared\+\_\+ptr$<$ Char\+Session $>$ s)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_client_interface_ad0b923698f1de99691e0057e795216eb}{\texorpdfstring{$\sim$}{\string~}\+Client\+Interface}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Char\+Session $>$ \mbox{\hyperlink{class_horizon_1_1_client_interface_aa330eedfb3f8a807d7afc6a379121598}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_client_interface_a797aff8327964f44705aa480dad23cf0}{set\+\_\+session}} (std\+::shared\+\_\+ptr$<$ Char\+Session $>$ s)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_client_interface_aec7dabe9f787da3c187cc2caf21b88f4}{\+\_\+pincode\+\_\+confirm}} \mbox{[}\mbox{\hyperlink{_client_8hpp_a71844e1b09e82f47bc287fdee4338608}{MAX\+\_\+\+PINCODE\+\_\+\+STRING\+\_\+\+LENGTH}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_ac606bc46ae42ea12b62521dd0a1aa3a1}\label{class_horizon_1_1_char_1_1_char_client_interface_ac606bc46ae42ea12b62521dd0a1aa3a1} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!CharClientInterface@{CharClientInterface}}
+\index{CharClientInterface@{CharClientInterface}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{CharClientInterface()}{CharClientInterface()}}
+{\footnotesize\ttfamily Char\+Client\+Interface\+::\+Char\+Client\+Interface (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session}{Char\+Session}} $>$}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_a6860cda1bdde16c6bf3f4f08e6c0f9bf}\label{class_horizon_1_1_char_1_1_char_client_interface_a6860cda1bdde16c6bf3f4f08e6c0f9bf} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!````~CharClientInterface@{\texorpdfstring{$\sim$}{\string~}CharClientInterface}}
+\index{````~CharClientInterface@{\texorpdfstring{$\sim$}{\string~}CharClientInterface}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CharClientInterface()}{\string~CharClientInterface()}}
+{\footnotesize\ttfamily Char\+Client\+Interface\+::\texorpdfstring{$\sim$}{\string~}\+Char\+Client\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_ac108c2d173ae16f2b20906868d9da6a7}\label{class_horizon_1_1_char_1_1_char_client_interface_ac108c2d173ae16f2b20906868d9da6a7} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!authorize\_new\_connection@{authorize\_new\_connection}}
+\index{authorize\_new\_connection@{authorize\_new\_connection}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{authorize\_new\_connection()}{authorize\_new\_connection()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::authorize\+\_\+new\+\_\+connection (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{account\+\_\+id,  }\item[{uint32\+\_\+t}]{auth\+\_\+code,  }\item[{uint32\+\_\+t}]{account\+\_\+level,  }\item[{uint8\+\_\+t}]{gender }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_ac108c2d173ae16f2b20906868d9da6a7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_a4473872f787b9859c7d9d0ac9042d038}\label{class_horizon_1_1_char_1_1_char_client_interface_a4473872f787b9859c7d9d0ac9042d038} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!character\_delete\_birthdate@{character\_delete\_birthdate}}
+\index{character\_delete\_birthdate@{character\_delete\_birthdate}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_birthdate()}{character\_delete\_birthdate()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::character\+\_\+delete\+\_\+birthdate (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{character\+\_\+id,  }\item[{std\+::string}]{birthdate }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_a4473872f787b9859c7d9d0ac9042d038_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_ac4b765cd06e1362bbbed065dfa9627bb}\label{class_horizon_1_1_char_1_1_char_client_interface_ac4b765cd06e1362bbbed065dfa9627bb} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!character\_delete\_cancel@{character\_delete\_cancel}}
+\index{character\_delete\_cancel@{character\_delete\_cancel}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_cancel()}{character\_delete\_cancel()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::character\+\_\+delete\+\_\+cancel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{character\+\_\+id }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_ac4b765cd06e1362bbbed065dfa9627bb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_af9294349f35f48caf15e57f5cc24cd9f}\label{class_horizon_1_1_char_1_1_char_client_interface_af9294349f35f48caf15e57f5cc24cd9f} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!character\_delete\_email@{character\_delete\_email}}
+\index{character\_delete\_email@{character\_delete\_email}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_email()}{character\_delete\_email()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::character\+\_\+delete\+\_\+email (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{character\+\_\+id,  }\item[{std\+::string}]{email }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_af9294349f35f48caf15e57f5cc24cd9f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_a5bdf03890d830e3bd80ea1aea523bdac}\label{class_horizon_1_1_char_1_1_char_client_interface_a5bdf03890d830e3bd80ea1aea523bdac} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!character\_delete\_reserve@{character\_delete\_reserve}}
+\index{character\_delete\_reserve@{character\_delete\_reserve}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_reserve()}{character\_delete\_reserve()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::character\+\_\+delete\+\_\+reserve (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{character\+\_\+id }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_a5bdf03890d830e3bd80ea1aea523bdac_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_aa5ec5c15f27e7c42adac1e78f71023d3}\label{class_horizon_1_1_char_1_1_char_client_interface_aa5ec5c15f27e7c42adac1e78f71023d3} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!character\_delete\_soft@{character\_delete\_soft}}
+\index{character\_delete\_soft@{character\_delete\_soft}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{character\_delete\_soft()}{character\_delete\_soft()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_client_8hpp_a3f10adac01a04029333a305a847873fc}{character\+\_\+delete\+\_\+result}} Char\+Client\+Interface\+::character\+\_\+delete\+\_\+soft (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{character\+\_\+id }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_aa5ec5c15f27e7c42adac1e78f71023d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc}\label{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!make\_new\_character@{make\_new\_character}}
+\index{make\_new\_character@{make\_new\_character}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{make\_new\_character()}{make\_new\_character()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::make\+\_\+new\+\_\+character (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{uint8\+\_\+t}]{slot,  }\item[{uint32\+\_\+t}]{hair\+\_\+color,  }\item[{uint32\+\_\+t}]{hair\+\_\+style,  }\item[{uint32\+\_\+t}]{job\+\_\+class,  }\item[{uint8\+\_\+t}]{gender }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_aeb1250aa82e96a2ec95de82141d3bbbc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_afeb65a5184999c154b583bf885df4edd}\label{class_horizon_1_1_char_1_1_char_client_interface_afeb65a5184999c154b583bf885df4edd} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!make\_new\_character@{make\_new\_character}}
+\index{make\_new\_character@{make\_new\_character}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{make\_new\_character()}{make\_new\_character()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::make\+\_\+new\+\_\+character (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{uint8\+\_\+t}]{slot,  }\item[{uint8\+\_\+t}]{hair\+\_\+color,  }\item[{uint8\+\_\+t}]{hair\+\_\+style }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_afeb65a5184999c154b583bf885df4edd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_acf8fd0fb14924dcced74d6fa5039a1b1}\label{class_horizon_1_1_char_1_1_char_client_interface_acf8fd0fb14924dcced74d6fa5039a1b1} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!pincode\_change@{pincode\_change}}
+\index{pincode\_change@{pincode\_change}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{pincode\_change()}{pincode\_change()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::pincode\+\_\+change (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{account\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{old\+\_\+pin,  }\item[{char \texorpdfstring{$\ast$}{*}}]{new\+\_\+pin }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_acf8fd0fb14924dcced74d6fa5039a1b1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_ab9d5972ed71bd4709ae92e170dc646e5}\label{class_horizon_1_1_char_1_1_char_client_interface_ab9d5972ed71bd4709ae92e170dc646e5} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!pincode\_create@{pincode\_create}}
+\index{pincode\_create@{pincode\_create}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{pincode\_create()}{pincode\_create()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::pincode\+\_\+create (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{account\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{new\+\_\+pin }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_ab9d5972ed71bd4709ae92e170dc646e5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_a737fac73c1e328ec677a9d42451f7776}\label{class_horizon_1_1_char_1_1_char_client_interface_a737fac73c1e328ec677a9d42451f7776} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!pincode\_decrypt@{pincode\_decrypt}}
+\index{pincode\_decrypt@{pincode\_decrypt}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{pincode\_decrypt()}{pincode\_decrypt()}}
+{\footnotesize\ttfamily void Char\+Client\+Interface\+::pincode\+\_\+decrypt (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed,  }\item[{char \texorpdfstring{$\ast$}{*}}]{input,  }\item[{char \texorpdfstring{$\ast$}{*}}]{output }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_a737fac73c1e328ec677a9d42451f7776_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_acfd928650fe09f9c32241e61fc5a61b9}\label{class_horizon_1_1_char_1_1_char_client_interface_acfd928650fe09f9c32241e61fc5a61b9} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!pincode\_verify@{pincode\_verify}}
+\index{pincode\_verify@{pincode\_verify}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{pincode\_verify()}{pincode\_verify()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::pincode\+\_\+verify (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{account\+\_\+id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{pincode }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_acfd928650fe09f9c32241e61fc5a61b9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_a833a2e9c93861bb75cf081dc97a1bcff}\label{class_horizon_1_1_char_1_1_char_client_interface_a833a2e9c93861bb75cf081dc97a1bcff} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!select\_character@{select\_character}}
+\index{select\_character@{select\_character}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{select\_character()}{select\_character()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::select\+\_\+character (\begin{DoxyParamCaption}\item[{int}]{slot }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_a833a2e9c93861bb75cf081dc97a1bcff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_ae8028b924aa174cc44cb9b6fa095e2ea}\label{class_horizon_1_1_char_1_1_char_client_interface_ae8028b924aa174cc44cb9b6fa095e2ea} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!update\_session@{update\_session}}
+\index{update\_session@{update\_session}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{update\_session()}{update\_session()}}
+{\footnotesize\ttfamily bool Char\+Client\+Interface\+::update\+\_\+session (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{account\+\_\+id }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_char_1_1_char_client_interface_ae8028b924aa174cc44cb9b6fa095e2ea_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_char_1_1_char_client_interface_aec7dabe9f787da3c187cc2caf21b88f4}\label{class_horizon_1_1_char_1_1_char_client_interface_aec7dabe9f787da3c187cc2caf21b88f4} 
+\index{Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}!\_pincode\_confirm@{\_pincode\_confirm}}
+\index{\_pincode\_confirm@{\_pincode\_confirm}!Horizon::Char::CharClientInterface@{Horizon::Char::CharClientInterface}}
+\doxysubsubsection{\texorpdfstring{\_pincode\_confirm}{\_pincode\_confirm}}
+{\footnotesize\ttfamily char Horizon\+::\+Char\+::\+Char\+Client\+Interface\+::\+\_\+pincode\+\_\+confirm\mbox{[}\mbox{\hyperlink{_client_8hpp_a71844e1b09e82f47bc287fdee4338608}{MAX\+\_\+\+PINCODE\+\_\+\+STRING\+\_\+\+LENGTH}}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Char/\+Interface/\mbox{\hyperlink{_char_client_interface_8hpp}{Char\+Client\+Interface.\+hpp}}\item 
+src/\+Server/\+Char/\+Interface/\mbox{\hyperlink{_char_client_interface_8cpp}{Char\+Client\+Interface.\+cpp}}\end{DoxyCompactItemize}

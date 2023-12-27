@@ -1,0 +1,34 @@
+\doxysection{src/\+Core/\+Structures/\+Linked\+List/\+Reference\+List/\+Ref\+Manager.hpp File Reference}
+\hypertarget{_ref_manager_8hpp}{}\label{_ref_manager_8hpp}\index{src/Core/Structures/LinkedList/ReferenceList/RefManager.hpp@{src/Core/Structures/LinkedList/ReferenceList/RefManager.hpp}}
+{\ttfamily \#include "{}Core/\+Structures/\+Linked\+List/\+Head.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Structures/\+Linked\+List/\+Reference\+List/\+Reference.\+hpp"{}}\newline
+Include dependency graph for Ref\+Manager.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ref_manager_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ref_manager_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Horizon\+::\+Structures\+::\+Linked\+List\+::\+Ref\+Manager$<$ TO, FROM $>$}}
+\begin{DoxyCompactList}\small\item\em This class is used to manage a linked list of References. It is not intended to be used directly. It is used as a base class for other classes that need to manage a linked list. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_head}{Head} class is a friend of this class to allow it to access the private members of this class. The functionality of this class is identical to the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_element}{Element} class except that it is used to manage a linked list of References. The \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_ref_manager}{Ref\+Manager} can be used to manage a linked list of References to any type of object. The object type is specified by the TO template parameter. And the type of object that the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing is specified by the FROM template parameter. By default the TO and FROM template parameters are the same type. But they can be different types if the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference} is managing a base class of the object. The reference list is a doubly linked list. The list is circular so the first element\textquotesingle{}s previous element is the last element and the last element\textquotesingle{}s next element is the first element. The reason we link the TO and FROM objects together is so that we can easily invalidate all the References in the list when the FROM object is destroyed. By creating a dynamic responsibility chain between the Reference\+Manager and the \doxylink{class_horizon_1_1_structures_1_1_linked_list_1_1_reference}{Reference}, we can provide a simple and efficient way to manage a linked list of References and visit objects of a specific type by using the Reference\+Manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_structures}{Horizon\+::\+Structures}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_structures_1_1_linked_list}{Horizon\+::\+Structures\+::\+Linked\+List}}
+\end{DoxyCompactItemize}

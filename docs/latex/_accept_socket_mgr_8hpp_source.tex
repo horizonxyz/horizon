@@ -1,0 +1,140 @@
+\doxysection{Accept\+Socket\+Mgr.\+hpp}
+\hypertarget{_accept_socket_mgr_8hpp_source}{}\label{_accept_socket_mgr_8hpp_source}\index{src/Libraries/Networking/AcceptSocketMgr.hpp@{src/Libraries/Networking/AcceptSocketMgr.hpp}}
+\mbox{\hyperlink{_accept_socket_mgr_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_NETWORKING\_ACCEPTSOCKETMGR\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_NETWORKING\_ACCEPTSOCKETMGR\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_socket_mgr_8hpp}{Libraries/Networking/SocketMgr.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_thread_safe_queue_8hpp}{Core/Multithreading/ThreadSafeQueue.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }Networking}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_networking_1_1_async_acceptor}{AsyncAcceptor}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ SocketType>}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{AcceptSocketMgr}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{SocketMgr}}<SocketType>}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<uint32\_t,\ std::shared\_ptr<SocketType>>\ SocketMap;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{SocketMgr<SocketType>}}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr}{BaseSocketMgr}};}
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a97d56555ad204a4d46aab39a892663a0}{AcceptSocketMgr}}()\ \{\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_ae414346e419ca9bedb2efb168e7f9149}{\string~AcceptSocketMgr}}()\ \{\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a108c84774379aaabf01a1e56e3900dad}{start}}(boost::asio::io\_service\ \&io\_service,\ std::string\ \textcolor{keyword}{const}\ \&listen\_ip,\ uint16\_t\ port,\ uint32\_t\ threads\ =\ 1)}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \_acceptor\ =\ std::make\_unique<AsyncAcceptor>(io\_service,\ listen\_ip,\ port);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (boost::system::system\_error\ \textcolor{keyword}{const}\ \&error)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}Exception\ caught\ in\ AcceptSocketMgr::Start\ ("{}}\ <<\ listen\_ip.c\_str()\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{})\ "{}}\ <<\ error.what();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a77af28e7a7be0e3108bb6558db9973b3}{BaseSocketMgr::StartNetworkThreads}}(threads))\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error)\ <<\ \textcolor{stringliteral}{"{}AcceptSocketMgr\ failed\ to\ start\ network\ threads."{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \_acceptor-\/>set\_socket\_factory(std::bind(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_a02b5d07a1bd8370494db5f31cd1faa9a}{BaseSocketMgr::get\_new\_socket}},\ \textcolor{keyword}{this}));}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_acceptor-\/>async\_accept\_with\_callback(std::bind(\&\mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr}{AcceptSocketMgr<SocketType>::on\_socket\_open}},\ \textcolor{keyword}{this},\ std::placeholders::\_1,\ std::placeholders::\_2));}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Networking\ initialized,\ listening\ on\ "{}}\ <<\ listen\_ip\ <<\ \textcolor{stringliteral}{"{}@"{}}\ <<\ port\ <<\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(info)\ <<\ \textcolor{stringliteral}{"{}Maximum\ Network\ Threads:\ "{}}\ <<\ threads;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_aff019133b97488e13363be0cb8a6e81d}{stop\_network}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_acceptor-\/>is\_open())}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \_acceptor-\/>close();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_ad4dc29dac960bda7710852716369d2bf}{BaseSocketMgr::stop\_network}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \_socket\_map.clear();}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a3ec2e951f4dc54e382ae426a9092a2f0}{on\_socket\_open}}(std::shared\_ptr<tcp::socket>\ \textcolor{keyword}{const}\ \&socket,\ uint32\_t\ thread\_index)}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ std::shared\_ptr<SocketType>\ new\_socket\ =\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_socket_mgr_af926bc3f7cd3b66a66c1912a5e61ceb3}{BaseSocketMgr::on\_socket\_open}}(std::move(socket),\ thread\_index);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca}{set\_socket\_for\_management}}(new\_socket);}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a1057117f3e847f8ce9d8f91c14131c13}{set\_socket\_for\_removal}}(std::weak\_ptr<SocketType>\ sock)}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \_socket\_management\_queue.\mbox{\hyperlink{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c}{push}}(std::make\_pair(\textcolor{keyword}{false},\ sock.lock()));}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a724ef11cf256163fda719211b18cd4ca}{set\_socket\_for\_management}}(std::shared\_ptr<SocketType>\ sock)}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \_socket\_management\_queue.\mbox{\hyperlink{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c}{push}}(std::make\_pair(\textcolor{keyword}{true},\ sock));}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_accept_socket_mgr_a2fcbab62f1c12c08f1c9b9a709600fe5}{update\_socket\_sessions}}(uint32\_t\ time)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ std::shared\_ptr<std::pair<bool,\ std::shared\_ptr<SocketType>>>\ sock\_buf;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((sock\_buf\ =\ \_socket\_management\_queue.\mbox{\hyperlink{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a}{try\_pop}}()))\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ add\ =\ (*sock\_buf).first;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<SocketType>\ socket\ =\ (*sock\_buf).second;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ socket\_iter\ =\ \_socket\_map.find(socket-\/>get\_socket\_id());}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (socket\_iter\ !=\ \_socket\_map.end())\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!add)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_socket\_map.erase(socket\_iter);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (add)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_socket\_map.emplace(socket-\/>get\_socket\_id(),\ socket);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ sock\ :\ \_socket\_map)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sock.second-\/>get\_session()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sock.second-\/>update\_session(time);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00161\ \ \ \ \ std::unique\_ptr<AsyncAcceptor>\ \_acceptor;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ SocketMap\ \_socket\_map;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue<std::pair<bool,\ std::shared\_ptr<SocketType>}}>>\ \_socket\_management\_queue;}
+\DoxyCodeLine{00164\ \};}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_NETWORKING\_ACCEPTSOCKETMGR\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

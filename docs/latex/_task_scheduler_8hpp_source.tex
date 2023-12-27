@@ -1,0 +1,615 @@
+\doxysection{Task\+Scheduler.\+hpp}
+\hypertarget{_task_scheduler_8hpp_source}{}\label{_task_scheduler_8hpp_source}\index{src/Utility/TaskScheduler.hpp@{src/Utility/TaskScheduler.hpp}}
+\mbox{\hyperlink{_task_scheduler_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_UTILITY\_TASKSCHEDULER\_HPP}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_UTILITY\_TASKSCHEDULER\_HPP}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ std::chrono::microseconds\ \mbox{\hyperlink{_task_scheduler_8hpp_ab82fac8cfa62a15220a6a8f8b534cefb}{Microseconds}};}
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ std::chrono::milliseconds\ \mbox{\hyperlink{_task_scheduler_8hpp_a97e964e8eec5ef3902ff1168c66be9fe}{Milliseconds}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ std::chrono::seconds\ \mbox{\hyperlink{_task_scheduler_8hpp_a8ca6484aacd248d2e1cdb347772ccd4d}{Seconds}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ std::chrono::minutes\ \mbox{\hyperlink{_task_scheduler_8hpp_ab08558444dc09b5e8091a73a6cf6faf2}{Minutes}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ std::chrono::hours\ \mbox{\hyperlink{_task_scheduler_8hpp_a467cadb986c0b9ac51392a48021cb37a}{Hours}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_context}{TaskContext}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_context}{TaskContext}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Time\ definitions\ (use\ steady\ clock)}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{typedef}\ std::chrono::system\_clock\ clock\_t;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{typedef}\ clock\_t::time\_point\ timepoint\_t;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Duration\ calculator}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<clock\_t::duration()>\ duration\_calculator\_t;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Static\ time}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ duration\_calculator\_t\ MakeDurationCalculator(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [duration]}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ duration;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Random\ time\ between\ min\ and\ max}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ duration\_calculator\_t\ MakeDurationCalculator(}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::bind(RandomDurationBetween<\_RepLeft,\ \_PeriodLeft,\ \_RepRight,\ \_PeriodRight>,\ min,\ max);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ Task\ group\ type}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typedef}\ uint64\_t\ group\_t;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Task\ repeated\ type}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ repeated\_t;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ Task\ handle\ type}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void(\mbox{\hyperlink{class_task_context}{TaskContext}})>\ task\_handler\_t;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Predicate\ type}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<bool()>\ predicate\_t;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Success\ handle\ type}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void()>\ success\_t;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ C++11\ std::make\_unique\ workarround}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<T>\ MakeUnique(Args\&\&...\ args)}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::unique\_ptr<T>(\textcolor{keyword}{new}\ T(std::forward<Args>(args)...));}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{class\ }Task}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_context}{TaskContext}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ timepoint\_t\ \_end;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ duration\_calculator\_t\ \_duration\_calculator;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::unique\_ptr<group\_t>\ \_group;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ repeated\_t\ \_repeated;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ task\_handler\_t\ \_task;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ All\ Argument\ construct}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ Task(timepoint\_t\ \textcolor{keyword}{const}\&\ end,\ duration\_calculator\_t\&\&\ duration\_calculator,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ repeated\_t\ \textcolor{keyword}{const}\ repeated,\ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ :\ \_end(end),\ \_duration\_calculator(std::move(duration\_calculator)),}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \_group(\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}::MakeUnique<group\_t>(group)),}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \_repeated(repeated),\ \_task(task)\ \{\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Minimal\ Argument\ construct}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ Task(timepoint\_t\ \textcolor{keyword}{const}\&\ end,\ duration\_calculator\_t\&\&\ duration\_calculator,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ :\ \_end(end),\ \_duration\_calculator(std::move(duration\_calculator)),}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \_group(nullptr),\ \_repeated(0),\ \_task(task)\ \{\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ construct}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ Task(Task\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ construct}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Task(Task\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ Assign}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Task\&\ operator=\ (Task\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ Assign}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ Task\&\ operator=\ (Task\&\&\ right)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Order\ tasks\ by\ its\ end}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator<\ (Task\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_end\ <\ other.\_end;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator>\ (Task\ \textcolor{keyword}{const}\&\ other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_end\ >\ other.\_end;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compare\ tasks\ with\ its\ end}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==\ (Task\ \textcolor{keyword}{const}\&\ other)}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_end\ ==\ other.\_end;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Returns\ true\ if\ the\ task\ is\ in\ the\ given\ group}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ IsInGroup(group\_t\ \textcolor{keyword}{const}\ group)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00160\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_group\ \&\&\ (*\_group\ ==\ group);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{typedef}\ std::shared\_ptr<Task>\ TaskContainer;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{struct\ }Compare}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()\ (TaskContainer\ \textcolor{keyword}{const}\&\ left,\ TaskContainer\ \textcolor{keyword}{const}\&\ right)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00171\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*left.get())\ <\ (*right.get());}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00174\ \ \ \ \ \};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{class\ }TaskQueue}
+\DoxyCodeLine{00177\ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ std::multiset<TaskContainer,\ Compare>\ container;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pushes\ the\ task\ in\ the\ container}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Push(TaskContainer\&\&\ task);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ TaskContainer\ Pop();}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ TaskContainer\ \textcolor{keyword}{const}\&\ First()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Clear();}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveIf(std::function<\textcolor{keywordtype}{bool}(TaskContainer\ \textcolor{keyword}{const}\&)>\ \textcolor{keyword}{const}\&\ filter);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ModifyIf(std::function<\textcolor{keywordtype}{bool}(TaskContainer\ \textcolor{keyword}{const}\&)>\ \textcolor{keyword}{const}\&\ filter);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ std::size\_t\ Count(group\_t\ \textcolor{keyword}{const}\ \&group);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsEmpty()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00198\ \ \ \ \ \};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00201\ \ \ \ \ std::shared\_ptr<TaskScheduler>\ self\_reference;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00204\ \ \ \ \ timepoint\_t\ \_now;}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00207\ \ \ \ \ TaskQueue\ \_task\_holder;}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{typedef}\ std::queue<std::function<void()>>\ AsyncHolder;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00213\ \ \ \ \ AsyncHolder\ \_asyncHolder;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ predicate\_t\ \_predicate;}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ EmptyValidator()}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ EmptyCallback()}
+\DoxyCodeLine{00223\ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler_aa77a78c146ba0fd71d33c44f7f2825f2}{TaskScheduler}}()}
+\DoxyCodeLine{00228\ \ \ \ \ :\ self\_reference(this,\ [](\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ const*)\ \{\ \}),}
+\DoxyCodeLine{00229\ \ \ \ \ \_now(clock\_t::now()),\ \_predicate(EmptyValidator)\ \{\ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ P>}
+\DoxyCodeLine{00232\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler_a7a4238b1a25be51166721ab89ecae50d}{TaskScheduler}}(P\&\&\ predicate)}
+\DoxyCodeLine{00233\ \ \ \ \ :\ self\_reference(this,\ [](\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ const*)\ \{\ \}),}
+\DoxyCodeLine{00234\ \ \ \ \ \_now(clock\_t::now()),\ \_predicate(std::forward<P>(predicate))\ \{\ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler_abdd7c9c3694ee4784b511bd622c5d1c3}{TaskScheduler}}(\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler_a35107fe7973581813395a168025f4602}{TaskScheduler}}(\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a0d12cd444cf5319cc2a22fce53158cdc}{operator=\ }}(\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a0d12cd444cf5319cc2a22fce53158cdc}{operator=\ }}(\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ P>}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_af2bb90b6b81ab1cacd9ac56c3d7e11b2}{SetValidator}}(P\&\&\ predicate)}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \_predicate\ =\ std::forward<P>(predicate);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_abba53e9320119263b413086d3cf98b06}{ClearValidator}}();}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9}{Update}}(success\_t\ \textcolor{keyword}{const}\&\ callback\ =\ EmptyCallback);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00258\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a35c0891c7aded13c6ae7ecd2e6d480a9}{Update}}(\textcolor{keywordtype}{size\_t}\ \textcolor{keyword}{const}\ microseconds,\ success\_t\ \textcolor{keyword}{const}\&\ callback\ =\ EmptyCallback);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a3b2df04710a7d6a4d15e0776eb077920}{Update}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ difftime,}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ success\_t\ \textcolor{keyword}{const}\&\ callback\ =\ EmptyCallback)}
+\DoxyCodeLine{00265\ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \_now\ +=\ difftime;}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ Dispatch(callback);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00269\ \ \ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}{Async}}(std::function<\textcolor{keywordtype}{void}()>\ \textcolor{keyword}{const}\&\ callable);}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a0e0579d2a2397de5a79c756d5e59a830}{Schedule}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ time,}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00280\ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ScheduleAt(\_now,\ MakeDurationCalculator(time),\ task);}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_task_scheduler_a06f6d2a14cc7ed2ce4d9865e89c0c0bf}{Count}}(group\_t\ \textcolor{keyword}{const}\ \&group);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_aaed6d647d6b01913e9e1223d951cfeba}{Schedule}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ time,}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ group\_t\ \textcolor{keyword}{const}\ group,\ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00291\ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ScheduleAt(\_now,\ MakeDurationCalculator(time),\ group,\ task);}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_aa80bbdd8dc6723f5fb85ffdd327a3938}{Schedule}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max,\ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ScheduleAt(\_now,\ MakeDurationCalculator(min,\ max),\ task);}
+\DoxyCodeLine{00302\ \ \ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_abd4d216bb9cc2ab3ae1441f079b7d7d3}{Schedule}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max,\ group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00310\ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ScheduleAt(\_now,\ MakeDurationCalculator(min,\ max),\ group,\ task);}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00316\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a05da7a474b80d725c991dde9d24df4a4}{CancelAll}}();}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_aa4076cb693d644584f7475dd4f5f4b5d}{CancelGroup}}(group\_t\ \textcolor{keyword}{const}\ group);}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00324\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a16b63643c58023c8e22f75e5782af4bf}{CancelGroupsOf}}(std::vector<group\_t>\ \textcolor{keyword}{const}\&\ groups);}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00328\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a0254703c6e20f5214682fbad8f96dcb2}{DelayAll}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00329\ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \_task\_holder.ModifyIf([\&duration](TaskContainer\ \textcolor{keyword}{const}\&\ task)\ -\/>\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task-\/>\_end\ +=\ duration;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00340\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a710aca9b74eabea0163fcb2b321a39e3}{DelayAll}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00342\ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_scheduler_a0254703c6e20f5214682fbad8f96dcb2}{DelayAll}}(RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00348\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a91f6ef47e22b95b487999bbaaa303c82}{DelayGroup}}(group\_t\ \textcolor{keyword}{const}\ group,\ std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00349\ \ \ \ \ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \_task\_holder.ModifyIf([\&duration,\ group](TaskContainer\ \textcolor{keyword}{const}\&\ task)\ -\/>\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (task-\/>IsInGroup(group))}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task-\/>\_end\ +=\ duration;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ true;}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00361\ \ \ \ \ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_ae5d12183c090335b291217db5c670e6f}{DelayGroup}}(group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00368\ \ \ \ \ \{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_scheduler_a91f6ef47e22b95b487999bbaaa303c82}{DelayGroup}}(group,\ RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a05c6f74e1be5aa699988908b3151b901}{RescheduleAll}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00375\ \ \ \ \ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ RescheduleAt(\_now\ +\ duration);}
+\DoxyCodeLine{00377\ \ \ \ \ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_afd7ca0f744e8f492f18b42d186ec0723}{RescheduleAll}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00383\ \ \ \ \ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_scheduler_a05c6f74e1be5aa699988908b3151b901}{RescheduleAll}}(RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00385\ \ \ \ \ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00389\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_afabf8f475205d00eedb9c39d84af7aa3}{RescheduleGroup}}(group\_t\ \textcolor{keyword}{const}\ group,\ std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00390\ \ \ \ \ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ RescheduleAtWithPredicate(\_now\ +\ duration,\ [\&](TaskContainer\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ task-\/>IsInGroup(group);}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00395\ \ \ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00399\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ \mbox{\hyperlink{class_task_scheduler_a762836fbd5252c247acedbe4d740cf09}{RescheduleGroup}}(group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00402\ \ \ \ \ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_scheduler_afabf8f475205d00eedb9c39d84af7aa3}{RescheduleGroup}}(group,\ RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00404\ \ \ \ \ \}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00408\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ InsertTask(TaskContainer\ task);}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ ScheduleAt(timepoint\_t\ \textcolor{keyword}{const}\&\ end,}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration\_calculator\_t\&\&\ duration\_calculator,\ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00412\ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ InsertTask(TaskContainer(\textcolor{keyword}{new}\ Task(end\ +\ duration\_calculator(),\ std::move(duration\_calculator),\ task)));}
+\DoxyCodeLine{00414\ \ \ \ \ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00418\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ ScheduleAt(timepoint\_t\ \textcolor{keyword}{const}\&\ end,}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration\_calculator\_t\&\&\ duration\_calculator,}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ group\_t\ \textcolor{keyword}{const}\ group,\ task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00421\ \ \ \ \ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIXME\ Reuse\ std::unique\_ptr}}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ repeated\_t\ \textcolor{keyword}{const}\ DEFAULT\_REPEATED\ =\ 0;}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ InsertTask(TaskContainer(\textcolor{keyword}{new}\ Task(end\ +\ duration\_calculator(),\ std::move(duration\_calculator),\ group,\ DEFAULT\_REPEATED,\ task)));}
+\DoxyCodeLine{00425\ \ \ \ \ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ AlwaysTruePredicate(TaskContainer\ \textcolor{keyword}{const}\&)}
+\DoxyCodeLine{00428\ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00430\ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ RescheduleAt(timepoint\_t\ \textcolor{keyword}{const}\&\ end)}
+\DoxyCodeLine{00433\ \ \ \ \ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ RescheduleAtWithPredicate(end,\ AlwaysTruePredicate);}
+\DoxyCodeLine{00435\ \ \ \ \ \}}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00438\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ RescheduleAtWithPredicate(timepoint\_t\ \textcolor{keyword}{const}\&\ end,\ std::function<\textcolor{keywordtype}{bool}(TaskContainer\ \textcolor{keyword}{const}\&)>\ \textcolor{keyword}{const}\&\ predicate)}
+\DoxyCodeLine{00439\ \ \ \ \ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \_task\_holder.ModifyIf([\&](TaskContainer\ \textcolor{keyword}{const}\&\ task)\ -\/>\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (predicate(task))}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task-\/>\_end\ =\ end;}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00451\ \ \ \ \ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{comment}{//\ Returns\ a\ random\ duration\ between\ min\ and\ max}}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00455\ \ \ \ \ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keyword}{static}\ RandomDurationBetween(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00458\ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!min.count()\ \&\&\ !max.count())}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>(0);}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }normalized\_t\ =\ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ normalized\ =\ std::chrono::duration\_cast<normalized\_t>(max);}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (min.count()\ >\ normalized.count())}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}min\ >\ max"{}});}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::mutex\ \_lock;}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ guard(\_lock);}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Random\ engine}}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::random\_device\ rd;}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::mt19937\ rng(rd());}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<typename\ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>::rep>}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \_distribution(min.count(),\ normalized.count());}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distribute}}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>(\_distribution(rng));}
+\DoxyCodeLine{00480\ \ \ \ \ \}}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00483\ \ \ \ \ \textcolor{keywordtype}{void}\ Dispatch(success\_t\ \textcolor{keyword}{const}\&\ callback);}
+\DoxyCodeLine{00484\ \};}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_context}{TaskContext}}}
+\DoxyCodeLine{00487\ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}};}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00491\ \ \ \ \ TaskScheduler::TaskContainer\ \_task;}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00494\ \ \ \ \ std::weak\_ptr<TaskScheduler>\ \_owner;}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00497\ \ \ \ \ std::shared\_ptr<bool>\ \_consumed;}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00500\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ Dispatch(std::function<\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&(\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&)>\ \textcolor{keyword}{const}\&\ apply);}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{comment}{//\ Copy\ assign}}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{comment}{//\ TODO\ Make\ TaskContext\ move\ only}}
+\DoxyCodeLine{00504\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ operator=\ (\mbox{\hyperlink{class_task_context}{TaskContext}}\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00505\ \ \ \ \ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \_task\ =\ right.\_task;}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \_owner\ =\ right.\_owner;}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \_consumed\ =\ right.\_consumed;}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00510\ \ \ \ \ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{comment}{//\ Copy\ construct}}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{comment}{//\ TODO\ Make\ TaskContext\ move\ only}}
+\DoxyCodeLine{00514\ \ \ \ \ \mbox{\hyperlink{class_task_context_ac844b54773254e162987f61f6c37450d}{TaskContext}}(\mbox{\hyperlink{class_task_context}{TaskContext}}\ \textcolor{keyword}{const}\&\ right)}
+\DoxyCodeLine{00515\ \ \ \ \ :\ \_task(right.\_task),\ \_owner(right.\_owner),\ \_consumed(right.\_consumed)\ \{\ \}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{comment}{//\ Empty\ constructor}}
+\DoxyCodeLine{00519\ \ \ \ \ \mbox{\hyperlink{class_task_context_ac844b54773254e162987f61f6c37450d}{TaskContext}}()}
+\DoxyCodeLine{00520\ \ \ \ \ :\ \_task(),\ \_owner(),\ \_consumed(std::make\_shared<bool>(true))\ \{\ \}}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \textcolor{comment}{//\ Construct\ from\ task\ and\ owner}}
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_task_context_adca01e15214852dd23d3e404ee3e1f21}{TaskContext}}(TaskScheduler::TaskContainer\&\&\ task,\ std::weak\_ptr<TaskScheduler>\&\&\ owner)}
+\DoxyCodeLine{00524\ \ \ \ \ :\ \_task(task),\ \_owner(owner),\ \_consumed(std::make\_shared<bool>(false))\ \{\ \}}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{comment}{//\ Move\ construct}}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{class_task_context_a675ad7f58107afea81b2a24057675f83}{TaskContext}}(\mbox{\hyperlink{class_task_context}{TaskContext}}\&\&\ right)}
+\DoxyCodeLine{00528\ \ \ \ \ :\ \_task(std::move(right.\_task)),\ \_owner(std::move(right.\_owner)),}
+\DoxyCodeLine{00529\ \ \ \ \ \_consumed(std::move(right.\_consumed))\ \{\ \}}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{comment}{//\ Move\ assign}}
+\DoxyCodeLine{00532\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ operator=\ (\mbox{\hyperlink{class_task_context}{TaskContext}}\&\&\ right)}
+\DoxyCodeLine{00533\ \ \ \ \ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \_task\ =\ std::move(right.\_task);}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \_owner\ =\ std::move(right.\_owner);}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \_consumed\ =\ std::move(right.\_consumed);}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00538\ \ \ \ \ \}}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00541\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_task_context_af1d32693e6df24d76a82b1a367eacbe5}{IsExpired}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00544\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_task_context_ad7bd61567707321cad553befb28c1c6a}{IsInGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00547\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a7a93eec2b41f8456a0e939303b3ab085}{SetGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group);}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00550\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_ac3d6d215d8c605a1f724af35136bafe6}{ClearGroup}}();}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00553\ \ \ \ \ TaskScheduler::repeated\_t\ \mbox{\hyperlink{class_task_context_aab7910aa171d409afa3f074858eacd0e}{GetRepeatCounter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00560\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a380c596857dd0030414db5e8d28a3dda}{Repeat}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00561\ \ \ \ \ \{}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \_task-\/>\_duration\_calculator\ =\ TaskScheduler::MakeDurationCalculator(duration);}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809}{Repeat}}();}
+\DoxyCodeLine{00564\ \ \ \ \ \}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00569\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809}{Repeat}}()}
+\DoxyCodeLine{00570\ \ \ \ \ \{}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ ThrowOnConsumed();}
+\DoxyCodeLine{00572\ }
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ new\ duration,\ in-\/context\ timing\ and\ increment\ repeat\ counter}}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \_task-\/>\_end\ +=\ \_task-\/>\_duration\_calculator();}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \_task-\/>\_repeated\ +=\ 1;}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ (*\_consumed)\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch(std::bind(\&TaskScheduler::InsertTask,\ std::placeholders::\_1,\ std::cref(\_task)));}
+\DoxyCodeLine{00578\ \ \ \ \ \}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00585\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a686aee457802bc71b6560549c13239c9}{Repeat}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00587\ \ \ \ \ \{}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \_task-\/>\_duration\_calculator\ =\ TaskScheduler::MakeDurationCalculator(min,\ max);}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809}{Repeat}}();}
+\DoxyCodeLine{00590\ \ \ \ \ \}}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00594\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a8e152545e08d9a73522bf03b631148a2}{Async}}(std::function<\textcolor{keywordtype}{void}()>\ \textcolor{keyword}{const}\&\ callable);}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00601\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}{Schedule}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ time,}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TaskScheduler::task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00603\ \ \ \ \ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch([\&](\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ scheduler)\ -\/>\ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scheduler.ScheduleAt(\_task-\/>\_end,\ TaskScheduler::MakeDurationCalculator(time),\ task);}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00608\ \ \ \ \ \}}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00615\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_aaaba68c85b949416169136485130c6f8}{Schedule}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ time,}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group,\ TaskScheduler::task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00617\ \ \ \ \ \{}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch([\&](\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ scheduler)\ -\/>\ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scheduler.ScheduleAt(\_task-\/>\_end,\ TaskScheduler::MakeDurationCalculator(time),\ group,\ task);}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00622\ \ \ \ \ \}}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00628\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00629\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_aa7530c5f763cc34d0cdc83fcbaaafe37}{Schedule}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max,\ TaskScheduler::task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00631\ \ \ \ \ \{}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch([\&](\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ scheduler)\ -\/>\ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scheduler.ScheduleAt(\_task-\/>\_end,\ TaskScheduler::MakeDurationCalculator(min,\ max),\ task);}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00636\ \ \ \ \ \}}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00643\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a5c856d7c07fe8058ff53d35ccfb9b677}{Schedule}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max,\ TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TaskScheduler::task\_handler\_t\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00646\ \ \ \ \ \{}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch([\&](\mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&\ scheduler)\ -\/>\ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\&}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scheduler.ScheduleAt(\_task-\/>\_end,\ TaskScheduler::MakeDurationCalculator(min,\ max),\ group,\ task);}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00651\ \ \ \ \ \}}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00654\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a6aa85817c2bf7c7f2f868d4a0a9fdf98}{CancelAll}}();}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00657\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a95dca8900ebf6709d9c5535f39c7277f}{CancelGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group);}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00661\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_ac22c5c7e5ceac123c72918d77edb25b9}{CancelGroupsOf}}(std::vector<TaskScheduler::group\_t>\ \textcolor{keyword}{const}\&\ groups);}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00664\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00665\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_aad967f626ce88f95bb7e0610f92f83bb}{DelayAll}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00666\ \ \ \ \ \{}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch(std::bind(\&TaskScheduler::DelayAll<\_Rep,\ \_Period>,\ std::placeholders::\_1,\ duration));}
+\DoxyCodeLine{00668\ \ \ \ \ \}}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00671\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00672\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_abde6f85254b960e69355583af88123f1}{DelayAll}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00674\ \ \ \ \ \{}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_context_aad967f626ce88f95bb7e0610f92f83bb}{DelayAll}}(TaskScheduler::RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00676\ \ \ \ \ \}}
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00679\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00680\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_ab51c9108135f18eda88250cbdc1d4c9e}{DelayGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group,\ std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00681\ \ \ \ \ \{}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch(std::bind(\&TaskScheduler::DelayGroup<\_Rep,\ \_Period>,\ std::placeholders::\_1,\ group,\ duration));}
+\DoxyCodeLine{00683\ \ \ \ \ \}}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00686\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00687\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a701e13bfc09a6c1fc6e372c5310e2d80}{DelayGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00690\ \ \ \ \ \{}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_context_ab51c9108135f18eda88250cbdc1d4c9e}{DelayGroup}}(group,\ TaskScheduler::RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00692\ \ \ \ \ \}}
+\DoxyCodeLine{00693\ }
+\DoxyCodeLine{00695\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00696\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_ae60b6c797e99c416b84c5b9ae715b215}{RescheduleAll}}(std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00697\ \ \ \ \ \{}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch(std::bind(\&TaskScheduler::RescheduleAt,\ std::placeholders::\_1,\ \_task-\/>\_end\ +\ duration));}
+\DoxyCodeLine{00699\ \ \ \ \ \}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00702\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00703\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_ac35c49969cef74262137fce851a3a30d}{RescheduleAll}}(std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00705\ \ \ \ \ \{}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_context_ae60b6c797e99c416b84c5b9ae715b215}{RescheduleAll}}(TaskScheduler::RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00707\ \ \ \ \ \}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00710\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_Rep,\ \textcolor{keyword}{typename}\ \_Period>}
+\DoxyCodeLine{00711\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_add5a7d1e76bd0d0766c17920dadd5b61}{RescheduleGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group,\ std::chrono::duration<\_Rep,\ \_Period>\ \textcolor{keyword}{const}\&\ duration)}
+\DoxyCodeLine{00712\ \ \ \ \ \{}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Dispatch(std::bind(\&TaskScheduler::RescheduleAtWithPredicate,\ std::placeholders::\_1,\ \_task-\/>\_end\ +\ duration,}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&](TaskScheduler::TaskContainer\ \textcolor{keyword}{const}\&\ task)}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ task-\/>IsInGroup(group);}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00718\ \ \ \ \ \}}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00721\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ \_RepLeft,\ \textcolor{keyword}{typename}\ \_PeriodLeft,\ \textcolor{keyword}{typename}\ \_RepRight,\ \textcolor{keyword}{typename}\ \_PeriodRight>}
+\DoxyCodeLine{00722\ \ \ \ \ \mbox{\hyperlink{class_task_context}{TaskContext}}\&\ \mbox{\hyperlink{class_task_context_a0cac55da6d10d0a74c9f83689d028174}{RescheduleGroup}}(TaskScheduler::group\_t\ \textcolor{keyword}{const}\ group,}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepLeft,\ \_PeriodLeft>\ \textcolor{keyword}{const}\&\ min,}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\_RepRight,\ \_PeriodRight>\ \textcolor{keyword}{const}\&\ max)}
+\DoxyCodeLine{00725\ \ \ \ \ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_task_context_add5a7d1e76bd0d0766c17920dadd5b61}{RescheduleGroup}}(group,\ TaskScheduler::RandomDurationBetween(min,\ max));}
+\DoxyCodeLine{00727\ \ \ \ \ \}}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00731\ \ \ \ \ \textcolor{keywordtype}{void}\ ThrowOnConsumed()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00734\ \ \ \ \ \textcolor{keywordtype}{void}\ Invoke();}
+\DoxyCodeLine{00735\ \};}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CORE\_UTILITY\_TASKSCHEDULER\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,176 @@
+\doxysection{Appearance.\+hpp}
+\hypertarget{_appearance_8hpp_source}{}\label{_appearance_8hpp_source}\index{src/Server/Zone/Game/Entities/Traits/Appearance.hpp@{src/Server/Zone/Game/Entities/Traits/Appearance.hpp}}
+\mbox{\hyperlink{_appearance_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_TRAITS\_APPEARANCE\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_TRAITS\_APPEARANCE\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{Server/Zone/Definitions/EntityDefinitions.hpp}}"{}}\ \textcolor{comment}{//\ Linux}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }Entity;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }Traits}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_ad6fac084569ebc2fc0bcbbc271e4d1ad}{Appearance}}(std::weak\_ptr<Entity>\ entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6ee}{entity\_appearance\_type}}\ type,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ :\ \_entity(entity),\ \_type(type),\ \_id(id)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_a950d08c4c7c6e2cee0b3e72b85b83205}{\string~Appearance}}()\ \{\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_af35a0dca4fb3c6fc347460cec414bd6c}{set}}(uint32\_t\ \textcolor{keywordtype}{id})\ \{\ \_id\ =\ id;\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_aca051077d0ccd81f790a27f92b5ee571}{notify\_update}}();\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_a1ddf5c6eaf226adf0a3dfd246a4cc1f7}{get}}()\ \{\ \textcolor{keywordflow}{return}\ \_id;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_aca051077d0ccd81f790a27f92b5ee571}{notify\_update}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::shared\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance_aa495bcfe4276df6183e8abd4288353f9}{get\_entity}}()\ \{\ \textcolor{keywordflow}{return}\ \_entity.lock();\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::weak\_ptr<Entity>\ \_entity;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6ee}{entity\_appearance\_type}}\ \_type;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ uint32\_t\ \_id\{0\};}
+\DoxyCodeLine{00066\ \ \ \ \ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance}{BaseAppearance}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance_a03e873fcb1c71111044096e4bf56d951}{BaseAppearance}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eea1d2975acca7d8eb01e6e18cc46dd0177}{EAT\_BASE}},\ id)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_appearance_ad227742fc41b5dff8034cc78fa5d0f81}{\string~BaseAppearance}}()\ \{\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color}{HairColor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color_a19f65dce4f71cac9ef90c7c075b176f4}{HairColor}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eeaf01e557d19e32a3c12dda49cc63a3921}{EAT\_HAIR\_COLOR}},\ id)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_color_a45fef64ff8d6d6e96f7dfca4fd3c7689}{\string~HairColor}}()\ \{\ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color}{ClothColor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color_a5fd09037d225e198cdc45d295040cc33}{ClothColor}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eea65a37958fc4473a60f384d113b3bff2f}{EAT\_CLOTH\_COLOR}},\ id)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_cloth_color_a0b256549741a41110f7d7ffa776bd783}{\string~ClothColor}}()\ \{\ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite}{WeaponSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite_a185e64f0504e58c4886f74d4514f7dfa}{WeaponSprite}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eeac622fafb442e0bbe2466e94163a32612}{EAT\_WEAPON\_SPRITE}},\ id)}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_weapon_sprite_a5b4dfc307b7e0665651b118e64fd3e34}{\string~WeaponSprite}}()\ \{\ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite}{ShieldSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite_a1a8a1836a8d49c3a8010b9bcf21f5652}{ShieldSprite}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eeadb8084c4f2d33d990bc64566e6d98f2e}{EAT\_SHIELD\_SPRITE}},\ id)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_shield_sprite_addb85d5b0ce2ad04de440d697c70d5e6}{\string~ShieldSprite}}()\ \{\ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite}{RobeSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite_afcdcffbc448f87d591cc928e8d62443c}{RobeSprite}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eeac63254775e1781bdca80499de70e276c}{EAT\_ROBE\_SPRITE}},\ id)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_robe_sprite_a635a993415d3043093a5cdfd31b0ab8d}{\string~RobeSprite}}()\ \{\ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite}{HeadTopSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite_ad2151c44b721d46b715fc83580c00a01}{HeadTopSprite}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eeacc6e952d8148dc28ea5247131a2f40bb}{EAT\_HEAD\_TOP\_SPRITE}},\ id)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_top_sprite_a1ba6bbca385162cfb9aa1c4790311cb1}{\string~HeadTopSprite}}()\ \{\ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite}{HeadMidSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite_ad17e1d48146eccd33b63db783be9f83b}{HeadMidSprite}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eea78fa6ee4ad4b4e718fddd8eecc4a2aa7}{EAT\_HEAD\_MID\_SPRITE}},\ id)}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_mid_sprite_adc05b6934b5c33fe66331c9920b405d4}{\string~HeadMidSprite}}()\ \{\ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite}{HeadBottomSprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite_adc8b6042accfffec92f593c7bb5f18bf}{HeadBottomSprite}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eea5b4dac63e6b07eb15e1a1e594882a72d}{EAT\_HEAD\_BOTTOM\_SPRITE}},\ id)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_head_bottom_sprite_aad88319d6d2f5836a845aa6f5a47d142}{\string~HeadBottomSprite}}()\ \{\ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style}{HairStyle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style_a79e4d7a3ef703dc02fd21bc4e22c87f9}{HairStyle}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eeae0f5dd01813c42fffd5d31de59ee1151}{EAT\_HAIR\_STYLE}},\ id)}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_hair_style_aa4555ace583a1a879045a0b7769c7f8e}{\string~HairStyle}}()\ \{\ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style}{BodyStyle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style_a2569dca176a496d8c17609b56bc87517}{BodyStyle}}(std::weak\_ptr<Entity>\ entity,\ uint32\_t\ \textcolor{keywordtype}{id}\ =\ 0)}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_appearance}{Appearance}}(entity,\ \mbox{\hyperlink{_entity_definitions_8hpp_ad19a7f903c8cee05d602fb8197fab6eea469ff1a46282d4b2259cf92db02b9c60}{EAT\_BODY\_STYLE}},\ id)}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \{\ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_body_style_afc4afa7fd3cab43e8c410fe3b3a2a6ca}{\string~BodyStyle}}()\ \{\ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \};}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ \}}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_TRAITS\_APPEARANCE\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

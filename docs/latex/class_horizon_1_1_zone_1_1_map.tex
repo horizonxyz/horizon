@@ -1,0 +1,456 @@
+\doxysection{Horizon\+::Zone\+::Map Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_map}{}\label{class_horizon_1_1_zone_1_1_map}\index{Horizon::Zone::Map@{Horizon::Zone::Map}}
+
+
+The class \doxylink{class_horizon_1_1_zone_1_1_map}{Map} is the representation of a map in the game. It contains all the cells and the grid holder. It also contains the A\texorpdfstring{$\ast$}{*} pathfinder. It is the main class for the map. It is used to get the cells, the grid holder and the pathfinder, and perform a variety of operations on them.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Zone\+::Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_horizon_1_1_zone_1_1_map__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Zone\+::Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_horizon_1_1_zone_1_1_map__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a4d8b89fa9eb6299c8b8c6b16a7ebdffd}{Map}} (std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$, std\+::string const \&, uint16\+\_\+t, uint16\+\_\+t, std\+::vector$<$ uint8\+\_\+t $>$ const \&)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_aa403fbe09394ccf39747588f5168e3b2}{\texorpdfstring{$\sim$}{\string~}\+Map}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_ae5a823bf7f2b4a0eebaa9ccb48eaff07}{container}} ()
+\item 
+std\+::string const \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a506e3c8ecfbf007b8276a85dd03c8e7a}{get\+\_\+name}} ()
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_ab4f48b519337d34aa291e56b12d9ae91}{get\+\_\+area}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a5209c10f0897673c976a1ff06d1acefd}{get\+\_\+width}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a6fe7cf2c53cd6c7d0a09e7c42a0fed9f}{get\+\_\+height}} ()
+\item 
+\mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\+\_\+cell\+\_\+types}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a19f00706ddf545f95b029957b279b486}{get\+\_\+cell\+\_\+type}} (\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} coords)
+\item 
+\mbox{\hyperlink{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6}{Grid\+Holder\+Type}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a67c4666a9ac045ff9d9e55a43d343f83}{get\+Grid\+Holder}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a784daf3e98d004fc92b59087a6f985f5}{ensure\+\_\+grid\+\_\+for\+\_\+entity}} (T \texorpdfstring{$\ast$}{*}entity, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} coords)
+\item 
+{\footnotesize template$<$class T , class CONTAINER $>$ }\\void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a5f36e63cd5a9e34b1cf119cf99321638}{visit}} (int grid\+\_\+x, int grid\+\_\+y, \mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ T, CONTAINER $>$ \&visitor)
+\item 
+{\footnotesize template$<$class T , class CONTAINER $>$ }\\void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_acd3baa0c13f67fd1f8862478fa9dba04}{visit}} (\mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{Grid\+Coords}} const \&lower\+\_\+bound, \mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{Grid\+Coords}} const \&upper\+\_\+bound, \mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ T, CONTAINER $>$ \&visitor)
+\item 
+{\footnotesize template$<$class T , class CONTAINER $>$ }\\void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_af4c5f19443da609457a5a85b514232d8}{visit\+\_\+in\+\_\+range}} (\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} const \&map\+\_\+coords, \mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ T, CONTAINER $>$ \&visitor, uint16\+\_\+t range=\mbox{\hyperlink{_horizon_8hpp_af494d096e3e50bdb6ec83ecddd05198b}{MAX\+\_\+\+VIEW\+\_\+\+RANGE}})
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator}{AStar\+::\+Generator}} \& \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a8e89cf992b826c8e277ac7c2272cf02b}{get\+\_\+pathfinder}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a5b5f0b35804eb43cce609ebd4fd12453}{has\+\_\+obstruction\+\_\+at}} (int16\+\_\+t x, int16\+\_\+t y)
+\item 
+\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a8a4b45e9e66423476e14e80a96694cf3}{get\+\_\+random\+\_\+accessible\+\_\+coordinates}} ()
+\item 
+\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_ae7f7f8c2ac7bcfafc40f5671fd91e6bd}{get\+\_\+random\+\_\+coordinates\+\_\+in\+\_\+walkable\+\_\+range}} (uint16\+\_\+t x, uint16\+\_\+t y, int16\+\_\+t min, int16\+\_\+t max)
+\item 
+\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a6a94e2f200eb2c8da84703dc0ac1edf6}{get\+\_\+random\+\_\+coordinates\+\_\+in\+\_\+walkable\+\_\+area}} (uint16\+\_\+t x, uint16\+\_\+t y, int16\+\_\+t xs, int16\+\_\+t ys)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a9a5bcaac7dd163de351c00c8020fe317}{set\+\_\+user\+\_\+count}} (int32\+\_\+t count)
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_af1d85802c9387289a00013b7ef8e900c}{get\+\_\+user\+\_\+count}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_ac64eccc7ef6233e042d421ce34f8b16a}{add\+\_\+user\+\_\+count}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_af2729b486a96c542fd829bcf437f87ea}{sub\+\_\+user\+\_\+count}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a090ea6fee34d02dc376a74de493415a5}{add\+\_\+item\+\_\+drop}} (int item\+\_\+id, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} map\+\_\+coords, int amount, int identified)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a79b0613566906639f9e182cc1c4251a7}{add\+\_\+item\+\_\+drop}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$ entry, int32\+\_\+t amount, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} map\+\_\+coords)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_a3c4d67f1691061ddc114d9a53c6125e4}{Map\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class \doxylink{class_horizon_1_1_zone_1_1_map}{Map} is the representation of a map in the game. It contains all the cells and the grid holder. It also contains the A\texorpdfstring{$\ast$}{*} pathfinder. It is the main class for the map. It is used to get the cells, the grid holder and the pathfinder, and perform a variety of operations on them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+container} & The container that contains this map. \\
+\hline
+{\em \+\_\+name} & The name of the map. \\
+\hline
+{\em \+\_\+width} & The width of the map. \\
+\hline
+{\em \+\_\+height} & The height of the map. \\
+\hline
+{\em \+\_\+cells} & The cells of the map. \\
+\hline
+{\em \+\_\+gridholder} & The grid holder of the map. \\
+\hline
+{\em \+\_\+pathfinder} & The A\texorpdfstring{$\ast$}{*} pathfinder of the map. \\
+\hline
+{\em \+\_\+obstructions} & The obstructions of the map. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a4d8b89fa9eb6299c8b8c6b16a7ebdffd}\label{class_horizon_1_1_zone_1_1_map_a4d8b89fa9eb6299c8b8c6b16a7ebdffd} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!Map@{Map}}
+\index{Map@{Map}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$}]{container,  }\item[{std\+::string const \&}]{name,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ const \&}]{cells }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_aa403fbe09394ccf39747588f5168e3b2}\label{class_horizon_1_1_zone_1_1_map_aa403fbe09394ccf39747588f5168e3b2} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!````~Map@{\texorpdfstring{$\sim$}{\string~}Map}}
+\index{````~Map@{\texorpdfstring{$\sim$}{\string~}Map}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Map()}{\string~Map()}}
+{\footnotesize\ttfamily Map\+::\texorpdfstring{$\sim$}{\string~}\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a090ea6fee34d02dc376a74de493415a5}\label{class_horizon_1_1_zone_1_1_map_a090ea6fee34d02dc376a74de493415a5} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!add\_item\_drop@{add\_item\_drop}}
+\index{add\_item\_drop@{add\_item\_drop}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{add\_item\_drop()}{add\_item\_drop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Map\+::add\+\_\+item\+\_\+drop (\begin{DoxyParamCaption}\item[{int}]{item\+\_\+id,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{map\+\_\+coords,  }\item[{int}]{amount,  }\item[{int}]{identified }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_horizon_1_1_zone_1_1_map_a090ea6fee34d02dc376a74de493415a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a090ea6fee34d02dc376a74de493415a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a79b0613566906639f9e182cc1c4251a7}\label{class_horizon_1_1_zone_1_1_map_a79b0613566906639f9e182cc1c4251a7} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!add\_item\_drop@{add\_item\_drop}}
+\index{add\_item\_drop@{add\_item\_drop}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{add\_item\_drop()}{add\_item\_drop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Map\+::add\+\_\+item\+\_\+drop (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structitem__entry__data}{item\+\_\+entry\+\_\+data}} $>$}]{entry,  }\item[{int32\+\_\+t}]{amount,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{map\+\_\+coords }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_horizon_1_1_zone_1_1_map_a79b0613566906639f9e182cc1c4251a7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_ac64eccc7ef6233e042d421ce34f8b16a}\label{class_horizon_1_1_zone_1_1_map_ac64eccc7ef6233e042d421ce34f8b16a} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!add\_user\_count@{add\_user\_count}}
+\index{add\_user\_count@{add\_user\_count}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{add\_user\_count()}{add\_user\_count()}}
+{\footnotesize\ttfamily void Map\+::add\+\_\+user\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_horizon_1_1_zone_1_1_map_ac64eccc7ef6233e042d421ce34f8b16a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_ae5a823bf7f2b4a0eebaa9ccb48eaff07}\label{class_horizon_1_1_zone_1_1_map_ae5a823bf7f2b4a0eebaa9ccb48eaff07} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!container@{container}}
+\index{container@{container}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{container()}{container()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{Map\+Container\+Thread}} $>$ Horizon\+::\+Zone\+::\+Map\+::container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_ae5a823bf7f2b4a0eebaa9ccb48eaff07_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a784daf3e98d004fc92b59087a6f985f5}\label{class_horizon_1_1_zone_1_1_map_a784daf3e98d004fc92b59087a6f985f5} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!ensure\_grid\_for\_entity@{ensure\_grid\_for\_entity}}
+\index{ensure\_grid\_for\_entity@{ensure\_grid\_for\_entity}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{ensure\_grid\_for\_entity()}{ensure\_grid\_for\_entity()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Horizon\+::\+Zone\+::\+Map\+::ensure\+\_\+grid\+\_\+for\+\_\+entity (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{entity,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{coords }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a784daf3e98d004fc92b59087a6f985f5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_ab4f48b519337d34aa291e56b12d9ae91}\label{class_horizon_1_1_zone_1_1_map_ab4f48b519337d34aa291e56b12d9ae91} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_area@{get\_area}}
+\index{get\_area@{get\_area}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_area()}{get\_area()}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Map\+::get\+\_\+area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a19f00706ddf545f95b029957b279b486}\label{class_horizon_1_1_zone_1_1_map_a19f00706ddf545f95b029957b279b486} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_cell\_type@{get\_cell\_type}}
+\index{get\_cell\_type@{get\_cell\_type}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_cell\_type()}{get\_cell\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_map_definitions_8hpp_a2b0356ca8ba5b9040a05c34b4ec52c46}{map\+\_\+cell\+\_\+types}} Horizon\+::\+Zone\+::\+Map\+::get\+\_\+cell\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{coords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_horizon_1_1_zone_1_1_map_a19f00706ddf545f95b029957b279b486_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a6fe7cf2c53cd6c7d0a09e7c42a0fed9f}\label{class_horizon_1_1_zone_1_1_map_a6fe7cf2c53cd6c7d0a09e7c42a0fed9f} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily uint16\+\_\+t Horizon\+::\+Zone\+::\+Map\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a6fe7cf2c53cd6c7d0a09e7c42a0fed9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a506e3c8ecfbf007b8276a85dd03c8e7a}\label{class_horizon_1_1_zone_1_1_map_a506e3c8ecfbf007b8276a85dd03c8e7a} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily std\+::string const  \& Horizon\+::\+Zone\+::\+Map\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a506e3c8ecfbf007b8276a85dd03c8e7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a8e89cf992b826c8e277ac7c2272cf02b}\label{class_horizon_1_1_zone_1_1_map_a8e89cf992b826c8e277ac7c2272cf02b} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_pathfinder@{get\_pathfinder}}
+\index{get\_pathfinder@{get\_pathfinder}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_pathfinder()}{get\_pathfinder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator}{AStar\+::\+Generator}} \& Horizon\+::\+Zone\+::\+Map\+::get\+\_\+pathfinder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a8a4b45e9e66423476e14e80a96694cf3}\label{class_horizon_1_1_zone_1_1_map_a8a4b45e9e66423476e14e80a96694cf3} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_random\_accessible\_coordinates@{get\_random\_accessible\_coordinates}}
+\index{get\_random\_accessible\_coordinates@{get\_random\_accessible\_coordinates}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_random\_accessible\_coordinates()}{get\_random\_accessible\_coordinates()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} Horizon\+::\+Zone\+::\+Map\+::get\+\_\+random\+\_\+accessible\+\_\+coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a8a4b45e9e66423476e14e80a96694cf3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a6a94e2f200eb2c8da84703dc0ac1edf6}\label{class_horizon_1_1_zone_1_1_map_a6a94e2f200eb2c8da84703dc0ac1edf6} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_random\_coordinates\_in\_walkable\_area@{get\_random\_coordinates\_in\_walkable\_area}}
+\index{get\_random\_coordinates\_in\_walkable\_area@{get\_random\_coordinates\_in\_walkable\_area}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_random\_coordinates\_in\_walkable\_area()}{get\_random\_coordinates\_in\_walkable\_area()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} Horizon\+::\+Zone\+::\+Map\+::get\+\_\+random\+\_\+coordinates\+\_\+in\+\_\+walkable\+\_\+area (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{xs,  }\item[{int16\+\_\+t}]{ys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a6a94e2f200eb2c8da84703dc0ac1edf6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a6a94e2f200eb2c8da84703dc0ac1edf6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_ae7f7f8c2ac7bcfafc40f5671fd91e6bd}\label{class_horizon_1_1_zone_1_1_map_ae7f7f8c2ac7bcfafc40f5671fd91e6bd} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_random\_coordinates\_in\_walkable\_range@{get\_random\_coordinates\_in\_walkable\_range}}
+\index{get\_random\_coordinates\_in\_walkable\_range@{get\_random\_coordinates\_in\_walkable\_range}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_random\_coordinates\_in\_walkable\_range()}{get\_random\_coordinates\_in\_walkable\_range()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} Horizon\+::\+Zone\+::\+Map\+::get\+\_\+random\+\_\+coordinates\+\_\+in\+\_\+walkable\+\_\+range (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{int16\+\_\+t}]{min,  }\item[{int16\+\_\+t}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_ae7f7f8c2ac7bcfafc40f5671fd91e6bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_ae7f7f8c2ac7bcfafc40f5671fd91e6bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_af1d85802c9387289a00013b7ef8e900c}\label{class_horizon_1_1_zone_1_1_map_af1d85802c9387289a00013b7ef8e900c} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_user\_count@{get\_user\_count}}
+\index{get\_user\_count@{get\_user\_count}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_user\_count()}{get\_user\_count()}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Map\+::get\+\_\+user\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_horizon_1_1_zone_1_1_map_af1d85802c9387289a00013b7ef8e900c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a5209c10f0897673c976a1ff06d1acefd}\label{class_horizon_1_1_zone_1_1_map_a5209c10f0897673c976a1ff06d1acefd} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily uint16\+\_\+t Horizon\+::\+Zone\+::\+Map\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a5209c10f0897673c976a1ff06d1acefd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a67c4666a9ac045ff9d9e55a43d343f83}\label{class_horizon_1_1_zone_1_1_map_a67c4666a9ac045ff9d9e55a43d343f83} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!getGridHolder@{getGridHolder}}
+\index{getGridHolder@{getGridHolder}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{getGridHolder()}{getGridHolder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6}{Grid\+Holder\+Type}} \& Horizon\+::\+Zone\+::\+Map\+::get\+Grid\+Holder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a5b5f0b35804eb43cce609ebd4fd12453}\label{class_horizon_1_1_zone_1_1_map_a5b5f0b35804eb43cce609ebd4fd12453} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!has\_obstruction\_at@{has\_obstruction\_at}}
+\index{has\_obstruction\_at@{has\_obstruction\_at}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{has\_obstruction\_at()}{has\_obstruction\_at()}}
+{\footnotesize\ttfamily bool Map\+::has\+\_\+obstruction\+\_\+at (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_horizon_1_1_zone_1_1_map_a5b5f0b35804eb43cce609ebd4fd12453_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_a5b5f0b35804eb43cce609ebd4fd12453_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a9a5bcaac7dd163de351c00c8020fe317}\label{class_horizon_1_1_zone_1_1_map_a9a5bcaac7dd163de351c00c8020fe317} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!set\_user\_count@{set\_user\_count}}
+\index{set\_user\_count@{set\_user\_count}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{set\_user\_count()}{set\_user\_count()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Map\+::set\+\_\+user\+\_\+count (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_map_af2729b486a96c542fd829bcf437f87ea}\label{class_horizon_1_1_zone_1_1_map_af2729b486a96c542fd829bcf437f87ea} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!sub\_user\_count@{sub\_user\_count}}
+\index{sub\_user\_count@{sub\_user\_count}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{sub\_user\_count()}{sub\_user\_count()}}
+{\footnotesize\ttfamily void Map\+::sub\+\_\+user\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_horizon_1_1_zone_1_1_map_af2729b486a96c542fd829bcf437f87ea_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_acd3baa0c13f67fd1f8862478fa9dba04}\label{class_horizon_1_1_zone_1_1_map_acd3baa0c13f67fd1f8862478fa9dba04} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!visit@{visit}}
+\index{visit@{visit}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T , class CONTAINER $>$ \\
+void Horizon\+::\+Zone\+::\+Map\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{Grid\+Coords}} const \&}]{lower\+\_\+bound,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{Grid\+Coords}} const \&}]{upper\+\_\+bound,  }\item[{\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ T, CONTAINER $>$ \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_horizon_1_1_zone_1_1_map_acd3baa0c13f67fd1f8862478fa9dba04_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a5f36e63cd5a9e34b1cf119cf99321638}\label{class_horizon_1_1_zone_1_1_map_a5f36e63cd5a9e34b1cf119cf99321638} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!visit@{visit}}
+\index{visit@{visit}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T , class CONTAINER $>$ \\
+void Horizon\+::\+Zone\+::\+Map\+::visit (\begin{DoxyParamCaption}\item[{int}]{grid\+\_\+x,  }\item[{int}]{grid\+\_\+y,  }\item[{\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ T, CONTAINER $>$ \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_horizon_1_1_zone_1_1_map_a5f36e63cd5a9e34b1cf119cf99321638_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_af4c5f19443da609457a5a85b514232d8}\label{class_horizon_1_1_zone_1_1_map_af4c5f19443da609457a5a85b514232d8} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!visit\_in\_range@{visit\_in\_range}}
+\index{visit\_in\_range@{visit\_in\_range}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{visit\_in\_range()}{visit\_in\_range()}}
+{\footnotesize\ttfamily template$<$class T , class CONTAINER $>$ \\
+void Horizon\+::\+Zone\+::\+Map\+::visit\+\_\+in\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} const \&}]{map\+\_\+coords,  }\item[{\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ T, CONTAINER $>$ \&}]{visitor,  }\item[{uint16\+\_\+t}]{range = {\ttfamily \mbox{\hyperlink{_horizon_8hpp_af494d096e3e50bdb6ec83ecddd05198b}{MAX\+\_\+\+VIEW\+\_\+\+RANGE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_map_af4c5f19443da609457a5a85b514232d8_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_map_a3c4d67f1691061ddc114d9a53c6125e4}\label{class_horizon_1_1_zone_1_1_map_a3c4d67f1691061ddc114d9a53c6125e4} 
+\index{Horizon::Zone::Map@{Horizon::Zone::Map}!MapManager@{MapManager}}
+\index{MapManager@{MapManager}!Horizon::Zone::Map@{Horizon::Zone::Map}}
+\doxysubsubsection{\texorpdfstring{MapManager}{MapManager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager}{Map\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_map_8hpp}{Map.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Map/\mbox{\hyperlink{_map_8cpp}{Map.\+cpp}}\end{DoxyCompactItemize}

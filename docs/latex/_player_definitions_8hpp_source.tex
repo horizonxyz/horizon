@@ -1,0 +1,54 @@
+\doxysection{Player\+Definitions.\+hpp}
+\hypertarget{_player_definitions_8hpp_source}{}\label{_player_definitions_8hpp_source}\index{src/Server/Zone/Definitions/PlayerDefinitions.hpp@{src/Server/Zone/Definitions/PlayerDefinitions.hpp}}
+\mbox{\hyperlink{_player_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_PLAYER\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_PLAYER\_DEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8e}{player\_action\_type}}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea9d678f58bba4487c26e6f655cf304a8e}{PLAYER\_ACT\_ATTACK}},}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8eac90c44414cefe78899a822382ee5010e}{PLAYER\_ACT\_ITEM\_PICKUP}},}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea0035c9bdf7945e708076f9ffd3bff43b}{PLAYER\_ACT\_SIT}},}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea3ce410f730ce1edcc2155c7c9bbc9073}{PLAYER\_ACT\_STAND}},}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea5d7fc222dce679a6c9169c3b84a09f72}{PLAYER\_ACT\_ATTACK\_NOMOTION}},}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea97504680c2613eced73729472dbcb8e4}{PLAYER\_ACT\_SPLASH}},}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8eaf64d468f5d05e523dbbed2a62517aa21}{PLAYER\_ACT\_SKILL}},}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea376ca0e736d3a05f18cdc962f8a4fba1}{PLAYER\_ACT\_ATTACK\_REPEAT}},}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea67018e9391f5c667ab12a109c332efa1}{PLAYER\_ACT\_ATTACK\_MULTIPLE}},}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8eac8d1d91c2f2556b01e02ad40d5790448}{PLAYER\_ACT\_ATTACK\_MULTIPLE\_NOMOTION}},}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8eac2a90ce9d15cedb1f0696f56b52cd621}{PLAYER\_ACT\_ATTACK\_CRITICAL}},}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ea98915f62840c002234a056c950e14a15}{PLAYER\_ACT\_ATTACK\_LUCKY}},}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_player_definitions_8hpp_a2e9d0dbd47d8fffa87b4734e659b7e8ead171578c95b975822ea605363a73f029}{PLAYER\_ACT\_TOUCHSKILL}}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HORIZON\_ZONE\_GAME\_PLAYER\_DEFINITIONS\_HPP}}
+
+\end{DoxyCode}

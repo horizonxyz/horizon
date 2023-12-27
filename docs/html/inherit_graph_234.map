@@ -1,0 +1,77 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,564,137,607"/>
+<area shape="rect" id="Node000001" href="$class_horizon_1_1_networking_1_1_session.html" title=" " alt="" coords="201,5,361,64"/>
+<area shape="poly" id="edge1925_Node000000_Node000001" title=" " alt="" coords="73,548,87,441,109,300,124,230,141,165,161,112,183,74,198,60,202,64,187,78,166,114,146,167,129,231,115,301,92,442,79,549"/>
+<area shape="rect" id="Node000003" href="$class_horizon_1_1_networking_1_1_session.html" title=" " alt="" coords="201,256,361,315"/>
+<area shape="poly" id="edge1927_Node000000_Node000003" title=" " alt="" coords="77,548,89,499,110,440,141,379,160,350,183,325,199,312,202,316,187,329,165,354,146,382,115,442,95,501,82,549"/>
+<area shape="rect" id="Node000005" href="$class_horizon_1_1_networking_1_1_session.html" title=" " alt="" coords="200,656,362,715"/>
+<area shape="poly" id="edge1929_Node000000_Node000005" title=" " alt="" coords="127,612,186,642,210,653,208,658,184,646,125,617"/>
+<area shape="rect" id="Node000007" href="$class_horizon_1_1_networking_1_1_socket.html" title=" " alt="" coords="200,739,362,781"/>
+<area shape="poly" id="edge1931_Node000000_Node000007" title=" " alt="" coords="94,619,133,673,158,701,186,724,206,736,203,741,183,729,154,704,129,676,90,622"/>
+<area shape="rect" id="Node000009" href="$class_horizon_1_1_networking_1_1_socket.html" title=" " alt="" coords="200,805,362,848"/>
+<area shape="poly" id="edge1933_Node000000_Node000009" title=" " alt="" coords="85,620,100,660,121,706,150,752,186,791,203,802,200,807,183,795,146,755,117,708,95,662,80,622"/>
+<area shape="rect" id="Node000011" href="$class_horizon_1_1_networking_1_1_socket.html" title=" " alt="" coords="199,872,363,915"/>
+<area shape="poly" id="edge1935_Node000000_Node000011" title=" " alt="" coords="80,622,92,674,112,737,143,802,163,832,186,858,201,869,198,874,183,862,159,835,138,805,107,739,86,675,75,623"/>
+<area shape="rect" id="Node000013" href="$class_horizon_1_1_networking_1_1_session.html" title="A Session object that handles a single socket. Sockets are moved into the thread by SocketMgr,..." alt="" coords="200,939,362,997"/>
+<area shape="poly" id="edge1937_Node000000_Node000013" title=" " alt="" coords="77,622,86,686,105,766,119,809,137,850,159,890,187,925,202,938,198,942,183,929,155,893,132,853,114,811,99,768,81,687,72,623"/>
+<area shape="rect" id="Node000014" href="$class_horizon_1_1_networking_1_1_socket.html" title="A Socket object that handles a single connection. Sockets are moved into the thread by SocketMgr,..." alt="" coords="199,1021,363,1064"/>
+<area shape="poly" id="edge1938_Node000000_Node000014" title=" " alt="" coords="74,622,77,701,92,804,106,858,126,912,152,963,187,1007,200,1019,197,1023,183,1011,148,965,121,914,101,860,87,805,72,701,69,622"/>
+<area shape="rect" id="Node000015" href="$class_horizon_1_1_zone_1_1_entity.html" title=" " alt="" coords="209,472,353,499"/>
+<area shape="poly" id="edge1939_Node000000_Node000015" title=" " alt="" coords="110,552,145,529,184,508,215,497,217,502,186,513,148,534,113,557"/>
+<area shape="rect" id="Node000035" href="$class_horizon_1_1_zone_1_1_map.html" title="The class Map is the representation of a map in the game. It contains all the cells and the grid hold..." alt="" coords="214,88,348,115"/>
+<area shape="poly" id="edge1950_Node000000_Node000035" title=" " alt="" coords="74,548,87,450,110,323,125,260,142,204,161,157,183,125,197,114,212,107,214,112,199,119,187,128,166,159,147,205,130,262,115,324,93,450,79,549"/>
+<area shape="rect" id="Node000036" href="$class_horizon_1_1_zone_1_1_map_container_thread.html" title=" " alt="" coords="186,139,376,181"/>
+<area shape="poly" id="edge1951_Node000000_Node000036" title=" " alt="" coords="70,549,74,475,91,380,105,329,125,280,150,233,183,191,197,180,200,184,187,195,155,236,129,282,110,331,96,381,80,476,75,549"/>
+<area shape="rect" id="Node000037" href="$class_horizon_1_1_zone_1_1_skill_execution.html" title=" " alt="" coords="185,205,377,232"/>
+<area shape="poly" id="edge1952_Node000000_Node000037" title=" " alt="" coords="71,548,78,483,95,400,110,357,129,315,153,276,183,242,199,230,203,235,186,246,157,280,133,318,115,359,100,402,83,484,76,549"/>
+<area shape="rect" id="Node000002" href="$class_horizon_1_1_auth_1_1_auth_session.html" title=" " alt="" coords="428,96,610,123"/>
+<area shape="poly" id="edge1926_Node000001_Node000002" title=" " alt="" coords="377,65,426,81,465,93,464,98,424,87,375,71"/>
+<area shape="rect" id="Node000004" href="$class_horizon_1_1_char_1_1_char_session.html" title=" " alt="" coords="428,221,610,248"/>
+<area shape="poly" id="edge1928_Node000003_Node000004" title=" " alt="" coords="376,263,452,246,454,251,377,268"/>
+<area shape="rect" id="Node000006" href="$class_horizon_1_1_zone_1_1_zone_session.html" title=" " alt="" coords="427,856,611,883"/>
+<area shape="poly" id="edge1930_Node000005_Node000006" title=" " alt="" coords="375,721,379,725,391,740,398,756,403,786,408,815,415,828,427,842,444,853,441,858,423,846,410,831,403,816,397,787,393,757,386,743,375,728,372,725"/>
+<area shape="rect" id="Node000008" href="$class_horizon_1_1_auth_1_1_auth_socket.html" title=" " alt="" coords="431,907,607,933"/>
+<area shape="poly" id="edge1932_Node000007_Node000008" title=" " alt="" coords="376,789,379,791,390,804,397,818,403,844,409,869,416,881,427,893,445,904,442,908,423,897,411,884,404,871,398,845,392,820,386,807,375,795,372,793"/>
+<area shape="rect" id="Node000010" href="$class_horizon_1_1_char_1_1_char_socket.html" title=" " alt="" coords="431,957,607,984"/>
+<area shape="poly" id="edge1934_Node000009_Node000010" title=" " alt="" coords="374,854,379,858,396,880,403,902,410,923,427,943,446,955,443,959,423,947,405,926,398,904,391,883,375,862,371,859"/>
+<area shape="rect" id="Node000012" href="$class_horizon_1_1_zone_1_1_zone_socket.html" title="declared to avoid recursive inclusion of header files." alt="" coords="430,1008,608,1035"/>
+<area shape="poly" id="edge1936_Node000011_Node000012" title=" " alt="" coords="373,921,379,925,395,943,403,961,411,978,427,994,448,1005,445,1010,423,998,407,981,398,963,391,946,375,929,370,925"/>
+<area shape="rect" id="Node000016" href="$class_horizon_1_1_zone_1_1_entities_1_1_creature.html" title=" " alt="" coords="443,456,596,499"/>
+<area shape="poly" id="edge1940_Node000015_Node000016" title=" " alt="" coords="368,480,442,477,442,483,368,485"/>
+<area shape="rect" id="Node000027" href="$class_horizon_1_1_zone_1_1_entities_1_1_item.html" title=" " alt="" coords="443,272,596,315"/>
+<area shape="poly" id="edge1946_Node000015_Node000027" title=" " alt="" coords="365,466,375,458,388,442,395,427,399,394,403,360,410,342,423,325,440,312,444,316,427,329,414,345,408,361,404,394,400,428,393,445,379,462,368,470"/>
+<area shape="rect" id="Node000029" href="$class_horizon_1_1_zone_1_1_entities_1_1_n_p_c.html" title=" " alt="" coords="425,339,613,365"/>
+<area shape="poly" id="edge1947_Node000015_Node000029" title=" " alt="" coords="365,465,375,458,392,439,398,418,406,396,423,375,443,364,446,368,427,379,410,399,404,420,396,441,379,462,368,469"/>
+<area shape="rect" id="Node000031" href="$class_horizon_1_1_zone_1_1_entities_1_1_player.html" title=" " alt="" coords="443,523,596,565"/>
+<area shape="poly" id="edge1948_Node000015_Node000031" title=" " alt="" coords="353,500,443,523,441,528,352,505"/>
+<area shape="rect" id="Node000033" href="$class_horizon_1_1_zone_1_1_entities_1_1_skill.html" title=" " alt="" coords="443,589,596,632"/>
+<area shape="poly" id="edge1949_Node000015_Node000033" title=" " alt="" coords="368,502,379,509,395,525,404,542,412,559,427,575,445,587,442,591,423,579,407,562,399,545,391,528,375,513,366,507"/>
+<area shape="rect" id="Node000017" href="$class_horizon_1_1_zone_1_1_entities_1_1_elemental.html" title=" " alt="" coords="675,193,829,236"/>
+<area shape="poly" id="edge1941_Node000016_Node000017" title=" " alt="" coords="607,445,612,442,637,418,659,392,696,334,724,279,741,235,746,237,729,281,701,337,663,395,640,422,615,446,610,450"/>
+<area shape="rect" id="Node000019" href="$class_horizon_1_1_zone_1_1_entities_1_1_homunculus.html" title=" " alt="" coords="675,423,829,465"/>
+<area shape="poly" id="edge1942_Node000016_Node000019" title=" " alt="" coords="611,462,674,452,675,458,611,467"/>
+<area shape="rect" id="Node000021" href="$class_horizon_1_1_zone_1_1_entities_1_1_mercenary.html" title=" " alt="" coords="675,507,829,549"/>
+<area shape="poly" id="edge1943_Node000016_Node000021" title=" " alt="" coords="611,495,675,509,674,514,610,500"/>
+<area shape="rect" id="Node000023" href="$class_horizon_1_1_zone_1_1_entities_1_1_monster.html" title=" " alt="" coords="675,608,829,651"/>
+<area shape="poly" id="edge1944_Node000016_Node000023" title=" " alt="" coords="607,504,615,508,630,521,640,533,663,559,721,605,718,610,659,563,636,536,627,525,612,513,604,508"/>
+<area shape="rect" id="Node000025" href="$class_horizon_1_1_zone_1_1_entities_1_1_pet.html" title=" " alt="" coords="661,745,843,772"/>
+<area shape="poly" id="edge1945_Node000016_Node000025" title=" " alt="" coords="610,504,615,509,630,528,639,547,645,583,648,620,654,640,664,661,699,708,736,743,732,747,695,712,659,664,649,642,643,621,640,583,634,548,626,531,611,512,607,508"/>
+<area shape="rect" id="Node000018" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="434,29,605,72"/>
+<area shape="poly" id="edge1953_Node000018_Node000017" title=" " alt="" coords="606,77,615,82,651,108,684,137,735,191,731,195,680,141,648,112,612,86,604,82"/>
+<area shape="rect" id="Node000020" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="434,389,605,432"/>
+<area shape="poly" id="edge1954_Node000020_Node000019" title=" " alt="" coords="620,422,675,430,675,436,619,428"/>
+<area shape="rect" id="Node000028" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="195,339,367,381"/>
+<area shape="poly" id="edge1955_Node000028_Node000027" title=" " alt="" coords="373,331,441,312,443,317,375,337"/>
+<area shape="rect" id="Node000022" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="434,656,605,699"/>
+<area shape="poly" id="edge1956_Node000022_Node000021" title=" " alt="" coords="604,646,612,642,636,619,660,594,718,548,721,552,663,598,640,623,615,646,607,651"/>
+<area shape="rect" id="Node000024" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="434,723,605,765"/>
+<area shape="poly" id="edge1957_Node000024_Node000023" title=" " alt="" coords="599,714,612,708,668,679,716,649,719,653,671,683,615,713,602,719"/>
+<area shape="rect" id="Node000030" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="195,405,367,448"/>
+<area shape="poly" id="edge1958_Node000030_Node000029" title=" " alt="" coords="358,397,424,375,464,363,465,368,426,380,360,402"/>
+<area shape="rect" id="Node000026" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="434,789,605,832"/>
+<area shape="poly" id="edge1959_Node000026_Node000025" title=" " alt="" coords="619,786,688,770,690,775,620,791"/>
+<area shape="rect" id="Node000032" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="195,523,367,565"/>
+<area shape="poly" id="edge1960_Node000032_Node000031" title=" " alt="" coords="382,541,442,541,442,547,382,547"/>
+<area shape="rect" id="Node000034" href="$class_horizon_1_1_zone_1_1_grid_object.html" title=" " alt="" coords="195,589,367,632"/>
+<area shape="poly" id="edge1961_Node000034_Node000033" title=" " alt="" coords="382,608,442,608,442,613,382,613"/>
+</map>

@@ -1,0 +1,179 @@
+\doxysection{Attribute.\+hpp}
+\hypertarget{_attribute_8hpp_source}{}\label{_attribute_8hpp_source}\index{src/Server/Zone/Game/Entities/Traits/Attribute.hpp@{src/Server/Zone/Game/Entities/Traits/Attribute.hpp}}
+\mbox{\hyperlink{_attribute_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_TRAITS\_ATTRIBUTES\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_TRAITS\_ATTRIBUTES\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_definitions_8hpp}{Server/Zone/Definitions/EntityDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observable_status_8hpp}{Server/Zone/Game/Entities/Traits/ObservableStatus.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }Entity;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }Traits}
+\DoxyCodeLine{00043\ \{\ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance}{AttributeVariance}}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a2e6548fbfaa9b277406ca3156599485c}{AttributeVariance}}()\ \{\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a0ad8fc5119eba3308731eba4cc8d8e38}{\string~AttributeVariance}}()\ \{\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_aee435bd3d796fafdb5792b7255135e1a}{add\_min}}(int32\_t\ val)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a25d2462837ae33390bea47273d09c73f}{set\_min}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a634473ddf87ba2578d95dfe0b9d9f248}{\_min}}\ +\ val);\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a768383f241c5960ecba8402e8d6c70df}{sub\_min}}(int32\_t\ val)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a25d2462837ae33390bea47273d09c73f}{set\_min}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a634473ddf87ba2578d95dfe0b9d9f248}{\_min}}\ -\/\ std::min(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a634473ddf87ba2578d95dfe0b9d9f248}{\_min}},\ val));\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a2aca3bf8a9089f417b138b0629e488ab}{get\_min}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a634473ddf87ba2578d95dfe0b9d9f248}{\_min}};\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a25d2462837ae33390bea47273d09c73f}{set\_min}}(int32\_t\ val)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a634473ddf87ba2578d95dfe0b9d9f248}{\_min}}\ =\ val;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a0a25504f47567fc1daf96fb71a522307}{add\_max}}(int32\_t\ val)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a0025b0f4afea1bce1d7014ed7e78c05d}{set\_max}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_accf05ae66bf34aa0c1b7ee52c782ed9b}{\_max}}\ +\ val);\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a03af95d6d3c119de9ded8336d6b2032f}{sub\_max}}(int32\_t\ val)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a0025b0f4afea1bce1d7014ed7e78c05d}{set\_max}}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_accf05ae66bf34aa0c1b7ee52c782ed9b}{\_max}}\ -\/\ std::min(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_accf05ae66bf34aa0c1b7ee52c782ed9b}{\_max}},\ val));\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_ab9eb6f56ee8b83cca5557015737c9d10}{get\_max}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_accf05ae66bf34aa0c1b7ee52c782ed9b}{\_max}};\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a0025b0f4afea1bce1d7014ed7e78c05d}{set\_max}}(int32\_t\ val)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_accf05ae66bf34aa0c1b7ee52c782ed9b}{\_max}}\ =\ val;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_a634473ddf87ba2578d95dfe0b9d9f248}{\_min}}\{\ 0\ \},\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_variance_accf05ae66bf34aa0c1b7ee52c782ed9b}{\_max}}\{\ 0\ \};}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ada532e9eba44613064ad10e4c68f42dc}{Attribute}}(std::weak\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}},\ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\_point\_type}}\ st\_type,\ int32\_t\ base\ =\ 0,\ int32\_t\ equip\ =\ 0,\ int32\_t\ status\ =\ 0)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}{\_base\_val}}(base),\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac1cfacb8f806e8fa73777d74016d27bf}{\_status\_point\_type}}(st\_type),\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}{\_equip\_val}}(equip),\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}{\_status\_val}}(status),\ \_entity(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}})}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf4d6cb96d99f71c5bbcfd70bbac0da6}{\string~Attribute}}()\ \{\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::shared\_ptr<Entity>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}}()\ \{\ \textcolor{keywordflow}{return}\ \_entity.lock();\ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a7573b0bde677a0d06347f30bcc7d0a55}{entity}}(std::shared\_ptr<Entity>\ e)\ \{\ \_entity\ =\ e;\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{set\_base}}(int32\_t\ val)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}{\_base\_val}}\ =\ val;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff}{notify}}();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a34cceac921ff1a46551efa544feab135}{add\_base}}(int32\_t\ val);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a38be66d97bbf9d166f21a916b8a48004}{sub\_base}}(int32\_t\ val);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae7808f6bd4f7b3045fde3409b42351ac}{get\_base}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}{\_base\_val}};\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{set\_equip}}(int32\_t\ val)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}{\_equip\_val}}\ =\ val;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff}{notify}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae3fc501d68c89a50137bb13c5c29bf0a}{add\_equip}}(int32\_t\ val);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad0737fb8b9747c13b08d57bcaf8b3ff8}{sub\_equip}}(int32\_t\ val);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a77e3583b1537162dd2ef0e76179f71d7}{get\_equip}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}{\_equip\_val}};\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{set\_status}}(int32\_t\ val)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}{\_status\_val}}\ =\ val;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff}{notify}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aee1b0f7b84a446047bc8afd50cfa4d42}{add\_status}}(int32\_t\ val);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a55a02f8093e30e27017a6c0eabe228d6}{sub\_status}}(int32\_t\ val);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aac57bb27c5a05ef58db459ace0854939}{get\_status}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}{\_status\_val}};\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}{\_base\_val}}\ +\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}{\_equip\_val}}\ +\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}{\_status\_val}};\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ TT\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aaaa47911ceab41a204cbea9a53a063b6}{operator\ +\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ +\ right;\ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ TT\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a13b72f0b565d4f98a2c9841ad8b4a6b4}{operator\ /\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ /\ right;\ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ TT\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c9ab70725e04bf8297e99cfc30746fd}{operator\ *\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ *\ right;\ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ TT\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a621b524dd2364540f01384cfa717510e}{operator\ -\/\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ -\/\ right;\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aaaa47911ceab41a204cbea9a53a063b6}{operator\ +\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ +\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ ;\ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a13b72f0b565d4f98a2c9841ad8b4a6b4}{operator\ /\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ /\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c9ab70725e04bf8297e99cfc30746fd}{operator\ *\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ *\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a621b524dd2364540f01384cfa717510e}{operator\ -\/\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ -\/\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad81469af17b1ccbec17d5909379af58f}{operator\ ==\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ ==\ right;\ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae36f68d5138eb513b241f76f208711c7}{operator\ !=\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ !=\ right;\ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3b83995c03407fc0096b926ec35d5250}{operator\ >\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ >\ right;\ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aefb771a2da7160dff92f2ec0a546241c}{operator\ >=\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ >=\ right;\ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c88ef014619dba70f8cdc3bb2e75a1a}{operator\ <\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ <\ right;\ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ template\ <typename\ TT,\ typename\ std::enable\_if<std::is\_integral<TT>::value>::type*\ =\ \textcolor{keyword}{nullptr}>}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac32689108cc931792280e63a7748ae15}{operator\ <=\ }}(TT\ right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ <=\ right;\ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad81469af17b1ccbec17d5909379af58f}{operator\ ==\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ ==\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae36f68d5138eb513b241f76f208711c7}{operator\ !=\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ !=\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3b83995c03407fc0096b926ec35d5250}{operator\ >\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ >\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aefb771a2da7160dff92f2ec0a546241c}{operator\ >=\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ >=\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c88ef014619dba70f8cdc3bb2e75a1a}{operator\ <\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ <\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac32689108cc931792280e63a7748ae15}{operator\ <=\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \textcolor{keyword}{const}\ \&right)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}()\ <=\ right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}}();\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3f287e5df7da2559e6e896e605876338}{operator\ =\ }}(\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}}\ \&right)}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}}(right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}}());}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{set\_base}}(right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae7808f6bd4f7b3045fde3409b42351ac}{get\_base}}());}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{set\_equip}}(right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a77e3583b1537162dd2ef0e76179f71d7}{get\_equip}}());}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{set\_status}}(right.\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aac57bb27c5a05ef58db459ace0854939}{get\_status}}());}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff}{notify}}();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\_point\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af7928f71166bbf878762165a5c30c03c}{get\_type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac1cfacb8f806e8fa73777d74016d27bf}{\_status\_point\_type}};\ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\_point\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac1cfacb8f806e8fa73777d74016d27bf}{\_status\_point\_type}}\{\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ab23c94da262dd0f752e1b0704cf1e994}{status\_point\_type::STATUS\_POINT\_INVALID}}\};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}{\_base\_val}}\{0\};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}{\_equip\_val}}\{0\};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}{\_status\_val}}\{0\};}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ std::weak\_ptr<Entity>\ \_entity;}
+\DoxyCodeLine{00168\ \ \ \ \ \};}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_STATUS\_ATTRIBUTES\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

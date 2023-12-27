@@ -1,0 +1,81 @@
+\doxysection{Storage\+DB.\+hpp}
+\hypertarget{_storage_d_b_8hpp_source}{}\label{_storage_d_b_8hpp_source}\index{src/Server/Zone/Game/StaticDB/StorageDB.hpp@{src/Server/Zone/Game/StaticDB/StorageDB.hpp}}
+\mbox{\hyperlink{_storage_d_b_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{\ \ \ \ /***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_STATICDB\_STORAGEDB\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_STATICDB\_STORAGEDB\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data}{storage\_config\_data}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data_a802381b2b06694aaea86d96da07156dc}{storage\_id}}\{0\};}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data_a39f4131de284607ed77cb4b3f0f15c71}{name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00041\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data_ac8d4716b83e86cbf379ed24f7a7cf084}{capacity}}\{600\};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database}{StorageDatabase}}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a0c105c1ad0a18f197125413a505bf881}{StorageDatabase}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a3c9dc02f505ec7e4eb4325b5daa68365}{\string~StorageDatabase}}();}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database}{StorageDatabase}}\ *\mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a0f875abd9f3e18e96dfb5db1a306195d}{get\_instance}}()}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database}{StorageDatabase}}\ instance;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_ab9f71732b504f4f2a2992d43b46fe058}{load}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_ac59f1026cff73261b9541e81f0e1aa75}{load\_storage}}(sol::table\ \textcolor{keyword}{const}\ \&storage\_tbl);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a5807eeeccb7ac68894e33ad0b9ce5e35}{load\_internal}}(sol::object\ \textcolor{keyword}{const}\ \&key,\ sol::object\ \textcolor{keyword}{const}\ \&value);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ std::shared\_ptr<const\ storage\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a2a8e17627989a3cc01d6e9ed49755c2e}{get\_storage\_by\_id}}(int32\_t\ \textcolor{keywordtype}{id})\ \{\ \textcolor{keywordflow}{return}\ \_storage\_db.at(\textcolor{keywordtype}{id});\ \}}
+\DoxyCodeLine{00063\ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a9bfb1102f8258b6cddde8c5fa2a7e55a}{get\_storage\_db\_size}}()\ \{\ \textcolor{keywordflow}{return}\ \_storage\_db.size();\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ std::map<uint32\_t,\ std::shared\_ptr<const\ storage\_config\_data>>\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a101d5922fd5938c45c80b52dd1cfba10}{get\_storage\_db}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_storage\_db.get\_map();\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint32\_t,\ std::shared\_ptr<const\ storage\_config\_data>}}>\ \_storage\_db;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ StorageDB\ Horizon::Zone::StorageDatabase::get\_instance()}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_STATICDB\_STORAGEDB\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

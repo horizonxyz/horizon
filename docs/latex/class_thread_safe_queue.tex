@@ -1,0 +1,157 @@
+\doxysection{Thread\+Safe\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_thread_safe_queue}{}\label{class_thread_safe_queue}\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Thread\+Safe\+Queue.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_thread_safe_queue_a06e14823003cc9b5d9e9151380077f08}{Thread\+Safe\+Queue}} ()
+\item 
+\mbox{\hyperlink{class_thread_safe_queue_ac95d228574bdd715ef5b8e1b82607173}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Safe\+Queue}} ()
+\item 
+\mbox{\hyperlink{class_thread_safe_queue_a0f3f492104e38b019a5e1a74647cec39}{Thread\+Safe\+Queue}} (const \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}} \& \mbox{\hyperlink{class_thread_safe_queue_a8a98125a8d06536d27be9adc79b185e8}{operator=}} (const \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}} \&other)=delete
+\item 
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a}{try\+\_\+pop}} ()
+\item 
+void \mbox{\hyperlink{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c}{push}} (T \&\&new\+\_\+value)
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_thread_safe_queue_a47c7aae14cd81274e1935709db8b3a8f}{size}} ()
+\item 
+bool \mbox{\hyperlink{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}{empty}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3}{front}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_thread_safe_queue_a06e14823003cc9b5d9e9151380077f08}\label{class_thread_safe_queue_a06e14823003cc9b5d9e9151380077f08} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!ThreadSafeQueue@{ThreadSafeQueue}}
+\index{ThreadSafeQueue@{ThreadSafeQueue}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ThreadSafeQueue()}{ThreadSafeQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\mbox{\hyperlink{class_thread_safe_queue}{\+::\+Thread\+Safe\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_thread_safe_queue_ac95d228574bdd715ef5b8e1b82607173}\label{class_thread_safe_queue_ac95d228574bdd715ef5b8e1b82607173} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!````~ThreadSafeQueue@{\texorpdfstring{$\sim$}{\string~}ThreadSafeQueue}}
+\index{````~ThreadSafeQueue@{\texorpdfstring{$\sim$}{\string~}ThreadSafeQueue}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ThreadSafeQueue()}{\string~ThreadSafeQueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_thread_safe_queue_ac95d228574bdd715ef5b8e1b82607173_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_thread_safe_queue_a0f3f492104e38b019a5e1a74647cec39}\label{class_thread_safe_queue_a0f3f492104e38b019a5e1a74647cec39} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!ThreadSafeQueue@{ThreadSafeQueue}}
+\index{ThreadSafeQueue@{ThreadSafeQueue}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ThreadSafeQueue()}{ThreadSafeQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\mbox{\hyperlink{class_thread_safe_queue}{\+::\+Thread\+Safe\+Queue}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888}\label{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_thread_safe_queue_a48fb982ab815c6a3954b73a74e1e0888_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3}\label{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!front@{front}}
+\index{front@{front}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_thread_safe_queue_a878974c459d238d4d3a2d67bfdf64fa3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_thread_safe_queue_a8a98125a8d06536d27be9adc79b185e8}\label{class_thread_safe_queue_a8a98125a8d06536d27be9adc79b185e8} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}} \& \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c}\label{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!push@{push}}
+\index{push@{push}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&\&}]{new\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_thread_safe_queue_aa9e0c33821475fba4a948ea6e9d4d28c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_thread_safe_queue_a47c7aae14cd81274e1935709db8b3a8f}\label{class_thread_safe_queue_a47c7aae14cd81274e1935709db8b3a8f} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!size@{size}}
+\index{size@{size}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_thread_safe_queue_a47c7aae14cd81274e1935709db8b3a8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a}\label{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a} 
+\index{ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}!try\_pop@{try\_pop}}
+\index{try\_pop@{try\_pop}!ThreadSafeQueue$<$ T $>$@{ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{try\_pop()}{try\_pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ T $>$\+::try\+\_\+pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_thread_safe_queue_ae7cb1085993144248b8a5642443be81a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Multithreading/\mbox{\hyperlink{_thread_safe_queue_8hpp}{Thread\+Safe\+Queue.\+hpp}}\end{DoxyCompactItemize}

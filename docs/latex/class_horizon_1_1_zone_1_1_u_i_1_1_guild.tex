@@ -1,0 +1,221 @@
+\doxysection{Horizon\+::Zone\+::UI\+::Guild Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild}{}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild}\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+
+
+{\ttfamily \#include $<$User\+Interface.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a02f6bd3c6c0e062a119c71f61dadfad2}{Guild}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a34c574bfa81104e1976a960bea77310d}{\texorpdfstring{$\sim$}{\string~}\+Guild}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a1b17d6a63c5216a600a9da19a7cb733c}{create}} (int master\+\_\+id, std\+::string name)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a9e55ee7aea1c56001a5399ee35677ed8}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae064d2cf276a38835b204cb91de801d4}{request\+\_\+guild\+\_\+information}} (int type)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ab31ca5f519cd55cdabad5fe6f022d054}{notify\+\_\+menu\+\_\+interface}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac32c6d883e4f06f639c945528e6b689a}{change\+\_\+position\+\_\+info}} (std\+::vector$<$ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo}{s\+\_\+cz\+\_\+reg\+\_\+change\+\_\+guild\+\_\+positioninfo}} $>$ info)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aecb1a8b49a2505c1575e70c58da4760a}{change\+\_\+member\+\_\+positions}} (std\+::vector$<$ \mbox{\hyperlink{structs__cz__req__change__memberpos}{s\+\_\+cz\+\_\+req\+\_\+change\+\_\+memberpos}} $>$ members)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac3fed71d170d5fa13f479fcad51c8fee}{change\+\_\+emblem}} (std\+::string emblem)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a5a3af446e63f7af61efd6d3b7bc2f59c}{change\+\_\+notice}} (int guild\+\_\+id, std\+::string subject, std\+::string notice)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a00726ff763207d91dcb893edeee137be}{invite}} (int account\+\_\+id, int inviter\+\_\+account\+\_\+id, int inviter\+\_\+char\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8e62c779fb7041c04b3af876056d97ad}{invite}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a0675638464b49031e4cbb27411ae5322}{invite\+\_\+response}} (int guild\+\_\+id, \mbox{\hyperlink{_client_definitions_8hpp_a32ff1e79998d006e035a3ec9fe91181f}{cz\+\_\+join\+\_\+guild\+\_\+response\+\_\+type}} response)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae5c7fbfcbd54a46e31ab5dda67d5d4dc}{leave}} (int guild\+\_\+id, int account\+\_\+id, int char\+\_\+id, std\+::string reason)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8789ce70d22494e90f9aefb1ada2b62e}{expel}} (int guild\+\_\+id, int account\+\_\+id, int char\+\_\+id, std\+::string reason)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad150370825ec84d16066062c3daade7a}{send\+\_\+message}} (std\+::string message)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_afdbc7fec5fde3359c5031a22ef359b92}{invite\+\_\+ally}} (int account\+\_\+id, int inviter\+\_\+account\+\_\+id, int inviter\+\_\+char\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_addff00bd9db4b0e1b505aa8eae87b8e9}{invite\+\_\+ally\+\_\+response}} (int inviter\+\_\+account\+\_\+id, \mbox{\hyperlink{_client_definitions_8hpp_a804aaf9e848100ab25219476f2677673}{cz\+\_\+ally\+\_\+guild\+\_\+response\+\_\+type}} response)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a3236365b9ff6c928401b94591857281c}{remove\+\_\+related\+\_\+guild}} (int guild\+\_\+id, \mbox{\hyperlink{_client_definitions_8hpp_af19b7b89f7817a1810da6a2a612a0d18}{cz\+\_\+req\+\_\+delete\+\_\+related\+\_\+guild\+\_\+relation\+\_\+type}} relation)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aa95bcfd3cf2013bbfd3bfc8a0ebc2381}{add\+\_\+opposition}} (int account\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad954627d658505fdf788891bff1d5bc3}{disband}} (std\+::string key)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ace38321785480c6ea1a67a1841c39125}{notify\+\_\+expel\+\_\+member}} (std\+::string char\+\_\+name, std\+::string reason, std\+::string account\+\_\+name)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad323dedcfd19e12b8e0043f7a06adb4e}{notify\+\_\+expel\+\_\+member}} (std\+::string char\+\_\+name, std\+::string reason)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a02f6bd3c6c0e062a119c71f61dadfad2}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a02f6bd3c6c0e062a119c71f61dadfad2} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!Guild@{Guild}}
+\index{Guild@{Guild}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{Guild()}{Guild()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::\+Guild (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+\doxylink{class_horizon_1_1_zone_1_1_u_i_1_1_guild}{Guild} \Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a34c574bfa81104e1976a960bea77310d}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a34c574bfa81104e1976a960bea77310d} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!````~Guild@{\texorpdfstring{$\sim$}{\string~}Guild}}
+\index{````~Guild@{\texorpdfstring{$\sim$}{\string~}Guild}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Guild()}{\string~Guild()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::\texorpdfstring{$\sim$}{\string~}\+Guild (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aa95bcfd3cf2013bbfd3bfc8a0ebc2381}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aa95bcfd3cf2013bbfd3bfc8a0ebc2381} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!add\_opposition@{add\_opposition}}
+\index{add\_opposition@{add\_opposition}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{add\_opposition()}{add\_opposition()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::add\+\_\+opposition (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac3fed71d170d5fa13f479fcad51c8fee}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac3fed71d170d5fa13f479fcad51c8fee} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!change\_emblem@{change\_emblem}}
+\index{change\_emblem@{change\_emblem}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{change\_emblem()}{change\_emblem()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::change\+\_\+emblem (\begin{DoxyParamCaption}\item[{std\+::string}]{emblem }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aecb1a8b49a2505c1575e70c58da4760a}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aecb1a8b49a2505c1575e70c58da4760a} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!change\_member\_positions@{change\_member\_positions}}
+\index{change\_member\_positions@{change\_member\_positions}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{change\_member\_positions()}{change\_member\_positions()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::change\+\_\+member\+\_\+positions (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structs__cz__req__change__memberpos}{s\+\_\+cz\+\_\+req\+\_\+change\+\_\+memberpos}} $>$}]{members }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a5a3af446e63f7af61efd6d3b7bc2f59c}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a5a3af446e63f7af61efd6d3b7bc2f59c} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!change\_notice@{change\_notice}}
+\index{change\_notice@{change\_notice}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{change\_notice()}{change\_notice()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::change\+\_\+notice (\begin{DoxyParamCaption}\item[{int}]{guild\+\_\+id,  }\item[{std\+::string}]{subject,  }\item[{std\+::string}]{notice }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac32c6d883e4f06f639c945528e6b689a}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac32c6d883e4f06f639c945528e6b689a} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!change\_position\_info@{change\_position\_info}}
+\index{change\_position\_info@{change\_position\_info}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{change\_position\_info()}{change\_position\_info()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::change\+\_\+position\+\_\+info (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structs__cz__reg__change__guild__positioninfo}{s\+\_\+cz\+\_\+reg\+\_\+change\+\_\+guild\+\_\+positioninfo}} $>$}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a1b17d6a63c5216a600a9da19a7cb733c}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a1b17d6a63c5216a600a9da19a7cb733c} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!create@{create}}
+\index{create@{create}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::create (\begin{DoxyParamCaption}\item[{int}]{master\+\_\+id,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad954627d658505fdf788891bff1d5bc3}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad954627d658505fdf788891bff1d5bc3} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!disband@{disband}}
+\index{disband@{disband}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{disband()}{disband()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::disband (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8789ce70d22494e90f9aefb1ada2b62e}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8789ce70d22494e90f9aefb1ada2b62e} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!expel@{expel}}
+\index{expel@{expel}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{expel()}{expel()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::expel (\begin{DoxyParamCaption}\item[{int}]{guild\+\_\+id,  }\item[{int}]{account\+\_\+id,  }\item[{int}]{char\+\_\+id,  }\item[{std\+::string}]{reason }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a9e55ee7aea1c56001a5399ee35677ed8}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a9e55ee7aea1c56001a5399ee35677ed8} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!get\_session@{get\_session}}
+\index{get\_session@{get\_session}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{get\_session()}{get\_session()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{Zone\+Session}} $>$ Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::get\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a00726ff763207d91dcb893edeee137be}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a00726ff763207d91dcb893edeee137be} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!invite@{invite}}
+\index{invite@{invite}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{invite()}{invite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::invite (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id,  }\item[{int}]{inviter\+\_\+account\+\_\+id,  }\item[{int}]{inviter\+\_\+char\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8e62c779fb7041c04b3af876056d97ad}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8e62c779fb7041c04b3af876056d97ad} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!invite@{invite}}
+\index{invite@{invite}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{invite()}{invite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::invite (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_afdbc7fec5fde3359c5031a22ef359b92}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_afdbc7fec5fde3359c5031a22ef359b92} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!invite\_ally@{invite\_ally}}
+\index{invite\_ally@{invite\_ally}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{invite\_ally()}{invite\_ally()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::invite\+\_\+ally (\begin{DoxyParamCaption}\item[{int}]{account\+\_\+id,  }\item[{int}]{inviter\+\_\+account\+\_\+id,  }\item[{int}]{inviter\+\_\+char\+\_\+id }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_addff00bd9db4b0e1b505aa8eae87b8e9}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_addff00bd9db4b0e1b505aa8eae87b8e9} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!invite\_ally\_response@{invite\_ally\_response}}
+\index{invite\_ally\_response@{invite\_ally\_response}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{invite\_ally\_response()}{invite\_ally\_response()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::invite\+\_\+ally\+\_\+response (\begin{DoxyParamCaption}\item[{int}]{inviter\+\_\+account\+\_\+id,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_a804aaf9e848100ab25219476f2677673}{cz\+\_\+ally\+\_\+guild\+\_\+response\+\_\+type}}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a0675638464b49031e4cbb27411ae5322}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a0675638464b49031e4cbb27411ae5322} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!invite\_response@{invite\_response}}
+\index{invite\_response@{invite\_response}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{invite\_response()}{invite\_response()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::invite\+\_\+response (\begin{DoxyParamCaption}\item[{int}]{guild\+\_\+id,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_a32ff1e79998d006e035a3ec9fe91181f}{cz\+\_\+join\+\_\+guild\+\_\+response\+\_\+type}}}]{response }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae5c7fbfcbd54a46e31ab5dda67d5d4dc}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae5c7fbfcbd54a46e31ab5dda67d5d4dc} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!leave@{leave}}
+\index{leave@{leave}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{leave()}{leave()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::leave (\begin{DoxyParamCaption}\item[{int}]{guild\+\_\+id,  }\item[{int}]{account\+\_\+id,  }\item[{int}]{char\+\_\+id,  }\item[{std\+::string}]{reason }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad323dedcfd19e12b8e0043f7a06adb4e}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad323dedcfd19e12b8e0043f7a06adb4e} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!notify\_expel\_member@{notify\_expel\_member}}
+\index{notify\_expel\_member@{notify\_expel\_member}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{notify\_expel\_member()}{notify\_expel\_member()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::notify\+\_\+expel\+\_\+member (\begin{DoxyParamCaption}\item[{std\+::string}]{char\+\_\+name,  }\item[{std\+::string}]{reason }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad323dedcfd19e12b8e0043f7a06adb4e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ace38321785480c6ea1a67a1841c39125}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ace38321785480c6ea1a67a1841c39125} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!notify\_expel\_member@{notify\_expel\_member}}
+\index{notify\_expel\_member@{notify\_expel\_member}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{notify\_expel\_member()}{notify\_expel\_member()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::notify\+\_\+expel\+\_\+member (\begin{DoxyParamCaption}\item[{std\+::string}]{char\+\_\+name,  }\item[{std\+::string}]{reason,  }\item[{std\+::string}]{account\+\_\+name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ace38321785480c6ea1a67a1841c39125_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ab31ca5f519cd55cdabad5fe6f022d054}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ab31ca5f519cd55cdabad5fe6f022d054} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!notify\_menu\_interface@{notify\_menu\_interface}}
+\index{notify\_menu\_interface@{notify\_menu\_interface}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{notify\_menu\_interface()}{notify\_menu\_interface()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::notify\+\_\+menu\+\_\+interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a3236365b9ff6c928401b94591857281c}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a3236365b9ff6c928401b94591857281c} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!remove\_related\_guild@{remove\_related\_guild}}
+\index{remove\_related\_guild@{remove\_related\_guild}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{remove\_related\_guild()}{remove\_related\_guild()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::remove\+\_\+related\+\_\+guild (\begin{DoxyParamCaption}\item[{int}]{guild\+\_\+id,  }\item[{\mbox{\hyperlink{_client_definitions_8hpp_af19b7b89f7817a1810da6a2a612a0d18}{cz\+\_\+req\+\_\+delete\+\_\+related\+\_\+guild\+\_\+relation\+\_\+type}}}]{relation }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae064d2cf276a38835b204cb91de801d4}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae064d2cf276a38835b204cb91de801d4} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!request\_guild\_information@{request\_guild\_information}}
+\index{request\_guild\_information@{request\_guild\_information}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{request\_guild\_information()}{request\_guild\_information()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::request\+\_\+guild\+\_\+information (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad150370825ec84d16066062c3daade7a}\label{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad150370825ec84d16066062c3daade7a} 
+\index{Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}!send\_message@{send\_message}}
+\index{send\_message@{send\_message}!Horizon::Zone::UI::Guild@{Horizon::Zone::UI::Guild}}
+\doxysubsubsection{\texorpdfstring{send\_message()}{send\_message()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+UI\+::\+Guild\+::send\+\_\+message (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8hpp}{User\+Interface.\+hpp}}\item 
+src/\+Server/\+Zone/\+Interface/\+UI/\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

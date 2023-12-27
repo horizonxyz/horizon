@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['inventory_5faddition_5fresult_5ftype_0',['inventory_addition_result_type',['../namespace_horizon_1_1_zone_1_1_assets.html#a98ede96d36b72ae3baa0f1a5439c0bbf',1,'Horizon::Zone::Assets']]],
+  ['inventory_5fdeletion_5freason_5ftype_1',['inventory_deletion_reason_type',['../namespace_horizon_1_1_zone_1_1_assets.html#a53580b310a0ba44bbff66604e7f7eaee',1,'Horizon::Zone::Assets']]],
+  ['inventory_5fremoval_5fresult_5ftype_2',['inventory_removal_result_type',['../namespace_horizon_1_1_zone_1_1_assets.html#a6eddbcb8a220961503bc2e4ba6b79bd1',1,'Horizon::Zone::Assets']]],
+  ['inventory_5ftype_3',['inventory_type',['../_client_definitions_8hpp.html#a9740564b2fbfecad5d9e1d10c0c0b531',1,'ClientDefinitions.hpp']]],
+  ['item_5fammunition_5ftype_4',['item_ammunition_type',['../_item_definitions_8hpp.html#a0e7543eeeb76039ac4e4c02dc64a19c9',1,'ItemDefinitions.hpp']]],
+  ['item_5fbind_5ftype_5',['item_bind_type',['../_item_definitions_8hpp.html#a8079cdd73ba24afe73b40f1b2390af1f',1,'ItemDefinitions.hpp']]],
+  ['item_5fdeletion_5freason_5ftype_6',['item_deletion_reason_type',['../_item_definitions_8hpp.html#a5addb57e66f4de69f4bd59a6a94de15d',1,'ItemDefinitions.hpp']]],
+  ['item_5fequip_5flocation_5findex_7',['item_equip_location_index',['../_item_definitions_8hpp.html#a7c5b6f73d77adb40bdb00db50f0890b6',1,'ItemDefinitions.hpp']]],
+  ['item_5fequip_5flocation_5fmask_8',['item_equip_location_mask',['../_item_definitions_8hpp.html#aa3193068418e49996c89d8f864b732b8',1,'ItemDefinitions.hpp']]],
+  ['item_5fequip_5fresult_5ftype_9',['item_equip_result_type',['../_item_definitions_8hpp.html#a0bb6eac851fc0fdfb46bbece811a2730',1,'ItemDefinitions.hpp']]],
+  ['item_5fgender_5ftype_10',['item_gender_type',['../_item_definitions_8hpp.html#ad16d2689568ffdb5a4018025d4043532',1,'ItemDefinitions.hpp']]],
+  ['item_5finventory_5faddition_5fnotif_5ftype_11',['item_inventory_addition_notif_type',['../_item_definitions_8hpp.html#a0b4c0e00be5cf7e60f473ee937b203ca',1,'ItemDefinitions.hpp']]],
+  ['item_5flevel_5ftype_12',['item_level_type',['../_item_definitions_8hpp.html#ad796d167655de4d9592a0da99a8ea546',1,'ItemDefinitions.hpp']]],
+  ['item_5fstorage_5ftype_13',['item_storage_type',['../_item_definitions_8hpp.html#aa2fc243f3a7c1a49745417d8ef6546a3',1,'ItemDefinitions.hpp']]],
+  ['item_5ftransaction_5fmask_14',['item_transaction_mask',['../_item_definitions_8hpp.html#a46d4ece5500e10e8d916d34de7bda82c',1,'ItemDefinitions.hpp']]],
+  ['item_5ftype_15',['item_type',['../_item_definitions_8hpp.html#a67272bbbc2ad09f19b25c078128f059a',1,'ItemDefinitions.hpp']]],
+  ['item_5funequip_5fresult_5ftype_16',['item_unequip_result_type',['../_item_definitions_8hpp.html#abb55f35e10d1ee3d7104e0c3bf620599',1,'ItemDefinitions.hpp']]],
+  ['item_5fusage_5frestriction_5fmask_17',['item_usage_restriction_mask',['../_item_definitions_8hpp.html#abcf38cad4be456c94237520b4ee1dab5',1,'ItemDefinitions.hpp']]],
+  ['item_5fweapon_5ftype_18',['item_weapon_type',['../_item_definitions_8hpp.html#abb6fcea0129ac77f77f48e9f48d4e3fa',1,'ItemDefinitions.hpp']]],
+  ['item_5fweapon_5ftype_5fmask_19',['item_weapon_type_mask',['../_item_definitions_8hpp.html#aba673059b5c209682501405134e1e59a',1,'ItemDefinitions.hpp']]]
+];

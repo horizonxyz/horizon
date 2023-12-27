@@ -1,0 +1,150 @@
+\doxysection{Skill\+DB.\+hpp}
+\hypertarget{_skill_d_b_8hpp_source}{}\label{_skill_d_b_8hpp_source}\index{src/Server/Zone/Game/StaticDB/SkillDB.hpp@{src/Server/Zone/Game/StaticDB/SkillDB.hpp}}
+\mbox{\hyperlink{_skill_d_b_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{\ \ \ \ /***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_STATICDB\_SKILLDB\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_STATICDB\_SKILLDB\_HPP}}
+\DoxyCodeLine{00032\ \ \textcolor{comment}{//\ Linux}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_battle_definitions_8hpp}{Server/Zone/Definitions/BattleDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_definitions_8hpp}{Server/Zone/Definitions/ItemDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_skill_definitions_8hpp}{Server/Zone/Definitions/SkillDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database}{SkillDatabase}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ad61537ff5ae9b4206df66cc9d2679dae}{SkillDatabase}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a0eaaa64e2cad51de008be00511e642dc}{\string~SkillDatabase}}();}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database}{SkillDatabase}}\ *\mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a8cef4006a28ff6f53515e4487a197f6c}{get\_instance}}()}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database}{SkillDatabase}}\ instance;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a68ef8dd314883fb1f667ef54a8145b0b}{load}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aae0fcb8605e93de19e58e38daba768d8}{load\_internal\_skill\_db}}(sol::object\ \textcolor{keyword}{const}\ \&key,\ sol::object\ \textcolor{keyword}{const}\ \&value);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_afc7722f4add88b9bd7195ddb11b4aad8}{load\_internal\_skill\_tree}}(sol::object\ \textcolor{keyword}{const}\ \&key,\ sol::object\ \textcolor{keyword}{const}\ \&value);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a8c96fc053e835bf1a865b3846a720cfd}{parse\_range}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a8ecdde6544892f816135a0ba1f74718a}{parse\_hit}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ab10a7972acf44f9b5be001a1a190baa1}{parse\_skill\_type}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3b49afadd09fe53e765ea67eecbe923c}{parse\_skill\_info}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ac4d8fd34b1544df93f83dc0a5594509e}{parse\_attack\_type}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3cb218d51a53a1cb96112907994e0325}{parse\_element}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ad6eb9a18f917730d1dbcfd240c365d21}{parse\_damage\_type}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ad3c12ea843411132898e68b543630907}{parse\_splash\_range}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aa34908b39418cf0c867f084d060cfe7f}{parse\_number\_of\_hits}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a023fc29bd5e488c525202522f5c0ab2c}{parse\_interrupt\_cast}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6423c3cfb9a0c1638abb3b17491e4184}{parse\_cast\_defense\_rate}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a297c19c61be35786c69e1947f168512b}{parse\_max\_skill\_instances}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ae5d4f1e0ff218c297ca2e0971f6b8fde}{parse\_knock\_back\_tiles}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a1c815c43dbb8bd62f63da32e4a085c24}{parse\_cast\_time}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a533a269040a10d119a459368e47270a9}{parse\_after\_cast\_act\_delay}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a50d7f0691611b12adf6e75f1bda18386}{parse\_after\_cast\_walk\_delay}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_acb4bd2ae90b859509dcef03c07dafbca}{parse\_skill\_data1}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a2e7a212e8f401a0662373bee618336fe}{parse\_skill\_data2}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aca420a88fe1d8637d8e1bac60f3d90b8}{parse\_cooldown}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6d61890cb821171d8cb0fe683ddfe36d}{parse\_fixed\_cast\_time}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3adc56d5ed34e7863d24e36e73e5e56b}{parse\_cast\_time\_options}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a4831f64125a8fc8d250d9e3936ed6447}{parse\_skill\_delay\_options}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a589e172e84dbf586105349c0272bd1a0}{parse\_requirements}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a2195c5f92d5de00ba3b54872912dbf66}{parse\_req\_hp\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a23d623cc946665af0fca85e30867950f}{parse\_req\_sp\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a1e8e3ef1be129a6ed99dbc4f628546e1}{parse\_req\_hp\_rate\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_af5cee31266a69833cb7e58109a7e08ec}{parse\_req\_sp\_rate\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_afeb01922425add34bf6c91bcd4b7e398}{parse\_req\_max\_hp\_trigger}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_adfa63829ba1ff359c4ee1dc82ac91d7e}{parse\_req\_max\_sp\_trigger}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ae8c4be8e6f17da9831158b845b72bceb}{parse\_req\_zeny\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a9379950095ce28369c79a046cf6502f9}{parse\_req\_weapon\_types}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6425e11fa99932b5c95f1ca50828c2e3}{parse\_req\_ammunition\_type}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a9b5c6f4696b1f955cb76cb9f0efd08cd}{parse\_req\_ammunition\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a404312cdaa597cef8fe05248b51a4e63}{parse\_req\_state}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a773eb913ac9fdc61e973764be703eebb}{parse\_req\_spirit\_sphere\_cost}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a2fd1229a2214e7694fba805f196a551e}{parse\_req\_items}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data,\ \textcolor{keywordtype}{bool}\ equips);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a631b2037d738599016c5be7396af5e99}{parse\_placement}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a82b36aa1ae60c584649ee51fd0346c1b}{parse\_placement\_id}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_ae7ed94e46b10d21c21099d2790912887}{parse\_placement\_layout}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a784058c430244d288e022d9b72401f82}{parse\_placement\_range}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a3f6a37b22657623f2fc9ce96a44b34d0}{parse\_placement\_interval}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a00fd3db05ea243688b7f6bef8ac53622}{parse\_placement\_target}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_af6eb62b9ed226b6aebb94d979ca242eb}{parse\_placement\_flag}}(sol::table\ \textcolor{keyword}{const}\ \&table,\ \mbox{\hyperlink{structskill__config__data}{skill\_config\_data}}\ \&data);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6e4bce318fcf04dfd0fc5d9797b0b518}{fill\_lvl\_range}}(T\ *setting,\ T\ value);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00109\ \ \ \ \ std::shared\_ptr<const\ skill\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a93c667bcaae4dd00d3b51b7a6fad2180}{get\_skill\_by\_id}}(int32\_t\ \textcolor{keywordtype}{id})\ \{\ \textcolor{keywordflow}{return}\ \_skill\_db.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(\textcolor{keywordtype}{id});\ \}}
+\DoxyCodeLine{00110\ \ \ \ \ std::shared\_ptr<const\ skill\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aee98e85608a9f959e36144987a11c7a7}{get\_skill\_by\_name}}(std::string\ name)\ \{\ \textcolor{keywordflow}{return}\ \_skill\_str\_db.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(name);\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<std::shared\_ptr<const\ skill\_tree\_config>>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b}{get\_skill\_tree\_by\_job\_id}}(\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\_class\_type}}\ job\_id)\ }
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_skill\_tree\_db.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(job\_id,\ std::vector<std::shared\_ptr<const\ skill\_tree\_config>>());\ }
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::shared\_ptr<const\ skill\_tree\_config>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_aa794f9220e7b444c998a743e938e4dd9}{get\_skill\_tree\_skill\_id\_by\_job\_id}}(\mbox{\hyperlink{_entity_definitions_8hpp_aac2046f735e599806f16a773b1178d00}{job\_class\_type}}\ job\_id,\ int16\_t\ skill\_id)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ stc\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6c7a87d7d4e86ae05e6cfebb513ba52b}{get\_skill\_tree\_by\_job\_id}}(job\_id))\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stc-\/>skill\_id\ ==\ skill\_id)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stc;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint32\_t,\ std::shared\_ptr<const\ skill\_config\_data>}}>\ \_skill\_db;}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<std::string,\ std::shared\_ptr<const\ skill\_config\_data>}}>\ \_skill\_str\_db;}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<job\_class\_type,\ std::vector<std::shared\_ptr<const\ skill\_tree\_config>}}>>\ \_skill\_tree\_db;}
+\DoxyCodeLine{00131\ \};}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_database_a6e4bce318fcf04dfd0fc5d9797b0b518}{Horizon::Zone::SkillDatabase::fill\_lvl\_range}}(T\ *setting,\ T\ value)}
+\DoxyCodeLine{00137\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\_SKILL\_LEVEL}};\ i++)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ setting[i]\ =\ value;}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ SkillDB\ Horizon::Zone::SkillDatabase::get\_instance()}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_STATICDB\_SKILLDB\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

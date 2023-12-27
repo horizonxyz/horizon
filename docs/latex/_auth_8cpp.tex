@@ -1,0 +1,75 @@
+\doxysection{src/\+Server/\+Auth/\+Auth.cpp File Reference}
+\hypertarget{_auth_8cpp}{}\label{_auth_8cpp}\index{src/Server/Auth/Auth.cpp@{src/Server/Auth/Auth.cpp}}
+{\ttfamily \#include "{}Auth.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Auth/\+Socket\+Mgr/\+Client\+Socket\+Mgr.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Common/\+Server.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Common/\+Configuration/\+Database.\+hpp"{}}\newline
+Include dependency graph for Auth.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_auth_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_auth_8cpp_afac5b58a160578241e7d66e24522e101}{horizon\+\_\+config\+\_\+error}}(setting\+\_\+name,  default)~ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error) $<$$<$ "{}No setting for \textquotesingle{}"{} $<$$<$ setting\+\_\+name $<$$<$ "{}\textquotesingle{} in configuration file, defaulting to "{} $<$$<$ default;
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_auth_8cpp_aceb9fdea3c71712b8bff428cb443f783}{Signal\+Handler}} (const boost\+::system\+::error\+\_\+code \&error, int)
+\item 
+int \mbox{\hyperlink{_auth_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_auth_8cpp_afac5b58a160578241e7d66e24522e101}\label{_auth_8cpp_afac5b58a160578241e7d66e24522e101} 
+\index{Auth.cpp@{Auth.cpp}!horizon\_config\_error@{horizon\_config\_error}}
+\index{horizon\_config\_error@{horizon\_config\_error}!Auth.cpp@{Auth.cpp}}
+\doxysubsubsection{\texorpdfstring{horizon\_config\_error}{horizon\_config\_error}}
+{\footnotesize\ttfamily \#define horizon\+\_\+config\+\_\+error(\begin{DoxyParamCaption}\item[{}]{setting\+\_\+name,  }\item[{}]{default }\end{DoxyParamCaption})~ \mbox{\hyperlink{_logger_8hpp_a8ea67eece01cf30f69681fd1f8930c35}{HLog}}(error) $<$$<$ "{}No setting for \textquotesingle{}"{} $<$$<$ setting\+\_\+name $<$$<$ "{}\textquotesingle{} in configuration file, defaulting to "{} $<$$<$ default;}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_auth_8cpp_ac0f2228420376f4db7e1274f2b41667c}\label{_auth_8cpp_ac0f2228420376f4db7e1274f2b41667c} 
+\index{Auth.cpp@{Auth.cpp}!main@{main}}
+\index{main@{main}!Auth.cpp@{Auth.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Main Runtime Method 
+\begin{DoxyParams}{Parameters}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Initialize the Common Core\Hypertarget{_auth_8cpp_aceb9fdea3c71712b8bff428cb443f783}\label{_auth_8cpp_aceb9fdea3c71712b8bff428cb443f783} 
+\index{Auth.cpp@{Auth.cpp}!SignalHandler@{SignalHandler}}
+\index{SignalHandler@{SignalHandler}!Auth.cpp@{Auth.cpp}}
+\doxysubsubsection{\texorpdfstring{SignalHandler()}{SignalHandler()}}
+{\footnotesize\ttfamily void Signal\+Handler (\begin{DoxyParamCaption}\item[{const boost\+::system\+::error\+\_\+code \&}]{error,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+Signal Handler from the main thread. 
+\begin{DoxyParams}{Parameters}
+{\em io\+Service\+Ref} & \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_auth_8cpp_aceb9fdea3c71712b8bff428cb443f783_icgraph}
+\end{center}
+\end{figure}

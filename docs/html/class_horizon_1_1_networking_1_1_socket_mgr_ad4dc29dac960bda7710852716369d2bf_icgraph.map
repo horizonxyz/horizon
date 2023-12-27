@@ -1,0 +1,7 @@
+<map id="Horizon::Networking::SocketMgr::stop_network" name="Horizon::Networking::SocketMgr::stop_network">
+<area shape="rect" id="Node000001" title="Stops network threads and clears the thread map." alt="" coords="220,55,397,97"/>
+<area shape="rect" id="Node000002" href="$class_horizon_1_1_networking_1_1_accept_socket_mgr.html#aff019133b97488e13363be0cb8a6e81d" title="Stop the Acceptor network and clear the client socket map." alt="" coords="5,5,172,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,59,172,53,173,48,205,54"/>
+<area shape="rect" id="Node000003" href="$class_horizon_1_1_networking_1_1_connect_socket_mgr.html#a7c07b8bdca016b85fd1f2e9229327274" title="Stop the Connector network and clear the connection pool." alt="" coords="14,88,163,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,98,164,106,163,101,204,93"/>
+</map>

@@ -1,0 +1,53 @@
+\doxysection{Worker\+Thread\+Pool Class Reference}
+\hypertarget{class_worker_thread_pool}{}\label{class_worker_thread_pool}\index{WorkerThreadPool@{WorkerThreadPool}}
+
+
+{\ttfamily \#include $<$Worker\+Thread\+Pool.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_worker_thread_pool_a1dda2052c5bd208b08d6cd4ef646abb9}{Worker\+Thread\+Pool}} (unsigned const thread\+\_\+count=std\+::thread\+::hardware\+\_\+concurrency())
+\item 
+\mbox{\hyperlink{class_worker_thread_pool_a6e2ff558062ca50fad6297e83bd4e9ed}{\texorpdfstring{$\sim$}{\string~}\+Worker\+Thread\+Pool}} ()
+\item 
+{\footnotesize template$<$typename Function\+Type $>$ }\\std\+::future$<$ typename std\+::invoke\+\_\+result$<$ Function\+Type()$>$\+::type $>$ \mbox{\hyperlink{class_worker_thread_pool_a203b693ab72037988c1c8fd9d0dffb5d}{submit}} (Function\+Type f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_worker_thread_pool_a1dda2052c5bd208b08d6cd4ef646abb9}\label{class_worker_thread_pool_a1dda2052c5bd208b08d6cd4ef646abb9} 
+\index{WorkerThreadPool@{WorkerThreadPool}!WorkerThreadPool@{WorkerThreadPool}}
+\index{WorkerThreadPool@{WorkerThreadPool}!WorkerThreadPool@{WorkerThreadPool}}
+\doxysubsubsection{\texorpdfstring{WorkerThreadPool()}{WorkerThreadPool()}}
+{\footnotesize\ttfamily Worker\+Thread\+Pool\+::\+Worker\+Thread\+Pool (\begin{DoxyParamCaption}\item[{unsigned const}]{thread\+\_\+count = {\ttfamily std\+:\+:thread\+:\+:hardware\+\_\+concurrency()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_worker_thread_pool_a6e2ff558062ca50fad6297e83bd4e9ed}\label{class_worker_thread_pool_a6e2ff558062ca50fad6297e83bd4e9ed} 
+\index{WorkerThreadPool@{WorkerThreadPool}!````~WorkerThreadPool@{\texorpdfstring{$\sim$}{\string~}WorkerThreadPool}}
+\index{````~WorkerThreadPool@{\texorpdfstring{$\sim$}{\string~}WorkerThreadPool}!WorkerThreadPool@{WorkerThreadPool}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}WorkerThreadPool()}{\string~WorkerThreadPool()}}
+{\footnotesize\ttfamily Worker\+Thread\+Pool\+::\texorpdfstring{$\sim$}{\string~}\+Worker\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_worker_thread_pool_a203b693ab72037988c1c8fd9d0dffb5d}\label{class_worker_thread_pool_a203b693ab72037988c1c8fd9d0dffb5d} 
+\index{WorkerThreadPool@{WorkerThreadPool}!submit@{submit}}
+\index{submit@{submit}!WorkerThreadPool@{WorkerThreadPool}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily template$<$typename Function\+Type $>$ \\
+std\+::future$<$ typename std\+::invoke\+\_\+result$<$ Function\+Type()$>$\+::type $>$ Worker\+Thread\+Pool\+::submit (\begin{DoxyParamCaption}\item[{Function\+Type}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_worker_thread_pool_a203b693ab72037988c1c8fd9d0dffb5d_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Multithreading/\mbox{\hyperlink{_worker_thread_pool_8hpp}{Worker\+Thread\+Pool.\+hpp}}\end{DoxyCompactItemize}

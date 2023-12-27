@@ -1,0 +1,100 @@
+\doxysection{Grid\+Definitions.\+hpp}
+\hypertarget{_grid_definitions_8hpp_source}{}\label{_grid_definitions_8hpp_source}\index{src/Server/Zone/Game/Map/Grid/GridDefinitions.hpp@{src/Server/Zone/Game/Map/Grid/GridDefinitions.hpp}}
+\mbox{\hyperlink{_grid_definitions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_GRIDDEFINITIONS\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_GRIDDEFINITIONS\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_type_list_8hpp}{Core/Structures/TypeList.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_coordinates_8hpp}{Server/Zone/Game/Map/Coordinates.hpp}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }NPC;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Elemental;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Homunculus;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Mercenary;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Pet;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Monster;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Item;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }Skill;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ ZONE\_OBJECT\_TYPES>}
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grid_holder}{GridHolder}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}16\_t\ MAX\_COORDINATES>}
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_coordinates}{Coordinates}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ OBJECT\_TYPES>}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grid_reference_container}{GridReferenceContainer}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Max\ Cells\ in\ a\ map\ are\ 416.}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ MAX\_CELLS\_PER\_GRID\ 32}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ MAX\_GRIDS\_PER\_MAP\ 14}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ MAX\_CELLS\_PER\_MAP\ MAX\_CELLS\_PER\_GRID\ *\ MAX\_GRIDS\_PER\_MAP}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ entity\_ns(e)\ Horizon::Zone::Entities::e}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{_type_list_8hpp_ac938e9eedc71479614ff131e99f58f38}{TYPELIST\_9}}(\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(\mbox{\hyperlink{class_player}{Player}}),}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(NPC),}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Elemental),}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Homunculus),}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Mercenary),}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Pet),}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Monster),}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Skill),}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\_ns}}(Item))\ AllEntityTypes;}
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_grid_holder}{GridHolder<AllEntityTypes>}}\ \mbox{\hyperlink{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6}{GridHolderType}};}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#undef\ entity\_ns}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_GRIDS\_PER\_MAP>}}\ \mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{GridCoords}};}
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_CELLS\_PER\_MAP>}}\ \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{MapCoords}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_grid_reference_container}{GridReferenceContainer<AllEntityTypes>}}\ \mbox{\hyperlink{_grid_definitions_8hpp_a0a27e1efdae0fa264c9178ff76794bba}{MapEntityContainer}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\_entity\_skill\_use\_notification\_type}}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caa1818da4ac5add726a310d2fe103c190d}{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_CASTTIME}},}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaa718bb55ec18e19d73dd62c41d44404d}{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_DAMAGE}},}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaea3a4e4e002fabf8b6d799fd46578855}{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_NO\_DAMAGE}},}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_GRIDDEFINITIONS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

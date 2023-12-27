@@ -1,0 +1,62 @@
+\doxysection{Skill\+Execution.\+hpp}
+\hypertarget{_skill_execution_8hpp_source}{}\label{_skill_execution_8hpp_source}\index{src/Server/Zone/Game/SkillSystem/SkillExecution.hpp@{src/Server/Zone/Game/SkillSystem/SkillExecution.hpp}}
+\mbox{\hyperlink{_skill_execution_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_SKILLEXECUTION\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_SKILLEXECUTION\_HPP}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_skill_definitions_8hpp}{Server/Zone/Definitions/SkillDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_coordinates_8hpp}{Server/Zone/Game/Map/Coordinates.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8hpp}{Server/Zone/Game/Map/Map.hpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution}{SkillExecution}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<SkillExecution>}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution}{SkillExecution}}(std::shared\_ptr<Entity>\ initial\_source,\ int16\_t\ skill\_id,\ int16\_t\ skill\_lv);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_aa00b45c9025a4184fefb71c76e6d64a4}{\string~SkillExecution}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_a764e622022d9ce836bb9208f37fb02ff}{execute}}(\textcolor{keywordtype}{int}\ initial\_target\_guid);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_a764e622022d9ce836bb9208f37fb02ff}{execute}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ map\_coords);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_a764e622022d9ce836bb9208f37fb02ff}{execute}}(int16\_t\ x,\ int16\_t\ y);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_a764e622022d9ce836bb9208f37fb02ff}{execute}}(\mbox{\hyperlink{class_coordinates}{MapCoords}}\ map\_coords,\ std::string\ message);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_a764e622022d9ce836bb9208f37fb02ff}{execute}}(int16\_t\ x,\ int16\_t\ y,\ std::string\ message);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ sol::table\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_skill_execution_a974ab9d0fe618d975216f23cc648f9a8}{get\_skill\_cast\_data}}()\ \{\ \textcolor{keywordflow}{return}\ \_scd;\ \}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ start\_execution(\textcolor{keyword}{enum}\ \mbox{\hyperlink{_skill_definitions_8hpp_ab76610fae4e7395b712125432afec098}{skill\_target\_type}}\ target\_type);}
+\DoxyCodeLine{00029\ \ \ \ \ std::shared\_ptr<Map>\ map()\ \{\ \textcolor{keywordflow}{return}\ \_map.expired()\ ?\ nullptr\ :\ \_map.lock();\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_map(std::shared\_ptr<Map>\ map)}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \_map\ =\ map;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \_map\_container\_thread\ =\ map-\/>container();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_lua\_mgr\ =\ map-\/>container()-\/>get\_lua\_manager();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \_lua\_state\ =\ lua\_manager()-\/>lua\_state();}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ std::shared\_ptr<MapContainerThread>\ map\_container()\ \{\ \textcolor{keywordflow}{return}\ \_map\_container\_thread.lock();\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ std::shared\_ptr<LUAManager>\ lua\_manager()\ \{\ \textcolor{keywordflow}{return}\ \_lua\_mgr.lock();\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ std::shared\_ptr<sol::state>\ lua\_state()\ \{\ \textcolor{keywordflow}{return}\ \_lua\_state.lock();\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::weak\_ptr<Map>\ \_map;}
+\DoxyCodeLine{00042\ \ \ \ \ std::weak\_ptr<MapContainerThread>\ \_map\_container\_thread;}
+\DoxyCodeLine{00043\ \ \ \ \ std::weak\_ptr<LUAManager>\ \_lua\_mgr;}
+\DoxyCodeLine{00044\ \ \ \ \ std::weak\_ptr<sol::state>\ \_lua\_state;}
+\DoxyCodeLine{00045\ \ \ \ \ std::shared\_ptr<Entity>\ \_initial\_source\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00046\ \ \ \ \ std::shared\_ptr<Entity>\ \_initial\_target\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00047\ \ \ \ \ int16\_t\ \_skill\_id;}
+\DoxyCodeLine{00048\ \ \ \ \ int16\_t\ \_skill\_lv;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{MapCoords}}\ \_map\_coords;}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ \_message;}
+\DoxyCodeLine{00051\ \ \ \ \ sol::table\ \_scd;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_SKILLEXECUTION\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

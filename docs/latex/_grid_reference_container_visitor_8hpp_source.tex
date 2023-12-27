@@ -1,0 +1,94 @@
+\doxysection{Grid\+Reference\+Container\+Visitor.\+hpp}
+\hypertarget{_grid_reference_container_visitor_8hpp_source}{}\label{_grid_reference_container_visitor_8hpp_source}\index{src/Server/Zone/Game/Map/Grid/Container/GridReferenceContainerVisitor.hpp@{src/Server/Zone/Game/Map/Grid/Container/GridReferenceContainerVisitor.hpp}}
+\mbox{\hyperlink{_grid_reference_container_visitor_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CORE\_STRUCTURES\_GRIDREFERENCECONTAINERVISITOR\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_CORE\_STRUCTURES\_GRIDREFERENCECONTAINERVISITOR\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grid_reference_container_8hpp}{Server/Zone/Game/Map/Grid/Container/GridReferenceContainer.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{/*============================*}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ Visitor\ Helper\ Functions}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *============================*/}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR>}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(VISITOR\ \&\textcolor{comment}{/*v*/},\ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<TypeNull>}}\ \&\textcolor{comment}{/*c*/})}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ terminate\ condition\ container\ map\ list}}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(VISITOR\ \&v,\ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer<T>}}\ \&c)}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ v.Visit(c.\mbox{\hyperlink{struct_grid_type_list_container_aeead6cf7d55a6f345bc5c429f1db2e58}{\_element}});}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ recursion\ container\ map\ list}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR,\ \textcolor{keyword}{class}\ H,\ \textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(VISITOR\ \&v,\ \mbox{\hyperlink{struct_grid_type_list_container}{GridTypeListContainer}}<\mbox{\hyperlink{struct_type_list}{TypeList<H,\ T>}}>\ \&c)}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(v,\ c.\_elements);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(v,\ c.\_tail\_elements);}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ for\ GridReferenceContainer}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR,\ \textcolor{keyword}{class}\ OBJECT\_TYPES>}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(VISITOR\ \&v,\ \mbox{\hyperlink{class_grid_reference_container}{GridReferenceContainer<OBJECT\_TYPES>}}\ \&c)}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(v,\ c.\mbox{\hyperlink{class_grid_reference_container_a5349dc988383d1ddcbc37bd6d9247e7b}{getElements}}());}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*============================*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ TypeContainerVisitor}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *============================*/}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ VISITOR,\ \textcolor{keyword}{class}\ TYPE\_CONTAINER>}
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_grid_reference_container_visitor}{GridReferenceContainerVisitor}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_grid_reference_container_visitor_ab5c3eba65a0b5cc7034605b1b47db0df}{GridReferenceContainerVisitor}}(VISITOR\ \&v)\ :\ \_visitor(v)\ \{\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grid_reference_container_visitor_a76d4733caf2e2c9956dc1235b8bf2c42}{Visit}}(TYPE\_CONTAINER\ \&c)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(\_visitor,\ c);}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_grid_reference_container_visitor_afef24f221ff22e72fe8f8fe1a860f113}{Visit}}(\textcolor{keyword}{const}\ TYPE\_CONTAINER\ \&c)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00080\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_grid_reference_container_visitor_8hpp_a329f3ef7e58eb45ca0b510ba5641a90c}{VisitorHelper}}(\_visitor,\ c);}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ VISITOR\ \&\_visitor;}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CORE\_STRUCTURES\_GRIDREFERENCECONTAINERVISITOR\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

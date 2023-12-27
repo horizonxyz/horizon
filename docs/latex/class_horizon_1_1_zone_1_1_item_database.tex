@@ -1,0 +1,208 @@
+\doxysection{Horizon\+::Zone\+::Item\+Database Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_item_database}{}\label{class_horizon_1_1_zone_1_1_item_database}\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+
+
+{\ttfamily \#include $<$Item\+DB.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a7d8edb843930291ea52c5b0882bda02c}{Item\+Database}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a797055a87f547fb9726bc987e739776b}{\texorpdfstring{$\sim$}{\string~}\+Item\+Database}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_acdb532af1007633fea611aa217e7f2ae}{load}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_aab636c2eb8b3fb61a6f2de39e251bb78}{load\+\_\+refine\+\_\+db}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_aa3b9af27c1a675cec8f90da2b588150f}{load\+\_\+weapon\+\_\+target\+\_\+size\+\_\+modifiers\+\_\+db}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a2e6c02bafbf93617f7dd945839089b2d}{load\+\_\+weapon\+\_\+attribute\+\_\+modifiers\+\_\+db}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a416690f4038b8c695c38b9b0a01db02d}{add\+\_\+job\+\_\+group\+\_\+to\+\_\+item}} (std\+::string const \&group, \mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}} \&id, bool enable, std\+::string const \&file\+\_\+path)
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a55dc2dc2ad8a83350581c9782e653e27}{get\+\_\+item\+\_\+by\+\_\+id}} (uint32\+\_\+t item\+\_\+id) const
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_af52067eb5871a721291dfbae9672a5d9}{get\+\_\+item\+\_\+by\+\_\+key\+\_\+name}} (std\+::string key\+\_\+name) const
+\item 
+std\+::shared\+\_\+ptr$<$ const refine\+\_\+config $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a8baa529278f935112848f8e7a8bf5d73}{get\+\_\+refine\+\_\+config}} (\mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23}{refine\+\_\+type}} type)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a0349f2cd23f63808f2ac9d22a7bce731}{get\+\_\+weapon\+\_\+target\+\_\+size\+\_\+modifier}} (\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\+\_\+weapon\+\_\+type}} wtype, \mbox{\hyperlink{_entity_definitions_8hpp_a36f051cd7b886dfac96f7b994d67c7db}{entity\+\_\+size\+\_\+type}} stype)
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a5af865a81102c4146f359b6518f179ae}{get\+\_\+weapon\+\_\+attribute\+\_\+modifier}} (int32\+\_\+t weapon\+\_\+lv, \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}} element, \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}} def\+\_\+ele)
+\item 
+std\+::string \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a4fd0d7ce369e60ed0bbaa6cd3f80d218}{get\+\_\+weapon\+\_\+type\+\_\+name}} (\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\+\_\+weapon\+\_\+type}} type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database}{Item\+Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database_a0a9a3a58ebeb768ce2c4b48132bd1913}{get\+\_\+instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a7d8edb843930291ea52c5b0882bda02c}\label{class_horizon_1_1_zone_1_1_item_database_a7d8edb843930291ea52c5b0882bda02c} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!ItemDatabase@{ItemDatabase}}
+\index{ItemDatabase@{ItemDatabase}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{ItemDatabase()}{ItemDatabase()}}
+{\footnotesize\ttfamily Item\+Database\+::\+Item\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a797055a87f547fb9726bc987e739776b}\label{class_horizon_1_1_zone_1_1_item_database_a797055a87f547fb9726bc987e739776b} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!````~ItemDatabase@{\texorpdfstring{$\sim$}{\string~}ItemDatabase}}
+\index{````~ItemDatabase@{\texorpdfstring{$\sim$}{\string~}ItemDatabase}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ItemDatabase()}{\string~ItemDatabase()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Item\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Item\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a416690f4038b8c695c38b9b0a01db02d}\label{class_horizon_1_1_zone_1_1_item_database_a416690f4038b8c695c38b9b0a01db02d} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!add\_job\_group\_to\_item@{add\_job\_group\_to\_item}}
+\index{add\_job\_group\_to\_item@{add\_job\_group\_to\_item}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{add\_job\_group\_to\_item()}{add\_job\_group\_to\_item()}}
+{\footnotesize\ttfamily bool Item\+Database\+::add\+\_\+job\+\_\+group\+\_\+to\+\_\+item (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{group,  }\item[{\mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}} \&}]{id,  }\item[{bool}]{enable,  }\item[{std\+::string const \&}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a0a9a3a58ebeb768ce2c4b48132bd1913}\label{class_horizon_1_1_zone_1_1_item_database_a0a9a3a58ebeb768ce2c4b48132bd1913} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_item_database}{Item\+Database}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a55dc2dc2ad8a83350581c9782e653e27}\label{class_horizon_1_1_zone_1_1_item_database_a55dc2dc2ad8a83350581c9782e653e27} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_item\_by\_id@{get\_item\_by\_id}}
+\index{get\_item\_by\_id@{get\_item\_by\_id}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_item\_by\_id()}{get\_item\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+item\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{item\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_a55dc2dc2ad8a83350581c9782e653e27_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_af52067eb5871a721291dfbae9672a5d9}\label{class_horizon_1_1_zone_1_1_item_database_af52067eb5871a721291dfbae9672a5d9} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_item\_by\_key\_name@{get\_item\_by\_key\_name}}
+\index{get\_item\_by\_key\_name@{get\_item\_by\_key\_name}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_item\_by\_key\_name()}{get\_item\_by\_key\_name()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structitem__config__data}{item\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+item\+\_\+by\+\_\+key\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{key\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_af52067eb5871a721291dfbae9672a5d9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a8baa529278f935112848f8e7a8bf5d73}\label{class_horizon_1_1_zone_1_1_item_database_a8baa529278f935112848f8e7a8bf5d73} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_refine\_config@{get\_refine\_config}}
+\index{get\_refine\_config@{get\_refine\_config}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_refine\_config()}{get\_refine\_config()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const refine\+\_\+config $>$ Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+refine\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_item_definitions_8hpp_a15aee6d8e74fb7b787ba9450ce0dde23}{refine\+\_\+type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_a8baa529278f935112848f8e7a8bf5d73_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a5af865a81102c4146f359b6518f179ae}\label{class_horizon_1_1_zone_1_1_item_database_a5af865a81102c4146f359b6518f179ae} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_weapon\_attribute\_modifier@{get\_weapon\_attribute\_modifier}}
+\index{get\_weapon\_attribute\_modifier@{get\_weapon\_attribute\_modifier}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_weapon\_attribute\_modifier()}{get\_weapon\_attribute\_modifier()}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+weapon\+\_\+attribute\+\_\+modifier (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{weapon\+\_\+lv,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}}}]{element,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}}}]{def\+\_\+ele }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_a5af865a81102c4146f359b6518f179ae_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a0349f2cd23f63808f2ac9d22a7bce731}\label{class_horizon_1_1_zone_1_1_item_database_a0349f2cd23f63808f2ac9d22a7bce731} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_weapon\_target\_size\_modifier@{get\_weapon\_target\_size\_modifier}}
+\index{get\_weapon\_target\_size\_modifier@{get\_weapon\_target\_size\_modifier}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_weapon\_target\_size\_modifier()}{get\_weapon\_target\_size\_modifier()}}
+{\footnotesize\ttfamily uint8\+\_\+t Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+weapon\+\_\+target\+\_\+size\+\_\+modifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\+\_\+weapon\+\_\+type}}}]{wtype,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_a36f051cd7b886dfac96f7b994d67c7db}{entity\+\_\+size\+\_\+type}}}]{stype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_a0349f2cd23f63808f2ac9d22a7bce731_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a4fd0d7ce369e60ed0bbaa6cd3f80d218}\label{class_horizon_1_1_zone_1_1_item_database_a4fd0d7ce369e60ed0bbaa6cd3f80d218} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!get\_weapon\_type\_name@{get\_weapon\_type\_name}}
+\index{get\_weapon\_type\_name@{get\_weapon\_type\_name}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_weapon\_type\_name()}{get\_weapon\_type\_name()}}
+{\footnotesize\ttfamily std\+::string Horizon\+::\+Zone\+::\+Item\+Database\+::get\+\_\+weapon\+\_\+type\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3fa}{item\+\_\+weapon\+\_\+type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_a4fd0d7ce369e60ed0bbaa6cd3f80d218_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_acdb532af1007633fea611aa217e7f2ae}\label{class_horizon_1_1_zone_1_1_item_database_acdb532af1007633fea611aa217e7f2ae} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!load@{load}}
+\index{load@{load}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Item\+Database\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_acdb532af1007633fea611aa217e7f2ae_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_aab636c2eb8b3fb61a6f2de39e251bb78}\label{class_horizon_1_1_zone_1_1_item_database_aab636c2eb8b3fb61a6f2de39e251bb78} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!load\_refine\_db@{load\_refine\_db}}
+\index{load\_refine\_db@{load\_refine\_db}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_refine\_db()}{load\_refine\_db()}}
+{\footnotesize\ttfamily bool Item\+Database\+::load\+\_\+refine\+\_\+db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_a2e6c02bafbf93617f7dd945839089b2d}\label{class_horizon_1_1_zone_1_1_item_database_a2e6c02bafbf93617f7dd945839089b2d} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!load\_weapon\_attribute\_modifiers\_db@{load\_weapon\_attribute\_modifiers\_db}}
+\index{load\_weapon\_attribute\_modifiers\_db@{load\_weapon\_attribute\_modifiers\_db}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_weapon\_attribute\_modifiers\_db()}{load\_weapon\_attribute\_modifiers\_db()}}
+{\footnotesize\ttfamily bool Item\+Database\+::load\+\_\+weapon\+\_\+attribute\+\_\+modifiers\+\_\+db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_a2e6c02bafbf93617f7dd945839089b2d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_item_database_aa3b9af27c1a675cec8f90da2b588150f}\label{class_horizon_1_1_zone_1_1_item_database_aa3b9af27c1a675cec8f90da2b588150f} 
+\index{Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}!load\_weapon\_target\_size\_modifiers\_db@{load\_weapon\_target\_size\_modifiers\_db}}
+\index{load\_weapon\_target\_size\_modifiers\_db@{load\_weapon\_target\_size\_modifiers\_db}!Horizon::Zone::ItemDatabase@{Horizon::Zone::ItemDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_weapon\_target\_size\_modifiers\_db()}{load\_weapon\_target\_size\_modifiers\_db()}}
+{\footnotesize\ttfamily bool Item\+Database\+::load\+\_\+weapon\+\_\+target\+\_\+size\+\_\+modifiers\+\_\+db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_item_database_aa3b9af27c1a675cec8f90da2b588150f_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_item_d_b_8hpp}{Item\+DB.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_item_d_b_8cpp}{Item\+DB.\+cpp}}\end{DoxyCompactItemize}

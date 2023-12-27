@@ -1,0 +1,212 @@
+\doxysection{Horizon\+::Networking\+::Session\texorpdfstring{$<$}{<} Socket\+Type, Session\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_horizon_1_1_networking_1_1_session}{}\label{class_horizon_1_1_networking_1_1_session}\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+
+
+\doxylink{class_a}{A} \doxylink{class_horizon_1_1_networking_1_1_session}{Session} object that handles a single socket. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping.  
+
+
+
+
+{\ttfamily \#include $<$Session.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Networking\+::Session\texorpdfstring{$<$}{<} Socket\+Type, Session\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_horizon_1_1_networking_1_1_session__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Networking\+::Session\texorpdfstring{$<$}{<} Socket\+Type, Session\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_horizon_1_1_networking_1_1_session__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a4bd1f95d79df62511ef13833a850177f}{Session}} (int64\+\_\+t uid, std\+::weak\+\_\+ptr$<$ Socket\+Type $>$ socket)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a2896280f57643ce058317c0a3281f333}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a659211b432102904d71e943a6fb64f89}{get\+\_\+socket}} ()
+\begin{DoxyCompactList}\small\item\em Get the socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a8c0962c994001e135aaac3b4d8006b65}{set\+\_\+socket}} (std\+::weak\+\_\+ptr$<$ Socket\+Type $>$ socket)
+\begin{DoxyCompactList}\small\item\em Set the socket. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a08de1249359a3b2b8519bfc94afec177}{update}} (uint32\+\_\+t diff)=0
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a718a6229c5a8e917edc7cc1872b51690}{initialize}} ()=0
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a76dae24907a98fb3e4f4160e8d3aaa26}{is\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em Called to verify if the session is initialized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_abf7c01b5b5e7d010b3d296629ad87426}{set\+\_\+initialized}} (bool initialized)
+\begin{DoxyCompactList}\small\item\em Set whether the session is initialized or not. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session_a7627c9890ed35856be3bb4412e70e395}{get\+\_\+session\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the unique id of the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Socket\+Type, class Session\+Type$>$\newline
+class Horizon\+::\+Networking\+::\+Session$<$ Socket\+Type, Session\+Type $>$}
+\doxylink{class_a}{A} \doxylink{class_horizon_1_1_networking_1_1_session}{Session} object that handles a single socket. Sockets are moved into the thread by \doxylink{class_horizon_1_1_networking_1_1_socket_mgr}{Socket\+Mgr}, once accepted or connected. Once started, the object blocks to handle I/O events and requires explicit stopping. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Socket\+Type} & The type of socket to use. \\
+\hline
+{\em Session\+Type} & The type of session to use. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em uid} & The unique id of the session. \\
+\hline
+{\em socket} & The socket to use. \\
+\hline
+{\em is\+\_\+initialized} & Whether the session is initialized or not. \\
+\hline
+{\em \+\_\+uid} & The unique id of the session. \\
+\hline
+{\em \+\_\+socket} & The socket to use. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a4bd1f95d79df62511ef13833a850177f}\label{class_horizon_1_1_networking_1_1_session_a4bd1f95d79df62511ef13833a850177f} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!Session@{Session}}
+\index{Session@{Session}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::\+Session (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{uid,  }\item[{std\+::weak\+\_\+ptr$<$ Socket\+Type $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a2896280f57643ce058317c0a3281f333}\label{class_horizon_1_1_networking_1_1_session_a2896280f57643ce058317c0a3281f333} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!````~Session@{\texorpdfstring{$\sim$}{\string~}Session}}
+\index{````~Session@{\texorpdfstring{$\sim$}{\string~}Session}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Session()}{\string~Session()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+virtual \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Session}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a7627c9890ed35856be3bb4412e70e395}\label{class_horizon_1_1_networking_1_1_session_a7627c9890ed35856be3bb4412e70e395} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!get\_session\_id@{get\_session\_id}}
+\index{get\_session\_id@{get\_session\_id}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_session\_id()}{get\_session\_id()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+int64\+\_\+t \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::get\+\_\+session\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the unique id of the session. 
+
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a659211b432102904d71e943a6fb64f89}\label{class_horizon_1_1_networking_1_1_session_a659211b432102904d71e943a6fb64f89} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!get\_socket@{get\_socket}}
+\index{get\_socket@{get\_socket}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_socket()}{get\_socket()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Socket\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::get\+\_\+socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the socket. 
+
+\begin{DoxyReturn}{Returns}
+The socket. 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a718a6229c5a8e917edc7cc1872b51690}\label{class_horizon_1_1_networking_1_1_session_a718a6229c5a8e917edc7cc1872b51690} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+virtual void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when the session is started. Virtual method that must be implmented by the derived class. Typically used to initialize the session. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_a69e47e11613357cb4cd19d27c659856b}{Horizon\+::\+Auth\+::\+Auth\+Session}}, \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_a2742d5c8d19edd4ac03213ab76ba9787}{Horizon\+::\+Char\+::\+Char\+Session}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_acdf950989f1132f981dfe01d4b9f2aba}{Horizon\+::\+Zone\+::\+Zone\+Session}}.
+
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a76dae24907a98fb3e4f4160e8d3aaa26}\label{class_horizon_1_1_networking_1_1_session_a76dae24907a98fb3e4f4160e8d3aaa26} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+bool \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::is\+\_\+initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called to verify if the session is initialized. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_abf7c01b5b5e7d010b3d296629ad87426}\label{class_horizon_1_1_networking_1_1_session_abf7c01b5b5e7d010b3d296629ad87426} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!set\_initialized@{set\_initialized}}
+\index{set\_initialized@{set\_initialized}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{set\_initialized()}{set\_initialized()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::set\+\_\+initialized (\begin{DoxyParamCaption}\item[{bool}]{initialized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set whether the session is initialized or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initialized} & Whether the session is initialized or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a8c0962c994001e135aaac3b4d8006b65}\label{class_horizon_1_1_networking_1_1_session_a8c0962c994001e135aaac3b4d8006b65} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!set\_socket@{set\_socket}}
+\index{set\_socket@{set\_socket}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{set\_socket()}{set\_socket()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::set\+\_\+socket (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ Socket\+Type $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & The socket. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{class_horizon_1_1_networking_1_1_session_a08de1249359a3b2b8519bfc94afec177}\label{class_horizon_1_1_networking_1_1_session_a08de1249359a3b2b8519bfc94afec177} 
+\index{Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}!update@{update}}
+\index{update@{update}!Horizon::Networking::Session$<$ SocketType, SessionType $>$@{Horizon::Networking::Session$<$ SocketType, SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class Socket\+Type , class Session\+Type $>$ \\
+virtual void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon\+::\+Networking\+::\+Session}}$<$ Socket\+Type, Session\+Type $>$\+::update (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when the session is started. Virtual method that must be implmented by the derived class. Typically used to update the session and process packets. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session_ab9a1c7b99c8500463e38e794f7cb98e9}{Horizon\+::\+Auth\+::\+Auth\+Session}}, \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_session_aede84f5488fc265bce120ad951fd6370}{Horizon\+::\+Char\+::\+Char\+Session}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_ae2722c494eb0963208af2463ee3693d6}{Horizon\+::\+Zone\+::\+Zone\+Session}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Networking/\mbox{\hyperlink{_session_8hpp}{Session.\+hpp}}\end{DoxyCompactItemize}

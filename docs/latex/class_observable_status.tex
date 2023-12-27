@@ -1,0 +1,158 @@
+\doxysection{Observable\+Status\texorpdfstring{$<$}{<} OBSERVABLE, HAS\+\_\+\+OBSERVERS \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_observable_status}{}\label{class_observable_status}\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+
+
+{\ttfamily \#include $<$Observable\+Status.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_observable_status_a83d902e8566880c9217aa1cf656a862b}{Observable\+Status}} (HAS\+\_\+\+OBSERVERS ... args)
+\item 
+\mbox{\hyperlink{class_observable_status_af9df4a9c777ac360ee628cd771c592bf}{\texorpdfstring{$\sim$}{\string~}\+Observable\+Status}} ()
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t I = 0, typename... Tp$>$ }\\std\+::enable\+\_\+if$<$ I==sizeof...(Tp), void $>$\+::type \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}} (std\+::tuple$<$ Tp... $>$ \&)
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t I = 0, typename... Tp$>$ }\\std\+::enable\+\_\+if$<$ I$<$ sizeof...(Tp), void $>$\+::type \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}(std\+::tuple$<$ Tp... $>$ \&t) \{ std\+::get$<$ I $>$(\mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\+\_\+observers}}) -\/$>$ \mbox{\hyperlink{class_observable_status_aac65caa16a7c3179d0f5ba5c1ad543b5}{on\+\_\+observable\+\_\+changed}} (\mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\+\_\+observable}})
+\item 
+\mbox{\hyperlink{class_observable_status_a626fb7d9dc6f5649e8970f296f800364}{notify}} (t)
+\item 
+void \mbox{\hyperlink{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}{notify\+\_\+observers}} ()
+\item 
+void \mbox{\hyperlink{class_observable_status_a360b782379f9fd42e52287d97bd181c8}{register\+\_\+observable}} (OBSERVABLE obs)
+\item 
+void \mbox{\hyperlink{class_observable_status_a9c286b577e997b6835f58adcca6c61da}{register\+\_\+observers}} (HAS\+\_\+\+OBSERVERS... obs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+OBSERVABLE \mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\+\_\+observable}}
+\item 
+std\+::tuple$<$ HAS\+\_\+\+OBSERVERS... $>$ \mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\+\_\+observers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_observable_status_a83d902e8566880c9217aa1cf656a862b}\label{class_observable_status_a83d902e8566880c9217aa1cf656a862b} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!ObservableStatus@{ObservableStatus}}
+\index{ObservableStatus@{ObservableStatus}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{ObservableStatus()}{ObservableStatus()}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+\mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\mbox{\hyperlink{class_observable_status}{\+::\+Observable\+Status}} (\begin{DoxyParamCaption}\item[{HAS\+\_\+\+OBSERVERS ...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_observable_status_af9df4a9c777ac360ee628cd771c592bf}\label{class_observable_status_af9df4a9c777ac360ee628cd771c592bf} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!````~ObservableStatus@{\texorpdfstring{$\sim$}{\string~}ObservableStatus}}
+\index{````~ObservableStatus@{\texorpdfstring{$\sim$}{\string~}ObservableStatus}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ObservableStatus()}{\string~ObservableStatus()}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+\mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_observable_status}{Observable\+Status}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}\label{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!notify@{notify}}
+\index{notify@{notify}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+template$<$std\+::size\+\_\+t I = 0, typename... Tp$>$ \\
+std\+::enable\+\_\+if$<$ I==sizeof...(Tp), void $>$\+::type \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::notify (\begin{DoxyParamCaption}\item[{std\+::tuple$<$ Tp... $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_observable_status_a626fb7d9dc6f5649e8970f296f800364}\label{class_observable_status_a626fb7d9dc6f5649e8970f296f800364} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!notify@{notify}}
+\index{notify@{notify}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+\mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::notify (\begin{DoxyParamCaption}\item[{t}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_observable_status_aa3d02a3d038ef2ccda117b9020524875}\label{class_observable_status_aa3d02a3d038ef2ccda117b9020524875} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!notify\_observers@{notify\_observers}}
+\index{notify\_observers@{notify\_observers}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{notify\_observers()}{notify\_observers()}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+void \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::notify\+\_\+observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_status_aa3d02a3d038ef2ccda117b9020524875_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_status_aa3d02a3d038ef2ccda117b9020524875_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_observable_status_aac65caa16a7c3179d0f5ba5c1ad543b5}\label{class_observable_status_aac65caa16a7c3179d0f5ba5c1ad543b5} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!on\_observable\_changed@{on\_observable\_changed}}
+\index{on\_observable\_changed@{on\_observable\_changed}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{on\_observable\_changed()}{on\_observable\_changed()}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+template$<$std\+::size\+\_\+t I = 0, typename... Tp$>$ \\
+std\+::enable\+\_\+if$<$ I$<$ sizeof...(Tp), void $>$\+::type \mbox{\hyperlink{class_observable_status_a8bf0cf601f5d0cb9eb14867befd4a8e3}{notify}}(std\+::tuple$<$ Tp... $>$ \&t) \{ std\+::get$<$ I $>$(\mbox{\hyperlink{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}{\+\_\+observers}}) -\/$>$ \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::on\+\_\+observable\+\_\+changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}{\+\_\+observable}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_observable_status_a360b782379f9fd42e52287d97bd181c8}\label{class_observable_status_a360b782379f9fd42e52287d97bd181c8} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!register\_observable@{register\_observable}}
+\index{register\_observable@{register\_observable}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{register\_observable()}{register\_observable()}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+void \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::register\+\_\+observable (\begin{DoxyParamCaption}\item[{OBSERVABLE}]{obs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_status_a360b782379f9fd42e52287d97bd181c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_observable_status_a9c286b577e997b6835f58adcca6c61da}\label{class_observable_status_a9c286b577e997b6835f58adcca6c61da} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!register\_observers@{register\_observers}}
+\index{register\_observers@{register\_observers}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{register\_observers()}{register\_observers()}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+void \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::register\+\_\+observers (\begin{DoxyParamCaption}\item[{HAS\+\_\+\+OBSERVERS...}]{obs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_observable_status_a9c286b577e997b6835f58adcca6c61da_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04}\label{class_observable_status_af2e0efa3a742bbaa05e8862eec5a4f04} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!\_observable@{\_observable}}
+\index{\_observable@{\_observable}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{\_observable}{\_observable}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+OBSERVABLE \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::\+\_\+observable}
+
+\Hypertarget{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379}\label{class_observable_status_abf970af0fb3b87ffae49b7f30ac85379} 
+\index{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}!\_observers@{\_observers}}
+\index{\_observers@{\_observers}!ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$@{ObservableStatus$<$ OBSERVABLE, HAS\_OBSERVERS $>$}}
+\doxysubsubsection{\texorpdfstring{\_observers}{\_observers}}
+{\footnotesize\ttfamily template$<$typename OBSERVABLE , typename ... HAS\+\_\+\+OBSERVERS$>$ \\
+std\+::tuple$<$HAS\+\_\+\+OBSERVERS...$>$ \mbox{\hyperlink{class_observable_status}{Observable\+Status}}$<$ OBSERVABLE, HAS\+\_\+\+OBSERVERS $>$\+::\+\_\+observers}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_observable_status_8hpp}{Observable\+Status.\+hpp}}\end{DoxyCompactItemize}

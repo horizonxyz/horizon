@@ -1,0 +1,163 @@
+\doxysection{Message\+Buffer.\+hpp}
+\hypertarget{_message_buffer_8hpp_source}{}\label{_message_buffer_8hpp_source}\index{src/Libraries/Networking/Buffer/MessageBuffer.hpp@{src/Libraries/Networking/Buffer/MessageBuffer.hpp}}
+\mbox{\hyperlink{_message_buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ MessageBuffer\_hpp}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MessageBuffer\_hpp}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_message_buffer}{MessageBuffer}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<uint8\_t>::size\_type\ size\_type;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_message_buffer_aa0703ae5152d138f6fada92d9ab00fc7}{MAX\_BUFFER\_LENGTH}}\{1536\};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_message_buffer_a92586fdeffb14738acbf8979b5974e6f}{MessageBuffer}}()\ :\ \_wpos(0),\ \_rpos(0),\ \_storage()}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \_storage.resize(\mbox{\hyperlink{class_message_buffer_aa0703ae5152d138f6fada92d9ab00fc7}{MAX\_BUFFER\_LENGTH}});}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_message_buffer_aa0e38177ed8e5a615e3d8939697c25fe}{MessageBuffer}}(std::size\_t\ initial\_size)}
+\DoxyCodeLine{00050\ \ \ \ \ :\ \_wpos(0),\ \_rpos(0),\ \_storage()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_storage.resize(initial\_size);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_message_buffer_a9a9bf51f87346e42a4765b72d78dc7f6}{MessageBuffer}}(\mbox{\hyperlink{class_message_buffer}{MessageBuffer}}\ \textcolor{keyword}{const}\ \&right)}
+\DoxyCodeLine{00056\ \ \ \ \ :\ \_wpos(right.\_wpos),\ \_rpos(right.\_rpos),\ \_storage(right.\_storage)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_message_buffer_ac6cf666fa2991a6a0f7d42efb0f226d7}{MessageBuffer}}(\mbox{\hyperlink{class_message_buffer}{MessageBuffer}}\ \&\&right)}
+\DoxyCodeLine{00061\ \ \ \ \ :\ \_wpos(right.\_wpos),\ \_rpos(right.\_rpos),\ \_storage(right.\mbox{\hyperlink{class_message_buffer_aa4fb058134f38f7f54a3e94d21e93506}{move}}())}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_a1b41691b33a790ba8aff740ef0549479}{reset}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \_wpos\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_rpos\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_aee3c603813b0323d899fd4d5f3d35f62}{resize}}(size\_type\ bytes)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_storage.resize(bytes);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ std::string\ \mbox{\hyperlink{class_message_buffer_afb1e92ceb47fe4a8f3b6a26e082d6f67}{to\_string}}()}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(\mbox{\hyperlink{class_message_buffer_aa0553408819420e137d3defc45712185}{get\_read\_pointer}}(),\ \mbox{\hyperlink{class_message_buffer_ab8e954be5d34f3537f41b6d668b81762}{get\_write\_pointer}}());}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{class_message_buffer_aa592c2bd8ec99c8a960ad1c39e77f7cd}{get\_base\_pointer}}()\ \{\ \textcolor{keywordflow}{return}\ \_storage.data();\ \}}
+\DoxyCodeLine{00082\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{class_message_buffer_aa0553408819420e137d3defc45712185}{get\_read\_pointer}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_message_buffer_aa592c2bd8ec99c8a960ad1c39e77f7cd}{get\_base\_pointer}}()\ +\ \_rpos;\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{class_message_buffer_ab8e954be5d34f3537f41b6d668b81762}{get\_write\_pointer}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_message_buffer_aa592c2bd8ec99c8a960ad1c39e77f7cd}{get\_base\_pointer}}()\ +\ \_wpos;\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_a1b566ec289d6faf0eef765fa39241c6b}{read\_completed}}(size\_type\ bytes)\ \{\ \_rpos\ +=\ bytes;\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_a91bad26e471a625995f1726c9a226323}{write\_completed}}(size\_type\ bytes)\ \{\ \_wpos\ +=\ bytes;\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ size\_type\ \mbox{\hyperlink{class_message_buffer_a20619173b4689b427586c22bdb1d9b68}{get\_active\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_wpos\ -\/\ \_rpos;\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ size\_type\ \mbox{\hyperlink{class_message_buffer_a06d61bcb9d89a8bd2035dc0574c5d089}{get\_remaining\_space}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_storage.size()\ -\/\ \_wpos;\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ size\_type\ \mbox{\hyperlink{class_message_buffer_af150941d9da1befe786271ed3ead5c0a}{get\_buffer\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_storage.size();\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ Discards\ inactive\ data}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_ac80c97eed418c32cb8521704c938a143}{normalize}}()}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_rpos)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_rpos\ !=\ \_wpos)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memmove(\mbox{\hyperlink{class_message_buffer_aa592c2bd8ec99c8a960ad1c39e77f7cd}{get\_base\_pointer}}(),\ \mbox{\hyperlink{class_message_buffer_aa0553408819420e137d3defc45712185}{get\_read\_pointer}}(),\ \mbox{\hyperlink{class_message_buffer_a20619173b4689b427586c22bdb1d9b68}{get\_active\_size}}());}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \_wpos\ -\/=\ \_rpos;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \_rpos\ =\ 0;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ Ensures\ there's\ "{}some"{}\ free\ space,\ make\ sure\ to\ call\ normalize()\ before\ this}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_aebf95224cb64d27c2cd50786075e5471}{ensure\_free\_space}}()}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ resize\ buffer\ if\ it's\ already\ full}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_message_buffer_a06d61bcb9d89a8bd2035dc0574c5d089}{get\_remaining\_space}}()\ ==\ 0)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \_storage.resize(\_storage.size()\ *\ 3\ /\ 2);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_message_buffer_aee46cc4d110d5f6b01d40dc4cde8797b}{write}}(\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}*\ data,\ std::size\_t\ size)}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\mbox{\hyperlink{class_message_buffer_ab8e954be5d34f3537f41b6d668b81762}{get\_write\_pointer}}(),\ data,\ size);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_message_buffer_a91bad26e471a625995f1726c9a226323}{write\_completed}}(size);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<uint8\_t>\ \&\&\mbox{\hyperlink{class_message_buffer_aa4fb058134f38f7f54a3e94d21e93506}{move}}()}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \_wpos\ =\ 0;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \_rpos\ =\ 0;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(\_storage);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&\mbox{\hyperlink{class_message_buffer_a75ef1056ea114b617a74bbf26040d120}{copy}}()\ \{\ \textcolor{keywordflow}{return}\ \_storage;\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{class_message_buffer}{MessageBuffer}}\ \&\mbox{\hyperlink{class_message_buffer_a1b6f18821fdf7688de020adfef80760b}{operator=}}(\mbox{\hyperlink{class_message_buffer}{MessageBuffer}}\ \textcolor{keyword}{const}\ \&right)}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&right)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \_wpos\ =\ right.\_wpos;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \_rpos\ =\ right.\_rpos;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \_storage\ =\ right.\_storage;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_message_buffer}{MessageBuffer}}\&\ \mbox{\hyperlink{class_message_buffer_a10ccd8942c530c192e80635d0237f020}{operator=}}(\mbox{\hyperlink{class_message_buffer}{MessageBuffer}}\ \&\&right)}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&right)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \_wpos\ =\ right.\_wpos;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \_rpos\ =\ right.\_rpos;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \_storage\ =\ right.move();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00152\ \ \ \ \ size\_type\ \_wpos;}
+\DoxyCodeLine{00153\ \ \ \ \ size\_type\ \_rpos;}
+\DoxyCodeLine{00154\ \ \ \ \ std::vector<uint8\_t>\ \_storage;}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MessageBuffer\_hpp\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

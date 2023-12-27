@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['h_0',['H',['../struct_horizon_1_1_zone_1_1_a_star_1_1_node.html#a776a87ef4921f34a996a8a820eca49c1',1,'Horizon::Zone::AStar::Node']]],
+  ['hair_5fcolor_5fid_1',['hair_color_id',['../structs__zc__membermgr__info__member.html#ab35fbc9a105316c844a3d0346e9fa088',1,'s_zc_membermgr_info_member::hair_color_id'],['../structentity__viewport__entry.html#a2e2215c48ed7bba521ad68bfce5c658f',1,'entity_viewport_entry::hair_color_id'],['../structmonster__config__data_1_1monster__view__data.html#a5642b8753a78078b781b0eced2a76bea',1,'monster_config_data::monster_view_data::hair_color_id']]],
+  ['hair_5fstyle_5fid_2',['hair_style_id',['../structs__zc__membermgr__info__member.html#af5f429ccf706ce465d802aef88fbbcb6',1,'s_zc_membermgr_info_member::hair_style_id'],['../structentity__viewport__entry.html#ab28017a3127837b7aa09d5f813e0510d',1,'entity_viewport_entry::hair_style_id'],['../structmonster__config__data_1_1monster__view__data.html#a7c3ddbe087cd58c175f343168fce4c05',1,'monster_config_data::monster_view_data::hair_style_id']]],
+  ['hard_5fdef_3',['hard_def',['../structzc__status__data.html#a9aa2e7c2c46938d155f909c88e741ec7',1,'zc_status_data::hard_def'],['../struct_horizon_1_1_zone_1_1zc__status__data.html#a87e42ada1b2a0daac8d528d2634564b3',1,'Horizon::Zone::zc_status_data::hard_def']]],
+  ['hard_5fmdef_4',['hard_mdef',['../structzc__status__data.html#ad47336b06819652e1ba759458aefdf1f',1,'zc_status_data::hard_mdef'],['../struct_horizon_1_1_zone_1_1zc__status__data.html#a22892964cf8612246b01d2cdef10d8c0',1,'Horizon::Zone::zc_status_data::hard_mdef']]],
+  ['hash_5ftable_5fposition_5',['hash_table_position',['../struct_data_file.html#ab4dcdd602ca5788a92e83e50572b6e47',1,'DataFile']]],
+  ['head_5fdirection_6',['head_direction',['../structentity__viewport__entry.html#ad85be6f994e7674b094933859f549ff0',1,'entity_viewport_entry']]],
+  ['headgear_5fbottom_5fid_7',['headgear_bottom_id',['../structentity__viewport__entry.html#ace52fa1d82264c5472200a5be67a86ca',1,'entity_viewport_entry::headgear_bottom_id'],['../structmonster__config__data_1_1monster__view__data.html#a55e098909e304d58806c1150b5fdccfb',1,'monster_config_data::monster_view_data::headgear_bottom_id']]],
+  ['headgear_5fmid_5fid_8',['headgear_mid_id',['../structentity__viewport__entry.html#a94a7ea01e65573e112f35890f27e6ee9',1,'entity_viewport_entry']]],
+  ['headgear_5fmiddle_5fid_9',['headgear_middle_id',['../structmonster__config__data_1_1monster__view__data.html#aa1510e94f1aa1999c438e0b436a25dad',1,'monster_config_data::monster_view_data']]],
+  ['headgear_5ftop_5fid_10',['headgear_top_id',['../structentity__viewport__entry.html#aa10b4ef18ddd8e2456926ba3e9eb24ff',1,'entity_viewport_entry::headgear_top_id'],['../structmonster__config__data_1_1monster__view__data.html#a43760d1f762327393151ede64c5a39e9',1,'monster_config_data::monster_view_data::headgear_top_id']]],
+  ['heal_5famount_11',['heal_amount',['../structcombat__healing.html#ae04ebbf55fe0a4f8f5ae95c2aa7b2e9c',1,'combat_healing']]],
+  ['health_5fstate_12',['health_state',['../structentity__viewport__entry.html#a8404e7bdba49e40b59ac820b88fa834e',1,'entity_viewport_entry']]],
+  ['hire_5fexpire_5fdate_13',['hire_expire_date',['../structitem__entry__data.html#aacf1c4cbdaf895b2273a8f21e403bb9a',1,'item_entry_data']]],
+  ['hit_14',['hit',['../structzc__status__data.html#a1fbfc129d1b0704d05e0a153bfa53ed3',1,'zc_status_data::hit'],['../struct_horizon_1_1_zone_1_1zc__status__data.html#ac8d4e0fc359e98543433718a1574ec7d',1,'Horizon::Zone::zc_status_data::hit']]],
+  ['honor_15',['honor',['../structs__zc__guild__info.html#aefdfd61fae24a3fbe6e83dc049950492',1,'s_zc_guild_info::honor'],['../structs__zc__guild__info2.html#a16c7e46a24a413c6cf7597ae1b9d13f8',1,'s_zc_guild_info2::honor'],['../structentity__viewport__entry.html#a372290e0cf95e976af4c53cc4b91b775',1,'entity_viewport_entry::honor']]],
+  ['hp_16',['hp',['../structentity__viewport__entry.html#ae42f7530d27213bbbe99392b427326cb',1,'entity_viewport_entry::hp'],['../structmonster__config__data.html#a7ae256846f64ba45d322813de7528d18',1,'monster_config_data::hp']]],
+  ['hp_5fcost_17',['hp_cost',['../structskill__config__data.html#a2ea020a51417f4df39b11a68535c3df7',1,'skill_config_data']]],
+  ['hp_5fpercent_5fcost_18',['hp_percent_cost',['../structskill__config__data.html#a2fca45fc24351bc5af626842e4670a29',1,'skill_config_data']]],
+  ['hp_5ftable_19',['hp_table',['../struct_horizon_1_1_zone_1_1job__config__data.html#aec5e69225a916a4d9a647104128710ef',1,'Horizon::Zone::job_config_data']]]
+];

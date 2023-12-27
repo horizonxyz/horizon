@@ -1,0 +1,95 @@
+\doxysection{Zone\+Session.\+hpp}
+\hypertarget{_zone_session_8hpp_source}{}\label{_zone_session_8hpp_source}\index{src/Server/Zone/Session/ZoneSession.hpp@{src/Server/Zone/Session/ZoneSession.hpp}}
+\mbox{\hyperlink{_zone_session_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_SESSION\_ZONESESSION\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_SESSION\_ZONESESSION\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_session_8hpp}{Libraries/Networking/Session.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_server_configuration_8hpp}{Server/Common/Configuration/ServerConfiguration.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_client_interface_8hpp}{Server/Zone/Interface/ZoneClientInterface.hpp}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8hpp}{Server/Zone/Game/Entities/Player/Player.hpp}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#if\ CLIENT\_TYPE\ ==\ 'R'}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_2_packets_2_r_e_2_client_packet_length_table_8hpp}{Server/Zone/Packets/RE/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'M'}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_2_packets_2_ragexe_2_client_packet_length_table_8hpp}{Server/Zone/Packets/Ragexe/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'S'}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_2_packets_2_sakray_2_client_packet_length_table_8hpp}{Server/Zone/Packets/Sakray/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'Z'}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_zone_2_packets_2_zero_2_client_packet_length_table_8hpp}{Server/Zone/Packets/Zero/ClientPacketLengthTable.hpp}}"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#elif\ CLIENT\_TYPE\ ==\ 'A'}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}Server/Zone/Packets/Ad/ClientPacketLengthTable.hpp"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }ZoneSocket;}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{ZoneSession}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_session}{Horizon::Networking::Session}}<ZoneSocket,\ ZoneSession>}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session}{ZoneSession}}(int64\_t\ uid,\ std::shared\_ptr<ZoneSocket>\ socket);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a98e96014347cbd1a3a1ce88e102940b9}{\string~ZoneSession}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a67b49f3dc123b0e08fba0cda6a72665c}{transmit\_buffer}}(\mbox{\hyperlink{class_byte_buffer}{ByteBuffer}}\ \_buffer,\ std::size\_t\ size);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_ae2722c494eb0963208af2463ee3693d6}{update}}(uint32\_t\ diff);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_afbcb8b4309f941dde861bf3507364908}{perform\_cleanup}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_acdf950989f1132f981dfe01d4b9f2aba}{initialize}}();}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ std::unique\_ptr<ZoneClientInterface>\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a58187605b8e1c2963358bc2cac14b586}{clif}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a8d1e3f944283f30a9e409ca5db2202b3}{\_clif}};\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::unique\_ptr<ClientPacketLengthTable>\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a66a918cc97d8a79b69f0b3811151dfa3}{pkt\_tbl}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_aced064093a760f3ff0f4287922d3a0f9}{\_pkt\_tbl}};\ \}}
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ std::shared\_ptr<Entities::Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a0826dd04893bad38a9d2b1d77b52b9b3}{player}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a34cd9e9029146a12fb8ccb02de2d611e}{\_player}};\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a2e10d1ed178b769980f1ba9ff49a5ecb}{set\_player}}(std::shared\_ptr<Entities::Player>\ pl)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a34cd9e9029146a12fb8ccb02de2d611e}{\_player}}\ =\ pl;\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::string\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a3f275922f472182277b669a75b62216b}{get\_map\_name}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a02871bcda314d0eee50f5580f4a32cbb}{\_map\_name}};\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a2a6042423d3f1395ed2dade22613d87a}{set\_map\_name}}(std::string\ map\_name)\ \{\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a02871bcda314d0eee50f5580f4a32cbb}{\_map\_name}}\ =\ map\_name;\ \}}
+\DoxyCodeLine{00119\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00120\ \ \ \ \ std::unique\_ptr<ZoneClientInterface>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a8d1e3f944283f30a9e409ca5db2202b3}{\_clif}};}
+\DoxyCodeLine{00121\ \ \ \ \ std::unique\_ptr<ClientPacketLengthTable>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_aced064093a760f3ff0f4287922d3a0f9}{\_pkt\_tbl}};}
+\DoxyCodeLine{00122\ \ \ \ \ std::shared\_ptr<Entities::Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a34cd9e9029146a12fb8ccb02de2d611e}{\_player}};}
+\DoxyCodeLine{00123\ \ \ \ \ std::string\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_zone_session_a02871bcda314d0eee50f5580f4a32cbb}{\_map\_name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

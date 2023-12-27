@@ -1,0 +1,65 @@
+\doxysection{Database.\+hpp}
+\hypertarget{_database_8hpp_source}{}\label{_database_8hpp_source}\index{src/Server/Common/Configuration/Database.hpp@{src/Server/Common/Configuration/Database.hpp}}
+\mbox{\hyperlink{_database_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_COMMON\_CONFIGURATION\_DATABASE\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_COMMON\_CONFIGURATION\_DATABASE\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_database_8hpp_aa25eccceb9db05e3a3d6b28f92919cf1}{game\_account\_gender\_type}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_aa25eccceb9db05e3a3d6b28f92919cf1a0d955b6e4e6f0995f6852531271dd096}{ACCOUNT\_GENDER\_MALE}},}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_aa25eccceb9db05e3a3d6b28f92919cf1abdb7274fdb955e972126423885de3842}{ACCOUNT\_GENDER\_FEMALE}},}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_aa25eccceb9db05e3a3d6b28f92919cf1ab6d2fe0dbd3760a9d508af32bea4fdd0}{ACCOUNT\_GENDER\_NONE}}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_database_8hpp_a098cae2177ee7bf7789fa27c6c26333b}{game\_account\_state\_type}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_a098cae2177ee7bf7789fa27c6c26333baba0619393e347bb03ac4803bc30ce763}{ACCOUNT\_STATE\_NONE}},}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_a098cae2177ee7bf7789fa27c6c26333ba6e21c40271ad10fa58c1f0b9f08ba992}{ACCOUNT\_STATE\_BANNED}}}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_database_8hpp_af5e3b3634cc2db2157d1c62b113e8cd1}{character\_gender\_type}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_af5e3b3634cc2db2157d1c62b113e8cd1a8f1f475672672a6d892c823088d7a801}{CHARACTER\_GENDER\_FEMALE}}\ =\ 0,}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_af5e3b3634cc2db2157d1c62b113e8cd1a6c7d69817eac60b38be533d5c4d09880}{CHARACTER\_GENDER\_MALE}}\ =\ 1,}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_database_8hpp_ad361b5eea7fe4989e33476a66cbd4e0f}{character\_save\_mask}}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_ad361b5eea7fe4989e33476a66cbd4e0fa0b3d8dedf6f7510502375ae35926512c}{CHAR\_SAVE\_BASE\_DATA}}\ =\ 0x1,}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_ad361b5eea7fe4989e33476a66cbd4e0fa5145671d369d278afe3c3177812e3817}{CHAR\_SAVE\_STATUS\_DATA}}\ =\ 0x2,}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_ad361b5eea7fe4989e33476a66cbd4e0fa3fb29da076b6b7a928e4cdf215e60690}{CHAR\_SAVE\_INVENTORY\_DATA}}\ =\ 0x4,}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_database_8hpp_ad361b5eea7fe4989e33476a66cbd4e0fa48bf2405486165909418e3390f523e08}{CHAR\_SAVE\_ALL}}\ =\ 0xf,}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

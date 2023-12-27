@@ -1,0 +1,140 @@
+\doxysection{Packet\+Length\+Table.\+hpp}
+\hypertarget{_char_2_packets_2_zero_2_packet_length_table_8hpp_source}{}\label{_char_2_packets_2_zero_2_packet_length_table_8hpp_source}\index{src/Server/Char/Packets/Zero/PacketLengthTable.hpp@{src/Server/Char/Packets/Zero/PacketLengthTable.hpp}}
+\mbox{\hyperlink{_char_2_packets_2_zero_2_packet_length_table_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sephus.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CHAR\_ZERO\_PACKET\_LENGTH\_TABLE}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HORIZON\_CHAR\_ZERO\_PACKET\_LENGTH\_TABLE}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_locked_lookup_table_8hpp}{Core/Multithreading/LockedLookupTable.hpp}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_char_2_packets_2_handled_packets_8hpp}{Server/Char/Packets/HandledPackets.hpp}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_char_2_packets_2_transmitted_packets_8hpp}{Server/Char/Packets/TransmittedPackets.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Char}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{typedef}\ std::shared\_ptr<Base::NetworkPacketHandler<CharSession>>\ \mbox{\hyperlink{namespace_horizon_1_1_char_adaf1cf1acc2d3590455a952ed25ab85a}{HPacketStructPtrType}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{typedef}\ std::shared\_ptr<Base::NetworkPacketTransmitter<CharSession>>\ \mbox{\hyperlink{namespace_horizon_1_1_char_ab0fafcd62f579138c8b0f5cea5607896}{TPacketStructPtrType}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<int16\_t,\ HPacketStructPtrType>\ \mbox{\hyperlink{namespace_horizon_1_1_char_a035aa92681e771c3e1ca9c6b53b17ffd}{HPacketTablePairType}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{typedef}\ std::pair<int16\_t,\ TPacketStructPtrType>\ \mbox{\hyperlink{namespace_horizon_1_1_char_a1aaf06e2bcfee4f5d3c1fc068fd145f2}{TPacketTablePairType}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }PacketLengthTable}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_a8343120b86df4b1be29b404af134dad0}{PacketLengthTable}}(std::shared\_ptr<CharSession>\ s)}
+\DoxyCodeLine{00050\ \ \ \ \ :\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_a072aef6841bd4a0943a70a24679f16cd}{\_session}}(s)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ADD\_HPKT(i,\ j,\ k)\ \_hpacket\_length\_table.insert(i,\ std::make\_pair(j,\ std::make\_shared<k>(s)))}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ADD\_TPKT(i,\ j,\ k)\ \_tpacket\_length\_table.insert(i,\ std::make\_pair(j,\ std::make\_shared<k>(s)))}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08fd,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r_n_a_m_e}{CH\_ACK\_CHANGE\_CHARACTERNAME}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08c5,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d}{CH\_AVAILABLE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x09a1,\ 2,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___c_h_a_r_l_i_s_t___r_e_q}{CH\_CHARLIST\_REQ}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x07e7,\ 32,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___c_h_e_c_k_b_o_t}{CH\_CHECKBOT}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0068,\ 46,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___c_h_a_r}{CH\_DELETE\_CHAR}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x01fb,\ 56,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___c_h_a_r2}{CH\_DELETE\_CHAR2}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0829,\ 12,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___c_h_a_r3}{CH\_DELETE\_CHAR3}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x082b,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l}{CH\_DELETE\_CHAR3\_CANCEL}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x098f,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___c_h_a_r3___e_x_t}{CH\_DELETE\_CHAR3\_EXT}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0827,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d}{CH\_DELETE\_CHAR3\_RESERVED}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08bc,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d}{CH\_DELETE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08be,\ 14,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d}{CH\_EDIT\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0065,\ 17,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___e_n_t_e_r}{CH\_ENTER}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0275,\ 37,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___e_n_t_e_r2}{CH\_ENTER2}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x07e5,\ 4,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___e_n_t_e_r___c_h_e_c_k_b_o_t}{CH\_ENTER\_CHECKBOT}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0a39,\ 36,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___m_a_k_e___c_h_a_r}{CH\_MAKE\_CHAR}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0970,\ 31,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___m_a_k_e___c_h_a_r___n_o_t___s_t_a_t_s}{CH\_MAKE\_CHAR\_NOT\_STATS}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08ba,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d}{CH\_MAKE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08c3,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d}{CH\_NOT\_AVAILABLE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08fc,\ 30,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___r_e_q___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r_n_a_m_e}{CH\_REQ\_CHANGE\_CHARACTERNAME}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08d4,\ 8,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___r_e_q___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t}{CH\_REQ\_CHANGE\_CHARACTER\_SLOT}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x028f,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___r_e_q___c_h_a_n_g_e___c_h_a_r_n_a_m_e}{CH\_REQ\_CHANGE\_CHARNAME}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x099c,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___r_e_q___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e}{CH\_REQ\_CHARINFO\_PER\_PAGE}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x028d,\ 34,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___r_e_q___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e}{CH\_REQ\_IS\_VALID\_CHARNAME}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08b8,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___s_e_c_o_n_d___p_a_s_s_w_d___a_c_k}{CH\_SECOND\_PASSWD\_ACK}});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0841,\ 4,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___s_e_l_e_c_t___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e}{CH\_SELECT\_ACCESSIBLE\_MAPNAME}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0066,\ 3,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___s_e_l_e_c_t___c_h_a_r}{CH\_SELECT\_CHAR}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x028c,\ 46,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___s_e_l_e_c_t___c_h_a_r___g_o_i_n_g_t_o_b_e_u_s_e_d}{CH\_SELECT\_CHAR\_GOINGTOBEUSED}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x0187,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___u_n_k_n_o_w_n___p_i_n_g}{CH\_UNKNOWN\_PING}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_a4bea1594797038597fb90f3b8940b307}{ADD\_HPKT}}(0x08b0,\ 17,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_c_h___w_a_i_t_i_n_g___l_o_g_i_n}{CH\_WAITING\_LOGIN}});}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x006f,\ 2,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___d_e_l_e_t_e_c_h_a_r}{HC\_ACCEPT\_DELETECHAR}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x006b,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r}{HC\_ACCEPT\_ENTER}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x082d,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___e_n_t_e_r2}{HC\_ACCEPT\_ENTER2}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x006d,\ 157,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_c_e_p_t___m_a_k_e_c_h_a_r}{HC\_ACCEPT\_MAKECHAR}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08d5,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_a_c_t_e_r___s_l_o_t}{HC\_ACK\_CHANGE\_CHARACTER\_SLOT}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0290,\ 4,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_n_g_e___c_h_a_r_n_a_m_e}{HC\_ACK\_CHANGE\_CHARNAME}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x099d,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___c_h_a_r_i_n_f_o___p_e_r___p_a_g_e}{HC\_ACK\_CHARINFO\_PER\_PAGE}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x028e,\ 4,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_c_k___i_s___v_a_l_i_d___c_h_a_r_n_a_m_e}{HC\_ACK\_IS\_VALID\_CHARNAME}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08c6,\ 4,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_AVAILABLE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x020d,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___b_l_o_c_k___c_h_a_r_a_c_t_e_r}{HC\_BLOCK\_CHARACTER}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0448,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_a_c_t_e_r___l_i_s_t}{HC\_CHARACTER\_LIST}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x09a0,\ 6,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_l_i_s_t___n_o_t_i_f_y}{HC\_CHARLIST\_NOTIFY}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x028b,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_a_r_n_o_t_b_e_e_n_s_e_l_e_c_t_e_d}{HC\_CHARNOTBEENSELECTED}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x07e8,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t}{HC\_CHECKBOT}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x07e9,\ 5,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___c_h_e_c_k_b_o_t___r_e_s_u_l_t}{HC\_CHECKBOT\_RESULT}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x082a,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3}{HC\_DELETE\_CHAR3}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x082c,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___c_a_n_c_e_l}{HC\_DELETE\_CHAR3\_CANCEL}});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0828,\ 14,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___c_h_a_r3___r_e_s_e_r_v_e_d}{HC\_DELETE\_CHAR3\_RESERVED}});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08bd,\ 8,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___d_e_l_e_t_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_DELETE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08bf,\ 8,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___e_d_i_t___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_EDIT\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08bb,\ 8,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___m_a_k_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_MAKE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0840,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___a_c_c_e_s_s_i_b_l_e___m_a_p_n_a_m_e}{HC\_NOTIFY\_ACCESSIBLE\_MAPNAME}});}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0ac5,\ 156,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t_i_f_y___z_o_n_e_s_v_r}{HC\_NOTIFY\_ZONESVR}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08c4,\ 8,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___n_o_t___a_v_a_i_l_a_b_l_e___s_e_c_o_n_d___p_a_s_s_w_d}{HC\_NOT\_AVAILABLE\_SECOND\_PASSWD}});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x099e,\ 12,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___q_u_e_u_e___o_r_d_e_r}{HC\_QUEUE\_ORDER}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x0070,\ 3,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___d_e_l_e_t_e_c_h_a_r}{HC\_REFUSE\_DELETECHAR}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x006c,\ 3,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___e_n_t_e_r}{HC\_REFUSE\_ENTER}});}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x006e,\ 3,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___m_a_k_e_c_h_a_r}{HC\_REFUSE\_MAKECHAR}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x02ca,\ 3,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_f_u_s_e___s_e_l_e_c_t_c_h_a_r}{HC\_REFUSE\_SELECTCHAR}});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x023e,\ 8,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___r_e_q_u_e_s_t___c_h_a_r_a_c_t_e_r___p_a_s_s_w_o_r_d}{HC\_REQUEST\_CHARACTER\_PASSWORD}});}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08b9,\ 12,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_o_n_d___p_a_s_s_w_d___l_o_g_i_n}{HC\_SECOND\_PASSWD\_LOGIN}});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x09c2,\ -\/1,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___s_e_c_r_e_t_s_c_a_n___d_a_t_a}{HC\_SECRETSCAN\_DATA}});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08e3,\ 157,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___u_p_d_a_t_e___c_h_a_r_i_n_f_o}{HC\_UPDATE\_CHARINFO}});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_auth_2_packets_2_a_d_2_client_packet_length_table_8hpp_adce128219b75049a8d237114c552242f}{ADD\_TPKT}}(0x08af,\ 10,\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_h_c___w_a_i_t_i_n_g___l_o_g_i_n}{HC\_WAITING\_LOGIN}});}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#undef\ ADD\_HPKT}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#undef\ ADD\_TPKT}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_afaadb092806e2f85ed97885d4a08ffa7}{\string~PacketLengthTable}}()\ \{\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ std::shared\_ptr<CharSession>\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_a74d10ba0549b6e54717c6446543b843b}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_a072aef6841bd4a0943a70a24679f16cd}{\_session}}.lock();\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a035aa92681e771c3e1ca9c6b53b17ffd}{HPacketTablePairType}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_af870c208f608e4f748efff398e635d45}{get\_hpacket\_info}}(uint16\_t\ packet\_id)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_aadd38d6681a7b62036c9eb466dda9d27}{\_hpacket\_length\_table}}.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(packet\_id);\ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_char_a1aaf06e2bcfee4f5d3c1fc068fd145f2}{TPacketTablePairType}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_a3ebc9d05aaf9fba8e0ea941cfbdb48d2}{get\_tpacket\_info}}(uint16\_t\ packet\_id)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_aea66e6ca22f0fbbbc8b972cc44485e11}{\_tpacket\_length\_table}}.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(packet\_id);\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint16\_t,\ HPacketTablePairType>}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_aadd38d6681a7b62036c9eb466dda9d27}{\_hpacket\_length\_table}};}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint16\_t,\ TPacketTablePairType>}}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_aea66e6ca22f0fbbbc8b972cc44485e11}{\_tpacket\_length\_table}};}
+\DoxyCodeLine{00132\ \ \ \ \ std::weak\_ptr<CharSession>\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_packet_length_table_a072aef6841bd4a0943a70a24679f16cd}{\_session}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ \}}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_CHAR\_ZERO\_PACKET\_LENGTH\_TABLE\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

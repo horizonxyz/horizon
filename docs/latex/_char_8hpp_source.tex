@@ -1,0 +1,147 @@
+\doxysection{Char.\+hpp}
+\hypertarget{_char_8hpp_source}{}\label{_char_8hpp_source}\index{src/Server/Char/Char.hpp@{src/Server/Char/Char.hpp}}
+\mbox{\hyperlink{_char_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_CHAR\_CHARMAIN\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_CHAR\_CHARMAIN\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8hpp}{Server/pch.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_server_8hpp}{Server/Common/Server.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Char}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server}{CharServer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_server}{Server}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{enum}\ character\_server\_type\ :\ uint16\_t}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ CHAR\_SERVER\_TYPE\_NORMAL,}
+\DoxyCodeLine{00047\ \ \ \ \ CHAR\_SERVER\_TYPE\_MAINTENANCE,}
+\DoxyCodeLine{00048\ \ \ \ \ CHAR\_SERVER\_TYPE\_OVER18,}
+\DoxyCodeLine{00049\ \ \ \ \ CHAR\_SERVER\_TYPE\_PAYING,}
+\DoxyCodeLine{00050\ \ \ \ \ CHAR\_SERVER\_TYPE\_FREE2PLAY,}
+\DoxyCodeLine{00051\ \ \ \ \ CHAR\_SERVER\_TYPE\_MAX,}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{struct\ }character\_server\_configuration}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{/*\ Start\ Map\ */}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&start\_map()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_start\_map;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_start\_map(std::string\ \textcolor{keyword}{const}\ \&map)\ \{\ \_start\_map\ =\ map;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{/*\ Start\ X\ */}}
+\DoxyCodeLine{00060\ \ \ \ \ int16\_t\ start\_x()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_start\_x;\ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_start\_x(int16\_t\ x)\ \{\ \_start\_x\ =\ x;\ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{/*\ Start\ Y\ */}}
+\DoxyCodeLine{00063\ \ \ \ \ int16\_t\ start\_y()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_start\_y;\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_start\_y(int16\_t\ y)\ \{\ \_start\_y\ =\ y;\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*\ Start\ Zeny\ */}}
+\DoxyCodeLine{00066\ \ \ \ \ int32\_t\ start\_zeny()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_start\_zeny;\ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_start\_zeny(int32\_t\ zeny)\ \{\ \_start\_zeny\ =\ zeny;\ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*\ Start\ Items\ */}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_start\_item(std::pair<int32\_t,\ int32\_t>\ item)\ \{\ \_start\_items.push\_back(item);\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ std::pair<int32\_t,\ int32\_t>\ \&start\_item(std::size\_t\ index)\ \{\ \textcolor{keywordflow}{return}\ \_start\_items.at(index);\ \}}
+\DoxyCodeLine{00071\ \ \ \ \ std::size\_t\ start\_item\_count()\ \{\ \textcolor{keywordflow}{return}\ \_start\_items.size();\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{/*\ Character\ Deletion\ Time\ */}}
+\DoxyCodeLine{00073\ \ \ \ \ time\_t\ character\_deletion\_time()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_character\_deletion\_time;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_character\_deletion\_time(time\_t\ time)\ \{\ \_character\_deletion\_time\ =\ time;\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{/*\ Zone\ Server\ IP\ */}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&zone\_server\_ip()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_zone\_server\_ip;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_zone\_server\_ip(std::string\ \textcolor{keyword}{const}\ \&ip)\ \{\ \_zone\_server\_ip\ =\ ip;\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{/*\ Zone\ Server\ Port\ */}}
+\DoxyCodeLine{00079\ \ \ \ \ int16\_t\ zone\_server\_port()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_zone\_server\_port;\ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_zone\_server\_port(int16\_t\ port)\ \{\ \_zone\_server\_port\ =\ port;\ \}}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ char\_hard\_delete()\ \{\ \textcolor{keywordflow}{return}\ \_char\_hard\_delete;\ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_char\_hard\_delete(\textcolor{keywordtype}{bool}\ d)\ \{\ \_char\_hard\_delete\ =\ d;\ \}}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ int32\_t\ pincode\_expiry()\ \{\ \textcolor{keywordflow}{return}\ \_pincode\_expiry;\ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_pincode\_expiry(int32\_t\ pincode\_expiry)\ \{\ \_pincode\_expiry\ =\ pincode\_expiry;\ \}}
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ int32\_t\ pincode\_max\_retry()\ \{\ \textcolor{keywordflow}{return}\ \_pincode\_max\_retry;\ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_pincode\_max\_retry(int32\_t\ retry)\ \{\ \_pincode\_max\_retry\ =\ retry;\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ std::time\_t\ session\_max\_timeout()\ \{\ \textcolor{keywordflow}{return}\ \_session\_max\_timeout;\ \}}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{void}\ set\_session\_max\_timeout(std::time\_t\ timeout)\ \{\ \_session\_max\_timeout\ =\ timeout;\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00095\ \ \ \ \ std::string\ \_start\_map\{\textcolor{stringliteral}{"{}new\_1-\/1"{}}\};}
+\DoxyCodeLine{00096\ \ \ \ \ int16\_t\ \_start\_x\{53\},\ \_start\_y\{111\};}
+\DoxyCodeLine{00097\ \ \ \ \ int32\_t\ \_start\_zeny\{0\};}
+\DoxyCodeLine{00098\ \ \ \ \ std::vector<std::pair<int32\_t,\ int32\_t>>\ \_start\_items;}
+\DoxyCodeLine{00099\ \ \ \ \ time\_t\ \_character\_deletion\_time;}
+\DoxyCodeLine{00100\ \ \ \ \ std::string\ \_zone\_server\_ip;}
+\DoxyCodeLine{00101\ \ \ \ \ int16\_t\ \_zone\_server\_port;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_char\_hard\_delete;}
+\DoxyCodeLine{00103\ \ \ \ \ int32\_t\ \_pincode\_expiry;}
+\DoxyCodeLine{00104\ \ \ \ \ int32\_t\ \_pincode\_max\_retry;}
+\DoxyCodeLine{00105\ \ \ std::time\_t\ \_session\_max\_timeout;}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ \ \ \ \ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_aff0dcee0e9dee4955e0925866e114f79}{CharServer}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a949ce4e308b8f9e3f8b302547a9cd1cf}{\string~CharServer}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server}{CharServer}}\ *\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_aba0b4637105a674748250725db097223}{getInstance}}()}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server}{CharServer}}\ instance;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a8c217b322e641f706d16b76289f320e1}{read\_config}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_af13036ccd49b0a5ed4b9c7d5c4668a05}{initialize\_cli\_commands}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a20bc12a28d7880def5dd6e663d438a73}{initialize\_core}}();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ character\_server\_configuration\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a7a567ec043cbea797447f179c48c42cb}{config}}()\ \{\ \textcolor{keywordflow}{return}\ \_char\_server\_config;\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \&\mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a62ab0d8a2611645ad41c25c22cce23d5}{getScheduler}}()\ \{\ \textcolor{keywordflow}{return}\ \_task\_scheduler;\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_aea567aec59e7f5447835d2f69a5ad9b1}{update}}(uint64\_t\ time);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_char_1_1_char_server_a9e25e9382ce1fa00bcea7c876e452faf}{verify\_connected\_sessions}}();}
+\DoxyCodeLine{00130\ \ \ \ \ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00132\ \ \ \ \ character\_server\_configuration\ \_char\_server\_config;}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \_task\_scheduler;}
+\DoxyCodeLine{00134\ \ \ \ \ boost::asio::deadline\_timer\ \_update\_timer;}
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ sChar\ Horizon::Char::CharServer::getInstance()}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//HORIZON\_CHAR\_CHARMAIN\_HPP}}
+
+\end{DoxyCode}

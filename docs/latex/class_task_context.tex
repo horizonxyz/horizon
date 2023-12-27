@@ -1,0 +1,461 @@
+\doxysection{Task\+Context Class Reference}
+\hypertarget{class_task_context}{}\label{class_task_context}\index{TaskContext@{TaskContext}}
+
+
+{\ttfamily \#include $<$Task\+Scheduler.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_context_ac844b54773254e162987f61f6c37450d}{Task\+Context}} ()
+\item 
+\mbox{\hyperlink{class_task_context_adca01e15214852dd23d3e404ee3e1f21}{Task\+Context}} (Task\+Scheduler\+::\+Task\+Container \&\&task, std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} $>$ \&\&owner)
+\item 
+\mbox{\hyperlink{class_task_context_a675ad7f58107afea81b2a24057675f83}{Task\+Context}} (\mbox{\hyperlink{class_task_context}{Task\+Context}} \&\&right)
+\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_aac6c2e98dc64f278054a38fa31b64685}{operator=}} (\mbox{\hyperlink{class_task_context}{Task\+Context}} \&\&right)
+\item 
+bool \mbox{\hyperlink{class_task_context_af1d32693e6df24d76a82b1a367eacbe5}{Is\+Expired}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the owner was deallocated and this context has expired. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_context_ad7bd61567707321cad553befb28c1c6a}{Is\+In\+Group}} (Task\+Scheduler\+::group\+\_\+t const group) const
+\begin{DoxyCompactList}\small\item\em Returns true if the event is in the given group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a7a93eec2b41f8456a0e939303b3ab085}{Set\+Group}} (Task\+Scheduler\+::group\+\_\+t const group)
+\begin{DoxyCompactList}\small\item\em Sets the event in the given group. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_ac3d6d215d8c605a1f724af35136bafe6}{Clear\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Removes the group from the event. \end{DoxyCompactList}\item 
+Task\+Scheduler\+::repeated\+\_\+t \mbox{\hyperlink{class_task_context_aab7910aa171d409afa3f074858eacd0e}{Get\+Repeat\+Counter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the repeat counter which increases every time the task is repeated. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a380c596857dd0030414db5e8d28a3dda}{Repeat}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809}{Repeat}} ()
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a686aee457802bc71b6560549c13239c9}{Repeat}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a8e152545e08d9a73522bf03b631148a2}{Async}} (std\+::function$<$ void()$>$ const \&callable)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&time, Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&task)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_aaaba68c85b949416169136485130c6f8}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&time, Task\+Scheduler\+::group\+\_\+t const group, Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&task)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_aa7530c5f763cc34d0cdc83fcbaaafe37}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max, Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&task)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a5c856d7c07fe8058ff53d35ccfb9b677}{Schedule}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max, Task\+Scheduler\+::group\+\_\+t const group, Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&task)
+\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a6aa85817c2bf7c7f2f868d4a0a9fdf98}{Cancel\+All}} ()
+\begin{DoxyCompactList}\small\item\em Cancels all tasks from within the context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a95dca8900ebf6709d9c5535f39c7277f}{Cancel\+Group}} (Task\+Scheduler\+::group\+\_\+t const group)
+\begin{DoxyCompactList}\small\item\em Cancel all tasks of a single group from within the context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_ac22c5c7e5ceac123c72918d77edb25b9}{Cancel\+Groups\+Of}} (std\+::vector$<$ Task\+Scheduler\+::group\+\_\+t $>$ const \&groups)
+\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_aad967f626ce88f95bb7e0610f92f83bb}{Delay\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Delays all tasks with the given duration from within the context. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_abde6f85254b960e69355583af88123f1}{Delay\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Delays all tasks with a random duration between min and max from within the context. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_ab51c9108135f18eda88250cbdc1d4c9e}{Delay\+Group}} (Task\+Scheduler\+::group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Delays all tasks of a group with the given duration from within the context. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a701e13bfc09a6c1fc6e372c5310e2d80}{Delay\+Group}} (Task\+Scheduler\+::group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Delays all tasks of a group with a random duration between min and max from within the context. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_ae60b6c797e99c416b84c5b9ae715b215}{Reschedule\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks with the given duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_ac35c49969cef74262137fce851a3a30d}{Reschedule\+All}} (std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks with a random duration between min and max. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_add5a7d1e76bd0d0766c17920dadd5b61}{Reschedule\+Group}} (Task\+Scheduler\+::group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&duration)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks of a group with the given duration. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ }\\\mbox{\hyperlink{class_task_context}{Task\+Context}} \& \mbox{\hyperlink{class_task_context_a0cac55da6d10d0a74c9f83689d028174}{Reschedule\+Group}} (Task\+Scheduler\+::group\+\_\+t const group, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&min, std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&max)
+\begin{DoxyCompactList}\small\item\em Reschedule all tasks of a group with a random duration between min and max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_task_context_a9f0573c5408a663c3874787eeb7d599e}{Task\+Scheduler}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_task_context_ac844b54773254e162987f61f6c37450d}\label{class_task_context_ac844b54773254e162987f61f6c37450d} 
+\index{TaskContext@{TaskContext}!TaskContext@{TaskContext}}
+\index{TaskContext@{TaskContext}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{TaskContext()}{TaskContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Task\+Context\+::\+Task\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_task_context_adca01e15214852dd23d3e404ee3e1f21}\label{class_task_context_adca01e15214852dd23d3e404ee3e1f21} 
+\index{TaskContext@{TaskContext}!TaskContext@{TaskContext}}
+\index{TaskContext@{TaskContext}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{TaskContext()}{TaskContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Task\+Context\+::\+Task\+Context (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::\+Task\+Container \&\&}]{task,  }\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} $>$ \&\&}]{owner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_task_context_a675ad7f58107afea81b2a24057675f83}\label{class_task_context_a675ad7f58107afea81b2a24057675f83} 
+\index{TaskContext@{TaskContext}!TaskContext@{TaskContext}}
+\index{TaskContext@{TaskContext}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{TaskContext()}{TaskContext()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Task\+Context\+::\+Task\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_context}{Task\+Context}} \&\&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_task_context_a8e152545e08d9a73522bf03b631148a2}\label{class_task_context_a8e152545e08d9a73522bf03b631148a2} 
+\index{TaskContext@{TaskContext}!Async@{Async}}
+\index{Async@{Async}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Async()}{Async()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Async (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$ const \&}]{callable }\end{DoxyParamCaption})}
+
+Schedule a callable function that is executed at the next update tick from within the context. Its safe to modify the \doxylink{class_task_scheduler}{Task\+Scheduler} from within the callable. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_task_context_a8e152545e08d9a73522bf03b631148a2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_a6aa85817c2bf7c7f2f868d4a0a9fdf98}\label{class_task_context_a6aa85817c2bf7c7f2f868d4a0a9fdf98} 
+\index{TaskContext@{TaskContext}!CancelAll@{CancelAll}}
+\index{CancelAll@{CancelAll}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{CancelAll()}{CancelAll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Cancel\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cancels all tasks from within the context. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_a6aa85817c2bf7c7f2f868d4a0a9fdf98_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_a95dca8900ebf6709d9c5535f39c7277f}\label{class_task_context_a95dca8900ebf6709d9c5535f39c7277f} 
+\index{TaskContext@{TaskContext}!CancelGroup@{CancelGroup}}
+\index{CancelGroup@{CancelGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{CancelGroup()}{CancelGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Cancel\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group }\end{DoxyParamCaption})}
+
+
+
+Cancel all tasks of a single group from within the context. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_a95dca8900ebf6709d9c5535f39c7277f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_ac22c5c7e5ceac123c72918d77edb25b9}\label{class_task_context_ac22c5c7e5ceac123c72918d77edb25b9} 
+\index{TaskContext@{TaskContext}!CancelGroupsOf@{CancelGroupsOf}}
+\index{CancelGroupsOf@{CancelGroupsOf}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{CancelGroupsOf()}{CancelGroupsOf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Cancel\+Groups\+Of (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Task\+Scheduler\+::group\+\_\+t $>$ const \&}]{groups }\end{DoxyParamCaption})}
+
+Cancels all groups in the given std\+::vector from within the context. Hint\+: Use std\+::initializer\+\_\+list for this\+: "{}\{1, 2, 3, 4\}"{} Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_ac22c5c7e5ceac123c72918d77edb25b9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_ac3d6d215d8c605a1f724af35136bafe6}\label{class_task_context_ac3d6d215d8c605a1f724af35136bafe6} 
+\index{TaskContext@{TaskContext}!ClearGroup@{ClearGroup}}
+\index{ClearGroup@{ClearGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{ClearGroup()}{ClearGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Clear\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes the group from the event. 
+
+\Hypertarget{class_task_context_aad967f626ce88f95bb7e0610f92f83bb}\label{class_task_context_aad967f626ce88f95bb7e0610f92f83bb} 
+\index{TaskContext@{TaskContext}!DelayAll@{DelayAll}}
+\index{DelayAll@{DelayAll}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{DelayAll()}{DelayAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Delay\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks with the given duration from within the context. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_task_context_aad967f626ce88f95bb7e0610f92f83bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_abde6f85254b960e69355583af88123f1}\label{class_task_context_abde6f85254b960e69355583af88123f1} 
+\index{TaskContext@{TaskContext}!DelayAll@{DelayAll}}
+\index{DelayAll@{DelayAll}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{DelayAll()}{DelayAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Delay\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks with a random duration between min and max from within the context. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_task_context_abde6f85254b960e69355583af88123f1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_ab51c9108135f18eda88250cbdc1d4c9e}\label{class_task_context_ab51c9108135f18eda88250cbdc1d4c9e} 
+\index{TaskContext@{TaskContext}!DelayGroup@{DelayGroup}}
+\index{DelayGroup@{DelayGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{DelayGroup()}{DelayGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Delay\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks of a group with the given duration from within the context. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_ab51c9108135f18eda88250cbdc1d4c9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_a701e13bfc09a6c1fc6e372c5310e2d80}\label{class_task_context_a701e13bfc09a6c1fc6e372c5310e2d80} 
+\index{TaskContext@{TaskContext}!DelayGroup@{DelayGroup}}
+\index{DelayGroup@{DelayGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{DelayGroup()}{DelayGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Delay\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delays all tasks of a group with a random duration between min and max from within the context. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_a701e13bfc09a6c1fc6e372c5310e2d80_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_aab7910aa171d409afa3f074858eacd0e}\label{class_task_context_aab7910aa171d409afa3f074858eacd0e} 
+\index{TaskContext@{TaskContext}!GetRepeatCounter@{GetRepeatCounter}}
+\index{GetRepeatCounter@{GetRepeatCounter}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{GetRepeatCounter()}{GetRepeatCounter()}}
+{\footnotesize\ttfamily Task\+Scheduler\+::repeated\+\_\+t Task\+Context\+::\+Get\+Repeat\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the repeat counter which increases every time the task is repeated. 
+
+\Hypertarget{class_task_context_af1d32693e6df24d76a82b1a367eacbe5}\label{class_task_context_af1d32693e6df24d76a82b1a367eacbe5} 
+\index{TaskContext@{TaskContext}!IsExpired@{IsExpired}}
+\index{IsExpired@{IsExpired}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{IsExpired()}{IsExpired()}}
+{\footnotesize\ttfamily bool Task\+Context\+::\+Is\+Expired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the owner was deallocated and this context has expired. 
+
+\Hypertarget{class_task_context_ad7bd61567707321cad553befb28c1c6a}\label{class_task_context_ad7bd61567707321cad553befb28c1c6a} 
+\index{TaskContext@{TaskContext}!IsInGroup@{IsInGroup}}
+\index{IsInGroup@{IsInGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{IsInGroup()}{IsInGroup()}}
+{\footnotesize\ttfamily bool Task\+Context\+::\+Is\+In\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the event is in the given group. 
+
+\Hypertarget{class_task_context_aac6c2e98dc64f278054a38fa31b64685}\label{class_task_context_aac6c2e98dc64f278054a38fa31b64685} 
+\index{TaskContext@{TaskContext}!operator=@{operator=}}
+\index{operator=@{operator=}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_task_context}{Task\+Context}} \&\&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809}\label{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809} 
+\index{TaskContext@{TaskContext}!Repeat@{Repeat}}
+\index{Repeat@{Repeat}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Repeat()}{Repeat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Repeat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Repeats the event with the same duration. This will consume the task context, its not possible to repeat the task again from the same task context! Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_adc1347e5fcff0bb21e45805b1cfd2809_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_a380c596857dd0030414db5e8d28a3dda}\label{class_task_context_a380c596857dd0030414db5e8d28a3dda} 
+\index{TaskContext@{TaskContext}!Repeat@{Repeat}}
+\index{Repeat@{Repeat}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Repeat()}{Repeat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Repeat (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Repeats the event and sets a new duration. std\+::chrono\+::seconds(5) for example. This will consume the task context, its not possible to repeat the task again from the same task context! Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_task_context_a380c596857dd0030414db5e8d28a3dda_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_a380c596857dd0030414db5e8d28a3dda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_a686aee457802bc71b6560549c13239c9}\label{class_task_context_a686aee457802bc71b6560549c13239c9} 
+\index{TaskContext@{TaskContext}!Repeat@{Repeat}}
+\index{Repeat@{Repeat}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Repeat()}{Repeat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Repeat (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Repeats the event and set a new duration that is randomized between min and max. std\+::chrono\+::seconds(5) for example. This will consume the task context, its not possible to repeat the task again from the same task context! Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_task_context_a686aee457802bc71b6560549c13239c9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_ae60b6c797e99c416b84c5b9ae715b215}\label{class_task_context_ae60b6c797e99c416b84c5b9ae715b215} 
+\index{TaskContext@{TaskContext}!RescheduleAll@{RescheduleAll}}
+\index{RescheduleAll@{RescheduleAll}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{RescheduleAll()}{RescheduleAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Reschedule\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks with the given duration. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_ae60b6c797e99c416b84c5b9ae715b215_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_ac35c49969cef74262137fce851a3a30d}\label{class_task_context_ac35c49969cef74262137fce851a3a30d} 
+\index{TaskContext@{TaskContext}!RescheduleAll@{RescheduleAll}}
+\index{RescheduleAll@{RescheduleAll}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{RescheduleAll()}{RescheduleAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Reschedule\+All (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks with a random duration between min and max. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_ac35c49969cef74262137fce851a3a30d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_add5a7d1e76bd0d0766c17920dadd5b61}\label{class_task_context_add5a7d1e76bd0d0766c17920dadd5b61} 
+\index{TaskContext@{TaskContext}!RescheduleGroup@{RescheduleGroup}}
+\index{RescheduleGroup@{RescheduleGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{RescheduleGroup()}{RescheduleGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Reschedule\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks of a group with the given duration. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_add5a7d1e76bd0d0766c17920dadd5b61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_a0cac55da6d10d0a74c9f83689d028174}\label{class_task_context_a0cac55da6d10d0a74c9f83689d028174} 
+\index{TaskContext@{TaskContext}!RescheduleGroup@{RescheduleGroup}}
+\index{RescheduleGroup@{RescheduleGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{RescheduleGroup()}{RescheduleGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Reschedule\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reschedule all tasks of a group with a random duration between min and max. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_context_a0cac55da6d10d0a74c9f83689d028174_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_task_context_aaaba68c85b949416169136485130c6f8}\label{class_task_context_aaaba68c85b949416169136485130c6f8} 
+\index{TaskContext@{TaskContext}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{time,  }\item[{Task\+Scheduler\+::group\+\_\+t const}]{group,  }\item[{Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a fixed rate from within the context. Its possible that the new event is executed immediately! Use \doxylink{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}{Task\+Scheduler\+::\+Async} to create a task which will be called at the next update tick. \Hypertarget{class_task_context_ada6565daabe9a55c0ca2379ed7b23741}\label{class_task_context_ada6565daabe9a55c0ca2379ed7b23741} 
+\index{TaskContext@{TaskContext}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep , typename \+\_\+\+Period $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep, \+\_\+\+Period $>$ const \&}]{time,  }\item[{Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a fixed rate from within the context. Its possible that the new event is executed immediately! Use \doxylink{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}{Task\+Scheduler\+::\+Async} to create a task which will be called at the next update tick. \Hypertarget{class_task_context_a5c856d7c07fe8058ff53d35ccfb9b677}\label{class_task_context_a5c856d7c07fe8058ff53d35ccfb9b677} 
+\index{TaskContext@{TaskContext}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max,  }\item[{Task\+Scheduler\+::group\+\_\+t const}]{group,  }\item[{Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a randomized rate between min and max rate from within the context. Its possible that the new event is executed immediately! Use \doxylink{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}{Task\+Scheduler\+::\+Async} to create a task which will be called at the next update tick. \Hypertarget{class_task_context_aa7530c5f763cc34d0cdc83fcbaaafe37}\label{class_task_context_aa7530c5f763cc34d0cdc83fcbaaafe37} 
+\index{TaskContext@{TaskContext}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+\+Rep\+Left , typename \+\_\+\+Period\+Left , typename \+\_\+\+Rep\+Right , typename \+\_\+\+Period\+Right $>$ \\
+\mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Schedule (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Left, \+\_\+\+Period\+Left $>$ const \&}]{min,  }\item[{std\+::chrono\+::duration$<$ \+\_\+\+Rep\+Right, \+\_\+\+Period\+Right $>$ const \&}]{max,  }\item[{Task\+Scheduler\+::task\+\_\+handler\+\_\+t const \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Schedule an event with a randomized rate between min and max rate from within the context. Its possible that the new event is executed immediately! Use \doxylink{class_task_scheduler_a0e4b7eea4d37cf6d9ae66330d6349626}{Task\+Scheduler\+::\+Async} to create a task which will be called at the next update tick. \Hypertarget{class_task_context_a7a93eec2b41f8456a0e939303b3ab085}\label{class_task_context_a7a93eec2b41f8456a0e939303b3ab085} 
+\index{TaskContext@{TaskContext}!SetGroup@{SetGroup}}
+\index{SetGroup@{SetGroup}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{SetGroup()}{SetGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_context}{Task\+Context}} \& Task\+Context\+::\+Set\+Group (\begin{DoxyParamCaption}\item[{Task\+Scheduler\+::group\+\_\+t const}]{group }\end{DoxyParamCaption})}
+
+
+
+Sets the event in the given group. 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_task_context_a9f0573c5408a663c3874787eeb7d599e}\label{class_task_context_a9f0573c5408a663c3874787eeb7d599e} 
+\index{TaskContext@{TaskContext}!TaskScheduler@{TaskScheduler}}
+\index{TaskScheduler@{TaskScheduler}!TaskContext@{TaskContext}}
+\doxysubsubsection{\texorpdfstring{TaskScheduler}{TaskScheduler}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utility/\mbox{\hyperlink{_task_scheduler_8hpp}{Task\+Scheduler.\+hpp}}\item 
+src/\+Utility/\mbox{\hyperlink{_task_scheduler_8cpp}{Task\+Scheduler.\+cpp}}\end{DoxyCompactItemize}

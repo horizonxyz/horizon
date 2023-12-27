@@ -1,0 +1,419 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: ClassName
+%%Creator: Doxygen
+%%CreationDate: Time
+%%For: 
+%Magnification: 1.00
+%%Orientation: Portrait
+%%BoundingBox: 0 0 500 1844.660156
+%%Pages: 0
+%%BeginSetup
+%%EndSetup
+%%EndComments
+
+% ----- variables -----
+
+/boxwidth 0 def
+/boxheight 40 def
+/fontheight 24 def
+/marginwidth 10 def
+/distx 20 def
+/disty 40 def
+/boundaspect 0.271053 def  % aspect ratio of the BoundingBox (width/height)
+/boundx 500 def
+/boundy boundx boundaspect div def
+/xspacing 0 def
+/yspacing 0 def
+/rows 57 def
+/cols 2 def
+/scalefactor 0 def
+/boxfont /Times-Roman findfont fontheight scalefont def
+
+% ----- procedures -----
+
+/dotted { [1 4] 0 setdash } def
+/dashed { [5] 0 setdash } def
+/solid  { [] 0 setdash } def
+
+/max % result = MAX(arg1,arg2)
+{
+  /a exch def
+  /b exch def
+  a b gt {a} {b} ifelse
+} def
+
+/xoffset % result = MAX(0,(scalefactor-(boxwidth*cols+distx*(cols-1)))/2)
+{
+  0 scalefactor boxwidth cols mul distx cols 1 sub mul add sub 2 div max
+} def
+
+/cw % boxwidth = MAX(boxwidth, stringwidth(arg1))
+{
+  /str exch def
+  /boxwidth boxwidth str stringwidth pop max def
+} def
+
+/box % draws a box with text 'arg1' at grid pos (arg2,arg3)
+{ gsave
+  2 setlinewidth
+  newpath
+  exch xspacing mul xoffset add
+  exch yspacing mul
+  moveto
+  boxwidth 0 rlineto 
+  0 boxheight rlineto 
+  boxwidth neg 0 rlineto 
+  0 boxheight neg rlineto 
+  closepath
+  dup stringwidth pop neg boxwidth add 2 div
+  boxheight fontheight 2 div sub 2 div
+  rmoveto show stroke
+  grestore
+} def  
+
+/mark
+{ newpath
+  exch xspacing mul xoffset add boxwidth add
+  exch yspacing mul
+  moveto
+  0 boxheight 4 div rlineto
+  boxheight neg 4 div boxheight neg 4 div rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/arrow
+{ newpath
+  moveto
+  3 -8 rlineto
+  -6 0 rlineto
+  3 8 rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/out % draws an output connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight add
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto 
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/in % draws an input connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul disty 2 div sub
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/hedge
+{
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight 2 div sub
+  /y exch def
+  /x exch def
+  newpath
+  x y moveto
+  boxwidth 2 div distx add 0 rlineto
+  stroke
+  1 eq
+  { newpath x boxwidth 2 div distx add add y moveto
+    -8 3 rlineto
+    0 -6 rlineto
+    8 3 rlineto
+    closepath
+    eofill
+    stroke
+  } if
+} def
+
+/vedge
+{
+  /ye exch def
+  /ys exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add dup
+  ys yspacing mul boxheight 2 div sub
+  moveto
+  ye yspacing mul boxheight 2 div sub
+  lineto
+  stroke
+} def
+
+/conn % connections the blocks from col 'arg1' to 'arg2' of row 'arg3'
+{
+  /ys exch def
+  /xe exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add
+  ys yspacing mul disty 2 div sub
+  moveto
+  xspacing xe xs sub mul 0
+  rlineto
+  stroke
+} def
+
+% ----- main ------
+
+boxfont setfont
+1 boundaspect scale
+(Horizon::Zone::Traits::Attribute) cw
+(Horizon::Zone::Traits::Agility) cw
+(Horizon::Zone::Traits::AgilityPointCost) cw
+(Horizon::Zone::Traits::AttackDelay) cw
+(Horizon::Zone::Traits::AttackMotion) cw
+(Horizon::Zone::Traits::AttackRange) cw
+(Horizon::Zone::Traits::AttackSpeed) cw
+(Horizon::Zone::Traits::BaseAttack) cw
+(Horizon::Zone::Traits::BaseExperience) cw
+(Horizon::Zone::Traits::BaseLevel) cw
+(Horizon::Zone::Traits::CRIT) cw
+(Horizon::Zone::Traits::CreatureAttackDamage) cw
+(Horizon::Zone::Traits::CreatureChaseRange) cw
+(Horizon::Zone::Traits::CreatureElement) cw
+(Horizon::Zone::Traits::CreatureElementLevel) cw
+(Horizon::Zone::Traits::CreatureMagicAttackDamage) cw
+(Horizon::Zone::Traits::CreatureMode) cw
+(Horizon::Zone::Traits::CreaturePrimaryRace) cw
+(Horizon::Zone::Traits::CreatureSecondaryRace) cw
+(Horizon::Zone::Traits::CreatureViewRange) cw
+(Horizon::Zone::Traits::CreatureWeaponAttack) cw
+(Horizon::Zone::Traits::CurrentHP) cw
+(Horizon::Zone::Traits::CurrentSP) cw
+(Horizon::Zone::Traits::CurrentWeight) cw
+(Horizon::Zone::Traits::DamageMotion) cw
+(Horizon::Zone::Traits::Dexterity) cw
+(Horizon::Zone::Traits::DexterityPointCost) cw
+(Horizon::Zone::Traits::EntitySize) cw
+(Horizon::Zone::Traits::EquipATK) cw
+(Horizon::Zone::Traits::FLEE) cw
+(Horizon::Zone::Traits::HIT) cw
+(Horizon::Zone::Traits::Honor) cw
+(Horizon::Zone::Traits::Intelligence) cw
+(Horizon::Zone::Traits::IntelligencePointCost) cw
+(Horizon::Zone::Traits::JobExperience) cw
+(Horizon::Zone::Traits::JobLevel) cw
+(Horizon::Zone::Traits::Luck) cw
+(Horizon::Zone::Traits::LuckPointCost) cw
+(Horizon::Zone::Traits::Manner) cw
+(Horizon::Zone::Traits::MaxHP) cw
+(Horizon::Zone::Traits::MaxSP) cw
+(Horizon::Zone::Traits::MaxWeight) cw
+(Horizon::Zone::Traits::MovementSpeed) cw
+(Horizon::Zone::Traits::NextBaseExperience) cw
+(Horizon::Zone::Traits::NextJobExperience) cw
+(Horizon::Zone::Traits::SkillPoint) cw
+(Horizon::Zone::Traits::SoftDEF) cw
+(Horizon::Zone::Traits::SoftMDEF) cw
+(Horizon::Zone::Traits::StatusATK) cw
+(Horizon::Zone::Traits::StatusMATK) cw
+(Horizon::Zone::Traits::StatusPoint) cw
+(Horizon::Zone::Traits::Strength) cw
+(Horizon::Zone::Traits::StrengthPointCost) cw
+(Horizon::Zone::Traits::Virtue) cw
+(Horizon::Zone::Traits::Vitality) cw
+(Horizon::Zone::Traits::VitalityPointCost) cw
+(Horizon::Zone::Traits::Zeny) cw
+/boxwidth boxwidth marginwidth 2 mul add def
+/xspacing boxwidth distx add def
+/yspacing boxheight disty add def
+/scalefactor 
+  boxwidth cols mul distx cols 1 sub mul add
+  boxheight rows mul disty rows 1 sub mul add boundaspect mul 
+  max def
+boundx scalefactor div boundy scalefactor div scale
+
+% ----- classes -----
+
+ (Horizon::Zone::Traits::Attribute) 0.000000 56.000000 box
+ (Horizon::Zone::Traits::Agility) 1.000000 55.000000 box
+ (Horizon::Zone::Traits::AgilityPointCost) 1.000000 54.000000 box
+ (Horizon::Zone::Traits::AttackDelay) 1.000000 53.000000 box
+ (Horizon::Zone::Traits::AttackMotion) 1.000000 52.000000 box
+ (Horizon::Zone::Traits::AttackRange) 1.000000 51.000000 box
+ (Horizon::Zone::Traits::AttackSpeed) 1.000000 50.000000 box
+ (Horizon::Zone::Traits::BaseAttack) 1.000000 49.000000 box
+ (Horizon::Zone::Traits::BaseExperience) 1.000000 48.000000 box
+ (Horizon::Zone::Traits::BaseLevel) 1.000000 47.000000 box
+ (Horizon::Zone::Traits::CRIT) 1.000000 46.000000 box
+ (Horizon::Zone::Traits::CreatureAttackDamage) 1.000000 45.000000 box
+ (Horizon::Zone::Traits::CreatureChaseRange) 1.000000 44.000000 box
+ (Horizon::Zone::Traits::CreatureElement) 1.000000 43.000000 box
+ (Horizon::Zone::Traits::CreatureElementLevel) 1.000000 42.000000 box
+ (Horizon::Zone::Traits::CreatureMagicAttackDamage) 1.000000 41.000000 box
+ (Horizon::Zone::Traits::CreatureMode) 1.000000 40.000000 box
+ (Horizon::Zone::Traits::CreaturePrimaryRace) 1.000000 39.000000 box
+ (Horizon::Zone::Traits::CreatureSecondaryRace) 1.000000 38.000000 box
+ (Horizon::Zone::Traits::CreatureViewRange) 1.000000 37.000000 box
+ (Horizon::Zone::Traits::CreatureWeaponAttack) 1.000000 36.000000 box
+ (Horizon::Zone::Traits::CurrentHP) 1.000000 35.000000 box
+ (Horizon::Zone::Traits::CurrentSP) 1.000000 34.000000 box
+ (Horizon::Zone::Traits::CurrentWeight) 1.000000 33.000000 box
+ (Horizon::Zone::Traits::DamageMotion) 1.000000 32.000000 box
+ (Horizon::Zone::Traits::Dexterity) 1.000000 31.000000 box
+ (Horizon::Zone::Traits::DexterityPointCost) 1.000000 30.000000 box
+ (Horizon::Zone::Traits::EntitySize) 1.000000 29.000000 box
+ (Horizon::Zone::Traits::EquipATK) 1.000000 28.000000 box
+ (Horizon::Zone::Traits::FLEE) 1.000000 27.000000 box
+ (Horizon::Zone::Traits::HIT) 1.000000 26.000000 box
+ (Horizon::Zone::Traits::Honor) 1.000000 25.000000 box
+ (Horizon::Zone::Traits::Intelligence) 1.000000 24.000000 box
+ (Horizon::Zone::Traits::IntelligencePointCost) 1.000000 23.000000 box
+ (Horizon::Zone::Traits::JobExperience) 1.000000 22.000000 box
+ (Horizon::Zone::Traits::JobLevel) 1.000000 21.000000 box
+ (Horizon::Zone::Traits::Luck) 1.000000 20.000000 box
+ (Horizon::Zone::Traits::LuckPointCost) 1.000000 19.000000 box
+ (Horizon::Zone::Traits::Manner) 1.000000 18.000000 box
+ (Horizon::Zone::Traits::MaxHP) 1.000000 17.000000 box
+ (Horizon::Zone::Traits::MaxSP) 1.000000 16.000000 box
+ (Horizon::Zone::Traits::MaxWeight) 1.000000 15.000000 box
+ (Horizon::Zone::Traits::MovementSpeed) 1.000000 14.000000 box
+ (Horizon::Zone::Traits::NextBaseExperience) 1.000000 13.000000 box
+ (Horizon::Zone::Traits::NextJobExperience) 1.000000 12.000000 box
+ (Horizon::Zone::Traits::SkillPoint) 1.000000 11.000000 box
+ (Horizon::Zone::Traits::SoftDEF) 1.000000 10.000000 box
+ (Horizon::Zone::Traits::SoftMDEF) 1.000000 9.000000 box
+ (Horizon::Zone::Traits::StatusATK) 1.000000 8.000000 box
+ (Horizon::Zone::Traits::StatusMATK) 1.000000 7.000000 box
+ (Horizon::Zone::Traits::StatusPoint) 1.000000 6.000000 box
+ (Horizon::Zone::Traits::Strength) 1.000000 5.000000 box
+ (Horizon::Zone::Traits::StrengthPointCost) 1.000000 4.000000 box
+ (Horizon::Zone::Traits::Virtue) 1.000000 3.000000 box
+ (Horizon::Zone::Traits::Vitality) 1.000000 2.000000 box
+ (Horizon::Zone::Traits::VitalityPointCost) 1.000000 1.000000 box
+ (Horizon::Zone::Traits::Zeny) 1.000000 0.000000 box
+
+% ----- relations -----
+
+solid
+1 0.000000 55.250000 out
+solid
+0 0.000000 55.500000 hedge
+solid
+0 0.000000 54.500000 hedge
+solid
+0 0.000000 53.500000 hedge
+solid
+0 0.000000 52.500000 hedge
+solid
+0 0.000000 51.500000 hedge
+solid
+0 0.000000 50.500000 hedge
+solid
+0 0.000000 49.500000 hedge
+solid
+0 0.000000 48.500000 hedge
+solid
+0 0.000000 47.500000 hedge
+solid
+0 0.000000 46.500000 hedge
+solid
+0 0.000000 45.500000 hedge
+solid
+0 0.000000 44.500000 hedge
+solid
+0 0.000000 43.500000 hedge
+solid
+0 0.000000 42.500000 hedge
+solid
+0 0.000000 41.500000 hedge
+solid
+0 0.000000 40.500000 hedge
+solid
+0 0.000000 39.500000 hedge
+solid
+0 0.000000 38.500000 hedge
+solid
+0 0.000000 37.500000 hedge
+solid
+0 0.000000 36.500000 hedge
+solid
+0 0.000000 35.500000 hedge
+solid
+0 0.000000 34.500000 hedge
+solid
+0 0.000000 33.500000 hedge
+solid
+0 0.000000 32.500000 hedge
+solid
+0 0.000000 31.500000 hedge
+solid
+0 0.000000 30.500000 hedge
+solid
+0 0.000000 29.500000 hedge
+solid
+0 0.000000 28.500000 hedge
+solid
+0 0.000000 27.500000 hedge
+solid
+0 0.000000 26.500000 hedge
+solid
+0 0.000000 25.500000 hedge
+solid
+0 0.000000 24.500000 hedge
+solid
+0 0.000000 23.500000 hedge
+solid
+0 0.000000 22.500000 hedge
+solid
+0 0.000000 21.500000 hedge
+solid
+0 0.000000 20.500000 hedge
+solid
+0 0.000000 19.500000 hedge
+solid
+0 0.000000 18.500000 hedge
+solid
+0 0.000000 17.500000 hedge
+solid
+0 0.000000 16.500000 hedge
+solid
+0 0.000000 15.500000 hedge
+solid
+0 0.000000 14.500000 hedge
+solid
+0 0.000000 13.500000 hedge
+solid
+0 0.000000 12.500000 hedge
+solid
+0 0.000000 11.500000 hedge
+solid
+0 0.000000 10.500000 hedge
+solid
+0 0.000000 9.500000 hedge
+solid
+0 0.000000 8.500000 hedge
+solid
+0 0.000000 7.500000 hedge
+solid
+0 0.000000 6.500000 hedge
+solid
+0 0.000000 5.500000 hedge
+solid
+0 0.000000 4.500000 hedge
+solid
+0 0.000000 3.500000 hedge
+solid
+0 0.000000 2.500000 hedge
+solid
+0 0.000000 1.500000 hedge
+solid
+0 0.000000 0.500000 hedge
+solid
+0.000000 56.000000 0.500000 vedge

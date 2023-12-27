@@ -1,0 +1,74 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\+Attribute.cpp File Reference}
+\hypertarget{_attribute_8cpp}{}\label{_attribute_8cpp}\index{src/Server/Zone/Game/Entities/Traits/Attribute.cpp@{src/Server/Zone/Game/Entities/Traits/Attribute.cpp}}
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Creature/\+Hostile/\+Monster.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Entity.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Traits/\+Status.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Player/\+Player.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Entities/\+Player/\+Assets/\+Inventory.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Job\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Static\+DB/\+Exp\+DB.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Entity\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Session/\+Zone\+Session.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Interface/\+Zone\+Client\+Interface.\+hpp"{}}\newline
+{\ttfamily \#include "{}Core/\+Logging/\+Logger.\+hpp"{}}\newline
+Include dependency graph for Attribute.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_attribute_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_attribute_8cpp_ac520aa3c425825926004d292ff78f140}{ASPD\+\_\+\+FROM\+\_\+\+STATUS\+\_\+\+EFFECTS}}~0
+\item 
+\#define \mbox{\hyperlink{_attribute_8cpp_ad4de83a7236e257382db920012e5c44c}{ASPD\+\_\+\+FROM\+\_\+\+SKILLS}}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class STATUS\+\_\+\+COST\+\_\+T , class STATUS\+\_\+T $>$ }\\void \mbox{\hyperlink{_attribute_8cpp_abdeefea326e88e5f9ec840d732b09a1f}{set\+\_\+new\+\_\+point\+\_\+cost}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$ entity, STATUS\+\_\+\+COST\+\_\+T \texorpdfstring{$\ast$}{*}cost\+\_\+t, STATUS\+\_\+T \texorpdfstring{$\ast$}{*}stat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_attribute_8cpp_ad4de83a7236e257382db920012e5c44c}\label{_attribute_8cpp_ad4de83a7236e257382db920012e5c44c} 
+\index{Attribute.cpp@{Attribute.cpp}!ASPD\_FROM\_SKILLS@{ASPD\_FROM\_SKILLS}}
+\index{ASPD\_FROM\_SKILLS@{ASPD\_FROM\_SKILLS}!Attribute.cpp@{Attribute.cpp}}
+\doxysubsubsection{\texorpdfstring{ASPD\_FROM\_SKILLS}{ASPD\_FROM\_SKILLS}}
+{\footnotesize\ttfamily \#define ASPD\+\_\+\+FROM\+\_\+\+SKILLS~0}
+
+\Hypertarget{_attribute_8cpp_ac520aa3c425825926004d292ff78f140}\label{_attribute_8cpp_ac520aa3c425825926004d292ff78f140} 
+\index{Attribute.cpp@{Attribute.cpp}!ASPD\_FROM\_STATUS\_EFFECTS@{ASPD\_FROM\_STATUS\_EFFECTS}}
+\index{ASPD\_FROM\_STATUS\_EFFECTS@{ASPD\_FROM\_STATUS\_EFFECTS}!Attribute.cpp@{Attribute.cpp}}
+\doxysubsubsection{\texorpdfstring{ASPD\_FROM\_STATUS\_EFFECTS}{ASPD\_FROM\_STATUS\_EFFECTS}}
+{\footnotesize\ttfamily \#define ASPD\+\_\+\+FROM\+\_\+\+STATUS\+\_\+\+EFFECTS~0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_attribute_8cpp_abdeefea326e88e5f9ec840d732b09a1f}\label{_attribute_8cpp_abdeefea326e88e5f9ec840d732b09a1f} 
+\index{Attribute.cpp@{Attribute.cpp}!set\_new\_point\_cost@{set\_new\_point\_cost}}
+\index{set\_new\_point\_cost@{set\_new\_point\_cost}!Attribute.cpp@{Attribute.cpp}}
+\doxysubsubsection{\texorpdfstring{set\_new\_point\_cost()}{set\_new\_point\_cost()}}
+{\footnotesize\ttfamily template$<$class STATUS\+\_\+\+COST\+\_\+T , class STATUS\+\_\+T $>$ \\
+void set\+\_\+new\+\_\+point\+\_\+cost (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}} $>$}]{entity,  }\item[{STATUS\+\_\+\+COST\+\_\+T \texorpdfstring{$\ast$}{*}}]{cost\+\_\+t,  }\item[{STATUS\+\_\+T \texorpdfstring{$\ast$}{*}}]{stat }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{_attribute_8cpp_abdeefea326e88e5f9ec840d732b09a1f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_attribute_8cpp_abdeefea326e88e5f9ec840d732b09a1f_icgraph}
+\end{center}
+\end{figure}

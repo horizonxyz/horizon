@@ -1,0 +1,334 @@
+\doxysection{Horizon\+::Auth\+::Auth\+Server Class Reference}
+\hypertarget{class_horizon_1_1_auth_1_1_auth_server}{}\label{class_horizon_1_1_auth_1_1_auth_server}\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+
+
+{\ttfamily \#include $<$Auth.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Auth\+::Auth\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_horizon_1_1_auth_1_1_auth_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Auth\+::Auth\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_add8dfe33bce47c4f4ec4d904958022de}{Auth\+Server}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a27a7b825b28f6e257ec5f64c5634b701}{\texorpdfstring{$\sim$}{\string~}\+Auth\+Server}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_afc8ee95847729e7bf015258f1027e082}{read\+\_\+config}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a863e41748ec1fee8cfbe3a5d18543fcf}{initialize\+\_\+core}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3}{initialize\+\_\+cli\+\_\+commands}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a86405d973e7c973f3f25368a816cc271}{clicmd\+\_\+reload\+\_\+config}} (std\+::string)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a8ffea2ba61763a9d267d3b9cd46e2f02}{clicmd\+\_\+create\+\_\+new\+\_\+account}} (std\+::string)
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a263293a19355c1189099ef492b7b25e3}{get\+Scheduler}} ()
+\item 
+\mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\+\_\+config\+\_\+type}} \& \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a3d0d7d0272c341ec7199a4482234cd7c}{get\+\_\+auth\+\_\+config}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_aed584794ce16db625febcf8334c2a51c}{update}} (uint64\+\_\+t time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_server}{Server}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_ad5ec9462b520e59f7ea831e157ee5e59}{Server}} ()
+\item 
+\mbox{\hyperlink{class_server_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\texorpdfstring{$\sim$}{\string~}\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_server_af34b875b35ae5de8bbb5863834c9f18f}{parse\+\_\+exec\+\_\+args}} (const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, int argc)
+\item 
+\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} \mbox{\hyperlink{class_server_aa65ab5685ff9de7bf3e7286a587903db}{get\+\_\+shutdown\+\_\+stage}} () const
+\item 
+void \mbox{\hyperlink{class_server_afef17fc28aeec43c2a2dae9bed39960e}{set\+\_\+shutdown\+\_\+stage}} (\mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} new\+\_\+stage)
+\item 
+void \mbox{\hyperlink{class_server_a659ca94721145e4dcf1530d25bb4f1dc}{set\+\_\+shutdown\+\_\+signal}} (int signal)
+\item 
+boost\+::asio\+::io\+\_\+service \& \mbox{\hyperlink{class_server_a3a1dece79068f344c4b05b6ee101b064}{get\+\_\+io\+\_\+service}} ()
+\item 
+struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \& \mbox{\hyperlink{class_server_a7477e1279f847a67b880ef242a9ecd19}{general\+\_\+conf}} ()
+\item 
+bool \mbox{\hyperlink{class_server_a2236a63f5838c08e1ef6ece408366610}{parse\+\_\+common\+\_\+configs}} (sol\+::table \&cfg)
+\item 
+virtual void \mbox{\hyperlink{class_server_a5eb7d86ecf169a70125c6565606edb6a}{finalize\+\_\+core}} ()
+\item 
+void \mbox{\hyperlink{class_server_aafe7d7817651422df6e920f5c6c5cc0c}{initialize\+\_\+command\+\_\+line}} ()
+\item 
+void \mbox{\hyperlink{class_server_ad1a38231c5756b7ca358a5932b0d0068}{process\+\_\+cli\+\_\+commands}} ()
+\item 
+void \mbox{\hyperlink{class_server_aec08544917c23ffde4541f53b9b6faa7}{queue\+\_\+cli\+\_\+command}} (\mbox{\hyperlink{class_c_l_i_command}{CLICommand}} \&\&cmd\+Mgr)
+\item 
+void \mbox{\hyperlink{class_server_a27ef7f0def5fdbe478b63d48e88baff5}{add\+\_\+cli\+\_\+command\+\_\+func}} (std\+::string cmd, std\+::function$<$ bool(std\+::string)$>$ func)
+\item 
+std\+::function$<$ bool(std\+::string)$>$ \mbox{\hyperlink{class_server_a01dc32676d4969aeeb2c8d16d422d8f0}{get\+\_\+cli\+\_\+command\+\_\+func}} (std\+::string \&cmd)
+\item 
+bool \mbox{\hyperlink{class_server_a3aa345741e30a7cd7c85f21ed30bdd37}{clicmd\+\_\+shutdown}} (std\+::string)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ \mbox{\hyperlink{class_server_aa41237231ca30f52dbfd6861c257319c}{database\+\_\+pool}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server}{Auth\+Server}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_ad76d42d20ea2281d586fa580f5aeea4e}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a31b1f78b877a3ad70bcccf6d2f016cfd}{\+\_\+task\+\_\+scheduler}}
+\item 
+std\+::mutex \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a3ba744cf78a3efb4acfee39fd213cdff}{\+\_\+conf\+\_\+lock}}
+\item 
+\mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\+\_\+config\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a47eb3327becc0d85f5b41ee08d2329c9}{\+\_\+auth\+\_\+config}}
+\item 
+boost\+::asio\+::deadline\+\_\+timer \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_ab6d6e29193393c4eae166a84e9f99a7d}{\+\_\+update\+\_\+timer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_server}{Server}}}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structgeneral__server__configuration}{general\+\_\+server\+\_\+configuration}} \mbox{\hyperlink{class_server_a987f48464a606912ed949959ec723e3c}{general\+\_\+config}}
+\item 
+\mbox{\hyperlink{class_thread_safe_queue}{Thread\+Safe\+Queue}}$<$ \mbox{\hyperlink{class_c_l_i_command}{CLICommand}} $>$ \mbox{\hyperlink{class_server_af325b836d0faeb21436367748c44aef5}{\+\_\+cli\+\_\+cmd\+\_\+queue}}
+\item 
+std\+::thread \mbox{\hyperlink{class_server_a959436cbed4996372e1276757fcb12c8}{\+\_\+cli\+\_\+thread}}
+\item 
+std\+::atomic$<$ \mbox{\hyperlink{_server_8hpp_a9b41a641afff82ad642c95c60610567b}{shutdown\+\_\+stages}} $>$ \mbox{\hyperlink{class_server_a32f7ff471dd4d05673c422626437c6ac}{\+\_\+shutdown\+\_\+stage}}
+\item 
+std\+::atomic$<$ int $>$ \mbox{\hyperlink{class_server_ab98363c5fa107a98629438e2f21b3ad1}{\+\_\+shutdown\+\_\+signal}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::function$<$ bool(std\+::string)$>$ $>$ \mbox{\hyperlink{class_server_aa1512413691c1a491293e2f6f74ae4dd}{\+\_\+cli\+\_\+function\+\_\+map}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connection_pool}{Connection\+Pool}} $>$ \mbox{\hyperlink{class_server_a92a1e058847b15eff35c51a4defd3e46}{\+\_\+mysql\+\_\+connections}}
+\item 
+boost\+::asio\+::io\+\_\+service \mbox{\hyperlink{class_server_a2065a6943ad8f1981d6d8bf6f4c52a2b}{\+\_\+io\+\_\+service}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_add8dfe33bce47c4f4ec4d904958022de}\label{class_horizon_1_1_auth_1_1_auth_server_add8dfe33bce47c4f4ec4d904958022de} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!AuthServer@{AuthServer}}
+\index{AuthServer@{AuthServer}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{AuthServer()}{AuthServer()}}
+{\footnotesize\ttfamily Auth\+Server\+::\+Auth\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{namespace_horizon}{Horizon} Constructor. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_add8dfe33bce47c4f4ec4d904958022de_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a27a7b825b28f6e257ec5f64c5634b701}\label{class_horizon_1_1_auth_1_1_auth_server_a27a7b825b28f6e257ec5f64c5634b701} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!````~AuthServer@{\texorpdfstring{$\sim$}{\string~}AuthServer}}
+\index{````~AuthServer@{\texorpdfstring{$\sim$}{\string~}AuthServer}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AuthServer()}{\string~AuthServer()}}
+{\footnotesize\ttfamily Auth\+Server\+::\texorpdfstring{$\sim$}{\string~}\+Auth\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\doxylink{namespace_horizon}{Horizon} Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a8ffea2ba61763a9d267d3b9cd46e2f02}\label{class_horizon_1_1_auth_1_1_auth_server_a8ffea2ba61763a9d267d3b9cd46e2f02} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!clicmd\_create\_new\_account@{clicmd\_create\_new\_account}}
+\index{clicmd\_create\_new\_account@{clicmd\_create\_new\_account}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{clicmd\_create\_new\_account()}{clicmd\_create\_new\_account()}}
+{\footnotesize\ttfamily bool Auth\+Server\+::clicmd\+\_\+create\+\_\+new\+\_\+account (\begin{DoxyParamCaption}\item[{std\+::string}]{cmd }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a8ffea2ba61763a9d267d3b9cd46e2f02_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a86405d973e7c973f3f25368a816cc271}\label{class_horizon_1_1_auth_1_1_auth_server_a86405d973e7c973f3f25368a816cc271} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!clicmd\_reload\_config@{clicmd\_reload\_config}}
+\index{clicmd\_reload\_config@{clicmd\_reload\_config}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{clicmd\_reload\_config()}{clicmd\_reload\_config()}}
+{\footnotesize\ttfamily bool Auth\+Server\+::clicmd\+\_\+reload\+\_\+config (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+CLI Command\+: Reload Configuration \begin{DoxyReturn}{Returns}
+boolean value from Auth\+Server-\/\texorpdfstring{$>$}{>}Read\+Config() 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a86405d973e7c973f3f25368a816cc271_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a86405d973e7c973f3f25368a816cc271_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a3d0d7d0272c341ec7199a4482234cd7c}\label{class_horizon_1_1_auth_1_1_auth_server_a3d0d7d0272c341ec7199a4482234cd7c} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!get\_auth\_config@{get\_auth\_config}}
+\index{get\_auth\_config@{get\_auth\_config}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{get\_auth\_config()}{get\_auth\_config()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\+\_\+config\+\_\+type}} \& Horizon\+::\+Auth\+::\+Auth\+Server\+::get\+\_\+auth\+\_\+config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_ad76d42d20ea2281d586fa580f5aeea4e}\label{class_horizon_1_1_auth_1_1_auth_server_ad76d42d20ea2281d586fa580f5aeea4e} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server}{Auth\+Server}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Auth\+::\+Auth\+Server\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a263293a19355c1189099ef492b7b25e3}\label{class_horizon_1_1_auth_1_1_auth_server_a263293a19355c1189099ef492b7b25e3} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!getScheduler@{getScheduler}}
+\index{getScheduler@{getScheduler}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{getScheduler()}{getScheduler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} \& Horizon\+::\+Auth\+::\+Auth\+Server\+::get\+Scheduler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a263293a19355c1189099ef492b7b25e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3}\label{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!initialize\_cli\_commands@{initialize\_cli\_commands}}
+\index{initialize\_cli\_commands@{initialize\_cli\_commands}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{initialize\_cli\_commands()}{initialize\_cli\_commands()}}
+{\footnotesize\ttfamily void Auth\+Server\+::initialize\+\_\+cli\+\_\+commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initialize CLI Comamnds 
+
+Reimplemented from \mbox{\hyperlink{class_server_a736fd2f58d66cea7bf6e0d49b1fadcb1}{Server}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a863e41748ec1fee8cfbe3a5d18543fcf}\label{class_horizon_1_1_auth_1_1_auth_server_a863e41748ec1fee8cfbe3a5d18543fcf} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!initialize\_core@{initialize\_core}}
+\index{initialize\_core@{initialize\_core}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{initialize\_core()}{initialize\_core()}}
+{\footnotesize\ttfamily void Auth\+Server\+::initialize\+\_\+core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Core Signal Handler
+
+Cancel all pending tasks.
+
+\doxylink{class_server}{Server} shutdown routine begins here...
+
+Stop all networks
+
+Reimplemented from \mbox{\hyperlink{class_server_a6a048a910c82c444ddf49212397dcfd2}{Server}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_a863e41748ec1fee8cfbe3a5d18543fcf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_afc8ee95847729e7bf015258f1027e082}\label{class_horizon_1_1_auth_1_1_auth_server_afc8ee95847729e7bf015258f1027e082} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!read\_config@{read\_config}}
+\index{read\_config@{read\_config}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{read\_config()}{read\_config()}}
+{\footnotesize\ttfamily bool Auth\+Server\+::read\+\_\+config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Read /config/horizon-\/server.yaml \begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+Process Configuration that is common between servers.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_afc8ee95847729e7bf015258f1027e082_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_aed584794ce16db625febcf8334c2a51c}\label{class_horizon_1_1_auth_1_1_auth_server_aed584794ce16db625febcf8334c2a51c} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!update@{update}}
+\index{update@{update}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Auth\+Server\+::update (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_aed584794ce16db625febcf8334c2a51c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_server_aed584794ce16db625febcf8334c2a51c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a47eb3327becc0d85f5b41ee08d2329c9}\label{class_horizon_1_1_auth_1_1_auth_server_a47eb3327becc0d85f5b41ee08d2329c9} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!\_auth\_config@{\_auth\_config}}
+\index{\_auth\_config@{\_auth\_config}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{\_auth\_config}{\_auth\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\+\_\+config\+\_\+type}} Horizon\+::\+Auth\+::\+Auth\+Server\+::\+\_\+auth\+\_\+config\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a3ba744cf78a3efb4acfee39fd213cdff}\label{class_horizon_1_1_auth_1_1_auth_server_a3ba744cf78a3efb4acfee39fd213cdff} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!\_conf\_lock@{\_conf\_lock}}
+\index{\_conf\_lock@{\_conf\_lock}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{\_conf\_lock}{\_conf\_lock}}
+{\footnotesize\ttfamily std\+::mutex Horizon\+::\+Auth\+::\+Auth\+Server\+::\+\_\+conf\+\_\+lock\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_a31b1f78b877a3ad70bcccf6d2f016cfd}\label{class_horizon_1_1_auth_1_1_auth_server_a31b1f78b877a3ad70bcccf6d2f016cfd} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!\_task\_scheduler@{\_task\_scheduler}}
+\index{\_task\_scheduler@{\_task\_scheduler}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{\_task\_scheduler}{\_task\_scheduler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_task_scheduler}{Task\+Scheduler}} Horizon\+::\+Auth\+::\+Auth\+Server\+::\+\_\+task\+\_\+scheduler\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_server_ab6d6e29193393c4eae166a84e9f99a7d}\label{class_horizon_1_1_auth_1_1_auth_server_ab6d6e29193393c4eae166a84e9f99a7d} 
+\index{Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}!\_update\_timer@{\_update\_timer}}
+\index{\_update\_timer@{\_update\_timer}!Horizon::Auth::AuthServer@{Horizon::Auth::AuthServer}}
+\doxysubsubsection{\texorpdfstring{\_update\_timer}{\_update\_timer}}
+{\footnotesize\ttfamily boost\+::asio\+::deadline\+\_\+timer Horizon\+::\+Auth\+::\+Auth\+Server\+::\+\_\+update\+\_\+timer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Auth/\mbox{\hyperlink{_auth_8hpp}{Auth.\+hpp}}\item 
+src/\+Server/\+Auth/\mbox{\hyperlink{_auth_8cpp}{Auth.\+cpp}}\end{DoxyCompactItemize}

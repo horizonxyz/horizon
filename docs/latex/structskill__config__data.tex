@@ -1,0 +1,407 @@
+\doxysection{skill\+\_\+config\+\_\+data Struct Reference}
+\hypertarget{structskill__config__data}{}\label{structskill__config__data}\index{skill\_config\_data@{skill\_config\_data}}
+
+
+{\ttfamily \#include $<$Skill\+Definitions.\+hpp$>$}
+
+
+
+Collaboration diagram for skill\+\_\+config\+\_\+data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{structskill__config__data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structskill__config__data_a89a89be4ec7dd2a1e00341144befc9ca}{skill\+\_\+id}} \{0\}
+\item 
+std\+::string \mbox{\hyperlink{structskill__config__data_a33cb8d8e54c1e91edb6da31bff5c2375}{name}}
+\item 
+std\+::string \mbox{\hyperlink{structskill__config__data_a6be60dfa378be6e5a9b19ffee6516568}{desc}}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a5c384a3d0303aab4025c3cc01cea038a}{max\+\_\+level}} \{1\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a9b090f0413917bae04b477cc2d376a2b}{use\+\_\+range}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+\mbox{\hyperlink{_battle_definitions_8hpp_a9c81e42060561767ff6220cdf683058a}{battle\+\_\+damage\+\_\+type}} \mbox{\hyperlink{structskill__config__data_aef6e1ff15d33695f6cac262e7fcbca24}{damage\+\_\+type}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{\mbox{\hyperlink{_battle_definitions_8hpp_a9c81e42060561767ff6220cdf683058aa31bca692f4fe05f39b0e9fa683e28a97}{BDT\+\_\+\+NORMAL}}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a325bc2360b675d1a9949591abdf700e3}{primary\+\_\+type}} \{\mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8}{SK\+\_\+\+TYPE\+\_\+\+PASSIVE}}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a4bbcc3db1bc29c5186e71301929c4335}{secondary\+\_\+type}} \{\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011}{SK\+\_\+\+SUBTYPE\+\_\+\+NONE}}\}
+\item 
+\mbox{\hyperlink{_battle_definitions_8hpp_a2496d1239b412d74c30a721411747c66}{battle\+\_\+attack\+\_\+type}} \mbox{\hyperlink{structskill__config__data_ae56ceccbd45423c3bbd9fdc9a20fb861}{attack\+\_\+type}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{\mbox{\hyperlink{_battle_definitions_8hpp_a2496d1239b412d74c30a721411747c66ac60efe2cbbd01310e9de0e9a89fd351e}{BAT\+\_\+\+NONE}}\}
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}} \mbox{\hyperlink{structskill__config__data_a44cf61f234d1a0e1b1e942022bfb32ac}{element}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9a075c68b83c36eb75798d0851302ec66b}{ELE\+\_\+\+NEUTRAL}}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a807f83e453397521aac458d09a7008b7}{dmg\+\_\+property}} \{\mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NONE}}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a45f909e2161e6f8ac6ed7a967faeb1ad}{splash\+\_\+range}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a76dc3de0a6848823940eb80389d1a790}{number\+\_\+of\+\_\+hits}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\begin{DoxyCompactList}\small\item\em num \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structskill__config__data_a5adc168c778ac5a7977fda1c44141bae}{interrupt\+\_\+cast}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a76f0240a3e8a1b996ef5a0df1cd8ca56}{cast\+\_\+defense\+\_\+rate}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a431b242603103f59642b3d71dc210fd8}{max\+\_\+skill\+\_\+instances}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a1043c018c069c939977a76cf38b82a3b}{knock\+\_\+back\+\_\+tiles}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a7e3464fe755909ca57a7472b29e124f1}{cast\+\_\+time}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\begin{DoxyCompactList}\small\item\em cast \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structskill__config__data_a9e20da84cb828fed1156a589472b7259}{after\+\_\+cast\+\_\+actor\+\_\+delay}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\begin{DoxyCompactList}\small\item\em delay \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structskill__config__data_adcf855bbeec1634cc636c777bd0e9672}{after\+\_\+cast\+\_\+walk\+\_\+delay}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a3d820bea6132762519348e0788d6a228}{upkeep\+\_\+time}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_ab6187baa7652bb1e40c827c8789be8d9}{upkeep\+\_\+time2}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a75f2c362722fc22096663b6f6ad28ec7}{cooldown}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a1459c7465add057b05f5888f147ed647}{fixed\+\_\+cast\+\_\+time}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_af94fcd31a7e6554e44170bd63a8d3bae}{cast\+\_\+time\+\_\+options}} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a24c2a5d8aa4327b8f38b9a4174ef970e}{skill\+\_\+delay\+\_\+options}} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a2ea020a51417f4df39b11a68535c3df7}{hp\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_aef8395baad986362a46026bd69fa61e6}{sp\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a2fca45fc24351bc5af626842e4670a29}{hp\+\_\+percent\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_afa37d01d9c718b7d858cd41a3034a3bc}{sp\+\_\+percent\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_aa058f124805bb4d5b343641f3330326f}{max\+\_\+hp\+\_\+trigger}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_ac312a5e4a0882c7f5905e46cf681fb11}{max\+\_\+sp\+\_\+trigger}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_af97be25b650bac345e0bb7e32e5e4fc3}{zeny\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a5470c09f253e536e9fcc73c5d76bfb70}{weapon\+\_\+type}} \{\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa0230f49391fae3f066a761601afb2a21}{IT\+\_\+\+WT\+\_\+\+FIST}}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_aba6070b7bc3d8a9712ce4be8421d15b6}{ammunition\+\_\+type}} \{\mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acbeb53d94e5085c11332ceaf6ed11a31}{IT\+\_\+\+AT\+\_\+\+NONE}}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a409db3b0b8b81bda4ab54c834b708c2b}{ammunition\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a64e23b5c2ff7fc6ae06bfa6a3f1ef3bf}{required\+\_\+state}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_ab04ad9feec7d9464f05551c7897bd665}{spirit\+\_\+sphere\+\_\+cost}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+struct \mbox{\hyperlink{structskill__required__item__data}{skill\+\_\+required\+\_\+item\+\_\+data}} \mbox{\hyperlink{structskill__config__data_a51e618e5b4772ac2d4650f2a75de60e1}{req\+\_\+items}}
+\item 
+struct \mbox{\hyperlink{structskill__required__item__data}{skill\+\_\+required\+\_\+item\+\_\+data}} \mbox{\hyperlink{structskill__config__data_a7e6a18994004f25776d4b938e24d9aa5}{req\+\_\+equip}}
+\item 
+int \mbox{\hyperlink{structskill__config__data_aea7e319bfd4b6f7990bf78b8670aef4c}{placement\+\_\+id}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]}\mbox{[}2\mbox{]} \{\{0\}\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_aedec325699a54cd8d2139a35ea67c6a5}{placement\+\_\+layout\+\_\+type}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_af709fc45dc526d50cb075ff3b1627a0a}{placement\+\_\+range}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a4c17fd8c0e3fe6569ff5525b3eaf8b2b}{placement\+\_\+interval}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a2740317ed023719aeddb05ed9acbf7e9}{placement\+\_\+target}} \mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}
+\item 
+int \mbox{\hyperlink{structskill__config__data_a938fd5d82cee0b5edbdf3ad2a6f1873c}{placement\+\_\+flag}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structskill__config__data_a9e20da84cb828fed1156a589472b7259}\label{structskill__config__data_a9e20da84cb828fed1156a589472b7259} 
+\index{skill\_config\_data@{skill\_config\_data}!after\_cast\_actor\_delay@{after\_cast\_actor\_delay}}
+\index{after\_cast\_actor\_delay@{after\_cast\_actor\_delay}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{after\_cast\_actor\_delay}{after\_cast\_actor\_delay}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::after\+\_\+cast\+\_\+actor\+\_\+delay\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+
+
+delay 
+
+\Hypertarget{structskill__config__data_adcf855bbeec1634cc636c777bd0e9672}\label{structskill__config__data_adcf855bbeec1634cc636c777bd0e9672} 
+\index{skill\_config\_data@{skill\_config\_data}!after\_cast\_walk\_delay@{after\_cast\_walk\_delay}}
+\index{after\_cast\_walk\_delay@{after\_cast\_walk\_delay}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{after\_cast\_walk\_delay}{after\_cast\_walk\_delay}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::after\+\_\+cast\+\_\+walk\+\_\+delay\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a409db3b0b8b81bda4ab54c834b708c2b}\label{structskill__config__data_a409db3b0b8b81bda4ab54c834b708c2b} 
+\index{skill\_config\_data@{skill\_config\_data}!ammunition\_cost@{ammunition\_cost}}
+\index{ammunition\_cost@{ammunition\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{ammunition\_cost}{ammunition\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::ammunition\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_aba6070b7bc3d8a9712ce4be8421d15b6}\label{structskill__config__data_aba6070b7bc3d8a9712ce4be8421d15b6} 
+\index{skill\_config\_data@{skill\_config\_data}!ammunition\_type@{ammunition\_type}}
+\index{ammunition\_type@{ammunition\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{ammunition\_type}{ammunition\_type}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::ammunition\+\_\+type \{\mbox{\hyperlink{_item_definitions_8hpp_a0e7543eeeb76039ac4e4c02dc64a19c9acbeb53d94e5085c11332ceaf6ed11a31}{IT\+\_\+\+AT\+\_\+\+NONE}}\}}
+
+\Hypertarget{structskill__config__data_ae56ceccbd45423c3bbd9fdc9a20fb861}\label{structskill__config__data_ae56ceccbd45423c3bbd9fdc9a20fb861} 
+\index{skill\_config\_data@{skill\_config\_data}!attack\_type@{attack\_type}}
+\index{attack\_type@{attack\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{attack\_type}{attack\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_battle_definitions_8hpp_a2496d1239b412d74c30a721411747c66}{battle\+\_\+attack\+\_\+type}} skill\+\_\+config\+\_\+data\+::attack\+\_\+type\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{\mbox{\hyperlink{_battle_definitions_8hpp_a2496d1239b412d74c30a721411747c66ac60efe2cbbd01310e9de0e9a89fd351e}{BAT\+\_\+\+NONE}}\}}
+
+\Hypertarget{structskill__config__data_a76f0240a3e8a1b996ef5a0df1cd8ca56}\label{structskill__config__data_a76f0240a3e8a1b996ef5a0df1cd8ca56} 
+\index{skill\_config\_data@{skill\_config\_data}!cast\_defense\_rate@{cast\_defense\_rate}}
+\index{cast\_defense\_rate@{cast\_defense\_rate}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{cast\_defense\_rate}{cast\_defense\_rate}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::cast\+\_\+defense\+\_\+rate\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a7e3464fe755909ca57a7472b29e124f1}\label{structskill__config__data_a7e3464fe755909ca57a7472b29e124f1} 
+\index{skill\_config\_data@{skill\_config\_data}!cast\_time@{cast\_time}}
+\index{cast\_time@{cast\_time}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{cast\_time}{cast\_time}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::cast\+\_\+time\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+
+
+cast 
+
+\Hypertarget{structskill__config__data_af94fcd31a7e6554e44170bd63a8d3bae}\label{structskill__config__data_af94fcd31a7e6554e44170bd63a8d3bae} 
+\index{skill\_config\_data@{skill\_config\_data}!cast\_time\_options@{cast\_time\_options}}
+\index{cast\_time\_options@{cast\_time\_options}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{cast\_time\_options}{cast\_time\_options}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::cast\+\_\+time\+\_\+options \{0\}}
+
+\Hypertarget{structskill__config__data_a75f2c362722fc22096663b6f6ad28ec7}\label{structskill__config__data_a75f2c362722fc22096663b6f6ad28ec7} 
+\index{skill\_config\_data@{skill\_config\_data}!cooldown@{cooldown}}
+\index{cooldown@{cooldown}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{cooldown}{cooldown}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::cooldown\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_aef6e1ff15d33695f6cac262e7fcbca24}\label{structskill__config__data_aef6e1ff15d33695f6cac262e7fcbca24} 
+\index{skill\_config\_data@{skill\_config\_data}!damage\_type@{damage\_type}}
+\index{damage\_type@{damage\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{damage\_type}{damage\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_battle_definitions_8hpp_a9c81e42060561767ff6220cdf683058a}{battle\+\_\+damage\+\_\+type}} skill\+\_\+config\+\_\+data\+::damage\+\_\+type\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{\mbox{\hyperlink{_battle_definitions_8hpp_a9c81e42060561767ff6220cdf683058aa31bca692f4fe05f39b0e9fa683e28a97}{BDT\+\_\+\+NORMAL}}\}}
+
+\Hypertarget{structskill__config__data_a6be60dfa378be6e5a9b19ffee6516568}\label{structskill__config__data_a6be60dfa378be6e5a9b19ffee6516568} 
+\index{skill\_config\_data@{skill\_config\_data}!desc@{desc}}
+\index{desc@{desc}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{desc}{desc}}
+{\footnotesize\ttfamily std\+::string skill\+\_\+config\+\_\+data\+::desc}
+
+\Hypertarget{structskill__config__data_a807f83e453397521aac458d09a7008b7}\label{structskill__config__data_a807f83e453397521aac458d09a7008b7} 
+\index{skill\_config\_data@{skill\_config\_data}!dmg\_property@{dmg\_property}}
+\index{dmg\_property@{dmg\_property}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{dmg\_property}{dmg\_property}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::dmg\+\_\+property \{\mbox{\hyperlink{_skill_definitions_8hpp_a7cdb9ff2cfb7b13022d89d98e6228aa1a3c2b16c82f3bab6149c21915285f5210}{SK\+\_\+\+DMG\+\_\+\+PROP\+\_\+\+NONE}}\}}
+
+\Hypertarget{structskill__config__data_a44cf61f234d1a0e1b1e942022bfb32ac}\label{structskill__config__data_a44cf61f234d1a0e1b1e942022bfb32ac} 
+\index{skill\_config\_data@{skill\_config\_data}!element@{element}}
+\index{element@{element}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{element}{element}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9}{element\+\_\+type}} skill\+\_\+config\+\_\+data\+::element\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{\mbox{\hyperlink{_entity_definitions_8hpp_a335448c424439b68912cf850f1edcfd9a075c68b83c36eb75798d0851302ec66b}{ELE\+\_\+\+NEUTRAL}}\}}
+
+\Hypertarget{structskill__config__data_a1459c7465add057b05f5888f147ed647}\label{structskill__config__data_a1459c7465add057b05f5888f147ed647} 
+\index{skill\_config\_data@{skill\_config\_data}!fixed\_cast\_time@{fixed\_cast\_time}}
+\index{fixed\_cast\_time@{fixed\_cast\_time}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{fixed\_cast\_time}{fixed\_cast\_time}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::fixed\+\_\+cast\+\_\+time\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a2ea020a51417f4df39b11a68535c3df7}\label{structskill__config__data_a2ea020a51417f4df39b11a68535c3df7} 
+\index{skill\_config\_data@{skill\_config\_data}!hp\_cost@{hp\_cost}}
+\index{hp\_cost@{hp\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{hp\_cost}{hp\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::hp\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a2fca45fc24351bc5af626842e4670a29}\label{structskill__config__data_a2fca45fc24351bc5af626842e4670a29} 
+\index{skill\_config\_data@{skill\_config\_data}!hp\_percent\_cost@{hp\_percent\_cost}}
+\index{hp\_percent\_cost@{hp\_percent\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{hp\_percent\_cost}{hp\_percent\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::hp\+\_\+percent\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a5adc168c778ac5a7977fda1c44141bae}\label{structskill__config__data_a5adc168c778ac5a7977fda1c44141bae} 
+\index{skill\_config\_data@{skill\_config\_data}!interrupt\_cast@{interrupt\_cast}}
+\index{interrupt\_cast@{interrupt\_cast}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{interrupt\_cast}{interrupt\_cast}}
+{\footnotesize\ttfamily bool skill\+\_\+config\+\_\+data\+::interrupt\+\_\+cast\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a1043c018c069c939977a76cf38b82a3b}\label{structskill__config__data_a1043c018c069c939977a76cf38b82a3b} 
+\index{skill\_config\_data@{skill\_config\_data}!knock\_back\_tiles@{knock\_back\_tiles}}
+\index{knock\_back\_tiles@{knock\_back\_tiles}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{knock\_back\_tiles}{knock\_back\_tiles}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::knock\+\_\+back\+\_\+tiles\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_aa058f124805bb4d5b343641f3330326f}\label{structskill__config__data_aa058f124805bb4d5b343641f3330326f} 
+\index{skill\_config\_data@{skill\_config\_data}!max\_hp\_trigger@{max\_hp\_trigger}}
+\index{max\_hp\_trigger@{max\_hp\_trigger}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{max\_hp\_trigger}{max\_hp\_trigger}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::max\+\_\+hp\+\_\+trigger\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a5c384a3d0303aab4025c3cc01cea038a}\label{structskill__config__data_a5c384a3d0303aab4025c3cc01cea038a} 
+\index{skill\_config\_data@{skill\_config\_data}!max\_level@{max\_level}}
+\index{max\_level@{max\_level}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{max\_level}{max\_level}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::max\+\_\+level \{1\}}
+
+\Hypertarget{structskill__config__data_a431b242603103f59642b3d71dc210fd8}\label{structskill__config__data_a431b242603103f59642b3d71dc210fd8} 
+\index{skill\_config\_data@{skill\_config\_data}!max\_skill\_instances@{max\_skill\_instances}}
+\index{max\_skill\_instances@{max\_skill\_instances}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{max\_skill\_instances}{max\_skill\_instances}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::max\+\_\+skill\+\_\+instances\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_ac312a5e4a0882c7f5905e46cf681fb11}\label{structskill__config__data_ac312a5e4a0882c7f5905e46cf681fb11} 
+\index{skill\_config\_data@{skill\_config\_data}!max\_sp\_trigger@{max\_sp\_trigger}}
+\index{max\_sp\_trigger@{max\_sp\_trigger}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{max\_sp\_trigger}{max\_sp\_trigger}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::max\+\_\+sp\+\_\+trigger\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a33cb8d8e54c1e91edb6da31bff5c2375}\label{structskill__config__data_a33cb8d8e54c1e91edb6da31bff5c2375} 
+\index{skill\_config\_data@{skill\_config\_data}!name@{name}}
+\index{name@{name}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string skill\+\_\+config\+\_\+data\+::name}
+
+\Hypertarget{structskill__config__data_a76dc3de0a6848823940eb80389d1a790}\label{structskill__config__data_a76dc3de0a6848823940eb80389d1a790} 
+\index{skill\_config\_data@{skill\_config\_data}!number\_of\_hits@{number\_of\_hits}}
+\index{number\_of\_hits@{number\_of\_hits}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{number\_of\_hits}{number\_of\_hits}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::number\+\_\+of\+\_\+hits\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+
+
+num 
+
+\Hypertarget{structskill__config__data_a938fd5d82cee0b5edbdf3ad2a6f1873c}\label{structskill__config__data_a938fd5d82cee0b5edbdf3ad2a6f1873c} 
+\index{skill\_config\_data@{skill\_config\_data}!placement\_flag@{placement\_flag}}
+\index{placement\_flag@{placement\_flag}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{placement\_flag}{placement\_flag}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::placement\+\_\+flag \{0\}}
+
+\Hypertarget{structskill__config__data_aea7e319bfd4b6f7990bf78b8670aef4c}\label{structskill__config__data_aea7e319bfd4b6f7990bf78b8670aef4c} 
+\index{skill\_config\_data@{skill\_config\_data}!placement\_id@{placement\_id}}
+\index{placement\_id@{placement\_id}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{placement\_id}{placement\_id}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::placement\+\_\+id\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]}\mbox{[}2\mbox{]} \{\{0\}\}}
+
+\Hypertarget{structskill__config__data_a4c17fd8c0e3fe6569ff5525b3eaf8b2b}\label{structskill__config__data_a4c17fd8c0e3fe6569ff5525b3eaf8b2b} 
+\index{skill\_config\_data@{skill\_config\_data}!placement\_interval@{placement\_interval}}
+\index{placement\_interval@{placement\_interval}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{placement\_interval}{placement\_interval}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::placement\+\_\+interval\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_aedec325699a54cd8d2139a35ea67c6a5}\label{structskill__config__data_aedec325699a54cd8d2139a35ea67c6a5} 
+\index{skill\_config\_data@{skill\_config\_data}!placement\_layout\_type@{placement\_layout\_type}}
+\index{placement\_layout\_type@{placement\_layout\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{placement\_layout\_type}{placement\_layout\_type}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::placement\+\_\+layout\+\_\+type\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_af709fc45dc526d50cb075ff3b1627a0a}\label{structskill__config__data_af709fc45dc526d50cb075ff3b1627a0a} 
+\index{skill\_config\_data@{skill\_config\_data}!placement\_range@{placement\_range}}
+\index{placement\_range@{placement\_range}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{placement\_range}{placement\_range}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::placement\+\_\+range\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a2740317ed023719aeddb05ed9acbf7e9}\label{structskill__config__data_a2740317ed023719aeddb05ed9acbf7e9} 
+\index{skill\_config\_data@{skill\_config\_data}!placement\_target@{placement\_target}}
+\index{placement\_target@{placement\_target}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{placement\_target}{placement\_target}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::placement\+\_\+target\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a325bc2360b675d1a9949591abdf700e3}\label{structskill__config__data_a325bc2360b675d1a9949591abdf700e3} 
+\index{skill\_config\_data@{skill\_config\_data}!primary\_type@{primary\_type}}
+\index{primary\_type@{primary\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{primary\_type}{primary\_type}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::primary\+\_\+type \{\mbox{\hyperlink{_skill_definitions_8hpp_a7b38ccfd037b72d63af787633162b891a7d55518c595adfb92e3c3f06eff3dec8}{SK\+\_\+\+TYPE\+\_\+\+PASSIVE}}\}}
+
+\Hypertarget{structskill__config__data_a7e6a18994004f25776d4b938e24d9aa5}\label{structskill__config__data_a7e6a18994004f25776d4b938e24d9aa5} 
+\index{skill\_config\_data@{skill\_config\_data}!req\_equip@{req\_equip}}
+\index{req\_equip@{req\_equip}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{req\_equip}{req\_equip}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structskill__required__item__data}{skill\+\_\+required\+\_\+item\+\_\+data}} skill\+\_\+config\+\_\+data\+::req\+\_\+equip}
+
+\Hypertarget{structskill__config__data_a51e618e5b4772ac2d4650f2a75de60e1}\label{structskill__config__data_a51e618e5b4772ac2d4650f2a75de60e1} 
+\index{skill\_config\_data@{skill\_config\_data}!req\_items@{req\_items}}
+\index{req\_items@{req\_items}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{req\_items}{req\_items}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structskill__required__item__data}{skill\+\_\+required\+\_\+item\+\_\+data}} skill\+\_\+config\+\_\+data\+::req\+\_\+items}
+
+\Hypertarget{structskill__config__data_a64e23b5c2ff7fc6ae06bfa6a3f1ef3bf}\label{structskill__config__data_a64e23b5c2ff7fc6ae06bfa6a3f1ef3bf} 
+\index{skill\_config\_data@{skill\_config\_data}!required\_state@{required\_state}}
+\index{required\_state@{required\_state}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{required\_state}{required\_state}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::required\+\_\+state\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a4bbcc3db1bc29c5186e71301929c4335}\label{structskill__config__data_a4bbcc3db1bc29c5186e71301929c4335} 
+\index{skill\_config\_data@{skill\_config\_data}!secondary\_type@{secondary\_type}}
+\index{secondary\_type@{secondary\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{secondary\_type}{secondary\_type}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::secondary\+\_\+type \{\mbox{\hyperlink{_skill_definitions_8hpp_a205fc4bc18d5f179c143035e94a1d575a3925f44a25c39cf08a0efa7715486011}{SK\+\_\+\+SUBTYPE\+\_\+\+NONE}}\}}
+
+\Hypertarget{structskill__config__data_a24c2a5d8aa4327b8f38b9a4174ef970e}\label{structskill__config__data_a24c2a5d8aa4327b8f38b9a4174ef970e} 
+\index{skill\_config\_data@{skill\_config\_data}!skill\_delay\_options@{skill\_delay\_options}}
+\index{skill\_delay\_options@{skill\_delay\_options}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{skill\_delay\_options}{skill\_delay\_options}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::skill\+\_\+delay\+\_\+options \{0\}}
+
+\Hypertarget{structskill__config__data_a89a89be4ec7dd2a1e00341144befc9ca}\label{structskill__config__data_a89a89be4ec7dd2a1e00341144befc9ca} 
+\index{skill\_config\_data@{skill\_config\_data}!skill\_id@{skill\_id}}
+\index{skill\_id@{skill\_id}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{skill\_id}{skill\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t skill\+\_\+config\+\_\+data\+::skill\+\_\+id \{0\}}
+
+\Hypertarget{structskill__config__data_aef8395baad986362a46026bd69fa61e6}\label{structskill__config__data_aef8395baad986362a46026bd69fa61e6} 
+\index{skill\_config\_data@{skill\_config\_data}!sp\_cost@{sp\_cost}}
+\index{sp\_cost@{sp\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{sp\_cost}{sp\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::sp\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_afa37d01d9c718b7d858cd41a3034a3bc}\label{structskill__config__data_afa37d01d9c718b7d858cd41a3034a3bc} 
+\index{skill\_config\_data@{skill\_config\_data}!sp\_percent\_cost@{sp\_percent\_cost}}
+\index{sp\_percent\_cost@{sp\_percent\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{sp\_percent\_cost}{sp\_percent\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::sp\+\_\+percent\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_ab04ad9feec7d9464f05551c7897bd665}\label{structskill__config__data_ab04ad9feec7d9464f05551c7897bd665} 
+\index{skill\_config\_data@{skill\_config\_data}!spirit\_sphere\_cost@{spirit\_sphere\_cost}}
+\index{spirit\_sphere\_cost@{spirit\_sphere\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{spirit\_sphere\_cost}{spirit\_sphere\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::spirit\+\_\+sphere\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a45f909e2161e6f8ac6ed7a967faeb1ad}\label{structskill__config__data_a45f909e2161e6f8ac6ed7a967faeb1ad} 
+\index{skill\_config\_data@{skill\_config\_data}!splash\_range@{splash\_range}}
+\index{splash\_range@{splash\_range}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{splash\_range}{splash\_range}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::splash\+\_\+range\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a3d820bea6132762519348e0788d6a228}\label{structskill__config__data_a3d820bea6132762519348e0788d6a228} 
+\index{skill\_config\_data@{skill\_config\_data}!upkeep\_time@{upkeep\_time}}
+\index{upkeep\_time@{upkeep\_time}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{upkeep\_time}{upkeep\_time}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::upkeep\+\_\+time\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_ab6187baa7652bb1e40c827c8789be8d9}\label{structskill__config__data_ab6187baa7652bb1e40c827c8789be8d9} 
+\index{skill\_config\_data@{skill\_config\_data}!upkeep\_time2@{upkeep\_time2}}
+\index{upkeep\_time2@{upkeep\_time2}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{upkeep\_time2}{upkeep\_time2}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::upkeep\+\_\+time2\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a9b090f0413917bae04b477cc2d376a2b}\label{structskill__config__data_a9b090f0413917bae04b477cc2d376a2b} 
+\index{skill\_config\_data@{skill\_config\_data}!use\_range@{use\_range}}
+\index{use\_range@{use\_range}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{use\_range}{use\_range}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::use\+\_\+range\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+\Hypertarget{structskill__config__data_a5470c09f253e536e9fcc73c5d76bfb70}\label{structskill__config__data_a5470c09f253e536e9fcc73c5d76bfb70} 
+\index{skill\_config\_data@{skill\_config\_data}!weapon\_type@{weapon\_type}}
+\index{weapon\_type@{weapon\_type}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{weapon\_type}{weapon\_type}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::weapon\+\_\+type \{\mbox{\hyperlink{_item_definitions_8hpp_abb6fcea0129ac77f77f48e9f48d4e3faa0230f49391fae3f066a761601afb2a21}{IT\+\_\+\+WT\+\_\+\+FIST}}\}}
+
+\Hypertarget{structskill__config__data_af97be25b650bac345e0bb7e32e5e4fc3}\label{structskill__config__data_af97be25b650bac345e0bb7e32e5e4fc3} 
+\index{skill\_config\_data@{skill\_config\_data}!zeny\_cost@{zeny\_cost}}
+\index{zeny\_cost@{zeny\_cost}!skill\_config\_data@{skill\_config\_data}}
+\doxysubsubsection{\texorpdfstring{zeny\_cost}{zeny\_cost}}
+{\footnotesize\ttfamily int skill\+\_\+config\+\_\+data\+::zeny\+\_\+cost\mbox{[}\mbox{\hyperlink{_skill_definitions_8hpp_ada0299f5f2fd9864d67801149232f4cb}{MAX\+\_\+\+SKILL\+\_\+\+LEVEL}}\mbox{]} \{0\}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Definitions/\mbox{\hyperlink{_skill_definitions_8hpp}{Skill\+Definitions.\+hpp}}\end{DoxyCompactItemize}

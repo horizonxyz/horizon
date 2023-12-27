@@ -1,0 +1,150 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\+Grid\+Definitions.hpp File Reference}
+\hypertarget{_grid_definitions_8hpp}{}\label{_grid_definitions_8hpp}\index{src/Server/Zone/Game/Map/Grid/GridDefinitions.hpp@{src/Server/Zone/Game/Map/Grid/GridDefinitions.hpp}}
+{\ttfamily \#include "{}Core/\+Structures/\+Type\+List.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Coordinates.\+hpp"{}}\newline
+Include dependency graph for Grid\+Definitions.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_grid_definitions_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_grid_definitions_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone}{Horizon\+::\+Zone}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_entities}{Horizon\+::\+Zone\+::\+Entities}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_grid_definitions_8hpp_ad572a2bce529c669d114bf922b2b843a}{MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+GRID}}~32
+\item 
+\#define \mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\+\_\+\+GRIDS\+\_\+\+PER\+\_\+\+MAP}}~14
+\item 
+\#define \mbox{\hyperlink{_grid_definitions_8hpp_ae768bb315ae2a766a10e4a36d2ffbc21}{MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+MAP}}~\mbox{\hyperlink{_grid_definitions_8hpp_ad572a2bce529c669d114bf922b2b843a}{MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+GRID}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\+\_\+\+GRIDS\+\_\+\+PER\+\_\+\+MAP}}
+\item 
+\#define \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(e)~Horizon\+::\+Zone\+::\+Entities\+::e
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$ All\+Entity\+Types $>$ \mbox{\hyperlink{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6}{Grid\+Holder\+Type}}
+\item 
+typedef \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ \mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\+\_\+\+GRIDS\+\_\+\+PER\+\_\+\+MAP}} $>$ \mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{Grid\+Coords}}
+\item 
+typedef \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$ \mbox{\hyperlink{_grid_definitions_8hpp_ae768bb315ae2a766a10e4a36d2ffbc21}{MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+MAP}} $>$ \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}
+\item 
+typedef \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ All\+Entity\+Types $>$ \mbox{\hyperlink{_grid_definitions_8hpp_a0a27e1efdae0fa264c9178ff76794bba}{Map\+Entity\+Container}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notification\+\_\+type}} \{ \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caa1818da4ac5add726a310d2fe103c190d}{GRID\+\_\+\+ENTITY\+\_\+\+SKILL\+\_\+\+USE\+\_\+\+NOTIFY\+\_\+\+CASTTIME}}
+, \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaa718bb55ec18e19d73dd62c41d44404d}{GRID\+\_\+\+ENTITY\+\_\+\+SKILL\+\_\+\+USE\+\_\+\+NOTIFY\+\_\+\+SUCCESS\+\_\+\+DAMAGE}}
+, \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaea3a4e4e002fabf8b6d799fd46578855}{GRID\+\_\+\+ENTITY\+\_\+\+SKILL\+\_\+\+USE\+\_\+\+NOTIFY\+\_\+\+SUCCESS\+\_\+\+NO\+\_\+\+DAMAGE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{_grid_definitions_8hpp_addc67ca898ae382cbb930c79800a179d}{TYPELIST\+\_\+9}} (\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}}), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(NPC), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Elemental), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Homunculus), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Mercenary), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Pet), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Monster), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Skill), \mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Item)) All\+Entity\+Types
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}\label{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!entity\_ns@{entity\_ns}}
+\index{entity\_ns@{entity\_ns}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{entity\_ns}{entity\_ns}}
+{\footnotesize\ttfamily \#define entity\+\_\+ns(\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})~Horizon\+::\+Zone\+::\+Entities\+::e}
+
+\Hypertarget{_grid_definitions_8hpp_ad572a2bce529c669d114bf922b2b843a}\label{_grid_definitions_8hpp_ad572a2bce529c669d114bf922b2b843a} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!MAX\_CELLS\_PER\_GRID@{MAX\_CELLS\_PER\_GRID}}
+\index{MAX\_CELLS\_PER\_GRID@{MAX\_CELLS\_PER\_GRID}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_CELLS\_PER\_GRID}{MAX\_CELLS\_PER\_GRID}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+GRID~32}
+
+\Hypertarget{_grid_definitions_8hpp_ae768bb315ae2a766a10e4a36d2ffbc21}\label{_grid_definitions_8hpp_ae768bb315ae2a766a10e4a36d2ffbc21} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!MAX\_CELLS\_PER\_MAP@{MAX\_CELLS\_PER\_MAP}}
+\index{MAX\_CELLS\_PER\_MAP@{MAX\_CELLS\_PER\_MAP}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_CELLS\_PER\_MAP}{MAX\_CELLS\_PER\_MAP}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+MAP~\mbox{\hyperlink{_grid_definitions_8hpp_ad572a2bce529c669d114bf922b2b843a}{MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+GRID}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\+\_\+\+GRIDS\+\_\+\+PER\+\_\+\+MAP}}}
+
+\Hypertarget{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}\label{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!MAX\_GRIDS\_PER\_MAP@{MAX\_GRIDS\_PER\_MAP}}
+\index{MAX\_GRIDS\_PER\_MAP@{MAX\_GRIDS\_PER\_MAP}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_GRIDS\_PER\_MAP}{MAX\_GRIDS\_PER\_MAP}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GRIDS\+\_\+\+PER\+\_\+\+MAP~14}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}\label{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!GridCoords@{GridCoords}}
+\index{GridCoords@{GridCoords}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{GridCoords}{GridCoords}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$\mbox{\hyperlink{_grid_definitions_8hpp_a0fdc89e6a88dd9aefe24a84d00444955}{MAX\+\_\+\+GRIDS\+\_\+\+PER\+\_\+\+MAP}}$>$ \mbox{\hyperlink{_grid_definitions_8hpp_a965b23c847b8d1eb4f2d19ac32d62723}{Grid\+Coords}}}
+
+\Hypertarget{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6}\label{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!GridHolderType@{GridHolderType}}
+\index{GridHolderType@{GridHolderType}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{GridHolderType}{GridHolderType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_grid_holder}{Grid\+Holder}}$<$All\+Entity\+Types$>$ \mbox{\hyperlink{_grid_definitions_8hpp_a84a05655cc44c692cda73065f52e45b6}{Grid\+Holder\+Type}}}
+
+\Hypertarget{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}\label{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!MapCoords@{MapCoords}}
+\index{MapCoords@{MapCoords}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MapCoords}{MapCoords}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_coordinates}{Coordinates}}$<$\mbox{\hyperlink{_grid_definitions_8hpp_ae768bb315ae2a766a10e4a36d2ffbc21}{MAX\+\_\+\+CELLS\+\_\+\+PER\+\_\+\+MAP}}$>$ \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}
+
+\Hypertarget{_grid_definitions_8hpp_a0a27e1efdae0fa264c9178ff76794bba}\label{_grid_definitions_8hpp_a0a27e1efdae0fa264c9178ff76794bba} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!MapEntityContainer@{MapEntityContainer}}
+\index{MapEntityContainer@{MapEntityContainer}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{MapEntityContainer}{MapEntityContainer}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$All\+Entity\+Types$>$ \mbox{\hyperlink{_grid_definitions_8hpp_a0a27e1efdae0fa264c9178ff76794bba}{Map\+Entity\+Container}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}\label{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!grid\_entity\_skill\_use\_notification\_type@{grid\_entity\_skill\_use\_notification\_type}}
+\index{grid\_entity\_skill\_use\_notification\_type@{grid\_entity\_skill\_use\_notification\_type}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{grid\_entity\_skill\_use\_notification\_type}{grid\_entity\_skill\_use\_notification\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737ca}{grid\+\_\+entity\+\_\+skill\+\_\+use\+\_\+notification\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_CASTTIME@{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_CASTTIME}!GridDefinitions.hpp@{GridDefinitions.hpp}}\index{GridDefinitions.hpp@{GridDefinitions.hpp}!GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_CASTTIME@{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_CASTTIME}}}\Hypertarget{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caa1818da4ac5add726a310d2fe103c190d}\label{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caa1818da4ac5add726a310d2fe103c190d} 
+GRID\+\_\+\+ENTITY\+\_\+\+SKILL\+\_\+\+USE\+\_\+\+NOTIFY\+\_\+\+CASTTIME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_DAMAGE@{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_DAMAGE}!GridDefinitions.hpp@{GridDefinitions.hpp}}\index{GridDefinitions.hpp@{GridDefinitions.hpp}!GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_DAMAGE@{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_DAMAGE}}}\Hypertarget{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaa718bb55ec18e19d73dd62c41d44404d}\label{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaa718bb55ec18e19d73dd62c41d44404d} 
+GRID\+\_\+\+ENTITY\+\_\+\+SKILL\+\_\+\+USE\+\_\+\+NOTIFY\+\_\+\+SUCCESS\+\_\+\+DAMAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_NO\_DAMAGE@{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_NO\_DAMAGE}!GridDefinitions.hpp@{GridDefinitions.hpp}}\index{GridDefinitions.hpp@{GridDefinitions.hpp}!GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_NO\_DAMAGE@{GRID\_ENTITY\_SKILL\_USE\_NOTIFY\_SUCCESS\_NO\_DAMAGE}}}\Hypertarget{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaea3a4e4e002fabf8b6d799fd46578855}\label{_grid_definitions_8hpp_a1339b00dbdc8f7bc348d91f3897737caaea3a4e4e002fabf8b6d799fd46578855} 
+GRID\+\_\+\+ENTITY\+\_\+\+SKILL\+\_\+\+USE\+\_\+\+NOTIFY\+\_\+\+SUCCESS\+\_\+\+NO\+\_\+\+DAMAGE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_grid_definitions_8hpp_addc67ca898ae382cbb930c79800a179d}\label{_grid_definitions_8hpp_addc67ca898ae382cbb930c79800a179d} 
+\index{GridDefinitions.hpp@{GridDefinitions.hpp}!TYPELIST\_9@{TYPELIST\_9}}
+\index{TYPELIST\_9@{TYPELIST\_9}!GridDefinitions.hpp@{GridDefinitions.hpp}}
+\doxysubsubsection{\texorpdfstring{TYPELIST\_9()}{TYPELIST\_9()}}
+{\footnotesize\ttfamily typedef TYPELIST\+\_\+9 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(\mbox{\hyperlink{class_player}{Player}})}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(NPC)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Elemental)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Homunculus)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Mercenary)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Pet)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Monster)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Skill)}]{,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_aed7beb24487bbb2f000de11c0f958479}{entity\+\_\+ns}}(Item)}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,281 @@
+\doxysection{User\+Interface.\+hpp}
+\hypertarget{_user_interface_8hpp_source}{}\label{_user_interface_8hpp_source}\index{src/Server/Zone/Interface/UI/UserInterface.hpp@{src/Server/Zone/Interface/UI/UserInterface.hpp}}
+\mbox{\hyperlink{_user_interface_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_USER\_INTERFACE\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_USER\_INTERFACE\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_client_definitions_8hpp}{Server/Zone/Definitions/ClientDefinitions.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }ZoneSession;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }UI}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction}{Auction}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction}{Auction}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a334d3b410beba62f5160fb6696310485}{\string~Auction}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4de66b00abe0078baed47cfb5a83e74e}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_acf1fbf7a225c027e62ad55e01c9d1058}{add}}(\textcolor{keywordtype}{int}\ now\_money,\ \textcolor{keywordtype}{int}\ max\_money,\ int16\_t\ delete\_hour);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9dae62eb59c8bee0e892fd34f1f4ac25}{add\_cancel}}(\textcolor{keywordtype}{int}\ auction\_id);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a6dd27f39f2d9548b73f5fa0f60a610ca}{add\_item}}(\textcolor{keywordtype}{int}\ inventory\_index,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a4d895eed2a8c36b4456f70bba89fc66d}{buy}}(\textcolor{keywordtype}{int}\ auction\_id,\ \textcolor{keywordtype}{int}\ money);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a066a58bec50979c918b0d0d2499dd2eb}{create}}(\mbox{\hyperlink{_client_definitions_8hpp_a6bca213bf3b6aef17c7628f7f86be6e5}{cz\_auction\_create\_type}}\ type);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a9b0555f2750f7cc735204ad195dd2d80}{search\_item}}(\mbox{\hyperlink{_client_definitions_8hpp_abb3b1e5f56d271a944430b708932c14d}{cz\_auction\_search\_type}}\ search\_type,\ \textcolor{keywordtype}{int}\ auction\_id,\ std::string\ search\_text,\ \textcolor{keywordtype}{int}\ page\_number);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a35f240d33e7c5d82b16fc74261557d2f}{own\_information}}(\mbox{\hyperlink{_client_definitions_8hpp_a81e2833c5675c199d0b08177d3e7557c}{cz\_auction\_reqmyinfo\_type}}\ type);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_a2518ce279b8e085ac5251c93d3201240}{stop}}(\textcolor{keywordtype}{int}\ auction\_id);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_auction_af3c2957b7ffb0871e69be532da6ef72d}{notify\_add\_item}}(\textcolor{keywordtype}{int}\ inventory\_index,\ \mbox{\hyperlink{_client_definitions_8hpp_a1bfec5a1c2370be3f0fce4cf0a2fbb5c}{zc\_ack\_auction\_add\_item\_result\_type}}\ result);}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom}{Chatroom}}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom}{Chatroom}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a5cce69774b3a62c3a455388415b9d385}{\string~Chatroom}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a17ed67f41a942f4ce83d52afcf81a9cf}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a23714c4423ac4da2cf7c47d9f125a573}{create\_chatroom}}(\textcolor{keywordtype}{int}\ limit,\ \textcolor{keywordtype}{int}\ \_public,\ std::string\ password,\ std::string\ title);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a01a827dd6d5b2f3678c3384751864506}{role\_change}}(\textcolor{keywordtype}{int}\ role,\ std::string\ name);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a61ec4e49da6547785a7f637383b5ff15}{add\_member}}(\textcolor{keywordtype}{int}\ chat\_id,\ std::string\ password);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1200a6a740347298a6663d953ddbe863}{expel\_member}}(std::string\ name);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a606714253b6864897c0b92634088e11a}{leave}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_chatroom_a1f3b680d2420dc5cf435e8621693b79d}{change\_properties}}(\textcolor{keywordtype}{int}\ limit,\ \textcolor{keywordtype}{int}\ type,\ std::string\ password,\ std::string\ title);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend}{Friend}}}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00084\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend}{Friend}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend_adb0226d601d36514ce0ee80f2e0d8ed2}{\string~Friend}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend_a2942069e64980d4b62b656c6212192b5}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend_ab9b4d66ebd26d55fd5b919fc10b9b732}{request}}(\textcolor{keywordtype}{int}\ inviter\_account\_id,\ \textcolor{keywordtype}{int}\ inviter\_char\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_aa1dcf430bc867520a2c95f0939599f9b}{cz\_ack\_req\_add\_friends\_result\_type}}\ result);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend_a3b4a7f469668bd2d1ef554694682b25e}{add}}(std::string\ name);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend_a5580a367ab0f440e1a7ad9bef3199baa}{remove}}(\textcolor{keywordtype}{int}\ account\_id,\ \textcolor{keywordtype}{int}\ char\_id);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_friend_a250adb363e677650e1ae0da678d998b6}{notify\_add\_friend\_request}}(\textcolor{keywordtype}{int}\ inviter\_account\_id,\ \textcolor{keywordtype}{int}\ inviter\_char\_id,\ std::string\ inviter\_name);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00096\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild}{Guild}}}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild}{Guild}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a34c574bfa81104e1976a960bea77310d}{\string~Guild}}();}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a1b17d6a63c5216a600a9da19a7cb733c}{create}}(\textcolor{keywordtype}{int}\ master\_id,\ std::string\ name);}
+\DoxyCodeLine{00105\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a9e55ee7aea1c56001a5399ee35677ed8}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae064d2cf276a38835b204cb91de801d4}{request\_guild\_information}}(\textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ab31ca5f519cd55cdabad5fe6f022d054}{notify\_menu\_interface}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac32c6d883e4f06f639c945528e6b689a}{change\_position\_info}}(std::vector<s\_cz\_reg\_change\_guild\_positioninfo>\ info);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aecb1a8b49a2505c1575e70c58da4760a}{change\_member\_positions}}(std::vector<s\_cz\_req\_change\_memberpos>\ members);}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ac3fed71d170d5fa13f479fcad51c8fee}{change\_emblem}}(std::string\ emblem);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a5a3af446e63f7af61efd6d3b7bc2f59c}{change\_notice}}(\textcolor{keywordtype}{int}\ guild\_id,\ std::string\ subject,\ std::string\ notice);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a00726ff763207d91dcb893edeee137be}{invite}}(\textcolor{keywordtype}{int}\ account\_id,\ \textcolor{keywordtype}{int}\ inviter\_account\_id,\ \textcolor{keywordtype}{int}\ inviter\_char\_id);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a00726ff763207d91dcb893edeee137be}{invite}}(std::string\ name);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a0675638464b49031e4cbb27411ae5322}{invite\_response}}(\textcolor{keywordtype}{int}\ guild\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_a32ff1e79998d006e035a3ec9fe91181f}{cz\_join\_guild\_response\_type}}\ response);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ae5c7fbfcbd54a46e31ab5dda67d5d4dc}{leave}}(\textcolor{keywordtype}{int}\ guild\_id,\ \textcolor{keywordtype}{int}\ account\_id,\ \textcolor{keywordtype}{int}\ char\_id,\ std::string\ reason);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a8789ce70d22494e90f9aefb1ada2b62e}{expel}}(\textcolor{keywordtype}{int}\ guild\_id,\ \textcolor{keywordtype}{int}\ account\_id,\ \textcolor{keywordtype}{int}\ char\_id,\ std::string\ reason);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad150370825ec84d16066062c3daade7a}{send\_message}}(std::string\ message);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_afdbc7fec5fde3359c5031a22ef359b92}{invite\_ally}}(\textcolor{keywordtype}{int}\ account\_id,\ \textcolor{keywordtype}{int}\ inviter\_account\_id,\ \textcolor{keywordtype}{int}\ inviter\_char\_id);}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_addff00bd9db4b0e1b505aa8eae87b8e9}{invite\_ally\_response}}(\textcolor{keywordtype}{int}\ inviter\_account\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_a804aaf9e848100ab25219476f2677673}{cz\_ally\_guild\_response\_type}}\ response);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_a3236365b9ff6c928401b94591857281c}{remove\_related\_guild}}(\textcolor{keywordtype}{int}\ guild\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_af19b7b89f7817a1810da6a2a612a0d18}{cz\_req\_delete\_related\_guild\_relation\_type}}\ relation);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_aa95bcfd3cf2013bbfd3bfc8a0ebc2381}{add\_opposition}}(\textcolor{keywordtype}{int}\ account\_id);}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ad954627d658505fdf788891bff1d5bc3}{disband}}(std::string\ key);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ace38321785480c6ea1a67a1841c39125}{notify\_expel\_member}}(std::string\ char\_name,\ std::string\ reason,\ std::string\ account\_name);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_guild_ace38321785480c6ea1a67a1841c39125}{notify\_expel\_member}}(std::string\ char\_name,\ std::string\ reason);}
+\DoxyCodeLine{00126\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00127\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan}{Clan}}}
+\DoxyCodeLine{00131\ \{}
+\DoxyCodeLine{00132\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan}{Clan}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan_a508085f6f1a92a801c9e18f3d5cb5786}{\string~Clan}}();}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan_a2278226b6cb3c47421f8a7bd068bc1da}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00137\ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan_af1c61e2b3c4c2418f315e063fa8dac5e}{message}}(std::string\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan_af1c61e2b3c4c2418f315e063fa8dac5e}{message}});}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_clan_a8c313c81174ae3f53c5982879f531ea4}{notify\_leave}}();}
+\DoxyCodeLine{00140\ \ \ \ \ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00142\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail}{Mail}}}
+\DoxyCodeLine{00146\ \{}
+\DoxyCodeLine{00147\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail}{Mail}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a3de4c3e0ccf0bf1d00480f3b30b3cca6}{\string~Mail}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a84916798a84d03c22a567c22df7f3f7d}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a134667b0de127fe887750cbaf24b6b2b}{check\_receiver\_name}}(std::string\ name);}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a8fb7dc00e0cc84fab2c7a7daf746ea87}{add\_item}}(\textcolor{keywordtype}{int}\ inventory\_index,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ae0f18fde68502c0b71d2d559a959b296}{delete\_}}(\textcolor{keywordtype}{int}\ mail\_id);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a5bfa9725b9fc3900e768fb40476ce6ba}{retrieve\_attachment}}(\textcolor{keywordtype}{int}\ mail\_id);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a38572929cf31a7f9fe4d0f186f6ba5ce}{list}}();}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_af55643412192a85de316b5cecef18dba}{open}}(\textcolor{keywordtype}{int}\ mail\_id);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a74d5bf2f4f3fde8fa2bc691d83ed1995}{reset}}(\mbox{\hyperlink{_client_definitions_8hpp_a7ca6b28e687754091685571a0f639500}{cz\_mail\_reset\_item\_type}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a74d5bf2f4f3fde8fa2bc691d83ed1995}{reset}});}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_afdad2087a4148640464f677eb7d789a9}{send}}(std::string\ recipient,\ std::string\ title,\ std::string\ body);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4cf28ca075b28172dc0dfb919f6a1372}{return\_}}(\textcolor{keywordtype}{int}\ mail\_id,\ std::string\ receiver\_name);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_ad4c9acf5667752b48b3151134f76bb17}{notify\_add\_item}}(\textcolor{keywordtype}{int}\ inventory\_index,\ \mbox{\hyperlink{_client_definitions_8hpp_ab75ad40ae73ef73382f095c7738c7882}{zc\_ack\_mail\_add\_item\_result\_type}}\ result);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a6d310f9e15004299310ddc38e5a800f5}{notify\_delete}}(\textcolor{keywordtype}{int}\ mail\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_aaf4469cbbc166701f6ff0c55d87ff342}{zc\_ack\_mail\_delete\_result\_type}}\ result);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_mail_a4da3bebe353afca2457a1b781cea99b0}{notify\_return}}(\textcolor{keywordtype}{int}\ mail\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_ac6d216bb6ce512b854dd74038f4a4922}{zc\_ack\_mail\_return\_result\_type}}\ result);}
+\DoxyCodeLine{00166\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00167\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00168\ \};}
+\DoxyCodeLine{00169\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party}{Party}}}
+\DoxyCodeLine{00170\ \{}
+\DoxyCodeLine{00171\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party}{Party}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5256d321d676ff8f7bd3618c437d4551}{\string~Party}}();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad5377c77bdcb329c84e142371839627d}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ad6c9368fc59b824d09b637d67ab23af6}{create}}(std::string\ name,\ \textcolor{keywordtype}{int}\ item\_pickup\_rule,\ \textcolor{keywordtype}{int}\ item\_share\_rule);}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a442160afb1a49d08d1c2cbae24910699}{invite}}(\textcolor{keywordtype}{int}\ account\_id);}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a442160afb1a49d08d1c2cbae24910699}{invite}}(std::string\ name);}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a5891145bdd8e4c58691cbafea3f3260b}{invite\_response}}(\textcolor{keywordtype}{int}\ party\_id,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_client_definitions_8hpp_ac7d921cb36fe7cd64c9ec6e27808f264}{party\_invite\_response\_type}}\ response);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ace2aee1892bab770c6c6b4931c1032ac}{leave}}();}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a9e66367faa29ec074aae411bf66e626d}{expel\_member}}(\textcolor{keywordtype}{int}\ account\_id,\ std::string\ name);}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a85beb2e41b6323d3e22fd572db4b7679}{change\_properties}}(\textcolor{keywordtype}{int}\ exp\_share\_rule,\ \textcolor{keywordtype}{int}\ item\_pickup\_rule,\ \textcolor{keywordtype}{int}\ item\_share\_rule);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a83cbd2e326d56e084b3b22924b0c2e83}{send\_message}}(\textcolor{keywordtype}{int}\ packet\_length,\ std::string\ message);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_adb140b8bf75e2943f7657bf8681dae77}{change\_leader}}(\textcolor{keywordtype}{int}\ account\_id);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_a93ba3e461601fe7378a12449cbc27ed8}{refuse\_invite}}(\textcolor{keywordtype}{bool}\ refuse);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{comment}{/*\ Notify\ */}}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_ae80772a68369efd3c41d056e11216d0a}{notify\_created}}(\mbox{\hyperlink{_client_definitions_8hpp_a376851af76731bedfbe037bbe2af154b}{zcack\_makegroup\_result\_type}}\ result);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00192\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking}{PartyBooking}}}
+\DoxyCodeLine{00196\ \{}
+\DoxyCodeLine{00197\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking}{PartyBooking}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking_a757e807e7c3c99a3b9838b1bffec501e}{\string~PartyBooking}}();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking_a591f7c5501e04b98703a024947d55dc5}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking_ad140a4be4e5f99547bb043b581cac22a}{delete\_}}();}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking_af754b644f9cea1e5befdd40a694694dc}{register\_}}(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ map\_id,\ std::vector<int>\ jobs);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking_accfadca83a61f60bb3c3f1c2dcc8a026}{search}}(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ map\_id,\ \textcolor{keywordtype}{int}\ job,\ \textcolor{keywordtype}{int}\ last\_index,\ \textcolor{keywordtype}{int}\ result\_count);}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_party_booking_a5c5d130357cc8a5c44c35786cd88dd3e}{update}}(std::vector<int>\ jobs);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00209\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00210\ \};}
+\DoxyCodeLine{00211\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_r_o_d_ex}{RODEx}}}
+\DoxyCodeLine{00212\ \{}
+\DoxyCodeLine{00213\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_r_o_d_ex}{RODEx}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_r_o_d_ex_aa26bfdd89ec98e384ae0c1569f9e8b21}{\string~RODEx}}();}
+\DoxyCodeLine{00216\ \ \ \ \ }
+\DoxyCodeLine{00217\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_r_o_d_ex_ad726b82f998171be662a9261300e83cd}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_r_o_d_ex_aab2c590f1ef1cd00378a288c03eb2ed0}{notify\_add\_item}}(\mbox{\hyperlink{structs__zc__ack__add__item__rodex}{s\_zc\_ack\_add\_item\_rodex}}\ info);}
+\DoxyCodeLine{00220\ \ \ \ \ }
+\DoxyCodeLine{00221\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00222\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00223\ \};}
+\DoxyCodeLine{00224\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_roulette}{Roulette}}}
+\DoxyCodeLine{00225\ \{}
+\DoxyCodeLine{00226\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_roulette}{Roulette}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_roulette_a6c3a025d404283bd38ff216d519cd3f3}{\string~Roulette}}();}
+\DoxyCodeLine{00229\ \ \ \ \ }
+\DoxyCodeLine{00230\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_roulette_aef5cab73001d442119083eeb74bcbcb9}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_roulette_a23cb23fde7d345003a18173efe15ca19}{notify\_close}}();}
+\DoxyCodeLine{00233\ \ \ \ \ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00235\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00236\ \};}
+\DoxyCodeLine{00237\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade}{Trade}}}
+\DoxyCodeLine{00238\ \{}
+\DoxyCodeLine{00239\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade}{Trade}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_ae49425face025d080f21d77a3ec22978}{\string~Trade}}();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_acbc1cbb64dca706538533d965f79b019}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a60f153ab26d83e374d7e7bf06c72c88d}{request}}(\textcolor{keywordtype}{int}\ account\_id);}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a1d8cb9705c6aaf61f96b8caa9764938a}{response}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a07657a6834864db669454c8bb1f69e5d}{add\_zeny}}(\textcolor{keywordtype}{int}\ zeny);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a19c60fd70617c5210153adbb7e8d4c53}{add\_item}}(\textcolor{keywordtype}{int}\ inventory\_index,\ \textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a80391aeeaca5a23c181ed934a8a9870f}{lock}}();}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_a0bfbb95218d429267061f3297b82ee52}{cancel}}();}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af35a694246c794902a7779208bcd37bb}{commit}}();}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af766b3f0d6b99480e73741b508525eb5}{notify\_response}}(\mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\_ack\_exchange\_item\_result\_type}}\ result);}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_trade_af766b3f0d6b99480e73741b508525eb5}{notify\_response}}(\mbox{\hyperlink{_client_definitions_8hpp_a1f1cf867e3e0b190a82e983e9944e36c}{zc\_ack\_exchange\_item\_result\_type}}\ result,\ \textcolor{keywordtype}{int}\ char\_id,\ \textcolor{keywordtype}{int}\ base\_level);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00257\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00258\ \};}
+\DoxyCodeLine{00259\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_quest}{Quest}}}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_quest}{Quest}}(std::shared\_ptr<ZoneSession>\ session);}
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_quest_acc59cb0d7dfe00d2faadc6bd0a8d717b}{\string~Quest}}();}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_quest_a648255b4b3e08c5d4db36995217abb79}{get\_session}}()\ \{\ \textcolor{keywordflow}{return}\ \_session.lock();\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_u_i_1_1_quest_aafe28a04265f3c2d5f3899730c264f0f}{update\_status}}(\textcolor{keywordtype}{int}\ quest\_id,\ \mbox{\hyperlink{_client_definitions_8hpp_a240a7ca3bd8f7cc7a7ebdd8a5604ce0f}{cz\_active\_quest\_type}}\ type);}
+\DoxyCodeLine{00268\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00269\ \ \ \ \ std::weak\_ptr<ZoneSession>\ \_session;}
+\DoxyCodeLine{00270\ \};}
+\DoxyCodeLine{00271\ \}}
+\DoxyCodeLine{00272\ \}}
+\DoxyCodeLine{00273\ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_USER\_INTERFACE\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

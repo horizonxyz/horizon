@@ -1,0 +1,144 @@
+\doxysection{monster\+\_\+spawn\+\_\+data Struct Reference}
+\hypertarget{structmonster__spawn__data}{}\label{structmonster__spawn__data}\index{monster\_spawn\_data@{monster\_spawn\_data}}
+
+
+{\ttfamily \#include $<$Monster\+Definitions.\+hpp$>$}
+
+
+
+Collaboration diagram for monster\+\_\+spawn\+\_\+data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{structmonster__spawn__data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache}{s\+\_\+monster\+\_\+spawn\+\_\+time\+\_\+cache}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structmonster__spawn__data_a5b60ae333166b5c66c1927aa88bd2e98}{spawn\+\_\+dataset\+\_\+id}} \{ 0 \}
+\item 
+int \mbox{\hyperlink{structmonster__spawn__data_af01eb009eca1f77e1c194bcdde35127e}{monster\+\_\+id}} \{0\}
+\item 
+std\+::string \mbox{\hyperlink{structmonster__spawn__data_a8590b9c0688ee4f1ba6a7c29a88a0092}{map\+\_\+name}} \{"{}"{}\}
+\item 
+\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} \mbox{\hyperlink{structmonster__spawn__data_ae0776ca640862458195c3f451564644d}{coords}} \{0,0\}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_a58bc8083887a53ed2914840b01a57e0b}{x}} \{0\}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_a033b0bd4d2b996f0b2beb3f9e5ca6ea0}{y}} \{0\}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_a21a7d51276e24173e31b17af541c029f}{x\+\_\+area}} \{0\}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_af135a125910d0856e7e4b4669a70c2f4}{y\+\_\+area}} \{0\}
+\item 
+std\+::string \mbox{\hyperlink{structmonster__spawn__data_a97a13f7c0e853205e27e6ef2081e1ee0}{mob\+\_\+name}} \{"{}"{}\}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_a87f6e2385dd3d2c17f114810bf12f7fa}{amount}} \{0\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_a9723a62c5adffdf95e911f8fb2c1b11a}{spawn\+\_\+delay\+\_\+base}} \{0\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_a1287ae82c339f5fcbfda913aab63fc7e}{spawn\+\_\+delay\+\_\+variance}} \{0\}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structmonster__spawn__data_abfea39d7b55a669008f16af35c764efd}{dead\+\_\+amount}} \{ 0 \}
+\item 
+std\+::unordered\+\_\+map$<$ int64\+\_\+t, \mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache}{s\+\_\+monster\+\_\+spawn\+\_\+time\+\_\+cache}} $>$ \mbox{\hyperlink{structmonster__spawn__data_a333ab514bdcdc0a78a8167c56fcf4495}{dead\+\_\+spawn\+\_\+time\+\_\+list}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structmonster__spawn__data_a87f6e2385dd3d2c17f114810bf12f7fa}\label{structmonster__spawn__data_a87f6e2385dd3d2c17f114810bf12f7fa} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!amount@{amount}}
+\index{amount@{amount}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily int16\+\_\+t monster\+\_\+spawn\+\_\+data\+::amount \{0\}}
+
+\Hypertarget{structmonster__spawn__data_ae0776ca640862458195c3f451564644d}\label{structmonster__spawn__data_ae0776ca640862458195c3f451564644d} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!coords@{coords}}
+\index{coords@{coords}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{coords}{coords}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} monster\+\_\+spawn\+\_\+data\+::coords \{0,0\}}
+
+\Hypertarget{structmonster__spawn__data_abfea39d7b55a669008f16af35c764efd}\label{structmonster__spawn__data_abfea39d7b55a669008f16af35c764efd} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!dead\_amount@{dead\_amount}}
+\index{dead\_amount@{dead\_amount}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{dead\_amount}{dead\_amount}}
+{\footnotesize\ttfamily int16\+\_\+t monster\+\_\+spawn\+\_\+data\+::dead\+\_\+amount \{ 0 \}}
+
+\Hypertarget{structmonster__spawn__data_a333ab514bdcdc0a78a8167c56fcf4495}\label{structmonster__spawn__data_a333ab514bdcdc0a78a8167c56fcf4495} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!dead\_spawn\_time\_list@{dead\_spawn\_time\_list}}
+\index{dead\_spawn\_time\_list@{dead\_spawn\_time\_list}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{dead\_spawn\_time\_list}{dead\_spawn\_time\_list}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$int64\+\_\+t, \mbox{\hyperlink{structmonster__spawn__data_1_1s__monster__spawn__time__cache}{s\+\_\+monster\+\_\+spawn\+\_\+time\+\_\+cache}}$>$ monster\+\_\+spawn\+\_\+data\+::dead\+\_\+spawn\+\_\+time\+\_\+list}
+
+\Hypertarget{structmonster__spawn__data_a8590b9c0688ee4f1ba6a7c29a88a0092}\label{structmonster__spawn__data_a8590b9c0688ee4f1ba6a7c29a88a0092} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!map\_name@{map\_name}}
+\index{map\_name@{map\_name}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{map\_name}{map\_name}}
+{\footnotesize\ttfamily std\+::string monster\+\_\+spawn\+\_\+data\+::map\+\_\+name \{"{}"{}\}}
+
+\Hypertarget{structmonster__spawn__data_a97a13f7c0e853205e27e6ef2081e1ee0}\label{structmonster__spawn__data_a97a13f7c0e853205e27e6ef2081e1ee0} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!mob\_name@{mob\_name}}
+\index{mob\_name@{mob\_name}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{mob\_name}{mob\_name}}
+{\footnotesize\ttfamily std\+::string monster\+\_\+spawn\+\_\+data\+::mob\+\_\+name \{"{}"{}\}}
+
+\Hypertarget{structmonster__spawn__data_af01eb009eca1f77e1c194bcdde35127e}\label{structmonster__spawn__data_af01eb009eca1f77e1c194bcdde35127e} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!monster\_id@{monster\_id}}
+\index{monster\_id@{monster\_id}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{monster\_id}{monster\_id}}
+{\footnotesize\ttfamily int monster\+\_\+spawn\+\_\+data\+::monster\+\_\+id \{0\}}
+
+\Hypertarget{structmonster__spawn__data_a5b60ae333166b5c66c1927aa88bd2e98}\label{structmonster__spawn__data_a5b60ae333166b5c66c1927aa88bd2e98} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!spawn\_dataset\_id@{spawn\_dataset\_id}}
+\index{spawn\_dataset\_id@{spawn\_dataset\_id}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{spawn\_dataset\_id}{spawn\_dataset\_id}}
+{\footnotesize\ttfamily int monster\+\_\+spawn\+\_\+data\+::spawn\+\_\+dataset\+\_\+id \{ 0 \}}
+
+\Hypertarget{structmonster__spawn__data_a9723a62c5adffdf95e911f8fb2c1b11a}\label{structmonster__spawn__data_a9723a62c5adffdf95e911f8fb2c1b11a} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!spawn\_delay\_base@{spawn\_delay\_base}}
+\index{spawn\_delay\_base@{spawn\_delay\_base}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{spawn\_delay\_base}{spawn\_delay\_base}}
+{\footnotesize\ttfamily int32\+\_\+t monster\+\_\+spawn\+\_\+data\+::spawn\+\_\+delay\+\_\+base \{0\}}
+
+\Hypertarget{structmonster__spawn__data_a1287ae82c339f5fcbfda913aab63fc7e}\label{structmonster__spawn__data_a1287ae82c339f5fcbfda913aab63fc7e} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!spawn\_delay\_variance@{spawn\_delay\_variance}}
+\index{spawn\_delay\_variance@{spawn\_delay\_variance}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{spawn\_delay\_variance}{spawn\_delay\_variance}}
+{\footnotesize\ttfamily int32\+\_\+t monster\+\_\+spawn\+\_\+data\+::spawn\+\_\+delay\+\_\+variance \{0\}}
+
+\Hypertarget{structmonster__spawn__data_a58bc8083887a53ed2914840b01a57e0b}\label{structmonster__spawn__data_a58bc8083887a53ed2914840b01a57e0b} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!x@{x}}
+\index{x@{x}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int16\+\_\+t monster\+\_\+spawn\+\_\+data\+::x \{0\}}
+
+\Hypertarget{structmonster__spawn__data_a21a7d51276e24173e31b17af541c029f}\label{structmonster__spawn__data_a21a7d51276e24173e31b17af541c029f} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!x\_area@{x\_area}}
+\index{x\_area@{x\_area}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{x\_area}{x\_area}}
+{\footnotesize\ttfamily int16\+\_\+t monster\+\_\+spawn\+\_\+data\+::x\+\_\+area \{0\}}
+
+\Hypertarget{structmonster__spawn__data_a033b0bd4d2b996f0b2beb3f9e5ca6ea0}\label{structmonster__spawn__data_a033b0bd4d2b996f0b2beb3f9e5ca6ea0} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!y@{y}}
+\index{y@{y}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int16\+\_\+t monster\+\_\+spawn\+\_\+data\+::y \{0\}}
+
+\Hypertarget{structmonster__spawn__data_af135a125910d0856e7e4b4669a70c2f4}\label{structmonster__spawn__data_af135a125910d0856e7e4b4669a70c2f4} 
+\index{monster\_spawn\_data@{monster\_spawn\_data}!y\_area@{y\_area}}
+\index{y\_area@{y\_area}!monster\_spawn\_data@{monster\_spawn\_data}}
+\doxysubsubsection{\texorpdfstring{y\_area}{y\_area}}
+{\footnotesize\ttfamily int16\+\_\+t monster\+\_\+spawn\+\_\+data\+::y\+\_\+area \{0\}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Definitions/\mbox{\hyperlink{_monster_definitions_8hpp}{Monster\+Definitions.\+hpp}}\end{DoxyCompactItemize}

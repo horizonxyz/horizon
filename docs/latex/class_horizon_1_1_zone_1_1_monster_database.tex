@@ -1,0 +1,547 @@
+\doxysection{Horizon\+::Zone\+::Monster\+Database Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_monster_database}{}\label{class_horizon_1_1_zone_1_1_monster_database}\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+
+
+{\ttfamily \#include $<$Monster\+DB.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_af979810b974c1684214d56a0a35b93a8}{Monster\+Database}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_aca8ded82b3a110b74440a22481ddd3e7}{\texorpdfstring{$\sim$}{\string~}\+Monster\+Database}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a2d51c8338c23e357966e7ea3ed055cba}{load}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a28f37e4a50fcac76f7a35bf04d43a753}{get\+\_\+monster\+\_\+by\+\_\+id}} (uint32\+\_\+t id)
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_af67c0dc070be68081eebbdc4d1d038ff}{get\+\_\+monster\+\_\+by\+\_\+name}} (std\+::string name)
+\item 
+std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__skill__config__data}{monster\+\_\+skill\+\_\+config\+\_\+data}} $>$ $>$ $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a3c76aa06ef86451ac9f3bec8cc780b53}{get\+\_\+monster\+\_\+skill\+\_\+by\+\_\+id}} (uint32\+\_\+t monster\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database}{Monster\+Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a3ebebfd7d1e79bdb1a13460e5ecfeec7}{get\+\_\+instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_abc30147aeda4a84a8ffcb7b952e95980}{load\+\_\+internal}} (sol\+::object const \&key, sol\+::object const \&value)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_ad49615e229c7804598c3480168146dbf}{parse\+\_\+level}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a4921aeddbcc21d574010c4187b38cdc7}{parse\+\_\+hp}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_abda33d71766dc5f6d4d2398360b78ac9}{parse\+\_\+sp}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a07c23d0a4be497faf4223c61c1b2350a}{parse\+\_\+reward\+\_\+base\+\_\+exp}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a04887fe588c392c56fe40b9a0260d6b1}{parse\+\_\+reward\+\_\+job\+\_\+exp}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_af367df7a1c79a3e5d376ef9869abc077}{parse\+\_\+attack\+\_\+range}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_af35494fba32fb662a902cd2316cba618}{parse\+\_\+attack}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a4451c5aa14a9a049db3875c92c7f1ef4}{parse\+\_\+defense}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_ae3b451e8a1b519e0907bc2c4f4e6e28a}{parse\+\_\+magic\+\_\+defense}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_ac6a5e1e57f84897f87c652d2e1ab0a64}{parse\+\_\+view\+\_\+range}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a04672dd8057e23ed09ca9aa01c362408}{parse\+\_\+chase\+\_\+range}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a8c7f7f3aedf3acd3043a723915465957}{parse\+\_\+size}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_aa7460774a15a154d1bf22f1a290f76fd}{parse\+\_\+race}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a9461b41e1abb55a0cfccba0db276dbb9}{parse\+\_\+element}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_ae921b0d9f212d7f4f81a0e834f9dd506}{parse\+\_\+mode}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a43b917ba13cde9ed2bf0674197d74c7a}{parse\+\_\+move\+\_\+speed}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a6dfeb5d548f3350c30c5f368d3e83436}{parse\+\_\+attack\+\_\+delay}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_aa34c14822ae93584e6b285e01651d790}{parse\+\_\+attack\+\_\+motion}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a4d2a23d323e69e37ea79465e3c76e8c5}{parse\+\_\+damage\+\_\+motion}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a166eb84439957033bfa9ec63a0e41537}{parse\+\_\+mvp\+\_\+exp}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a42dcb5250a602346a1e9a2a6b4bf9b5e}{parse\+\_\+damage\+\_\+taken\+\_\+rate}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a919e925746195285c07dd4a8213fe454}{parse\+\_\+stats}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_adbbcbeb5cddf3f0238026942ea34ad70}{parse\+\_\+drops}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data, bool mvp)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_ad5dabf48d5b550813e05af6565bdf17b}{parse\+\_\+view}} (sol\+::table const \&table, \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&data)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database_a07497b45849a16ccecdee5462fd94a67}{load\+\_\+skill\+\_\+internal}} (sol\+::object const \&key, sol\+::object const \&value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_af979810b974c1684214d56a0a35b93a8}\label{class_horizon_1_1_zone_1_1_monster_database_af979810b974c1684214d56a0a35b93a8} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!MonsterDatabase@{MonsterDatabase}}
+\index{MonsterDatabase@{MonsterDatabase}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{MonsterDatabase()}{MonsterDatabase()}}
+{\footnotesize\ttfamily Monster\+Database\+::\+Monster\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_aca8ded82b3a110b74440a22481ddd3e7}\label{class_horizon_1_1_zone_1_1_monster_database_aca8ded82b3a110b74440a22481ddd3e7} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!````~MonsterDatabase@{\texorpdfstring{$\sim$}{\string~}MonsterDatabase}}
+\index{````~MonsterDatabase@{\texorpdfstring{$\sim$}{\string~}MonsterDatabase}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MonsterDatabase()}{\string~MonsterDatabase()}}
+{\footnotesize\ttfamily Monster\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Monster\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a3ebebfd7d1e79bdb1a13460e5ecfeec7}\label{class_horizon_1_1_zone_1_1_monster_database_a3ebebfd7d1e79bdb1a13460e5ecfeec7} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_monster_database}{Monster\+Database}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Monster\+Database\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a28f37e4a50fcac76f7a35bf04d43a753}\label{class_horizon_1_1_zone_1_1_monster_database_a28f37e4a50fcac76f7a35bf04d43a753} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!get\_monster\_by\_id@{get\_monster\_by\_id}}
+\index{get\_monster\_by\_id@{get\_monster\_by\_id}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_monster\_by\_id()}{get\_monster\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Monster\+Database\+::get\+\_\+monster\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a28f37e4a50fcac76f7a35bf04d43a753_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_af67c0dc070be68081eebbdc4d1d038ff}\label{class_horizon_1_1_zone_1_1_monster_database_af67c0dc070be68081eebbdc4d1d038ff} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!get\_monster\_by\_name@{get\_monster\_by\_name}}
+\index{get\_monster\_by\_name@{get\_monster\_by\_name}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_monster\_by\_name()}{get\_monster\_by\_name()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Monster\+Database\+::get\+\_\+monster\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_af67c0dc070be68081eebbdc4d1d038ff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a3c76aa06ef86451ac9f3bec8cc780b53}\label{class_horizon_1_1_zone_1_1_monster_database_a3c76aa06ef86451ac9f3bec8cc780b53} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!get\_monster\_skill\_by\_id@{get\_monster\_skill\_by\_id}}
+\index{get\_monster\_skill\_by\_id@{get\_monster\_skill\_by\_id}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_monster\_skill\_by\_id()}{get\_monster\_skill\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{structmonster__skill__config__data}{monster\+\_\+skill\+\_\+config\+\_\+data}} $>$ $>$ $>$ Horizon\+::\+Zone\+::\+Monster\+Database\+::get\+\_\+monster\+\_\+skill\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{monster\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a3c76aa06ef86451ac9f3bec8cc780b53_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a2d51c8338c23e357966e7ea3ed055cba}\label{class_horizon_1_1_zone_1_1_monster_database_a2d51c8338c23e357966e7ea3ed055cba} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!load@{load}}
+\index{load@{load}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_monster_database_a2d51c8338c23e357966e7ea3ed055cba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_abc30147aeda4a84a8ffcb7b952e95980}\label{class_horizon_1_1_zone_1_1_monster_database_abc30147aeda4a84a8ffcb7b952e95980} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!load\_internal@{load\_internal}}
+\index{load\_internal@{load\_internal}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_internal()}{load\_internal()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::load\+\_\+internal (\begin{DoxyParamCaption}\item[{sol\+::object const \&}]{key,  }\item[{sol\+::object const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_monster_database_abc30147aeda4a84a8ffcb7b952e95980_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_abc30147aeda4a84a8ffcb7b952e95980_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a07497b45849a16ccecdee5462fd94a67}\label{class_horizon_1_1_zone_1_1_monster_database_a07497b45849a16ccecdee5462fd94a67} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!load\_skill\_internal@{load\_skill\_internal}}
+\index{load\_skill\_internal@{load\_skill\_internal}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_skill\_internal()}{load\_skill\_internal()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::load\+\_\+skill\+\_\+internal (\begin{DoxyParamCaption}\item[{sol\+::object const \&}]{key,  }\item[{sol\+::object const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a07497b45849a16ccecdee5462fd94a67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a07497b45849a16ccecdee5462fd94a67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_af35494fba32fb662a902cd2316cba618}\label{class_horizon_1_1_zone_1_1_monster_database_af35494fba32fb662a902cd2316cba618} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_attack@{parse\_attack}}
+\index{parse\_attack@{parse\_attack}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_attack()}{parse\_attack()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+attack (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_af35494fba32fb662a902cd2316cba618_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a6dfeb5d548f3350c30c5f368d3e83436}\label{class_horizon_1_1_zone_1_1_monster_database_a6dfeb5d548f3350c30c5f368d3e83436} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_attack\_delay@{parse\_attack\_delay}}
+\index{parse\_attack\_delay@{parse\_attack\_delay}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_attack\_delay()}{parse\_attack\_delay()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+attack\+\_\+delay (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a6dfeb5d548f3350c30c5f368d3e83436_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_aa34c14822ae93584e6b285e01651d790}\label{class_horizon_1_1_zone_1_1_monster_database_aa34c14822ae93584e6b285e01651d790} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_attack\_motion@{parse\_attack\_motion}}
+\index{parse\_attack\_motion@{parse\_attack\_motion}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_attack\_motion()}{parse\_attack\_motion()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+attack\+\_\+motion (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_aa34c14822ae93584e6b285e01651d790_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_af367df7a1c79a3e5d376ef9869abc077}\label{class_horizon_1_1_zone_1_1_monster_database_af367df7a1c79a3e5d376ef9869abc077} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_attack\_range@{parse\_attack\_range}}
+\index{parse\_attack\_range@{parse\_attack\_range}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_attack\_range()}{parse\_attack\_range()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+attack\+\_\+range (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_af367df7a1c79a3e5d376ef9869abc077_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a04672dd8057e23ed09ca9aa01c362408}\label{class_horizon_1_1_zone_1_1_monster_database_a04672dd8057e23ed09ca9aa01c362408} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_chase\_range@{parse\_chase\_range}}
+\index{parse\_chase\_range@{parse\_chase\_range}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_chase\_range()}{parse\_chase\_range()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+chase\+\_\+range (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a04672dd8057e23ed09ca9aa01c362408_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a4d2a23d323e69e37ea79465e3c76e8c5}\label{class_horizon_1_1_zone_1_1_monster_database_a4d2a23d323e69e37ea79465e3c76e8c5} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_damage\_motion@{parse\_damage\_motion}}
+\index{parse\_damage\_motion@{parse\_damage\_motion}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_damage\_motion()}{parse\_damage\_motion()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+damage\+\_\+motion (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a4d2a23d323e69e37ea79465e3c76e8c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a42dcb5250a602346a1e9a2a6b4bf9b5e}\label{class_horizon_1_1_zone_1_1_monster_database_a42dcb5250a602346a1e9a2a6b4bf9b5e} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_damage\_taken\_rate@{parse\_damage\_taken\_rate}}
+\index{parse\_damage\_taken\_rate@{parse\_damage\_taken\_rate}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_damage\_taken\_rate()}{parse\_damage\_taken\_rate()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+damage\+\_\+taken\+\_\+rate (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a42dcb5250a602346a1e9a2a6b4bf9b5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a4451c5aa14a9a049db3875c92c7f1ef4}\label{class_horizon_1_1_zone_1_1_monster_database_a4451c5aa14a9a049db3875c92c7f1ef4} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_defense@{parse\_defense}}
+\index{parse\_defense@{parse\_defense}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_defense()}{parse\_defense()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+defense (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a4451c5aa14a9a049db3875c92c7f1ef4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_adbbcbeb5cddf3f0238026942ea34ad70}\label{class_horizon_1_1_zone_1_1_monster_database_adbbcbeb5cddf3f0238026942ea34ad70} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_drops@{parse\_drops}}
+\index{parse\_drops@{parse\_drops}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_drops()}{parse\_drops()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+drops (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data,  }\item[{bool}]{mvp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_adbbcbeb5cddf3f0238026942ea34ad70_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a9461b41e1abb55a0cfccba0db276dbb9}\label{class_horizon_1_1_zone_1_1_monster_database_a9461b41e1abb55a0cfccba0db276dbb9} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_element@{parse\_element}}
+\index{parse\_element@{parse\_element}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_element()}{parse\_element()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+element (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a9461b41e1abb55a0cfccba0db276dbb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a4921aeddbcc21d574010c4187b38cdc7}\label{class_horizon_1_1_zone_1_1_monster_database_a4921aeddbcc21d574010c4187b38cdc7} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_hp@{parse\_hp}}
+\index{parse\_hp@{parse\_hp}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_hp()}{parse\_hp()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+hp (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a4921aeddbcc21d574010c4187b38cdc7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_ad49615e229c7804598c3480168146dbf}\label{class_horizon_1_1_zone_1_1_monster_database_ad49615e229c7804598c3480168146dbf} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_level@{parse\_level}}
+\index{parse\_level@{parse\_level}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_level()}{parse\_level()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+level (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_ad49615e229c7804598c3480168146dbf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_ae3b451e8a1b519e0907bc2c4f4e6e28a}\label{class_horizon_1_1_zone_1_1_monster_database_ae3b451e8a1b519e0907bc2c4f4e6e28a} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_magic\_defense@{parse\_magic\_defense}}
+\index{parse\_magic\_defense@{parse\_magic\_defense}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_magic\_defense()}{parse\_magic\_defense()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+magic\+\_\+defense (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_ae3b451e8a1b519e0907bc2c4f4e6e28a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_ae921b0d9f212d7f4f81a0e834f9dd506}\label{class_horizon_1_1_zone_1_1_monster_database_ae921b0d9f212d7f4f81a0e834f9dd506} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_mode@{parse\_mode}}
+\index{parse\_mode@{parse\_mode}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_mode()}{parse\_mode()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+mode (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_ae921b0d9f212d7f4f81a0e834f9dd506_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a43b917ba13cde9ed2bf0674197d74c7a}\label{class_horizon_1_1_zone_1_1_monster_database_a43b917ba13cde9ed2bf0674197d74c7a} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_move\_speed@{parse\_move\_speed}}
+\index{parse\_move\_speed@{parse\_move\_speed}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_move\_speed()}{parse\_move\_speed()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+move\+\_\+speed (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a43b917ba13cde9ed2bf0674197d74c7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a166eb84439957033bfa9ec63a0e41537}\label{class_horizon_1_1_zone_1_1_monster_database_a166eb84439957033bfa9ec63a0e41537} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_mvp\_exp@{parse\_mvp\_exp}}
+\index{parse\_mvp\_exp@{parse\_mvp\_exp}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_mvp\_exp()}{parse\_mvp\_exp()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+mvp\+\_\+exp (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a166eb84439957033bfa9ec63a0e41537_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_aa7460774a15a154d1bf22f1a290f76fd}\label{class_horizon_1_1_zone_1_1_monster_database_aa7460774a15a154d1bf22f1a290f76fd} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_race@{parse\_race}}
+\index{parse\_race@{parse\_race}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_race()}{parse\_race()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+race (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_aa7460774a15a154d1bf22f1a290f76fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a07c23d0a4be497faf4223c61c1b2350a}\label{class_horizon_1_1_zone_1_1_monster_database_a07c23d0a4be497faf4223c61c1b2350a} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_reward\_base\_exp@{parse\_reward\_base\_exp}}
+\index{parse\_reward\_base\_exp@{parse\_reward\_base\_exp}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_reward\_base\_exp()}{parse\_reward\_base\_exp()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+reward\+\_\+base\+\_\+exp (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a07c23d0a4be497faf4223c61c1b2350a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a04887fe588c392c56fe40b9a0260d6b1}\label{class_horizon_1_1_zone_1_1_monster_database_a04887fe588c392c56fe40b9a0260d6b1} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_reward\_job\_exp@{parse\_reward\_job\_exp}}
+\index{parse\_reward\_job\_exp@{parse\_reward\_job\_exp}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_reward\_job\_exp()}{parse\_reward\_job\_exp()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+reward\+\_\+job\+\_\+exp (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a04887fe588c392c56fe40b9a0260d6b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a8c7f7f3aedf3acd3043a723915465957}\label{class_horizon_1_1_zone_1_1_monster_database_a8c7f7f3aedf3acd3043a723915465957} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_size@{parse\_size}}
+\index{parse\_size@{parse\_size}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_size()}{parse\_size()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+size (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a8c7f7f3aedf3acd3043a723915465957_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_abda33d71766dc5f6d4d2398360b78ac9}\label{class_horizon_1_1_zone_1_1_monster_database_abda33d71766dc5f6d4d2398360b78ac9} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_sp@{parse\_sp}}
+\index{parse\_sp@{parse\_sp}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_sp()}{parse\_sp()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+sp (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_abda33d71766dc5f6d4d2398360b78ac9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_a919e925746195285c07dd4a8213fe454}\label{class_horizon_1_1_zone_1_1_monster_database_a919e925746195285c07dd4a8213fe454} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_stats@{parse\_stats}}
+\index{parse\_stats@{parse\_stats}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_stats()}{parse\_stats()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+stats (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_a919e925746195285c07dd4a8213fe454_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_ad5dabf48d5b550813e05af6565bdf17b}\label{class_horizon_1_1_zone_1_1_monster_database_ad5dabf48d5b550813e05af6565bdf17b} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_view@{parse\_view}}
+\index{parse\_view@{parse\_view}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_view()}{parse\_view()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+view (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_ad5dabf48d5b550813e05af6565bdf17b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_monster_database_ac6a5e1e57f84897f87c652d2e1ab0a64}\label{class_horizon_1_1_zone_1_1_monster_database_ac6a5e1e57f84897f87c652d2e1ab0a64} 
+\index{Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}!parse\_view\_range@{parse\_view\_range}}
+\index{parse\_view\_range@{parse\_view\_range}!Horizon::Zone::MonsterDatabase@{Horizon::Zone::MonsterDatabase}}
+\doxysubsubsection{\texorpdfstring{parse\_view\_range()}{parse\_view\_range()}}
+{\footnotesize\ttfamily bool Monster\+Database\+::parse\+\_\+view\+\_\+range (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{table,  }\item[{\mbox{\hyperlink{structmonster__config__data}{monster\+\_\+config\+\_\+data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_monster_database_ac6a5e1e57f84897f87c652d2e1ab0a64_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_monster_d_b_8hpp}{Monster\+DB.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_monster_d_b_8cpp}{Monster\+DB.\+cpp}}\end{DoxyCompactItemize}

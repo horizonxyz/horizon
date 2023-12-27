@@ -1,0 +1,457 @@
+\doxysection{Horizon\+::Libraries\+::Map\+Cache Class Reference}
+\hypertarget{class_horizon_1_1_libraries_1_1_map_cache}{}\label{class_horizon_1_1_libraries_1_1_map_cache}\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+
+
+{\ttfamily \#include $<$Map\+Cache.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a8ad3358c26420fadf29520c644522763}{Map\+Cache}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a9a250d82da32b846f9c3e28ea3e55cb8}{\texorpdfstring{$\sim$}{\string~}\+Map\+Cache}} ()
+\item 
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739}{mcache\+\_\+error\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a5573b316bc319509be5996399da45d4b}{initialize}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ae5f53c79b2ab5a7ff64bafe5f6689db3}{Exists}} ()
+\item 
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3b}{mcache\+\_\+import\+\_\+error\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_af5c063d620d803d3ad4e84ddfa61c7a1}{Import\+From\+Cache\+File}} ()
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a9216442e767756eee3bf7decc000d31a}{Build\+Internal\+Cache}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a72349c19597aec9b161c93f1377e1f61}{Build\+External\+Cache}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a67336a3aade872836d81519b6350a62a}{Append\+Header}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a4206a19858b2093bd4deafc2ca6daff5}{Create\+New\+Cache\+With\+Header}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a4acc72c20d3194a3b4d8dfe244f4ad5a}{Append\+To\+Cache}} (std\+::string const \&name)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a4b8a5a43d27a4072f00a409ba1a72d5e}{Get\+Map\+From\+GRF}} (\mbox{\hyperlink{class_g_r_f}{GRF}} \&grf, std\+::string const \&name)
+\begin{DoxyCompactList}\small\item\em Reads a map from \doxylink{class_g_r_f}{GRF}\textquotesingle{}s GAT and RSW files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ac5fddf4be1d78755a1ec436e7f7ce221}{Parse\+GRFRead\+Result}} (\mbox{\hyperlink{class_g_r_f}{GRF}} \&grf, std\+::string const \&filename, \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3ef}{grf\+\_\+read\+\_\+error\+\_\+type}} error)
+\item 
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47f}{mcache\+\_\+config\+\_\+error\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a5ef086af135f91182c5ad22f9aeb18da}{Read\+Map\+List\+Config}} ()
+\item 
+\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218}{mcache\+\_\+grf\+\_\+config\+\_\+error\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ad3734b2db823ffac6a99b89a030e5767}{Read\+GRFList\+Config}} ()
+\item 
+std\+::pair$<$ uint8\+\_\+t, \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79e}{grf\+\_\+load\+\_\+result\+\_\+type}} $>$ \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_aad18dcd2e830d98adc2faf775c36b677}{Load\+GRFs}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a3d713526fd0574dd4952e8c085ff8f29}{Print\+Cache\+For\+Map}} (std\+::string const \&map\+\_\+name)
+\item 
+\mbox{\hyperlink{class_g_r_f}{GRF}} \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a7f78f288b3853fe30167eba8236cfead}{get\+GRF}} (uint8\+\_\+t id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a9fddf7e0e43fcc885ced3909bf02e7fa}{add\+GRF}} (uint8\+\_\+t id, \mbox{\hyperlink{class_g_r_f}{GRF}} \&grf)
+\item 
+boost\+::filesystem\+::path \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a7f3824da14cf8707c42c0a773bf025cc}{get\+Map\+Cache\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a7c4c12436c4b8e86cc9e1ab5e1b75d59}{set\+Map\+Cache\+Path}} (std\+::string const \&file)
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a0d77aa04b557c618a98b5acf5c9adb42}{get\+Compression\+Level}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a900dcf581b5c8f25a6b7a31e58ace776}{set\+Compression\+Level}} (int level)
+\item 
+const boost\+::filesystem\+::path \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_acfa1aa40373105b7c1a2baa7b977192e}{get\+Map\+List\+Path}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a74e645956878503968057776c048d0b6}{set\+Map\+List\+Path}} (std\+::string const \&path)
+\item 
+const boost\+::filesystem\+::path \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a378a2f5223f6a2e1d18f6a717e8c2809}{get\+GRFList\+Path}} () const
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ae698999238035193b28b8994bb1573c4}{set\+GRFList\+Path}} (std\+::string const \&path)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_afe1b6dfcc193ce23d0a5d6f41bdfcd52}{add\+To\+Map\+List}} (std\+::string const \&map)
+\item 
+const boost\+::filesystem\+::path \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ac00bef3b1b077399af70fb6e2684e75f}{get\+GRFPath}} (uint8\+\_\+t id)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ace8ec85929269ae146de0092c8546585}{set\+GRFPath}} (uint8\+\_\+t id, std\+::string const \&path)
+\item 
+const boost\+::filesystem\+::path \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a91146528118358b70118e60ac50b9511}{get\+Resource\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a4a908b0cde10c0b36350df8b43ce51f4}{set\+Resource\+Path}} (std\+::string const \&path)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a49db12841e9ef5737df15d487d214ef5}{set\+Verbose}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a07583f076ccbd0eac43563499ac937c0}{unset\+Verbose}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a06fdb72e91a66a7419ffde655f8523c3}{get\+Verbose}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmap__cache}{map\+\_\+cache}} $>$ \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_ad6a41f966ffeb803bed0f57f934666ec}{get\+MCache}} ()
+\item 
+const std\+::unordered\+\_\+map$<$ uint8\+\_\+t, \mbox{\hyperlink{class_g_r_f}{GRF}} $>$ \& \mbox{\hyperlink{class_horizon_1_1_libraries_1_1_map_cache_a0644777e4194196b0e78bb5bf093dbac}{get\+GRFs}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a8ad3358c26420fadf29520c644522763}\label{class_horizon_1_1_libraries_1_1_map_cache_a8ad3358c26420fadf29520c644522763} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!MapCache@{MapCache}}
+\index{MapCache@{MapCache}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{MapCache()}{MapCache()}}
+{\footnotesize\ttfamily Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Map\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a9a250d82da32b846f9c3e28ea3e55cb8}\label{class_horizon_1_1_libraries_1_1_map_cache_a9a250d82da32b846f9c3e28ea3e55cb8} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!````~MapCache@{\texorpdfstring{$\sim$}{\string~}MapCache}}
+\index{````~MapCache@{\texorpdfstring{$\sim$}{\string~}MapCache}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapCache()}{\string~MapCache()}}
+{\footnotesize\ttfamily Horizon\+::\+Libraries\+::\+Map\+Cache\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a9fddf7e0e43fcc885ced3909bf02e7fa}\label{class_horizon_1_1_libraries_1_1_map_cache_a9fddf7e0e43fcc885ced3909bf02e7fa} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!addGRF@{addGRF}}
+\index{addGRF@{addGRF}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{addGRF()}{addGRF()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::add\+GRF (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id,  }\item[{\mbox{\hyperlink{class_g_r_f}{GRF}} \&}]{grf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_afe1b6dfcc193ce23d0a5d6f41bdfcd52}\label{class_horizon_1_1_libraries_1_1_map_cache_afe1b6dfcc193ce23d0a5d6f41bdfcd52} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!addToMapList@{addToMapList}}
+\index{addToMapList@{addToMapList}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{addToMapList()}{addToMapList()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::add\+To\+Map\+List (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a67336a3aade872836d81519b6350a62a}\label{class_horizon_1_1_libraries_1_1_map_cache_a67336a3aade872836d81519b6350a62a} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!AppendHeader@{AppendHeader}}
+\index{AppendHeader@{AppendHeader}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{AppendHeader()}{AppendHeader()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Append\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a4acc72c20d3194a3b4d8dfe244f4ad5a}\label{class_horizon_1_1_libraries_1_1_map_cache_a4acc72c20d3194a3b4d8dfe244f4ad5a} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!AppendToCache@{AppendToCache}}
+\index{AppendToCache@{AppendToCache}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{AppendToCache()}{AppendToCache()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Append\+To\+Cache (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a72349c19597aec9b161c93f1377e1f61}\label{class_horizon_1_1_libraries_1_1_map_cache_a72349c19597aec9b161c93f1377e1f61} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!BuildExternalCache@{BuildExternalCache}}
+\index{BuildExternalCache@{BuildExternalCache}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{BuildExternalCache()}{BuildExternalCache()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Build\+External\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_horizon_1_1_libraries_1_1_map_cache_a72349c19597aec9b161c93f1377e1f61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a9216442e767756eee3bf7decc000d31a}\label{class_horizon_1_1_libraries_1_1_map_cache_a9216442e767756eee3bf7decc000d31a} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!BuildInternalCache@{BuildInternalCache}}
+\index{BuildInternalCache@{BuildInternalCache}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{BuildInternalCache()}{BuildInternalCache()}}
+{\footnotesize\ttfamily int Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Build\+Internal\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_horizon_1_1_libraries_1_1_map_cache_a9216442e767756eee3bf7decc000d31a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a4206a19858b2093bd4deafc2ca6daff5}\label{class_horizon_1_1_libraries_1_1_map_cache_a4206a19858b2093bd4deafc2ca6daff5} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!CreateNewCacheWithHeader@{CreateNewCacheWithHeader}}
+\index{CreateNewCacheWithHeader@{CreateNewCacheWithHeader}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{CreateNewCacheWithHeader()}{CreateNewCacheWithHeader()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Create\+New\+Cache\+With\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ae5f53c79b2ab5a7ff64bafe5f6689db3}\label{class_horizon_1_1_libraries_1_1_map_cache_ae5f53c79b2ab5a7ff64bafe5f6689db3} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!Exists@{Exists}}
+\index{Exists@{Exists}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{Exists()}{Exists()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_horizon_1_1_libraries_1_1_map_cache_ae5f53c79b2ab5a7ff64bafe5f6689db3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a0d77aa04b557c618a98b5acf5c9adb42}\label{class_horizon_1_1_libraries_1_1_map_cache_a0d77aa04b557c618a98b5acf5c9adb42} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getCompressionLevel@{getCompressionLevel}}
+\index{getCompressionLevel@{getCompressionLevel}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getCompressionLevel()}{getCompressionLevel()}}
+{\footnotesize\ttfamily int Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+Compression\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_horizon_1_1_libraries_1_1_map_cache_a0d77aa04b557c618a98b5acf5c9adb42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a7f78f288b3853fe30167eba8236cfead}\label{class_horizon_1_1_libraries_1_1_map_cache_a7f78f288b3853fe30167eba8236cfead} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getGRF@{getGRF}}
+\index{getGRF@{getGRF}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getGRF()}{getGRF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_r_f}{GRF}} \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+GRF (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a378a2f5223f6a2e1d18f6a717e8c2809}\label{class_horizon_1_1_libraries_1_1_map_cache_a378a2f5223f6a2e1d18f6a717e8c2809} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getGRFListPath@{getGRFListPath}}
+\index{getGRFListPath@{getGRFListPath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getGRFListPath()}{getGRFListPath()}}
+{\footnotesize\ttfamily const boost\+::filesystem\+::path \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+GRFList\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ac00bef3b1b077399af70fb6e2684e75f}\label{class_horizon_1_1_libraries_1_1_map_cache_ac00bef3b1b077399af70fb6e2684e75f} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getGRFPath@{getGRFPath}}
+\index{getGRFPath@{getGRFPath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getGRFPath()}{getGRFPath()}}
+{\footnotesize\ttfamily const boost\+::filesystem\+::path \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+GRFPath (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a0644777e4194196b0e78bb5bf093dbac}\label{class_horizon_1_1_libraries_1_1_map_cache_a0644777e4194196b0e78bb5bf093dbac} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getGRFs@{getGRFs}}
+\index{getGRFs@{getGRFs}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getGRFs()}{getGRFs()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ uint8\+\_\+t, \mbox{\hyperlink{class_g_r_f}{GRF}} $>$ \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+GRFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a7f3824da14cf8707c42c0a773bf025cc}\label{class_horizon_1_1_libraries_1_1_map_cache_a7f3824da14cf8707c42c0a773bf025cc} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getMapCachePath@{getMapCachePath}}
+\index{getMapCachePath@{getMapCachePath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getMapCachePath()}{getMapCachePath()}}
+{\footnotesize\ttfamily boost\+::filesystem\+::path \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+Map\+Cache\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_a7f3824da14cf8707c42c0a773bf025cc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a4b8a5a43d27a4072f00a409ba1a72d5e}\label{class_horizon_1_1_libraries_1_1_map_cache_a4b8a5a43d27a4072f00a409ba1a72d5e} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!GetMapFromGRF@{GetMapFromGRF}}
+\index{GetMapFromGRF@{GetMapFromGRF}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{GetMapFromGRF()}{GetMapFromGRF()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Get\+Map\+From\+GRF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_r_f}{GRF}} \&}]{grf,  }\item[{std\+::string const \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Reads a map from \doxylink{class_g_r_f}{GRF}\textquotesingle{}s GAT and RSW files. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & name of the map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_a4b8a5a43d27a4072f00a409ba1a72d5e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_acfa1aa40373105b7c1a2baa7b977192e}\label{class_horizon_1_1_libraries_1_1_map_cache_acfa1aa40373105b7c1a2baa7b977192e} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getMapListPath@{getMapListPath}}
+\index{getMapListPath@{getMapListPath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getMapListPath()}{getMapListPath()}}
+{\footnotesize\ttfamily const boost\+::filesystem\+::path \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+Map\+List\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_acfa1aa40373105b7c1a2baa7b977192e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ad6a41f966ffeb803bed0f57f934666ec}\label{class_horizon_1_1_libraries_1_1_map_cache_ad6a41f966ffeb803bed0f57f934666ec} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getMCache@{getMCache}}
+\index{getMCache@{getMCache}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getMCache()}{getMCache()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmap__cache}{map\+\_\+cache}} $>$ Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+MCache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_ad6a41f966ffeb803bed0f57f934666ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a91146528118358b70118e60ac50b9511}\label{class_horizon_1_1_libraries_1_1_map_cache_a91146528118358b70118e60ac50b9511} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getResourcePath@{getResourcePath}}
+\index{getResourcePath@{getResourcePath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getResourcePath()}{getResourcePath()}}
+{\footnotesize\ttfamily const boost\+::filesystem\+::path \& Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+Resource\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a06fdb72e91a66a7419ffde655f8523c3}\label{class_horizon_1_1_libraries_1_1_map_cache_a06fdb72e91a66a7419ffde655f8523c3} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!getVerbose@{getVerbose}}
+\index{getVerbose@{getVerbose}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{getVerbose()}{getVerbose()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::get\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_af5c063d620d803d3ad4e84ddfa61c7a1}\label{class_horizon_1_1_libraries_1_1_map_cache_af5c063d620d803d3ad4e84ddfa61c7a1} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!ImportFromCacheFile@{ImportFromCacheFile}}
+\index{ImportFromCacheFile@{ImportFromCacheFile}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{ImportFromCacheFile()}{ImportFromCacheFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a87a42a66f2166f265e699a9e97ac8f3b}{mcache\+\_\+import\+\_\+error\+\_\+type}} Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Import\+From\+Cache\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_af5c063d620d803d3ad4e84ddfa61c7a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_af5c063d620d803d3ad4e84ddfa61c7a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a5573b316bc319509be5996399da45d4b}\label{class_horizon_1_1_libraries_1_1_map_cache_a5573b316bc319509be5996399da45d4b} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!initialize@{initialize}}
+\index{initialize@{initialize}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_ae81a84a073a8bf476de8eaa8bd6de739}{mcache\+\_\+error\+\_\+type}} Horizon\+::\+Libraries\+::\+Map\+Cache\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{class_horizon_1_1_libraries_1_1_map_cache_a5573b316bc319509be5996399da45d4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_aad18dcd2e830d98adc2faf775c36b677}\label{class_horizon_1_1_libraries_1_1_map_cache_aad18dcd2e830d98adc2faf775c36b677} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!LoadGRFs@{LoadGRFs}}
+\index{LoadGRFs@{LoadGRFs}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{LoadGRFs()}{LoadGRFs()}}
+{\footnotesize\ttfamily std\+::pair$<$ uint8\+\_\+t, \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79e}{grf\+\_\+load\+\_\+result\+\_\+type}} $>$ Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Load\+GRFs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_horizon_1_1_libraries_1_1_map_cache_aad18dcd2e830d98adc2faf775c36b677_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ac5fddf4be1d78755a1ec436e7f7ce221}\label{class_horizon_1_1_libraries_1_1_map_cache_ac5fddf4be1d78755a1ec436e7f7ce221} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!ParseGRFReadResult@{ParseGRFReadResult}}
+\index{ParseGRFReadResult@{ParseGRFReadResult}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{ParseGRFReadResult()}{ParseGRFReadResult()}}
+{\footnotesize\ttfamily bool Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Parse\+GRFRead\+Result (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_r_f}{GRF}} \&}]{grf,  }\item[{std\+::string const \&}]{filename,  }\item[{\mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3ef}{grf\+\_\+read\+\_\+error\+\_\+type}}}]{error }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_ac5fddf4be1d78755a1ec436e7f7ce221_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a3d713526fd0574dd4952e8c085ff8f29}\label{class_horizon_1_1_libraries_1_1_map_cache_a3d713526fd0574dd4952e8c085ff8f29} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!PrintCacheForMap@{PrintCacheForMap}}
+\index{PrintCacheForMap@{PrintCacheForMap}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{PrintCacheForMap()}{PrintCacheForMap()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Print\+Cache\+For\+Map (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{map\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ad3734b2db823ffac6a99b89a030e5767}\label{class_horizon_1_1_libraries_1_1_map_cache_ad3734b2db823ffac6a99b89a030e5767} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!ReadGRFListConfig@{ReadGRFListConfig}}
+\index{ReadGRFListConfig@{ReadGRFListConfig}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{ReadGRFListConfig()}{ReadGRFListConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_a202f58a5b61fb685244e747c8f632218}{mcache\+\_\+grf\+\_\+config\+\_\+error\+\_\+type}} Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Read\+GRFList\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_ad3734b2db823ffac6a99b89a030e5767_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a5ef086af135f91182c5ad22f9aeb18da}\label{class_horizon_1_1_libraries_1_1_map_cache_a5ef086af135f91182c5ad22f9aeb18da} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!ReadMapListConfig@{ReadMapListConfig}}
+\index{ReadMapListConfig@{ReadMapListConfig}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{ReadMapListConfig()}{ReadMapListConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp_af254e3467460ff9f41bd7f446bfea47f}{mcache\+\_\+config\+\_\+error\+\_\+type}} Horizon\+::\+Libraries\+::\+Map\+Cache\+::\+Read\+Map\+List\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_a5ef086af135f91182c5ad22f9aeb18da_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a900dcf581b5c8f25a6b7a31e58ace776}\label{class_horizon_1_1_libraries_1_1_map_cache_a900dcf581b5c8f25a6b7a31e58ace776} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setCompressionLevel@{setCompressionLevel}}
+\index{setCompressionLevel@{setCompressionLevel}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setCompressionLevel()}{setCompressionLevel()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+Compression\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ae698999238035193b28b8994bb1573c4}\label{class_horizon_1_1_libraries_1_1_map_cache_ae698999238035193b28b8994bb1573c4} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setGRFListPath@{setGRFListPath}}
+\index{setGRFListPath@{setGRFListPath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setGRFListPath()}{setGRFListPath()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+GRFList\+Path (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_ace8ec85929269ae146de0092c8546585}\label{class_horizon_1_1_libraries_1_1_map_cache_ace8ec85929269ae146de0092c8546585} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setGRFPath@{setGRFPath}}
+\index{setGRFPath@{setGRFPath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setGRFPath()}{setGRFPath()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+GRFPath (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id,  }\item[{std\+::string const \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a7c4c12436c4b8e86cc9e1ab5e1b75d59}\label{class_horizon_1_1_libraries_1_1_map_cache_a7c4c12436c4b8e86cc9e1ab5e1b75d59} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setMapCachePath@{setMapCachePath}}
+\index{setMapCachePath@{setMapCachePath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setMapCachePath()}{setMapCachePath()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+Map\+Cache\+Path (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_a7c4c12436c4b8e86cc9e1ab5e1b75d59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a74e645956878503968057776c048d0b6}\label{class_horizon_1_1_libraries_1_1_map_cache_a74e645956878503968057776c048d0b6} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setMapListPath@{setMapListPath}}
+\index{setMapListPath@{setMapListPath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setMapListPath()}{setMapListPath()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+Map\+List\+Path (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_libraries_1_1_map_cache_a74e645956878503968057776c048d0b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a4a908b0cde10c0b36350df8b43ce51f4}\label{class_horizon_1_1_libraries_1_1_map_cache_a4a908b0cde10c0b36350df8b43ce51f4} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setResourcePath@{setResourcePath}}
+\index{setResourcePath@{setResourcePath}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setResourcePath()}{setResourcePath()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+Resource\+Path (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a49db12841e9ef5737df15d487d214ef5}\label{class_horizon_1_1_libraries_1_1_map_cache_a49db12841e9ef5737df15d487d214ef5} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!setVerbose@{setVerbose}}
+\index{setVerbose@{setVerbose}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{setVerbose()}{setVerbose()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::set\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_libraries_1_1_map_cache_a07583f076ccbd0eac43563499ac937c0}\label{class_horizon_1_1_libraries_1_1_map_cache_a07583f076ccbd0eac43563499ac937c0} 
+\index{Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}!unsetVerbose@{unsetVerbose}}
+\index{unsetVerbose@{unsetVerbose}!Horizon::Libraries::MapCache@{Horizon::Libraries::MapCache}}
+\doxysubsubsection{\texorpdfstring{unsetVerbose()}{unsetVerbose()}}
+{\footnotesize\ttfamily void Horizon\+::\+Libraries\+::\+Map\+Cache\+::unset\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Map\+Cache/\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8hpp}{Map\+Cache.\+hpp}}\item 
+src/\+Libraries/\+Map\+Cache/\mbox{\hyperlink{_libraries_2_map_cache_2_map_cache_8cpp}{Map\+Cache.\+cpp}}\end{DoxyCompactItemize}

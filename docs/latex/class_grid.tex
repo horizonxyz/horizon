@@ -1,0 +1,118 @@
+\doxysection{Grid\texorpdfstring{$<$}{<} GRID\+\_\+\+OBJECT\+\_\+\+TYPES \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_grid}{}\label{class_grid}\index{Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}}
+
+
+{\ttfamily \#include $<$Grid.\+hpp$>$}
+
+
+
+Collaboration diagram for Grid\texorpdfstring{$<$}{<} GRID\+\_\+\+OBJECT\+\_\+\+TYPES \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_grid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class SPECIFIC\+\_\+\+OBJECT $>$ }\\void \mbox{\hyperlink{class_grid_a2b3b643a4b31db5b3491ccb264f39d70}{add\+\_\+object}} (SPECIFIC\+\_\+\+OBJECT \texorpdfstring{$\ast$}{*}obj)
+\item 
+{\footnotesize template$<$class VISITOR $>$ }\\void \mbox{\hyperlink{class_grid_a8fc9a2c774dafccfeace8f4360d00e14}{visit}} (\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ VISITOR, \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ $>$ \&visitor)
+\item 
+{\footnotesize template$<$class T $>$ }\\uint32\+\_\+t \mbox{\hyperlink{class_grid_abcb348ed6fe4057e4760314cb97c1a3f}{get\+Object\+Count}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \mbox{\hyperlink{class_grid_a734cff5c18e6de861205b3ec65268413}{\+\_\+container}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_grid_a1d4e7aa71a331a3564624fbabb97d1a7}{Horizon\+::\+Zone\+::\+Map\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class GRID\+\_\+\+OBJECT\+\_\+\+TYPES$>$\newline
+class Grid$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$}
+\doxylink{class_grid}{Grid} is used to store objects in a 2\doxylink{class_d}{D} grid. This is used to speed up the search for objects in a given area. The grid is divided into cells of a given size. Each grid-\/cell contains a list of objects that are in that grid-\/cell. The grid is actually stored in the \doxylink{class_grid_holder}{Grid\+Holder} class.
+\begin{DoxyItemize}
+\item The \doxylink{class_grid_holder}{Grid\+Holder} class is a container for Grids.
+\item The \doxylink{class_grid}{Grid} class is a container for objects.
+\item The \doxylink{class_grid_reference_container}{Grid\+Reference\+Container} class is a container for objects in a grid-\/cell.
+\item The \doxylink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor} class is used to visit the objects in a grid-\/cell. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ACTIVE\+\_\+\+OBJECT} & is the object that is stored in the grid. \\
+\hline
+{\em GRID\+\_\+\+OBJECT\+\_\+\+TYPES} & is a type-\/list of object types that are stored in the grid. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+container} & is the container for objects in the grid-\/cell. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_grid_a2b3b643a4b31db5b3491ccb264f39d70}\label{class_grid_a2b3b643a4b31db5b3491ccb264f39d70} 
+\index{Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}!add\_object@{add\_object}}
+\index{add\_object@{add\_object}!Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{add\_object()}{add\_object()}}
+{\footnotesize\ttfamily template$<$class GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+template$<$class SPECIFIC\+\_\+\+OBJECT $>$ \\
+void \mbox{\hyperlink{class_grid}{Grid}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::add\+\_\+object (\begin{DoxyParamCaption}\item[{SPECIFIC\+\_\+\+OBJECT \texorpdfstring{$\ast$}{*}}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_grid_abcb348ed6fe4057e4760314cb97c1a3f}\label{class_grid_abcb348ed6fe4057e4760314cb97c1a3f} 
+\index{Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}!getObjectCount@{getObjectCount}}
+\index{getObjectCount@{getObjectCount}!Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{getObjectCount()}{getObjectCount()}}
+{\footnotesize\ttfamily template$<$class GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+template$<$class T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{class_grid}{Grid}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::get\+Object\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of object within the grid. \Hypertarget{class_grid_a8fc9a2c774dafccfeace8f4360d00e14}\label{class_grid_a8fc9a2c774dafccfeace8f4360d00e14} 
+\index{Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}!visit@{visit}}
+\index{visit@{visit}!Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily template$<$class GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+template$<$class VISITOR $>$ \\
+void \mbox{\hyperlink{class_grid}{Grid}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_grid_reference_container_visitor}{Grid\+Reference\+Container\+Visitor}}$<$ VISITOR, \mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ $>$ \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_grid_a8fc9a2c774dafccfeace8f4360d00e14_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_grid_a1d4e7aa71a331a3564624fbabb97d1a7}\label{class_grid_a1d4e7aa71a331a3564624fbabb97d1a7} 
+\index{Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}!Horizon::Zone::MapManager@{Horizon::Zone::MapManager}}
+\index{Horizon::Zone::MapManager@{Horizon::Zone::MapManager}!Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{Horizon::Zone::MapManager}{Horizon::Zone::MapManager}}
+{\footnotesize\ttfamily template$<$class GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+friend class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_manager}{Horizon\+::\+Zone\+::\+Map\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_grid_a734cff5c18e6de861205b3ec65268413}\label{class_grid_a734cff5c18e6de861205b3ec65268413} 
+\index{Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}!\_container@{\_container}}
+\index{\_container@{\_container}!Grid$<$ GRID\_OBJECT\_TYPES $>$@{Grid$<$ GRID\_OBJECT\_TYPES $>$}}
+\doxysubsubsection{\texorpdfstring{\_container}{\_container}}
+{\footnotesize\ttfamily template$<$class GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$ \\
+\mbox{\hyperlink{class_grid_reference_container}{Grid\+Reference\+Container}}$<$GRID\+\_\+\+OBJECT\+\_\+\+TYPES$>$ \mbox{\hyperlink{class_grid}{Grid}}$<$ GRID\+\_\+\+OBJECT\+\_\+\+TYPES $>$\+::\+\_\+container}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Grid/\mbox{\hyperlink{_grid_8hpp}{Grid.\+hpp}}\end{DoxyCompactItemize}

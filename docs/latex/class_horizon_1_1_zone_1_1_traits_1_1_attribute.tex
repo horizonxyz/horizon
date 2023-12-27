@@ -1,0 +1,773 @@
+\doxysection{Horizon\+::Zone\+::Traits\+::Attribute Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute}\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+
+
+{\ttfamily \#include $<$Attribute.\+hpp$>$}
+
+
+
+Inherited by \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility}{Horizon\+::\+Zone\+::\+Traits\+::\+Agility}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_point_cost}{Horizon\+::\+Zone\+::\+Traits\+::\+Agility\+Point\+Cost}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_delay}{Horizon\+::\+Zone\+::\+Traits\+::\+Attack\+Delay}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_motion}{Horizon\+::\+Zone\+::\+Traits\+::\+Attack\+Motion}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_range}{Horizon\+::\+Zone\+::\+Traits\+::\+Attack\+Range}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attack_speed}{Horizon\+::\+Zone\+::\+Traits\+::\+Attack\+Speed}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_attack}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Attack}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Experience}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_c_r_i_t}{Horizon\+::\+Zone\+::\+Traits\+::\+CRIT}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_attack_damage}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Attack\+Damage}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_chase_range}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Chase\+Range}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Element}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_element_level}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Element\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_magic_attack_damage}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Magic\+Attack\+Damage}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_mode}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Mode}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_primary_race}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Primary\+Race}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_secondary_race}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Secondary\+Race}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_view_range}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+View\+Range}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_creature_weapon_attack}{Horizon\+::\+Zone\+::\+Traits\+::\+Creature\+Weapon\+Attack}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_h_p}{Horizon\+::\+Zone\+::\+Traits\+::\+Current\+HP}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_s_p}{Horizon\+::\+Zone\+::\+Traits\+::\+Current\+SP}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_current_weight}{Horizon\+::\+Zone\+::\+Traits\+::\+Current\+Weight}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_damage_motion}{Horizon\+::\+Zone\+::\+Traits\+::\+Damage\+Motion}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity}{Horizon\+::\+Zone\+::\+Traits\+::\+Dexterity}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_point_cost}{Horizon\+::\+Zone\+::\+Traits\+::\+Dexterity\+Point\+Cost}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_entity_size}{Horizon\+::\+Zone\+::\+Traits\+::\+Entity\+Size}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_equip_a_t_k}{Horizon\+::\+Zone\+::\+Traits\+::\+Equip\+ATK}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_f_l_e_e}{Horizon\+::\+Zone\+::\+Traits\+::\+FLEE}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_h_i_t}{Horizon\+::\+Zone\+::\+Traits\+::\+HIT}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor}{Horizon\+::\+Zone\+::\+Traits\+::\+Honor}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence}{Horizon\+::\+Zone\+::\+Traits\+::\+Intelligence}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_point_cost}{Horizon\+::\+Zone\+::\+Traits\+::\+Intelligence\+Point\+Cost}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Experience}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck}{Horizon\+::\+Zone\+::\+Traits\+::\+Luck}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_point_cost}{Horizon\+::\+Zone\+::\+Traits\+::\+Luck\+Point\+Cost}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner}{Horizon\+::\+Zone\+::\+Traits\+::\+Manner}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_h_p}{Horizon\+::\+Zone\+::\+Traits\+::\+Max\+HP}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_s_p}{Horizon\+::\+Zone\+::\+Traits\+::\+Max\+SP}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_max_weight}{Horizon\+::\+Zone\+::\+Traits\+::\+Max\+Weight}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed}{Horizon\+::\+Zone\+::\+Traits\+::\+Movement\+Speed}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_base_experience}{Horizon\+::\+Zone\+::\+Traits\+::\+Next\+Base\+Experience}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_next_job_experience}{Horizon\+::\+Zone\+::\+Traits\+::\+Next\+Job\+Experience}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point}{Horizon\+::\+Zone\+::\+Traits\+::\+Skill\+Point}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_d_e_f}{Horizon\+::\+Zone\+::\+Traits\+::\+Soft\+DEF}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_soft_m_d_e_f}{Horizon\+::\+Zone\+::\+Traits\+::\+Soft\+MDEF}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_a_t_k}{Horizon\+::\+Zone\+::\+Traits\+::\+Status\+ATK}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_m_a_t_k}{Horizon\+::\+Zone\+::\+Traits\+::\+Status\+MATK}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_status_point}{Horizon\+::\+Zone\+::\+Traits\+::\+Status\+Point}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength}{Horizon\+::\+Zone\+::\+Traits\+::\+Strength}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_point_cost}{Horizon\+::\+Zone\+::\+Traits\+::\+Strength\+Point\+Cost}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue}{Horizon\+::\+Zone\+::\+Traits\+::\+Virtue}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality}{Horizon\+::\+Zone\+::\+Traits\+::\+Vitality}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_point_cost}{Horizon\+::\+Zone\+::\+Traits\+::\+Vitality\+Point\+Cost}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny}{Horizon\+::\+Zone\+::\+Traits\+::\+Zeny}}.
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ada532e9eba44613064ad10e4c68f42dc}{Attribute}} (std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}}, \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} st\+\_\+type, int32\+\_\+t base=0, int32\+\_\+t equip=0, int32\+\_\+t status=0)
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf4d6cb96d99f71c5bbcfd70bbac0da6}{\texorpdfstring{$\sim$}{\string~}\+Attribute}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}{entity}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a7573b0bde677a0d06347f30bcc7d0a55}{entity}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ e)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}{set\+\_\+base}} (int32\+\_\+t val)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a34cceac921ff1a46551efa544feab135}{add\+\_\+base}} (int32\+\_\+t val)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a38be66d97bbf9d166f21a916b8a48004}{sub\+\_\+base}} (int32\+\_\+t val)
+\item 
+virtual int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae7808f6bd4f7b3045fde3409b42351ac}{get\+\_\+base}} () const
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}{set\+\_\+equip}} (int32\+\_\+t val)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae3fc501d68c89a50137bb13c5c29bf0a}{add\+\_\+equip}} (int32\+\_\+t val)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad0737fb8b9747c13b08d57bcaf8b3ff8}{sub\+\_\+equip}} (int32\+\_\+t val)
+\item 
+virtual int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a77e3583b1537162dd2ef0e76179f71d7}{get\+\_\+equip}} () const
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}{set\+\_\+status}} (int32\+\_\+t val)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aee1b0f7b84a446047bc8afd50cfa4d42}{add\+\_\+status}} (int32\+\_\+t val)
+\item 
+virtual void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a55a02f8093e30e27017a6c0eabe228d6}{sub\+\_\+status}} (int32\+\_\+t val)
+\item 
+virtual int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aac57bb27c5a05ef58db459ace0854939}{get\+\_\+status}} () const
+\item 
+virtual int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}{total}} () const
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\TT \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aaaa47911ceab41a204cbea9a53a063b6}{operator+}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\TT \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a13b72f0b565d4f98a2c9841ad8b4a6b4}{operator/}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\TT \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c9ab70725e04bf8297e99cfc30746fd}{operator\texorpdfstring{$\ast$}{*}}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\TT \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a621b524dd2364540f01384cfa717510e}{operator-\/}} (TT right)
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a9c6ba75188c28cbf95bb58319aaa7844}{operator+}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right) const
+\item 
+double \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af1a03f6341b13a40fbe9f754a1097049}{operator/}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+double \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a10815e15646d42489f862df59de9a4bf}{operator\texorpdfstring{$\ast$}{*}}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+int \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a992a5f72b03e47d2b0b698657218e76a}{operator-\/}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad81469af17b1ccbec17d5909379af58f}{operator==}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae36f68d5138eb513b241f76f208711c7}{operator!=}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3b83995c03407fc0096b926ec35d5250}{operator$>$}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aefb771a2da7160dff92f2ec0a546241c}{operator$>$=}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c88ef014619dba70f8cdc3bb2e75a1a}{operator$<$}} (TT right)
+\item 
+{\footnotesize template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ }\\bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac32689108cc931792280e63a7748ae15}{operator$<$=}} (TT right)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a79187e48d8f920f297afb9f639620ca3}{operator==}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_abda8bf4a68bd08a534a3bfa01b2972d2}{operator!=}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a6f8609fd07bdbd4263c60c11c7dd7ac9}{operator$>$}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac571f86103193d7242080fa06713e2c6}{operator$>$=}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac08dab648862339f08f4e1ada6f0b5a8}{operator$<$}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4ef39bac8d5968e34d6cf966c1ccee0d}{operator$<$=}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&right)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3f287e5df7da2559e6e896e605876338}{operator=}} (\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \&right)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff}{notify}} ()
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af7928f71166bbf878762165a5c30c03c}{get\+\_\+type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac1cfacb8f806e8fa73777d74016d27bf}{\+\_\+status\+\_\+point\+\_\+type}} \{\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ab23c94da262dd0f752e1b0704cf1e994}{status\+\_\+point\+\_\+type\+::\+STATUS\+\_\+\+POINT\+\_\+\+INVALID}}\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}{\+\_\+base\+\_\+val}} \{0\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}{\+\_\+equip\+\_\+val}} \{0\}
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}{\+\_\+status\+\_\+val}} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ada532e9eba44613064ad10e4c68f42dc}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ada532e9eba44613064ad10e4c68f42dc} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!Attribute@{Attribute}}
+\index{Attribute@{Attribute}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{Attribute()}{Attribute()}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::\+Attribute (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{entity,  }\item[{\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}}}]{st\+\_\+type,  }\item[{int32\+\_\+t}]{base = {\ttfamily 0},  }\item[{int32\+\_\+t}]{equip = {\ttfamily 0},  }\item[{int32\+\_\+t}]{status = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf4d6cb96d99f71c5bbcfd70bbac0da6}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf4d6cb96d99f71c5bbcfd70bbac0da6} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!````~Attribute@{\texorpdfstring{$\sim$}{\string~}Attribute}}
+\index{````~Attribute@{\texorpdfstring{$\sim$}{\string~}Attribute}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Attribute()}{\string~Attribute()}}
+{\footnotesize\ttfamily virtual Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::\texorpdfstring{$\sim$}{\string~}\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a34cceac921ff1a46551efa544feab135}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a34cceac921ff1a46551efa544feab135} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!add\_base@{add\_base}}
+\index{add\_base@{add\_base}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{add\_base()}{add\_base()}}
+{\footnotesize\ttfamily void Attribute\+::add\+\_\+base (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a34cceac921ff1a46551efa544feab135_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a34cceac921ff1a46551efa544feab135_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae3fc501d68c89a50137bb13c5c29bf0a}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae3fc501d68c89a50137bb13c5c29bf0a} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!add\_equip@{add\_equip}}
+\index{add\_equip@{add\_equip}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{add\_equip()}{add\_equip()}}
+{\footnotesize\ttfamily void Attribute\+::add\+\_\+equip (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae3fc501d68c89a50137bb13c5c29bf0a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae3fc501d68c89a50137bb13c5c29bf0a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aee1b0f7b84a446047bc8afd50cfa4d42}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aee1b0f7b84a446047bc8afd50cfa4d42} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!add\_status@{add\_status}}
+\index{add\_status@{add\_status}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{add\_status()}{add\_status()}}
+{\footnotesize\ttfamily void Attribute\+::add\+\_\+status (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aee1b0f7b84a446047bc8afd50cfa4d42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aee1b0f7b84a446047bc8afd50cfa4d42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!entity@{entity}}
+\index{entity@{entity}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{entity()}{entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$ Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a001ca2f058df816b0bcb9119112ae35e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a7573b0bde677a0d06347f30bcc7d0a55}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a7573b0bde677a0d06347f30bcc7d0a55} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!entity@{entity}}
+\index{entity@{entity}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{entity()}{entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::entity (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Entity}} $>$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae7808f6bd4f7b3045fde3409b42351ac}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae7808f6bd4f7b3045fde3409b42351ac} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!get\_base@{get\_base}}
+\index{get\_base@{get\_base}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{get\_base()}{get\_base()}}
+{\footnotesize\ttfamily virtual int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::get\+\_\+base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae7808f6bd4f7b3045fde3409b42351ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a77e3583b1537162dd2ef0e76179f71d7}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a77e3583b1537162dd2ef0e76179f71d7} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!get\_equip@{get\_equip}}
+\index{get\_equip@{get\_equip}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{get\_equip()}{get\_equip()}}
+{\footnotesize\ttfamily virtual int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::get\+\_\+equip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a77e3583b1537162dd2ef0e76179f71d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aac57bb27c5a05ef58db459ace0854939}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aac57bb27c5a05ef58db459ace0854939} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!get\_status@{get\_status}}
+\index{get\_status@{get\_status}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{get\_status()}{get\_status()}}
+{\footnotesize\ttfamily virtual int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::get\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aac57bb27c5a05ef58db459ace0854939_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af7928f71166bbf878762165a5c30c03c}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af7928f71166bbf878762165a5c30c03c} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!notify@{notify}}
+\index{notify@{notify}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void Attribute\+::notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aba47bba2957ff310afe7c87527339bff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_abda8bf4a68bd08a534a3bfa01b2972d2}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_abda8bf4a68bd08a534a3bfa01b2972d2} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_abda8bf4a68bd08a534a3bfa01b2972d2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae36f68d5138eb513b241f76f208711c7}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae36f68d5138eb513b241f76f208711c7} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator!= (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ae36f68d5138eb513b241f76f208711c7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a10815e15646d42489f862df59de9a4bf}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a10815e15646d42489f862df59de9a4bf} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a10815e15646d42489f862df59de9a4bf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c9ab70725e04bf8297e99cfc30746fd}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c9ab70725e04bf8297e99cfc30746fd} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+TT Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c9ab70725e04bf8297e99cfc30746fd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a9c6ba75188c28cbf95bb58319aaa7844}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a9c6ba75188c28cbf95bb58319aaa7844} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator+@{operator+}}
+\index{operator+@{operator+}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a9c6ba75188c28cbf95bb58319aaa7844_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aaaa47911ceab41a204cbea9a53a063b6}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aaaa47911ceab41a204cbea9a53a063b6} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator+@{operator+}}
+\index{operator+@{operator+}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+TT Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator+ (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aaaa47911ceab41a204cbea9a53a063b6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a992a5f72b03e47d2b0b698657218e76a}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a992a5f72b03e47d2b0b698657218e76a} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a992a5f72b03e47d2b0b698657218e76a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a621b524dd2364540f01384cfa717510e}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a621b524dd2364540f01384cfa717510e} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+TT Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator-\/ (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a621b524dd2364540f01384cfa717510e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af1a03f6341b13a40fbe9f754a1097049}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af1a03f6341b13a40fbe9f754a1097049} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator/@{operator/}}
+\index{operator/@{operator/}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_af1a03f6341b13a40fbe9f754a1097049_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a13b72f0b565d4f98a2c9841ad8b4a6b4}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a13b72f0b565d4f98a2c9841ad8b4a6b4} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator/@{operator/}}
+\index{operator/@{operator/}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+TT Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator/ (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a13b72f0b565d4f98a2c9841ad8b4a6b4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac08dab648862339f08f4e1ada6f0b5a8}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac08dab648862339f08f4e1ada6f0b5a8} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac08dab648862339f08f4e1ada6f0b5a8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c88ef014619dba70f8cdc3bb2e75a1a}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c88ef014619dba70f8cdc3bb2e75a1a} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$<$ (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4c88ef014619dba70f8cdc3bb2e75a1a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4ef39bac8d5968e34d6cf966c1ccee0d}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4ef39bac8d5968e34d6cf966c1ccee0d} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a4ef39bac8d5968e34d6cf966c1ccee0d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac32689108cc931792280e63a7748ae15}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac32689108cc931792280e63a7748ae15} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$<$= (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac32689108cc931792280e63a7748ae15_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3f287e5df7da2559e6e896e605876338}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3f287e5df7da2559e6e896e605876338} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator=@{operator=}}
+\index{operator=@{operator=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3f287e5df7da2559e6e896e605876338_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a79187e48d8f920f297afb9f639620ca3}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a79187e48d8f920f297afb9f639620ca3} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator==@{operator==}}
+\index{operator==@{operator==}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a79187e48d8f920f297afb9f639620ca3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad81469af17b1ccbec17d5909379af58f}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad81469af17b1ccbec17d5909379af58f} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator==@{operator==}}
+\index{operator==@{operator==}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator== (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad81469af17b1ccbec17d5909379af58f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a6f8609fd07bdbd4263c60c11c7dd7ac9}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a6f8609fd07bdbd4263c60c11c7dd7ac9} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a6f8609fd07bdbd4263c60c11c7dd7ac9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3b83995c03407fc0096b926ec35d5250}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3b83995c03407fc0096b926ec35d5250} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$>$ (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a3b83995c03407fc0096b926ec35d5250_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac571f86103193d7242080fa06713e2c6}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac571f86103193d7242080fa06713e2c6} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_attribute}{Attribute}} const \&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac571f86103193d7242080fa06713e2c6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aefb771a2da7160dff92f2ec0a546241c}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aefb771a2da7160dff92f2ec0a546241c} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TT , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ TT $>$\+::value $>$\+::type \texorpdfstring{$\ast$}{*}  = nullptr$>$ \\
+bool Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::operator$>$= (\begin{DoxyParamCaption}\item[{TT}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_aefb771a2da7160dff92f2ec0a546241c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!set\_base@{set\_base}}
+\index{set\_base@{set\_base}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{set\_base()}{set\_base()}}
+{\footnotesize\ttfamily virtual void Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::set\+\_\+base (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_a1b62c1389c04650baadbc7cc7b30d21e}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_a3f719cf98611f59c19d381fcc000d58d}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_skill_point_afc7b8a5e4287fc2175ce79deffe877fb}{Horizon\+::\+Zone\+::\+Traits\+::\+Skill\+Point}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_strength_a92052973723707becabe3efbf3ae694e}{Horizon\+::\+Zone\+::\+Traits\+::\+Strength}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_agility_a06325664b87f56c41b87786b21559251}{Horizon\+::\+Zone\+::\+Traits\+::\+Agility}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_vitality_a361ba7a6e568cd19901dec60198405df}{Horizon\+::\+Zone\+::\+Traits\+::\+Vitality}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_intelligence_a384e2243c90714868c6c1b1c5aee9183}{Horizon\+::\+Zone\+::\+Traits\+::\+Intelligence}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_dexterity_a6d4ec2c4e5e4fd49ef53b3ef5743bffa}{Horizon\+::\+Zone\+::\+Traits\+::\+Dexterity}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_luck_a3ffcb35514cc50130c22f0b9a3eee5d0}{Horizon\+::\+Zone\+::\+Traits\+::\+Luck}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_af834f3ea652559e04432a705838b5c80}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Experience}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_a5b6f2e0990847bb6d0af64b6a7923880}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Experience}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_zeny_a3f04ea144b4d2e8934498d88889bf684}{Horizon\+::\+Zone\+::\+Traits\+::\+Zeny}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_honor_aafa2784edd5f27c1728e3b9a6a854429}{Horizon\+::\+Zone\+::\+Traits\+::\+Honor}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_manner_a6f00303d82f151fafcbc6ec75482e73a}{Horizon\+::\+Zone\+::\+Traits\+::\+Manner}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_virtue_af28a9b29252e143ee16f9d5d135dc4a3}{Horizon\+::\+Zone\+::\+Traits\+::\+Virtue}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_movement_speed_a01cd8d31b5a3ffc63964ab57d58d8a37}{Horizon\+::\+Zone\+::\+Traits\+::\+Movement\+Speed}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_adf192cbbb8955bf4557de0ecd0052a9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!set\_equip@{set\_equip}}
+\index{set\_equip@{set\_equip}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{set\_equip()}{set\_equip()}}
+{\footnotesize\ttfamily virtual void Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::set\+\_\+equip (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_a0ab417bd2f83d5255ce6eb0ae01e252d}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_a62a23e0764f52ca78c05e4ec7d6c9b77}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_a708f6751603f529cea6ae504fdd136cc}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Experience}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_aa0e1f6281002d6b228a5b68296d3e62d}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Experience}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad2ae92fef880899998944ec1692155cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!set\_status@{set\_status}}
+\index{set\_status@{set\_status}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{set\_status()}{set\_status()}}
+{\footnotesize\ttfamily virtual void Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::set\+\_\+status (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_level_acf39e3dd930a2fc63f15685da824e6b6}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_level_aec4417513e13dc0a9ef20411fc001de0}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Level}}, \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_base_experience_a57595ba74ec04c68d3ae04c0576ee9ac}{Horizon\+::\+Zone\+::\+Traits\+::\+Base\+Experience}}, and \mbox{\hyperlink{class_horizon_1_1_zone_1_1_traits_1_1_job_experience_a55db3ccc6f2585c918c747622c1a7abe}{Horizon\+::\+Zone\+::\+Traits\+::\+Job\+Experience}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acf9f427d0d300d703de243fc822229d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a38be66d97bbf9d166f21a916b8a48004}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a38be66d97bbf9d166f21a916b8a48004} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!sub\_base@{sub\_base}}
+\index{sub\_base@{sub\_base}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{sub\_base()}{sub\_base()}}
+{\footnotesize\ttfamily void Attribute\+::sub\+\_\+base (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a38be66d97bbf9d166f21a916b8a48004_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a38be66d97bbf9d166f21a916b8a48004_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad0737fb8b9747c13b08d57bcaf8b3ff8}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad0737fb8b9747c13b08d57bcaf8b3ff8} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!sub\_equip@{sub\_equip}}
+\index{sub\_equip@{sub\_equip}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{sub\_equip()}{sub\_equip()}}
+{\footnotesize\ttfamily void Attribute\+::sub\+\_\+equip (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad0737fb8b9747c13b08d57bcaf8b3ff8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ad0737fb8b9747c13b08d57bcaf8b3ff8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a55a02f8093e30e27017a6c0eabe228d6}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a55a02f8093e30e27017a6c0eabe228d6} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!sub\_status@{sub\_status}}
+\index{sub\_status@{sub\_status}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{sub\_status()}{sub\_status()}}
+{\footnotesize\ttfamily void Attribute\+::sub\+\_\+status (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a55a02f8093e30e27017a6c0eabe228d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a55a02f8093e30e27017a6c0eabe228d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!total@{total}}
+\index{total@{total}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{total()}{total()}}
+{\footnotesize\ttfamily virtual int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_horizon_1_1_zone_1_1_traits_1_1_attribute_afb8bed0c5dff839edb9f185a11bad13d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_a5e00aff1eacb4355ff3b62af4c6be32d} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!\_base\_val@{\_base\_val}}
+\index{\_base\_val@{\_base\_val}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{\_base\_val}{\_base\_val}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::\+\_\+base\+\_\+val \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac3f5cf3b609dfa156eaa81597e8eed64} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!\_equip\_val@{\_equip\_val}}
+\index{\_equip\_val@{\_equip\_val}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{\_equip\_val}{\_equip\_val}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::\+\_\+equip\+\_\+val \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac1cfacb8f806e8fa73777d74016d27bf}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_ac1cfacb8f806e8fa73777d74016d27bf} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!\_status\_point\_type@{\_status\_point\_type}}
+\index{\_status\_point\_type@{\_status\_point\_type}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{\_status\_point\_type}{\_status\_point\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701}{status\+\_\+point\+\_\+type}} Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::\+\_\+status\+\_\+point\+\_\+type \{\mbox{\hyperlink{_entity_definitions_8hpp_af0263df8499dd2bdadac0ec4d7cb1701ab23c94da262dd0f752e1b0704cf1e994}{status\+\_\+point\+\_\+type\+::\+STATUS\+\_\+\+POINT\+\_\+\+INVALID}}\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a}\label{class_horizon_1_1_zone_1_1_traits_1_1_attribute_acb0c6de8976306898be093eb1ba94c7a} 
+\index{Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}!\_status\_val@{\_status\_val}}
+\index{\_status\_val@{\_status\_val}!Horizon::Zone::Traits::Attribute@{Horizon::Zone::Traits::Attribute}}
+\doxysubsubsection{\texorpdfstring{\_status\_val}{\_status\_val}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Traits\+::\+Attribute\+::\+\_\+status\+\_\+val \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_attribute_8hpp}{Attribute.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Entities/\+Traits/\mbox{\hyperlink{_attribute_8cpp}{Attribute.\+cpp}}\end{DoxyCompactItemize}

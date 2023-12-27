@@ -1,0 +1,105 @@
+\doxysection{Auth.\+hpp}
+\hypertarget{_auth_8hpp_source}{}\label{_auth_8hpp_source}\index{src/Server/Auth/Auth.hpp@{src/Server/Auth/Auth.hpp}}
+\mbox{\hyperlink{_auth_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_AUTH\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_AUTH\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8hpp}{Server/pch.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_server_8hpp}{Common/Server.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Auth}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\_config\_type}}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_a82f44355096df7879b5a62e6dfdf780f}{\_password\_salt\_mix}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server}{char\_server}}}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server_a4a1fa78152e041e13d117c7fb7ea9b06}{\_name}},\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server_abe98a288967c2051e5dd7c6502fcd175}{\_host}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server_a76ffb69d217d65de6ceceee2033117a8}{\_port}},\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server_ad97fe6a0d79050e2ec6664955198745e}{\_type}},\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server_a0843788d04f377d0c39e49b8019b3c28}{\_is\_new}};\ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_a3b73c0c47268ef3210e3bdad3d85e8f8}{add\_char\_server}}(\mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_1_1char__server}{char\_server}}\ c)\ \{\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_acdcfa0ebd0aa6b13de0e538d187f53d3}{\_char\_servers}}.push\_back(c);\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<char\_server>\ \&\mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_a7daa0ca7eaf8c39da5220558e07e64a3}{get\_char\_servers}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_acdcfa0ebd0aa6b13de0e538d187f53d3}{\_char\_servers}};\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::vector<char\_server>\ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type_acdcfa0ebd0aa6b13de0e538d187f53d3}{\_char\_servers}};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server}{AuthServer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_server}{Server}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_add8dfe33bce47c4f4ec4d904958022de}{AuthServer}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a27a7b825b28f6e257ec5f64c5634b701}{\string~AuthServer}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server}{AuthServer}}\ *\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_ad76d42d20ea2281d586fa580f5aeea4e}{getInstance}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server}{AuthServer}}\ instance;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_afc8ee95847729e7bf015258f1027e082}{read\_config}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a863e41748ec1fee8cfbe3a5d18543fcf}{initialize\_core}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{/*\ CLI\ */}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a529b8f3b83896879a664f1aa3e1ea5b3}{initialize\_cli\_commands}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a86405d973e7c973f3f25368a816cc271}{clicmd\_reload\_config}}(std::string\ \textcolor{comment}{/*cmd*/});}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a8ffea2ba61763a9d267d3b9cd46e2f02}{clicmd\_create\_new\_account}}(std::string\ \textcolor{comment}{/*cmd*/});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{/*\ Task\ Scheduler\ */}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a263293a19355c1189099ef492b7b25e3}{getScheduler}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a31b1f78b877a3ad70bcccf6d2f016cfd}{\_task\_scheduler}};\ \}}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\_config\_type}}\ \&\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a3d0d7d0272c341ec7199a4482234cd7c}{get\_auth\_config}}()}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a3ba744cf78a3efb4acfee39fd213cdff}{\_conf\_lock}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a47eb3327becc0d85f5b41ee08d2329c9}{\_auth\_config}};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_aed584794ce16db625febcf8334c2a51c}{update}}(uint64\_t\ time);}
+\DoxyCodeLine{00089\ \ \ \ \ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a31b1f78b877a3ad70bcccf6d2f016cfd}{\_task\_scheduler}};}
+\DoxyCodeLine{00092\ \ \ \ \ std::mutex\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a3ba744cf78a3efb4acfee39fd213cdff}{\_conf\_lock}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{struct_horizon_1_1_auth_1_1auth__config__type}{auth\_config\_type}}\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_a47eb3327becc0d85f5b41ee08d2329c9}{\_auth\_config}};}
+\DoxyCodeLine{00094\ \ \ \ \ boost::asio::deadline\_timer\ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_server_ab6d6e29193393c4eae166a84e9f99a7d}{\_update\_timer}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ sAuth\ Horizon::Auth::AuthServer::getInstance()}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_AUTH\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

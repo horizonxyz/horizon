@@ -1,0 +1,137 @@
+\doxysection{GRF.\+hpp}
+\hypertarget{_g_r_f_8hpp_source}{}\label{_g_r_f_8hpp_source}\index{src/Libraries/GRF/GRF.hpp@{src/Libraries/GRF/GRF.hpp}}
+\mbox{\hyperlink{_g_r_f_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_LIBRARIES\_GRF\_GRF\_HPP}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HORIZON\_LIBRARIES\_GRF\_GRF\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_d_e_s_8hpp}{DES.hpp}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <boost/filesystem/path.hpp>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_g_r_f_8hpp_a701d9c26dd2050b9d3c0537d49a7e927}{datafile\_type}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a701d9c26dd2050b9d3c0537d49a7e927a02aa9fd36c4bf1d3821e9935e3d46e48}{DATAFILE\_TYPE\_FILE}}\ \ \ \ \ \ \ \ \ \ =\ 0x01,\ \textcolor{comment}{//\ entry\ is\ a\ file}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a701d9c26dd2050b9d3c0537d49a7e927a5ab391bf6c468c5f91744af8dfed7a6f}{DATAFILE\_TYPE\_DES\_MIXED}}\ \ \ \ \ =\ 0x02,\ \textcolor{comment}{//\ encryption\ mode\ 0\ (header\ DES\ +\ periodic\ DES/shuffle)}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a701d9c26dd2050b9d3c0537d49a7e927a70974994fb97db254204c7eaee821119}{DATAFILE\_TYPE\_DES\_HEADER}}\ \ \ \ =\ 0x04,\ \textcolor{comment}{//\ encryption\ mode\ 1\ (header\ DES\ only)}}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79e}{grf\_load\_result\_type}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79ea750325edc54429f81dfd5c701828dbd7}{GRF\_LOAD\_OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79eae8872dbd4779d37e4ba5f691d9b26a87}{GRF\_LOAD\_PATH\_ERROR}}\ \ \ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79ea217d4de2acb3c8017cf50e294c0767f5}{GRF\_LOAD\_INCOMPLETE\_HEADER}}\ \ \ =\ 2,}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79ea789ee53c232adb19fca12fc35d01cb84}{GRF\_LOAD\_MAGIC\_ERROR}}\ \ \ \ \ \ \ \ \ =\ 3,}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79ea9453652caf3363222a3f80fbe431468c}{GRF\_LOAD\_FORMAT\_ERROR}}\ \ \ \ \ \ \ \ =\ 4,}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79eaed37f6e7451e21201e973bded4237e91}{GRF\_LOAD\_INVALID\_VERSION}}\ \ \ \ \ =\ 5,}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79eaf94d442430a7b0e0bff858abb07cc9c9}{GRF\_LOAD\_HEADER\_READ\_ERROR}}\ \ \ =\ 6,}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79ea47aa4dfd3a7b799162817d00a418380e}{GRF\_LOAD\_ILLEGAL\_DATA\_FORMAT}}\ =\ 7,}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79eab4caee8bc26755635d4e8792ec1d0126}{GRF\_LOAD\_READ\_ERROR}}\ \ \ \ \ \ \ \ \ \ =\ 8,}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_g_r_f_8hpp_a3bbf80e42b0d15e73365146e58064b63}{grf\_file\_error\_type}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a3bbf80e42b0d15e73365146e58064b63ad1edec7872ce2eb64d58b27a466f4ad8}{GRF\_FILE\_ERROR\_NONE}}\ \ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a3bbf80e42b0d15e73365146e58064b63a7abda1c56c2743d7453aacb6c536bce9}{GRF\_FILE\_ERROR\_NAME\_TOO\_LONG}}\ =\ 1}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3ef}{grf\_read\_error\_type}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3efaba6b494de7816ef9cc1264f6667d71a8}{GRE\_OK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3efa9e4167f408df852dc9570369f57aa13b}{GRE\_NOT\_FOUND}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3efa07d5f6a08609f01f5917273b96ac927e}{GRE\_READ\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_a800b768026d2377ddc03c5eb62f3b3efab7c70bcb3123ad05dde2d26427ffd5c8}{GRE\_DECOMPRESS\_SIZE\_MISMATCH}}\ =\ 3,}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_data_file}{DataFile}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_data_file_aa32efec4c5576d718df4f329377321e4}{compressed\_size}};\ \textcolor{comment}{//\ compressed\ size}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_data_file_af3cf921e85681b882ba5567f454e05a1}{compressed\_aligned\_size}};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_data_file_a8381d38bc93b607a61ac1b560d787525}{original\_size}};\ \textcolor{comment}{//\ original\ size}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_data_file_abc45f09b2ea94793218655179225fd41}{entry\_position}};\ \textcolor{comment}{//\ position\ of\ entry\ in\ grf}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_data_file_ab4dcdd602ca5788a92e83e50572b6e47}{hash\_table\_position}};\ \textcolor{comment}{//\ position\ in\ hash\ table.}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_data_file_a5d08c2fe4f7cc4702a5e0d32df8f81d5}{next\_hash\_collision}};\ \textcolor{comment}{//\ index\ of\ next\ DataFile\ entry\ with\ same\ hash\ (-\/1:\ end\ of\ entry\ chain)}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_data_file_aba5343f9795bcf73cbf986395af84d22}{type}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_data_file_a93baf1094897c4a21f3d3ae43f89f643}{file\_name}}[128\ -\/\ 4\ *\ 5];\ \textcolor{comment}{//\ file\ name}}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_r_f}{GRF}}}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{typedef}\ std::unordered\_map<std::string,\ std::shared\_ptr<DataFile>>\ FileMapType;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{typedef}\ std::unordered\_map<std::string,\ grf\_file\_error\_type>\ FileErrorMapType;}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_g_r_f_a8265d50eda2df9c2ce2401bc52b6713b}{GRF}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_g_r_f_8hpp_af5b67bff01e53bfb7aae00a1e345f79e}{grf\_load\_result\_type}}\ \mbox{\hyperlink{class_g_r_f_a6f2c010cb061e49075854abf75eee2fb}{load}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_ac07390ae906258905c15ceb25e8af09b}{extractAllFiles}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_af0ed197c966f95c106a8f1eac5625b5a}{extractFile}}(std::string\ file\_name,\ std::string\ output\_path,\ clock\_t\ begin\_time);}
+\DoxyCodeLine{00094\ \ \ \ \ std::pair<grf\_read\_error\_type,\ uint8\_t\ *>\ \mbox{\hyperlink{class_g_r_f_a9ef9210001ff34a4295716d1a30b7e15}{read}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *in\_name,\ \textcolor{keywordtype}{int}\ *size);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_af00be034100eb8916ad28e6e34f8fcb2}{decode}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{char}\ entry\_type,\ \textcolor{keywordtype}{int}\ entry\_len);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a0d62090ac82ebbbb27738dbb1337df43}{decodeFull}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ len,\ \textcolor{keywordtype}{int}\ cycle);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a84d6d5ade7a11988e2867440e1ef083a}{decodeHeader}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *buf,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a4050d0cdd20ded558f5662ed5076ebbd}{decodeShuffledBytes}}(\mbox{\hyperlink{struct_b_i_t64}{BIT64}}\ *src);}
+\DoxyCodeLine{00099\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_g_r_f_adc489a2eaef9224d33075b1482a98708}{substituteObfuscatedByte}}(uint8\_t\ in);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_g_r_f_a6b5e988a2f5e25b485864e3bbc113ac9}{get\_id}}()\ \{\ \textcolor{keywordflow}{return}\ \_id;\ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a6f9f1d0775e1bf850d94f11c54c78c93}{set\_id}}(uint8\_t\ \textcolor{keywordtype}{id})\ \{\ \_id\ =\ id;\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{/*\ Path\ */}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{const}\ boost::filesystem::path\ \&\mbox{\hyperlink{class_g_r_f_a27e4d41dd51e2f0ca78c0473a2a517aa}{getGRFPath}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_path;\ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a71ec3fba1c85caf1ef2fdc6606600d7d}{setGRFPath}}(std::string\ \textcolor{keyword}{const}\ \&path)\ \{\ \_path\ =\ path;\ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{/*\ Size\ */}}
+\DoxyCodeLine{00108\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_g_r_f_a7c0386dcd0fb1d464c986afd79c09766}{getGRFSize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_grf\_size;\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a31e07473f10fb341d5666d5ac890023a}{setGRFSize}}(std::size\_t\ \textcolor{keyword}{const}\ \&size)\ \{\ \_grf\_size\ =\ size;\ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{/*\ Version\ */}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_g_r_f_ab0d1fe790e66c54909779ee05ec39ab9}{getGRFVersion}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_grf\_version;\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_ad32defe95dddad1214d68ed8d7dbaf5d}{setGRFVersion}}(\textcolor{keywordtype}{int}\ version)\ \{\ \_grf\_version\ =\ version;\ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{/*\ Total\ Files\ */}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_g_r_f_a58b8115d23a1ca322121400d2b051562}{getTotalFiles}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_total\_files;\ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_r_f_a755d1c0fed2f9972b714944d0663d28e}{setTotalFiles}}(\textcolor{keywordtype}{int}\ total)\ \{\ \_total\_files\ =\ total;\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ FileMapType\ \&\mbox{\hyperlink{class_g_r_f_a00ed715dde32def3bc9bdb0c94c78527}{getFileMap}}()\ \{\ \textcolor{keywordflow}{return}\ \_file\_map;\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ FileErrorMapType\ \&\mbox{\hyperlink{class_g_r_f_a2d62e5c0cca5ffa836e32f1fb1e23625}{getFileErrorMap}}()\ \{\ \textcolor{keywordflow}{return}\ \_file\_error\_map;\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ \_id;}
+\DoxyCodeLine{00122\ \ \ \ \ boost::filesystem::path\ \_path;}
+\DoxyCodeLine{00123\ \ \ \ \ std::size\_t\ \_grf\_size;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ \_grf\_version;}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \_total\_files;}
+\DoxyCodeLine{00126\ \ \ \ \ FileMapType\ \_file\_map;}
+\DoxyCodeLine{00127\ \ \ \ \ FileErrorMapType\ \_file\_error\_map;}
+\DoxyCodeLine{00128\ \};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HORIZON\_LIBRARIES\_GRF\_GRF\_HPP}}
+
+\end{DoxyCode}

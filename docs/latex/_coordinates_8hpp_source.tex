@@ -1,0 +1,161 @@
+\doxysection{Coordinates.\+hpp}
+\hypertarget{_coordinates_8hpp_source}{}\label{_coordinates_8hpp_source}\index{src/Server/Zone/Game/Map/Coordinates.hpp@{src/Server/Zone/Game/Map/Coordinates.hpp}}
+\mbox{\hyperlink{_coordinates_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_MAP\_COORDINATES\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_MAP\_COORDINATES\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}16\_t\ MAX\_COORDINATES>}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_coordinates}{Coordinates}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_coordinates_a304fd01bccbf93ee4818363cc836d71d}{Coordinates}}(int16\_t\ \mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}\ =\ 0,\ int16\_t\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}\ =\ 0)}
+\DoxyCodeLine{00038\ \ \ \ \ :\ \_x(\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}),\ \_y(\mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}),\ \_move\_cost(0)}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_coordinates_a34dbf6d60a60e72798a26e6fa1180d6d}{Coordinates}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \&obj)}
+\DoxyCodeLine{00044\ \ \ \ \ :\ \_x(obj.\_x),\ \_y(obj.\_y),\ \_move\_cost(obj.\_move\_cost)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \mbox{\hyperlink{class_coordinates_ae0afde8c447f73c54264db3812a87196}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \&right)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \_x\ =\ right.\_x;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_y\ =\ right.\_y;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_move\_cost\ =\ right.\_move\_cost;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_coordinates_a1d86abdea0d249f32f81f25b46f1a244}{operator\ ==\ }}(\mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \textcolor{keyword}{const}\ \&right)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00058\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_x\ ==\ right.\_x\ \&\&\ \_y\ ==\ right.\_y);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_coordinates_a6578363594ffcf7b7385f77a0b33176b}{operator\ !=\ }}(\mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \textcolor{keyword}{const}\ \&right)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ right);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \mbox{\hyperlink{class_coordinates_abc6cd67f710d6e95acd9a75308e72b8c}{operator\ +\ }}(\mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \textcolor{keyword}{const}\ \&right)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}(\_x\ +\ right.\_x,\ \_y\ +\ right.\_y);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \mbox{\hyperlink{class_coordinates_a02ca32aa5e33694cdf37362fbc257438}{operator\ -\/\ }}(\mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}\ \textcolor{keyword}{const}\ \&right)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_coordinates}{Coordinates<MAX\_COORDINATES>}}(\_x\ -\/\ right.\_x,\ \_y\ -\/\ right.\_y);}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{int}16\_t\ BOUNDS>}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_coordinates_a2ae0019a7707fc98814620107c4d0749}{is\_within\_range}}(\mbox{\hyperlink{class_coordinates}{Coordinates<BOUNDS>}}\ \textcolor{keyword}{const}\ \&bounds,\ \textcolor{keywordtype}{int}\ range)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00079\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\_diff\ =\ \_x\ -\/\ bounds.\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ y\_diff\ =\ \_y\ -\/\ bounds.\mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ abs(x\_diff)\ <=\ range\ \&\&\ abs(y\_diff)\ <=\ range;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}16\_t\ BOUNDS>}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{Coordinates<BOUNDS>}}\ \mbox{\hyperlink{class_coordinates_a6ae6a2fd1d12e251b3e06c9f3a27eca3}{at\_range}}(\textcolor{keywordtype}{int}\ range)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00088\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}\ =\ std::max(0,\ std::min((\_x\ +\ range),\ (\textcolor{keywordtype}{int})\ BOUNDS));}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}\ =\ std::max(0,\ std::min((\_y\ +\ range),\ (\textcolor{keywordtype}{int})\ BOUNDS));}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_coordinates}{Coordinates<BOUNDS>}}(\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}},\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}});}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}16\_t\ BLOCK\_SIZE,\ \textcolor{keywordtype}{int}16\_t\ BLOCK\_COUNT>}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_coordinates}{Coordinates<BLOCK\_COUNT>}}\ \mbox{\hyperlink{class_coordinates_a1dddac88d6e458c4746203ba82086278}{scale}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}\ =\ \_x\ /\ BLOCK\_SIZE;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}\ =\ \_y\ /\ BLOCK\_SIZE;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}\ <\ BLOCK\_COUNT\ \&\&\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}\ <\ BLOCK\_COUNT);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ assert(\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}\ >=\ 0\ \&\&\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}\ >=\ 0);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_coordinates}{Coordinates<BLOCK\_COUNT>}}(\mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}},\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}});}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_coordinates_aea176e774e2ae6b9faf47a6af64c6e23}{x}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_x;\ \}}
+\DoxyCodeLine{00108\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_coordinates_a13e275b7df55f51beb61bb20ead8699e}{y}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_y;\ \}}
+\DoxyCodeLine{00109\ \ \ \ \ int16\_t\ \mbox{\hyperlink{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}{move\_cost}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_move\_cost;\ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_coordinates_aff105d2c4b7b643a9bd3b05ad1ebc3ed}{set\_move\_cost}}(int16\_t\ \mbox{\hyperlink{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}{move\_cost}})\ \{\ \_move\_cost\ =\ \mbox{\hyperlink{class_coordinates_ae2a5ac323bb267433bfaef488130a29e}{move\_cost}};\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_coordinates_adfcc161e45c4247dc2026aaa50fe8a26}{inc\_x}}(int16\_t\ val)}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_x\ +\ val\ <\ MAX\_COORDINATES)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \_x\ +=\ val;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \_x\ =\ MAX\_COORDINATES\ -\/\ 1;}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_coordinates_a1f7510f826e0c28deb28c99f854fac96}{dec\_x}}(int16\_t\ val)}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_x\ >\ val)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \_x\ -\/=\ val;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \_x\ =\ 0;}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_coordinates_ac22cfee5dc63bfde60b8266dc8724e0f}{inc\_y}}(int16\_t\ val)}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_y\ +\ val\ <\ MAX\_COORDINATES)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \_y\ +=\ val;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \_y\ =\ MAX\_COORDINATES\ -\/\ 1;}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_coordinates_a4733999fbddbd0b816e28c79364f4931}{dec\_y}}(int16\_t\ val)}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_y\ >\ val)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \_y\ -\/=\ val;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \_y\ =\ 0;}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_coordinates_a77f4de4cd4ba39b28de33db2ddd71d42}{valid}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00145\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_x\ <\ MAX\_COORDINATES\ \&\&\ \_y\ <\ MAX\_COORDINATES;}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00150\ \ \ \ \ int16\_t\ \_x\{0\};}
+\DoxyCodeLine{00151\ \ \ \ \ int16\_t\ \_y\{0\};}
+\DoxyCodeLine{00152\ \ \ \ \ int16\_t\ \_move\_cost\{0\};}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_MAP\_COORDINATES\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

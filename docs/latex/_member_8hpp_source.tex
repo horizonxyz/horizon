@@ -1,0 +1,78 @@
+\doxysection{Member.\+hpp}
+\hypertarget{_member_8hpp_source}{}\label{_member_8hpp_source}\index{src/Server/Zone/Game/Guild/Member.hpp@{src/Server/Zone/Game/Guild/Member.hpp}}
+\mbox{\hyperlink{_member_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_MODELS\_GUILD\_MEMBERS\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_MODELS\_GUILD\_MEMBERS\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }Models}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Guild}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member}{Member}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a1456bc1aac1c96b327661188048db9cb}{Member}}()\ \{\ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a7cbe1e7ba08931784163649759523b9a}{\string~Member}}()\ \{\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{/*\ Guild\ ID\ */}}
+\DoxyCodeLine{00046\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_ab2ed909c244068a5554f5dd87c01ac52}{get\_guild\_id}}()\ \{\ \textcolor{keywordflow}{return}\ \_guild\_id;\ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a93e89518e76c9905779c93e089f94c5c}{set\_guild\_id}}(uint32\_t\ guild\_id)\ \{\ \_guild\_id\ =\ guild\_id;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ Character\ ID\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_aed67bca20ad532716d8ad0eaba8eea34}{get\_character\_id}}()\ \{\ \textcolor{keywordflow}{return}\ \_character\_id;\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a111427de4e2053ed87bbb8558559d3de}{set\_character\_id}}(uint32\_t\ char\_id)\ \{\ \_character\_id\ =\ char\_id;\ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*\ Experience\ Paid\ */}}
+\DoxyCodeLine{00052\ \ \ \ \ uint64\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a9d0eca188b1e77f1c580086827781a49}{getExperiencePaid}}()\ \{\ \textcolor{keywordflow}{return}\ \_experience\_paid;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a8ca38c762c8baf8bbf8c70661e7ccff6}{setExperiencePaid}}(uint32\_t\ exp)\ \{\ \_experience\_paid\ =\ exp;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{/*\ Tax\ Percent\ */}}
+\DoxyCodeLine{00055\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a1405d62aa68ef2fc8d0eefc3c1e415c6}{getTaxPercent}}()\ \{\ \textcolor{keywordflow}{return}\ \_tax\_percent;\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_adddf6192ab2edc5378d08568aba6fd86}{setTaxPercent}}(uint8\_t\ percent)\ \{\ \_tax\_percent\ =\ percent;\ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{/*\ Position\ ID\ */}}
+\DoxyCodeLine{00058\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_a2f1f0a333f36786d01359f760fe948d0}{getPositionID}}()\ \{\ \textcolor{keywordflow}{return}\ \_position\_id;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member_af3bf864568426e9c683b22b7a8fd9961}{setPositionID}}(uint8\_t\ pos)\ \{\ \_position\_id\ =\ pos;\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ uint32\_t\ \_guild\_id;}
+\DoxyCodeLine{00063\ \ \ \ \ uint32\_t\ \_character\_id;}
+\DoxyCodeLine{00064\ \ \ \ \ uint64\_t\ \_experience\_paid;}
+\DoxyCodeLine{00065\ \ \ \ \ uint8\_t\ \_tax\_percent;}
+\DoxyCodeLine{00066\ \ \ \ \ uint8\_t\ \_position\_id;}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_MODELS\_GUILD\_MEMBERS\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

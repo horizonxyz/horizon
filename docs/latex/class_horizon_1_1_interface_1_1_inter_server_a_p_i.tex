@@ -1,0 +1,200 @@
+\doxysection{Horizon\+::Interface\+::Inter\+Server\+API\texorpdfstring{$<$}{<} Session\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i}\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+
+
+{\ttfamily \#include $<$Inter\+Server\+API.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_af4a208c4f4d8e9449a94ef7e381f9057}{Inter\+Server\+API}} ()
+\item 
+virtual \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a2479e950d2c48643cce80f5014a50b44}{\texorpdfstring{$\sim$}{\string~}\+Inter\+Server\+API}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Session\+Data $>$ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a1dc6b8e5b4738edb4e90457e38a2179b}{get\+\_\+session\+\_\+data}} (uint32\+\_\+t auth\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Obtain session data from the inter-\/server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a25b687f91d87e7fa2b72dbb05dff3d85}{request\+\_\+authorisation}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_abc4946e1f5adbb513d4aa9046d89a332}{delete\+\_\+session}} (uint32\+\_\+t auth\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Request inter to delete a session from the server\textquotesingle{}s storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_ae809fd1894173032a4bf93cee001da83}{store\+\_\+session\+\_\+data}} (std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Session\+Data $>$ const \&session\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Insert or Update session data into the inter server storage. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Game\+Account $>$ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_acba7f5344aac409b8d6d448022e421a2}{get\+\_\+game\+\_\+account}} (uint32\+\_\+t account\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Obtain game account data from the inter-\/server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a85370d41a09eaee02b63b597b3cb667e}{delete\+\_\+game\+\_\+account}} (uint32\+\_\+t account\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Request inter to delete a game account from the server\textquotesingle{}s storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_aec7074ce31f5428dc9854199771f87e5}{store\+\_\+game\+\_\+account}} (std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Game\+Account $>$ game\+\_\+account)
+\begin{DoxyCompactList}\small\item\em Insert or Update game account data into the inter server storage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a3412c77d6e6ac4813feba6d188cce83d}{ping\+\_\+inter\+\_\+server}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_afb9b28f0f0494cab3ff3c72b10070ee7}{get\+\_\+inter\+\_\+socket}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a8f2e483ef14b4f1d8f72e4f201d928ad}{set\+\_\+inter\+\_\+socket}} (std\+::shared\+\_\+ptr$<$ Session\+Type $>$ socket)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_af4a208c4f4d8e9449a94ef7e381f9057}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_af4a208c4f4d8e9449a94ef7e381f9057} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!InterServerAPI@{InterServerAPI}}
+\index{InterServerAPI@{InterServerAPI}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{InterServerAPI()}{InterServerAPI()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+\mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::\+Inter\+Server\+API (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a2479e950d2c48643cce80f5014a50b44}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a2479e950d2c48643cce80f5014a50b44} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!````~InterServerAPI@{\texorpdfstring{$\sim$}{\string~}InterServerAPI}}
+\index{````~InterServerAPI@{\texorpdfstring{$\sim$}{\string~}InterServerAPI}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}InterServerAPI()}{\string~InterServerAPI()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+virtual \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Inter\+Server\+API}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a85370d41a09eaee02b63b597b3cb667e}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a85370d41a09eaee02b63b597b3cb667e} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!delete\_game\_account@{delete\_game\_account}}
+\index{delete\_game\_account@{delete\_game\_account}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{delete\_game\_account()}{delete\_game\_account()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::delete\+\_\+game\+\_\+account (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{account\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Request inter to delete a game account from the server\textquotesingle{}s storage. 
+
+
+\begin{DoxyItemize}
+\item Use carefully, deletions performed will affect all other services. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em account\+\_\+id} & game account ID to check against. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_abc4946e1f5adbb513d4aa9046d89a332}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_abc4946e1f5adbb513d4aa9046d89a332} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!delete\_session@{delete\_session}}
+\index{delete\_session@{delete\_session}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{delete\_session()}{delete\_session()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::delete\+\_\+session (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{auth\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Request inter to delete a session from the server\textquotesingle{}s storage. 
+
+
+\begin{DoxyItemize}
+\item Use carefully, deletions performed will affect all other services. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em auth\+\_\+code} & session auth code to check against. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_acba7f5344aac409b8d6d448022e421a2}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_acba7f5344aac409b8d6d448022e421a2} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!get\_game\_account@{get\_game\_account}}
+\index{get\_game\_account@{get\_game\_account}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_game\_account()}{get\_game\_account()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Game\+Account $>$ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::get\+\_\+game\+\_\+account (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{account\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtain game account data from the inter-\/server. 
+
+
+\begin{DoxyItemize}
+\item Does not check if the inter-\/server is online (but returns nullptr if the session happens to be null). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em account\+\_\+id} & game account ID to check against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared\+\_\+ptr to the game account data or nullptr if none found. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_afb9b28f0f0494cab3ff3c72b10070ee7}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_afb9b28f0f0494cab3ff3c72b10070ee7} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!get\_inter\_socket@{get\_inter\_socket}}
+\index{get\_inter\_socket@{get\_inter\_socket}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_inter\_socket()}{get\_inter\_socket()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Session\+Type $>$ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::get\+\_\+inter\+\_\+socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a1dc6b8e5b4738edb4e90457e38a2179b}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a1dc6b8e5b4738edb4e90457e38a2179b} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!get\_session\_data@{get\_session\_data}}
+\index{get\_session\_data@{get\_session\_data}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_session\_data()}{get\_session\_data()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Session\+Data $>$ \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::get\+\_\+session\+\_\+data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{auth\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtain session data from the inter-\/server. 
+
+
+\begin{DoxyItemize}
+\item Does not check if the inter-\/server is online (but returns nullptr if the session happens to be null). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em auth\+\_\+code} & session auth code to check against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared\+\_\+ptr to the session data or nullptr if none found. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a3412c77d6e6ac4813feba6d188cce83d}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a3412c77d6e6ac4813feba6d188cce83d} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!ping\_inter\_server@{ping\_inter\_server}}
+\index{ping\_inter\_server@{ping\_inter\_server}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{ping\_inter\_server()}{ping\_inter\_server()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+bool \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::ping\+\_\+inter\+\_\+server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a25b687f91d87e7fa2b72dbb05dff3d85}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a25b687f91d87e7fa2b72dbb05dff3d85} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!request\_authorisation@{request\_authorisation}}
+\index{request\_authorisation@{request\_authorisation}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{request\_authorisation()}{request\_authorisation()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::request\+\_\+authorisation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a8f2e483ef14b4f1d8f72e4f201d928ad}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_a8f2e483ef14b4f1d8f72e4f201d928ad} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!set\_inter\_socket@{set\_inter\_socket}}
+\index{set\_inter\_socket@{set\_inter\_socket}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{set\_inter\_socket()}{set\_inter\_socket()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::set\+\_\+inter\+\_\+socket (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ Session\+Type $>$}]{socket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_aec7074ce31f5428dc9854199771f87e5}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_aec7074ce31f5428dc9854199771f87e5} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!store\_game\_account@{store\_game\_account}}
+\index{store\_game\_account@{store\_game\_account}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{store\_game\_account()}{store\_game\_account()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::store\+\_\+game\+\_\+account (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Game\+Account $>$}]{game\+\_\+account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert or Update game account data into the inter server storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & game\+\_\+account shared\+\_\+ptr to the game account data object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_horizon_1_1_interface_1_1_inter_server_a_p_i_ae809fd1894173032a4bf93cee001da83}\label{class_horizon_1_1_interface_1_1_inter_server_a_p_i_ae809fd1894173032a4bf93cee001da83} 
+\index{Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}!store\_session\_data@{store\_session\_data}}
+\index{store\_session\_data@{store\_session\_data}!Horizon::Interface::InterServerAPI$<$ SessionType $>$@{Horizon::Interface::InterServerAPI$<$ SessionType $>$}}
+\doxysubsubsection{\texorpdfstring{store\_session\_data()}{store\_session\_data()}}
+{\footnotesize\ttfamily template$<$class Session\+Type $>$ \\
+void \mbox{\hyperlink{class_horizon_1_1_interface_1_1_inter_server_a_p_i}{Horizon\+::\+Interface\+::\+Inter\+Server\+API}}$<$ Session\+Type $>$\+::store\+\_\+session\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ Horizon\+::\+Models\+::\+Session\+Data $>$ const \&}]{session\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert or Update session data into the inter server storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & session\+\_\+data shared\+\_\+ptr to the session data object. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Common/\+Interfaces/\mbox{\hyperlink{_inter_server_a_p_i_8hpp}{Inter\+Server\+API.\+hpp}}\end{DoxyCompactItemize}

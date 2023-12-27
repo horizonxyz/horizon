@@ -1,0 +1,132 @@
+\doxysection{Horizon\+::Zone\+::AStar\+::Generator Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator}{}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator}\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+
+
+{\ttfamily \#include $<$AStar.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a3ebc772ead8649f440e0b9343cfb79d4}{Generator}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a78f6a3f4bb43abb8cf202bb610e4ff7a}{Generator}} (\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} world\+Size\+\_\+, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Collision\+Detection\+Function}} c, bool diagonal\+\_\+movement=true, \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Heuristic\+Function}} h=\&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_a0814519d949a96cc8d8539e08e3218c9}{Heuristic\+::manhattan}})
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_adfeae05a713a0f3607bce96a63478c3c}{set\+World\+Size}} (\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} world\+Size\+\_\+)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a62232df0e67b600d9b13b7790294dfc7}{set\+Collision\+Detection\+Function}} (\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Collision\+Detection\+Function}} c)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7}{set\+Diagonal\+Movement}} (bool enable\+\_\+)
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76}{set\+Heuristic}} (const \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Heuristic\+Function}} \&heuristic\+\_\+)
+\item 
+\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{Coordinate\+List}} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_generator_ac5db6d98c21b24531343a0a5a101b2b2}{find\+Path}} (\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} source\+\_\+, \mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}} target\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a3ebc772ead8649f440e0b9343cfb79d4}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a3ebc772ead8649f440e0b9343cfb79d4} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!Generator@{Generator}}
+\index{Generator@{Generator}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{Generator()}{Generator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a3ebc772ead8649f440e0b9343cfb79d4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a78f6a3f4bb43abb8cf202bb610e4ff7a}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a78f6a3f4bb43abb8cf202bb610e4ff7a} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!Generator@{Generator}}
+\index{Generator@{Generator}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{Generator()}{Generator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{world\+Size\+\_\+,  }\item[{\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Collision\+Detection\+Function}}}]{c,  }\item[{bool}]{diagonal\+\_\+movement = {\ttfamily true},  }\item[{\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Heuristic\+Function}}}]{h = {\ttfamily \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_a_star_1_1_heuristic_a0814519d949a96cc8d8539e08e3218c9}{Heuristic\+::manhattan}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a78f6a3f4bb43abb8cf202bb610e4ff7a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_ac5db6d98c21b24531343a0a5a101b2b2}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_ac5db6d98c21b24531343a0a5a101b2b2} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!findPath@{findPath}}
+\index{findPath@{findPath}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{findPath()}{findPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ac1c15ad0ff301445ece400ce6ba9d34c}{Coordinate\+List}} Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::find\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{source\+\_\+,  }\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{target\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_ac5db6d98c21b24531343a0a5a101b2b2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a62232df0e67b600d9b13b7790294dfc7}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a62232df0e67b600d9b13b7790294dfc7} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!setCollisionDetectionFunction@{setCollisionDetectionFunction}}
+\index{setCollisionDetectionFunction@{setCollisionDetectionFunction}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{setCollisionDetectionFunction()}{setCollisionDetectionFunction()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::set\+Collision\+Detection\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_ad907c4b90d04797d5b142f8849d7d92e}{Collision\+Detection\+Function}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a62232df0e67b600d9b13b7790294dfc7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!setDiagonalMovement@{setDiagonalMovement}}
+\index{setDiagonalMovement@{setDiagonalMovement}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{setDiagonalMovement()}{setDiagonalMovement()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::set\+Diagonal\+Movement (\begin{DoxyParamCaption}\item[{bool}]{enable\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a1efd44b729c6a22c3713a16b9c0669f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!setHeuristic@{setHeuristic}}
+\index{setHeuristic@{setHeuristic}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{setHeuristic()}{setHeuristic()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::set\+Heuristic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_a_star_a02b7605d1ddc11a5d5b7f4a570fee41d}{Heuristic\+Function}} \&}]{heuristic\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_a7cdd3d57b8386232fdd827715a76bc76_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_a_star_1_1_generator_adfeae05a713a0f3607bce96a63478c3c}\label{class_horizon_1_1_zone_1_1_a_star_1_1_generator_adfeae05a713a0f3607bce96a63478c3c} 
+\index{Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}!setWorldSize@{setWorldSize}}
+\index{setWorldSize@{setWorldSize}!Horizon::Zone::AStar::Generator@{Horizon::Zone::AStar::Generator}}
+\doxysubsubsection{\texorpdfstring{setWorldSize()}{setWorldSize()}}
+{\footnotesize\ttfamily void Horizon\+::\+Zone\+::\+AStar\+::\+Generator\+::set\+World\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid_definitions_8hpp_a7037cc6e3caef960f1061e60ae5d35eb}{Map\+Coords}}}]{world\+Size\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_a_star_1_1_generator_adfeae05a713a0f3607bce96a63478c3c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Map/\+Path/\mbox{\hyperlink{_a_star_8hpp}{AStar.\+hpp}}\end{DoxyCompactItemize}

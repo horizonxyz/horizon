@@ -1,0 +1,131 @@
+\doxysection{Horizon\+::Zone\+::Storage\+Database Class Reference}
+\hypertarget{class_horizon_1_1_zone_1_1_storage_database}{}\label{class_horizon_1_1_zone_1_1_storage_database}\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+
+
+{\ttfamily \#include $<$Storage\+DB.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a0c105c1ad0a18f197125413a505bf881}{Storage\+Database}} ()
+\item 
+\mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a3c9dc02f505ec7e4eb4325b5daa68365}{\texorpdfstring{$\sim$}{\string~}\+Storage\+Database}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_ab9f71732b504f4f2a2992d43b46fe058}{load}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data}{storage\+\_\+config\+\_\+data}} $>$ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a2a8e17627989a3cc01d6e9ed49755c2e}{get\+\_\+storage\+\_\+by\+\_\+id}} (int32\+\_\+t id)
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a9bfb1102f8258b6cddde8c5fa2a7e55a}{get\+\_\+storage\+\_\+db\+\_\+size}} ()
+\item 
+std\+::map$<$ uint32\+\_\+t, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data}{storage\+\_\+config\+\_\+data}} $>$ $>$ const \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a101d5922fd5938c45c80b52dd1cfba10}{get\+\_\+storage\+\_\+db}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database}{Storage\+Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a0f875abd9f3e18e96dfb5db1a306195d}{get\+\_\+instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_ac59f1026cff73261b9541e81f0e1aa75}{load\+\_\+storage}} (sol\+::table const \&storage\+\_\+tbl)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database_a5807eeeccb7ac68894e33ad0b9ce5e35}{load\+\_\+internal}} (sol\+::object const \&key, sol\+::object const \&value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a0c105c1ad0a18f197125413a505bf881}\label{class_horizon_1_1_zone_1_1_storage_database_a0c105c1ad0a18f197125413a505bf881} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!StorageDatabase@{StorageDatabase}}
+\index{StorageDatabase@{StorageDatabase}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{StorageDatabase()}{StorageDatabase()}}
+{\footnotesize\ttfamily Storage\+Database\+::\+Storage\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a3c9dc02f505ec7e4eb4325b5daa68365}\label{class_horizon_1_1_zone_1_1_storage_database_a3c9dc02f505ec7e4eb4325b5daa68365} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!````~StorageDatabase@{\texorpdfstring{$\sim$}{\string~}StorageDatabase}}
+\index{````~StorageDatabase@{\texorpdfstring{$\sim$}{\string~}StorageDatabase}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StorageDatabase()}{\string~StorageDatabase()}}
+{\footnotesize\ttfamily Storage\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Storage\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a0f875abd9f3e18e96dfb5db1a306195d}\label{class_horizon_1_1_zone_1_1_storage_database_a0f875abd9f3e18e96dfb5db1a306195d} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!get\_instance@{get\_instance}}
+\index{get\_instance@{get\_instance}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_horizon_1_1_zone_1_1_storage_database}{Storage\+Database}} \texorpdfstring{$\ast$}{*} Horizon\+::\+Zone\+::\+Storage\+Database\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a2a8e17627989a3cc01d6e9ed49755c2e}\label{class_horizon_1_1_zone_1_1_storage_database_a2a8e17627989a3cc01d6e9ed49755c2e} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!get\_storage\_by\_id@{get\_storage\_by\_id}}
+\index{get\_storage\_by\_id@{get\_storage\_by\_id}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_storage\_by\_id()}{get\_storage\_by\_id()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data}{storage\+\_\+config\+\_\+data}} $>$ Horizon\+::\+Zone\+::\+Storage\+Database\+::get\+\_\+storage\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a101d5922fd5938c45c80b52dd1cfba10}\label{class_horizon_1_1_zone_1_1_storage_database_a101d5922fd5938c45c80b52dd1cfba10} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!get\_storage\_db@{get\_storage\_db}}
+\index{get\_storage\_db@{get\_storage\_db}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_storage\_db()}{get\_storage\_db()}}
+{\footnotesize\ttfamily std\+::map$<$ uint32\+\_\+t, std\+::shared\+\_\+ptr$<$ const \mbox{\hyperlink{struct_horizon_1_1_zone_1_1storage__config__data}{storage\+\_\+config\+\_\+data}} $>$ $>$ const Horizon\+::\+Zone\+::\+Storage\+Database\+::get\+\_\+storage\+\_\+db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a9bfb1102f8258b6cddde8c5fa2a7e55a}\label{class_horizon_1_1_zone_1_1_storage_database_a9bfb1102f8258b6cddde8c5fa2a7e55a} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!get\_storage\_db\_size@{get\_storage\_db\_size}}
+\index{get\_storage\_db\_size@{get\_storage\_db\_size}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{get\_storage\_db\_size()}{get\_storage\_db\_size()}}
+{\footnotesize\ttfamily int32\+\_\+t Horizon\+::\+Zone\+::\+Storage\+Database\+::get\+\_\+storage\+\_\+db\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_ab9f71732b504f4f2a2992d43b46fe058}\label{class_horizon_1_1_zone_1_1_storage_database_ab9f71732b504f4f2a2992d43b46fe058} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!load@{load}}
+\index{load@{load}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool Storage\+Database\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_storage_database_ab9f71732b504f4f2a2992d43b46fe058_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_a5807eeeccb7ac68894e33ad0b9ce5e35}\label{class_horizon_1_1_zone_1_1_storage_database_a5807eeeccb7ac68894e33ad0b9ce5e35} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!load\_internal@{load\_internal}}
+\index{load\_internal@{load\_internal}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_internal()}{load\_internal()}}
+{\footnotesize\ttfamily bool Storage\+Database\+::load\+\_\+internal (\begin{DoxyParamCaption}\item[{sol\+::object const \&}]{key,  }\item[{sol\+::object const \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_storage_database_a5807eeeccb7ac68894e33ad0b9ce5e35_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_zone_1_1_storage_database_ac59f1026cff73261b9541e81f0e1aa75}\label{class_horizon_1_1_zone_1_1_storage_database_ac59f1026cff73261b9541e81f0e1aa75} 
+\index{Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}!load\_storage@{load\_storage}}
+\index{load\_storage@{load\_storage}!Horizon::Zone::StorageDatabase@{Horizon::Zone::StorageDatabase}}
+\doxysubsubsection{\texorpdfstring{load\_storage()}{load\_storage()}}
+{\footnotesize\ttfamily bool Storage\+Database\+::load\+\_\+storage (\begin{DoxyParamCaption}\item[{sol\+::table const \&}]{storage\+\_\+tbl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_storage_database_ac59f1026cff73261b9541e81f0e1aa75_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_zone_1_1_storage_database_ac59f1026cff73261b9541e81f0e1aa75_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_storage_d_b_8hpp}{Storage\+DB.\+hpp}}\item 
+src/\+Server/\+Zone/\+Game/\+Static\+DB/\mbox{\hyperlink{_storage_d_b_8cpp}{Storage\+DB.\+cpp}}\end{DoxyCompactItemize}

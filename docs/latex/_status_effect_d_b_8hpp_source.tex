@@ -1,0 +1,82 @@
+\doxysection{Status\+Effect\+DB.\+hpp}
+\hypertarget{_status_effect_d_b_8hpp_source}{}\label{_status_effect_d_b_8hpp_source}\index{src/Server/Zone/Game/StaticDB/StatusEffectDB.hpp@{src/Server/Zone/Game/StaticDB/StatusEffectDB.hpp}}
+\mbox{\hyperlink{_status_effect_d_b_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{\ \ \ \ /***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_STATICDB\_STATUSEFFECTDB\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_STATICDB\_STATUSEFFECTDB\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data}{status\_effect\_config\_data}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a90853ae3cad9e939036eacd89e5b96ed}{status\_id}}\{0\};}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a3a2bfff809e4006d14f4d4b39af4ea9f}{name}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00043\ \ \ \ \ int32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a15fd196343e45805d30e1b4d26ed4e78}{behavior}}\{0\};}
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a214f892941054d3a158e608331cc12fc}{icon}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a1b384898fa2a0699e32d78556bc4666f}{visible}}\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a083f7e1df2a66cd5efa966443a381470}{on\_start\_script}}\{\textcolor{stringliteral}{"{}"{}}\},\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_a36c075377e0da4ab734517adb9c3fb84}{on\_end\_script}}\{\textcolor{stringliteral}{"{}"{}}\},\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1status__effect__config__data_ab2f29fedc3dbd61ec05a9d12271dcad4}{per\_second\_script}}\{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database}{StatusEffectDatabase}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a0caeb3242de32599cf60db32e7e860d7}{StatusEffectDatabase}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a4ee32814f2b2df1561cd371bed258e93}{\string~StatusEffectDatabase}}();}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database}{StatusEffectDatabase}}\ *\mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a621c4fc670c2fbff6f52fd3b1fa3c52c}{get\_instance}}()}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database}{StatusEffectDatabase}}\ instance;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a41dbbff4def235e3f009f0547b762177}{load}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a9eac0bd07d6253b946e047124ae79058}{load\_internal}}(sol::object\ \textcolor{keyword}{const}\ \&key,\ sol::object\ \textcolor{keyword}{const}\ \&value);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ std::shared\_ptr<const\ status\_effect\_config\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_status_effect_database_a3daea73614e18a38d7730c5b6a50ad2c}{get\_status\_effect\_by\_id}}(int32\_t\ \textcolor{keywordtype}{id})\ \{\ \textcolor{keywordflow}{return}\ \_status\_effect\_db.at(\textcolor{keywordtype}{id});\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint32\_t,\ std::shared\_ptr<const\ status\_effect\_config\_data>}}>\ \_status\_effect\_db;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ StatusEffectDB\ Horizon::Zone::StatusEffectDatabase::get\_instance()}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_STATICDB\_STATUSEFFECTDB\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

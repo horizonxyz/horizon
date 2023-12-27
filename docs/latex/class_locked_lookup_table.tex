@@ -1,0 +1,208 @@
+\doxysection{Locked\+Lookup\+Table\texorpdfstring{$<$}{<} Key, Value, Hash \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_locked_lookup_table}{}\label{class_locked_lookup_table}\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+
+
+{\ttfamily \#include $<$Locked\+Lookup\+Table.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Key \mbox{\hyperlink{class_locked_lookup_table_a6b7531d353442ffebe3e4ad716deb937}{key\+\_\+type}}
+\item 
+typedef Value \mbox{\hyperlink{class_locked_lookup_table_a87dbffbc07bd15c9a3e308f1afefe05f}{mapped\+\_\+type}}
+\item 
+typedef Hash \mbox{\hyperlink{class_locked_lookup_table_a800082eab7342c5170989993db055282}{hash\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_locked_lookup_table_a7fb6f3b5cb8b42eb3a7110a9c218bdd7}{Locked\+Lookup\+Table}} (unsigned num\+\_\+buckets=19, const Hash \&hasher\+\_\+=Hash())
+\item 
+\mbox{\hyperlink{class_locked_lookup_table_ac4841239030ee464d8f9eab3d51136e5}{Locked\+Lookup\+Table}} (const \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}} \&other)=delete
+\item 
+\mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}} \& \mbox{\hyperlink{class_locked_lookup_table_a9c5582ceddf288062fa8ae2b63166b2b}{operator=}} (const \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}} \&other)=delete
+\item 
+Value const \& \mbox{\hyperlink{class_locked_lookup_table_a331059001b9cb2ba56978ed27064bf48}{operator\mbox{[}$\,$\mbox{]}}} (Key \&k)
+\item 
+Value \mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}} (Key const \&key, Value const \&default\+\_\+value=Value()) const
+\item 
+void \mbox{\hyperlink{class_locked_lookup_table_a471083f2f190bbc602718de23bdc1b79}{insert}} (const Key \&key, const Value \&value)
+\item 
+void \mbox{\hyperlink{class_locked_lookup_table_af6db19add60b8aeef4fec9b70b764957}{erase}} (const Key \&key)
+\item 
+std\+::map$<$ Key, Value $>$ \mbox{\hyperlink{class_locked_lookup_table_afd536eb5de8db4df48ade0910a05b454}{get\+\_\+map}} () const
+\item 
+int \mbox{\hyperlink{class_locked_lookup_table_a35bbfc4cb19fc7892e9247eaaa096cd4}{max\+\_\+collisions}} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_locked_lookup_table_ab063bb25057015d7d1cfb897ab6a2227}{size}} ()
+\item 
+void \mbox{\hyperlink{class_locked_lookup_table_a1c7bfd07b67c4424e4393f421d6aa6b9}{clear}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_locked_lookup_table_a800082eab7342c5170989993db055282}\label{class_locked_lookup_table_a800082eab7342c5170989993db055282} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!hash\_type@{hash\_type}}
+\index{hash\_type@{hash\_type}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{hash\_type}{hash\_type}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+typedef Hash \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::hash\+\_\+type}
+
+\Hypertarget{class_locked_lookup_table_a6b7531d353442ffebe3e4ad716deb937}\label{class_locked_lookup_table_a6b7531d353442ffebe3e4ad716deb937} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!key\_type@{key\_type}}
+\index{key\_type@{key\_type}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{key\_type}{key\_type}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+typedef Key \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::key\+\_\+type}
+
+\Hypertarget{class_locked_lookup_table_a87dbffbc07bd15c9a3e308f1afefe05f}\label{class_locked_lookup_table_a87dbffbc07bd15c9a3e308f1afefe05f} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!mapped\_type@{mapped\_type}}
+\index{mapped\_type@{mapped\_type}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{mapped\_type}{mapped\_type}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+typedef Value \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::mapped\+\_\+type}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_locked_lookup_table_a7fb6f3b5cb8b42eb3a7110a9c218bdd7}\label{class_locked_lookup_table_a7fb6f3b5cb8b42eb3a7110a9c218bdd7} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!LockedLookupTable@{LockedLookupTable}}
+\index{LockedLookupTable@{LockedLookupTable}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{LockedLookupTable()}{LockedLookupTable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+\mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\mbox{\hyperlink{class_locked_lookup_table}{\+::\+Locked\+Lookup\+Table}} (\begin{DoxyParamCaption}\item[{unsigned}]{num\+\_\+buckets = {\ttfamily 19},  }\item[{const Hash \&}]{hasher\+\_\+ = {\ttfamily Hash()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_locked_lookup_table_ac4841239030ee464d8f9eab3d51136e5}\label{class_locked_lookup_table_ac4841239030ee464d8f9eab3d51136e5} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!LockedLookupTable@{LockedLookupTable}}
+\index{LockedLookupTable@{LockedLookupTable}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{LockedLookupTable()}{LockedLookupTable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+\mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\mbox{\hyperlink{class_locked_lookup_table}{\+::\+Locked\+Lookup\+Table}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}\label{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!at@{at}}
+\index{at@{at}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+Value \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::at (\begin{DoxyParamCaption}\item[{Key const \&}]{key,  }\item[{Value const \&}]{default\+\_\+value = {\ttfamily Value()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_locked_lookup_table_a1c7bfd07b67c4424e4393f421d6aa6b9}\label{class_locked_lookup_table_a1c7bfd07b67c4424e4393f421d6aa6b9} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!clear@{clear}}
+\index{clear@{clear}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+void \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_locked_lookup_table_af6db19add60b8aeef4fec9b70b764957}\label{class_locked_lookup_table_af6db19add60b8aeef4fec9b70b764957} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!erase@{erase}}
+\index{erase@{erase}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+void \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::erase (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_locked_lookup_table_af6db19add60b8aeef4fec9b70b764957_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_locked_lookup_table_afd536eb5de8db4df48ade0910a05b454}\label{class_locked_lookup_table_afd536eb5de8db4df48ade0910a05b454} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!get\_map@{get\_map}}
+\index{get\_map@{get\_map}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{get\_map()}{get\_map()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+std\+::map$<$ Key, Value $>$ \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::get\+\_\+map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_locked_lookup_table_afd536eb5de8db4df48ade0910a05b454_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_locked_lookup_table_a471083f2f190bbc602718de23bdc1b79}\label{class_locked_lookup_table_a471083f2f190bbc602718de23bdc1b79} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!insert@{insert}}
+\index{insert@{insert}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+void \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::insert (\begin{DoxyParamCaption}\item[{const Key \&}]{key,  }\item[{const Value \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_locked_lookup_table_a471083f2f190bbc602718de23bdc1b79_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_locked_lookup_table_a35bbfc4cb19fc7892e9247eaaa096cd4}\label{class_locked_lookup_table_a35bbfc4cb19fc7892e9247eaaa096cd4} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!max\_collisions@{max\_collisions}}
+\index{max\_collisions@{max\_collisions}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{max\_collisions()}{max\_collisions()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+int \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::max\+\_\+collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_locked_lookup_table_a35bbfc4cb19fc7892e9247eaaa096cd4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_locked_lookup_table_a9c5582ceddf288062fa8ae2b63166b2b}\label{class_locked_lookup_table_a9c5582ceddf288062fa8ae2b63166b2b} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+\mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}} \& \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_locked_lookup_table_a331059001b9cb2ba56978ed27064bf48}\label{class_locked_lookup_table_a331059001b9cb2ba56978ed27064bf48} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+Value const  \& \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{Key \&}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_locked_lookup_table_a331059001b9cb2ba56978ed27064bf48_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_locked_lookup_table_ab063bb25057015d7d1cfb897ab6a2227}\label{class_locked_lookup_table_ab063bb25057015d7d1cfb897ab6a2227} 
+\index{LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}!size@{size}}
+\index{size@{size}!LockedLookupTable$<$ Key, Value, Hash $>$@{LockedLookupTable$<$ Key, Value, Hash $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Key , typename Value , typename Hash  = std\+::hash$<$\+Key$>$$>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{class_locked_lookup_table}{Locked\+Lookup\+Table}}$<$ Key, Value, Hash $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_locked_lookup_table_ab063bb25057015d7d1cfb897ab6a2227_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Core/\+Multithreading/\mbox{\hyperlink{_locked_lookup_table_8hpp}{Locked\+Lookup\+Table.\+hpp}}\end{DoxyCompactItemize}

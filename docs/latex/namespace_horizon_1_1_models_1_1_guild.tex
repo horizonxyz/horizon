@@ -1,0 +1,68 @@
+\doxysection{Horizon\+::Models\+::Guild Namespace Reference}
+\hypertarget{namespace_horizon_1_1_models_1_1_guild}{}\label{namespace_horizon_1_1_models_1_1_guild}\index{Horizon::Models::Guild@{Horizon::Models::Guild}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_affiliation}{Affiliation}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_guild}{Guild}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_h_log}{HLog}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_member}{Member}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_position}{Position}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_models_1_1_guild_1_1_skill}{Skill}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12}{affiliation\+\_\+type}} \{ \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12aa782da6026909480866b127349382dc8}{AFFTYPE\+\_\+\+ANTAGONIST}}
+, \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12a5592557e2992b3133f5d185267b3c559}{AFFTYPE\+\_\+\+ALLIANCE}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7c}{permission\+\_\+mask\+\_\+type}} \{ \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca2cc29ad23bd2943afd8a2378cb864604}{GPERM\+\_\+\+INVITE}} = 0x01
+, \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca7389b5504e1288d0b2441e56c3d20946}{GPERM\+\_\+\+EXPEL}} = 0x10
+, \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca04d0ad7d7005fb161951eb34035427aa}{GPERM\+\_\+\+ALL}} = GPERM\+\_\+\+INVITE \texorpdfstring{$\vert$}{|} GPERM\+\_\+\+EXPEL
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12}\label{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12} 
+\index{Horizon::Models::Guild@{Horizon::Models::Guild}!affiliation\_type@{affiliation\_type}}
+\index{affiliation\_type@{affiliation\_type}!Horizon::Models::Guild@{Horizon::Models::Guild}}
+\doxysubsubsection{\texorpdfstring{affiliation\_type}{affiliation\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12}{Horizon\+::\+Models\+::\+Guild\+::affiliation\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AFFTYPE\_ANTAGONIST@{AFFTYPE\_ANTAGONIST}!Horizon::Models::Guild@{Horizon::Models::Guild}}\index{Horizon::Models::Guild@{Horizon::Models::Guild}!AFFTYPE\_ANTAGONIST@{AFFTYPE\_ANTAGONIST}}}\Hypertarget{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12aa782da6026909480866b127349382dc8}\label{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12aa782da6026909480866b127349382dc8} 
+AFFTYPE\+\_\+\+ANTAGONIST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AFFTYPE\_ALLIANCE@{AFFTYPE\_ALLIANCE}!Horizon::Models::Guild@{Horizon::Models::Guild}}\index{Horizon::Models::Guild@{Horizon::Models::Guild}!AFFTYPE\_ALLIANCE@{AFFTYPE\_ALLIANCE}}}\Hypertarget{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12a5592557e2992b3133f5d185267b3c559}\label{namespace_horizon_1_1_models_1_1_guild_ac122b2b3b894d38c6712938140590d12a5592557e2992b3133f5d185267b3c559} 
+AFFTYPE\+\_\+\+ALLIANCE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7c}\label{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7c} 
+\index{Horizon::Models::Guild@{Horizon::Models::Guild}!permission\_mask\_type@{permission\_mask\_type}}
+\index{permission\_mask\_type@{permission\_mask\_type}!Horizon::Models::Guild@{Horizon::Models::Guild}}
+\doxysubsubsection{\texorpdfstring{permission\_mask\_type}{permission\_mask\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7c}{Horizon\+::\+Models\+::\+Guild\+::permission\+\_\+mask\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPERM\_INVITE@{GPERM\_INVITE}!Horizon::Models::Guild@{Horizon::Models::Guild}}\index{Horizon::Models::Guild@{Horizon::Models::Guild}!GPERM\_INVITE@{GPERM\_INVITE}}}\Hypertarget{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca2cc29ad23bd2943afd8a2378cb864604}\label{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca2cc29ad23bd2943afd8a2378cb864604} 
+GPERM\+\_\+\+INVITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPERM\_EXPEL@{GPERM\_EXPEL}!Horizon::Models::Guild@{Horizon::Models::Guild}}\index{Horizon::Models::Guild@{Horizon::Models::Guild}!GPERM\_EXPEL@{GPERM\_EXPEL}}}\Hypertarget{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca7389b5504e1288d0b2441e56c3d20946}\label{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca7389b5504e1288d0b2441e56c3d20946} 
+GPERM\+\_\+\+EXPEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GPERM\_ALL@{GPERM\_ALL}!Horizon::Models::Guild@{Horizon::Models::Guild}}\index{Horizon::Models::Guild@{Horizon::Models::Guild}!GPERM\_ALL@{GPERM\_ALL}}}\Hypertarget{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca04d0ad7d7005fb161951eb34035427aa}\label{namespace_horizon_1_1_models_1_1_guild_a8bf925d969878d002f87a769f3c71a7ca04d0ad7d7005fb161951eb34035427aa} 
+GPERM\+\_\+\+ALL&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,26 @@
+var class_message_buffer =
+[
+    [ "MessageBuffer", "class_message_buffer.html#a92586fdeffb14738acbf8979b5974e6f", null ],
+    [ "MessageBuffer", "class_message_buffer.html#aa0e38177ed8e5a615e3d8939697c25fe", null ],
+    [ "MessageBuffer", "class_message_buffer.html#a9a9bf51f87346e42a4765b72d78dc7f6", null ],
+    [ "MessageBuffer", "class_message_buffer.html#ac6cf666fa2991a6a0f7d42efb0f226d7", null ],
+    [ "copy", "class_message_buffer.html#a75ef1056ea114b617a74bbf26040d120", null ],
+    [ "ensure_free_space", "class_message_buffer.html#aebf95224cb64d27c2cd50786075e5471", null ],
+    [ "get_active_size", "class_message_buffer.html#a20619173b4689b427586c22bdb1d9b68", null ],
+    [ "get_base_pointer", "class_message_buffer.html#aa592c2bd8ec99c8a960ad1c39e77f7cd", null ],
+    [ "get_buffer_size", "class_message_buffer.html#af150941d9da1befe786271ed3ead5c0a", null ],
+    [ "get_read_pointer", "class_message_buffer.html#aa0553408819420e137d3defc45712185", null ],
+    [ "get_remaining_space", "class_message_buffer.html#a06d61bcb9d89a8bd2035dc0574c5d089", null ],
+    [ "get_write_pointer", "class_message_buffer.html#ab8e954be5d34f3537f41b6d668b81762", null ],
+    [ "move", "class_message_buffer.html#aa4fb058134f38f7f54a3e94d21e93506", null ],
+    [ "normalize", "class_message_buffer.html#ac80c97eed418c32cb8521704c938a143", null ],
+    [ "operator=", "class_message_buffer.html#a10ccd8942c530c192e80635d0237f020", null ],
+    [ "operator=", "class_message_buffer.html#a1b6f18821fdf7688de020adfef80760b", null ],
+    [ "read_completed", "class_message_buffer.html#a1b566ec289d6faf0eef765fa39241c6b", null ],
+    [ "reset", "class_message_buffer.html#a1b41691b33a790ba8aff740ef0549479", null ],
+    [ "resize", "class_message_buffer.html#aee3c603813b0323d899fd4d5f3d35f62", null ],
+    [ "to_string", "class_message_buffer.html#afb1e92ceb47fe4a8f3b6a26e082d6f67", null ],
+    [ "write", "class_message_buffer.html#aee46cc4d110d5f6b01d40dc4cde8797b", null ],
+    [ "write_completed", "class_message_buffer.html#a91bad26e471a625995f1726c9a226323", null ],
+    [ "MAX_BUFFER_LENGTH", "class_message_buffer.html#aa0703ae5152d138f6fada92d9ab00fc7", null ]
+];

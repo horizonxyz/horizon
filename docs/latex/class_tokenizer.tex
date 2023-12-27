@@ -1,0 +1,123 @@
+\doxysection{Tokenizer Class Reference}
+\hypertarget{class_tokenizer}{}\label{class_tokenizer}\index{Tokenizer@{Tokenizer}}
+
+
+{\ttfamily \#include $<$Tokenizer.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ char const \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_tokenizer_aeddb5963d2b8948c59b141591f1646c6}{Storage\+Type}}
+\item 
+typedef Storage\+Type\+::size\+\_\+type \mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}}
+\item 
+typedef Storage\+Type\+::const\+\_\+iterator \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\+\_\+iterator}}
+\item 
+typedef Storage\+Type\+::reference \mbox{\hyperlink{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}{reference}}
+\item 
+typedef Storage\+Type\+::const\+\_\+reference \mbox{\hyperlink{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}{const\+\_\+reference}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tokenizer_a4d75bd9a827d845dad15ba771b8176f7}{Tokenizer}} (const std\+::string \&src, char const sep, uint32\+\_\+t vector\+Reserve=0, bool keep\+Empty\+Strings=true)
+\item 
+\mbox{\hyperlink{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017}{\texorpdfstring{$\sim$}{\string~}\+Tokenizer}} ()
+\item 
+\mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\+\_\+iterator}} \mbox{\hyperlink{class_tokenizer_ae4e615a375607c4742e9ccf771e4d0d2}{begin}} () const
+\item 
+\mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\+\_\+iterator}} \mbox{\hyperlink{class_tokenizer_adc4a84fd03558063e3b84e04894bb6de}{end}} () const
+\item 
+\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}} \mbox{\hyperlink{class_tokenizer_a84fec1cbb0c61932c2121b60947fbbe9}{size}} () const
+\item 
+\mbox{\hyperlink{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}{reference}} \mbox{\hyperlink{class_tokenizer_ab53ae97539431235d979efd76ba9644b}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}} i)
+\item 
+\mbox{\hyperlink{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}{const\+\_\+reference}} \mbox{\hyperlink{class_tokenizer_a7997044b4f3c62a10616f19a609fb7e9}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}} i) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}\label{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0} 
+\index{Tokenizer@{Tokenizer}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef Storage\+Type\+::const\+\_\+iterator \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{Tokenizer\+::const\+\_\+iterator}}}
+
+\Hypertarget{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}\label{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b} 
+\index{Tokenizer@{Tokenizer}!const\_reference@{const\_reference}}
+\index{const\_reference@{const\_reference}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{const\_reference}{const\_reference}}
+{\footnotesize\ttfamily typedef Storage\+Type\+::const\+\_\+reference \mbox{\hyperlink{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}{Tokenizer\+::const\+\_\+reference}}}
+
+\Hypertarget{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}\label{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611} 
+\index{Tokenizer@{Tokenizer}!reference@{reference}}
+\index{reference@{reference}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily typedef Storage\+Type\+::reference \mbox{\hyperlink{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}{Tokenizer\+::reference}}}
+
+\Hypertarget{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}\label{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a} 
+\index{Tokenizer@{Tokenizer}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily typedef Storage\+Type\+::size\+\_\+type \mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{Tokenizer\+::size\+\_\+type}}}
+
+\Hypertarget{class_tokenizer_aeddb5963d2b8948c59b141591f1646c6}\label{class_tokenizer_aeddb5963d2b8948c59b141591f1646c6} 
+\index{Tokenizer@{Tokenizer}!StorageType@{StorageType}}
+\index{StorageType@{StorageType}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{StorageType}{StorageType}}
+{\footnotesize\ttfamily typedef std\+::vector$<$char const \texorpdfstring{$\ast$}{*}$>$ \mbox{\hyperlink{class_tokenizer_aeddb5963d2b8948c59b141591f1646c6}{Tokenizer\+::\+Storage\+Type}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tokenizer_a4d75bd9a827d845dad15ba771b8176f7}\label{class_tokenizer_a4d75bd9a827d845dad15ba771b8176f7} 
+\index{Tokenizer@{Tokenizer}!Tokenizer@{Tokenizer}}
+\index{Tokenizer@{Tokenizer}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{Tokenizer()}{Tokenizer()}}
+{\footnotesize\ttfamily Tokenizer\+::\+Tokenizer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{src,  }\item[{char const}]{sep,  }\item[{uint32\+\_\+t}]{vector\+Reserve = {\ttfamily 0},  }\item[{bool}]{keep\+Empty\+Strings = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017}\label{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017} 
+\index{Tokenizer@{Tokenizer}!````~Tokenizer@{\texorpdfstring{$\sim$}{\string~}Tokenizer}}
+\index{````~Tokenizer@{\texorpdfstring{$\sim$}{\string~}Tokenizer}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Tokenizer()}{\string~Tokenizer()}}
+{\footnotesize\ttfamily Tokenizer\+::\texorpdfstring{$\sim$}{\string~}\+Tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tokenizer_ae4e615a375607c4742e9ccf771e4d0d2}\label{class_tokenizer_ae4e615a375607c4742e9ccf771e4d0d2} 
+\index{Tokenizer@{Tokenizer}!begin@{begin}}
+\index{begin@{begin}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\+\_\+iterator}} Tokenizer\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_tokenizer_adc4a84fd03558063e3b84e04894bb6de}\label{class_tokenizer_adc4a84fd03558063e3b84e04894bb6de} 
+\index{Tokenizer@{Tokenizer}!end@{end}}
+\index{end@{end}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tokenizer_a974b8d27958dd98b9cdb7e5de466a0e0}{const\+\_\+iterator}} Tokenizer\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_tokenizer_ab53ae97539431235d979efd76ba9644b}\label{class_tokenizer_ab53ae97539431235d979efd76ba9644b} 
+\index{Tokenizer@{Tokenizer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tokenizer_a68f551aa5166b95b4f9739b9a8ed2611}{reference}} Tokenizer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_tokenizer_a7997044b4f3c62a10616f19a609fb7e9}\label{class_tokenizer_a7997044b4f3c62a10616f19a609fb7e9} 
+\index{Tokenizer@{Tokenizer}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tokenizer_ab23b8d31e1405ad6f5ac76f1462f6f9b}{const\+\_\+reference}} Tokenizer\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_tokenizer_a84fec1cbb0c61932c2121b60947fbbe9}\label{class_tokenizer_a84fec1cbb0c61932c2121b60947fbbe9} 
+\index{Tokenizer@{Tokenizer}!size@{size}}
+\index{size@{size}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tokenizer_a8f47819dad8157495877a9a3e9702a6a}{size\+\_\+type}} Tokenizer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Utility/\mbox{\hyperlink{_tokenizer_8hpp}{Tokenizer.\+hpp}}\item 
+src/\+Utility/\mbox{\hyperlink{_tokenizer_8cpp}{Tokenizer.\+cpp}}\end{DoxyCompactItemize}

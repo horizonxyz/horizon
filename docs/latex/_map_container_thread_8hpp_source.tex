@@ -1,0 +1,115 @@
+\doxysection{Map\+Container\+Thread.\+hpp}
+\hypertarget{_map_container_thread_8hpp_source}{}\label{_map_container_thread_8hpp_source}\index{src/Server/Zone/Game/Map/MapContainerThread.hpp@{src/Server/Zone/Game/Map/MapContainerThread.hpp}}
+\mbox{\hyperlink{_map_container_thread_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_GAME\_MAPCONTAINERTHREAD\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_GAME\_MAPCONTAINERTHREAD\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_thread_safe_queue_8hpp}{Core/Multithreading/ThreadSafeQueue.hpp}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_l_u_a_manager_8hpp}{Server/Zone/LUA/LUAManager.hpp}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_task_scheduler_8hpp}{Utility/TaskScheduler.hpp}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }Map;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }Entity;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }ZoneSession;}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ Important\ step\ as\ when\ the\ map\ is\ not\ available\ in\ a\ given\ MapContainerThread,\ the\ function\ invoked\ from\ lua\ will\ just\ exit.\ }}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ Functions\ are\ run\ on\ all\ containers\ and\ not\ just\ one.}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ MAP\_CONTAINER\_THREAD\_ASSERT\_MAP(map,\ container,\ map\_name)\ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ if\ ((map\ =\ container-\/>get\_map(map\_name))\ ==\ nullptr)\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return;}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Session\ action\ enum\ for\ the\ session\ buffer.}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ This\ enum\ is\ used\ to\ determine\ what\ action\ should\ be\ taken\ on\ a\ session}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ when\ the\ session\ buffer\ is\ processed.}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{map\_container\_session\_action}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2a9e894a49f374a6141bcf5b569dedf576}{SESSION\_ACTION\_ADD}},}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2a53527c182d2ee8283f1a74026e2c123a}{SESSION\_ACTION\_REMOVE}},}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2a311c2ab3e23923292fbe3f85100e421c}{SESSION\_ACTION\_LOGOUT\_AND\_REMOVE}},}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread}{MapContainerThread}}\ :\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<MapContainerThread>}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a34d173a7ca848c790bd35ed33e903584}{MapContainerThread}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_ad16d8e0723bec6dbd741d7d9a24d94d6}{\string~MapContainerThread}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ std::shared\_ptr<Map>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a5e10582cbbb44b7479501b8b07a2b1bc}{get\_map}}(std::string\ \textcolor{keyword}{const}\ \&name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a6ece9593dadcd1c7e8321dee99e2c60f}{add\_map}}(std::shared\_ptr<Map>\ \&\&map);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a8e0b6d6cefb063aba591ce86253ebf28}{remove\_map}}(std::string\ \textcolor{keyword}{const}\ \&name);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_aa69dbb479da79c695697aa7f3de3287d}{manage\_session}}(\mbox{\hyperlink{namespace_horizon_1_1_zone_a1b0bc871ddfe5f6a47b6661b391dfbd2}{map\_container\_session\_action}},\ std::shared\_ptr<ZoneSession>\ s);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ std::shared\_ptr<Entities::Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_aa6c0d1fde6a8c802100cf778616ac44e}{get\_player}}(std::string\ \textcolor{keyword}{const}\ \&name);}
+\DoxyCodeLine{00090\ \ \ \ \ std::shared\_ptr<Entities::Player>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a3486272ae849d6027cd18183e8b0f36f}{get\_player}}(int32\_t\ guid);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::shared\_ptr<ZoneSession>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_ab3e97e848804190332bcd7371d912854}{get\_session}}(int64\_t\ session\_id);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_af522c5bd8fd3e9449020e3ecb86e9a33}{initialize}}();}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a7e3b7d44aafb870f7109cc06b62c8f7d}{finalize}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a44d91f7f9115c6e15af1bbfd64e05fd7}{start}}();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ std::shared\_ptr<LUAManager>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a87031c7590f9e871b7b1babf1dabedc4}{get\_lua\_manager}}()\ \{\ \textcolor{keywordflow}{return}\ \_lua\_mgr;\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \&\mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a3ffad592477b95e3014d63f5853aefdf}{getScheduler}}()\ \{\ \textcolor{keywordflow}{return}\ \_task\_scheduler;\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a7d88bc01ebd7f9ad4fb571a341188852}{add\_entity}}(std::shared\_ptr<Entity>\ entity);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_map_container_thread_a6c81e622c6cfab951192a4028a8b2311}{remove\_entity}}(std::shared\_ptr<Entity>\ entity);}
+\DoxyCodeLine{00117\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ start\_internal();}
+\DoxyCodeLine{00122\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ update(uint64\_t\ tick);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ std::thread\ \_thread;}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<std::string,\ std::shared\_ptr<Map>}}>\ \_managed\_maps;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_thread_safe_queue}{ThreadSafeQueue<std::pair<map\_container\_session\_action,\ std::shared\_ptr<ZoneSession>}}>>\ \_session\_buffer;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<int64\_t,\ std::shared\_ptr<ZoneSession>}}>\ \_managed\_sessions;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ std::shared\_ptr<LUAManager>\ \_lua\_mgr;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_task_scheduler}{TaskScheduler}}\ \_task\_scheduler;}
+\DoxyCodeLine{00134\ \ \ \ \ std::vector<std::shared\_ptr<Entity>>\ \_entities;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_GAME\_MAPCONTAINERTHREAD\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

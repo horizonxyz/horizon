@@ -1,0 +1,107 @@
+\doxysection{Exp\+DB.\+hpp}
+\hypertarget{_exp_d_b_8hpp_source}{}\label{_exp_d_b_8hpp_source}\index{src/Server/Zone/Game/StaticDB/ExpDB.hpp@{src/Server/Zone/Game/StaticDB/ExpDB.hpp}}
+\mbox{\hyperlink{_exp_d_b_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_\ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ (\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\_|\ |\ \_\_\_\ \ \_\ \_\_\ \_\ \_\_\_\_\_\_\_\ \ \_\ \_\_\ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ \ \_\ \ |/\ \_\ \(\backslash\)|\ '\_\_|\ |\_\ \ /\ \_\ \(\backslash\)|\ '\_\ \ \(\backslash\)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ |\ |\ |\ |\ (\_)\ |\ |\ \ |\ |/\ /\ (\_)\ |\ |\ |\ |\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \(\backslash\)\_|\ |\_/\(\backslash\)\_\_\_/|\_|\ \ |\_/\_\_\_\(\backslash\)\_\_\_/|\_|\ |\_|\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ Horizon\ (c).}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Sagun\ K.\ (sagunxp@gmail.com).}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2019\ Horizon\ Dev\ Team.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Base\ Author\ -\/\ Sagun\ K.\ (sagunxp@gmail.com)}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ along\ with\ this\ library.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **************************************************/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ HORIZON\_ZONE\_STATICDB\_EXPDB\_HPP}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HORIZON\_ZONE\_STATICDB\_EXPDB\_HPP}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_horizon_8hpp}{Server/Common/Configuration/Horizon.hpp}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ SOL\_ALL\_SAFETIES\_ON}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SOL\_ALL\_SAFETIES\_ON\ 1}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ SOL\_STD\_VARIANT}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SOL\_STD\_VARIANT\ 0}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_horizon}{Horizon}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{namespace\ }Zone}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_horizon_1_1_zone_1_1exp__group__data}{exp\_group\_data}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1exp__group__data_acd20e4ca3ea005c160e953ab1c628c22}{max\_level}};}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<uint64\_t>\ \mbox{\hyperlink{struct_horizon_1_1_zone_1_1exp__group__data_a094c43f0ae7e8668fd2dfd04ac4a39da}{exp}};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_horizon_1_1_zone_a7f5b5f25dcf7f0132710aeaa534ab2fa}{exp\_group\_type}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_a7f5b5f25dcf7f0132710aeaa534ab2faa5964d852d45d9296387f8132e6e56ab8}{EXP\_GROUP\_TYPE\_BASE}},}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespace_horizon_1_1_zone_a7f5b5f25dcf7f0132710aeaa534ab2faa249aee1e4f87dafdfc69b28b3bbb7ded}{EXP\_GROUP\_TYPE\_JOB}}}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database}{ExpDatabase}}}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_a9fb08cf6057137098b5489abdb76b62e}{ExpDatabase}}()\ \{\ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_a89e99981e91c8b68a78d22a21d2ee6f4}{\string~ExpDatabase}}()\ \{\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database}{ExpDatabase}}\ *\mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_ae60f3a0cdd9307d5d438befe60426c22}{get\_instance}}()}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database}{ExpDatabase}}\ instance;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&instance;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_abbeedc47694f8cb8d87722c93f7b967b}{load}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::shared\_ptr<const\ exp\_group\_data>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_afece13efd095ae7fe0d6795fc7235ad4}{get\_exp\_group}}(std::string\ \textcolor{keyword}{const}\ \&name,\ \mbox{\hyperlink{namespace_horizon_1_1_zone_a7f5b5f25dcf7f0132710aeaa534ab2fa}{exp\_group\_type}}\ type)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\ ==\ \mbox{\hyperlink{namespace_horizon_1_1_zone_a7f5b5f25dcf7f0132710aeaa534ab2faa5964d852d45d9296387f8132e6e56ab8}{EXP\_GROUP\_TYPE\_BASE}}\ ?\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_a44bff7c2d15506910f3ac6dd08d06105}{\_base\_exp\_group\_db}}.at(name)\ :\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_acb5ddc0c2e7c86614a799128c42c5893}{\_job\_exp\_group\_db}}.at(name);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_ab6a72bafbf925ce16cfeb90bed52d0c9}{get\_status\_point}}(uint32\_t\ level)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ <=\ 0\ ||\ level\ >\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_accc8eace5a45535aba2fb39b1ffe63e3}{\_stat\_point\_db}}.\mbox{\hyperlink{class_locked_lookup_table_ab063bb25057015d7d1cfb897ab6a2227}{size}}()\ ||\ level\ >\ \mbox{\hyperlink{_horizon_8hpp_a5bb4257ca9fa4bfcf9391b7895b97761}{MAX\_LEVEL}})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_accc8eace5a45535aba2fb39b1ffe63e3}{\_stat\_point\_db}}.\mbox{\hyperlink{class_locked_lookup_table_a93c5b193fda96adf8128767d06980a20}{at}}(level);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_a11149652f72ec8f936177f894c3f37f8}{load\_status\_point\_table}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_a592c56a4212a191638916f6b814eadb6}{load\_group}}(sol::table\ \&tbl,\ \mbox{\hyperlink{namespace_horizon_1_1_zone_a7f5b5f25dcf7f0132710aeaa534ab2fa}{exp\_group\_type}}\ type);}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<std::string,\ std::shared\_ptr<const\ exp\_group\_data>}}>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_a44bff7c2d15506910f3ac6dd08d06105}{\_base\_exp\_group\_db}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<std::string,\ std::shared\_ptr<const\ exp\_group\_data>}}>\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_acb5ddc0c2e7c86614a799128c42c5893}{\_job\_exp\_group\_db}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_locked_lookup_table}{LockedLookupTable<uint32\_t,\ uint32\_t>}}\ \mbox{\hyperlink{class_horizon_1_1_zone_1_1_exp_database_accc8eace5a45535aba2fb39b1ffe63e3}{\_stat\_point\_db}};}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ ExpDB\ Horizon::Zone::ExpDatabase::get\_instance()}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HORIZON\_ZONE\_STATICDB\_EXPDB\_HPP\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

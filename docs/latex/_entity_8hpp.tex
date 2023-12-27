@@ -1,0 +1,176 @@
+\doxysection{src/\+Server/\+Zone/\+Game/\+Entities/\+Entity.hpp File Reference}
+\hypertarget{_entity_8hpp}{}\label{_entity_8hpp}\index{src/Server/Zone/Game/Entities/Entity.hpp@{src/Server/Zone/Game/Entities/Entity.hpp}}
+{\ttfamily \#include "{}Server/\+Common/\+Configuration/\+Horizon.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Entity\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Client\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Skill\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Definitions/\+Status\+Effect\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Grid/\+Grid\+Definitions.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Coordinates.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Map/\+Map.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+Game/\+Skill\+System/\+Skill\+Execution.\+hpp"{}}\newline
+{\ttfamily \#include "{}Server/\+Zone/\+LUA/\+LUAManager.\+hpp"{}}\newline
+{\ttfamily \#include "{}Utility/\+Task\+Scheduler.\+hpp"{}}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+Include dependency graph for Entity.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_entity_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_entity_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structentity__uuid}{entity\+\_\+uuid}}
+\item 
+class \mbox{\hyperlink{class_horizon_1_1_zone_1_1_entity}{Horizon\+::\+Zone\+::\+Entity}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon}{Horizon}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone}{Horizon\+::\+Zone}}
+\item 
+namespace \mbox{\hyperlink{namespace_horizon_1_1_zone_1_1_traits}{Horizon\+::\+Zone\+::\+Traits}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_entity_8hpp_a1bb255d7368273266871725b31d26cd1}{MIN\+\_\+\+RANDOM\+\_\+\+TRAVEL\+\_\+\+TIME}}~4000
+\item 
+\#define \mbox{\hyperlink{_entity_8hpp_a501aa5555e9f13b1b7e84f69c0a96612}{MOB\+\_\+\+LAZY\+\_\+\+MOVE\+\_\+\+RATE}}~1000
+\item 
+\#define \mbox{\hyperlink{_entity_8hpp_afd4def13108f8cb4a138aa11382b6cbf}{MOB\+\_\+\+MIN\+\_\+\+THINK\+\_\+\+TIME}}~100
+\item 
+\#define \mbox{\hyperlink{_entity_8hpp_a9a0dba13d7ebfc05e7514ca9021ba70a}{MOB\+\_\+\+MIN\+\_\+\+THINK\+\_\+\+TIME\+\_\+\+LAZY}}~(\mbox{\hyperlink{_entity_8hpp_afd4def13108f8cb4a138aa11382b6cbf}{MOB\+\_\+\+MIN\+\_\+\+THINK\+\_\+\+TIME}} \texorpdfstring{$\ast$}{*} 10)
+\item 
+\#define \mbox{\hyperlink{_entity_8hpp_a85553dbc6539895842f09fcb50663b5e}{ENTITY\+\_\+\+STATUS\+\_\+\+EFFECT\+\_\+\+CHECK\+\_\+\+TIME}}~1000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953}{entity\+\_\+task\+\_\+schedule\+\_\+group}} \{ \newline
+\mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a5e1d72d986aeb9e9c7ca20993960a3f4}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+WALK}} = 1
+, \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a838fe3a54e5acad84120aa372c2a0f3f}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+SAVE}} = 2
+, \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953afd0c23cb1b01e52f4faadbf5af223f79}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+AI\+\_\+\+THINK}} = 3
+, \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a6b21aecc204df03d0e00223a79dbff4e}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+AI\+\_\+\+WALK}} = 4
+, \newline
+\mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953ad0a6ed29cdc1caa634515660beb36d86}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+STATUS\+\_\+\+EFFECT\+\_\+\+CLEAR}} = 5
+, \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a084c879dafc850b117ce1e20933a9647}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+AI\+\_\+\+ACTIVE}} = 6
+, \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a1997f87be6dfaa4fc6d292d7d12187a5}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+ATTACK}} = 7
+, \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953ab283525d78ce687bbaeb7242881b8d0b}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+SKILL\+\_\+\+CAST}} = 8
+, \newline
+\mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a637f147e83e4c2a0ca3ecb1abc8ff882}{ENTITY\+\_\+\+SCHEDULE\+\_\+\+MONSTER\+\_\+\+RESPAWN}} = 9
+ \}
+\item 
+enum \mbox{\hyperlink{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bd}{entity\+\_\+walk\+\_\+state}} \{ \mbox{\hyperlink{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bda91e0c3edfc312c551e45f78c9e7f0299}{ENTITY\+\_\+\+WALK\+\_\+\+STOPPED}} = 0
+, \mbox{\hyperlink{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bdac7e3e5d75c8e60a3c1454eb43e9ebc79}{ENTITY\+\_\+\+WALK\+\_\+\+MOVING}} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_entity_8hpp_a85553dbc6539895842f09fcb50663b5e}\label{_entity_8hpp_a85553dbc6539895842f09fcb50663b5e} 
+\index{Entity.hpp@{Entity.hpp}!ENTITY\_STATUS\_EFFECT\_CHECK\_TIME@{ENTITY\_STATUS\_EFFECT\_CHECK\_TIME}}
+\index{ENTITY\_STATUS\_EFFECT\_CHECK\_TIME@{ENTITY\_STATUS\_EFFECT\_CHECK\_TIME}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{ENTITY\_STATUS\_EFFECT\_CHECK\_TIME}{ENTITY\_STATUS\_EFFECT\_CHECK\_TIME}}
+{\footnotesize\ttfamily \#define ENTITY\+\_\+\+STATUS\+\_\+\+EFFECT\+\_\+\+CHECK\+\_\+\+TIME~1000}
+
+\Hypertarget{_entity_8hpp_a1bb255d7368273266871725b31d26cd1}\label{_entity_8hpp_a1bb255d7368273266871725b31d26cd1} 
+\index{Entity.hpp@{Entity.hpp}!MIN\_RANDOM\_TRAVEL\_TIME@{MIN\_RANDOM\_TRAVEL\_TIME}}
+\index{MIN\_RANDOM\_TRAVEL\_TIME@{MIN\_RANDOM\_TRAVEL\_TIME}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_RANDOM\_TRAVEL\_TIME}{MIN\_RANDOM\_TRAVEL\_TIME}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+RANDOM\+\_\+\+TRAVEL\+\_\+\+TIME~4000}
+
+\Hypertarget{_entity_8hpp_a501aa5555e9f13b1b7e84f69c0a96612}\label{_entity_8hpp_a501aa5555e9f13b1b7e84f69c0a96612} 
+\index{Entity.hpp@{Entity.hpp}!MOB\_LAZY\_MOVE\_RATE@{MOB\_LAZY\_MOVE\_RATE}}
+\index{MOB\_LAZY\_MOVE\_RATE@{MOB\_LAZY\_MOVE\_RATE}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{MOB\_LAZY\_MOVE\_RATE}{MOB\_LAZY\_MOVE\_RATE}}
+{\footnotesize\ttfamily \#define MOB\+\_\+\+LAZY\+\_\+\+MOVE\+\_\+\+RATE~1000}
+
+\Hypertarget{_entity_8hpp_afd4def13108f8cb4a138aa11382b6cbf}\label{_entity_8hpp_afd4def13108f8cb4a138aa11382b6cbf} 
+\index{Entity.hpp@{Entity.hpp}!MOB\_MIN\_THINK\_TIME@{MOB\_MIN\_THINK\_TIME}}
+\index{MOB\_MIN\_THINK\_TIME@{MOB\_MIN\_THINK\_TIME}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{MOB\_MIN\_THINK\_TIME}{MOB\_MIN\_THINK\_TIME}}
+{\footnotesize\ttfamily \#define MOB\+\_\+\+MIN\+\_\+\+THINK\+\_\+\+TIME~100}
+
+\Hypertarget{_entity_8hpp_a9a0dba13d7ebfc05e7514ca9021ba70a}\label{_entity_8hpp_a9a0dba13d7ebfc05e7514ca9021ba70a} 
+\index{Entity.hpp@{Entity.hpp}!MOB\_MIN\_THINK\_TIME\_LAZY@{MOB\_MIN\_THINK\_TIME\_LAZY}}
+\index{MOB\_MIN\_THINK\_TIME\_LAZY@{MOB\_MIN\_THINK\_TIME\_LAZY}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{MOB\_MIN\_THINK\_TIME\_LAZY}{MOB\_MIN\_THINK\_TIME\_LAZY}}
+{\footnotesize\ttfamily \#define MOB\+\_\+\+MIN\+\_\+\+THINK\+\_\+\+TIME\+\_\+\+LAZY~(\mbox{\hyperlink{_entity_8hpp_afd4def13108f8cb4a138aa11382b6cbf}{MOB\+\_\+\+MIN\+\_\+\+THINK\+\_\+\+TIME}} \texorpdfstring{$\ast$}{*} 10)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953} 
+\index{Entity.hpp@{Entity.hpp}!entity\_task\_schedule\_group@{entity\_task\_schedule\_group}}
+\index{entity\_task\_schedule\_group@{entity\_task\_schedule\_group}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{entity\_task\_schedule\_group}{entity\_task\_schedule\_group}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953}{entity\+\_\+task\+\_\+schedule\+\_\+group}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_WALK@{ENTITY\_SCHEDULE\_WALK}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_WALK@{ENTITY\_SCHEDULE\_WALK}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a5e1d72d986aeb9e9c7ca20993960a3f4}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a5e1d72d986aeb9e9c7ca20993960a3f4} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+WALK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_SAVE@{ENTITY\_SCHEDULE\_SAVE}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_SAVE@{ENTITY\_SCHEDULE\_SAVE}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a838fe3a54e5acad84120aa372c2a0f3f}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a838fe3a54e5acad84120aa372c2a0f3f} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_AI\_THINK@{ENTITY\_SCHEDULE\_AI\_THINK}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_AI\_THINK@{ENTITY\_SCHEDULE\_AI\_THINK}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953afd0c23cb1b01e52f4faadbf5af223f79}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953afd0c23cb1b01e52f4faadbf5af223f79} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+AI\+\_\+\+THINK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_AI\_WALK@{ENTITY\_SCHEDULE\_AI\_WALK}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_AI\_WALK@{ENTITY\_SCHEDULE\_AI\_WALK}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a6b21aecc204df03d0e00223a79dbff4e}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a6b21aecc204df03d0e00223a79dbff4e} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+AI\+\_\+\+WALK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_STATUS\_EFFECT\_CLEAR@{ENTITY\_SCHEDULE\_STATUS\_EFFECT\_CLEAR}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_STATUS\_EFFECT\_CLEAR@{ENTITY\_SCHEDULE\_STATUS\_EFFECT\_CLEAR}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953ad0a6ed29cdc1caa634515660beb36d86}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953ad0a6ed29cdc1caa634515660beb36d86} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+STATUS\+\_\+\+EFFECT\+\_\+\+CLEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_AI\_ACTIVE@{ENTITY\_SCHEDULE\_AI\_ACTIVE}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_AI\_ACTIVE@{ENTITY\_SCHEDULE\_AI\_ACTIVE}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a084c879dafc850b117ce1e20933a9647}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a084c879dafc850b117ce1e20933a9647} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+AI\+\_\+\+ACTIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_ATTACK@{ENTITY\_SCHEDULE\_ATTACK}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_ATTACK@{ENTITY\_SCHEDULE\_ATTACK}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a1997f87be6dfaa4fc6d292d7d12187a5}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a1997f87be6dfaa4fc6d292d7d12187a5} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_SKILL\_CAST@{ENTITY\_SCHEDULE\_SKILL\_CAST}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_SKILL\_CAST@{ENTITY\_SCHEDULE\_SKILL\_CAST}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953ab283525d78ce687bbaeb7242881b8d0b}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953ab283525d78ce687bbaeb7242881b8d0b} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+SKILL\+\_\+\+CAST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_SCHEDULE\_MONSTER\_RESPAWN@{ENTITY\_SCHEDULE\_MONSTER\_RESPAWN}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_SCHEDULE\_MONSTER\_RESPAWN@{ENTITY\_SCHEDULE\_MONSTER\_RESPAWN}}}\Hypertarget{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a637f147e83e4c2a0ca3ecb1abc8ff882}\label{_entity_8hpp_a20696ac003438689a3adb9d1b11ae953a637f147e83e4c2a0ca3ecb1abc8ff882} 
+ENTITY\+\_\+\+SCHEDULE\+\_\+\+MONSTER\+\_\+\+RESPAWN&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bd}\label{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bd} 
+\index{Entity.hpp@{Entity.hpp}!entity\_walk\_state@{entity\_walk\_state}}
+\index{entity\_walk\_state@{entity\_walk\_state}!Entity.hpp@{Entity.hpp}}
+\doxysubsubsection{\texorpdfstring{entity\_walk\_state}{entity\_walk\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bd}{entity\+\_\+walk\+\_\+state}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_WALK\_STOPPED@{ENTITY\_WALK\_STOPPED}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_WALK\_STOPPED@{ENTITY\_WALK\_STOPPED}}}\Hypertarget{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bda91e0c3edfc312c551e45f78c9e7f0299}\label{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bda91e0c3edfc312c551e45f78c9e7f0299} 
+ENTITY\+\_\+\+WALK\+\_\+\+STOPPED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENTITY\_WALK\_MOVING@{ENTITY\_WALK\_MOVING}!Entity.hpp@{Entity.hpp}}\index{Entity.hpp@{Entity.hpp}!ENTITY\_WALK\_MOVING@{ENTITY\_WALK\_MOVING}}}\Hypertarget{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bdac7e3e5d75c8e60a3c1454eb43e9ebc79}\label{_entity_8hpp_a78edd5016f239b06f8a2d31fa05857bdac7e3e5d75c8e60a3c1454eb43e9ebc79} 
+ENTITY\+\_\+\+WALK\+\_\+\+MOVING&\\
+\hline
+
+\end{DoxyEnumFields}

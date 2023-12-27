@@ -1,0 +1,116 @@
+\doxysection{Horizon\+::Networking\+::Connector Class Reference}
+\hypertarget{class_horizon_1_1_networking_1_1_connector}{}\label{class_horizon_1_1_networking_1_1_connector}\index{Horizon::Networking::Connector@{Horizon::Networking::Connector}}
+
+
+\doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} object that allows connecting to remote endpoints. Connections are passed to network connected threads that handle them separately from accepted threads.  
+
+
+
+
+{\ttfamily \#include $<$Connector.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::function$<$ void(std\+::string \&, std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t)$>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}{Connector\+Callback}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a5a097a976bd99c4bf9d637383e402f3d}{Connector}} (std\+::string const \&connection\+\_\+name, \mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}server, std\+::string const \&connect\+\_\+ip, uint16\+\_\+t port)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} contructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a7cac708f9c6aefcb9ca1d59c88c7955c}{Connector}} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the object that handles joining of all socket polling threads. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_ae70f3995ad9601215795ff788bbb94e5}{connect\+\_\+with\+\_\+callback}} (\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}{Connector\+Callback}} callback, int connections=1)
+\begin{DoxyCompactList}\small\item\em Attempts connections to the remote endpoint that the object was initiated with. The responsibilities of this method are -\/ 1) Attempt to open connections to an endpoint and retry on failure. 2) Execute callbacks to functions that handle the ownership of the connected socket. 3) Start threads that execute state-\/verification checks of each connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a4e55f9f393db2a0844581d7d413e2155}{set\+\_\+socket\+\_\+factory}} (std\+::function$<$ std\+::pair$<$ std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t $>$()$>$ \&\&func)
+\begin{DoxyCompactList}\small\item\em Sets a socket factory method that provides a socket for new connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} object that allows connecting to remote endpoints. Connections are passed to network connected threads that handle them separately from accepted threads. 
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}\label{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160} 
+\index{Horizon::Networking::Connector@{Horizon::Networking::Connector}!ConnectorCallback@{ConnectorCallback}}
+\index{ConnectorCallback@{ConnectorCallback}!Horizon::Networking::Connector@{Horizon::Networking::Connector}}
+\doxysubsubsection{\texorpdfstring{ConnectorCallback}{ConnectorCallback}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(std\+::string \&, std\+::shared\+\_\+ptr$<$tcp\+::socket$>$, uint32\+\_\+t)$>$ \mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}{Horizon\+::\+Networking\+::\+Connector\+::\+Connector\+Callback}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_connector_a5a097a976bd99c4bf9d637383e402f3d}\label{class_horizon_1_1_networking_1_1_connector_a5a097a976bd99c4bf9d637383e402f3d} 
+\index{Horizon::Networking::Connector@{Horizon::Networking::Connector}!Connector@{Connector}}
+\index{Connector@{Connector}!Horizon::Networking::Connector@{Horizon::Networking::Connector}}
+\doxysubsubsection{\texorpdfstring{Connector()}{Connector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Networking\+::\+Connector\+::\+Connector (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{connection\+\_\+name,  }\item[{\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*}}]{server,  }\item[{std\+::string const \&}]{connect\+\_\+ip,  }\item[{uint16\+\_\+t}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{class_horizon_1_1_networking_1_1_connector}{Connector} contructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & connection\+\_\+name constant reference to the name string of the connection being created. \\
+\hline
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & server pointer to the server object that is instantiating the connection. \\
+\hline
+ & {\em \mbox{[}in\texorpdfstring{$\vert$}{|}out\mbox{]}} & connect\+\_\+ip constant reference to the ip string of the endpoint to connect to. \\
+\hline
+\mbox{\texttt{ in}}  & {\em port} & port number of the endpoint to connect to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_horizon_1_1_networking_1_1_connector_a7cac708f9c6aefcb9ca1d59c88c7955c}\label{class_horizon_1_1_networking_1_1_connector_a7cac708f9c6aefcb9ca1d59c88c7955c} 
+\index{Horizon::Networking::Connector@{Horizon::Networking::Connector}!Connector@{Connector}}
+\index{Connector@{Connector}!Horizon::Networking::Connector@{Horizon::Networking::Connector}}
+\doxysubsubsection{\texorpdfstring{Connector()}{Connector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Horizon\+::\+Networking\+::\+Connector\+::\+Connector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor of the object that handles joining of all socket polling threads. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_networking_1_1_connector_ae70f3995ad9601215795ff788bbb94e5}\label{class_horizon_1_1_networking_1_1_connector_ae70f3995ad9601215795ff788bbb94e5} 
+\index{Horizon::Networking::Connector@{Horizon::Networking::Connector}!connect\_with\_callback@{connect\_with\_callback}}
+\index{connect\_with\_callback@{connect\_with\_callback}!Horizon::Networking::Connector@{Horizon::Networking::Connector}}
+\doxysubsubsection{\texorpdfstring{connect\_with\_callback()}{connect\_with\_callback()}}
+{\footnotesize\ttfamily void Horizon\+::\+Networking\+::\+Connector\+::connect\+\_\+with\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horizon_1_1_networking_1_1_connector_a1889273b17537e5b568ed6f800664160}{Connector\+Callback}}}]{callback,  }\item[{int}]{connections = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Attempts connections to the remote endpoint that the object was initiated with. The responsibilities of this method are -\/ 1) Attempt to open connections to an endpoint and retry on failure. 2) Execute callbacks to functions that handle the ownership of the connected socket. 3) Start threads that execute state-\/verification checks of each connection. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & the callback function that handles socket ownership. \\
+\hline
+\mbox{\texttt{ in}}  & {\em connections} & the number of connections to the endpoint that will be initiated and handled. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_horizon_1_1_networking_1_1_connector_ae70f3995ad9601215795ff788bbb94e5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_networking_1_1_connector_a4e55f9f393db2a0844581d7d413e2155}\label{class_horizon_1_1_networking_1_1_connector_a4e55f9f393db2a0844581d7d413e2155} 
+\index{Horizon::Networking::Connector@{Horizon::Networking::Connector}!set\_socket\_factory@{set\_socket\_factory}}
+\index{set\_socket\_factory@{set\_socket\_factory}!Horizon::Networking::Connector@{Horizon::Networking::Connector}}
+\doxysubsubsection{\texorpdfstring{set\_socket\_factory()}{set\_socket\_factory()}}
+{\footnotesize\ttfamily void Horizon\+::\+Networking\+::\+Connector\+::set\+\_\+socket\+\_\+factory (\begin{DoxyParamCaption}\item[{std\+::function$<$ std\+::pair$<$ std\+::shared\+\_\+ptr$<$ tcp\+::socket $>$, uint32\+\_\+t $>$()$>$ \&\&}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets a socket factory method that provides a socket for new connections. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Libraries/\+Networking/\mbox{\hyperlink{_connector_8hpp}{Connector.\+hpp}}\end{DoxyCompactItemize}

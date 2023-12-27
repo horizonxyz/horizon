@@ -1,0 +1,100 @@
+\doxysection{Horizon\+::Auth\+::Auth\+Client\+Interface Class Reference}
+\hypertarget{class_horizon_1_1_auth_1_1_auth_client_interface}{}\label{class_horizon_1_1_auth_1_1_auth_client_interface}\index{Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}}
+
+
+{\ttfamily \#include $<$Auth\+Client\+Interface.\+hpp$>$}
+
+
+
+Inheritance diagram for Horizon\+::Auth\+::Auth\+Client\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_horizon_1_1_auth_1_1_auth_client_interface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Horizon\+::Auth\+::Auth\+Client\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_horizon_1_1_auth_1_1_auth_client_interface__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_client_interface_a63983b4dfa8b2907cfd4ff15a14107fb}{Auth\+Client\+Interface}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$ session)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_client_interface_a2e45e1dfe0021200b55f2b808b0261d6}{\texorpdfstring{$\sim$}{\string~}\+Auth\+Client\+Interface}} ()
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_client_interface_a2face10d739d7c0fddcda5be3d4c9f9d}{process\+\_\+login}} (std\+::string username, std\+::string hash, uint16\+\_\+t version, uint16\+\_\+t client\+\_\+type)
+\item 
+bool \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_client_interface_a4bf56260e896b5cbd5f58ef68147a4ed}{client\+\_\+login\+\_\+otp\+\_\+response}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_horizon_1_1_client_interface}{Horizon\+::\+Client\+Interface$<$ Auth\+Session $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_horizon_1_1_client_interface_a1e6935e9a77ed92cfeab2e80901cfc3e}{Client\+Interface}} (std\+::shared\+\_\+ptr$<$ Auth\+Session $>$ s)
+\item 
+\mbox{\hyperlink{class_horizon_1_1_client_interface_ad0b923698f1de99691e0057e795216eb}{\texorpdfstring{$\sim$}{\string~}\+Client\+Interface}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ Auth\+Session $>$ \mbox{\hyperlink{class_horizon_1_1_client_interface_aa330eedfb3f8a807d7afc6a379121598}{get\+\_\+session}} ()
+\item 
+void \mbox{\hyperlink{class_horizon_1_1_client_interface_a797aff8327964f44705aa480dad23cf0}{set\+\_\+session}} (std\+::shared\+\_\+ptr$<$ Auth\+Session $>$ s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_client_interface_a63983b4dfa8b2907cfd4ff15a14107fb}\label{class_horizon_1_1_auth_1_1_auth_client_interface_a63983b4dfa8b2907cfd4ff15a14107fb} 
+\index{Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}!AuthClientInterface@{AuthClientInterface}}
+\index{AuthClientInterface@{AuthClientInterface}!Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}}
+\doxysubsubsection{\texorpdfstring{AuthClientInterface()}{AuthClientInterface()}}
+{\footnotesize\ttfamily Auth\+Client\+Interface\+::\+Auth\+Client\+Interface (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_horizon_1_1_auth_1_1_auth_session}{Auth\+Session}} $>$}]{session }\end{DoxyParamCaption})}
+
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_client_interface_a2e45e1dfe0021200b55f2b808b0261d6}\label{class_horizon_1_1_auth_1_1_auth_client_interface_a2e45e1dfe0021200b55f2b808b0261d6} 
+\index{Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}!````~AuthClientInterface@{\texorpdfstring{$\sim$}{\string~}AuthClientInterface}}
+\index{````~AuthClientInterface@{\texorpdfstring{$\sim$}{\string~}AuthClientInterface}!Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AuthClientInterface()}{\string~AuthClientInterface()}}
+{\footnotesize\ttfamily Auth\+Client\+Interface\+::\texorpdfstring{$\sim$}{\string~}\+Auth\+Client\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_client_interface_a4bf56260e896b5cbd5f58ef68147a4ed}\label{class_horizon_1_1_auth_1_1_auth_client_interface_a4bf56260e896b5cbd5f58ef68147a4ed} 
+\index{Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}!client\_login\_otp\_response@{client\_login\_otp\_response}}
+\index{client\_login\_otp\_response@{client\_login\_otp\_response}!Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}}
+\doxysubsubsection{\texorpdfstring{client\_login\_otp\_response()}{client\_login\_otp\_response()}}
+{\footnotesize\ttfamily bool Auth\+Client\+Interface\+::client\+\_\+login\+\_\+otp\+\_\+response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_client_interface_a4bf56260e896b5cbd5f58ef68147a4ed_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_horizon_1_1_auth_1_1_auth_client_interface_a2face10d739d7c0fddcda5be3d4c9f9d}\label{class_horizon_1_1_auth_1_1_auth_client_interface_a2face10d739d7c0fddcda5be3d4c9f9d} 
+\index{Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}!process\_login@{process\_login}}
+\index{process\_login@{process\_login}!Horizon::Auth::AuthClientInterface@{Horizon::Auth::AuthClientInterface}}
+\doxysubsubsection{\texorpdfstring{process\_login()}{process\_login()}}
+{\footnotesize\ttfamily bool Auth\+Client\+Interface\+::process\+\_\+login (\begin{DoxyParamCaption}\item[{std\+::string}]{username,  }\item[{std\+::string}]{hash,  }\item[{uint16\+\_\+t}]{version,  }\item[{uint16\+\_\+t}]{client\+\_\+type }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_horizon_1_1_auth_1_1_auth_client_interface_a2face10d739d7c0fddcda5be3d4c9f9d_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Server/\+Auth/\+Interface/\mbox{\hyperlink{_auth_client_interface_8hpp}{Auth\+Client\+Interface.\+hpp}}\item 
+src/\+Server/\+Auth/\+Interface/\mbox{\hyperlink{_auth_client_interface_8cpp}{Auth\+Client\+Interface.\+cpp}}\end{DoxyCompactItemize}
