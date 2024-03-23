@@ -2,8 +2,8 @@
     "version": 2,
     "configurePresets": [
         {
-            "name": "Debug",
-            "displayName": "Visual Studio Community 2022 Debug - amd64",
+            "name": "Horizon",
+            "displayName": "Horizon Release (x64 architecture) - Visual Studio Community 2022",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
             "generator": "Visual Studio 17 2022",
             "toolset": "host=x64",
@@ -13,14 +13,13 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET": "x64-windows"
             }
         },
         {
-            "name": "Debug-Tools",
-            "displayName": "Visual Studio Community 2022 Debug Tools - amd64",
+            "name": "Horizon-Tools",
+            "displayName": "Horizon Tools Release (x64 architecture) - Visual Studio Community 2022",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
             "generator": "Visual Studio 17 2022",
             "toolset": "host=x64",
@@ -30,7 +29,6 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET": "x64-windows",
                 "WITH_TOOLS": true,
@@ -39,19 +37,8 @@
             }
         },
         {
-            "name": "Release",
-            "description": "",
-            "displayName": "Visual Studio Community 2022 Release - amd64",
-            "inherits": [
-                "Debug"
-            ],
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
-            }
-        },
-        {
-            "name": "Tests",
-            "displayName": "Visual Studio Community 2022 Debug - amd64 (Tests)",
+            "name": "Horizon-Tests",
+            "displayName": "Horizon Tests Release (x64 architecture) - Visual Studio Community 2022",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
             "generator": "Visual Studio 17 2022",
             "toolset": "host=x64",
@@ -61,101 +48,78 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET": "x64-windows",
-                "WITH_TESTS": true,
-                "WITHOUT_SERVERS": true
-            },
-            "environment": {
-              "CFLAGS": "/fsanitize=address",
-              "CXXFLAGS": "/fsanitize=address"
+                "WITH_TOOLS": false,
+                "WITHOUT_SERVERS": true,
+                "WITH_TESTS": true
             }
         },
         {
-            "name": "Tests-Clang-GNU-Debug-ASAN",
-            "displayName": "Tests-Clang-GNU-Debug-ASAN",
-            "description": "Clang 15.0.1 (GNU CLI) for MSVC 17.5.33516.290 (Visual Studio Community 2022 Release - amd64)",
+            "name": "Horizon Debug (x64 architecture) - Visual Studio Community 2022",
+            "description": "",
+            "displayName": "",
+            "inherits": [
+                "Horizon"
+            ]
+        },
+        {
+            "name": "Horizon Tools Debug (x64 architecture) - Visual Studio Community 2022",
+            "description": "",
+            "displayName": "",
+            "inherits": [
+                "Horizon-Tools"
+            ]
+        },
+        {
+            "name": "Horizon Tests Debug (x64 architecture) - Visual Studio Community 2022",
+            "description": "",
+            "displayName": "",
+            "inherits": [
+                "Horizon-Tests"
+            ]
+        },
+        {
+            "name": "Horizon x86",
+            "displayName": "Horizon (x86 architecture) - Visual Studio Community 2022",
+            "description": "Using compilers for Visual Studio 17 2022 (x86 architecture)",
             "generator": "Visual Studio 17 2022",
+            "toolset": "host=x86",
+            "architecture": "win32",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
-                "CMAKE_CXX_COMPILER": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
-                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
                 "CMAKE_TOOLCHAIN_FILE": "C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
-                "VCPKG_TARGET_TRIPLET": "x64-windows",
-                "WITH_TESTS": true,
-                "WITHOUT_SERVERS": true,
-                "CMAKE_C_FLAGS_DEBUG": "/MTd -fsanitize=address",
-                "CMAKE_CXX_FLAGS_DEBUG": "/MTd -fsanitize=address",
-                "CMAKE_EXE_LINKER_FLAGS_DEBUG": "/MTd -fsanitize=address"
-            }
-        },
-        {
-            "name": "Tests-Clang-GNU-Debug-TSAN",
-            "description": "Clang 15.0.1 (GNU CLI) for MSVC 17.5.33516.290 (Visual Studio Community 2022 Release - amd64)",
-            "displayName": "Tests-Clang-GNU-Debug-TSAN",
-            "inherits": [
-                "Tests-Clang-GNU-Debug-ASAN"
-            ],
-            "cacheVariables": {
-                "CMAKE_C_FLAGS_DEBUG": "-fsanitize=thread",
-                "CMAKE_CXX_FLAGS_DEBUG": "-fsanitize=thread",
-                "CMAKE_EXE_LINKER_FLAGS_DEBUG": "-fsanitize=thread"
+                "VCPKG_TARGET_TRIPLET": "x32-windows"
             }
         }
     ],
     "buildPresets": [
         {
-            "name": "Debug",
-            "displayName": "Visual Studio Community 2022 Debug - amd64",
-            "configurePreset": "Debug",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Debug-Tools",
-            "displayName": "Visual Studio Community 2022 Debug Tools - amd64",
-            "configurePreset": "Debug-Tools",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Release",
+            "name": "Horizon",
             "displayName": "Visual Studio Community 2022 Release - amd64",
-            "configurePreset": "Release",
+            "configurePreset": "Horizon",
             "configuration": "Release"
         },
         {
-            "name": "Tests-Clang-MSVC-Release",
-            "displayName": "Clang 15.0.1 (MSVC CLI) for MSVC 17.5.33516.290 (Visual Studio Community 2022 Release - x86)",
-            "configurePreset": "Tests-Clang-MSVC-Release",
-            "configuration": "Debug"
+            "name": "Horizon-Tools",
+            "displayName": "Visual Studio Community 2022 Release - Tools - amd64",
+            "configurePreset": "Horizon-Tools",
+            "configuration": "Release"
         },
         {
-            "name": "Tests-Clang-GNU-Debug-ASAN",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Tests-Clang-GNU-Debug-ASAN"
-        }
-    ],
-    "testPresets": [
-        {
-            "name": "Tests-Clang-Release",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Tests-Clang-MSVC-Release"
+            "name": "Horizon-Tests",
+            "displayName": "Visual Studio Community 2022 Release - Tests - amd64",
+            "configurePreset": "Horizon-Tests",
+            "configuration": "Release"
         },
         {
-            "name": "Tests-Clang-GNU-Debug",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Tests-Clang-GNU-Debug"
-        },
-        {
-            "name": "Tests-Clang-GNU-Debug-ThreadSan",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Tests-Clang-GNU-Debug"
+            "name": "Horizon x86",
+            "displayName": "Visual Studio Community 2022 Release - x86 - Debug",
+            "configurePreset": "Horizon x86",
+            "configuration": "Release"
         }
     ]
 }

@@ -56,7 +56,8 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
 		set (ADD_INCLUDE_DIRS ${LUA_INCLUDE_DIR} ${SOL2_INCLUDE_DIR})
 	elseif (TEST_NAME STREQUAL "LockedLookupTableTest"
 			OR TEST_NAME STREQUAL "ThreadSafeQueueTest"
-			OR TEST_NAME STREQUAL "WorkerThreadPoolTest")
+			OR TEST_NAME STREQUAL "WorkerThreadPoolTest"
+			OR TEST_NAME STREQUAL "ParallelDataLockDesignTest")
 		set (ADD_LIBS -lpthread)
 	elseif (TEST_NAME STREQUAL "LoggingTest")
 		set (ADD_SOURCES
